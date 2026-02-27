@@ -21,9 +21,9 @@ export function Work() {
 
                 <div className="space-y-32">
                     {projects.map((project, index) => (
-                        <ScrollAnimation key={project.id} className="group">
-                            <div className="grid gap-12 lg:grid-cols-2 lg:gap-24 items-start">
-                                {/* Live Preview Side */}
+                        <ScrollAnimation key={project.id}>
+                            <div className="grid gap-12 lg:grid-cols-2 lg:gap-16 items-start">
+                                {/* Live Preview */}
                                 <div className={index % 2 === 1 ? "lg:order-2" : ""}>
                                     <ProjectLivePreview
                                         url={project.link}
@@ -32,7 +32,7 @@ export function Work() {
                                     />
                                 </div>
 
-                                {/* Content Side */}
+                                {/* Case Study Content */}
                                 <div className={index % 2 === 1 ? "lg:order-1" : ""}>
                                     <div className="flex items-center justify-between mb-6">
                                         <h3 className="text-3xl font-bold tracking-tight">{project.title}</h3>
@@ -68,25 +68,13 @@ export function Work() {
                                         </div>
                                     )}
 
-                                    <div className="flex flex-wrap gap-2 mb-8">
+                                    <div className="flex flex-wrap gap-2">
                                         {project.tags.map(tag => (
-                                            <span key={tag} className="text-sm text-muted-foreground/80 bg-secondary/40 px-3 py-1.5 rounded-md">
+                                            <span key={tag} className="text-sm text-muted-foreground bg-secondary/40 px-3 py-1.5 rounded-md">
                                                 {tag}
                                             </span>
                                         ))}
                                     </div>
-
-                                    {project.link && project.link !== "#" && (
-                                        <a
-                                            href={project.link}
-                                            target="_blank"
-                                            rel="noopener noreferrer"
-                                            className="inline-flex items-center min-h-[48px] text-sm font-medium text-accent hover:text-accent/80 transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring rounded-md px-1"
-                                            aria-label={`Visit ${project.title} live site`}
-                                        >
-                                            Visit Live Site →
-                                        </a>
-                                    )}
                                 </div>
                             </div>
                         </ScrollAnimation>
