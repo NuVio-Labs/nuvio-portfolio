@@ -1,0 +1,15 @@
+{
+  "/(auth)/login/page": "app/(auth)/login/page.js",
+  "/(protected)/dashboard/page": "app/(protected)/dashboard/page.js",
+  "/(protected)/dashboard/settings/page": "app/(protected)/dashboard/settings/page.js",
+  "/_global-error/page": "app/_global-error/page.js",
+  "/_not-found/page": "app/_not-found/page.js",
+  "/demos/helix/page": "app/demos/helix/page.js",
+  "/demos/nuvio-core/page": "app/demos/nuvio-core/page.js",
+  "/demos/vanguard/page": "app/demos/vanguard/page.js",
+  "/demos/velos/page": "app/demos/velos/page.js",
+  "/favicon.ico/route": "app/favicon.ico/route.js",
+  "/imprint/page": "app/imprint/page.js",
+  "/page": "app/page.js",
+  "/privacy/page": "app/privacy/page.js"
+}

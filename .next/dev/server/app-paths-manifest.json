@@ -1,0 +1,8 @@
+{
+  "/(protected)/dashboard/page": "app/(protected)/dashboard/page.js",
+  "/demos/helix/page": "app/demos/helix/page.js",
+  "/demos/nuvio-core/page": "app/demos/nuvio-core/page.js",
+  "/demos/vanguard/page": "app/demos/vanguard/page.js",
+  "/demos/velos/page": "app/demos/velos/page.js",
+  "/page": "app/page.js"
+}

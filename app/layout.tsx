@@ -9,6 +9,7 @@ import { cn } from "@/lib/utils";
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
+  metadataBase: new URL("https://www.nuviolabs.de"),
   title: {
     default: "Axel | Digital Products & Systems",
     template: "%s | Axel"
@@ -17,10 +18,13 @@ export const metadata: Metadata = {
   keywords: ["Fullstack Engineer", "Product Designer", "React", "Next.js", "TypeScript", "Minimalist Design"],
   authors: [{ name: "Axel" }],
   creator: "Axel",
+  alternates: {
+    canonical: "https://www.nuviolabs.de",
+  },
   openGraph: {
     type: "website",
     locale: "en_US",
-    url: "https://portfolio-2026.com",
+    url: "https://www.nuviolabs.de",
     title: "Axel | Digital Products & Systems",
     description: "Senior Fullstack Engineer & Product Designer specializing in minimalist, high-performance web applications.",
     siteName: "Axel Portfolio",

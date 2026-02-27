@@ -1,0 +1,15 @@
+{
+  "headers": {
+    "x-nextjs-stale-time": "300",
+    "x-nextjs-prerender": "1",
+    "x-next-cache-tags": "_N_T_/layout,_N_T_/imprint/layout,_N_T_/imprint/page,_N_T_/imprint"
+  },
+  "segmentPaths": [
+    "/_tree",
+    "/_full",
+    "/imprint/__PAGE__",
+    "/imprint",
+    "/_index",
+    "/_head"
+  ]
+}

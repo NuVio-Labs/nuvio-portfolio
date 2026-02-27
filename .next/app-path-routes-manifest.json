@@ -1,0 +1,15 @@
+{
+  "/(auth)/login/page": "/login",
+  "/(protected)/dashboard/page": "/dashboard",
+  "/(protected)/dashboard/settings/page": "/dashboard/settings",
+  "/_global-error/page": "/_global-error",
+  "/_not-found/page": "/_not-found",
+  "/demos/helix/page": "/demos/helix",
+  "/demos/nuvio-core/page": "/demos/nuvio-core",
+  "/demos/vanguard/page": "/demos/vanguard",
+  "/demos/velos/page": "/demos/velos",
+  "/favicon.ico/route": "/favicon.ico",
+  "/imprint/page": "/imprint",
+  "/page": "/",
+  "/privacy/page": "/privacy"
+}
