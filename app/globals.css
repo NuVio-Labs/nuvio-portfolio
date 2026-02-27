@@ -68,3 +68,16 @@
     text-wrap: balance;
   }
 }
+
+/* ─── Hero entrance animation (CSS-only, no JS delay) ─── */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}

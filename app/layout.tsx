@@ -12,7 +12,7 @@ import { DebugPanel } from "@/components/saas/DebugPanel";
 const inter = Inter({ subsets: ["latin"], display: "swap" });
 
 /* ─── Production SEO Metadata ───────────────────────── */
-const SITE_URL = "https://nuviolabs.de";
+const SITE_URL = "https://www.nuviolabs.de";
 
 export const metadata: Metadata = {
   metadataBase: new URL(SITE_URL),

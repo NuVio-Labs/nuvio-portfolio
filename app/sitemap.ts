@@ -1,6 +1,6 @@
 import type { MetadataRoute } from "next";
 
-const SITE_URL = "https://nuviolabs.de";
+const SITE_URL = "https://www.nuviolabs.de";
 
 export default function sitemap(): MetadataRoute.Sitemap {
     return [
