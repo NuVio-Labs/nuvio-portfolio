@@ -58,64 +58,44 @@ __turbopack_context__.s([
 ]);
 const projects = [
     {
-        id: "vanguard",
-        title: "Vanguard",
-        description: "Institutional trading dashboard consolidating fragmented workflows into a unified, real-time interface.",
+        id: "wt-erdbewegungen",
+        title: "WT Erdbewegungen",
+        description: "Professional website for a local excavation and earthmoving company — fast, responsive, and built for search visibility.",
         category: "Web",
         image: "/placeholder-project-1.jpg",
         tags: [
             "Next.js",
             "TypeScript",
-            "WebSocket",
-            "TanStack Query"
+            "Tailwind CSS",
+            "Vercel"
         ],
-        link: "#",
+        link: "https://www.wt-erdbewegungen.de",
         featured: true,
-        demoRoute: "/demos/vanguard",
         caseStudy: {
-            problem: "Traders were switching between six different legacy applications to execute a single transaction, leading to data entry errors and missed market opportunities. The existing tools were strictly tabular and lacked contextual visualization.",
-            solution: "Designed and built a unified web-based dashboard that aggregates market data, execution, and risk analysis. Implemented a highly performant WebSocket layer for real-time price updates and a composable widget system allowing traders to customize their workspace.",
-            result: "Reduced average trade execution time by 30% and completely eliminated cross-application copy-paste errors. Adopted by the institutional desk as the primary daily driver within two months."
+            problem: "A local construction and earthmoving business had no web presence at all. Potential customers in the region couldn't find them online, and all leads came through word-of-mouth only.",
+            solution: "Designed and built a clean, fast-loading website focused on showcasing the company's services, machinery, and completed projects. Implemented strong on-page SEO for local search terms and ensured the site performs well on mobile devices, where most local searches happen.",
+            result: "The business now has a professional online presence that ranks for relevant local search terms. The site loads in under 2 seconds on mobile and gives potential customers a clear picture of the services offered."
         }
     },
     {
-        id: "helix",
-        title: "Helix",
-        description: "Multi-brand design system for a rapid-growth healthtech scale-up.",
-        category: "Design",
+        id: "daisymays-salon",
+        title: "Daisy May's Salon",
+        description: "Bilingual website for a dog grooming salon — warm branding, booking information, and multi-language support.",
+        category: "Web",
         image: "/placeholder-project-2.jpg",
         tags: [
             "React",
-            "Storybook",
-            "Tailwind",
-            "Figma API"
+            "TypeScript",
+            "Vite",
+            "Tailwind CSS",
+            "i18n"
         ],
-        link: "#",
+        link: "https://www.daisymayssalon.de",
         featured: true,
         caseStudy: {
-            problem: "After acquiring two smaller competitors, the product landscape was fractured. Five different authentication flows and inconsistent UI patterns were slowing down feature development and confusing users moving between products.",
-            solution: "Established a core design system with strict reliable tokens and a library of 40+ accessible React components. Built automated pipelines to sync Figma tokens directly to the codebase, ensuring design-dev parity.",
-            result: "Reduced UI related code debt by 40% and accelerated the prototyping phase by 2x. Successfully unified the visual identity across all three major product lines within one year."
-        }
-    },
-    {
-        id: "velos",
-        title: "Velos",
-        description: "High-performance headless e-commerce platform for a global lifestyle brand.",
-        category: "Web",
-        image: "/placeholder-project-3.jpg",
-        tags: [
-            "Next.js",
-            "Shopify Headless",
-            "Framer Motion",
-            "Edge Functions"
-        ],
-        link: "#",
-        featured: true,
-        caseStudy: {
-            problem: "The previous monolithic shop setup crashed during peak traffic events (Black Friday) and suffered from slow mobile load times, resulting in a high cart abandonment rate on mobile devices.",
-            solution: "Re-platformed to a modern headless architecture using Next.js on the edge. Implemented aggressive caching strategies and optimistic UI updates to ensure the interface feels instant, even on slow connections.",
-            result: "Achieved 99.99% uptime during the biggest sale of the year. Mobile conversion rate increased by 15% due to sub-second page transitions and improved perceived performance."
+            problem: "A dog grooming salon needed a website that could serve both German and English-speaking customers. The existing workflow relied entirely on phone calls and social media, making it hard to communicate services and prices clearly.",
+            solution: "Built a fully responsive, bilingual website with internationalization (i18n) support. Focused on warm, approachable design that matches the salon's brand. Included clear service descriptions, pricing, image galleries, and easy-to-find contact information.",
+            result: "The salon now has a professional bilingual website that reduces repetitive phone inquiries about services and prices. Customers can browse offerings in their preferred language and find all the information they need to book an appointment."
         }
     }
 ];
@@ -128,10 +108,10 @@ __turbopack_context__.s([
     ()=>Work
 ]);
 var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/node_modules/next/dist/server/route-modules/app-page/vendored/ssr/react-jsx-dev-runtime.js [app-ssr] (ecmascript)");
-var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$client$2f$app$2d$dir$2f$link$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/node_modules/next/dist/client/app-dir/link.js [app-ssr] (ecmascript)");
 var __TURBOPACK__imported__module__$5b$project$5d2f$components$2f$layout$2f$container$2e$tsx__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/components/layout/container.tsx [app-ssr] (ecmascript)");
 var __TURBOPACK__imported__module__$5b$project$5d2f$data$2f$projects$2e$ts__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/data/projects.ts [app-ssr] (ecmascript)");
 var __TURBOPACK__imported__module__$5b$project$5d2f$components$2f$ui$2f$scroll$2d$animation$2e$tsx__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/components/ui/scroll-animation.tsx [app-ssr] (ecmascript)");
+var __TURBOPACK__imported__module__$5b$project$5d2f$lib$2f$utils$2e$ts__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/lib/utils.ts [app-ssr] (ecmascript)");
 "use client";
 ;
 ;
@@ -153,7 +133,7 @@ function Work() {
                                 children: "Selected Work"
                             }, void 0, false, {
                                 fileName: "[project]/components/sections/work.tsx",
-                                lineNumber: 18,
+                                lineNumber: 14,
                                 columnNumber: 25
                             }, this),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
@@ -162,25 +142,25 @@ function Work() {
                                     "Deep dives into problems solved and value delivered. ",
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("br", {}, void 0, false, {
                                         fileName: "[project]/components/sections/work.tsx",
-                                        lineNumber: 20,
+                                        lineNumber: 16,
                                         columnNumber: 82
                                     }, this),
                                     "Quality over quantity."
                                 ]
                             }, void 0, true, {
                                 fileName: "[project]/components/sections/work.tsx",
-                                lineNumber: 19,
+                                lineNumber: 15,
                                 columnNumber: 25
                             }, this)
                         ]
                     }, void 0, true, {
                         fileName: "[project]/components/sections/work.tsx",
-                        lineNumber: 17,
+                        lineNumber: 13,
                         columnNumber: 21
                     }, this)
                 }, void 0, false, {
                     fileName: "[project]/components/sections/work.tsx",
-                    lineNumber: 16,
+                    lineNumber: 12,
                     columnNumber: 17
                 }, this),
                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -192,108 +172,58 @@ function Work() {
                                 children: [
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
                                         className: index % 2 === 1 ? "lg:order-2" : "",
-                                        children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$client$2f$app$2d$dir$2f$link$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["default"], {
-                                            href: project.demoRoute || project.link,
-                                            className: cn("block w-full h-full cursor-pointer", !project.demoRoute && "cursor-default"),
+                                        children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("a", {
+                                            href: project.link,
+                                            target: "_blank",
+                                            rel: "noopener noreferrer",
+                                            className: "block w-full h-full cursor-pointer",
                                             children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
                                                 className: "overflow-hidden rounded-2xl border border-border/40 bg-muted/30 shadow-sm transition-all duration-500 hover:shadow-xl aspect-[4/3] relative group-hover:-translate-y-2",
-                                                children: project.id === "vanguard" ? /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                                                    className: "absolute inset-0 z-0",
-                                                    children: [
-                                                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(VanguardDemo, {
-                                                            mode: "compact"
+                                                children: [
+                                                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                                                        className: (0, __TURBOPACK__imported__module__$5b$project$5d2f$lib$2f$utils$2e$ts__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["cn"])("absolute inset-0 flex flex-col items-center justify-center", index === 0 ? "bg-gradient-to-br from-amber-500/20 via-orange-500/10 to-background/80" : "bg-gradient-to-br from-rose-500/20 via-pink-500/10 to-background/80"),
+                                                        children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
+                                                            className: "text-4xl font-bold text-foreground/15 uppercase tracking-widest text-center px-8",
+                                                            children: project.title
                                                         }, void 0, false, {
                                                             fileName: "[project]/components/sections/work.tsx",
-                                                            lineNumber: 37,
-                                                            columnNumber: 53
-                                                        }, this),
-                                                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                                                            className: "absolute top-4 left-4 z-20",
-                                                            children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
-                                                                className: "inline-flex items-center rounded-full border bg-background/80 px-2.5 py-0.5 text-xs font-semibold text-foreground backdrop-blur-sm shadow-sm",
-                                                                children: [
-                                                                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
-                                                                        className: "mr-1.5 h-2 w-2 rounded-full bg-green-500 animate-pulse"
-                                                                    }, void 0, false, {
-                                                                        fileName: "[project]/components/sections/work.tsx",
-                                                                        lineNumber: 40,
-                                                                        columnNumber: 61
-                                                                    }, this),
-                                                                    "Live Preview"
-                                                                ]
-                                                            }, void 0, true, {
-                                                                fileName: "[project]/components/sections/work.tsx",
-                                                                lineNumber: 39,
-                                                                columnNumber: 57
-                                                            }, this)
-                                                        }, void 0, false, {
-                                                            fileName: "[project]/components/sections/work.tsx",
-                                                            lineNumber: 38,
-                                                            columnNumber: 53
-                                                        }, this),
-                                                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                                                            className: "absolute inset-0 z-10 bg-transparent"
-                                                        }, void 0, false, {
-                                                            fileName: "[project]/components/sections/work.tsx",
-                                                            lineNumber: 44,
-                                                            columnNumber: 53
-                                                        }, this),
-                                                        " ",
-                                                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                                                            className: "absolute bottom-4 right-4 z-20 opacity-0 group-hover:opacity-100 transition-opacity duration-300",
-                                                            children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
-                                                                className: "inline-flex items-center rounded-full bg-primary px-4 py-2 text-xs font-medium text-primary-foreground shadow-lg",
-                                                                children: "Open Demo"
-                                                            }, void 0, false, {
-                                                                fileName: "[project]/components/sections/work.tsx",
-                                                                lineNumber: 46,
-                                                                columnNumber: 57
-                                                            }, this)
-                                                        }, void 0, false, {
-                                                            fileName: "[project]/components/sections/work.tsx",
-                                                            lineNumber: 45,
-                                                            columnNumber: 53
+                                                            lineNumber: 42,
+                                                            columnNumber: 49
                                                         }, this)
-                                                    ]
-                                                }, void 0, true, {
-                                                    fileName: "[project]/components/sections/work.tsx",
-                                                    lineNumber: 36,
-                                                    columnNumber: 49
-                                                }, this) : /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["Fragment"], {
-                                                    children: [
-                                                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                                                            className: "absolute inset-0 bg-gradient-to-br from-background/0 to-background/80 z-10"
+                                                    }, void 0, false, {
+                                                        fileName: "[project]/components/sections/work.tsx",
+                                                        lineNumber: 36,
+                                                        columnNumber: 45
+                                                    }, this),
+                                                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                                                        className: "absolute bottom-4 right-4 z-20 opacity-0 group-hover:opacity-100 transition-opacity duration-300",
+                                                        children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
+                                                            className: "inline-flex items-center rounded-full bg-primary px-4 py-2 text-xs font-medium text-primary-foreground shadow-lg",
+                                                            children: "Visit Live Site →"
                                                         }, void 0, false, {
                                                             fileName: "[project]/components/sections/work.tsx",
-                                                            lineNumber: 53,
-                                                            columnNumber: 53
-                                                        }, this),
-                                                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                                                            className: "absolute inset-0 flex items-center justify-center text-4xl font-bold text-muted-foreground/10 uppercase tracking-widest",
-                                                            children: [
-                                                                project.title,
-                                                                " Preview"
-                                                            ]
-                                                        }, void 0, true, {
-                                                            fileName: "[project]/components/sections/work.tsx",
-                                                            lineNumber: 54,
-                                                            columnNumber: 53
+                                                            lineNumber: 47,
+                                                            columnNumber: 49
                                                         }, this)
-                                                    ]
-                                                }, void 0, true)
-                                            }, void 0, false, {
+                                                    }, void 0, false, {
+                                                        fileName: "[project]/components/sections/work.tsx",
+                                                        lineNumber: 46,
+                                                        columnNumber: 45
+                                                    }, this)
+                                                ]
+                                            }, void 0, true, {
                                                 fileName: "[project]/components/sections/work.tsx",
-                                                lineNumber: 33,
+                                                lineNumber: 34,
                                                 columnNumber: 41
                                             }, this)
                                         }, void 0, false, {
                                             fileName: "[project]/components/sections/work.tsx",
-                                            lineNumber: 32,
+                                            lineNumber: 28,
                                             columnNumber: 37
                                         }, this)
                                     }, void 0, false, {
                                         fileName: "[project]/components/sections/work.tsx",
-                                        lineNumber: 31,
+                                        lineNumber: 27,
                                         columnNumber: 33
                                     }, this),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -307,7 +237,7 @@ function Work() {
                                                         children: project.title
                                                     }, void 0, false, {
                                                         fileName: "[project]/components/sections/work.tsx",
-                                                        lineNumber: 66,
+                                                        lineNumber: 58,
                                                         columnNumber: 41
                                                     }, this),
                                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
@@ -315,13 +245,13 @@ function Work() {
                                                         children: project.category
                                                     }, void 0, false, {
                                                         fileName: "[project]/components/sections/work.tsx",
-                                                        lineNumber: 67,
+                                                        lineNumber: 59,
                                                         columnNumber: 41
                                                     }, this)
                                                 ]
                                             }, void 0, true, {
                                                 fileName: "[project]/components/sections/work.tsx",
-                                                lineNumber: 65,
+                                                lineNumber: 57,
                                                 columnNumber: 37
                                             }, this),
                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
@@ -329,7 +259,7 @@ function Work() {
                                                 children: project.description
                                             }, void 0, false, {
                                                 fileName: "[project]/components/sections/work.tsx",
-                                                lineNumber: 72,
+                                                lineNumber: 64,
                                                 columnNumber: 37
                                             }, this),
                                             project.caseStudy && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -342,7 +272,7 @@ function Work() {
                                                                 children: "The Problem"
                                                             }, void 0, false, {
                                                                 fileName: "[project]/components/sections/work.tsx",
-                                                                lineNumber: 79,
+                                                                lineNumber: 71,
                                                                 columnNumber: 49
                                                             }, this),
                                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
@@ -350,23 +280,23 @@ function Work() {
                                                                 children: project.caseStudy.problem
                                                             }, void 0, false, {
                                                                 fileName: "[project]/components/sections/work.tsx",
-                                                                lineNumber: 80,
+                                                                lineNumber: 72,
                                                                 columnNumber: 49
                                                             }, this)
                                                         ]
                                                     }, void 0, true, {
                                                         fileName: "[project]/components/sections/work.tsx",
-                                                        lineNumber: 78,
+                                                        lineNumber: 70,
                                                         columnNumber: 45
                                                     }, this),
                                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
                                                         children: [
                                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("h4", {
                                                                 className: "text-sm font-semibold uppercase tracking-wider text-muted-foreground mb-2",
-                                                                children: "The Solution"
+                                                                children: "The Approach"
                                                             }, void 0, false, {
                                                                 fileName: "[project]/components/sections/work.tsx",
-                                                                lineNumber: 85,
+                                                                lineNumber: 77,
                                                                 columnNumber: 49
                                                             }, this),
                                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
@@ -374,13 +304,13 @@ function Work() {
                                                                 children: project.caseStudy.solution
                                                             }, void 0, false, {
                                                                 fileName: "[project]/components/sections/work.tsx",
-                                                                lineNumber: 86,
+                                                                lineNumber: 78,
                                                                 columnNumber: 49
                                                             }, this)
                                                         ]
                                                     }, void 0, true, {
                                                         fileName: "[project]/components/sections/work.tsx",
-                                                        lineNumber: 84,
+                                                        lineNumber: 76,
                                                         columnNumber: 45
                                                     }, this),
                                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -388,10 +318,10 @@ function Work() {
                                                         children: [
                                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("h4", {
                                                                 className: "text-sm font-semibold uppercase tracking-wider text-accent mb-2",
-                                                                children: "The Result"
+                                                                children: "The Outcome"
                                                             }, void 0, false, {
                                                                 fileName: "[project]/components/sections/work.tsx",
-                                                                lineNumber: 91,
+                                                                lineNumber: 83,
                                                                 columnNumber: 49
                                                             }, this),
                                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
@@ -399,19 +329,19 @@ function Work() {
                                                                 children: project.caseStudy.result
                                                             }, void 0, false, {
                                                                 fileName: "[project]/components/sections/work.tsx",
-                                                                lineNumber: 92,
+                                                                lineNumber: 84,
                                                                 columnNumber: 49
                                                             }, this)
                                                         ]
                                                     }, void 0, true, {
                                                         fileName: "[project]/components/sections/work.tsx",
-                                                        lineNumber: 90,
+                                                        lineNumber: 82,
                                                         columnNumber: 45
                                                     }, this)
                                                 ]
                                             }, void 0, true, {
                                                 fileName: "[project]/components/sections/work.tsx",
-                                                lineNumber: 77,
+                                                lineNumber: 69,
                                                 columnNumber: 41
                                             }, this),
                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -421,45 +351,56 @@ function Work() {
                                                         children: tag
                                                     }, tag, false, {
                                                         fileName: "[project]/components/sections/work.tsx",
-                                                        lineNumber: 101,
+                                                        lineNumber: 93,
                                                         columnNumber: 45
                                                     }, this))
                                             }, void 0, false, {
                                                 fileName: "[project]/components/sections/work.tsx",
-                                                lineNumber: 99,
+                                                lineNumber: 91,
                                                 columnNumber: 37
+                                            }, this),
+                                            project.link && project.link !== "#" && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("a", {
+                                                href: project.link,
+                                                target: "_blank",
+                                                rel: "noopener noreferrer",
+                                                className: "inline-flex items-center text-sm font-medium text-accent hover:text-accent/80 transition-colors",
+                                                children: "Visit Live Site →"
+                                            }, void 0, false, {
+                                                fileName: "[project]/components/sections/work.tsx",
+                                                lineNumber: 100,
+                                                columnNumber: 41
                                             }, this)
                                         ]
                                     }, void 0, true, {
                                         fileName: "[project]/components/sections/work.tsx",
-                                        lineNumber: 64,
+                                        lineNumber: 56,
                                         columnNumber: 33
                                     }, this)
                                 ]
                             }, void 0, true, {
                                 fileName: "[project]/components/sections/work.tsx",
-                                lineNumber: 29,
+                                lineNumber: 25,
                                 columnNumber: 29
                             }, this)
                         }, project.id, false, {
                             fileName: "[project]/components/sections/work.tsx",
-                            lineNumber: 28,
+                            lineNumber: 24,
                             columnNumber: 25
                         }, this))
                 }, void 0, false, {
                     fileName: "[project]/components/sections/work.tsx",
-                    lineNumber: 26,
+                    lineNumber: 22,
                     columnNumber: 17
                 }, this)
             ]
         }, void 0, true, {
             fileName: "[project]/components/sections/work.tsx",
-            lineNumber: 15,
+            lineNumber: 11,
             columnNumber: 13
         }, this)
     }, void 0, false, {
         fileName: "[project]/components/sections/work.tsx",
-        lineNumber: 14,
+        lineNumber: 10,
         columnNumber: 9
     }, this);
 }
@@ -922,7 +863,7 @@ function Contact() {
                             }, this),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
                                 className: "text-muted-foreground text-lg",
-                                children: "Have a project in mind? Let's build something great together."
+                                children: "Have feedback, want to collaborate, or just want to connect? I'd love to hear from you."
                             }, void 0, false, {
                                 fileName: "[project]/components/sections/contact.tsx",
                                 lineNumber: 32,
@@ -946,14 +887,14 @@ function Contact() {
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$components$2f$ui$2f$card$2e$tsx__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["CardHeader"], {
                                 children: [
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$components$2f$ui$2f$card$2e$tsx__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["CardTitle"], {
-                                        children: "Contact Form"
+                                        children: "Send a Message"
                                     }, void 0, false, {
                                         fileName: "[project]/components/sections/contact.tsx",
                                         lineNumber: 41,
                                         columnNumber: 29
                                     }, this),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$components$2f$ui$2f$card$2e$tsx__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["CardDescription"], {
-                                        children: "Fill out the form below and I'll get back to you as soon as possible."
+                                        children: "Drop me a message and I'll get back to you as soon as I can."
                                     }, void 0, false, {
                                         fileName: "[project]/components/sections/contact.tsx",
                                         lineNumber: 42,
@@ -1035,7 +976,7 @@ function Contact() {
                                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$components$2f$ui$2f$input$2e$tsx__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["Input"], {
                                                             id: "name",
                                                             name: "name",
-                                                            placeholder: "John Doe",
+                                                            placeholder: "Your name",
                                                             required: true,
                                                             disabled: status === "submitting"
                                                         }, void 0, false, {
@@ -1064,7 +1005,7 @@ function Contact() {
                                                             id: "email",
                                                             name: "email",
                                                             type: "email",
-                                                            placeholder: "john@example.com",
+                                                            placeholder: "your@email.com",
                                                             required: true,
                                                             disabled: status === "submitting"
                                                         }, void 0, false, {
@@ -1098,7 +1039,7 @@ function Contact() {
                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$components$2f$ui$2f$input$2e$tsx__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["Input"], {
                                                     id: "subject",
                                                     name: "subject",
-                                                    placeholder: "Project Inquiry",
+                                                    placeholder: "What's this about?",
                                                     required: true,
                                                     disabled: status === "submitting"
                                                 }, void 0, false, {
@@ -1126,7 +1067,7 @@ function Contact() {
                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$components$2f$ui$2f$textarea$2e$tsx__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["Textarea"], {
                                                     id: "message",
                                                     name: "message",
-                                                    placeholder: "Tell me about your project...",
+                                                    placeholder: "Your message...",
                                                     className: "min-h-[150px]",
                                                     required: true,
                                                     disabled: status === "submitting"

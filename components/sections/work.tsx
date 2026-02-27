@@ -1,18 +1,9 @@
 "use client"
 
-import Link from "next/link"
-
 import { Container } from "@/components/layout/container"
-import { Button } from "@/components/ui/button"
 import { projects } from "@/data/projects"
 import { ScrollAnimation } from "@/components/ui/scroll-animation"
-import { VanguardDemo } from "@/components/demos/vanguard-demo"
-import { HelixDemo } from "@/components/demos/helix-demo"
-import { VelosDemo } from "@/components/demos/velos-demo"
-import { NuvioCoreDemo } from "@/components/demos/nuvio-core-demo"
 import { cn } from "@/lib/utils"
-
-
 
 export function Work() {
     return (
@@ -34,83 +25,31 @@ export function Work() {
                             <div className="grid gap-12 lg:grid-cols-2 lg:gap-24 items-start">
                                 {/* Visual Side */}
                                 <div className={index % 2 === 1 ? "lg:order-2" : ""}>
-                                    <Link href={project.demoRoute || project.link} className={cn("block w-full h-full cursor-pointer", !project.demoRoute && "cursor-default")}>
+                                    <a
+                                        href={project.link}
+                                        target="_blank"
+                                        rel="noopener noreferrer"
+                                        className="block w-full h-full cursor-pointer"
+                                    >
                                         <div className="overflow-hidden rounded-2xl border border-border/40 bg-muted/30 shadow-sm transition-all duration-500 hover:shadow-xl aspect-[4/3] relative group-hover:-translate-y-2">
-                                            {/* Render Demo Component or Placeholder */}
-                                            {project.id === "vanguard" ? (
-                                                <div className="absolute inset-0 z-0">
-                                                    <VanguardDemo mode="compact" />
-                                                    <div className="absolute top-4 left-4 z-20">
-                                                        <span className="inline-flex items-center rounded-full border bg-background/80 px-2.5 py-0.5 text-xs font-semibold text-foreground backdrop-blur-sm shadow-sm">
-                                                            <span className="mr-1.5 h-2 w-2 rounded-full bg-green-500 animate-pulse"></span>
-                                                            Live Preview
-                                                        </span>
-                                                    </div>
-                                                    <div className="absolute inset-0 z-10 bg-transparent" />
-                                                    <div className="absolute bottom-4 right-4 z-20 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                                                        <span className="inline-flex items-center rounded-full bg-primary px-4 py-2 text-xs font-medium text-primary-foreground shadow-lg">
-                                                            Open Demo
-                                                        </span>
-                                                    </div>
-                                                </div>
-                                            ) : project.id === "helix" ? (
-                                                <div className="absolute inset-0 z-0">
-                                                    <HelixDemo mode="compact" />
-                                                    <div className="absolute top-4 left-4 z-20">
-                                                        <span className="inline-flex items-center rounded-full border bg-background/80 px-2.5 py-0.5 text-xs font-semibold text-foreground backdrop-blur-sm shadow-sm">
-                                                            <span className="mr-1.5 h-2 w-2 rounded-full bg-blue-500"></span>
-                                                            Live Preview
-                                                        </span>
-                                                    </div>
-                                                    <div className="absolute inset-0 z-10 bg-transparent" />
-                                                    <div className="absolute bottom-4 right-4 z-20 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                                                        <span className="inline-flex items-center rounded-full bg-primary px-4 py-2 text-xs font-medium text-primary-foreground shadow-lg">
-                                                            Open Demo
-                                                        </span>
-                                                    </div>
-                                                </div>
-                                            ) : project.id === "velos" ? (
-                                                <div className="absolute inset-0 z-0">
-                                                    <VelosDemo mode="compact" />
-                                                    <div className="absolute top-4 left-4 z-20">
-                                                        <span className="inline-flex items-center rounded-full border bg-background/80 px-2.5 py-0.5 text-xs font-semibold text-foreground backdrop-blur-sm shadow-sm">
-                                                            <span className="mr-1.5 h-2 w-2 rounded-full bg-emerald-500"></span>
-                                                            Live Preview
-                                                        </span>
-                                                    </div>
-                                                    <div className="absolute inset-0 z-10 bg-transparent" />
-                                                    <div className="absolute bottom-4 right-4 z-20 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                                                        <span className="inline-flex items-center rounded-full bg-primary px-4 py-2 text-xs font-medium text-primary-foreground shadow-lg">
-                                                            Open Demo
-                                                        </span>
-                                                    </div>
-                                                </div>
-                                            ) : project.id === "nuvio-core" ? (
-                                                <div className="absolute inset-0 z-0">
-                                                    <NuvioCoreDemo mode="compact" />
-                                                    <div className="absolute top-4 left-4 z-20">
-                                                        <span className="inline-flex items-center rounded-full border bg-background/80 px-2.5 py-0.5 text-xs font-semibold text-foreground backdrop-blur-sm shadow-sm">
-                                                            <span className="mr-1.5 h-2 w-2 rounded-full bg-purple-500"></span>
-                                                            Platform Preview
-                                                        </span>
-                                                    </div>
-                                                    <div className="absolute inset-0 z-10 bg-transparent" />
-                                                    <div className="absolute bottom-4 right-4 z-20 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                                                        <span className="inline-flex items-center rounded-full bg-primary px-4 py-2 text-xs font-medium text-primary-foreground shadow-lg">
-                                                            Open Core
-                                                        </span>
-                                                    </div>
-                                                </div>
-                                            ) : (
-                                                <>
-                                                    <div className="absolute inset-0 bg-gradient-to-br from-background/0 to-background/80 z-10" />
-                                                    <div className="absolute inset-0 flex items-center justify-center text-4xl font-bold text-muted-foreground/10 uppercase tracking-widest">
-                                                        {project.title} Preview
-                                                    </div>
-                                                </>
-                                            )}
+                                            {/* Gradient placeholder with project title */}
+                                            <div className={cn(
+                                                "absolute inset-0 flex flex-col items-center justify-center",
+                                                index === 0
+                                                    ? "bg-gradient-to-br from-amber-500/20 via-orange-500/10 to-background/80"
+                                                    : "bg-gradient-to-br from-rose-500/20 via-pink-500/10 to-background/80"
+                                            )}>
+                                                <span className="text-4xl font-bold text-foreground/15 uppercase tracking-widest text-center px-8">
+                                                    {project.title}
+                                                </span>
+                                            </div>
+                                            <div className="absolute bottom-4 right-4 z-20 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                                                <span className="inline-flex items-center rounded-full bg-primary px-4 py-2 text-xs font-medium text-primary-foreground shadow-lg">
+                                                    Visit Live Site →
+                                                </span>
+                                            </div>
                                         </div>
-                                    </Link>
+                                    </a>
                                 </div>
 
                                 {/* Content Side */}
@@ -135,13 +74,13 @@ export function Work() {
                                                 </p>
                                             </div>
                                             <div>
-                                                <h4 className="text-sm font-semibold uppercase tracking-wider text-muted-foreground mb-2">The Solution</h4>
+                                                <h4 className="text-sm font-semibold uppercase tracking-wider text-muted-foreground mb-2">The Approach</h4>
                                                 <p className="text-muted-foreground leading-relaxed">
                                                     {project.caseStudy.solution}
                                                 </p>
                                             </div>
                                             <div className="pl-4 border-l-2 border-accent">
-                                                <h4 className="text-sm font-semibold uppercase tracking-wider text-accent mb-2">The Result</h4>
+                                                <h4 className="text-sm font-semibold uppercase tracking-wider text-accent mb-2">The Outcome</h4>
                                                 <p className="text-foreground font-medium leading-relaxed">
                                                     {project.caseStudy.result}
                                                 </p>
@@ -157,7 +96,16 @@ export function Work() {
                                         ))}
                                     </div>
 
-                                    {/* Link removed as detailed pages are not yet implemented */}
+                                    {project.link && project.link !== "#" && (
+                                        <a
+                                            href={project.link}
+                                            target="_blank"
+                                            rel="noopener noreferrer"
+                                            className="inline-flex items-center text-sm font-medium text-accent hover:text-accent/80 transition-colors"
+                                        >
+                                            Visit Live Site →
+                                        </a>
+                                    )}
                                 </div>
                             </div>
                         </ScrollAnimation>

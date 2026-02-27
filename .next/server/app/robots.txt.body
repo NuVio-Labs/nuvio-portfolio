@@ -1,0 +1,7 @@
+User-Agent: *
+Allow: /
+Disallow: /login
+Disallow: /dashboard
+Disallow: /(protected)/
+
+Sitemap: https://www.nuviolabs.de/sitemap.xml

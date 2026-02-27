@@ -44,7 +44,7 @@ export function Navbar() {
                 <div className="flex h-14 items-center justify-between">
                     <div className="flex gap-6 md:gap-10">
                         <Link href="/" className="flex items-center space-x-2" onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}>
-                            <span className="inline-block font-bold">Portfolio.</span>
+                            <span className="inline-block font-bold">nuviolabs.</span>
                         </Link>
                     </div>
                     <div className="flex flex-1 items-center justify-end space-x-4">

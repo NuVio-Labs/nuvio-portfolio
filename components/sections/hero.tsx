@@ -10,21 +10,21 @@ export function Hero() {
                 <ScrollAnimation delay={0.1}>
                     <div className="mb-8 inline-flex items-center rounded-full border border-border/40 bg-background/50 px-4 py-1.5 text-sm font-medium text-muted-foreground backdrop-blur-sm shadow-sm">
                         <span className="mr-2 inline-block h-2 w-2 rounded-full bg-emerald-500 animate-pulse"></span>
-                        Available for new projects
+                        Open to Opportunities
                     </div>
                 </ScrollAnimation>
 
                 <ScrollAnimation delay={0.2} className="relative">
                     <h1 className="mb-8 bg-gradient-to-b from-foreground to-foreground/70 bg-clip-text text-6xl font-extrabold tracking-tight text-transparent sm:text-8xl md:text-9xl leading-[0.9]">
-                        Crafting Digital <br />
-                        <span className="text-foreground">Perfection.</span>
+                        Building. <br />
+                        <span className="text-foreground">Learning. Shipping.</span>
                     </h1>
                 </ScrollAnimation>
 
                 <ScrollAnimation delay={0.3}>
                     <p className="mb-12 max-w-2xl text-xl text-muted-foreground md:text-2xl leading-relaxed text-balance">
-                        I simplify complexity through minimalist design and robust engineering.
-                        Building high-performance web applications that feel exceptional.
+                        I'm a self-taught junior developer who learns by building real projects.
+                        Every site I ship is a case study in growth.
                     </p>
                 </ScrollAnimation>
 
@@ -32,12 +32,12 @@ export function Hero() {
                     <div className="flex flex-col gap-5 sm:flex-row">
                         <Link href="#work">
                             <Button size="lg" className="h-14 px-10 text-lg rounded-full shadow-lg hover:shadow-xl transition-all">
-                                View Work
+                                View My Work
                             </Button>
                         </Link>
                         <Link href="#contact">
                             <Button variant="outline" size="lg" className="h-14 px-10 text-lg rounded-full border-2 hover:bg-secondary/50">
-                                Get in Touch
+                                Say Hello
                             </Button>
                         </Link>
                     </div>

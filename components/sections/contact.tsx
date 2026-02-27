@@ -30,7 +30,7 @@ export function Contact() {
                     <div className="mb-12 text-center">
                         <h2 className="text-4xl font-extrabold tracking-tight lg:text-5xl mb-4">Get in Touch</h2>
                         <p className="text-muted-foreground text-lg">
-                            Have a project in mind? Let's build something great together.
+                            Have feedback, want to collaborate, or just want to connect? I'd love to hear from you.
                         </p>
                     </div>
                 </ScrollAnimation>
@@ -38,9 +38,9 @@ export function Contact() {
                 <ScrollAnimation delay={0.2}>
                     <Card>
                         <CardHeader>
-                            <CardTitle>Contact Form</CardTitle>
+                            <CardTitle>Send a Message</CardTitle>
                             <CardDescription>
-                                Fill out the form below and I'll get back to you as soon as possible.
+                                Drop me a message and I'll get back to you as soon as I can.
                             </CardDescription>
                         </CardHeader>
                         <CardContent>
@@ -60,23 +60,23 @@ export function Contact() {
                                     <div className="grid gap-4 md:grid-cols-2">
                                         <div className="space-y-2">
                                             <Label htmlFor="name">Name</Label>
-                                            <Input id="name" name="name" placeholder="John Doe" required disabled={status === "submitting"} />
+                                            <Input id="name" name="name" placeholder="Your name" required disabled={status === "submitting"} />
                                         </div>
                                         <div className="space-y-2">
                                             <Label htmlFor="email">Email</Label>
-                                            <Input id="email" name="email" type="email" placeholder="john@example.com" required disabled={status === "submitting"} />
+                                            <Input id="email" name="email" type="email" placeholder="your@email.com" required disabled={status === "submitting"} />
                                         </div>
                                     </div>
                                     <div className="space-y-2">
                                         <Label htmlFor="subject">Subject</Label>
-                                        <Input id="subject" name="subject" placeholder="Project Inquiry" required disabled={status === "submitting"} />
+                                        <Input id="subject" name="subject" placeholder="What's this about?" required disabled={status === "submitting"} />
                                     </div>
                                     <div className="space-y-2">
                                         <Label htmlFor="message">Message</Label>
                                         <Textarea
                                             id="message"
                                             name="message"
-                                            placeholder="Tell me about your project..."
+                                            placeholder="Your message..."
                                             className="min-h-[150px]"
                                             required
                                             disabled={status === "submitting"}

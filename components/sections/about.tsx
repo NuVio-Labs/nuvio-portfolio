@@ -5,11 +5,9 @@ import { ScrollAnimation } from "@/components/ui/scroll-animation"
 export function About() {
     const skills = [
         { category: "Frontend", items: ["React", "Next.js", "TypeScript", "Tailwind CSS", "Framer Motion"] },
-        { category: "Backend", items: ["Node.js", "PostgreSQL", "Supabase", "GraphQL", "Serverless"] },
-        { category: "Design", items: ["Figma", "UI/UX", "Prototyping", "Design Systems", "Accessibility"] },
+        { category: "Backend", items: ["Node.js", "PostgreSQL", "Supabase", "REST APIs", "Serverless"] },
+        { category: "Design & Tools", items: ["Figma", "Git", "Vercel", "VS Code", "Responsive Design"] },
     ]
-
-    const tools = ["VS Code", "Git", "Docker", "Vercel", "Linear", "Notion"]
 
     return (
         <section id="about" className="py-12 md:py-24 bg-secondary/20">
@@ -20,26 +18,26 @@ export function About() {
                         <h2 className="mb-6 text-4xl font-extrabold tracking-tight lg:text-5xl">About Me</h2>
                         <div className="space-y-4 text-lg text-muted-foreground leading-relaxed">
                             <p>
-                                I'm a Senior Fullstack Engineer & Product Designer with a passion for building digital products that look as good as they perform.
+                                I'm a self-taught junior fullstack developer with a genuine love for building things on the web. I started learning through online resources, documentation, and — above all — by shipping real projects.
                             </p>
                             <p>
-                                With over 8 years of experience, I bridge the gap between design and engineering. I believe that the best products are born from a deep understanding of both user needs and technical constraints.
+                                Every project on this site is a case study from my learning journey. I don't just follow tutorials — I take on real challenges, make mistakes, and iterate until the result meets a standard I'm proud of.
                             </p>
                             <p>
-                                My approach is minimalist and functional. I strip away the unnecessary to focus on what matters most: the content and the user interaction.
+                                My goal is simple: get better every day, write clean code, and build products that feel polished and purposeful.
                             </p>
                         </div>
                     </ScrollAnimation>
 
-                    {/* Stats / Quick Info */}
+                    {/* Quick Info Cards */}
                     <div className="flex flex-col gap-6 lg:pl-12">
                         <ScrollAnimation delay={0.1}>
                             <Card>
                                 <CardHeader>
-                                    <CardTitle>Experience</CardTitle>
+                                    <CardTitle>Background</CardTitle>
                                 </CardHeader>
                                 <CardContent className="text-muted-foreground">
-                                    8+ Years across focused startups and major tech companies.
+                                    Self-study, online courses, and learning by building from day one. No bootcamp, no CS degree — just curiosity and persistence.
                                 </CardContent>
                             </Card>
                         </ScrollAnimation>
@@ -49,7 +47,7 @@ export function About() {
                                     <CardTitle>Focus</CardTitle>
                                 </CardHeader>
                                 <CardContent className="text-muted-foreground">
-                                    React Ecosystem, Performance Optimization, and Design Systems.
+                                    React Ecosystem, modern web performance, and building end-to-end products from design to deployment.
                                 </CardContent>
                             </Card>
                         </ScrollAnimation>
@@ -59,7 +57,7 @@ export function About() {
                                     <CardTitle>Location</CardTitle>
                                 </CardHeader>
                                 <CardContent className="text-muted-foreground">
-                                    Based in Berlin, working globally.
+                                    Based in Germany, open to remote work.
                                 </CardContent>
                             </Card>
                         </ScrollAnimation>
@@ -69,7 +67,7 @@ export function About() {
                 {/* Skills Section */}
                 <div className="mt-24">
                     <ScrollAnimation>
-                        <h3 className="mb-12 text-3xl font-bold tracking-tight">Technical Expertise</h3>
+                        <h3 className="mb-12 text-3xl font-bold tracking-tight">What I'm Working With</h3>
                     </ScrollAnimation>
                     <div className="grid gap-6 md:grid-cols-3">
                         {skills.map((skillGroup, index) => (
@@ -89,22 +87,6 @@ export function About() {
                                         </ul>
                                     </CardContent>
                                 </Card>
-                            </ScrollAnimation>
-                        ))}
-                    </div>
-                </div>
-
-                {/* Tooling Section */}
-                <div className="mt-24">
-                    <ScrollAnimation>
-                        <h3 className="mb-8 text-2xl font-bold tracking-tight">Toolkit</h3>
-                    </ScrollAnimation>
-                    <div className="flex flex-wrap gap-4">
-                        {tools.map((tool, index) => (
-                            <ScrollAnimation key={tool} delay={index * 0.05}>
-                                <div className="rounded-full border bg-secondary/30 px-4 py-2 text-sm font-medium text-secondary-foreground backdrop-blur-sm">
-                                    {tool}
-                                </div>
                             </ScrollAnimation>
                         ))}
                     </div>

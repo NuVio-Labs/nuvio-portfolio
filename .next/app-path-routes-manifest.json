@@ -11,5 +11,7 @@
   "/favicon.ico/route": "/favicon.ico",
   "/imprint/page": "/imprint",
   "/page": "/",
-  "/privacy/page": "/privacy"
+  "/privacy/page": "/privacy",
+  "/robots.txt/route": "/robots.txt",
+  "/sitemap.xml/route": "/sitemap.xml"
 }

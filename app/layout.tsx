@@ -5,44 +5,76 @@ import { ThemeProvider } from "@/components/theme-provider";
 import { Navbar } from "@/components/layout/navbar";
 import { Footer } from "@/components/layout/footer";
 import { cn } from "@/lib/utils";
+import { AuthProvider } from "@/lib/auth";
+import { DebugPanel } from "@/components/saas/DebugPanel";
 
-const inter = Inter({ subsets: ["latin"] });
+/* ─── Font ──────────────────────────────────────────── */
+const inter = Inter({ subsets: ["latin"], display: "swap" });
+
+/* ─── Production SEO Metadata ───────────────────────── */
+const SITE_URL = "https://www.nuviolabs.de";
 
 export const metadata: Metadata = {
-  metadataBase: new URL("https://www.nuviolabs.de"),
+  metadataBase: new URL(SITE_URL),
+
   title: {
-    default: "Axel | Digital Products & Systems",
-    template: "%s | Axel"
+    default: "NuVioLabs | Junior Fullstack Developer",
+    template: "%s | NuVioLabs",
   },
-  description: "Senior Fullstack Engineer & Product Designer specializing in minimalist, high-performance web applications.",
-  keywords: ["Fullstack Engineer", "Product Designer", "React", "Next.js", "TypeScript", "Minimalist Design"],
-  authors: [{ name: "Axel" }],
-  creator: "Axel",
+
+  description:
+    "Self-taught junior fullstack developer documenting a learning journey — building real projects with React, Next.js & TypeScript.",
+
+  keywords: [
+    "Junior Developer",
+    "Fullstack Developer",
+    "Self-Taught",
+    "React",
+    "Next.js",
+    "TypeScript",
+    "Portfolio",
+    "Learning Journey",
+  ],
+
+  authors: [{ name: "NuVioLabs", url: SITE_URL }],
+  creator: "NuVioLabs",
+  publisher: "NuVioLabs",
+
+  robots: {
+    index: true,
+    follow: true,
+    "max-image-preview": "large",
+    "max-snippet": -1,
+    "max-video-preview": -1,
+  },
+
   alternates: {
-    canonical: "https://www.nuviolabs.de",
+    canonical: "/",
   },
+
   openGraph: {
     type: "website",
     locale: "en_US",
-    url: "https://www.nuviolabs.de",
-    title: "Axel | Digital Products & Systems",
-    description: "Senior Fullstack Engineer & Product Designer specializing in minimalist, high-performance web applications.",
-    siteName: "Axel Portfolio",
+    url: SITE_URL,
+    siteName: "NuVioLabs",
   },
+
   twitter: {
     card: "summary_large_image",
-    title: "Axel | Digital Products & Systems",
-    description: "Senior Fullstack Engineer & Product Designer specializing in minimalist, high-performance web applications.",
-    creator: "@axel",
   },
+
+  formatDetection: {
+    telephone: false,
+    email: false,
+    address: false,
+  },
+
   icons: {
     icon: "/favicon.ico",
   },
 };
 
-import { AuthProvider } from "@/lib/auth";
-import { DebugPanel } from "@/components/saas/DebugPanel";
-
+/* ─── Root Layout ─────────────────────────────────── */
 export default function RootLayout({
   children,
 }: Readonly<{
@@ -50,7 +82,12 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" suppressHydrationWarning>
-      <body className={cn(inter.className, "min-h-screen bg-background font-sans antialiased")}>
+      <body
+        className={cn(
+          inter.className,
+          "min-h-screen bg-background font-sans antialiased"
+        )}
+      >
         <AuthProvider>
           <ThemeProvider
             attribute="class"

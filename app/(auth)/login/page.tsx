@@ -66,7 +66,7 @@ export default function LoginPage() {
                 </div>
                 <div className="relative z-20 mt-auto">
                     <p className="text-sm text-muted-foreground/80">
-                        &copy; 2026 Axel &middot; NuVio
+                        &copy; 2026 NuVioLabs
                     </p>
                 </div>
             </div>

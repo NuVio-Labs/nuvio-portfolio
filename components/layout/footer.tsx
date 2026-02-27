@@ -7,7 +7,7 @@ export function Footer() {
             <Container className="flex flex-col items-center justify-between gap-6 md:flex-row">
                 <div className="flex flex-col items-center gap-1 text-center md:items-start md:text-left">
                     <p className="text-xs text-muted-foreground">
-                        &copy; 2026 Axel &middot; NuVio
+                        &copy; 2026 NuVioLabs
                     </p>
                     <p className="text-xs text-muted-foreground/60">
                         Digital Products &middot; Web &middot; Systems
