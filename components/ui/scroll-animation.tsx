@@ -20,7 +20,7 @@ export function ScrollAnimation({
             initial={{ opacity: 0, y: 20, scale: 0.95 }}
             whileInView={{ opacity: 1, y: 0, scale: 1 }}
             exit={{ opacity: 0, y: 20, scale: 0.95 }}
-            viewport={{ once: false, margin: "-50px" }}
+            viewport={{ once: true, margin: "-50px" }}
             transition={{ duration: 0.5, delay, ease: "easeOut" }}
             className={cn(className)}
             {...props}

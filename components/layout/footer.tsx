@@ -9,23 +9,23 @@ export function Footer() {
                     <p className="text-xs text-muted-foreground">
                         &copy; 2026 NuVioLabs
                     </p>
-                    <p className="text-xs text-muted-foreground/60">
+                    <p className="text-xs text-muted-foreground">
                         Digital Products &middot; Web &middot; Systems
                     </p>
                 </div>
 
-                <nav className="flex flex-wrap justify-center gap-6 md:justify-end">
-                    <Link href="/imprint" className="text-xs text-muted-foreground transition-colors hover:text-foreground">
+                <nav className="flex flex-wrap justify-center gap-2 md:justify-end" aria-label="Footer navigation">
+                    <Link href="/imprint" className="text-xs text-muted-foreground transition-colors hover:text-foreground min-h-[48px] inline-flex items-center px-3 rounded-md focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring">
                         Imprint
                     </Link>
-                    <Link href="/privacy" className="text-xs text-muted-foreground transition-colors hover:text-foreground">
+                    <Link href="/privacy" className="text-xs text-muted-foreground transition-colors hover:text-foreground min-h-[48px] inline-flex items-center px-3 rounded-md focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring">
                         Privacy
                     </Link>
                     <a
                         href="https://github.com"
                         target="_blank"
                         rel="noreferrer"
-                        className="text-xs text-muted-foreground transition-colors hover:text-foreground"
+                        className="text-xs text-muted-foreground transition-colors hover:text-foreground min-h-[48px] inline-flex items-center px-3 rounded-md focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring"
                     >
                         GitHub
                     </a>
@@ -33,7 +33,7 @@ export function Footer() {
                         href="https://linkedin.com"
                         target="_blank"
                         rel="noreferrer"
-                        className="text-xs text-muted-foreground transition-colors hover:text-foreground"
+                        className="text-xs text-muted-foreground transition-colors hover:text-foreground min-h-[48px] inline-flex items-center px-3 rounded-md focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring"
                     >
                         LinkedIn
                     </a>

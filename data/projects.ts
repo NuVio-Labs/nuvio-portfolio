@@ -4,6 +4,7 @@ export interface Project {
     description: string
     category: "Web" | "Mobile" | "Design" | "Strategy"
     image: string
+    previewImage: string
     tags: string[]
     link: string
     featured: boolean
@@ -21,7 +22,8 @@ export const projects: Project[] = [
         title: "WT Erdbewegungen",
         description: "Professional website for a local excavation and earthmoving company — fast, responsive, and built for search visibility.",
         category: "Web",
-        image: "/placeholder-project-1.jpg",
+        image: "/wterd.webp",
+        previewImage: "/wterd.webp",
         tags: ["Next.js", "TypeScript", "Tailwind CSS", "Vercel"],
         link: "https://www.wt-erdbewegungen.de",
         featured: true,
@@ -36,7 +38,8 @@ export const projects: Project[] = [
         title: "Daisy May's Salon",
         description: "Bilingual website for a dog grooming salon — warm branding, booking information, and multi-language support.",
         category: "Web",
-        image: "/placeholder-project-2.jpg",
+        image: "/daisymays.webp",
+        previewImage: "/daisymays.webp",
         tags: ["React", "TypeScript", "Vite", "Tailwind CSS", "i18n"],
         link: "https://www.daisymayssalon.de",
         featured: true,

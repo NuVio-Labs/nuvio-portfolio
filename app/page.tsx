@@ -1,8 +1,11 @@
+import dynamic from "next/dynamic"
 import { Hero } from "@/components/sections/hero"
 import { Work } from "@/components/sections/work"
 import { About } from "@/components/sections/about"
-import { Lab } from "@/components/sections/lab"
-import { Contact } from "@/components/sections/contact"
+
+/* ─── Lazy-load below-fold sections ─── */
+const Lab = dynamic(() => import("@/components/sections/lab").then((m) => m.Lab))
+const Contact = dynamic(() => import("@/components/sections/contact").then((m) => m.Contact))
 
 export default function Home() {
   return (

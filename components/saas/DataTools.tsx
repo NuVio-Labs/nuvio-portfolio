@@ -112,7 +112,7 @@ export function DataTools() {
         if (!importData) return
 
         // Simulate save to store and localStorage
-        console.log("Importing data for tenant:", importData.tenantId)
+        // Import data for tenant (simulated)
         // localStorage.setItem(`nuvio:data:${session?.tenantId}`, JSON.stringify(importData.data))
 
         setShowConfirmOverwrite(false)

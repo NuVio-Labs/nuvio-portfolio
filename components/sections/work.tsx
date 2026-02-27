@@ -3,7 +3,7 @@
 import { Container } from "@/components/layout/container"
 import { projects } from "@/data/projects"
 import { ScrollAnimation } from "@/components/ui/scroll-animation"
-import { cn } from "@/lib/utils"
+import { ProjectLivePreview } from "@/components/ui/project-live-preview"
 
 export function Work() {
     return (
@@ -23,33 +23,13 @@ export function Work() {
                     {projects.map((project, index) => (
                         <ScrollAnimation key={project.id} className="group">
                             <div className="grid gap-12 lg:grid-cols-2 lg:gap-24 items-start">
-                                {/* Visual Side */}
+                                {/* Live Preview Side */}
                                 <div className={index % 2 === 1 ? "lg:order-2" : ""}>
-                                    <a
-                                        href={project.link}
-                                        target="_blank"
-                                        rel="noopener noreferrer"
-                                        className="block w-full h-full cursor-pointer"
-                                    >
-                                        <div className="overflow-hidden rounded-2xl border border-border/40 bg-muted/30 shadow-sm transition-all duration-500 hover:shadow-xl aspect-[4/3] relative group-hover:-translate-y-2">
-                                            {/* Gradient placeholder with project title */}
-                                            <div className={cn(
-                                                "absolute inset-0 flex flex-col items-center justify-center",
-                                                index === 0
-                                                    ? "bg-gradient-to-br from-amber-500/20 via-orange-500/10 to-background/80"
-                                                    : "bg-gradient-to-br from-rose-500/20 via-pink-500/10 to-background/80"
-                                            )}>
-                                                <span className="text-4xl font-bold text-foreground/15 uppercase tracking-widest text-center px-8">
-                                                    {project.title}
-                                                </span>
-                                            </div>
-                                            <div className="absolute bottom-4 right-4 z-20 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                                                <span className="inline-flex items-center rounded-full bg-primary px-4 py-2 text-xs font-medium text-primary-foreground shadow-lg">
-                                                    Visit Live Site →
-                                                </span>
-                                            </div>
-                                        </div>
-                                    </a>
+                                    <ProjectLivePreview
+                                        url={project.link}
+                                        title={project.title}
+                                        previewImage={project.previewImage}
+                                    />
                                 </div>
 
                                 {/* Content Side */}
@@ -101,7 +81,8 @@ export function Work() {
                                             href={project.link}
                                             target="_blank"
                                             rel="noopener noreferrer"
-                                            className="inline-flex items-center text-sm font-medium text-accent hover:text-accent/80 transition-colors"
+                                            className="inline-flex items-center min-h-[48px] text-sm font-medium text-accent hover:text-accent/80 transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring rounded-md px-1"
+                                            aria-label={`Visit ${project.title} live site`}
                                         >
                                             Visit Live Site →
                                         </a>

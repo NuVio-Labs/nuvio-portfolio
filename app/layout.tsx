@@ -12,7 +12,7 @@ import { DebugPanel } from "@/components/saas/DebugPanel";
 const inter = Inter({ subsets: ["latin"], display: "swap" });
 
 /* ─── Production SEO Metadata ───────────────────────── */
-const SITE_URL = "https://www.nuviolabs.de";
+const SITE_URL = "https://nuviolabs.de";
 
 export const metadata: Metadata = {
   metadataBase: new URL(SITE_URL),
@@ -88,6 +88,13 @@ export default function RootLayout({
           "min-h-screen bg-background font-sans antialiased"
         )}
       >
+        {/* Skip-to-content link — first focusable element */}
+        <a
+          href="#main-content"
+          className="sr-only focus:not-sr-only focus:fixed focus:top-4 focus:left-4 focus:z-[100] focus:rounded-md focus:bg-primary focus:px-4 focus:py-2 focus:text-primary-foreground focus:text-sm focus:font-medium focus:shadow-lg"
+        >
+          Skip to content
+        </a>
         <AuthProvider>
           <ThemeProvider
             attribute="class"
@@ -97,7 +104,7 @@ export default function RootLayout({
           >
             <div className="relative flex min-h-screen flex-col">
               <Navbar />
-              <main className="flex-1">{children}</main>
+              <main id="main-content" className="flex-1">{children}</main>
               <Footer />
             </div>
             <DebugPanel />

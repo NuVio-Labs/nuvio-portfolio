@@ -3,8 +3,7 @@
 import * as React from "react"
 import Link from "next/link"
 import { usePathname } from "next/navigation"
-import { motion } from "framer-motion"
-import { Moon, Sun, Menu, X } from "lucide-react"
+import { Moon, Sun } from "lucide-react"
 import { useTheme } from "next-themes"
 
 import { cn } from "@/lib/utils"
@@ -28,7 +27,7 @@ export function Navbar() {
             e.preventDefault()
             const element = document.querySelector(href)
             if (element) {
-                const offsetTop = element.getBoundingClientRect().top + window.scrollY - 80 // Adjust for header height
+                const offsetTop = element.getBoundingClientRect().top + window.scrollY - 80
                 window.scrollTo({
                     top: offsetTop,
                     behavior: "smooth"
@@ -48,17 +47,17 @@ export function Navbar() {
                         </Link>
                     </div>
                     <div className="flex flex-1 items-center justify-end space-x-4">
-                        <nav className="flex items-center space-x-1">
+                        <nav className="flex items-center space-x-1" aria-label="Main navigation">
                             {navItems.map((item) => (
                                 <Link
                                     key={item.href}
                                     href={item.href}
                                     onClick={(e) => handleScroll(e, item.href)}
                                     className={cn(
-                                        "hidden md:inline-flex h-9 items-center justify-center rounded-md px-4 text-sm font-medium transition-colors hover:text-foreground/80",
+                                        "hidden md:inline-flex min-h-[48px] items-center justify-center rounded-md px-4 text-sm font-medium transition-colors hover:text-foreground/80 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2",
                                         activeSection === item.href
                                             ? "text-foreground"
-                                            : "text-foreground/60"
+                                            : "text-muted-foreground"
                                     )}
                                 >
                                     {item.name}
@@ -68,7 +67,7 @@ export function Navbar() {
                                 variant="ghost"
                                 size="icon"
                                 aria-label="Toggle theme"
-                                className="mr-6"
+                                className="min-h-[48px] min-w-[48px]"
                                 onClick={() => setTheme(theme === "dark" ? "light" : "dark")}
                             >
                                 <Sun className="h-[1.2rem] w-[1.2rem] rotate-0 scale-100 transition-all dark:-rotate-90 dark:scale-0" />
@@ -78,13 +77,13 @@ export function Navbar() {
                                 <span className="text-xs text-muted-foreground hidden lg:inline-block">
                                     Private Area for Clients
                                 </span>
-                                <Link href="/login">
-                                    <Button variant="ghost" size="sm" className="hidden sm:inline-flex">
+                                <Link href="/login" aria-label="Client portal login">
+                                    <Button variant="ghost" size="sm" className="hidden sm:inline-flex min-h-[48px]">
                                         Client Portal
                                     </Button>
-                                    <Button variant="ghost" size="icon" className="sm:hidden">
+                                    <Button variant="ghost" size="icon" className="sm:hidden min-h-[48px] min-w-[48px]">
                                         <span className="sr-only">Login</span>
-                                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="lucide lucide-log-in"><path d="M15 3h4a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2h-4" /><polyline points="10 17 15 12 10 7" /><line x1="15" x2="3" y1="12" y2="12" /></svg>
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="lucide lucide-log-in" aria-hidden="true"><path d="M15 3h4a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2h-4" /><polyline points="10 17 15 12 10 7" /><line x1="15" x2="3" y1="12" y2="12" /></svg>
                                     </Button>
                                 </Link>
                             </div>

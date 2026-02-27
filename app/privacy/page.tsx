@@ -1,6 +1,5 @@
 import type { Metadata } from "next"
 import { Container } from "@/components/layout/container"
-import Link from "next/link"
 
 export const metadata: Metadata = {
     title: "Privacy Policy",
