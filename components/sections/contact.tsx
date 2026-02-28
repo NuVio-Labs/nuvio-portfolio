@@ -10,6 +10,7 @@ import { Label } from "@/components/ui/label"
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
 import { CheckCircle2 } from "lucide-react"
 import { ScrollAnimation } from "@/components/ui/scroll-animation"
+import { sendEmail } from "@/app/actions/send-email"
 
 export function Contact() {
     const t = useTranslations("contact")
@@ -19,10 +20,15 @@ export function Contact() {
         event.preventDefault()
         setStatus("submitting")
 
-        // Simulate network delay
-        await new Promise((resolve) => setTimeout(resolve, 1500))
+        const formData = new FormData(event.currentTarget)
+        const result = await sendEmail(formData)
 
-        setStatus("success")
+        if (result?.error) {
+            console.error("Email send failed:", result.error)
+            setStatus("error")
+        } else {
+            setStatus("success")
+        }
     }
 
     return (

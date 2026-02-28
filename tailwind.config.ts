@@ -66,10 +66,22 @@ const config: Config = {
           from: { height: "var(--radix-accordion-content-height)" },
           to: { height: "0" },
         },
+        "logo-reveal": {
+          "0%": { opacity: "0", filter: "blur(10px)", transform: "scale(1.2)" },
+          "20%": { opacity: "1", filter: "blur(0px)", transform: "scale(1.5)" }, /* Sharp and large */
+          "60%": { opacity: "1", filter: "blur(0px)", transform: "scale(1.5)" }, /* Hold */
+          "100%": { opacity: "0.15", filter: "blur(3px)", transform: "scale(1.5)" } /* Fade to background, keep size */
+        },
+        "text-reveal": {
+          "0%": { opacity: "0", transform: "translateY(20px)" },
+          "100%": { opacity: "1", transform: "translateY(0)" }
+        }
       },
       animation: {
         "accordion-down": "accordion-down 0.2s ease-out",
         "accordion-up": "accordion-up 0.2s ease-out",
+        "logo-reveal": "logo-reveal 2.5s cubic-bezier(0.4, 0, 0.2, 1) forwards",
+        "text-reveal": "text-reveal 0.8s cubic-bezier(0.4, 0, 0.2, 1) forwards"
       },
     },
   },

@@ -13,10 +13,10 @@
         "switchLanguage": "Taal wijzigen"
     },
     "hero": {
-        "badge": "Beschikbaar",
-        "headlinePart1": "Ik bouw",
-        "headlinePart2": "voor het web.",
-        "subline": "Fullstack developer met focus op snelheid, heldere code en werkende producten.",
+        "badge": "Ready for Opportunities",
+        "headlinePart1": "NuVioLabs",
+        "headlinePart2": "Webdesign & digitale oplossingen",
+        "subline": "Webdevelopment met focus op snelheid, heldere code en werkende producten.",
         "ctaPrimary": "Werk",
         "ctaSecondary": "Contact"
     },
@@ -94,7 +94,7 @@
     },
     "footer": {
         "copyright": "© 2026 NuVioLabs",
-        "tagline": "Web · Fullstack · Duitsland",
+        "tagline": "Web · Webdevelopment · Duitsland",
         "imprint": "Impressum",
         "privacy": "Privacy",
         "github": "GitHub",
@@ -104,8 +104,8 @@
     "skipToContent": "Naar inhoud springen",
     "seo": {
         "home": {
-            "title": "NuVioLabs | Fullstack Developer",
-            "description": "Fullstack developer uit Duitsland. Websites en webapplicaties gebouwd met React, Next.js en TypeScript."
+            "title": "NuVioLabs | Webdevelopment",
+            "description": "Webdevelopment uit Duitsland. Websites en webapplicaties gebouwd met React, Next.js en TypeScript."
         },
         "imprint": {
             "title": "Impressum"

@@ -13,10 +13,10 @@
         "switchLanguage": "Sprache wechseln"
     },
     "hero": {
-        "badge": "Verfügbar",
-        "headlinePart1": "Ich baue",
-        "headlinePart2": "Websites.",
-        "subline": "Fullstack Entwickler mit Fokus auf Performance, klare Struktur und saubere Umsetzung.",
+        "badge": "Ready for Opportunities",
+        "headlinePart1": "NuVioLabs",
+        "headlinePart2": "Webdesign & digitale Lösungen",
+        "subline": "Webentwicklung mit Fokus auf Performance, klare Struktur und saubere Umsetzung.",
         "ctaPrimary": "Projekte",
         "ctaSecondary": "Kontakt"
     },
@@ -94,7 +94,7 @@
     },
     "footer": {
         "copyright": "© 2026 NuVioLabs",
-        "tagline": "Web · Fullstack · Deutschland",
+        "tagline": "Web · Webentwicklung · Deutschland",
         "imprint": "Impressum",
         "privacy": "Datenschutz",
         "github": "GitHub",
@@ -104,8 +104,8 @@
     "skipToContent": "Zum Inhalt springen",
     "seo": {
         "home": {
-            "title": "NuVioLabs | Fullstack Entwickler",
-            "description": "Fullstack Entwickler aus Deutschland. Websites und Webanwendungen mit React, Next.js und TypeScript."
+            "title": "NuVioLabs | Webentwicklung",
+            "description": "Webentwicklung aus Deutschland. Websites und Webanwendungen mit React, Next.js und TypeScript."
         },
         "imprint": {
             "title": "Impressum"

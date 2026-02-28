@@ -13,10 +13,10 @@
         "switchLanguage": "Switch language"
     },
     "hero": {
-        "badge": "Available",
-        "headlinePart1": "I build",
-        "headlinePart2": "for the web.",
-        "subline": "Fullstack developer focused on performance, clean code, and shipping real products.",
+        "badge": "Ready for Opportunities",
+        "headlinePart1": "NuVioLabs",
+        "headlinePart2": "Web design & digital solutions",
+        "subline": "Web development focused on performance, clean code, and shipping real products.",
         "ctaPrimary": "Work",
         "ctaSecondary": "Contact"
     },
@@ -94,7 +94,7 @@
     },
     "footer": {
         "copyright": "© 2026 NuVioLabs",
-        "tagline": "Web · Fullstack · Germany",
+        "tagline": "Web · Web development · Germany",
         "imprint": "Imprint",
         "privacy": "Privacy",
         "github": "GitHub",
@@ -104,8 +104,8 @@
     "skipToContent": "Skip to content",
     "seo": {
         "home": {
-            "title": "NuVioLabs | Fullstack Developer",
-            "description": "Fullstack developer based in Germany. Websites and web applications built with React, Next.js, and TypeScript."
+            "title": "NuVioLabs | Web development",
+            "description": "Web development based in Germany. Websites and web applications built with React, Next.js, and TypeScript."
         },
         "imprint": {
             "title": "Imprint"
