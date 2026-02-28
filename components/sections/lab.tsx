@@ -1,18 +1,21 @@
 "use client"
 
+import { useTranslations } from "next-intl"
 import { motion } from "framer-motion"
 import { Container } from "@/components/layout/container"
 import { ScrollAnimation } from "@/components/ui/scroll-animation"
 
 export function Lab() {
+    const t = useTranslations("lab")
+
     return (
         <section id="lab" className="py-12 md:py-24">
             <Container>
                 <ScrollAnimation>
                     <div className="mb-12">
-                        <h2 className="mb-4 text-4xl font-extrabold tracking-tight lg:text-5xl">The Lab</h2>
+                        <h2 className="mb-4 text-4xl font-extrabold tracking-tight lg:text-5xl">{t("sectionTitle")}</h2>
                         <p className="text-muted-foreground text-lg">
-                            A playground for experiments, half-baked ideas, and UI interactions.
+                            {t("sectionSubtitle")}
                         </p>
                     </div>
                 </ScrollAnimation>
@@ -37,7 +40,7 @@ export function Lab() {
                                     repeatDelay: 1
                                 }}
                             />
-                            <div className="absolute bottom-4 left-4 text-sm font-medium">Morphing Shape</div>
+                            <div className="absolute bottom-4 left-4 text-sm font-medium">{t("morphingShape")}</div>
                         </div>
                     </ScrollAnimation>
 
@@ -65,14 +68,14 @@ export function Lab() {
                                     />
                                 ))}
                             </motion.div>
-                            <div className="absolute bottom-4 left-4 text-sm font-medium">Audio Viz</div>
+                            <div className="absolute bottom-4 left-4 text-sm font-medium">{t("audioViz")}</div>
                         </div>
                     </ScrollAnimation>
 
                     {/* Placeholder */}
                     <ScrollAnimation delay={0.3}>
                         <div className="aspect-square rounded-xl border border-dashed flex items-center justify-center text-muted-foreground bg-muted/20 h-full">
-                            <span className="text-sm">More coming soon...</span>
+                            <span className="text-sm">{t("comingSoon")}</span>
                         </div>
                     </ScrollAnimation>
                 </div>

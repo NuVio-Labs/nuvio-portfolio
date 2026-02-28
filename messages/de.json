@@ -1,0 +1,117 @@
+{
+    "nav": {
+        "brand": "nuviolabs.",
+        "work": "Projekte",
+        "about": "Über mich",
+        "lab": "Labor",
+        "contact": "Kontakt",
+        "toggleTheme": "Farbschema wechseln",
+        "clientPortal": "Kundenportal",
+        "clientPortalLabel": "Zum Kundenportal",
+        "clientAreaHint": "Bereich für Kunden",
+        "login": "Anmelden",
+        "switchLanguage": "Sprache wechseln"
+    },
+    "hero": {
+        "badge": "Offen für neue Möglichkeiten",
+        "headlinePart1": "Bauen.",
+        "headlinePart2": "Lernen. Liefern.",
+        "subline": "Ich bin ein autodidaktischer Juniorentwickler, der durch echte Projekte lernt. Jede Website, die ich veröffentliche, ist eine Fallstudie in persönlichem Wachstum.",
+        "ctaPrimary": "Meine Projekte ansehen",
+        "ctaSecondary": "Sag Hallo"
+    },
+    "work": {
+        "sectionTitle": "Ausgewählte Projekte",
+        "sectionSubtitle": "Einblicke in gelöste Probleme und geschaffenen Mehrwert. Qualität statt Quantität.",
+        "visitSite": "Live ansehen →",
+        "visitSiteLabel": "{title} besuchen — öffnet in neuem Tab",
+        "previewLoading": "Vorschau wird geladen…",
+        "previewAlt": "Screenshot von {title}",
+        "previewDesktopTitle": "Desktop-Vorschau von {title}",
+        "theProblem": "Das Problem",
+        "theApproach": "Der Ansatz",
+        "theOutcome": "Das Ergebnis",
+        "projects": {
+            "wt-erdbewegungen": {
+                "title": "WT Erdbewegungen",
+                "description": "Professionelle Website für ein lokales Erdbewegungs- und Tiefbauunternehmen — schnell, responsiv und für Suchmaschinen optimiert.",
+                "problem": "Ein lokaler Bau- und Erdbewegungsbetrieb hatte keinerlei Online-Präsenz. Potenzielle Kunden in der Region konnten das Unternehmen nicht finden, alle Aufträge kamen ausschließlich über Mundpropaganda.",
+                "approach": "Ich habe eine schlanke, schnell ladende Website entworfen und entwickelt, die Dienstleistungen, Maschinen und abgeschlossene Projekte zeigt. Starke On-Page-SEO für lokale Suchbegriffe und optimale Darstellung auf Mobilgeräten, wo die meisten lokalen Suchen stattfinden.",
+                "outcome": "Das Unternehmen hat jetzt eine professionelle Online-Präsenz, die für relevante lokale Suchbegriffe rankt. Die Seite lädt auf Mobilgeräten in unter 2 Sekunden und gibt potenziellen Kunden einen klaren Überblick über das Leistungsangebot."
+            },
+            "daisymays-salon": {
+                "title": "Daisy May's Salon",
+                "description": "Zweisprachige Website für einen Hundesalon — warmes Branding, Buchungsinformationen und Mehrsprachenunterstützung.",
+                "problem": "Ein Hundesalon brauchte eine Website für deutsch- und englischsprachige Kunden. Der bestehende Workflow lief komplett über Telefon und Social Media, was es schwierig machte, Leistungen und Preise klar zu kommunizieren.",
+                "approach": "Ich habe eine vollständig responsive, zweisprachige Website mit Internationalisierung (i18n) gebaut. Fokus auf ein warmes, einladendes Design passend zur Marke. Klare Leistungsbeschreibungen, Preise, Bildergalerien und leicht auffindbare Kontaktinformationen.",
+                "outcome": "Der Salon hat jetzt eine professionelle zweisprachige Website, die wiederkehrende Telefonanfragen zu Leistungen und Preisen reduziert. Kunden können das Angebot in ihrer bevorzugten Sprache durchstöbern und finden alle Informationen für eine Terminbuchung."
+            }
+        }
+    },
+    "about": {
+        "sectionTitle": "Über mich",
+        "bio1": "Ich bin ein autodidaktischer Junior-Fullstack-Entwickler mit einer echten Leidenschaft fürs Bauen im Web. Ich habe mir alles durch Online-Ressourcen, Dokumentation und vor allem durch echte Projekte beigebracht.",
+        "bio2": "Jedes Projekt auf dieser Seite ist eine Fallstudie aus meinem Lernweg. Ich folge nicht einfach Tutorials — ich nehme mir echte Herausforderungen vor, mache Fehler und iteriere, bis das Ergebnis einem Standard entspricht, auf den ich stolz bin.",
+        "bio3": "Mein Ziel ist einfach: jeden Tag besser werden, sauberen Code schreiben und Produkte bauen, die durchdacht und hochwertig wirken.",
+        "backgroundTitle": "Hintergrund",
+        "backgroundText": "Selbststudium, Online-Kurse und Learning by Doing von Tag eins. Kein Bootcamp, kein Informatikstudium — nur Neugier und Durchhaltevermögen.",
+        "focusTitle": "Fokus",
+        "focusText": "React-Ökosystem, moderne Webperformance und End-to-End-Produkte vom Design bis zum Deployment.",
+        "locationTitle": "Standort",
+        "locationText": "Ansässig in Deutschland, offen für Remote-Arbeit.",
+        "skillsTitle": "Womit ich arbeite",
+        "skillCategories": {
+            "frontend": "Frontend",
+            "backend": "Backend",
+            "designTools": "Design & Tools"
+        }
+    },
+    "lab": {
+        "sectionTitle": "Das Labor",
+        "sectionSubtitle": "Ein Spielplatz für Experimente, halbfertige Ideen und UI-Interaktionen.",
+        "morphingShape": "Morphende Form",
+        "audioViz": "Audio-Visualisierung",
+        "comingSoon": "Mehr kommt bald…"
+    },
+    "contact": {
+        "sectionTitle": "Kontakt aufnehmen",
+        "sectionSubtitle": "Feedback, Zusammenarbeit oder einfach nur kennenlernen? Ich freue mich auf deine Nachricht.",
+        "formTitle": "Nachricht senden",
+        "formDescription": "Schreib mir eine Nachricht und ich melde mich so schnell wie möglich.",
+        "labelName": "Name",
+        "labelEmail": "E-Mail",
+        "labelSubject": "Betreff",
+        "labelMessage": "Nachricht",
+        "placeholderName": "Dein Name",
+        "placeholderEmail": "deine@email.de",
+        "placeholderSubject": "Worum geht es?",
+        "placeholderMessage": "Deine Nachricht…",
+        "submit": "Nachricht senden",
+        "submitting": "Wird gesendet…",
+        "successTitle": "Nachricht gesendet!",
+        "successText": "Danke für deine Nachricht. Ich melde mich in Kürze.",
+        "sendAnother": "Weitere senden"
+    },
+    "footer": {
+        "copyright": "© 2026 NuVioLabs",
+        "tagline": "Digitale Produkte · Web · Systeme",
+        "imprint": "Impressum",
+        "privacy": "Datenschutz",
+        "github": "GitHub",
+        "linkedin": "LinkedIn",
+        "footerNav": "Footer-Navigation"
+    },
+    "skipToContent": "Zum Inhalt springen",
+    "seo": {
+        "home": {
+            "title": "NuVioLabs | Junior Fullstack Entwickler",
+            "description": "Autodidaktischer Junior-Fullstack-Entwickler, der seinen Lernweg dokumentiert — echte Projekte mit React, Next.js und TypeScript."
+        },
+        "imprint": {
+            "title": "Impressum"
+        },
+        "privacy": {
+            "title": "Datenschutzerklärung"
+        }
+    }
+}

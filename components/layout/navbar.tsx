@@ -1,24 +1,25 @@
 "use client"
 
 import * as React from "react"
-import Link from "next/link"
-import { usePathname } from "next/navigation"
+import { useTranslations } from "next-intl"
 import { Moon, Sun } from "lucide-react"
 import { useTheme } from "next-themes"
+import { Link } from "@/i18n/navigation"
 
 import { cn } from "@/lib/utils"
 import { Button } from "@/components/ui/button"
 import { Container } from "@/components/layout/container"
+import { LanguageSwitcher } from "@/components/layout/language-switcher"
 
 const navItems = [
-    { name: "Work", href: "#work" },
-    { name: "About", href: "#about" },
-    { name: "Lab", href: "#lab" },
-    { name: "Contact", href: "#contact" },
-]
+    { key: "work", href: "#work" },
+    { key: "about", href: "#about" },
+    { key: "lab", href: "#lab" },
+    { key: "contact", href: "#contact" },
+] as const
 
 export function Navbar() {
-    const pathname = usePathname()
+    const t = useTranslations("nav")
     const { setTheme, theme } = useTheme()
     const [activeSection, setActiveSection] = React.useState("")
 
@@ -43,13 +44,13 @@ export function Navbar() {
                 <div className="flex h-14 items-center justify-between">
                     <div className="flex gap-6 md:gap-10">
                         <Link href="/" className="flex items-center space-x-2" onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}>
-                            <span className="inline-block font-bold">nuviolabs.</span>
+                            <span className="inline-block font-bold">{t("brand")}</span>
                         </Link>
                     </div>
-                    <div className="flex flex-1 items-center justify-end space-x-4">
-                        <nav className="flex items-center space-x-1" aria-label="Main navigation">
+                    <div className="flex flex-1 items-center justify-end space-x-2">
+                        <nav className="flex items-center space-x-1" aria-label={t("work")}>
                             {navItems.map((item) => (
-                                <Link
+                                <a
                                     key={item.href}
                                     href={item.href}
                                     onClick={(e) => handleScroll(e, item.href)}
@@ -60,29 +61,32 @@ export function Navbar() {
                                             : "text-muted-foreground"
                                     )}
                                 >
-                                    {item.name}
-                                </Link>
+                                    {t(item.key)}
+                                </a>
                             ))}
+
+                            <LanguageSwitcher />
+
                             <Button
                                 variant="ghost"
                                 size="icon"
-                                aria-label="Toggle theme"
+                                aria-label={t("toggleTheme")}
                                 className="min-h-[48px] min-w-[48px]"
                                 onClick={() => setTheme(theme === "dark" ? "light" : "dark")}
                             >
                                 <Sun className="h-[1.2rem] w-[1.2rem] rotate-0 scale-100 transition-all dark:-rotate-90 dark:scale-0" />
                                 <Moon className="absolute h-[1.2rem] w-[1.2rem] rotate-90 scale-0 transition-all dark:rotate-0 dark:scale-100" />
                             </Button>
-                            <div className="flex items-center gap-4 pl-6 border-l border-border/40">
+                            <div className="flex items-center gap-4 pl-4 border-l border-border/40">
                                 <span className="text-xs text-muted-foreground hidden lg:inline-block">
-                                    Private Area for Clients
+                                    {t("clientAreaHint")}
                                 </span>
-                                <Link href="/login" aria-label="Client portal login">
+                                <Link href="/login" aria-label={t("clientPortalLabel")}>
                                     <Button variant="ghost" size="sm" className="hidden sm:inline-flex min-h-[48px]">
-                                        Client Portal
+                                        {t("clientPortal")}
                                     </Button>
                                     <Button variant="ghost" size="icon" className="sm:hidden min-h-[48px] min-w-[48px]">
-                                        <span className="sr-only">Login</span>
+                                        <span className="sr-only">{t("login")}</span>
                                         <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="lucide lucide-log-in" aria-hidden="true"><path d="M15 3h4a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2h-4" /><polyline points="10 17 15 12 10 7" /><line x1="15" x2="3" y1="12" y2="12" /></svg>
                                     </Button>
                                 </Link>

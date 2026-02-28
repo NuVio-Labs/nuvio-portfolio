@@ -2,9 +2,8 @@
 
 import { AuthProvider } from "@/lib/auth"
 import { ThemeProvider } from "@/components/theme-provider"
-import { DemoGuard } from "@/components/saas/DemoGuard"
 
-export default function ProtectedLayout({
+export default function AuthLayout({
     children,
 }: {
     children: React.ReactNode
@@ -17,7 +16,7 @@ export default function ProtectedLayout({
                 enableSystem
                 disableTransitionOnChange
             >
-                <DemoGuard>{children}</DemoGuard>
+                {children}
             </ThemeProvider>
         </AuthProvider>
     )

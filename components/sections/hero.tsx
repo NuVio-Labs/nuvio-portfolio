@@ -1,35 +1,39 @@
-import Link from "next/link"
+"use client"
+
+import { useTranslations } from "next-intl"
+import { Link } from "@/i18n/navigation"
 import { Button } from "@/components/ui/button"
 import { Container } from "@/components/layout/container"
 
 export function Hero() {
+    const t = useTranslations("hero")
+
     return (
         <section id="home" className="relative flex min-h-[80vh] flex-col justify-center overflow-hidden pt-16 md:pt-24">
             <Container className="relative z-10 flex flex-col items-center text-center">
                 <div className="mb-8 inline-flex items-center rounded-full border border-border/40 bg-background/50 px-4 py-1.5 text-sm font-medium text-muted-foreground backdrop-blur-sm shadow-sm animate-[fadeInUp_0.5s_ease-out_0.1s_both]">
                     <span className="mr-2 inline-block h-2 w-2 rounded-full bg-emerald-500 animate-pulse"></span>
-                    Open to Opportunities
+                    {t("badge")}
                 </div>
 
                 <h1 className="mb-8 bg-gradient-to-b from-foreground to-foreground/70 bg-clip-text text-6xl font-extrabold tracking-tight text-transparent sm:text-8xl md:text-9xl leading-[0.9] animate-[fadeInUp_0.5s_ease-out_0.2s_both]">
-                    Building. <br />
-                    <span className="text-foreground">Learning. Shipping.</span>
+                    {t("headlinePart1")} <br />
+                    <span className="text-foreground">{t("headlinePart2")}</span>
                 </h1>
 
                 <p className="mb-12 max-w-2xl text-xl text-muted-foreground md:text-2xl leading-relaxed text-balance animate-[fadeInUp_0.5s_ease-out_0.3s_both]">
-                    I&apos;m a self-taught junior developer who learns by building real projects.
-                    Every site I ship is a case study in growth.
+                    {t("subline")}
                 </p>
 
                 <div className="flex flex-col gap-5 sm:flex-row animate-[fadeInUp_0.5s_ease-out_0.4s_both]">
                     <Link href="#work">
                         <Button size="lg" className="h-14 px-10 text-lg rounded-full shadow-lg hover:shadow-xl transition-all">
-                            View My Work
+                            {t("ctaPrimary")}
                         </Button>
                     </Link>
                     <Link href="#contact">
                         <Button variant="outline" size="lg" className="h-14 px-10 text-lg rounded-full border-2 hover:bg-secondary/50">
-                            Say Hello
+                            {t("ctaSecondary")}
                         </Button>
                     </Link>
                 </div>

@@ -1,0 +1,117 @@
+{
+    "nav": {
+        "brand": "nuviolabs.",
+        "work": "Work",
+        "about": "About",
+        "lab": "Lab",
+        "contact": "Contact",
+        "toggleTheme": "Toggle colour scheme",
+        "clientPortal": "Client Portal",
+        "clientPortalLabel": "Go to client portal",
+        "clientAreaHint": "Private Area for Clients",
+        "login": "Login",
+        "switchLanguage": "Switch language"
+    },
+    "hero": {
+        "badge": "Open to Opportunities",
+        "headlinePart1": "Building.",
+        "headlinePart2": "Learning. Shipping.",
+        "subline": "I'm a self-taught junior developer who learns by building real projects. Every site I ship is a case study in growth.",
+        "ctaPrimary": "View My Work",
+        "ctaSecondary": "Say Hello"
+    },
+    "work": {
+        "sectionTitle": "Selected Work",
+        "sectionSubtitle": "Deep dives into problems solved and value delivered. Quality over quantity.",
+        "visitSite": "Visit Live Site →",
+        "visitSiteLabel": "Visit {title} — opens in new tab",
+        "previewLoading": "Loading preview…",
+        "previewAlt": "Screenshot of {title}",
+        "previewDesktopTitle": "Live desktop preview of {title}",
+        "theProblem": "The Problem",
+        "theApproach": "The Approach",
+        "theOutcome": "The Outcome",
+        "projects": {
+            "wt-erdbewegungen": {
+                "title": "WT Erdbewegungen",
+                "description": "Professional website for a local excavation and earthmoving company — fast, responsive, and built for search visibility.",
+                "problem": "A local construction and earthmoving business had no web presence at all. Potential customers in the region couldn't find them online, and all leads came through word-of-mouth only.",
+                "approach": "Designed and built a clean, fast-loading website focused on showcasing the company's services, machinery, and completed projects. Implemented strong on-page SEO for local search terms and ensured the site performs well on mobile devices, where most local searches happen.",
+                "outcome": "The business now has a professional online presence that ranks for relevant local search terms. The site loads in under 2 seconds on mobile and gives potential customers a clear picture of the services offered."
+            },
+            "daisymays-salon": {
+                "title": "Daisy May's Salon",
+                "description": "Bilingual website for a dog grooming salon — warm branding, booking information, and multi-language support.",
+                "problem": "A dog grooming salon needed a website that could serve both German and English-speaking customers. The existing workflow relied entirely on phone calls and social media, making it hard to communicate services and prices clearly.",
+                "approach": "Built a fully responsive, bilingual website with internationalisation (i18n) support. Focused on warm, approachable design that matches the salon's brand. Included clear service descriptions, pricing, image galleries, and easy-to-find contact information.",
+                "outcome": "The salon now has a professional bilingual website that reduces repetitive phone inquiries about services and prices. Customers can browse offerings in their preferred language and find all the information they need to book an appointment."
+            }
+        }
+    },
+    "about": {
+        "sectionTitle": "About Me",
+        "bio1": "I'm a self-taught junior fullstack developer with a genuine love for building things on the web. I started learning through online resources, documentation, and — above all — by shipping real projects.",
+        "bio2": "Every project on this site is a case study from my learning journey. I don't just follow tutorials — I take on real challenges, make mistakes, and iterate until the result meets a standard I'm proud of.",
+        "bio3": "My goal is simple: get better every day, write clean code, and build products that feel polished and purposeful.",
+        "backgroundTitle": "Background",
+        "backgroundText": "Self-study, online courses, and learning by building from day one. No bootcamp, no CS degree — just curiosity and persistence.",
+        "focusTitle": "Focus",
+        "focusText": "React Ecosystem, modern web performance, and building end-to-end products from design to deployment.",
+        "locationTitle": "Location",
+        "locationText": "Based in Germany, open to remote work.",
+        "skillsTitle": "What I'm Working With",
+        "skillCategories": {
+            "frontend": "Frontend",
+            "backend": "Backend",
+            "designTools": "Design & Tools"
+        }
+    },
+    "lab": {
+        "sectionTitle": "The Lab",
+        "sectionSubtitle": "A playground for experiments, half-baked ideas, and UI interactions.",
+        "morphingShape": "Morphing Shape",
+        "audioViz": "Audio Viz",
+        "comingSoon": "More coming soon…"
+    },
+    "contact": {
+        "sectionTitle": "Get in Touch",
+        "sectionSubtitle": "Have feedback, want to collaborate, or just want to connect? I'd love to hear from you.",
+        "formTitle": "Send a Message",
+        "formDescription": "Drop me a message and I'll get back to you as soon as I can.",
+        "labelName": "Name",
+        "labelEmail": "Email",
+        "labelSubject": "Subject",
+        "labelMessage": "Message",
+        "placeholderName": "Your name",
+        "placeholderEmail": "your@email.com",
+        "placeholderSubject": "What's this about?",
+        "placeholderMessage": "Your message…",
+        "submit": "Send Message",
+        "submitting": "Sending…",
+        "successTitle": "Message Sent!",
+        "successText": "Thanks for reaching out. I'll be in touch shortly.",
+        "sendAnother": "Send Another"
+    },
+    "footer": {
+        "copyright": "© 2026 NuVioLabs",
+        "tagline": "Digital Products · Web · Systems",
+        "imprint": "Imprint",
+        "privacy": "Privacy",
+        "github": "GitHub",
+        "linkedin": "LinkedIn",
+        "footerNav": "Footer navigation"
+    },
+    "skipToContent": "Skip to content",
+    "seo": {
+        "home": {
+            "title": "NuVioLabs | Junior Fullstack Developer",
+            "description": "Self-taught junior fullstack developer documenting a learning journey — building real projects with React, Next.js & TypeScript."
+        },
+        "imprint": {
+            "title": "Imprint"
+        },
+        "privacy": {
+            "title": "Privacy Policy"
+        }
+    }
+}
