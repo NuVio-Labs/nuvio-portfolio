@@ -24,7 +24,7 @@ export function About() {
                         <div className="space-y-4 text-lg text-muted-foreground leading-relaxed">
                             <p>{t("bio1")}</p>
                             <p>{t("bio2")}</p>
-                            <p>{t("bio3")}</p>
+                            {t("bio3") && <p>{t("bio3")}</p>}
                         </div>
                     </ScrollAnimation>
 

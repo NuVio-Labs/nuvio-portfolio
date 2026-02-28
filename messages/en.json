@@ -13,53 +13,53 @@
         "switchLanguage": "Switch language"
     },
     "hero": {
-        "badge": "Open to Opportunities",
-        "headlinePart1": "Building.",
-        "headlinePart2": "Learning. Shipping.",
-        "subline": "I'm a self-taught junior developer who learns by building real projects. Every site I ship is a case study in growth.",
-        "ctaPrimary": "View My Work",
-        "ctaSecondary": "Say Hello"
+        "badge": "Available",
+        "headlinePart1": "I build",
+        "headlinePart2": "for the web.",
+        "subline": "Fullstack developer focused on performance, clean code, and shipping real products.",
+        "ctaPrimary": "Work",
+        "ctaSecondary": "Contact"
     },
     "work": {
-        "sectionTitle": "Selected Work",
-        "sectionSubtitle": "Deep dives into problems solved and value delivered. Quality over quantity.",
-        "visitSite": "Visit Live Site →",
+        "sectionTitle": "Work",
+        "sectionSubtitle": "Two real client projects. From brief to launch.",
+        "visitSite": "View Live →",
         "visitSiteLabel": "Visit {title} — opens in new tab",
         "previewLoading": "Loading preview…",
         "previewAlt": "Screenshot of {title}",
         "previewDesktopTitle": "Live desktop preview of {title}",
-        "theProblem": "The Problem",
-        "theApproach": "The Approach",
-        "theOutcome": "The Outcome",
+        "theProblem": "Starting Point",
+        "theApproach": "Execution",
+        "theOutcome": "Result",
         "projects": {
             "wt-erdbewegungen": {
                 "title": "WT Erdbewegungen",
-                "description": "Professional website for a local excavation and earthmoving company — fast, responsive, and built for search visibility.",
-                "problem": "A local construction and earthmoving business had no web presence at all. Potential customers in the region couldn't find them online, and all leads came through word-of-mouth only.",
-                "approach": "Designed and built a clean, fast-loading website focused on showcasing the company's services, machinery, and completed projects. Implemented strong on-page SEO for local search terms and ensured the site performs well on mobile devices, where most local searches happen.",
-                "outcome": "The business now has a professional online presence that ranks for relevant local search terms. The site loads in under 2 seconds on mobile and gives potential customers a clear picture of the services offered."
+                "description": "Website for a local excavation company. Fast, responsive, built for local search.",
+                "problem": "No web presence. Customers couldn't find the business online.",
+                "approach": "Clean, mobile-first site with strong local SEO and fast load times.",
+                "outcome": "Under 2 second load on mobile. Ranking for local search terms."
             },
             "daisymays-salon": {
                 "title": "Daisy May's Salon",
-                "description": "Bilingual website for a dog grooming salon — warm branding, booking information, and multi-language support.",
-                "problem": "A dog grooming salon needed a website that could serve both German and English-speaking customers. The existing workflow relied entirely on phone calls and social media, making it hard to communicate services and prices clearly.",
-                "approach": "Built a fully responsive, bilingual website with internationalisation (i18n) support. Focused on warm, approachable design that matches the salon's brand. Included clear service descriptions, pricing, image galleries, and easy-to-find contact information.",
-                "outcome": "The salon now has a professional bilingual website that reduces repetitive phone inquiries about services and prices. Customers can browse offerings in their preferred language and find all the information they need to book an appointment."
+                "description": "Bilingual website for a dog grooming salon. German and English.",
+                "problem": "All enquiries went through phone and social media. No single source for services and pricing.",
+                "approach": "Responsive site with i18n, clear pricing, and direct contact options.",
+                "outcome": "Fewer repeat calls. Customers find what they need in their language."
             }
         }
     },
     "about": {
-        "sectionTitle": "About Me",
-        "bio1": "I'm a self-taught junior fullstack developer with a genuine love for building things on the web. I started learning through online resources, documentation, and — above all — by shipping real projects.",
-        "bio2": "Every project on this site is a case study from my learning journey. I don't just follow tutorials — I take on real challenges, make mistakes, and iterate until the result meets a standard I'm proud of.",
-        "bio3": "My goal is simple: get better every day, write clean code, and build products that feel polished and purposeful.",
+        "sectionTitle": "About",
+        "bio1": "I build websites and web applications. Design to deployment.",
+        "bio2": "Every project here is real client work with real outcomes.",
+        "bio3": "",
         "backgroundTitle": "Background",
-        "backgroundText": "Self-study, online courses, and learning by building from day one. No bootcamp, no CS degree — just curiosity and persistence.",
+        "backgroundText": "Frontend and backend. Self-directed from day one.",
         "focusTitle": "Focus",
-        "focusText": "React Ecosystem, modern web performance, and building end-to-end products from design to deployment.",
+        "focusText": "React, Next.js, TypeScript. End-to-end product delivery.",
         "locationTitle": "Location",
-        "locationText": "Based in Germany, open to remote work.",
-        "skillsTitle": "What I'm Working With",
+        "locationText": "Germany. Available remotely.",
+        "skillsTitle": "Tech Stack",
         "skillCategories": {
             "frontend": "Frontend",
             "backend": "Backend",
@@ -67,17 +67,17 @@
         }
     },
     "lab": {
-        "sectionTitle": "The Lab",
-        "sectionSubtitle": "A playground for experiments, half-baked ideas, and UI interactions.",
+        "sectionTitle": "Lab",
+        "sectionSubtitle": "Experiments and prototypes.",
         "morphingShape": "Morphing Shape",
         "audioViz": "Audio Viz",
-        "comingSoon": "More coming soon…"
+        "comingSoon": "More soon."
     },
     "contact": {
-        "sectionTitle": "Get in Touch",
-        "sectionSubtitle": "Have feedback, want to collaborate, or just want to connect? I'd love to hear from you.",
-        "formTitle": "Send a Message",
-        "formDescription": "Drop me a message and I'll get back to you as soon as I can.",
+        "sectionTitle": "Say hello",
+        "sectionSubtitle": "Project, question, or just hello.",
+        "formTitle": "Message",
+        "formDescription": "I'll get back to you shortly.",
         "labelName": "Name",
         "labelEmail": "Email",
         "labelSubject": "Subject",
@@ -86,15 +86,15 @@
         "placeholderEmail": "your@email.com",
         "placeholderSubject": "What's this about?",
         "placeholderMessage": "Your message…",
-        "submit": "Send Message",
+        "submit": "Send",
         "submitting": "Sending…",
-        "successTitle": "Message Sent!",
-        "successText": "Thanks for reaching out. I'll be in touch shortly.",
-        "sendAnother": "Send Another"
+        "successTitle": "Sent.",
+        "successText": "I'll be in touch shortly.",
+        "sendAnother": "Again"
     },
     "footer": {
         "copyright": "© 2026 NuVioLabs",
-        "tagline": "Digital Products · Web · Systems",
+        "tagline": "Web · Fullstack · Germany",
         "imprint": "Imprint",
         "privacy": "Privacy",
         "github": "GitHub",
@@ -104,8 +104,8 @@
     "skipToContent": "Skip to content",
     "seo": {
         "home": {
-            "title": "NuVioLabs | Junior Fullstack Developer",
-            "description": "Self-taught junior fullstack developer documenting a learning journey — building real projects with React, Next.js & TypeScript."
+            "title": "NuVioLabs | Fullstack Developer",
+            "description": "Fullstack developer based in Germany. Websites and web applications built with React, Next.js, and TypeScript."
         },
         "imprint": {
             "title": "Imprint"

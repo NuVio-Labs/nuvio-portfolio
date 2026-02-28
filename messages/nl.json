@@ -13,53 +13,53 @@
         "switchLanguage": "Taal wijzigen"
     },
     "hero": {
-        "badge": "Open voor nieuwe kansen",
-        "headlinePart1": "Bouwen.",
-        "headlinePart2": "Leren. Opleveren.",
-        "subline": "Ik ben een zelflerende junior developer die leert door echte projecten te bouwen. Elke website die ik oplever is een case study in persoonlijke groei.",
-        "ctaPrimary": "Bekijk mijn werk",
-        "ctaSecondary": "Zeg hallo"
+        "badge": "Beschikbaar",
+        "headlinePart1": "Ik bouw",
+        "headlinePart2": "voor het web.",
+        "subline": "Fullstack developer met focus op snelheid, heldere code en werkende producten.",
+        "ctaPrimary": "Werk",
+        "ctaSecondary": "Contact"
     },
     "work": {
-        "sectionTitle": "Geselecteerd werk",
-        "sectionSubtitle": "Diepgaande blik op opgeloste problemen en geleverde waarde. Kwaliteit boven kwantiteit.",
+        "sectionTitle": "Werk",
+        "sectionSubtitle": "Twee echte opdrachten. Van briefing tot livegang.",
         "visitSite": "Bekijk live →",
         "visitSiteLabel": "Bezoek {title} — opent in nieuw tabblad",
         "previewLoading": "Voorbeeld laden…",
         "previewAlt": "Screenshot van {title}",
         "previewDesktopTitle": "Live desktop voorbeeld van {title}",
-        "theProblem": "Het probleem",
-        "theApproach": "De aanpak",
-        "theOutcome": "Het resultaat",
+        "theProblem": "Uitgangspunt",
+        "theApproach": "Uitvoering",
+        "theOutcome": "Resultaat",
         "projects": {
             "wt-erdbewegungen": {
                 "title": "WT Erdbewegungen",
-                "description": "Professionele website voor een lokaal grondverzet- en constructiebedrijf — snel, responsive en gebouwd voor vindbaarheid.",
-                "problem": "Een lokaal bouw- en grondverzetbedrijf had helemaal geen online aanwezigheid. Potentiële klanten in de regio konden het bedrijf niet vinden en alle opdrachten kwamen uitsluitend via mond-tot-mondreclame.",
-                "approach": "Een strakke, snel ladende website ontworpen en gebouwd die diensten, machines en afgeronde projecten toont. Sterke on-page SEO voor lokale zoektermen en uitstekende prestaties op mobiele apparaten, waar de meeste lokale zoekopdrachten plaatsvinden.",
-                "outcome": "Het bedrijf heeft nu een professionele online aanwezigheid die scoort op relevante lokale zoektermen. De site laadt in minder dan 2 seconden op mobiel en geeft potentiële klanten een helder beeld van het dienstenaanbod."
+                "description": "Website voor een grondverzetbedrijf. Snel, responsive, lokaal vindbaar.",
+                "problem": "Geen website. Klanten konden het bedrijf online niet vinden.",
+                "approach": "Strakke, mobiele site met sterke lokale SEO en korte laadtijden.",
+                "outcome": "Minder dan 2 seconden laadtijd op mobiel. Vindbaar op lokale zoektermen."
             },
             "daisymays-salon": {
                 "title": "Daisy May's Salon",
-                "description": "Tweetalige website voor een hondentrimsalon — warm merk, boekingsinformatie en meertalige ondersteuning.",
-                "problem": "Een hondentrimsalon had een website nodig die zowel Duits- als Engelstalige klanten kon bedienen. De bestaande werkwijze was volledig afhankelijk van telefoontjes en social media, waardoor het lastig was om diensten en prijzen helder te communiceren.",
-                "approach": "Een volledig responsive, tweetalige website gebouwd met internationalisatie (i18n). Gericht op een warm, toegankelijk ontwerp dat past bij het merk. Duidelijke dienstomschrijvingen, prijzen, fotogalerijen en gemakkelijk vindbare contactgegevens.",
-                "outcome": "De salon heeft nu een professionele tweetalige website die herhaaldelijke telefoontjes over diensten en prijzen vermindert. Klanten kunnen het aanbod bekijken in hun voorkeurstaal en vinden alle informatie die ze nodig hebben om een afspraak te maken."
+                "description": "Tweetalige website voor een trimsalon. Duits en Engels.",
+                "problem": "Alle vragen liepen via telefoon en social media. Geen centrale plek voor diensten en prijzen.",
+                "approach": "Responsive site met i18n, duidelijke prijzen en directe contactmogelijkheden.",
+                "outcome": "Minder herhaalde telefoontjes. Klanten vinden alles in hun eigen taal."
             }
         }
     },
     "about": {
         "sectionTitle": "Over mij",
-        "bio1": "Ik ben een zelflerende junior fullstack developer met een oprechte passie voor het bouwen van dingen op het web. Ik ben begonnen met online bronnen, documentatie en — bovenal — door echte projecten live te zetten.",
-        "bio2": "Elk project op deze site is een case study uit mijn leertraject. Ik volg niet zomaar tutorials — ik pak echte uitdagingen aan, maak fouten en blijf itereren tot het resultaat aan mijn eigen standaard voldoet.",
-        "bio3": "Mijn doel is simpel: elke dag beter worden, schone code schrijven en producten bouwen die doordacht en professioneel aanvoelen.",
+        "bio1": "Ik bouw websites en webapplicaties. Van ontwerp tot oplevering.",
+        "bio2": "Elk project hier is een echte opdracht met een echt resultaat.",
+        "bio3": "",
         "backgroundTitle": "Achtergrond",
-        "backgroundText": "Zelfstudie, online cursussen en leren door te doen vanaf dag één. Geen bootcamp, geen informaticadiploma — alleen nieuwsgierigheid en doorzettingsvermogen.",
+        "backgroundText": "Frontend en backend. Vanaf dag één zelf aangeleerd.",
         "focusTitle": "Focus",
-        "focusText": "React-ecosysteem, moderne webprestaties en end-to-end producten bouwen van ontwerp tot deployment.",
+        "focusText": "React, Next.js, TypeScript. Van concept tot live product.",
         "locationTitle": "Locatie",
-        "locationText": "Gevestigd in Duitsland, open voor remote werk.",
-        "skillsTitle": "Waar ik mee werk",
+        "locationText": "Duitsland. Remote beschikbaar.",
+        "skillsTitle": "Tech Stack",
         "skillCategories": {
             "frontend": "Frontend",
             "backend": "Backend",
@@ -67,17 +67,17 @@
         }
     },
     "lab": {
-        "sectionTitle": "Het lab",
-        "sectionSubtitle": "Een speeltuin voor experimenten, halve ideeën en UI-interacties.",
+        "sectionTitle": "Lab",
+        "sectionSubtitle": "Experimenten en prototypes.",
         "morphingShape": "Vormverandering",
         "audioViz": "Audio-visualisatie",
-        "comingSoon": "Meer volgt binnenkort…"
+        "comingSoon": "Meer volgt."
     },
     "contact": {
-        "sectionTitle": "Neem contact op",
-        "sectionSubtitle": "Feedback, samenwerken, of gewoon even kennismaken? Ik hoor graag van je.",
-        "formTitle": "Stuur een bericht",
-        "formDescription": "Stuur me een bericht en ik reageer zo snel mogelijk.",
+        "sectionTitle": "Stuur een bericht",
+        "sectionSubtitle": "Project, vraag, of gewoon hallo.",
+        "formTitle": "Bericht",
+        "formDescription": "Ik reageer zo snel mogelijk.",
         "labelName": "Naam",
         "labelEmail": "E-mail",
         "labelSubject": "Onderwerp",
@@ -86,15 +86,15 @@
         "placeholderEmail": "je@email.nl",
         "placeholderSubject": "Waar gaat het over?",
         "placeholderMessage": "Je bericht…",
-        "submit": "Bericht versturen",
+        "submit": "Verstuur",
         "submitting": "Wordt verstuurd…",
-        "successTitle": "Bericht verstuurd!",
-        "successText": "Bedankt voor je bericht. Ik neem snel contact met je op.",
-        "sendAnother": "Nog een versturen"
+        "successTitle": "Verstuurd.",
+        "successText": "Ik neem snel contact op.",
+        "sendAnother": "Nogmaals"
     },
     "footer": {
         "copyright": "© 2026 NuVioLabs",
-        "tagline": "Digitale producten · Web · Systemen",
+        "tagline": "Web · Fullstack · Duitsland",
         "imprint": "Impressum",
         "privacy": "Privacy",
         "github": "GitHub",
@@ -104,8 +104,8 @@
     "skipToContent": "Naar inhoud springen",
     "seo": {
         "home": {
-            "title": "NuVioLabs | Junior Fullstack Developer",
-            "description": "Zelflerende junior fullstack developer die zijn leertraject documenteert — echte projecten bouwen met React, Next.js en TypeScript."
+            "title": "NuVioLabs | Fullstack Developer",
+            "description": "Fullstack developer uit Duitsland. Websites en webapplicaties gebouwd met React, Next.js en TypeScript."
         },
         "imprint": {
             "title": "Impressum"
