@@ -19,7 +19,9 @@
         "headlinePart2": "voor duurzame groei.",
         "subline": "Heldere structuur, snelle prestaties en een logische gebruikersflow.",
         "ctaPrimary": "Gratis adviesgesprek",
-        "ctaSecondary": "Bekijk werk"
+        "ctaSecondary": "Bekijk werk",
+        "ctaProject": "Project aanvragen",
+        "ctaWork": "Geselecteerd werk"
     },
     "valueProposition": {
         "label": "Kernprincipes",
@@ -49,6 +51,8 @@
         "previewLoading": "Voorbeeld laden…",
         "previewAlt": "Screenshot van {title}",
         "previewDesktopTitle": "Live desktopweergave van {title}",
+        "previewGdprNotice": "Bij het laden van de live voorbeeldweergave wordt een verbinding met externe servers gemaakt. Uw IP-adres kan hierbij worden overgedragen.",
+        "previewLoadButton": "Live voorbeeldweergave laden",
         "theProblem": "Het probleem",
         "theApproach": "De oplossing",
         "theOutcome": "Meetbaar resultaat",

@@ -3,6 +3,7 @@
 import { motion } from "framer-motion";
 import { Link } from "@/i18n/navigation";
 import Image from "next/image";
+import { useTranslations } from "next-intl";
 import { Zap, Globe, Search, Code2, Layers } from "lucide-react";
 
 // Subtile stufenweise Fade-Up Animation für den Textbereich
@@ -12,6 +13,8 @@ const fadeUpVariants: any = {
 };
 
 export function Hero() {
+    const t = useTranslations("hero");
+
     return (
         <section className="relative w-full min-h-[90vh] pt-32 pb-20 md:pt-48 md:pb-32 flex flex-col items-center justify-center overflow-hidden">
 
@@ -76,13 +79,13 @@ export function Hero() {
                             href="#contact"
                             className="w-full sm:w-auto px-8 py-3.5 rounded-xl bg-neutral-900 dark:bg-neutral-100 text-white dark:text-neutral-900 shadow-xl shadow-black/10 dark:shadow-white/5 text-sm font-medium hover:bg-neutral-800 dark:hover:bg-white transition-all hover:scale-[1.02] flex items-center justify-center"
                         >
-                            Projekt anfragen
+                            {t("ctaProject")}
                         </Link>
                         <Link
                             href="#work"
                             className="w-full sm:w-auto px-8 py-3.5 rounded-xl bg-white/50 dark:bg-black/20 backdrop-blur-md border border-black/10 dark:border-white/10 text-neutral-800 dark:text-neutral-300 text-sm font-medium hover:bg-white/80 dark:hover:bg-black/40 hover:border-black/20 dark:hover:border-white/20 hover:text-neutral-900 dark:hover:text-neutral-100 transition-all flex items-center justify-center"
                         >
-                            Ausgewählte Arbeiten
+                            {t("ctaWork")}
                         </Link>
                     </motion.div>
 
