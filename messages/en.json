@@ -162,19 +162,19 @@
         "imprint": {
             "title": "Imprint / Legal Notice",
             "provider": "Information in accordance with § 5 TMG",
-            "address": "NuVioLabs\nMax Mustermann\nMusterstraße 1\n12345 Musterstadt\nGermany",
+            "address": "NuVioLabs\nAxel Schurer\nNimwegerstraße 3\n47559 Kranenburg\nNorth Rhine-Westphalia\nGermany",
             "contactTitle": "Contact",
-            "contact": "Phone: +49 (0) 123 44 55 66\nEmail: contact@nuviolabs.de",
-            "vatTitle": "VAT ID",
-            "vat": "Sales tax identification number according to § 27 a of the Sales Tax Law:\nDE999999999",
-            "disputeTitle": "EU Dispute Resolution",
-            "dispute": "The European Commission provides a platform for online dispute resolution (OS): https://ec.europa.eu/consumers/odr/.\nPlease find our email in the impressum/legal notice."
+            "contact": "Email: contact@nuviolabs.de",
+            "vatTitle": "VAT Information",
+            "vat": "In accordance with § 19 UStG (German VAT Act), no value-added tax is charged (small business regulation).\nA VAT identification number is currently not available.",
+            "disputeTitle": "Dispute Resolution",
+            "dispute": "The European Commission provides a platform for online dispute resolution (OS):\nhttps://ec.europa.eu/consumers/odr/\n\nWe are not willing or obliged to participate in dispute resolution proceedings before a consumer arbitration board."
         },
         "privacy": {
             "title": "Privacy Policy",
             "intro": "We take the protection of your personal data very seriously. We treat your personal data confidentially and in accordance with the statutory data protection regulations and this privacy policy.",
             "hostingTitle": "1. Hosting",
-            "hosting": "This website is hosted by Vercel. The provider is Vercel Inc., 340 S Lemon Ave #4133, Walnut, CA 91789, USA.",
+            "hosting": "Our website is hosted by Vercel Inc., 340 S Lemon Ave #4133, Walnut, CA 91789, USA.\nPersonal data collected on this website is processed on Vercel's servers.\n\nData transfer to the US is based on the EU Standard Contractual Clauses in accordance with Art. 46 GDPR.\n\nFurther information on data protection at Vercel can be found at:\nhttps://vercel.com/legal/privacy-policy",
             "contactFormTitle": "2. Contact Form",
             "contactForm": "If you send us inquiries via the contact form, your details from the inquiry form, including the contact details you provided there, will be processed and stored via Resend for the purpose of processing the inquiry and in case of follow-up questions. We do not share this data without your consent."
         }

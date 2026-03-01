@@ -162,19 +162,19 @@
         "imprint": {
             "title": "Impressum",
             "provider": "Angaben gemäß § 5 TMG",
-            "address": "NuVioLabs\nMax Mustermann\nMusterstraße 1\n12345 Musterstadt",
+            "address": "NuVioLabs\nAxel Schurer\nNimwegerstraße 3\n47559 Kranenburg\nNordrhein-Westfalen\nDeutschland",
             "contactTitle": "Kontakt",
-            "contact": "Telefon: +49 (0) 123 44 55 66\nE-Mail: contact@nuviolabs.de",
-            "vatTitle": "Umsatzsteuer-ID",
-            "vat": "Umsatzsteuer-Identifikationsnummer gemäß § 27 a Umsatzsteuergesetz:\nDE999999999",
-            "disputeTitle": "EU-Streitschlichtung",
-            "dispute": "Die Europäische Kommission stellt eine Plattform zur Online-Streitbeilegung (OS) bereit: https://ec.europa.eu/consumers/odr/.\nUnsere E-Mail-Adresse finden Sie oben im Impressum."
+            "contact": "E-Mail: contact@nuviolabs.de",
+            "vatTitle": "Umsatzsteuer",
+            "vat": "Gemäß § 19 UStG wird keine Umsatzsteuer berechnet (Kleinunternehmerregelung).\nEine Umsatzsteuer-Identifikationsnummer liegt derzeit nicht vor.",
+            "disputeTitle": "Verbraucherstreitbeilegung / EU-Streitschlichtung",
+            "dispute": "Die Europäische Kommission stellt eine Plattform zur Online-Streitbeilegung (OS) bereit:\nhttps://ec.europa.eu/consumers/odr/\n\nWir sind nicht verpflichtet und nicht bereit, an Streitbeilegungsverfahren vor einer Verbraucherschlichtungsstelle teilzunehmen."
         },
         "privacy": {
             "title": "Datenschutzerklärung",
             "intro": "Wir nehmen den Schutz Ihrer persönlichen Daten sehr ernst. Wir behandeln Ihre personenbezogenen Daten vertraulich und entsprechend der gesetzlichen Datenschutzvorschriften sowie dieser Datenschutzerklärung.",
             "hostingTitle": "1. Hosting",
-            "hosting": "Wir hosten unsere Website bei Vercel. Anbieter ist Vercel Inc., 340 S Lemon Ave #4133, Walnut, CA 91789, USA.",
+            "hosting": "Unsere Website wird bei Vercel Inc., 340 S Lemon Ave #4133, Walnut, CA 91789, USA, gehostet.\nPersonenbezogene Daten, die auf dieser Website erfasst werden, werden auf den Servern von Vercel verarbeitet.\n\nDie Datenübermittlung in die USA erfolgt auf Grundlage der EU-Standardvertragsklauseln gemäß Art. 46 DSGVO.\n\nWeitere Informationen zum Datenschutz bei Vercel finden Sie unter:\nhttps://vercel.com/legal/privacy-policy",
             "contactFormTitle": "2. Kontaktformular",
             "contactForm": "Wenn Sie uns per Kontaktformular Anfragen zukommen lassen, werden Ihre Angaben aus dem Anfrageformular inklusive der von Ihnen dort angegebenen Kontaktdaten zwecks Bearbeitung der Anfrage und für den Fall von Anschlussfragen bei uns über Resend verarbeitet und gespeichert. Diese Daten geben wir nicht ohne Ihre Einwilligung weiter."
         }

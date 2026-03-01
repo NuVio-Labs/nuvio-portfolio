@@ -162,19 +162,19 @@
         "imprint": {
             "title": "Colofon / Impressum",
             "provider": "Informatie volgens § 5 TMG (Duitsland)",
-            "address": "NuVioLabs\nMax Mustermann\nMusterstraße 1\n12345 Musterstadt\nDuitsland",
+            "address": "NuVioLabs\nAxel Schurer\nNimwegerstraße 3\n47559 Kranenburg\nNoordrijn-Westfalen\nDuitsland",
             "contactTitle": "Contact",
-            "contact": "Telefoon: +49 (0) 123 44 55 66\nE-mail: contact@nuviolabs.de",
-            "vatTitle": "Btw-nummer",
-            "vat": "Btw-identificatienummer volgens § 27 a Umsatzsteuergesetz:\nDE999999999",
-            "disputeTitle": "EU Geschillenbeslechting",
-            "dispute": "De Europese Commissie biedt een platform voor online geschillenbeslechting (OS): https://ec.europa.eu/consumers/odr/.\nOnze e-mail is te vinden in de colofon."
+            "contact": "E-mail: contact@nuviolabs.de",
+            "vatTitle": "Btw",
+            "vat": "Volgens § 19 UStG (Duitse btw-wetgeving) wordt er geen btw in rekening gebracht (kleineondernemersregeling).\nEen btw-identificatienummer is momenteel niet beschikbaar.",
+            "disputeTitle": "Geschillenbeslechting / EU",
+            "dispute": "De Europese Commissie biedt een platform voor online geschillenbeslechting (OS):\nhttps://ec.europa.eu/consumers/odr/\n\nWij zijn niet verplicht en niet bereid om deel te nemen aan een geschillenbeslechtingsprocedure voor een geschillencommissie voor consumenten."
         },
         "privacy": {
             "title": "Privacybeleid",
             "intro": "Wij nemen de bescherming van uw persoonlijke gegevens zeer serieus. Wij behandelen uw persoonlijke gegevens vertrouwelijk en in overeenstemming met de wettelijke voorschriften inzake gegevensbescherming en dit privacybeleid.",
             "hostingTitle": "1. Hosting",
-            "hosting": "Deze website wordt gehost door Vercel. De provider is Vercel Inc., 340 S Lemon Ave #4133, Walnut, CA 91789, VS.",
+            "hosting": "Onze website wordt gehost door Vercel Inc., 340 S Lemon Ave #4133, Walnut, CA 91789, VS.\nPersoonsgegevens die op deze website worden verzameld, worden verwerkt op de servers van Vercel.\n\nDe overdracht van gegevens naar de VS is gebaseerd op de EU-modelcontractbepalingen in overeenstemming met Art. 46 AVG.\n\nMeer informatie over gegevensbescherming bij Vercel vindt u op:\nhttps://vercel.com/legal/privacy-policy",
             "contactFormTitle": "2. Contactformulier",
             "contactForm": "Als u ons via het contactformulier aanvragen stuurt, worden uw gegevens uit het aanvraagformulier, inclusief de contactgegevens die u daar hebt opgegeven, via Resend verwerkt en opgeslagen voor het verwerken van de aanvraag en in het geval van vervolgvragen. We delen deze gegevens niet zonder uw toestemming."
         }
