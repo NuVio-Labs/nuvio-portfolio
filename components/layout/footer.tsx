@@ -19,6 +19,9 @@ export function Footer() {
                 </div>
 
                 <nav className="flex flex-wrap justify-center gap-2 md:justify-end" aria-label={t("footerNav")}>
+                    <Link href="/research" className="text-xs text-muted-foreground transition-colors hover:text-foreground min-h-[48px] inline-flex items-center px-3 rounded-md focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring">
+                        {t("research")}
+                    </Link>
                     <Link href="/imprint" className="text-xs text-muted-foreground transition-colors hover:text-foreground min-h-[48px] inline-flex items-center px-3 rounded-md focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring">
                         {t("imprint")}
                     </Link>

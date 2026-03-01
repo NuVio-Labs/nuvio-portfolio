@@ -149,6 +149,7 @@
     "footer": {
         "copyright": "© 2026 NuVioLabs",
         "tagline": "Web design · Web development · Germany",
+        "research": "Research",
         "imprint": "Imprint",
         "privacy": "Privacy",
         "github": "GitHub",
@@ -157,6 +158,27 @@
         "llmContext": "NuVioLabs is an independent web studio in Kranenburg, Germany, building fast, modern Next.js websites with a focus on SEO and conversion."
     },
     "skipToContent": "Skip to content",
+    "legal": {
+        "imprint": {
+            "title": "Imprint / Legal Notice",
+            "provider": "Information in accordance with § 5 TMG",
+            "address": "NuVioLabs\nMax Mustermann\nMusterstraße 1\n12345 Musterstadt\nGermany",
+            "contactTitle": "Contact",
+            "contact": "Phone: +49 (0) 123 44 55 66\nEmail: contact@nuviolabs.de",
+            "vatTitle": "VAT ID",
+            "vat": "Sales tax identification number according to § 27 a of the Sales Tax Law:\nDE999999999",
+            "disputeTitle": "EU Dispute Resolution",
+            "dispute": "The European Commission provides a platform for online dispute resolution (OS): https://ec.europa.eu/consumers/odr/.\nPlease find our email in the impressum/legal notice."
+        },
+        "privacy": {
+            "title": "Privacy Policy",
+            "intro": "We take the protection of your personal data very seriously. We treat your personal data confidentially and in accordance with the statutory data protection regulations and this privacy policy.",
+            "hostingTitle": "1. Hosting",
+            "hosting": "This website is hosted by Vercel. The provider is Vercel Inc., 340 S Lemon Ave #4133, Walnut, CA 91789, USA.",
+            "contactFormTitle": "2. Contact Form",
+            "contactForm": "If you send us inquiries via the contact form, your details from the inquiry form, including the contact details you provided there, will be processed and stored via Resend for the purpose of processing the inquiry and in case of follow-up questions. We do not share this data without your consent."
+        }
+    },
     "faq": {
         "sectionTitle": "Frequently Asked Questions",
         "sectionSubtitle": "Clarity from the start.",

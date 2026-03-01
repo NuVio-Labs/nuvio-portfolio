@@ -148,8 +148,9 @@
     },
     "footer": {
         "copyright": "© 2026 NuVioLabs",
-        "tagline": "Webdesign · Webontwikkeling · Duitsland",
-        "imprint": "Impressum",
+        "tagline": "Web · Webontwikkeling · Duitsland",
+        "research": "Onderzoek",
+        "imprint": "Colofon",
         "privacy": "Privacybeleid",
         "github": "GitHub",
         "linkedin": "LinkedIn",
@@ -157,6 +158,27 @@
         "llmContext": "NuVioLabs is een onafhankelijke webstudio in Kranenburg, Duitsland, gespecialiseerd in moderne Next.js websites met focus op SEO en conversie."
     },
     "skipToContent": "Ga naar inhoud",
+    "legal": {
+        "imprint": {
+            "title": "Colofon / Impressum",
+            "provider": "Informatie volgens § 5 TMG (Duitsland)",
+            "address": "NuVioLabs\nMax Mustermann\nMusterstraße 1\n12345 Musterstadt\nDuitsland",
+            "contactTitle": "Contact",
+            "contact": "Telefoon: +49 (0) 123 44 55 66\nE-mail: contact@nuviolabs.de",
+            "vatTitle": "Btw-nummer",
+            "vat": "Btw-identificatienummer volgens § 27 a Umsatzsteuergesetz:\nDE999999999",
+            "disputeTitle": "EU Geschillenbeslechting",
+            "dispute": "De Europese Commissie biedt een platform voor online geschillenbeslechting (OS): https://ec.europa.eu/consumers/odr/.\nOnze e-mail is te vinden in de colofon."
+        },
+        "privacy": {
+            "title": "Privacybeleid",
+            "intro": "Wij nemen de bescherming van uw persoonlijke gegevens zeer serieus. Wij behandelen uw persoonlijke gegevens vertrouwelijk en in overeenstemming met de wettelijke voorschriften inzake gegevensbescherming en dit privacybeleid.",
+            "hostingTitle": "1. Hosting",
+            "hosting": "Deze website wordt gehost door Vercel. De provider is Vercel Inc., 340 S Lemon Ave #4133, Walnut, CA 91789, VS.",
+            "contactFormTitle": "2. Contactformulier",
+            "contactForm": "Als u ons via het contactformulier aanvragen stuurt, worden uw gegevens uit het aanvraagformulier, inclusief de contactgegevens die u daar hebt opgegeven, via Resend verwerkt en opgeslagen voor het verwerken van de aanvraag en in het geval van vervolgvragen. We delen deze gegevens niet zonder uw toestemming."
+        }
+    },
     "faq": {
         "sectionTitle": "Veelgestelde vragen",
         "sectionSubtitle": "Helderheid vanaf het begin.",
