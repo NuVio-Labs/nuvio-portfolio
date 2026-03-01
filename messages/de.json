@@ -176,7 +176,17 @@
             "hostingTitle": "1. Hosting",
             "hosting": "Unsere Website wird bei Vercel Inc., 340 S Lemon Ave #4133, Walnut, CA 91789, USA, gehostet.\nPersonenbezogene Daten, die auf dieser Website erfasst werden, werden auf den Servern von Vercel verarbeitet.\n\nDie Datenübermittlung in die USA erfolgt auf Grundlage der EU-Standardvertragsklauseln gemäß Art. 46 DSGVO.\n\nWeitere Informationen zum Datenschutz bei Vercel finden Sie unter:\nhttps://vercel.com/legal/privacy-policy",
             "contactFormTitle": "2. Kontaktformular",
-            "contactForm": "Wenn Sie uns per Kontaktformular Anfragen zukommen lassen, werden Ihre Angaben aus dem Anfrageformular inklusive der von Ihnen dort angegebenen Kontaktdaten zwecks Bearbeitung der Anfrage und für den Fall von Anschlussfragen bei uns über Resend verarbeitet und gespeichert. Diese Daten geben wir nicht ohne Ihre Einwilligung weiter."
+            "contactForm": "Wenn Sie uns per Kontaktformular Anfragen zukommen lassen, werden Ihre Angaben aus dem Anfrageformular inklusive der von Ihnen dort angegebenen Kontaktdaten zwecks Bearbeitung der Anfrage und für den Fall von Anschlussfragen bei uns über Resend verarbeitet und gespeichert. Diese Daten geben wir nicht ohne Ihre Einwilligung weiter.",
+            "responsibleTitle": "3. Verantwortliche Stelle",
+            "responsible": "Verantwortlich für die Datenverarbeitung auf dieser Website ist:\n\nAxel Schurer\nNuVioLabs\nNimwegerstraße 3\n47559 Kranenburg\nDeutschland\n\nE-Mail: contact@nuviolabs.de",
+            "sslTitle": "4. SSL- / TLS-Verschlüsselung",
+            "ssl": "Diese Seite nutzt aus Sicherheitsgründen und zum Schutz der Übertragung vertraulicher Inhalte, wie zum Beispiel der Anfragen, die Sie an uns senden, eine SSL- bzw. TLS-Verschlüsselung.",
+            "logfilesTitle": "5. Server-Log-Dateien",
+            "logfiles": "Der Provider der Seiten erfasst und speichert automatisch Informationen in so genannten Server-Log-Dateien, die Ihr Browser automatisch an uns übermittelt (z.B. Browsertyp/-version, Betriebssystem, Referrer URL, Hostname des zugreifenden Rechners, Uhrzeit, IP-Adresse). Eine Zusammenführung dieser Daten mit anderen Datenquellen wird nicht vorgenommen.\nDie Erfassung dieser Daten erfolgt auf Grundlage von Art. 6 Abs. 1 lit. f DSGVO.",
+            "rightsTitle": "6. Betroffenenrechte (Art. 15–21 DSGVO)",
+            "rights": "Sie haben das Recht auf unentgeltliche Auskunft über Ihre gespeicherten personenbezogenen Daten, deren Herkunft/Empfänger und Zweck der Verarbeitung, sowie ein Recht auf Berichtigung, Sperrung oder Löschung dieser Daten. Hierzu sowie zu weiteren Fragen können Sie sich jederzeit an uns wenden.",
+            "complaintTitle": "7. Beschwerderecht bei der Aufsichtsbehörde",
+            "complaint": "Im Falle von Verstößen gegen die DSGVO steht den Betroffenen ein Beschwerderecht bei einer zuständigen Aufsichtsbehörde zu. Das Beschwerderecht besteht unbeschadet anderweitiger Rechtsbehelfe."
         }
     },
     "faq": {

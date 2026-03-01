@@ -6,6 +6,16 @@ export default function PrivacyPage({ params: { locale } }: { params: { locale: 
     setRequestLocale(locale)
     const t = useTranslations("legal.privacy")
 
+    const sections = [
+        { title: "hostingTitle", content: "hosting" },
+        { title: "contactFormTitle", content: "contactForm" },
+        { title: "responsibleTitle", content: "responsible" },
+        { title: "sslTitle", content: "ssl" },
+        { title: "logfilesTitle", content: "logfiles" },
+        { title: "rightsTitle", content: "rights" },
+        { title: "complaintTitle", content: "complaint" }
+    ]
+
     return (
         <div className="flex flex-col min-h-screen">
             <main className="flex-1">
@@ -13,21 +23,18 @@ export default function PrivacyPage({ params: { locale } }: { params: { locale: 
                     <Container className="max-w-3xl">
                         <div className="mb-16">
                             <h1 className="mb-6 text-4xl font-extrabold tracking-tight lg:text-5xl">{t("title")}</h1>
-                            <p className="text-lg text-muted-foreground leading-relaxed">
+                            <p className="text-lg text-muted-foreground leading-relaxed whitespace-pre-line">
                                 {t("intro")}
                             </p>
                         </div>
 
                         <div className="prose prose-neutral dark:prose-invert prose-lg max-w-none">
-                            <div className="mb-12">
-                                <h2 className="text-xl font-bold mb-4">{t("hostingTitle")}</h2>
-                                <p className="text-muted-foreground">{t("hosting")}</p>
-                            </div>
-
-                            <div className="mb-12">
-                                <h2 className="text-xl font-bold mb-4">{t("contactFormTitle")}</h2>
-                                <p className="text-muted-foreground">{t("contactForm")}</p>
-                            </div>
+                            {sections.map((section) => (
+                                <div key={section.title} className="mb-12">
+                                    <h2 className="text-xl font-bold mb-4">{t(section.title)}</h2>
+                                    <p className="whitespace-pre-line text-muted-foreground block">{t(section.content)}</p>
+                                </div>
+                            ))}
                         </div>
                     </Container>
                 </section>

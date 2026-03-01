@@ -176,7 +176,17 @@
             "hostingTitle": "1. Hosting",
             "hosting": "Our website is hosted by Vercel Inc., 340 S Lemon Ave #4133, Walnut, CA 91789, USA.\nPersonal data collected on this website is processed on Vercel's servers.\n\nData transfer to the US is based on the EU Standard Contractual Clauses in accordance with Art. 46 GDPR.\n\nFurther information on data protection at Vercel can be found at:\nhttps://vercel.com/legal/privacy-policy",
             "contactFormTitle": "2. Contact Form",
-            "contactForm": "If you send us inquiries via the contact form, your details from the inquiry form, including the contact details you provided there, will be processed and stored via Resend for the purpose of processing the inquiry and in case of follow-up questions. We do not share this data without your consent."
+            "contactForm": "If you send us inquiries via the contact form, your details from the inquiry form, including the contact details you provided there, will be processed and stored via Resend for the purpose of processing the inquiry and in case of follow-up questions. We do not share this data without your consent.",
+            "responsibleTitle": "3. Responsible Entity",
+            "responsible": "The entity responsible for data processing on this website is:\n\nAxel Schurer\nNuVioLabs\nNimwegerstraße 3\n47559 Kranenburg\nGermany\n\nEmail: contact@nuviolabs.de",
+            "sslTitle": "4. SSL/TLS Encryption",
+            "ssl": "For security reasons and to protect the transmission of confidential content, such as inquiries you send to us, this site uses SSL or TLS encryption.",
+            "logfilesTitle": "5. Server Log Files",
+            "logfiles": "The provider of the pages automatically collects and stores information in server log files (e.g. browser type/version, OS, referrer URL, host name, time, IP address). These data are not combined with other data sources.\nThe basis for data processing is Art. 6 (1) (f) GDPR.",
+            "rightsTitle": "6. Data Subject Rights (Art. 15–21 GDPR)",
+            "rights": "You have the right at any time to free information about your stored personal data, its origin and recipient and the purpose of data processing, and a right to correction, blocking or deletion of this data. For questions you can contact us at any time.",
+            "complaintTitle": "7. Right of Appeal to the Supervisory Authority",
+            "complaint": "In the event of violations of the GDPR, data subjects have the right to lodge a complaint with a supervisory authority."
         }
     },
     "faq": {

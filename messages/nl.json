@@ -176,7 +176,17 @@
             "hostingTitle": "1. Hosting",
             "hosting": "Onze website wordt gehost door Vercel Inc., 340 S Lemon Ave #4133, Walnut, CA 91789, VS.\nPersoonsgegevens die op deze website worden verzameld, worden verwerkt op de servers van Vercel.\n\nDe overdracht van gegevens naar de VS is gebaseerd op de EU-modelcontractbepalingen in overeenstemming met Art. 46 AVG.\n\nMeer informatie over gegevensbescherming bij Vercel vindt u op:\nhttps://vercel.com/legal/privacy-policy",
             "contactFormTitle": "2. Contactformulier",
-            "contactForm": "Als u ons via het contactformulier aanvragen stuurt, worden uw gegevens uit het aanvraagformulier, inclusief de contactgegevens die u daar hebt opgegeven, via Resend verwerkt en opgeslagen voor het verwerken van de aanvraag en in het geval van vervolgvragen. We delen deze gegevens niet zonder uw toestemming."
+            "contactForm": "Als u ons via het contactformulier aanvragen stuurt, worden uw gegevens uit het aanvraagformulier via Resend verwerkt. We delen deze gegevens niet zonder uw toestemming.",
+            "responsibleTitle": "3. Verantwoordelijke Instantie",
+            "responsible": "De verantwoordelijke voor de gegevensverwerking op deze website is:\n\nAxel Schurer\nNuVioLabs\nNimwegerstraße 3\n47559 Kranenburg\nDuitsland\n\nE-mail: contact@nuviolabs.de",
+            "sslTitle": "4. SSL/TLS-versleuteling",
+            "ssl": "Om veiligheidsredenen en ter bescherming van vertrouwelijke inhoud maakt deze site gebruik van een SSL- of TLS-versleuteling.",
+            "logfilesTitle": "5. Serverlogbestanden",
+            "logfiles": "De provider verzamelt automatisch serverlogbestanden (browsertype, OS, referrer URL, IP-adres enz.). De basis voor gegevensverwerking is Art. 6 (1) (f) AVG.",
+            "rightsTitle": "6. Rechten van betrokkenen (Art. 15–21 AVG)",
+            "rights": "U heeft te allen tijde recht op gratis informatie over uw opgeslagen gegevens, de herkomst, de ontvanger en het doel. U heeft recht op correctie of verwijdering.",
+            "complaintTitle": "7. Recht op klacht bij de toezichthouder",
+            "complaint": "In geval van schendingen van de AVG heeft u het recht een klacht in te dienen bij een toezichthoudende autoriteit."
         }
     },
     "faq": {

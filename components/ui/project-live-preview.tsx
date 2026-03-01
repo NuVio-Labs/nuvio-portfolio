@@ -34,22 +34,6 @@ export function ProjectLivePreview({ url, title, previewImage }: ProjectLivePrev
     }, [])
 
     useEffect(() => {
-        const el = containerRef.current
-        if (!el) return
-        const observer = new IntersectionObserver(
-            ([entry]) => {
-                if (entry.isIntersecting && iframeState === "idle") {
-                    setIframeState("loading")
-                    observer.disconnect()
-                }
-            },
-            { rootMargin: "200px" }
-        )
-        observer.observe(el)
-        return () => observer.disconnect()
-    }, [iframeState])
-
-    useEffect(() => {
         if (iframeState === "loading") {
             timeoutRef.current = setTimeout(() => {
                 setIframeState((prev) => (prev === "loading" ? "fallback" : prev))
@@ -59,6 +43,10 @@ export function ProjectLivePreview({ url, title, previewImage }: ProjectLivePrev
             if (timeoutRef.current) clearTimeout(timeoutRef.current)
         }
     }, [iframeState])
+
+    const handleLoadClick = () => {
+        setIframeState("loading")
+    }
 
     const handleIframeLoad = useCallback(() => {
         if (timeoutRef.current) clearTimeout(timeoutRef.current)
@@ -91,14 +79,46 @@ export function ProjectLivePreview({ url, title, previewImage }: ProjectLivePrev
                         </div>
                     </div>
                     <div className="relative overflow-hidden" style={{ height: scaledHeight > 0 ? `${scaledHeight}px` : "auto" }}>
-                        {(iframeState === "idle" || iframeState === "loading") && (
-                            <div className="absolute inset-0 flex items-center justify-center bg-muted/40 z-10">
+
+                        {/* Always show image as base layer until iframe is fully loaded to prevent blank flashes */}
+                        {iframeState !== "loaded" && (
+                            <div className="absolute inset-0 z-0">
+                                <Image
+                                    src={previewImage}
+                                    alt={t("previewAlt", { title })}
+                                    fill
+                                    className="object-cover object-top"
+                                    sizes="(min-width: 768px) 50vw, 100vw"
+                                />
+                            </div>
+                        )}
+
+                        {/* GDPR Overlay - Idle State */}
+                        {iframeState === "idle" && (
+                            <div className="absolute inset-0 z-10 flex flex-col items-center justify-center bg-background/60 backdrop-blur-md p-6 text-center">
+                                <div className="max-w-md space-y-4">
+                                    <p className="text-sm text-foreground font-medium">
+                                        Beim Laden der Live-Vorschau wird eine Verbindung zu externen Servern hergestellt. Dabei kann Ihre IP-Adresse übertragen werden.
+                                    </p>
+                                    <button
+                                        onClick={handleLoadClick}
+                                        className="inline-flex items-center justify-center h-10 px-6 mt-2 rounded-full bg-primary text-primary-foreground text-sm font-medium hover:bg-primary/90 transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring"
+                                    >
+                                        Live-Vorschau laden
+                                    </button>
+                                </div>
+                            </div>
+                        )}
+
+                        {iframeState === "loading" && (
+                            <div className="absolute inset-0 flex items-center justify-center bg-background/80 backdrop-blur-sm z-10">
                                 <div className="flex flex-col items-center gap-3">
-                                    <div className="h-6 w-6 animate-spin rounded-full border-2 border-muted-foreground/20 border-t-muted-foreground" />
+                                    <div className="h-6 w-6 animate-spin rounded-full border-2 border-primary/30 border-t-primary" />
                                     <span className="text-xs text-muted-foreground">{t("previewLoading")}</span>
                                 </div>
                             </div>
                         )}
+
                         {(iframeState === "loading" || iframeState === "loaded") && scale > 0 && (
                             <iframe
                                 src={url}
@@ -108,27 +128,19 @@ export function ProjectLivePreview({ url, title, previewImage }: ProjectLivePrev
                                     height: `${CANVAS_H}px`,
                                     transform: `scale(${scale})`,
                                     transformOrigin: "top left",
+                                    position: "relative",
+                                    zIndex: 20
                                 }}
                                 className={cn(
-                                    "border-0 pointer-events-none transition-opacity duration-500",
+                                    "border-0 pointer-events-auto transition-opacity duration-700",
                                     iframeState === "loaded" ? "opacity-100" : "opacity-0"
                                 )}
-                                sandbox="allow-scripts allow-same-origin"
+                                sandbox="allow-scripts allow-same-origin allow-forms allow-popups"
                                 loading="lazy"
+                                referrerPolicy="no-referrer"
                                 onLoad={handleIframeLoad}
                                 onError={handleIframeError}
                             />
-                        )}
-                        {iframeState === "fallback" && (
-                            <div className="relative" style={{ height: scaledHeight > 0 ? `${scaledHeight}px` : "400px" }}>
-                                <Image
-                                    src={previewImage}
-                                    alt={t("previewAlt", { title })}
-                                    fill
-                                    className="object-cover object-top"
-                                    sizes="(min-width: 768px) 50vw, 100vw"
-                                />
-                            </div>
                         )}
                     </div>
                 </div>
