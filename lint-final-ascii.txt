@@ -1,0 +1,17 @@
+
+S:\WebDev\Antigravity Test\portfolio-2026\components\layout\language-switcher.tsx
+  26:13  error  Error: This value cannot be modified
+
+Modifying a variable defined outside a component or hook is not allowed. Consider using an effect.
+
+S:\WebDev\Antigravity Test\portfolio-2026\components\layout\language-switcher.tsx:26:13
+  24 |         // Set cookie for locale persistence
+  25 |         if (typeof document !== "undefined") {
+> 26 |             document.cookie = `NEXT_LOCALE=${newLocale};path=/;max-age=31536000;SameSite=Lax`
+     |             ^^^^^^^^ value cannot be modified
+  27 |         }
+  28 |
+  29 |         router.push(newPath)  react-hooks/immutability
+
+??? 1 problem (1 error, 0 warnings)
+

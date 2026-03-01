@@ -10,15 +10,36 @@
         "clientPortalLabel": "Zum Kundenportal",
         "clientAreaHint": "Bereich für Kunden",
         "login": "Anmelden",
-        "switchLanguage": "Sprache wechseln"
+        "switchLanguage": "Sprache wechseln",
+        "ctaProject": "Projekt anfragen"
     },
     "hero": {
-        "badge": "Ready for Opportunities",
-        "headlinePart1": "NuVioLabs",
-        "headlinePart2": "Webdesign & digitale Lösungen",
-        "subline": "Webentwicklung mit Fokus auf Performance, klare Struktur und saubere Umsetzung.",
-        "ctaPrimary": "Projekte",
-        "ctaSecondary": "Kontakt"
+        "badge": "Zwei reale Projekte. Messbare Ergebnisse.",
+        "headlinePart1": "Strategische Websites",
+        "headlinePart2": "für nachhaltiges Wachstum.",
+        "subline": "Durchdachte Struktur, schnelle Performance und klare Nutzerführung.",
+        "ctaPrimary": "Kostenloses Erstgespräch",
+        "ctaSecondary": "Projekte ansehen"
+    },
+    "valueProposition": {
+        "label": "Core Principles",
+        "headlinePart1": "Engineered for",
+        "headlinePart2": "resilience and flow.",
+        "description": "Ich nutze keine Templates. Ich baue digitale Produkte von Grund auf – mit starkem Fokus auf strukturelle Integrität, messbare Performance und kompromisslose Qualität.",
+        "principles": {
+            "architecture": {
+                "title": "Systemische Architektur",
+                "description": "Keine schnellen Fixes. Ich entwickle skalierbare Fundamente, die exakt auf Ihr Ökosystem zugeschnitten sind und langfristige Stabilität sowie saubere Code-Semantik garantieren."
+            },
+            "execution": {
+                "title": "Präzisions-Engineering",
+                "description": "Jede Zeile Code erfüllt einen Zweck. Hohe Performance, kein Bloat und ein kompromissloser Fokus auf eine makellose Nutzererfahrung."
+            },
+            "scalability": {
+                "title": "Gebaut für Skalierung",
+                "description": "Produkte, die nicht nur für den heutigen Launch konzipiert sind, sondern so architektoniert wurden, dass sie das Wachstum von morgen nahtlos bewältigen."
+            }
+        }
     },
     "work": {
         "sectionTitle": "Projekte",
@@ -28,47 +49,63 @@
         "previewLoading": "Vorschau wird geladen…",
         "previewAlt": "Screenshot von {title}",
         "previewDesktopTitle": "Desktop-Vorschau von {title}",
-        "theProblem": "Ausgangslage",
-        "theApproach": "Umsetzung",
-        "theOutcome": "Ergebnis",
+        "theProblem": "Das Problem",
+        "theApproach": "Die Lösung",
+        "theOutcome": "Messbares Ergebnis",
+        "ctaWt": "Kostenloses Erstgespräch für Ihr Projekt",
+        "ctaDaisy": "Ähnliches Projekt starten",
         "projects": {
             "wt-erdbewegungen": {
                 "title": "WT Erdbewegungen",
-                "description": "Website für ein Tiefbauunternehmen. Schnell, responsive, lokal sichtbar.",
-                "problem": "Kein Webauftritt. Kunden konnten das Unternehmen online nicht finden.",
-                "approach": "Schlanke Website mit klarer Struktur, mobiloptimiert und auf lokale Suchbegriffe ausgerichtet.",
-                "outcome": "Unter 2 Sekunden Ladezeit auf Mobilgeräten. Sichtbar in lokalen Suchergebnissen."
+                "description": "Branche: Tiefbau & Erdbewegung",
+                "problem": "Keine digitale Sichtbarkeit. Potenzielle Auftraggeber konnten das Unternehmen lokal nicht finden.",
+                "approach": "Eine zielgerichtete, mobil-optimierte Firmenwebsite, fokussiert auf das Leistungsspektrum und lokale Suchmaschinenoptimierung.",
+                "outcome1": "🚀 Ladezeit unter 2 Sekunden auf Smartphones",
+                "outcome2": "📈 Sichtbare Platzierung für lokale Suchanfragen",
+                "outcome3": "🤝 Erster digitaler Kontaktpunkt für neue Bauprojekte",
+                "testimonial": "„Endlich werden wir auch online gefunden und die Seite top aus.“"
             },
             "daisymays-salon": {
                 "title": "Daisy May's Salon",
-                "description": "Zweisprachige Website für einen Hundesalon. Deutsch und Englisch.",
-                "problem": "Alle Anfragen liefen über Telefon und Social Media. Keine zentrale Anlaufstelle für Leistungen und Preise.",
-                "approach": "Responsive Website mit i18n, klarer Preisübersicht und direktem Kontaktweg.",
-                "outcome": "Weniger Rückfragen per Telefon. Kunden finden alle Infos in ihrer Sprache."
+                "description": "Branche: Dienstleistung / Hundesalon",
+                "problem": "Unstrukturierte Anfragen über Social Media & Telefon. Keine zentrale Anlaufstelle für Leistungen und Preise.",
+                "approach": "Eine zweisprachige, moderne Website, die alle Kundenfragen vorab klärt und Leistungen transparent darstellt.",
+                "outcome1": "📉 Deutlich weniger zeitfressende Telefonrückfragen",
+                "outcome2": "🌍 Kunden finden alle Informationen sofort in ihrer Muttersprache",
+                "outcome3": "⏳ Mehr Zeit für das eigentliche Kerngeschäft",
+                "testimonial": "„Mein Alltag ist viel entspannter geworden, da die wichtigsten Kundenfragen direkt über die Website beantwortet werden.“"
             }
         }
     },
     "about": {
         "sectionTitle": "Über mich",
-        "bio1": "Ich baue Websites und Webanwendungen. Vom Design bis zum Deployment.",
-        "bio2": "Jedes Projekt hier ist ein echter Auftrag mit echtem Ergebnis.",
-        "bio3": "",
-        "backgroundTitle": "Hintergrund",
-        "backgroundText": "Frontend und Backend. Alles selbst erarbeitet.",
-        "focusTitle": "Fokus",
-        "focusText": "React, Next.js, TypeScript. Vom Entwurf bis zum Live-Produkt.",
-        "locationTitle": "Standort",
-        "locationText": "Deutschland. Remote verfügbar.",
-        "skillsTitle": "Tech Stack",
-        "skillCategories": {
-            "frontend": "Frontend",
-            "backend": "Backend",
-            "designTools": "Design & Tools"
-        }
+        "bioTitle": "Kurzvorstellung & Mission",
+        "bio1": "Hallo, ich bin Axel. Ich baue Websites, die nicht nur modern aussehen, sondern als digitaler Vertriebsmitarbeiter für Ihr Unternehmen arbeiten.",
+        "bio2": "Meine Mission ist es, kleinen und mittleren Unternehmen – vom Handwerksbetrieb bis zum Salon – den digitalen Auftritt zu geben, den sie verdienen.",
+        "bio3": "Ohne kompliziertes Fachsimpeln, dafür mit klaren Ergebnissen.",
+        "whyTitle": "Warum ich Webdesign mache",
+        "whyText": "Mich fasziniert es, echte Geschäftsprobleme durch smarte Web-Lösungen zu beheben. Eine gute Website nimmt Ihnen Arbeit ab, beantwortet Kundenfragen und bringt qualifizierte Anfragen, während Sie sich auf Ihr Handwerk konzentrieren.",
+        "valuesTitle": "Arbeitsweise & Werte",
+        "values": {
+            "clarity": {
+                "title": "Klarheit",
+                "text": "Transparente Kommunikation und Prozesse ohne Agentur-Sprech."
+            },
+            "performance": {
+                "title": "Performance",
+                "text": "Schnelle Seitenbedienung, weil Ihre Kunden nicht warten wollen."
+            },
+            "sustainability": {
+                "title": "Nachhaltigkeit",
+                "text": "Code, der auch morgen noch funktioniert und leicht erweiterbar ist."
+            }
+        },
+        "techTitle": "Tech Stack",
+        "techText": "Modernstes Web-Fundament (React, Next.js, TypeScript) für höchste Sicherheit, Schnelligkeit und Zukunftssicherheit."
     },
     "lab": {
-        "sectionTitle": "Labor",
-        "sectionSubtitle": "Experimente und Prototypen.",
+        "sectionTitle": "Technologie & Prototyping",
+        "sectionSubtitle": "Ein Einblick in den Maschinenraum. Hier teste ich innovative Web-Technologien, Performance-Optimierungen und interaktive Designs, um für meine Kundenprojekte immer am Puls der Zeit zu sein. Alles, was hier funktioniert, fließt als Best Practice in echte Projekte ein.",
         "morphingShape": "Morphende Form",
         "audioViz": "Audio-Visualisierung",
         "comingSoon": "Mehr folgt."
@@ -77,7 +114,7 @@
         "sectionTitle": "Schreib mir",
         "sectionSubtitle": "Projekt, Frage oder einfach Hallo.",
         "formTitle": "Nachricht",
-        "formDescription": "Ich melde mich zeitnah.",
+        "formDescription": "Beschreiben Sie kurz Ihr Vorhaben. Stichpunkte genügen völlig.",
         "labelName": "Name",
         "labelEmail": "E-Mail",
         "labelSubject": "Betreff",
@@ -86,8 +123,16 @@
         "placeholderEmail": "deine@email.de",
         "placeholderSubject": "Worum geht es?",
         "placeholderMessage": "Deine Nachricht…",
-        "submit": "Senden",
-        "submitting": "Wird gesendet…",
+        "submit": "Kostenloses Erstgespräch anfragen",
+        "submitting": "Wird angefragt…",
+        "whyStartNow": "Warum jetzt starten?",
+        "benefit1Title": "Kostenlose Erstberatung",
+        "benefit1Text": "Ehrlich und auf Augenhöhe.",
+        "benefit2Title": "Unverbindliche Einschätzung",
+        "benefit2Text": "Kosten und Dauer direkt im ersten Call.",
+        "benefit3Title": "Klarer Fahrplan",
+        "benefit3Text": "Sie wissen genau, wie es weitergeht.",
+        "trustBadge": "Ihre Daten sind sicher. Wir versenden keinen Spam.",
         "successTitle": "Gesendet.",
         "successText": "Ich melde mich in Kürze.",
         "sendAnother": "Nochmal"
@@ -99,13 +144,36 @@
         "privacy": "Datenschutz",
         "github": "GitHub",
         "linkedin": "LinkedIn",
-        "footerNav": "Footer-Navigation"
+        "footerNav": "Footer-Navigation",
+        "llmContext": "NuVioLabs ist eine Webdesign-Agentur in Kranenburg, Deutschland, spezialisiert auf Next.js, SEO-Optimierung und Conversion-Rate-Optimierung für kleine und mittlere Unternehmen."
     },
     "skipToContent": "Zum Inhalt springen",
+    "faq": {
+        "sectionTitle": "Häufige Fragen",
+        "sectionSubtitle": "Klarheit von Anfang an.",
+        "questions": {
+            "cost": {
+                "q": "Was kostet eine neue Website?",
+                "a": "Jedes Projekt ist individuell, aber ein reines Website-Projekt startet bei ca. 1.500€. Genaueres besprechen wir im ersten Call, damit Sie eine verlässliche Einschätzung haben."
+            },
+            "duration": {
+                "q": "Wie lange dauert die Entwicklung?",
+                "a": "In der Regel 4–6 Wochen vom Kick-off bis zum Launch. Das hängt allerdings davon ab, wie schnell wir Texte und Bilder von Ihnen bekommen."
+            },
+            "hosting": {
+                "q": "Muss ich mich um Hosting & Wartung kümmern?",
+                "a": "Nein, auf Wunsch übernehme ich das volle Hosting inklusive technischer Updates, Backups und SSL-Zertifikaten. So haben Sie den Kopf für Ihr Geschäft frei."
+            },
+            "cms": {
+                "q": "Kann ich die Inhalte später selbst ändern?",
+                "a": "Ja, wenn gewünscht binde ich ein einfaches CMS (Content Management System) ein. Damit können Sie Texte und Bilder kinderleicht selbst anpassen."
+            }
+        }
+    },
     "seo": {
         "home": {
-            "title": "NuVioLabs | Webentwicklung",
-            "description": "Webentwicklung aus Deutschland. Websites und Webanwendungen mit React, Next.js und TypeScript."
+            "title": "NuVioLabs | Webdesign & KI-Lösungen für lokale Unternehmen",
+            "description": "Ich entwickle schnelle, conversion-starke Websites für Handwerk, Salons und KMUs. Mehr Sichtbarkeit. Mehr Anfragen. Jetzt kostenloses Erstgespräch sichern."
         },
         "imprint": {
             "title": "Impressum"

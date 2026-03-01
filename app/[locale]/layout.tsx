@@ -7,7 +7,6 @@ import { ThemeProvider } from "@/components/theme-provider";
 import { Navbar } from "@/components/layout/navbar";
 import { Footer } from "@/components/layout/footer";
 import { AuthProvider } from "@/lib/auth";
-import { DebugPanel } from "@/components/saas/DebugPanel";
 
 /* ─── Production SEO Metadata ───────────────────────── */
 const SITE_URL = "https://www.nuviolabs.de";
@@ -101,7 +100,7 @@ export default async function LocaleLayout({
     const { locale } = await params;
 
     // Validate locale
-    if (!routing.locales.includes(locale as any)) {
+    if (!routing.locales.includes(locale as typeof routing.locales[number])) {
         notFound();
     }
 
@@ -138,7 +137,6 @@ export default async function LocaleLayout({
                             </main>
                             <Footer />
                         </div>
-                        <DebugPanel />
                     </ThemeProvider>
                 </AuthProvider>
             </NextIntlClientProvider>

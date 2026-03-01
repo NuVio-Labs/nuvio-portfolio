@@ -10,15 +10,36 @@
         "clientPortalLabel": "Naar het klantenportaal",
         "clientAreaHint": "Privégedeelte voor klanten",
         "login": "Inloggen",
-        "switchLanguage": "Taal wijzigen"
+        "switchLanguage": "Taal wijzigen",
+        "ctaProject": "Project Aanvragen"
     },
     "hero": {
-        "badge": "Ready for Opportunities",
-        "headlinePart1": "NuVioLabs",
-        "headlinePart2": "Webdesign & digitale oplossingen",
-        "subline": "Webdevelopment met focus op snelheid, heldere code en werkende producten.",
-        "ctaPrimary": "Werk",
-        "ctaSecondary": "Contact"
+        "badge": "Twee echte projecten. Meetbare resultaten.",
+        "headlinePart1": "Strategische Websites",
+        "headlinePart2": "voor duurzame groei.",
+        "subline": "Doordachte structuur, snelle prestaties en duidelijke gebruikersbegeleiding.",
+        "ctaPrimary": "Gratis Adviesgesprek",
+        "ctaSecondary": "Bekijk Projecten"
+    },
+    "valueProposition": {
+        "label": "Core Principles",
+        "headlinePart1": "Engineered for",
+        "headlinePart2": "resilience and flow.",
+        "description": "Ik gebruik geen templates. Ik bouw digitale producten vanaf de basis – met een sterke focus op structurele integriteit, meetbare prestaties en compromisloze kwaliteit.",
+        "principles": {
+            "architecture": {
+                "title": "Systeemarchitectuur",
+                "description": "Geen snelle oplossingen. Ik ontwikkel schaalbare fundamenten die precies zijn afgestemd op uw ecosysteem, wat langdurige stabiliteit en schone code-semantiek garandeert."
+            },
+            "execution": {
+                "title": "Precisie-engineering",
+                "description": "Elke regel code heeft een doel. Hoge prestaties, geen overbodige code (bloat) en een compromisloze focus op een vlekkeloze gebruikerservaring."
+            },
+            "scalability": {
+                "title": "Gebouwd voor schaalbaarheid",
+                "description": "Producten die niet alleen zijn ontworpen voor de lancering van vandaag, maar die zo zijn gebouwd dat ze de groei van morgen naadloos aankunnen."
+            }
+        }
     },
     "work": {
         "sectionTitle": "Werk",
@@ -28,47 +49,63 @@
         "previewLoading": "Voorbeeld laden…",
         "previewAlt": "Screenshot van {title}",
         "previewDesktopTitle": "Live desktop voorbeeld van {title}",
-        "theProblem": "Uitgangspunt",
-        "theApproach": "Uitvoering",
-        "theOutcome": "Resultaat",
+        "theProblem": "Het Probleem",
+        "theApproach": "De Oplossing",
+        "theOutcome": "Meetbaar Resultaat",
+        "ctaWt": "Gratis adviesgesprek voor uw project",
+        "ctaDaisy": "Start een vergelijkbaar project",
         "projects": {
             "wt-erdbewegungen": {
                 "title": "WT Erdbewegungen",
-                "description": "Website voor een grondverzetbedrijf. Snel, responsive, lokaal vindbaar.",
-                "problem": "Geen website. Klanten konden het bedrijf online niet vinden.",
-                "approach": "Strakke, mobiele site met sterke lokale SEO en korte laadtijden.",
-                "outcome": "Minder dan 2 seconden laadtijd op mobiel. Vindbaar op lokale zoektermen."
+                "description": "Branche: Grondverzetdiensten",
+                "problem": "Geen digitale zichtbaarheid. Potentiële klanten konden het bedrijf lokaal niet vinden.",
+                "approach": "Een doelgerichte, mobiel-geoptimaliseerde bedrijfswebsite gericht op diensten en lokale SEO.",
+                "outcome1": "🚀 Laadtijd van minder dan 2 seconden op smartphones",
+                "outcome2": "📈 Zichtbare ranking voor lokale zoekopdrachten",
+                "outcome3": "🤝 Eerste digitale contactpunt voor nieuwe bouwprojecten",
+                "testimonial": "„Eindelijk worden we online gevonden – en de site ziet er op elke telefoon top uit.“"
             },
             "daisymays-salon": {
                 "title": "Daisy May's Salon",
-                "description": "Tweetalige website voor een trimsalon. Duits en Engels.",
-                "problem": "Alle vragen liepen via telefoon en social media. Geen centrale plek voor diensten en prijzen.",
-                "approach": "Responsive site met i18n, duidelijke prijzen en directe contactmogelijkheden.",
-                "outcome": "Minder herhaalde telefoontjes. Klanten vinden alles in hun eigen taal."
+                "description": "Branche: Dienstverlening / Hondensalon",
+                "problem": "Ongestructureerde aanvragen via social media en telefoon. Geen centraal punt voor diensten en prijzen.",
+                "approach": "Een meertalige, moderne website die alle klantvragen vooraf beantwoordt en diensten transparant weergeeft.",
+                "outcome1": "📉 Duidelijk minder tijdrovende telefoontjes",
+                "outcome2": "🌍 Klanten vinden alle informatie direct in hun moedertaal",
+                "outcome3": "⏳ Meer tijd voor de daadwerkelijke corebusiness",
+                "testimonial": "„Onze dagelijkse routine is veel meer ontspannen geworden, omdat de belangrijkste klantvragen direct via de website worden beantwoord.“"
             }
         }
     },
     "about": {
         "sectionTitle": "Over mij",
-        "bio1": "Ik bouw websites en webapplicaties. Van ontwerp tot oplevering.",
-        "bio2": "Elk project hier is een echte opdracht met een echt resultaat.",
-        "bio3": "",
-        "backgroundTitle": "Achtergrond",
-        "backgroundText": "Frontend en backend. Vanaf dag één zelf aangeleerd.",
-        "focusTitle": "Focus",
-        "focusText": "React, Next.js, TypeScript. Van concept tot live product.",
-        "locationTitle": "Locatie",
-        "locationText": "Duitsland. Remote beschikbaar.",
-        "skillsTitle": "Tech Stack",
-        "skillCategories": {
-            "frontend": "Frontend",
-            "backend": "Backend",
-            "designTools": "Design & Tools"
-        }
+        "bioTitle": "Introductie & Missie",
+        "bio1": "Hallo, ik ben Axel. Ik bouw websites die er niet alleen modern uitzien, maar ook fungeren als digitaal verkoopkanaal voor uw bedrijf.",
+        "bio2": "Mijn missie is om het mkb – van ambachtsbedrijf tot salon – de digitale uitstraling te geven die ze verdienen.",
+        "bio3": "Zonder ingewikkeld vakjargon, maar met heldere resultaten.",
+        "whyTitle": "Waarom webdesign?",
+        "whyText": "Het oplossen van echte zakelijke problemen met slimme weboplossingen fascineert me. Een goede website neemt werk uit handen, beantwoordt vragen van klanten en levert gekwalificeerde leads op, zodat u zich kunt richten op uw vak.",
+        "valuesTitle": "Werkwijze & Waarden",
+        "values": {
+            "clarity": {
+                "title": "Helderheid",
+                "text": "Transparante communicatie en processen zonder bureau-jargon."
+            },
+            "performance": {
+                "title": "Prestaties",
+                "text": "Razendsnelle laadtijden, omdat uw klanten niet willen wachten."
+            },
+            "sustainability": {
+                "title": "Duurzaamheid",
+                "text": "Code die morgen ook nog werkt en gemakkelijk uit te breiden is."
+            }
+        },
+        "techTitle": "Tech Stack",
+        "techText": "Moderne webfundering (React, Next.js, TypeScript) voor maximale veiligheid, snelheid en toekomstbestendigheid."
     },
     "lab": {
-        "sectionTitle": "Lab",
-        "sectionSubtitle": "Experimenten en prototypes.",
+        "sectionTitle": "Technologie & Prototyping",
+        "sectionSubtitle": "Een kijkje in de machinekamer. Hier test ik innovatieve webtechnologieën, prestatie-optimalisaties en interactieve ontwerpen om voorop te blijven lopen voor mijn klanten. Alles wat hier werkt, wordt een best practice in echte projecten.",
         "morphingShape": "Vormverandering",
         "audioViz": "Audio-visualisatie",
         "comingSoon": "Meer volgt."
@@ -77,7 +114,7 @@
         "sectionTitle": "Stuur een bericht",
         "sectionSubtitle": "Project, vraag, of gewoon hallo.",
         "formTitle": "Bericht",
-        "formDescription": "Ik reageer zo snel mogelijk.",
+        "formDescription": "Beschrijf kort uw project. Opsommingstekens zijn prima.",
         "labelName": "Naam",
         "labelEmail": "E-mail",
         "labelSubject": "Onderwerp",
@@ -86,8 +123,16 @@
         "placeholderEmail": "je@email.nl",
         "placeholderSubject": "Waar gaat het over?",
         "placeholderMessage": "Je bericht…",
-        "submit": "Verstuur",
-        "submitting": "Wordt verstuurd…",
+        "submit": "Gratis Adviesgesprek Aanvragen",
+        "submitting": "Aanvragen…",
+        "whyStartNow": "Waarom nu starten?",
+        "benefit1Title": "Gratis Adviesgesprek",
+        "benefit1Text": "Eerlijk en transparant.",
+        "benefit2Title": "Vrijblijvende Inschatting",
+        "benefit2Text": "Kosten en duur direct besproken.",
+        "benefit3Title": "Helder Stappenplan",
+        "benefit3Text": "U weet precies wat de volgende stappen zijn.",
+        "trustBadge": "Uw gegevens zijn veilig. Wij sturen geen spam.",
         "successTitle": "Verstuurd.",
         "successText": "Ik neem snel contact op.",
         "sendAnother": "Nogmaals"
@@ -99,13 +144,36 @@
         "privacy": "Privacy",
         "github": "GitHub",
         "linkedin": "LinkedIn",
-        "footerNav": "Footernavigatie"
+        "footerNav": "Footernavigatie",
+        "llmContext": "NuVioLabs is een webdesign bureau in Kranenburg, Duitsland, gespecialiseerd in Next.js, SEO-optimalisatie en Conversie-optimalisatie voor het midden- en kleinbedrijf."
     },
     "skipToContent": "Naar inhoud springen",
+    "faq": {
+        "sectionTitle": "Veelgestelde Vragen",
+        "sectionSubtitle": "Helderheid vanaf het begin.",
+        "questions": {
+            "cost": {
+                "q": "Wat kost een nieuwe website?",
+                "a": "Elk project is uniek, maar een basis website-project begint bij ongeveer €1.500. We bespreken de details in ons eerste gesprek om een betrouwbare indicatie te geven."
+            },
+            "duration": {
+                "q": "Hoe lang duurt de ontwikkeling?",
+                "a": "Normaal gesproken 4–6 weken van kick-off tot lancering. Dit hangt echter af van hoe snel we teksten en afbeeldingen van u ontvangen."
+            },
+            "hosting": {
+                "q": "Moet ik zelf hosting & onderhoud regelen?",
+                "a": "Nee, indien gewenst bied ik volledige hosting aan, inclusief technische updates, back-ups en SSL-certificaten. Zo houdt u uw handen vrij voor uw eigen bedrijf."
+            },
+            "cms": {
+                "q": "Kan ik de inhoud later zelf aanpassen?",
+                "a": "Ja, als u wilt voeg ik een eenvoudig CMS (Content Management System) toe. Hiermee kunt u teksten en afbeeldingen heel makkelijk zelf wijzigen."
+            }
+        }
+    },
     "seo": {
         "home": {
-            "title": "NuVioLabs | Webdevelopment",
-            "description": "Webdevelopment uit Duitsland. Websites en webapplicaties gebouwd met React, Next.js en TypeScript."
+            "title": "NuVioLabs | Webdesign & AI Oplossingen voor Lokale Bedrijven",
+            "description": "Ik bouw snelle, converterende websites voor vakmensen, salons en het mkb. Meer zichtbaarheid. Meer aanvragen. Plan nu uw gratis adviesgesprek."
         },
         "imprint": {
             "title": "Impressum"

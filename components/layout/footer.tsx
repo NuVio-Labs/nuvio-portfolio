@@ -6,7 +6,8 @@ export function Footer() {
     const t = useTranslations("footer")
 
     return (
-        <footer className="border-t border-border/40 py-12">
+        <footer className="border-t border-border/40 py-12 relative">
+            <div className="sr-only" aria-hidden="true">{t("llmContext")}</div>
             <Container className="flex flex-col items-center justify-between gap-6 md:flex-row">
                 <div className="flex flex-col items-center gap-1 text-center md:items-start md:text-left">
                     <p className="text-xs text-muted-foreground">

@@ -4,6 +4,8 @@ import { useTranslations } from "next-intl"
 import { Container } from "@/components/layout/container"
 import { ScrollAnimation } from "@/components/ui/scroll-animation"
 import { ProjectLivePreview } from "@/components/ui/project-live-preview"
+import { Link } from "@/i18n/navigation"
+import { Button } from "@/components/ui/button"
 
 const PROJECT_IDS = ["wt-erdbewegungen", "daisymays-salon"] as const
 
@@ -80,18 +82,32 @@ export function Work() {
                                             </div>
                                             <div className="pl-4 border-l-2 border-accent">
                                                 <h4 className="text-sm font-semibold uppercase tracking-wider text-accent mb-2">{t("theOutcome")}</h4>
-                                                <p className="text-foreground font-medium leading-relaxed">
-                                                    {t(`projects.${id}.outcome`)}
-                                                </p>
+                                                <ul className="space-y-3 text-foreground font-medium leading-relaxed">
+                                                    <li>{t(`projects.${id}.outcome1`)}</li>
+                                                    <li>{t(`projects.${id}.outcome2`)}</li>
+                                                    <li>{t(`projects.${id}.outcome3`)}</li>
+                                                </ul>
                                             </div>
+
+                                            <blockquote className="border-l-4 border-primary/50 pl-4 py-1 italic text-muted-foreground mt-8 text-lg bg-secondary/10 rounded-r-lg">
+                                                {t(`projects.${id}.testimonial`)}
+                                            </blockquote>
                                         </div>
 
-                                        <div className="flex flex-wrap gap-2">
-                                            {meta.tags.map(tag => (
-                                                <span key={tag} className="text-sm text-muted-foreground bg-secondary/40 px-3 py-1.5 rounded-md">
-                                                    {tag}
-                                                </span>
-                                            ))}
+                                        <div className="flex flex-col gap-6">
+                                            <div className="flex flex-wrap gap-2">
+                                                {meta.tags.map(tag => (
+                                                    <span key={tag} className="text-sm font-medium bg-secondary text-secondary-foreground px-3 py-1.5 rounded-md">
+                                                        {tag}
+                                                    </span>
+                                                ))}
+                                            </div>
+
+                                            <Link href="#contact" className="w-fit mt-2">
+                                                <Button size="lg" className="rounded-full flex items-center gap-2 shadow-md">
+                                                    {t(id === "wt-erdbewegungen" ? "ctaWt" : "ctaDaisy")}
+                                                </Button>
+                                            </Link>
                                         </div>
                                     </div>
                                 </div>

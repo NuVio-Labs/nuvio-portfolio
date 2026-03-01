@@ -1,0 +1,93 @@
+
+S:\WebDev\Antigravity Test\portfolio-2026\components\layout\language-switcher.tsx
+  25:9  error  Error: This value cannot be modified
+
+Modifying a variable defined outside a component or hook is not allowed. Consider using an effect.
+
+S:\WebDev\Antigravity Test\portfolio-2026\components\layout\language-switcher.tsx:25:9
+  23 |
+  24 |         // Set cookie for locale persistence
+> 25 |         document.cookie = `NEXT_LOCALE=${newLocale};path=/;max-age=31536000;SameSite=Lax`
+     |         ^^^^^^^^ value cannot be modified
+  26 |
+  27 |         router.push(newPath)
+  28 |     }  react-hooks/immutability
+
+S:\WebDev\Antigravity Test\portfolio-2026\components\saas\DebugPanel.tsx
+   6:15  warning  'ChevronUp' is defined but never used                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                          @typescript-eslint/no-unused-vars
+  20:13  error    Error: Calling setState synchronously within an effect can trigger cascading renders
+
+Effects are intended to synchronize state between React and external systems such as manually updating the DOM, state management libraries, or other platform APIs. In general, the body of an effect should do one or both of the following:
+* Update external systems with the latest state from React.
+* Subscribe for updates from some external system, calling setState in a callback function when external state changes.
+
+Calling setState synchronously within an effect body causes cascading renders that can hurt performance, and is not recommended. (https://react.dev/learn/you-might-not-need-an-effect).
+
+S:\WebDev\Antigravity Test\portfolio-2026\components\saas\DebugPanel.tsx:20:13
+  18 |         // Only show in development
+  19 |         if (process.env.NODE_ENV === "development") {
+> 20 |             setIsDev(true)
+     |             ^^^^^^^^ Avoid calling setState() directly within an effect
+  21 |         }
+  22 |
+  23 |         // Read flags from localStorage after mount  react-hooks/set-state-in-effect
+
+S:\WebDev\Antigravity Test\portfolio-2026\components\sections\hero.tsx
+  48:17  warning  Using `<img>` could result in slower LCP and higher bandwidth. Consider using `<Image />` from `next/image` or a custom image loader to automatically optimize images. This may incur additional usage or cost from your provider. See: https://nextjs.org/docs/messages/no-img-element  @next/next/no-img-element
+
+S:\WebDev\Antigravity Test\portfolio-2026\components\ui\input.tsx
+  4:18  error  An interface declaring no members is equivalent to its supertype  @typescript-eslint/no-empty-object-type
+
+S:\WebDev\Antigravity Test\portfolio-2026\components\ui\textarea.tsx
+  4:18  error  An interface declaring no members is equivalent to its supertype  @typescript-eslint/no-empty-object-type
+
+S:\WebDev\Antigravity Test\portfolio-2026\data\nuvioData.ts
+   36:15  error    Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any
+   71:20  warning  'tid' is defined but never used           @typescript-eslint/no-unused-vars
+   91:20  warning  'tid' is defined but never used           @typescript-eslint/no-unused-vars
+  111:20  warning  'tid' is defined but never used           @typescript-eslint/no-unused-vars
+  131:20  warning  'tid' is defined but never used           @typescript-eslint/no-unused-vars
+  151:20  warning  'tid' is defined but never used           @typescript-eslint/no-unused-vars
+  171:20  warning  'tid' is defined but never used           @typescript-eslint/no-unused-vars
+
+S:\WebDev\Antigravity Test\portfolio-2026\hooks\useTenantData.ts
+  18:17  error  Error: Calling setState synchronously within an effect can trigger cascading renders
+
+Effects are intended to synchronize state between React and external systems such as manually updating the DOM, state management libraries, or other platform APIs. In general, the body of an effect should do one or both of the following:
+* Update external systems with the latest state from React.
+* Subscribe for updates from some external system, calling setState in a callback function when external state changes.
+
+Calling setState synchronously within an effect body causes cascading renders that can hurt performance, and is not recommended. (https://react.dev/learn/you-might-not-need-an-effect).
+
+S:\WebDev\Antigravity Test\portfolio-2026\hooks\useTenantData.ts:18:17
+  16 |         if (storedData) {
+  17 |             try {
+> 18 |                 setData(JSON.parse(storedData))
+     |                 ^^^^^^^ Avoid calling setState() directly within an effect
+  19 |             } catch (e) {
+  20 |                 console.error("Failed to parse tenant data", e)
+  21 |                 const initial = SEED_DATA[tenantId] || SEED_DATA.acme  react-hooks/set-state-in-effect
+
+S:\WebDev\Antigravity Test\portfolio-2026\i18n\request.ts
+  8:56  error  Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any
+
+S:\WebDev\Antigravity Test\portfolio-2026\lib\auth.tsx
+  32:17  error  Error: Calling setState synchronously within an effect can trigger cascading renders
+
+Effects are intended to synchronize state between React and external systems such as manually updating the DOM, state management libraries, or other platform APIs. In general, the body of an effect should do one or both of the following:
+* Update external systems with the latest state from React.
+* Subscribe for updates from some external system, calling setState in a callback function when external state changes.
+
+Calling setState synchronously within an effect body causes cascading renders that can hurt performance, and is not recommended. (https://react.dev/learn/you-might-not-need-an-effect).
+
+S:\WebDev\Antigravity Test\portfolio-2026\lib\auth.tsx:32:17
+  30 |         if (storedSession) {
+  31 |             try {
+> 32 |                 setSession(JSON.parse(storedSession))
+     |                 ^^^^^^^^^^ Avoid calling setState() directly within an effect
+  33 |             } catch {
+  34 |                 localStorage.removeItem(SESSION_KEY)
+  35 |             }  react-hooks/set-state-in-effect
+
+??? 16 problems (8 errors, 8 warnings)
+

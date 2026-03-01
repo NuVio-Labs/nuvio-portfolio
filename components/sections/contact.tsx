@@ -37,9 +37,36 @@ export function Contact() {
                 <ScrollAnimation>
                     <div className="mb-12 text-center">
                         <h2 className="text-4xl font-extrabold tracking-tight lg:text-5xl mb-4">{t("sectionTitle")}</h2>
-                        <p className="text-muted-foreground text-lg">
+                        <p className="text-muted-foreground text-lg mb-12">
                             {t("sectionSubtitle")}
                         </p>
+
+                        <div className="mb-4">
+                            <h3 className="text-2xl font-bold mb-6">{t("whyStartNow")}</h3>
+                            <div className="flex flex-col sm:flex-row justify-center gap-4 text-left">
+                                <div className="flex gap-3 items-start bg-background p-4 text-sm rounded-xl border shadow-sm flex-1">
+                                    <CheckCircle2 className="h-5 w-5 text-primary shrink-0 mt-0.5" />
+                                    <div>
+                                        <p className="font-semibold text-foreground">{t("benefit1Title")}</p>
+                                        <p className="text-muted-foreground">{t("benefit1Text")}</p>
+                                    </div>
+                                </div>
+                                <div className="flex gap-3 items-start bg-background p-4 text-sm rounded-xl border shadow-sm flex-1">
+                                    <CheckCircle2 className="h-5 w-5 text-primary shrink-0 mt-0.5" />
+                                    <div>
+                                        <p className="font-semibold text-foreground">{t("benefit2Title")}</p>
+                                        <p className="text-muted-foreground">{t("benefit2Text")}</p>
+                                    </div>
+                                </div>
+                                <div className="flex gap-3 items-start bg-background p-4 text-sm rounded-xl border shadow-sm flex-1">
+                                    <CheckCircle2 className="h-5 w-5 text-primary shrink-0 mt-0.5" />
+                                    <div>
+                                        <p className="font-semibold text-foreground">{t("benefit3Title")}</p>
+                                        <p className="text-muted-foreground">{t("benefit3Text")}</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
                     </div>
                 </ScrollAnimation>
 
@@ -90,7 +117,7 @@ export function Contact() {
                                             disabled={status === "submitting"}
                                         />
                                     </div>
-                                    <Button type="submit" className="w-full" disabled={status === "submitting"}>
+                                    <Button type="submit" className="w-full text-base font-semibold shadow-md py-6 rounded-xl" disabled={status === "submitting"}>
                                         {status === "submitting" ? (
                                             <span className="flex items-center">
                                                 <span className="mr-2 h-4 w-4 animate-spin rounded-full border-2 border-background border-r-transparent" />
@@ -100,6 +127,9 @@ export function Contact() {
                                             t("submit")
                                         )}
                                     </Button>
+                                    <div className="pt-2 flex items-center justify-center text-xs text-muted-foreground text-center">
+                                        <span className="mr-1.5 opacity-80">🔒</span> {t("trustBadge")}
+                                    </div>
                                 </form>
                             )}
                         </CardContent>

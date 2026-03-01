@@ -35,7 +35,7 @@ ${message}
         }
 
         return { success: true }
-    } catch (error) {
+    } catch {
         return { error: "Something went wrong" }
     }
 }

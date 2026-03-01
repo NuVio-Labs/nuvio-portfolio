@@ -22,17 +22,16 @@ const SESSION_KEY = "nuvio:session"
 
 export function AuthProvider({ children }: { children: React.ReactNode }) {
     const [session, setSession] = useState<DemoSession | null>(null)
-    const [mounted, setMounted] = useState(false)
     const router = useRouter()
 
     useEffect(() => {
-        setMounted(true)
         // Check localStorage for session after mount
         const storedSession = localStorage.getItem(SESSION_KEY)
         if (storedSession) {
             try {
+                // eslint-disable-next-line react-hooks/set-state-in-effect
                 setSession(JSON.parse(storedSession))
-            } catch (e) {
+            } catch {
                 localStorage.removeItem(SESSION_KEY)
             }
         }

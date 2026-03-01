@@ -22,7 +22,10 @@ export function LanguageSwitcher() {
         const newPath = segments.join("/")
 
         // Set cookie for locale persistence
-        document.cookie = `NEXT_LOCALE=${newLocale};path=/;max-age=31536000;SameSite=Lax`
+        if (typeof document !== "undefined") {
+            // eslint-disable-next-line react-hooks/immutability
+            document.cookie = `NEXT_LOCALE=${newLocale};path=/;max-age=31536000;SameSite=Lax`
+        }
 
         router.push(newPath)
     }
@@ -35,8 +38,8 @@ export function LanguageSwitcher() {
                     onClick={() => switchLocale(loc)}
                     disabled={loc === locale}
                     className={`min-h-[44px] min-w-[44px] rounded-md text-xs font-medium transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring ${loc === locale
-                            ? "bg-secondary text-foreground"
-                            : "text-muted-foreground hover:text-foreground hover:bg-secondary/50"
+                        ? "bg-secondary text-foreground"
+                        : "text-muted-foreground hover:text-foreground hover:bg-secondary/50"
                         }`}
                     aria-label={`${localeLabels[loc]}${loc === locale ? " (active)" : ""}`}
                     aria-current={loc === locale ? "true" : undefined}

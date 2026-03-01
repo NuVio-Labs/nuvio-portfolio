@@ -10,15 +10,36 @@
         "clientPortalLabel": "Go to client portal",
         "clientAreaHint": "Private Area for Clients",
         "login": "Login",
-        "switchLanguage": "Switch language"
+        "switchLanguage": "Switch language",
+        "ctaProject": "Request Project"
     },
     "hero": {
-        "badge": "Ready for Opportunities",
-        "headlinePart1": "NuVioLabs",
-        "headlinePart2": "Web design & digital solutions",
-        "subline": "Web development focused on performance, clean code, and shipping real products.",
-        "ctaPrimary": "Work",
-        "ctaSecondary": "Contact"
+        "badge": "Two real projects. Measurable results.",
+        "headlinePart1": "Strategic Websites",
+        "headlinePart2": "for sustainable growth.",
+        "subline": "Well-thought-out structure, fast performance, and clear user guidance.",
+        "ctaPrimary": "Free Consultation",
+        "ctaSecondary": "View Projects"
+    },
+    "valueProposition": {
+        "label": "Core Principles",
+        "headlinePart1": "Engineered for",
+        "headlinePart2": "resilience and flow.",
+        "description": "I don't assemble templates. I engineer digital products from the ground up—with a heavy focus on structural integrity, measurable performance, and uncompromising quality.",
+        "principles": {
+            "architecture": {
+                "title": "Systemic Architecture",
+                "description": "No quick fixes. I build scalable foundations tailored to your specific ecosystem, ensuring long-term stability and clean codebase semantics."
+            },
+            "execution": {
+                "title": "Precision Engineering",
+                "description": "Every line of code serves a purpose. High performance, zero bloat, and a relentless focus on an immaculate user experience."
+            },
+            "scalability": {
+                "title": "Built to Scale",
+                "description": "Products designed not just for today's launch, but architected to handle tomorrow's growth seamlessly."
+            }
+        }
     },
     "work": {
         "sectionTitle": "Work",
@@ -28,47 +49,63 @@
         "previewLoading": "Loading preview…",
         "previewAlt": "Screenshot of {title}",
         "previewDesktopTitle": "Live desktop preview of {title}",
-        "theProblem": "Starting Point",
-        "theApproach": "Execution",
-        "theOutcome": "Result",
+        "theProblem": "The Problem",
+        "theApproach": "The Solution",
+        "theOutcome": "Measurable Result",
+        "ctaWt": "Free consultation for your project",
+        "ctaDaisy": "Start a similar project",
         "projects": {
             "wt-erdbewegungen": {
                 "title": "WT Erdbewegungen",
-                "description": "Website for a local excavation company. Fast, responsive, built for local search.",
-                "problem": "No web presence. Customers couldn't find the business online.",
-                "approach": "Clean, mobile-first site with strong local SEO and fast load times.",
-                "outcome": "Under 2 second load on mobile. Ranking for local search terms."
+                "description": "Industry: Excavation & Earthmoving",
+                "problem": "No digital visibility. Potential clients couldn't find the company locally.",
+                "approach": "A targeted, mobile-optimized business website focused on services and local SEO.",
+                "outcome1": "🚀 Load time under 2 seconds on smartphones",
+                "outcome2": "📈 Visible ranking for local search queries",
+                "outcome3": "🤝 First digital touchpoint for new construction projects",
+                "testimonial": "“Finally we are found online – and the site looks great on every phone.”"
             },
             "daisymays-salon": {
                 "title": "Daisy May's Salon",
-                "description": "Bilingual website for a dog grooming salon. German and English.",
-                "problem": "All enquiries went through phone and social media. No single source for services and pricing.",
-                "approach": "Responsive site with i18n, clear pricing, and direct contact options.",
-                "outcome": "Fewer repeat calls. Customers find what they need in their language."
+                "description": "Industry: Services / Dog Grooming",
+                "problem": "Unstructured inquiries via social media & phone. No central hub for services and pricing.",
+                "approach": "A bilingual, modern website that answers all client questions upfront and transparently lists services.",
+                "outcome1": "📉 Significantly fewer time-consuming phone calls",
+                "outcome2": "🌍 Clients find all information immediately in their native language",
+                "outcome3": "⏳ More time for the actual core business",
+                "testimonial": "“Our daily routine is much more relaxed now that the most important client questions are answered directly via the website.”"
             }
         }
     },
     "about": {
         "sectionTitle": "About",
-        "bio1": "I build websites and web applications. Design to deployment.",
-        "bio2": "Every project here is real client work with real outcomes.",
-        "bio3": "",
-        "backgroundTitle": "Background",
-        "backgroundText": "Frontend and backend. Self-directed from day one.",
-        "focusTitle": "Focus",
-        "focusText": "React, Next.js, TypeScript. End-to-end product delivery.",
-        "locationTitle": "Location",
-        "locationText": "Germany. Available remotely.",
-        "skillsTitle": "Tech Stack",
-        "skillCategories": {
-            "frontend": "Frontend",
-            "backend": "Backend",
-            "designTools": "Design & Tools"
-        }
+        "bioTitle": "Introduction & Mission",
+        "bio1": "Hi, I'm Axel. I build websites that don't just look modern, but serve as a digital sales representative for your business.",
+        "bio2": "My mission is to give small and medium-sized businesses – from trade shops to salons – the digital presence they deserve.",
+        "bio3": "No complicated jargon, just clear results.",
+        "whyTitle": "Why I do web design",
+        "whyText": "I'm fascinated by solving real business problems with smart web solutions. A good website takes work off your plate, answers client questions, and brings in qualified leads while you focus on your craft.",
+        "valuesTitle": "Work Ethic & Values",
+        "values": {
+            "clarity": {
+                "title": "Clarity",
+                "text": "Transparent communication and processes without agency jargon."
+            },
+            "performance": {
+                "title": "Performance",
+                "text": "Lightning-fast sites because your customers don't want to wait."
+            },
+            "sustainability": {
+                "title": "Sustainability",
+                "text": "Code that still works tomorrow and is easy to expand."
+            }
+        },
+        "techTitle": "Tech Stack",
+        "techText": "State-of-the-art web foundation (React, Next.js, TypeScript) for maximum security, speed, and future-readiness."
     },
     "lab": {
-        "sectionTitle": "Lab",
-        "sectionSubtitle": "Experiments and prototypes.",
+        "sectionTitle": "Technology & Prototyping",
+        "sectionSubtitle": "A look into the engine room. Here I test innovative web technologies, performance optimizations, and interactive designs to stay ahead of the curve for my client projects. Whatever works here becomes a best practice in real projects.",
         "morphingShape": "Morphing Shape",
         "audioViz": "Audio Viz",
         "comingSoon": "More soon."
@@ -77,7 +114,7 @@
         "sectionTitle": "Say hello",
         "sectionSubtitle": "Project, question, or just hello.",
         "formTitle": "Message",
-        "formDescription": "I'll get back to you shortly.",
+        "formDescription": "Briefly describe your project. Bullet points are totally fine.",
         "labelName": "Name",
         "labelEmail": "Email",
         "labelSubject": "Subject",
@@ -86,8 +123,16 @@
         "placeholderEmail": "your@email.com",
         "placeholderSubject": "What's this about?",
         "placeholderMessage": "Your message…",
-        "submit": "Send",
-        "submitting": "Sending…",
+        "submit": "Request Free Consultation",
+        "submitting": "Requesting…",
+        "whyStartNow": "Why start now?",
+        "benefit1Title": "Free Initial Consultation",
+        "benefit1Text": "Honest and transparent discussion.",
+        "benefit2Title": "No-Obligation Estimate",
+        "benefit2Text": "Costs and timeline discussed right away.",
+        "benefit3Title": "Clear Roadmap",
+        "benefit3Text": "You'll know exactly what the next steps are.",
+        "trustBadge": "Your data is safe. We never send spam.",
         "successTitle": "Sent.",
         "successText": "I'll be in touch shortly.",
         "sendAnother": "Again"
@@ -99,13 +144,36 @@
         "privacy": "Privacy",
         "github": "GitHub",
         "linkedin": "LinkedIn",
-        "footerNav": "Footer navigation"
+        "footerNav": "Footer navigation",
+        "llmContext": "NuVioLabs is a web design agency in Kranenburg, Germany, specialized in Next.js, SEO optimization, and Conversion Rate Optimization for small and medium-sized businesses."
     },
     "skipToContent": "Skip to content",
+    "faq": {
+        "sectionTitle": "Frequently Asked Questions",
+        "sectionSubtitle": "Clarity right from the start.",
+        "questions": {
+            "cost": {
+                "q": "How much does a new website cost?",
+                "a": "Every project is unique, but a standard website project starts at around €1,500. We'll discuss the details in our first call to give you a reliable estimate."
+            },
+            "duration": {
+                "q": "How long does development take?",
+                "a": "Usually 4–6 weeks from kickoff to launch. This depends on how quickly we receive texts and images from you."
+            },
+            "hosting": {
+                "q": "Do I have to take care of hosting & maintenance?",
+                "a": "No, if you'd like, I can handle the full hosting including technical updates, backups, and SSL certificates, so you can focus on your business."
+            },
+            "cms": {
+                "q": "Can I edit the content myself later?",
+                "a": "Yes, I can integrate a simple CMS (Content Management System) if desired. This allows you to easily update texts and images yourself."
+            }
+        }
+    },
     "seo": {
         "home": {
-            "title": "NuVioLabs | Web development",
-            "description": "Web development based in Germany. Websites and web applications built with React, Next.js, and TypeScript."
+            "title": "NuVioLabs | Web Design & AI Solutions for Local Businesses",
+            "description": "I build fast, high-converting websites for trades, salons, and SMEs. More visibility. More leads. Secure your free consultation now."
         },
         "imprint": {
             "title": "Imprint"

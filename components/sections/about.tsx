@@ -4,12 +4,7 @@ import { useTranslations } from "next-intl"
 import { Container } from "@/components/layout/container"
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
 import { ScrollAnimation } from "@/components/ui/scroll-animation"
-
-const SKILL_GROUPS = [
-    { key: "frontend", items: ["React", "Next.js", "TypeScript", "Tailwind CSS", "Framer Motion"] },
-    { key: "backend", items: ["Node.js", "PostgreSQL", "Supabase", "REST APIs", "Serverless"] },
-    { key: "designTools", items: ["Figma", "Git", "Vercel", "VS Code", "Responsive Design"] },
-] as const
+import { CheckCircle2, Zap, ShieldCheck } from "lucide-react"
 
 export function About() {
     const t = useTranslations("about")
@@ -17,77 +12,70 @@ export function About() {
     return (
         <section id="about" className="py-12 md:py-24 bg-secondary/20">
             <Container>
-                <div className="grid gap-12 lg:grid-cols-2">
+                <div className="grid gap-16 lg:grid-cols-2">
                     {/* Bio Section */}
                     <ScrollAnimation>
-                        <h2 className="mb-6 text-4xl font-extrabold tracking-tight lg:text-5xl">{t("sectionTitle")}</h2>
+                        <h2 className="mb-2 text-primary font-semibold tracking-wide uppercase">{t("bioTitle")}</h2>
+                        <h3 className="mb-6 text-4xl font-extrabold tracking-tight lg:text-5xl">{t("sectionTitle")}</h3>
                         <div className="space-y-4 text-lg text-muted-foreground leading-relaxed">
                             <p>{t("bio1")}</p>
                             <p>{t("bio2")}</p>
-                            {t("bio3") && <p>{t("bio3")}</p>}
+                            <p>{t("bio3")}</p>
+                        </div>
+
+                        <div className="mt-12">
+                            <h4 className="text-xl font-bold tracking-tight mb-4">{t("whyTitle")}</h4>
+                            <p className="text-muted-foreground leading-relaxed">
+                                {t("whyText")}
+                            </p>
                         </div>
                     </ScrollAnimation>
 
                     {/* Quick Info Cards */}
-                    <div className="flex flex-col gap-6 lg:pl-12">
+                    <div className="flex flex-col gap-6 lg:pl-12 justify-center">
                         <ScrollAnimation delay={0.1}>
-                            <Card>
-                                <CardHeader>
-                                    <CardTitle>{t("backgroundTitle")}</CardTitle>
-                                </CardHeader>
-                                <CardContent className="text-muted-foreground">
-                                    {t("backgroundText")}
-                                </CardContent>
-                            </Card>
+                            <h4 className="text-2xl font-bold tracking-tight mb-6">{t("valuesTitle")}</h4>
+                            <div className="space-y-6">
+                                <div className="flex gap-4">
+                                    <div className="mt-1 flex-shrink-0">
+                                        <CheckCircle2 className="h-6 w-6 text-primary" />
+                                    </div>
+                                    <div>
+                                        <h5 className="font-semibold text-lg">{t("values.clarity.title")}</h5>
+                                        <p className="text-muted-foreground">{t("values.clarity.text")}</p>
+                                    </div>
+                                </div>
+                                <div className="flex gap-4">
+                                    <div className="mt-1 flex-shrink-0">
+                                        <Zap className="h-6 w-6 text-primary" />
+                                    </div>
+                                    <div>
+                                        <h5 className="font-semibold text-lg">{t("values.performance.title")}</h5>
+                                        <p className="text-muted-foreground">{t("values.performance.text")}</p>
+                                    </div>
+                                </div>
+                                <div className="flex gap-4">
+                                    <div className="mt-1 flex-shrink-0">
+                                        <ShieldCheck className="h-6 w-6 text-primary" />
+                                    </div>
+                                    <div>
+                                        <h5 className="font-semibold text-lg">{t("values.sustainability.title")}</h5>
+                                        <p className="text-muted-foreground">{t("values.sustainability.text")}</p>
+                                    </div>
+                                </div>
+                            </div>
                         </ScrollAnimation>
-                        <ScrollAnimation delay={0.2}>
-                            <Card>
-                                <CardHeader>
-                                    <CardTitle>{t("focusTitle")}</CardTitle>
-                                </CardHeader>
-                                <CardContent className="text-muted-foreground">
-                                    {t("focusText")}
-                                </CardContent>
-                            </Card>
-                        </ScrollAnimation>
-                        <ScrollAnimation delay={0.3}>
-                            <Card>
-                                <CardHeader>
-                                    <CardTitle>{t("locationTitle")}</CardTitle>
-                                </CardHeader>
-                                <CardContent className="text-muted-foreground">
-                                    {t("locationText")}
-                                </CardContent>
-                            </Card>
-                        </ScrollAnimation>
-                    </div>
-                </div>
 
-                {/* Skills Section */}
-                <div className="mt-24">
-                    <ScrollAnimation>
-                        <h3 className="mb-12 text-3xl font-bold tracking-tight">{t("skillsTitle")}</h3>
-                    </ScrollAnimation>
-                    <div className="grid gap-6 md:grid-cols-3">
-                        {SKILL_GROUPS.map((skillGroup, index) => (
-                            <ScrollAnimation key={skillGroup.key} delay={index * 0.1} className="h-full">
-                                <Card className="h-full">
-                                    <CardHeader>
-                                        <CardTitle>{t(`skillCategories.${skillGroup.key}`)}</CardTitle>
-                                    </CardHeader>
-                                    <CardContent>
-                                        <ul className="space-y-2">
-                                            {skillGroup.items.map((item) => (
-                                                <li key={item} className="flex items-center text-muted-foreground">
-                                                    <span className="mr-2 h-1.5 w-1.5 rounded-full bg-accent" />
-                                                    {item}
-                                                </li>
-                                            ))}
-                                        </ul>
-                                    </CardContent>
-                                </Card>
-                            </ScrollAnimation>
-                        ))}
+                        <ScrollAnimation delay={0.3} className="mt-8">
+                            <Card className="bg-primary/5 border-primary/10">
+                                <CardHeader className="pb-2">
+                                    <CardTitle className="text-lg">{t("techTitle")}</CardTitle>
+                                </CardHeader>
+                                <CardContent className="text-muted-foreground text-sm leading-relaxed">
+                                    {t("techText")}
+                                </CardContent>
+                            </Card>
+                        </ScrollAnimation>
                     </div>
                 </div>
             </Container>
