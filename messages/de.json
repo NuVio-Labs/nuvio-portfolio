@@ -14,12 +14,19 @@
         "ctaProject": "Projekt anfragen"
     },
     "hero": {
-        "badge": "Zwei reale Projekte. Messbare Ergebnisse.",
-        "headlinePart1": "Strategische Websites",
-        "headlinePart2": "für nachhaltiges Wachstum.",
-        "subline": "Durchdachte Struktur, schnelle Performance und klare Nutzerführung.",
-        "ctaPrimary": "Kostenloses Erstgespräch",
-        "ctaSecondary": "Projekte ansehen"
+        "badge": "Bereit für neue Projekte",
+        "headlinePart1": "Where structure ",
+        "headlinePart2": "meets execution.",
+        "subline": "Ich gestalte und entwickle digitale Plattformen,\ndie wartbar, skalierbar und schnell bleiben.",
+        "ctaPrimary": "Projekt anfragen",
+        "ctaSecondary": "Ausgewählte Arbeiten",
+        "features": {
+            "lighthouse": "Lighthouse 95+",
+            "multilang": "Mehrsprachig",
+            "seo": "SEO optimiert",
+            "nextjs": "Next.js nativ",
+            "scalable": "Skalierbare Systeme"
+        }
     },
     "valueProposition": {
         "label": "Core Principles",

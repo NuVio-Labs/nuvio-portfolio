@@ -14,12 +14,19 @@
         "ctaProject": "Start a project"
     },
     "hero": {
-        "badge": "Two shipped projects. Measurable results.",
-        "headlinePart1": "Websites built",
-        "headlinePart2": "for sustainable growth.",
-        "subline": "Clear structure, fast performance, and confident user flow.",
-        "ctaPrimary": "Book a free consult",
-        "ctaSecondary": "View work"
+        "badge": "Ready for opportunities",
+        "headlinePart1": "Where structure ",
+        "headlinePart2": "meets execution.",
+        "subline": "I design and engineer digital platforms\nthat stay maintainable, scalable and fast.",
+        "ctaPrimary": "Start a project",
+        "ctaSecondary": "Selected work",
+        "features": {
+            "lighthouse": "Lighthouse 95+",
+            "multilang": "Multi-Language",
+            "seo": "SEO Optimized",
+            "nextjs": "Next.js Native",
+            "scalable": "Scalable Systems"
+        }
     },
     "valueProposition": {
         "label": "Core Principles",

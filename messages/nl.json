@@ -14,12 +14,19 @@
         "ctaProject": "Project aanvragen"
     },
     "hero": {
-        "badge": "Twee gerealiseerde projecten. Meetbare resultaten.",
-        "headlinePart1": "Websites gebouwd",
-        "headlinePart2": "voor duurzame groei.",
-        "subline": "Heldere structuur, snelle prestaties en een logische gebruikersflow.",
-        "ctaPrimary": "Gratis adviesgesprek",
-        "ctaSecondary": "Bekijk werk"
+        "badge": "Klaar voor nieuwe projecten",
+        "headlinePart1": "Where structure ",
+        "headlinePart2": "meets execution.",
+        "subline": "Ik ontwerp en ontwikkel digitale platforms\ndie onderhoudbaar, schaalbaar en snel blijven.",
+        "ctaPrimary": "Project aanvragen",
+        "ctaSecondary": "Geselecteerd werk",
+        "features": {
+            "lighthouse": "Lighthouse 95+",
+            "multilang": "Meertalig",
+            "seo": "SEO geoptimaliseerd",
+            "nextjs": "Next.js native",
+            "scalable": "Schaalbare systemen"
+        }
     },
     "valueProposition": {
         "label": "Kernprincipes",
