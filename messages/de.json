@@ -25,7 +25,7 @@
         "label": "Core Principles",
         "headlinePart1": "Engineered for",
         "headlinePart2": "resilience and flow.",
-        "description": "Ich nutze keine Templates. Ich baue digitale Produkte von Grund auf – mit starkem Fokus auf strukturelle Integrität, messbare Performance und kompromisslose Qualität.",
+        "description": "Ich nutze keine Templates. Ich baue digitale Produkte von Grund auf mit starkem Fokus auf strukturelle Integrität, messbare Performance und kompromisslose Qualität.",
         "principles": {
             "architecture": {
                 "title": "Systemische Architektur",
@@ -45,7 +45,7 @@
         "sectionTitle": "Projekte",
         "sectionSubtitle": "Zwei echte Aufträge. Vom Briefing bis zum Launch.",
         "visitSite": "Live ansehen →",
-        "visitSiteLabel": "{title} besuchen — öffnet in neuem Tab",
+        "visitSiteLabel": "{title} besuchen öffnet in neuem Tab",
         "previewLoading": "Vorschau wird geladen…",
         "previewAlt": "Screenshot von {title}",
         "previewDesktopTitle": "Desktop-Vorschau von {title}",
@@ -78,30 +78,27 @@
         }
     },
     "about": {
-        "sectionTitle": "Über mich",
-        "bioTitle": "Kurzvorstellung & Mission",
-        "bio1": "Hallo, ich bin Axel. Ich baue Websites, die nicht nur modern aussehen, sondern als digitaler Vertriebsmitarbeiter für Ihr Unternehmen arbeiten.",
-        "bio2": "Meine Mission ist es, kleinen und mittleren Unternehmen – vom Handwerksbetrieb bis zum Salon – den digitalen Auftritt zu geben, den sie verdienen.",
-        "bio3": "Ohne kompliziertes Fachsimpeln, dafür mit klaren Ergebnissen.",
-        "whyTitle": "Warum ich Webdesign mache",
-        "whyText": "Mich fasziniert es, echte Geschäftsprobleme durch smarte Web-Lösungen zu beheben. Eine gute Website nimmt Ihnen Arbeit ab, beantwortet Kundenfragen und bringt qualifizierte Anfragen, während Sie sich auf Ihr Handwerk konzentrieren.",
-        "valuesTitle": "Arbeitsweise & Werte",
+        "label": "The Architect",
+        "headline": "Digitales Handwerk.",
+        "bio1": "Ich bin ein unabhängiger Entwickler. Mein Fokus liegt nicht auf kurzfristigen Agentur-Sprints, sondern auf dem Bau belastbarer, hochperformanter Systeme, die echten geschäftlichen Mehrwert liefern.",
+        "bio2": "Für kleine und mittlere Unternehmen entwickle ich digitale Plattformen, die als lautloser, aber hochgradig verlässlicher Vertriebskanal funktionieren. Ohne Buzzwords. Mit messbaren Ergebnissen.",
+        "principlesTitle": "Arbeitsweise",
         "values": {
             "clarity": {
                 "title": "Klarheit",
-                "text": "Transparente Kommunikation und Prozesse ohne Agentur-Sprech."
+                "text": "Transparente Prozesse und direkte Kommunikation auf Augenhöhe."
             },
             "performance": {
                 "title": "Performance",
-                "text": "Schnelle Seitenbedienung, weil Ihre Kunden nicht warten wollen."
+                "text": "Jede Millisekunde Ladezeit zählt für Ihre Conversion-Rate."
             },
             "sustainability": {
                 "title": "Nachhaltigkeit",
-                "text": "Code, der auch morgen noch funktioniert und leicht erweiterbar ist."
+                "text": "Sauberer Code als Fundament für zukünftiges Wachstum."
             }
         },
-        "techTitle": "Tech Stack",
-        "techText": "Modernstes Web-Fundament (React, Next.js, TypeScript) für höchste Sicherheit, Schnelligkeit und Zukunftssicherheit."
+        "techStack": "Engineered with Next.js, TypeScript & Tailwind CSS.",
+        "signature": "Weniger Lärm. Mehr funktionierende Systeme."
     },
     "lab": {
         "sectionTitle": "Technologie & Prototyping",
@@ -154,25 +151,25 @@
         "questions": {
             "cost": {
                 "q": "Was kostet eine neue Website?",
-                "a": "Jedes Projekt ist individuell, aber ein reines Website-Projekt startet bei ca. 1.500€. Genaueres besprechen wir im ersten Call, damit Sie eine verlässliche Einschätzung haben."
+                "a": "Jedes Projekt ist individuell. Reine Website-Projekte starten ab 800€. Im ersten Gespräch klären wir Umfang, Ziel und Budget, damit Sie eine realistische und transparente Einschätzung erhalten."
             },
             "duration": {
-                "q": "Wie lange dauert die Entwicklung?",
-                "a": "In der Regel 4–6 Wochen vom Kick-off bis zum Launch. Das hängt allerdings davon ab, wie schnell wir Texte und Bilder von Ihnen bekommen."
+                "q": "Wie lange dauert die Umsetzung?",
+                "a": "Je nach Umfang und Vorbereitung in der Regel einige Wochen. Ein klarer Projektplan sorgt dafür, dass wir strukturiert und effizient vorgehen."
             },
             "hosting": {
-                "q": "Muss ich mich um Hosting & Wartung kümmern?",
-                "a": "Nein, auf Wunsch übernehme ich das volle Hosting inklusive technischer Updates, Backups und SSL-Zertifikaten. So haben Sie den Kopf für Ihr Geschäft frei."
+                "q": "Muss ich mich um Hosting oder Technik kümmern?",
+                "a": "Nicht zwingend. Auf Wunsch übernehme ich Hosting, technische Updates und Wartung. Alternativ können wir die Seite auch in Ihre bestehende Infrastruktur integrieren."
             },
             "cms": {
-                "q": "Kann ich die Inhalte später selbst ändern?",
-                "a": "Ja, wenn gewünscht binde ich ein einfaches CMS (Content Management System) ein. Damit können Sie Texte und Bilder kinderleicht selbst anpassen."
+                "q": "Kann ich Inhalte später ändern lassen?",
+                "a": "Ja. Kleine Anpassungen sind jederzeit möglich. Wenn Sie Inhalte regelmäßig selbst pflegen möchten, besprechen wir eine passende Lösung im Erstgespräch."
             }
         }
     },
     "seo": {
         "home": {
-            "title": "NuVioLabs | Webdesign & KI-Lösungen für lokale Unternehmen",
+            "title": "NuVioLabs | Webdesign  für lokale Unternehmen",
             "description": "Ich entwickle schnelle, conversion-starke Websites für Handwerk, Salons und KMUs. Mehr Sichtbarkeit. Mehr Anfragen. Jetzt kostenloses Erstgespräch sichern."
         },
         "imprint": {

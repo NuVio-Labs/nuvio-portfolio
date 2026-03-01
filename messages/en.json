@@ -78,30 +78,27 @@
         }
     },
     "about": {
-        "sectionTitle": "About",
-        "bioTitle": "Introduction & Mission",
-        "bio1": "Hi, I'm Axel. I build websites that don't just look modern, but serve as a digital sales representative for your business.",
-        "bio2": "My mission is to give small and medium-sized businesses – from trade shops to salons – the digital presence they deserve.",
-        "bio3": "No complicated jargon, just clear results.",
-        "whyTitle": "Why I do web design",
-        "whyText": "I'm fascinated by solving real business problems with smart web solutions. A good website takes work off your plate, answers client questions, and brings in qualified leads while you focus on your craft.",
-        "valuesTitle": "Work Ethic & Values",
+        "label": "The Architect",
+        "headline": "Digital Craftsmanship.",
+        "bio1": "I'm Axel, an independent developer and digital architect. My focus isn't on short-term agency sprints, but on building resilient, high-performance systems that deliver real business value.",
+        "bio2": "I develop digital platforms for small and medium-sized businesses that operate as a silent, highly reliable sales channel. No buzzwords. Just measurable results.",
+        "principlesTitle": "Methodology",
         "values": {
             "clarity": {
                 "title": "Clarity",
-                "text": "Transparent communication and processes without agency jargon."
+                "text": "Transparent processes and direct, eye-level communication."
             },
             "performance": {
                 "title": "Performance",
-                "text": "Lightning-fast sites because your customers don't want to wait."
+                "text": "Every millisecond of load time counts toward your conversion rate."
             },
             "sustainability": {
                 "title": "Sustainability",
-                "text": "Code that still works tomorrow and is easy to expand."
+                "text": "Clean code as the foundation for future growth."
             }
         },
-        "techTitle": "Tech Stack",
-        "techText": "State-of-the-art web foundation (React, Next.js, TypeScript) for maximum security, speed, and future-readiness."
+        "techStack": "Engineered with Next.js, TypeScript & Tailwind CSS.",
+        "signature": "Less noise. More working systems."
     },
     "lab": {
         "sectionTitle": "Technology & Prototyping",
@@ -154,19 +151,19 @@
         "questions": {
             "cost": {
                 "q": "How much does a new website cost?",
-                "a": "Every project is unique, but a standard website project starts at around €1,500. We'll discuss the details in our first call to give you a reliable estimate."
+                "a": "Every project is unique. Standard website projects start at around €800. In our first call, we'll discuss the scope, goals, and budget so you get a realistic and transparent estimate."
             },
             "duration": {
-                "q": "How long does development take?",
-                "a": "Usually 4–6 weeks from kickoff to launch. This depends on how quickly we receive texts and images from you."
+                "q": "How long does the implementation take?",
+                "a": "Usually a few weeks, depending on the scope and preparation. A clear project plan ensures a structured and efficient approach."
             },
             "hosting": {
-                "q": "Do I have to take care of hosting & maintenance?",
-                "a": "No, if you'd like, I can handle the full hosting including technical updates, backups, and SSL certificates, so you can focus on your business."
+                "q": "Do I have to take care of hosting or the technical side?",
+                "a": "Not necessarily. If desired, I can handle hosting, technical updates, and maintenance. Alternatively, we can integrate the site into your existing infrastructure."
             },
             "cms": {
-                "q": "Can I edit the content myself later?",
-                "a": "Yes, I can integrate a simple CMS (Content Management System) if desired. This allows you to easily update texts and images yourself."
+                "q": "Can I have content changed later?",
+                "a": "Yes. Small adjustments are always possible. If you want to regularly maintain content yourself, we can discuss a suitable solution in our first call."
             }
         }
     },
