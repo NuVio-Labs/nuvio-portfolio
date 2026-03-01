@@ -122,6 +122,32 @@ export async function sendEmail(formData: FormData) {
             return { success: false, message: result.error.message };
         }
 
+        // 7) Auto-Reply an den Kunden
+        const autoReplySubjects: Record<Lang, string> = {
+            de: "Wir haben deine Anfrage erhalten",
+            nl: "We hebben uw aanvraag ontvangen",
+            en: "We have received your inquiry",
+        };
+
+        const autoReplyTexts: Record<Lang, string> = {
+            de: `Hallo ${name},\n\nvielen Dank für deine Anfrage bei NuVioLabs.\nWir melden uns zeitnah bei dir.\n\nBeste Grüße\nNuVioLabs`,
+            nl: `Hallo ${name},\n\nbedankt voor uw aanvraag bij NuVioLabs.\nWe nemen binnenkort contact met u op.\n\nMet vriendelijke groet,\nNuVioLabs`,
+            en: `Hello ${name},\n\nthank you for your inquiry at NuVioLabs.\nWe will get back to you shortly.\n\nBest regards,\nNuVioLabs`,
+        };
+
+        try {
+            await resend.emails.send({
+                from: "NuVioLabs <contact@nuviolabs.de>",
+                to: email,
+                subject: autoReplySubjects[lang],
+                text: autoReplyTexts[lang]
+            });
+        } catch (autoErr) {
+            // Auto-reply error should not prevent the success message to the client 
+            // as the main lead email was already successful.
+            console.error("Auto-reply failed:", autoErr);
+        }
+
         return { success: true, message: responseMessages[lang].success };
     } catch (e: any) {
         return { success: false, message: e.message || "Server error." };
