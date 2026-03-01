@@ -1,8 +1,12 @@
 "use server";
 
 import { Resend } from "resend";
+import { headers } from "next/headers";
 
 const resend = new Resend(process.env.RESEND_API_KEY);
+
+// Einfache In-Memory Rate Limit Map (IP -> Timestamp)
+const ipRateLimitMap = new Map<string, number>();
 
 type Lang = "de" | "nl" | "en";
 
@@ -25,6 +29,21 @@ function cleanMsg(value: unknown) {
 
 export async function sendEmail(formData: FormData) {
     try {
+        // 0) In-Memory IP Rate Limiting (1 Request per Minute)
+        const headerStore = await headers();
+        const ip = headerStore.get("x-forwarded-for") ?? "unknown-ip";
+
+        const now = Date.now();
+        const windowMs = 60 * 1000; // 1 Minute
+
+        if (ipRateLimitMap.has(ip)) {
+            const lastTime = ipRateLimitMap.get(ip)!;
+            if (now - lastTime < windowMs) {
+                return { success: false, message: "Too many requests. Please wait a minute." };
+            }
+        }
+        ipRateLimitMap.set(ip, now);
+
         // 1) Bot Schutz
         const honeypot = String(formData.get("honeypot") ?? "");
         if (honeypot.trim().length > 0) {
