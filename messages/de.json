@@ -61,6 +61,8 @@
         "theOutcome": "Messbares Ergebnis",
         "ctaWt": "Kostenloses Erstgespräch für Ihr Projekt",
         "ctaDaisy": "Ähnliches Projekt starten",
+        "previewGdprText": "Beim Laden der Live-Vorschau wird eine Verbindung zu externen Servern hergestellt. Dabei kann Ihre IP-Adresse übertragen werden.",
+        "previewLoadBtn": "Live-Vorschau laden",
         "projects": {
             "wt-erdbewegungen": {
                 "title": "WT Erdbewegungen",

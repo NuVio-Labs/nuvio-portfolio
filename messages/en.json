@@ -61,6 +61,8 @@
         "theOutcome": "Measurable Result",
         "ctaWt": "Book a free consult",
         "ctaDaisy": "Start a similar project",
+        "previewGdprText": "Loading the live preview will establish a connection to external servers. Your IP address may be transmitted in the process.",
+        "previewLoadBtn": "Load live preview",
         "projects": {
             "wt-erdbewegungen": {
                 "title": "WT Erdbewegungen",

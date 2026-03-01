@@ -61,6 +61,8 @@
         "theOutcome": "Meetbaar resultaat",
         "ctaWt": "Plan een gratis adviesgesprek",
         "ctaDaisy": "Start een vergelijkbaar project",
+        "previewGdprText": "Bij het laden van het live-voorbeeld wordt een verbinding met externe servers tot stand gebracht. Uw IP-adres kan hierbij worden overgedragen.",
+        "previewLoadBtn": "Live-voorbeeld laden",
         "projects": {
             "wt-erdbewegungen": {
                 "title": "WT Erdbewegungen",
