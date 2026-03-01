@@ -23,10 +23,11 @@ export function Contact() {
         const formData = new FormData(event.currentTarget)
         const result = await sendEmail(formData)
 
-        if (result?.error) {
-            console.error("Email send failed:", result.error)
+        if (!result?.ok) {
+            console.error("Email send failed:", result?.error)
             setStatus("error")
         } else {
+            event.currentTarget.reset()
             setStatus("success")
         }
     }

@@ -15,27 +15,20 @@ export async function sendEmail(formData: FormData) {
     }
 
     try {
-        const data = await resend.emails.send({
-            from: "Portfolio Contact <contact@nuviolabs.com>", // You'll need to verify this domain in Resend
-            to: process.env.CONTACT_EMAIL || "hello@nuviolabs.com", // Fallback email
-            subject: `Neue Portfolio Anfrage: ${subject}`,
+        const result = await resend.emails.send({
+            from: "NuVioLabs <onboarding@resend.dev>",
+            to: "contact@nuviolabs.de",
             replyTo: email,
-            text: `
-Name: ${name}
-Email: ${email}
-Betreff: ${subject}
-
-Nachricht:
-${message}
-            `,
+            subject: `Kontaktformular: ${name}`,
+            text: `Name: ${name}\nEmail: ${email}\n\n${message}`
         })
 
-        if (data.error) {
-            return { error: data.error.message }
+        if (result.error) {
+            return { ok: false, error: result.error.message }
         }
 
-        return { success: true }
-    } catch {
-        return { error: "Something went wrong" }
+        return { ok: true }
+    } catch (e: any) {
+        return { ok: false, error: e.message || "Something went wrong" }
     }
 }
