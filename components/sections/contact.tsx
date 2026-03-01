@@ -127,9 +127,9 @@ export function Contact() {
                                             t("submit")
                                         )}
                                     </Button>
-                                    <div className="pt-2 flex items-center justify-center text-xs text-muted-foreground text-center">
-                                        <span className="mr-1.5 opacity-80">🔒</span> {t("trustBadge")}
-                                    </div>
+                                    {/* <div className="pt-2 flex items-center justify-center text-xs text-muted-foreground text-center"> */}
+                                    {/* <span className="mr-1.5 opacity-80">🔒</span> {t("trustBadge")} */}
+                                    {/* </div> */}
                                 </form>
                             )}
                         </CardContent>

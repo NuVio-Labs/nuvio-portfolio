@@ -3,174 +3,186 @@
         "brand": "nuviolabs.",
         "work": "Work",
         "about": "About",
-        "lab": "Lab",
+        "lab": "Research",
         "contact": "Contact",
-        "toggleTheme": "Toggle colour scheme",
+        "toggleTheme": "Toggle theme",
         "clientPortal": "Client Portal",
-        "clientPortalLabel": "Go to client portal",
-        "clientAreaHint": "Private Area for Clients",
-        "login": "Login",
+        "clientPortalLabel": "Open client portal",
+        "clientAreaHint": "Private client area",
+        "login": "Log in",
         "switchLanguage": "Switch language",
-        "ctaProject": "Request Project"
+        "ctaProject": "Start a project"
     },
     "hero": {
-        "badge": "Two real projects. Measurable results.",
-        "headlinePart1": "Strategic Websites",
+        "badge": "Two shipped projects. Measurable results.",
+        "headlinePart1": "Websites built",
         "headlinePart2": "for sustainable growth.",
-        "subline": "Well-thought-out structure, fast performance, and clear user guidance.",
-        "ctaPrimary": "Free Consultation",
-        "ctaSecondary": "View Projects"
+        "subline": "Clear structure, fast performance, and confident user flow.",
+        "ctaPrimary": "Book a free consult",
+        "ctaSecondary": "View work"
     },
     "valueProposition": {
         "label": "Core Principles",
         "headlinePart1": "Engineered for",
         "headlinePart2": "resilience and flow.",
-        "description": "I don't assemble templates. I engineer digital products from the ground up—with a heavy focus on structural integrity, measurable performance, and uncompromising quality.",
+        "description": "I don't assemble templates. I build digital products from the ground up—with a strong focus on solid foundations, measurable performance, and uncompromising quality.",
         "principles": {
             "architecture": {
-                "title": "Systemic Architecture",
-                "description": "No quick fixes. I build scalable foundations tailored to your specific ecosystem, ensuring long-term stability and clean codebase semantics."
+                "title": "System Architecture",
+                "description": "No quick fixes. I build scalable foundations tailored to your setup—so things stay stable, maintainable, and easy to evolve."
             },
             "execution": {
-                "title": "Precision Engineering",
-                "description": "Every line of code serves a purpose. High performance, zero bloat, and a relentless focus on an immaculate user experience."
+                "title": "Precision Execution",
+                "description": "Every line of code has a job. High performance, no bloat, and a relentless focus on a polished user experience."
             },
             "scalability": {
                 "title": "Built to Scale",
-                "description": "Products designed not just for today's launch, but architected to handle tomorrow's growth seamlessly."
+                "description": "Designed not just for today's launch, but ready to support tomorrow's growth."
             }
         }
     },
     "work": {
         "sectionTitle": "Work",
         "sectionSubtitle": "Two real client projects. From brief to launch.",
-        "visitSite": "View Live →",
-        "visitSiteLabel": "Visit {title} — opens in new tab",
+        "visitSite": "View live →",
+        "visitSiteLabel": "Visit {title} (opens in a new tab)",
         "previewLoading": "Loading preview…",
-        "previewAlt": "Screenshot of {title}",
+        "previewAlt": "{title} screenshot",
         "previewDesktopTitle": "Live desktop preview of {title}",
         "theProblem": "The Problem",
         "theApproach": "The Solution",
         "theOutcome": "Measurable Result",
-        "ctaWt": "Free consultation for your project",
+        "ctaWt": "Book a free consult",
         "ctaDaisy": "Start a similar project",
         "projects": {
             "wt-erdbewegungen": {
                 "title": "WT Erdbewegungen",
-                "description": "Industry: Excavation & Earthmoving",
-                "problem": "No digital visibility. Potential clients couldn't find the company locally.",
-                "approach": "A targeted, mobile-optimized business website focused on services and local SEO.",
+                "description": "Industry: Excavation & earthmoving",
+                "problem": "No real online presence. Local clients couldn't find the business.",
+                "approach": "A focused, mobile-first site built around services and local SEO.",
                 "outcome1": "🚀 Load time under 2 seconds on smartphones",
-                "outcome2": "📈 Visible ranking for local search queries",
-                "outcome3": "🤝 First digital touchpoint for new construction projects",
-                "testimonial": "“Finally we are found online – and the site looks great on every phone.”"
+                "outcome2": "📈 Visible in local search results",
+                "outcome3": "🤝 A clear first touchpoint for new projects",
+                "testimonial": "“We finally show up online—and the site looks great on every phone.”"
             },
             "daisymays-salon": {
                 "title": "Daisy May's Salon",
-                "description": "Industry: Services / Dog Grooming",
-                "problem": "Unstructured inquiries via social media & phone. No central hub for services and pricing.",
-                "approach": "A bilingual, modern website that answers all client questions upfront and transparently lists services.",
-                "outcome1": "📉 Significantly fewer time-consuming phone calls",
-                "outcome2": "🌍 Clients find all information immediately in their native language",
-                "outcome3": "⏳ More time for the actual core business",
-                "testimonial": "“Our daily routine is much more relaxed now that the most important client questions are answered directly via the website.”"
+                "description": "Industry: Dog grooming",
+                "problem": "Inquiries came in via social and phone, without structure. No clear place for services and pricing.",
+                "approach": "A modern, bilingual site that answers common questions upfront and lists services transparently.",
+                "outcome1": "📉 Fewer time-consuming phone calls",
+                "outcome2": "🌍 Clients find what they need immediately—in their language",
+                "outcome3": "⏳ More time for the work that matters",
+                "testimonial": "“Our day-to-day is much calmer now that the key questions are answered directly on the website.”"
             }
         }
     },
     "about": {
-        "label": "The Architect",
+        "label": "About",
         "headline": "Digital Craftsmanship.",
-        "bio1": "I'm Axel, an independent developer and digital architect. My focus isn't on short-term agency sprints, but on building resilient, high-performance systems that deliver real business value.",
-        "bio2": "I develop digital platforms for small and medium-sized businesses that operate as a silent, highly reliable sales channel. No buzzwords. Just measurable results.",
+        "bio1": "I'm Axel, an independent developer. I focus on building resilient, high-performance systems that deliver real business value—without the agency noise.",
+        "bio2": "I build platforms for small and mid-sized businesses that work as a quiet, reliable lead channel. No buzzwords. Just results you can measure.",
         "principlesTitle": "Methodology",
         "values": {
             "clarity": {
                 "title": "Clarity",
-                "text": "Transparent processes and direct, eye-level communication."
+                "text": "Transparent process and clear, direct communication."
             },
             "performance": {
                 "title": "Performance",
-                "text": "Every millisecond of load time counts toward your conversion rate."
+                "text": "Every millisecond matters—especially for conversion."
             },
             "sustainability": {
                 "title": "Sustainability",
-                "text": "Clean code as the foundation for future growth."
+                "text": "Clean code that stays maintainable as you grow."
             }
         },
-        "techStack": "Engineered with Next.js, TypeScript & Tailwind CSS.",
+        "techStack": "Built with Next.js, TypeScript, and Tailwind CSS.",
         "signature": "Less noise. More working systems."
     },
     "lab": {
-        "sectionTitle": "Technology & Prototyping",
-        "sectionSubtitle": "A look into the engine room. Here I test innovative web technologies, performance optimizations, and interactive designs to stay ahead of the curve for my client projects. Whatever works here becomes a best practice in real projects.",
-        "morphingShape": "Morphing Shape",
-        "audioViz": "Audio Viz",
-        "comingSoon": "More soon."
+        "sectionTitle": "Applied Research",
+        "sectionSubtitle": "Digital products demand absolute stability. Complex interactions, rendering limits, and new architecture patterns need robust testing in isolated R&D sprints. What proves itself under load here becomes the reliable standard for future client systems. No playgrounds. Only targeted validation.",
+        "experiments": {
+            "fluidGeometry": {
+                "focus": "Fluid Geometry & State Transitions",
+                "problem": "Abrupt UI state changes disrupt navigation flow, increase cognitive load, and signal poor product quality.",
+                "approach": "Developing interpolated vector paths via Framer Motion & SVG, calculated off the main thread. Rendering stable 60fps animations that adapt to scroll velocity.",
+                "value": "Frictionless visual feedback during critical micro-interactions (e.g., checkout or form validation), indirectly boosting user trust and time-on-site."
+            },
+            "audioViz": {
+                "focus": "High-Frequency Data Streaming & GPU Rendering",
+                "problem": "Web-based dashboards often collapse at the hardware level when rendering extremely dense, reactive data streams (audio, live analytics, tracking).",
+                "approach": "Offloading the render pipeline from the DOM directly to the GPU using WebGL/Canvas API and isolated Web Workers for data processing.",
+                "value": "Resilient architectures for data-heavy B2B interfaces that fluidly display complex live metrics without frame drops, even on low-power devices."
+            }
+        },
+        "cta": "Systematic quality for your project."
     },
     "contact": {
         "sectionTitle": "Say hello",
-        "sectionSubtitle": "Project, question, or just hello.",
+        "sectionSubtitle": "A project, a question, or just hello.",
         "formTitle": "Message",
-        "formDescription": "Briefly describe your project. Bullet points are totally fine.",
+        "formDescription": "Tell me a bit about your project. Bullet points are totally fine.",
         "labelName": "Name",
         "labelEmail": "Email",
         "labelSubject": "Subject",
         "labelMessage": "Message",
         "placeholderName": "Your name",
-        "placeholderEmail": "your@email.com",
-        "placeholderSubject": "What's this about?",
+        "placeholderEmail": "you@example.com",
+        "placeholderSubject": "What’s this about?",
         "placeholderMessage": "Your message…",
-        "submit": "Request Free Consultation",
-        "submitting": "Requesting…",
+        "submit": "Request a free consult",
+        "submitting": "Sending…",
         "whyStartNow": "Why start now?",
-        "benefit1Title": "Free Initial Consultation",
-        "benefit1Text": "Honest and transparent discussion.",
-        "benefit2Title": "No-Obligation Estimate",
-        "benefit2Text": "Costs and timeline discussed right away.",
-        "benefit3Title": "Clear Roadmap",
-        "benefit3Text": "You'll know exactly what the next steps are.",
-        "trustBadge": "Your data is safe. We never send spam.",
-        "successTitle": "Sent.",
-        "successText": "I'll be in touch shortly.",
-        "sendAnother": "Again"
+        "benefit1Title": "Free initial consult",
+        "benefit1Text": "Honest, transparent guidance.",
+        "benefit2Title": "No-obligation estimate",
+        "benefit2Text": "We'll discuss cost and timeline right away.",
+        "benefit3Title": "Clear next steps",
+        "benefit3Text": "You'll know exactly what happens next.",
+        "trustBadge": "Your data stays private. No spam—ever.",
+        "successTitle": "Message sent.",
+        "successText": "I'll get back to you shortly.",
+        "sendAnother": "Send another"
     },
     "footer": {
         "copyright": "© 2026 NuVioLabs",
-        "tagline": "Web · Web development · Germany",
+        "tagline": "Web design · Web development · Germany",
         "imprint": "Imprint",
         "privacy": "Privacy",
         "github": "GitHub",
         "linkedin": "LinkedIn",
         "footerNav": "Footer navigation",
-        "llmContext": "NuVioLabs is a web design agency in Kranenburg, Germany, specialized in Next.js, SEO optimization, and Conversion Rate Optimization for small and medium-sized businesses."
+        "llmContext": "NuVioLabs is an independent web studio in Kranenburg, Germany, building fast, modern Next.js websites with a focus on SEO and conversion."
     },
     "skipToContent": "Skip to content",
     "faq": {
         "sectionTitle": "Frequently Asked Questions",
-        "sectionSubtitle": "Clarity right from the start.",
+        "sectionSubtitle": "Clarity from the start.",
         "questions": {
             "cost": {
                 "q": "How much does a new website cost?",
-                "a": "Every project is unique. Standard website projects start at around €800. In our first call, we'll discuss the scope, goals, and budget so you get a realistic and transparent estimate."
+                "a": "Every project is different. Most sites start around €800. In our first call, we'll define scope, goals, and budget—so you get a realistic, transparent estimate."
             },
             "duration": {
-                "q": "How long does the implementation take?",
-                "a": "Usually a few weeks, depending on the scope and preparation. A clear project plan ensures a structured and efficient approach."
+                "q": "How long does the build take?",
+                "a": "Usually a few weeks, depending on scope and how prepared the content is. A clear plan keeps things structured and efficient."
             },
             "hosting": {
-                "q": "Do I have to take care of hosting or the technical side?",
-                "a": "Not necessarily. If desired, I can handle hosting, technical updates, and maintenance. Alternatively, we can integrate the site into your existing infrastructure."
+                "q": "Do I need to handle hosting or the technical side?",
+                "a": "Not necessarily. If you want, I can handle hosting, updates, and maintenance. Or we plug into your existing setup."
             },
             "cms": {
-                "q": "Can I have content changed later?",
-                "a": "Yes. Small adjustments are always possible. If you want to regularly maintain content yourself, we can discuss a suitable solution in our first call."
+                "q": "Can content be updated later?",
+                "a": "Yes. Small updates are always possible. If you want to maintain content yourself, we can choose a setup that fits."
             }
         }
     },
     "seo": {
         "home": {
-            "title": "NuVioLabs | Web Design & AI Solutions for Local Businesses",
-            "description": "I build fast, high-converting websites for trades, salons, and SMEs. More visibility. More leads. Secure your free consultation now."
+            "title": "NuVioLabs | Modern Web Design for Local Businesses",
+            "description": "Fast, modern websites for trades, salons, and SMEs—built for clarity, performance, and more inbound requests. Book a free consultation."
         },
         "imprint": {
             "title": "Imprint"

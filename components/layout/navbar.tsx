@@ -12,10 +12,10 @@ import { Container } from "@/components/layout/container"
 import { LanguageSwitcher } from "@/components/layout/language-switcher"
 
 const navItems = [
-    { key: "work", href: "#work" },
-    { key: "about", href: "#about" },
-    { key: "lab", href: "#lab" },
-    { key: "contact", href: "#contact" },
+    { key: "work", href: "/#work" },
+    { key: "about", href: "/#about" },
+    { key: "lab", href: "/research" },
+    { key: "contact", href: "/#contact" },
 ] as const
 
 export function Navbar() {

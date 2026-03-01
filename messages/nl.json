@@ -3,7 +3,7 @@
         "brand": "nuviolabs.",
         "work": "Werk",
         "about": "Over",
-        "lab": "Lab",
+        "lab": "Research",
         "contact": "Contact",
         "toggleTheme": "Thema wisselen",
         "clientPortal": "Klantenportaal",
@@ -101,11 +101,23 @@
         "signature": "Minder ruis. Meer werkende systemen."
     },
     "lab": {
-        "sectionTitle": "Technologie & Prototyping",
-        "sectionSubtitle": "Een kijkje achter de schermen. Hier test ik nieuwe webtechnologieën, prestatieverbeteringen en interactieve concepten. Wat hier werkt, wordt standaard in klantprojecten.",
-        "morphingShape": "Morphing Shape",
-        "audioViz": "Audio Visualisatie",
-        "comingSoon": "Binnenkort meer."
+        "sectionTitle": "Applied Research",
+        "sectionSubtitle": "Digitale producten vereisen absolute stabiliteit. Complexe interacties, rendering-limieten en nieuwe architectuurpatronen test ik in geïsoleerde R&D sprints. Wat zich hier onder stevige belasting bewijst, wordt de betrouwbare standaard voor toekomstige klantsystemen. Geen speelkwartier. Gerichte validatie.",
+        "experiments": {
+            "fluidGeometry": {
+                "focus": "Fluid Geometry & State Transitions",
+                "problem": "Abrupte weergavewisselingen en statusveranderingen in de gebruikersinterface verstoren de navigatiestroom, verhogen de cognitieve belasting en stralen een lage productkwaliteit uit.",
+                "approach": "Ontwikkelen van geïnterpoleerde vectorpaden via Framer Motion en SVG, berekend buiten de hoofdthread (main thread). Het renderen van stabiele 60fps animaties die zich vloeiend aanpassen aan de scrollsnelheid.",
+                "value": "Wrijvingsloze visuele feedback bij kritieke micro-interacties (zoals tijdens het afrekenen of bij formuliervalidatie), wat indirect het vertrouwen van de gebruiker en de verblijfstijd verhoogt."
+            },
+            "audioViz": {
+                "focus": "High-Frequency Data Streaming & GPU Rendering",
+                "problem": "Webgebaseerde dashboards storten op hardwareniveau vaak in wanneer extreem dichte, snel reagerende datastromen (zoals audio, live analyses, of tracking) gevisualiseerd moeten worden.",
+                "approach": "Het verplaatsen van de render-pipeline van het DOM direct naar de GPU via de WebGL/Canvas API, in combinatie met geïsoleerde Web Workers voor de dataverwerking.",
+                "value": "Veerkrachtige architecturen voor data-intensieve B2B-interfaces, die zelfs de meest complexe live-statistieken op eenvoudige apparaten weergave zonder haperingen (frame drops) in beeld brengen."
+            }
+        },
+        "cta": "Systematische kwaliteit voor uw project."
     },
     "contact": {
         "sectionTitle": "Neem contact op",

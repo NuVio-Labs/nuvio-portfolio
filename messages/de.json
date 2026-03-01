@@ -3,7 +3,7 @@
         "brand": "nuviolabs.",
         "work": "Projekte",
         "about": "Über mich",
-        "lab": "Labor",
+        "lab": "Research",
         "contact": "Kontakt",
         "toggleTheme": "Farbschema wechseln",
         "clientPortal": "Kundenportal",
@@ -101,11 +101,23 @@
         "signature": "Weniger Lärm. Mehr funktionierende Systeme."
     },
     "lab": {
-        "sectionTitle": "Technologie & Prototyping",
-        "sectionSubtitle": "Ein Einblick in den Maschinenraum. Hier teste ich innovative Web-Technologien, Performance-Optimierungen und interaktive Designs, um für meine Kundenprojekte immer am Puls der Zeit zu sein. Alles, was hier funktioniert, fließt als Best Practice in echte Projekte ein.",
-        "morphingShape": "Morphende Form",
-        "audioViz": "Audio-Visualisierung",
-        "comingSoon": "Mehr folgt."
+        "sectionTitle": "Applied Research",
+        "sectionSubtitle": "Digitale Produkte verlangen bedingungslose Stabilität. Komplexe Interaktionen, Rendering-Limits und neue Architektur-Pattern teste ich in isolierten R&D-Sprints. Was sich hier unter Last bewährt, wird zum verlässlichen Standard für zukünftige Kundensysteme. Keine Spielerei. Gezielte Validierung.",
+        "experiments": {
+            "fluidGeometry": {
+                "focus": "Fluid Geometry & State Transitions",
+                "problem": "Abrupte Zustandswechsel im User Interface stören den Navigationsfluss, erhöhen die kognitive Last und signalisieren mangelnde Produktqualität.",
+                "approach": "Entwicklung interpolierter Vektorpfade via Framer Motion & SVG, berechnet abseits des Main-Threads. Rendering stabiler 60fps Animationen, die sich der Scroll-Velocity anpassen.",
+                "value": "Reibungsloses visuelles Feedback bei kritischen Micro-Interactions (z.B. im Checkout oder bei Formular-Validierungen), was indirekt das Nutzervertrauen und die Verweildauer steigert."
+            },
+            "audioViz": {
+                "focus": "High-Frequency Data Streaming & GPU Rendering",
+                "problem": "Web-basierte Dashboards kollabieren hardwareseitig oft, wenn extrem dichte, reaktive Datenströme (Audio, Live-Analytics, Tracking) visualisiert werden müssen.",
+                "approach": "Auslagerung der Render-Pipeline von der DOM-Ebene direkt auf die GPU mittels WebGL/Canvas API und isolierten Web Workern zur Datenverarbeitung.",
+                "value": "Belastbare Architekturen für datenintensive B2B-Interfaces, die selbst komplexe Live-Metriken auf leistungsschwachen Endgeräten ohne Frame-Drops flüssig darstellen."
+            }
+        },
+        "cta": "Systematische Qualität für Ihr Projekt."
     },
     "contact": {
         "sectionTitle": "Schreib mir",
@@ -129,7 +141,7 @@
         "benefit2Text": "Kosten und Dauer direkt im ersten Call.",
         "benefit3Title": "Klarer Fahrplan",
         "benefit3Text": "Sie wissen genau, wie es weitergeht.",
-        "trustBadge": "Ihre Daten sind sicher. Wir versenden keinen Spam.",
+        "trustBadge": "Ihre Daten sind sicher.",
         "successTitle": "Gesendet.",
         "successText": "Ich melde mich in Kürze.",
         "sendAnother": "Nochmal"
