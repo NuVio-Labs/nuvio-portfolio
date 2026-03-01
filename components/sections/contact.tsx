@@ -8,12 +8,14 @@ import { Input } from "@/components/ui/input"
 import { Textarea } from "@/components/ui/textarea"
 import { Label } from "@/components/ui/label"
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
-import { CheckCircle2 } from "lucide-react"
+import { Contact as ContactIcon, CheckCircle2 } from "lucide-react"
 import { ScrollAnimation } from "@/components/ui/scroll-animation"
 import { sendEmail } from "@/app/actions/send-email"
+import { useRef } from "react"
 
 export function Contact() {
     const t = useTranslations("contact")
+    const formRef = useRef<HTMLElement>(null)
     const locale = useLocale()
     const [status, setStatus] = useState<"idle" | "submitting" | "success" | "error">("idle")
     const [errorMessage, setErrorMessage] = useState<string | null>(null)
@@ -34,6 +36,11 @@ export function Contact() {
                 form.reset()
                 setStatus("success")
                 setSuccessMessage(result?.message || t("successToast"))
+
+                // Auto-scroll to top of form section with a tiny delay
+                setTimeout(() => {
+                    formRef.current?.scrollIntoView({ behavior: "smooth", block: "start" })
+                }, 100)
                 return
             }
 
@@ -46,7 +53,7 @@ export function Contact() {
     }
 
     return (
-        <section id="contact" className="py-12 md:py-24 bg-secondary/20">
+        <section id="contact" ref={formRef} className="py-12 md:py-24 bg-secondary/20 scroll-mt-24">
             <Container className="max-w-2xl">
                 <ScrollAnimation>
                     <div className="mb-12 text-center">
@@ -100,9 +107,6 @@ export function Contact() {
                                     </div>
                                     <h3 className="text-xl font-bold">{t("successTitle")}</h3>
                                     <p className="text-muted-foreground">{successMessage || t("successText")}</p>
-                                    <Button variant="outline" onClick={() => setStatus("idle")} className="mt-4">
-                                        {t("sendAnother")}
-                                    </Button>
                                 </div>
                             ) : (
                                 <form onSubmit={handleSubmit} className="space-y-6">

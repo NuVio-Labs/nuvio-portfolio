@@ -108,7 +108,7 @@ export async function sendEmail(formData: FormData) {
 
         // 6) Versand
         const to = "contact@nuviolabs.de";
-        const from = "NuVioLabs <contact@nuviolabs.de>";
+        const from = "NuVioLabs <no-reply@nuviolabs.de>";
 
         const result = await resend.emails.send({
             from,
@@ -116,6 +116,17 @@ export async function sendEmail(formData: FormData) {
             replyTo: email,
             subject: `${subjects[lang]}: ${subject}`,
             text,
+            html: `
+            <div style="font-family: -apple-system, BlinkMacSystemFont, sans-serif; background:#0b0b0c; padding:32px; color:#fff;">
+                <h2 style="margin-bottom:16px;">Neue Anfrage bei NuVioLabs</h2>
+                <p><strong>Name:</strong> ${name}</p>
+                <p><strong>E-Mail:</strong> ${email}</p>
+                <p><strong>Telefon:</strong> ${phone || "-"}</p>
+                <p><strong>Betreff:</strong> ${subject}</p>
+                <hr style="border-color:#222; margin:24px 0;" />
+                <p>${message.replace(/\n/g, '<br/>')}</p>
+            </div>
+            `
         });
 
         if (result.error) {
@@ -137,8 +148,9 @@ export async function sendEmail(formData: FormData) {
 
         try {
             await resend.emails.send({
-                from: "NuVioLabs <contact@nuviolabs.de>",
+                from: "NuVioLabs <no-reply@nuviolabs.de>",
                 to: email,
+                replyTo: "contact@nuviolabs.de",
                 subject: autoReplySubjects[lang],
                 text: autoReplyTexts[lang]
             });
