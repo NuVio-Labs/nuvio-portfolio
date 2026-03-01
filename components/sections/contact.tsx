@@ -24,17 +24,24 @@ export function Contact() {
         setStatus("submitting")
         setErrorMessage(null)
 
-        const formData = new FormData(event.currentTarget)
-        const result = await sendEmail(formData)
+        const form = event.currentTarget
+        const formData = new FormData(form)
 
-        if (!result?.success) {
-            console.error("Email send failed:", result?.message)
+        try {
+            const result = await sendEmail(formData)
+
+            if (result?.success) {
+                form.reset()
+                setStatus("success")
+                setSuccessMessage(result?.message || t("successToast"))
+                return
+            }
+
             setStatus("error")
             setErrorMessage(result?.message || t("errorToast"))
-        } else {
-            event.currentTarget.reset()
-            setStatus("success")
-            setSuccessMessage(result?.message || t("successToast"))
+        } catch (err) {
+            setStatus("error")
+            setErrorMessage(t("errorToast"))
         }
     }
 
