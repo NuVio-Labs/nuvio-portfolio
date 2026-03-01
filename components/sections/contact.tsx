@@ -1,7 +1,7 @@
 "use client"
 
 import { useState } from "react"
-import { useTranslations } from "next-intl"
+import { useTranslations, useLocale } from "next-intl"
 import { Container } from "@/components/layout/container"
 import { Button } from "@/components/ui/button"
 import { Input } from "@/components/ui/input"
@@ -14,21 +14,27 @@ import { sendEmail } from "@/app/actions/send-email"
 
 export function Contact() {
     const t = useTranslations("contact")
+    const locale = useLocale()
     const [status, setStatus] = useState<"idle" | "submitting" | "success" | "error">("idle")
+    const [errorMessage, setErrorMessage] = useState<string | null>(null)
+    const [successMessage, setSuccessMessage] = useState<string | null>(null)
 
     async function handleSubmit(event: React.FormEvent<HTMLFormElement>) {
         event.preventDefault()
         setStatus("submitting")
+        setErrorMessage(null)
 
         const formData = new FormData(event.currentTarget)
         const result = await sendEmail(formData)
 
-        if (!result?.ok) {
-            console.error("Email send failed:", result?.error)
+        if (!result?.success) {
+            console.error("Email send failed:", result?.message)
             setStatus("error")
+            setErrorMessage(result?.message || t("errorToast"))
         } else {
             event.currentTarget.reset()
             setStatus("success")
+            setSuccessMessage(result?.message || t("successToast"))
         }
     }
 
@@ -86,13 +92,20 @@ export function Contact() {
                                         <CheckCircle2 className="h-8 w-8 text-green-600 dark:text-green-400" />
                                     </div>
                                     <h3 className="text-xl font-bold">{t("successTitle")}</h3>
-                                    <p className="text-muted-foreground">{t("successText")}</p>
+                                    <p className="text-muted-foreground">{successMessage || t("successText")}</p>
                                     <Button variant="outline" onClick={() => setStatus("idle")} className="mt-4">
                                         {t("sendAnother")}
                                     </Button>
                                 </div>
                             ) : (
                                 <form onSubmit={handleSubmit} className="space-y-6">
+                                    {errorMessage && (
+                                        <div className="bg-destructive/15 text-destructive text-sm p-3 rounded-md mb-4 border border-destructive/20 text-center">
+                                            {errorMessage}
+                                        </div>
+                                    )}
+                                    <input type="text" name="honeypot" style={{ display: "none" }} tabIndex={-1} autoComplete="off" />
+                                    <input type="hidden" name="lang" value={locale} />
                                     <div className="grid gap-4 md:grid-cols-2">
                                         <div className="space-y-2">
                                             <Label htmlFor="name">{t("labelName")}</Label>
