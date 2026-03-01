@@ -98,13 +98,13 @@ export function ProjectLivePreview({ url, title, previewImage }: ProjectLivePrev
                             <div className="absolute inset-0 z-10 flex flex-col items-center justify-center bg-background/60 backdrop-blur-md p-6 text-center">
                                 <div className="max-w-md space-y-4">
                                     <p className="text-sm text-foreground font-medium">
-                                        {t("previewGdprNotice")}
+                                        Beim Laden der Live-Vorschau wird eine Verbindung zu externen Servern hergestellt. Dabei kann Ihre IP-Adresse übertragen werden.
                                     </p>
                                     <button
                                         onClick={handleLoadClick}
                                         className="inline-flex items-center justify-center h-10 px-6 mt-2 rounded-full bg-primary text-primary-foreground text-sm font-medium hover:bg-primary/90 transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring"
                                     >
-                                        {t("previewLoadButton")}
+                                        Live-Vorschau laden
                                     </button>
                                 </div>
                             </div>

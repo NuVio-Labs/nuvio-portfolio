@@ -19,9 +19,7 @@
         "headlinePart2": "for sustainable growth.",
         "subline": "Clear structure, fast performance, and confident user flow.",
         "ctaPrimary": "Book a free consult",
-        "ctaSecondary": "View work",
-        "ctaProject": "Start a project",
-        "ctaWork": "Selected work"
+        "ctaSecondary": "View work"
     },
     "valueProposition": {
         "label": "Core Principles",
@@ -51,8 +49,6 @@
         "previewLoading": "Loading preview…",
         "previewAlt": "{title} screenshot",
         "previewDesktopTitle": "Live desktop preview of {title}",
-        "previewGdprNotice": "When loading the live preview, a connection to external servers is established. Your IP address may be transmitted in the process.",
-        "previewLoadButton": "Load live preview",
         "theProblem": "The Problem",
         "theApproach": "The Solution",
         "theOutcome": "Measurable Result",

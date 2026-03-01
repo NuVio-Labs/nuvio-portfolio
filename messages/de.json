@@ -19,9 +19,7 @@
         "headlinePart2": "für nachhaltiges Wachstum.",
         "subline": "Durchdachte Struktur, schnelle Performance und klare Nutzerführung.",
         "ctaPrimary": "Kostenloses Erstgespräch",
-        "ctaSecondary": "Projekte ansehen",
-        "ctaProject": "Projekt anfragen",
-        "ctaWork": "Ausgewählte Arbeiten"
+        "ctaSecondary": "Projekte ansehen"
     },
     "valueProposition": {
         "label": "Core Principles",
@@ -51,8 +49,6 @@
         "previewLoading": "Vorschau wird geladen…",
         "previewAlt": "Screenshot von {title}",
         "previewDesktopTitle": "Desktop-Vorschau von {title}",
-        "previewGdprNotice": "Beim Laden der Live-Vorschau wird eine Verbindung zu externen Servern hergestellt. Dabei kann Ihre IP-Adresse übertragen werden.",
-        "previewLoadButton": "Live-Vorschau laden",
         "theProblem": "Das Problem",
         "theApproach": "Die Lösung",
         "theOutcome": "Messbares Ergebnis",
