@@ -14,75 +14,126 @@
         "ctaProject": "Projekt anfragen"
     },
     "hero": {
-        "badge": "Bereit für neue Projekte",
-        "headlinePart1": "Where structure ",
-        "headlinePart2": "meets execution.",
-        "subline": "Ich gestalte und entwickle digitale Plattformen,\ndie wartbar, skalierbar und schnell bleiben.",
+        "badge": "Verfügbar für neue Projekte",
+        "headlinePart1": "Websites, die Vertrauen schaffen",
+        "headlinePart2": "und Anfragen generieren.",
+        "headlineLines": [
+            "Websites, die",
+            "Vertrauen schaffen",
+            "und Anfragen",
+            "generieren."
+        ],
+        "subline": "Ich entwickle moderne Unternehmenswebsites mit klarer Struktur, hochwertigem Design und starker Performance. Für Marken, die online professionell auftreten und nicht austauschbar wirken wollen.",
         "ctaPrimary": "Projekt anfragen",
-        "ctaSecondary": "Ausgewählte Arbeiten",
-        "features": {
+        "ctaSecondary": "Portfolio ansehen",
+        "preview": {
+            "browserLabel": "selected work",
+            "eyebrow": "Premium Case Preview",
+            "title": "Daisy May's Salon",
+            "description": "Eleganter Markenauftritt für einen modernen Salon mit Fokus auf Vertrauen, Ästhetik und klare Conversion.",
+            "primaryCta": "Termin anfragen",
+            "secondaryCta": "Mehr erfahren"
+        },
+        "trustRow": {
             "lighthouse": "Lighthouse 95+",
-            "multilang": "Mehrsprachig",
+            "mobile": "Mobile first",
             "seo": "SEO optimiert",
+            "multilang": "Mehrsprachig",
             "nextjs": "Next.js nativ",
             "scalable": "Skalierbare Systeme"
+        },
+        "cards": {
+            "performance": {
+                "title": "Performance",
+                "score": "95+",
+                "badge": "Live",
+                "label": "Optimierung für",
+                "features": [
+                    "Next.js nativ",
+                    "SEO sauber aufgebaut",
+                    "Responsive und schnell"
+                ]
+            },
+            "optimized": {
+                "title": "Optimiert für",
+                "items": ["Vertrauen", "Design", "Conversion"]
+            },
+            "slots": {
+                "title": "Freie Slots für",
+                "status": "neue Projekte"
+            }
         }
     },
     "valueProposition": {
-        "label": "Core Principles",
-        "headlinePart1": "Engineered for",
-        "headlinePart2": "resilience and flow.",
-        "description": "Ich nutze keine Templates. Ich baue digitale Produkte von Grund auf mit starkem Fokus auf strukturelle Integrität, messbare Performance und kompromisslose Qualität.",
+        "label": "Warum NuVioLabs",
+        "headlinePart1": "Modern aufgebaut.",
+        "headlinePart2": "Auf Anfragen optimiert.",
+        "description": "Ihre Website soll nicht nur gut aussehen, sondern schnell Vertrauen aufbauen, klar führen und aus Besuchern echte Anfragen machen. Genau darauf ist dieser Aufbau ausgelegt.",
+        "proofPoints": [
+            "Klare Nutzerführung",
+            "Starker erster Eindruck",
+            "Mehr qualifizierte Anfragen"
+        ],
+        "ctaEyebrow": "Conversion-Fokus",
+        "ctaTitle": "Aus Design wird ein verlässlicher Vertriebskanal.",
+        "ctaText": "Struktur, Inhalte und Performance greifen zusammen, damit Ihre Website professionell wirkt, schneller überzeugt und den nächsten Schritt leicht macht.",
+        "ctaPrimary": "Projekt anfragen",
+        "ctaSecondary": "Portfolio ansehen",
         "principles": {
             "architecture": {
-                "title": "Systemische Architektur",
-                "description": "Keine schnellen Fixes. Ich entwickle skalierbare Fundamente, die exakt auf Ihr Ökosystem zugeschnitten sind und langfristige Stabilität sowie saubere Code-Semantik garantieren."
+                "title": "Klare Positionierung",
+                "description": "Besucher verstehen in wenigen Sekunden, was Sie anbieten, für wen es gedacht ist und warum sie mit Ihnen arbeiten sollten.",
+                "highlight": "Schnell verständlich"
             },
             "execution": {
-                "title": "Präzisions-Engineering",
-                "description": "Jede Zeile Code erfüllt einen Zweck. Hohe Performance, kein Bloat und ein kompromissloser Fokus auf eine makellose Nutzererfahrung."
+                "title": "Design mit Wirkung",
+                "description": "Ein hochwertiger Auftritt hebt Sie sichtbar vom Wettbewerb ab, stärkt Vertrauen und lenkt gezielt auf die relevanten Handlungen.",
+                "highlight": "Vertrauen in Sekunden"
             },
             "scalability": {
-                "title": "Gebaut für Skalierung",
-                "description": "Produkte, die nicht nur für den heutigen Launch konzipiert sind, sondern so architektoniert wurden, dass sie das Wachstum von morgen nahtlos bewältigen."
+                "title": "Technisch sauber gebaut",
+                "description": "Schnell, mobil optimiert und so umgesetzt, dass Ihre Website auch später ohne Reibung erweitert werden kann.",
+                "highlight": "Bereit für Wachstum"
             }
         }
     },
     "work": {
+        "eyebrow": "Ausgewählte Arbeiten",
         "sectionTitle": "Projekte",
         "sectionSubtitle": "Zwei echte Aufträge. Vom Briefing bis zum Launch.",
-        "visitSite": "Live ansehen →",
+        "previewBadge": "Live-Vorschau",
+        "visitSite": "Live ansehen",
         "visitSiteLabel": "{title} besuchen öffnet in neuem Tab",
         "previewLoading": "Vorschau wird geladen…",
         "previewAlt": "Screenshot von {title}",
         "previewDesktopTitle": "Desktop-Vorschau von {title}",
         "theProblem": "Das Problem",
         "theApproach": "Die Lösung",
-        "theOutcome": "Messbares Ergebnis",
-        "ctaWt": "Kostenloses Erstgespräch für Ihr Projekt",
-        "ctaDaisy": "Ähnliches Projekt starten",
+        "theOutcome": "Das Ergebnis",
+        "ctaWt": "Ähnliches Projekt anfragen",
+        "ctaDaisy": "Ähnlichen Auftritt anfragen",
         "previewGdprText": "Beim Laden der Live-Vorschau wird eine Verbindung zu externen Servern hergestellt. Dabei kann Ihre IP-Adresse übertragen werden.",
         "previewLoadBtn": "Live-Vorschau laden",
         "projects": {
             "wt-erdbewegungen": {
                 "title": "WT Erdbewegungen",
-                "description": "Branche: Tiefbau & Erdbewegung",
-                "problem": "Keine digitale Sichtbarkeit. Potenzielle Auftraggeber konnten das Unternehmen lokal nicht finden.",
-                "approach": "Eine zielgerichtete, mobil-optimierte Firmenwebsite, fokussiert auf das Leistungsspektrum und lokale Suchmaschinenoptimierung.",
-                "outcome1": "🚀 Ladezeit unter 2 Sekunden auf Smartphones",
-                "outcome2": "📈 Sichtbare Platzierung für lokale Suchanfragen",
-                "outcome3": "🤝 Erster digitaler Kontaktpunkt für neue Bauprojekte",
-                "testimonial": "„Endlich werden wir auch online gefunden und die Seite sieht top aus.“"
+                "description": "Lokaler Webauftritt für Tiefbau und Erdbewegung.",
+                "problem": "Online praktisch unsichtbar. Für potenzielle Auftraggeber fehlte ein klarer digitaler Erstkontakt.",
+                "approach": "Eine fokussierte Unternehmenswebsite mit sauberer Leistungsstruktur, lokaler SEO-Basis und mobile-first Aufbau.",
+                "outcome1": "Klarer digitaler Einstieg für neue Bauanfragen",
+                "outcome2": "Schnelle mobile Performance und saubere Nutzerführung",
+                "outcome3": "Bessere Auffindbarkeit im lokalen Umfeld",
+                "testimonial": "„Endlich werden wir auch online gefunden und der Auftritt wirkt so professionell wie unsere Arbeit.“"
             },
             "daisymays-salon": {
                 "title": "Daisy May's Salon",
-                "description": "Branche: Dienstleistung / Hundesalon",
-                "problem": "Unstrukturierte Anfragen über Social Media & Telefon. Keine zentrale Anlaufstelle für Leistungen und Preise.",
-                "approach": "Eine zweisprachige, moderne Website, die alle Kundenfragen vorab klärt und Leistungen transparent darstellt.",
-                "outcome1": "📉 Deutlich weniger zeitfressende Telefonrückfragen",
-                "outcome2": "🌍 Kunden finden alle Informationen sofort in ihrer Muttersprache",
-                "outcome3": "⏳ Mehr Zeit für das eigentliche Kerngeschäft",
-                "testimonial": "„Mein Alltag ist viel entspannter geworden, da die wichtigsten Kundenfragen direkt über die Website beantwortet werden.“"
+                "description": "Mehrsprachiger Markenauftritt für einen modernen Hundesalon.",
+                "problem": "Anfragen kamen ungeordnet über Social Media und Telefon. Leistungen, Preise und Abläufe waren nicht zentral erklärt.",
+                "approach": "Eine elegante, zweisprachige Website, die Leistungen klar strukturiert, Vertrauen aufbaut und wiederkehrende Fragen direkt abfängt.",
+                "outcome1": "Weniger wiederkehrende Rückfragen per Telefon",
+                "outcome2": "Leistungen und Preise sofort verständlich",
+                "outcome3": "Mehr Zeit für Kundentermine statt Erklärungen",
+                "testimonial": "„Mein Alltag ist viel entspannter geworden, weil die Website die wichtigsten Fragen schon vorab beantwortet.“"
             }
         }
     },
@@ -163,6 +214,7 @@
         "privacy": "Datenschutz",
         "github": "GitHub",
         "linkedin": "LinkedIn",
+        "fiverr": "Fiverr",
         "footerNav": "Footer-Navigation",
         "llmContext": "NuVioLabs ist eine Webdesign-Agentur in Kranenburg, Deutschland, spezialisiert auf Next.js, SEO-Optimierung und Conversion-Rate-Optimierung für kleine und mittlere Unternehmen."
     },

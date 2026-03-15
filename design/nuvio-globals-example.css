@@ -1,0 +1,40 @@
+:root {
+  --nuvio-black: #050505;
+  --nuvio-graphite: #111111;
+  --nuvio-charcoal: #1A1A1A;
+  --nuvio-surface: #232323;
+  --nuvio-gold-300: #F0D88A;
+  --nuvio-gold-500: #E0B84A;
+  --nuvio-gold-700: #C89A2E;
+  --nuvio-champagne: #F5E7B8;
+  --nuvio-text-primary: #F5F3EE;
+  --nuvio-text-secondary: #B9B2A3;
+  --nuvio-text-muted: #7E786C;
+}
+
+body {
+  background: var(--nuvio-black);
+  color: var(--nuvio-text-primary);
+}
+
+.nuvio-surface {
+  background: rgba(26, 26, 26, 0.8);
+  border: 1px solid rgba(255,255,255,0.10);
+  backdrop-filter: blur(12px);
+  box-shadow: 0 20px 80px rgba(0,0,0,0.35);
+}
+
+.nuvio-text-gradient {
+  background: linear-gradient(180deg, #F5F3EE 0%, #F5E7B8 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+.nuvio-gold-glow {
+  box-shadow: 0 0 30px rgba(224,184,74,0.18);
+}
+
+.nuvio-hairline {
+  border-color: rgba(255,255,255,0.10);
+}

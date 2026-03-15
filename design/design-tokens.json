@@ -1,0 +1,53 @@
+{
+  "meta": {
+    "name": "NuVio Corporate Design Tokens",
+    "version": "1.0.0",
+    "scope": "NuVio brand only"
+  },
+  "colors": {
+    "nuvioBlack": "#050505",
+    "graphite": "#111111",
+    "charcoal": "#1A1A1A",
+    "surface": "#232323",
+    "gold300": "#F0D88A",
+    "gold500": "#E0B84A",
+    "gold700": "#C89A2E",
+    "champagne": "#F5E7B8",
+    "textPrimary": "#F5F3EE",
+    "textSecondary": "#B9B2A3",
+    "textMuted": "#7E786C"
+  },
+  "radius": {
+    "sm": "0.75rem",
+    "md": "1rem",
+    "lg": "1.5rem",
+    "xl": "2rem"
+  },
+  "spacing": {
+    "sectionYMobile": "5rem",
+    "sectionYDesktop": "7rem",
+    "containerXMobile": "1.5rem",
+    "containerXDesktop": "2rem",
+    "gridGap": "1.5rem"
+  },
+  "borders": {
+    "subtle": "rgba(255,255,255,0.10)",
+    "stronger": "rgba(255,255,255,0.15)",
+    "goldFocus": "rgba(224,184,74,0.30)"
+  },
+  "shadow": {
+    "soft": "0 10px 40px rgba(0,0,0,0.30)",
+    "premium": "0 20px 80px rgba(0,0,0,0.35)",
+    "goldGlow": "0 0 30px rgba(224,184,74,0.18)"
+  },
+  "blur": {
+    "card": "12px",
+    "heroGlow": "64px"
+  },
+  "motion": {
+    "fast": "180ms",
+    "base": "260ms",
+    "slow": "420ms",
+    "ease": "cubic-bezier(0.22, 1, 0.36, 1)"
+  }
+}

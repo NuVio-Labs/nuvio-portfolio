@@ -14,75 +14,126 @@
         "ctaProject": "Project aanvragen"
     },
     "hero": {
-        "badge": "Klaar voor nieuwe projecten",
-        "headlinePart1": "Where structure ",
-        "headlinePart2": "meets execution.",
-        "subline": "Ik ontwerp en ontwikkel digitale platforms\ndie onderhoudbaar, schaalbaar en snel blijven.",
+        "badge": "Beschikbaar voor nieuwe projecten",
+        "headlinePart1": "Websites die vertrouwen bouwen",
+        "headlinePart2": "en aanvragen genereren.",
+        "headlineLines": [
+            "Websites die",
+            "vertrouwen bouwen",
+            "en aanvragen",
+            "genereren."
+        ],
+        "subline": "Ik ontwikkel moderne zakelijke websites met een heldere structuur, hoogwaardig design en sterke prestaties. Voor merken die online professioneel willen overkomen zonder inwisselbaar te voelen.",
         "ctaPrimary": "Project aanvragen",
-        "ctaSecondary": "Geselecteerd werk",
-        "features": {
+        "ctaSecondary": "Portfolio bekijken",
+        "preview": {
+            "browserLabel": "selected work",
+            "eyebrow": "Premium Case Preview",
+            "title": "Daisy May's Salon",
+            "description": "Een elegante merkpresentatie voor een moderne salon met focus op vertrouwen, esthetiek en duidelijke conversie.",
+            "primaryCta": "Afspraak aanvragen",
+            "secondaryCta": "Meer info"
+        },
+        "trustRow": {
             "lighthouse": "Lighthouse 95+",
-            "multilang": "Meertalig",
+            "mobile": "Mobile first",
             "seo": "SEO geoptimaliseerd",
+            "multilang": "Meertalig",
             "nextjs": "Next.js native",
             "scalable": "Schaalbare systemen"
+        },
+        "cards": {
+            "performance": {
+                "title": "Prestaties",
+                "score": "95+",
+                "badge": "Live",
+                "label": "Optimalisatie voor",
+                "features": [
+                    "Native Next.js opbouw",
+                    "Schone SEO-structuur",
+                    "Responsive en snel"
+                ]
+            },
+            "optimized": {
+                "title": "Geoptimaliseerd voor",
+                "items": ["Vertrouwen", "Design", "Conversie"]
+            },
+            "slots": {
+                "title": "Beschikbaar voor",
+                "status": "nieuwe projecten"
+            }
         }
     },
     "valueProposition": {
-        "label": "Kernprincipes",
-        "headlinePart1": "Gebouwd voor",
-        "headlinePart2": "stabiliteit en flow.",
-        "description": "Ik werk niet met standaard templates. Ik bouw digitale producten vanaf de basis — met focus op sterke fundamenten, meetbare prestaties en kwaliteit zonder concessies.",
+        "label": "Waarom NuVioLabs",
+        "headlinePart1": "Modern opgebouwd.",
+        "headlinePart2": "Geoptimaliseerd voor aanvragen.",
+        "description": "Uw website moet meer doen dan er goed uitzien. Ze moet snel vertrouwen opbouwen, duidelijk sturen en bezoekers omzetten in echte aanvragen. Daar is deze opbouw op gericht.",
+        "proofPoints": [
+            "Duidelijke gebruikersroute",
+            "Sterkere eerste indruk",
+            "Meer gekwalificeerde aanvragen"
+        ],
+        "ctaEyebrow": "Conversiefocus",
+        "ctaTitle": "Design wordt een betrouwbaar acquisitiekanaal.",
+        "ctaText": "Structuur, inhoud en performance werken samen zodat uw website professioneel aanvoelt, sneller overtuigt en de volgende stap eenvoudig maakt.",
+        "ctaPrimary": "Project aanvragen",
+        "ctaSecondary": "Portfolio bekijken",
         "principles": {
             "architecture": {
-                "title": "Systeemarchitectuur",
-                "description": "Geen snelle oplossingen. Ik ontwikkel schaalbare fundamenten die passen bij uw organisatie — stabiel, onderhoudbaar en klaar voor verdere groei."
+                "title": "Heldere positionering",
+                "description": "Bezoekers begrijpen binnen enkele seconden wat u aanbiedt, voor wie het bedoeld is en waarom ze met u zouden moeten werken.",
+                "highlight": "Snel te begrijpen"
             },
             "execution": {
-                "title": "Nauwkeurige uitvoering",
-                "description": "Elke regel code heeft een functie. Hoge prestaties, geen overbodige complexiteit en een sterke focus op een soepele gebruikerservaring."
+                "title": "Design met impact",
+                "description": "Een sterke uitstraling onderscheidt u van de concurrentie, vergroot vertrouwen en stuurt gericht naar de belangrijkste acties.",
+                "highlight": "Vertrouwen in seconden"
             },
             "scalability": {
-                "title": "Klaar om te groeien",
-                "description": "Niet alleen gebouwd voor vandaag, maar voorbereid op de groei van morgen."
+                "title": "Technisch schoon opgebouwd",
+                "description": "Snel, mobiel geoptimaliseerd en zo gebouwd dat de website later zonder frictie kan meegroeien.",
+                "highlight": "Klaar om te groeien"
             }
         }
     },
     "work": {
+        "eyebrow": "Geselecteerd werk",
         "sectionTitle": "Werk",
         "sectionSubtitle": "Twee echte klantprojecten. Van briefing tot livegang.",
-        "visitSite": "Bekijk live →",
+        "previewBadge": "Live-preview",
+        "visitSite": "Bekijk live",
         "visitSiteLabel": "Bezoek {title} (opent in nieuw tabblad)",
         "previewLoading": "Voorbeeld laden…",
         "previewAlt": "Screenshot van {title}",
         "previewDesktopTitle": "Live desktopweergave van {title}",
         "theProblem": "Het probleem",
         "theApproach": "De oplossing",
-        "theOutcome": "Meetbaar resultaat",
-        "ctaWt": "Plan een gratis adviesgesprek",
-        "ctaDaisy": "Start een vergelijkbaar project",
+        "theOutcome": "Het resultaat",
+        "ctaWt": "Vergelijkbaar project aanvragen",
+        "ctaDaisy": "Vergelijkbare merkwebsite aanvragen",
         "previewGdprText": "Bij het laden van het live-voorbeeld wordt een verbinding met externe servers tot stand gebracht. Uw IP-adres kan hierbij worden overgedragen.",
         "previewLoadBtn": "Live-voorbeeld laden",
         "projects": {
             "wt-erdbewegungen": {
                 "title": "WT Erdbewegungen",
-                "description": "Branche: Grondverzet",
-                "problem": "Geen duidelijke online aanwezigheid. Lokale klanten konden het bedrijf moeilijk vinden.",
-                "approach": "Een gerichte, mobiel-geoptimaliseerde website met focus op diensten en lokale vindbaarheid.",
-                "outcome1": "🚀 Laadtijd onder 2 seconden op smartphones",
-                "outcome2": "📈 Zichtbaar in lokale zoekresultaten",
-                "outcome3": "🤝 Een duidelijk eerste contactpunt voor nieuwe projecten",
-                "testimonial": "“We worden eindelijk online gevonden — en de site ziet er op elke telefoon goed uit.”"
+                "description": "Een lokale webpresentatie voor grondverzet en graafwerk.",
+                "problem": "Het bedrijf was online vrijwel onzichtbaar. Potentiële opdrachtgevers hadden geen duidelijk digitaal eerste contactpunt.",
+                "approach": "Een gerichte bedrijfswebsite met een heldere dienstenstructuur, lokale SEO-basis en een mobile-first opbouw.",
+                "outcome1": "Een duidelijk digitaal startpunt voor nieuwe aanvragen",
+                "outcome2": "Snelle mobiele performance en helderdere gebruikersroute",
+                "outcome3": "Sterkere zichtbaarheid in de lokale markt",
+                "testimonial": "“We worden eindelijk online gevonden en de site voelt nu net zo professioneel als ons werk.”"
             },
             "daisymays-salon": {
                 "title": "Daisy May's Salon",
-                "description": "Branche: Hondensalon",
-                "problem": "Aanvragen kwamen ongeordend binnen via social media en telefoon. Geen centrale plek voor diensten en prijzen.",
-                "approach": "Een moderne, meertalige website die veelgestelde vragen vooraf beantwoordt en diensten transparant weergeeft.",
-                "outcome1": "📉 Minder tijdrovende telefoontjes",
-                "outcome2": "🌍 Klanten vinden direct wat ze zoeken — in hun eigen taal",
-                "outcome3": "⏳ Meer tijd voor het echte werk",
-                "testimonial": "“Onze werkdagen zijn rustiger geworden nu de belangrijkste vragen al op de website beantwoord worden.”"
+                "description": "Een meertalige merkpresentatie voor een moderne hondensalon.",
+                "problem": "Aanvragen kwamen ongeordend binnen via social media en telefoon. Diensten, prijzen en verwachtingen stonden nergens centraal uitgelegd.",
+                "approach": "Een elegante tweetalige website die het aanbod helder structureert, vertrouwen opbouwt en terugkerende vragen vooraf opvangt.",
+                "outcome1": "Minder terugkerende vragen per telefoon",
+                "outcome2": "Diensten en prijzen direct duidelijk",
+                "outcome3": "Meer tijd voor afspraken in plaats van uitleg",
+                "testimonial": "“Mijn werkdagen zijn veel rustiger geworden omdat de website de belangrijkste vragen al vooraf beantwoordt.”"
             }
         }
     },
@@ -163,6 +214,7 @@
         "privacy": "Privacybeleid",
         "github": "GitHub",
         "linkedin": "LinkedIn",
+        "fiverr": "Fiverr",
         "footerNav": "Footernavigatie",
         "llmContext": "NuVioLabs is een onafhankelijke webstudio in Kranenburg, Duitsland, gespecialiseerd in moderne Next.js websites met focus op SEO en conversie."
     },

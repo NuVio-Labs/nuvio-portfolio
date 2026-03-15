@@ -39,63 +39,52 @@ export function Navbar() {
     }
 
     return (
-        <header className="sticky top-0 z-50 w-full border-b border-border/40 bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">
+        <header className="fixed top-0 z-50 w-full border-b border-white/[0.03] bg-[#050505]/40 backdrop-blur-2xl">
             <Container>
-                <div className="flex h-14 items-center justify-between">
-                    <div className="flex gap-6 md:gap-10">
+                <div className="flex h-16 items-center justify-between">
+                    <div className="flex items-center gap-12">
                         <Link href="/" className="flex items-center space-x-2" onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}>
-                            <span className="inline-block font-bold">{t("brand")}</span>
+                            <span className="inline-block font-bold text-foreground tracking-[-0.03em] text-[19px]">{t("brand")}</span>
                         </Link>
-                    </div>
-                    <div className="flex flex-1 items-center justify-end space-x-2">
-                        <nav className="flex items-center space-x-1" aria-label={t("work")}>
+                        
+                        <nav className="hidden md:flex items-center gap-8">
                             {navItems.map((item) => (
                                 <a
                                     key={item.href}
                                     href={item.href}
                                     onClick={(e) => handleScroll(e, item.href)}
                                     className={cn(
-                                        "hidden md:inline-flex min-h-[48px] items-center justify-center rounded-md px-4 text-sm font-medium transition-colors hover:text-foreground/80 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2",
+                                        "text-[12px] font-bold uppercase tracking-[0.2em] transition-all hover:text-foreground/100",
                                         activeSection === item.href
                                             ? "text-foreground"
-                                            : "text-muted-foreground"
+                                            : "text-neutral-500"
                                     )}
                                 >
                                     {t(item.key)}
                                 </a>
                             ))}
-
-                            <LanguageSwitcher />
-
-                            <Button
-                                variant="ghost"
-                                size="icon"
-                                aria-label={t("toggleTheme")}
-                                className="min-h-[48px] min-w-[48px]"
-                                onClick={() => setTheme(theme === "dark" ? "light" : "dark")}
-                            >
-                                <Sun className="h-[1.2rem] w-[1.2rem] rotate-0 scale-100 transition-all dark:-rotate-90 dark:scale-0" />
-                                <Moon className="absolute h-[1.2rem] w-[1.2rem] rotate-90 scale-0 transition-all dark:rotate-0 dark:scale-100" />
-                            </Button>
-
-                            <a href="#contact" onClick={(e) => handleScroll(e, "#contact")} className="hidden md:flex ml-2 ">
-                                <Button className="rounded-full shadow-md font-semibold px-6 hover:shadow-lg transition-all ">
-                                    {t("ctaProject")}
-                                </Button>
-                            </a>
-
-                            <div className="flex items-center gap-4 pl-4 ml-2 border-l border-border/40">
-                                <a href="https://core.nuviolabs.de" target="_blank" rel="noopener noreferrer" aria-label={t("clientPortalLabel")}>
-                                    {/* <Button disabled variant="default" size="sm" className="hidden sm:inline-flex min-h-[48px]"> */}
-                                    {/* {t("clientPortal")} */}
-                                    {/* </Button> */}
-                                    <Button variant="default" size="icon" className="sm:hidden min-h-[48px] min-w-[48px]">
-                                        <span className="sr-only">{t("login")}</span>
-                                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="lucide lucide-log-in" aria-hidden="true"><path d="M15 3h4a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2h-4" /><polyline points="10 17 15 12 10 7" /><line x1="15" x2="3" y1="12" y2="12" /></svg>
-                                    </Button>
-                                </a>
-                            </div>
                         </nav>
+                    </div>
+
+                    <div className="flex items-center gap-6">
+                        <LanguageSwitcher />
+
+                        <Button
+                            variant="ghost"
+                            size="icon"
+                            aria-label={t("toggleTheme")}
+                            className="w-10 h-10 rounded-full hover:bg-white/5 transition-colors"
+                            onClick={() => setTheme(theme === "dark" ? "light" : "dark")}
+                        >
+                            <Sun className="h-[1.1rem] w-[1.1rem] rotate-0 scale-100 transition-all dark:-rotate-90 dark:scale-0 text-neutral-400" />
+                            <Moon className="absolute h-[1.1rem] w-[1.1rem] rotate-90 scale-0 transition-all dark:rotate-0 dark:scale-100 text-neutral-400" />
+                        </Button>
+
+                        <a href="#contact" onClick={(e) => handleScroll(e, "#contact")} className="hidden sm:block">
+                            <Button className="rounded-full bg-foreground text-background font-bold text-[11px] uppercase tracking-widest px-8 py-5 hover:bg-neutral-200 transition-all active:scale-[0.98]">
+                                {t("ctaProject")}
+                            </Button>
+                        </a>
                     </div>
                 </div>
             </Container>

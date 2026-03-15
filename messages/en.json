@@ -14,75 +14,126 @@
         "ctaProject": "Start a project"
     },
     "hero": {
-        "badge": "Ready for opportunities",
-        "headlinePart1": "Where structure ",
-        "headlinePart2": "meets execution.",
-        "subline": "I design and engineer digital platforms\nthat stay maintainable, scalable and fast.",
-        "ctaPrimary": "Start a project",
-        "ctaSecondary": "Selected work",
-        "features": {
+        "badge": "Available for new projects",
+        "headlinePart1": "Websites that build trust",
+        "headlinePart2": "and generate inquiries.",
+        "headlineLines": [
+            "Websites that",
+            "build trust",
+            "and drive",
+            "inquiries."
+        ],
+        "subline": "I develop modern business websites with clear structure, premium design, and strong performance. For brands that want to look professional online without feeling generic.",
+        "ctaPrimary": "Request a project",
+        "ctaSecondary": "View portfolio",
+        "preview": {
+            "browserLabel": "selected work",
+            "eyebrow": "Premium Case Preview",
+            "title": "Daisy May's Salon",
+            "description": "An elegant brand presence for a modern salon focused on trust, aesthetics, and clear conversion paths.",
+            "primaryCta": "Book an appointment",
+            "secondaryCta": "Learn more"
+        },
+        "trustRow": {
             "lighthouse": "Lighthouse 95+",
-            "multilang": "Multi-Language",
-            "seo": "SEO Optimized",
-            "nextjs": "Next.js Native",
-            "scalable": "Scalable Systems"
+            "mobile": "Mobile first",
+            "seo": "SEO optimized",
+            "multilang": "Multi-language",
+            "nextjs": "Next.js native",
+            "scalable": "Scalable systems"
+        },
+        "cards": {
+            "performance": {
+                "title": "Performance",
+                "score": "95+",
+                "badge": "Live",
+                "label": "Optimization for",
+                "features": [
+                    "Native Next.js build",
+                    "Clean SEO structure",
+                    "Responsive and fast"
+                ]
+            },
+            "optimized": {
+                "title": "Optimized for",
+                "items": ["Trust", "Design", "Conversion"]
+            },
+            "slots": {
+                "title": "Available for",
+                "status": "new projects"
+            }
         }
     },
     "valueProposition": {
-        "label": "Core Principles",
-        "headlinePart1": "Engineered for",
-        "headlinePart2": "resilience and flow.",
-        "description": "I don't assemble templates. I build digital products from the ground up—with a strong focus on solid foundations, measurable performance, and uncompromising quality.",
+        "label": "Why NuVioLabs",
+        "headlinePart1": "Built to feel",
+        "headlinePart2": "modern and convincing.",
+        "description": "Your website should do more than look good. It should build trust fast, guide people clearly, and turn visits into real inquiries. That is what this structure is designed for.",
+        "proofPoints": [
+            "Clear user guidance",
+            "Stronger first impression",
+            "More qualified inquiries"
+        ],
+        "ctaEyebrow": "Conversion Focus",
+        "ctaTitle": "Design becomes a reliable lead channel.",
+        "ctaText": "Structure, messaging, and performance work together so your website feels professional, earns trust faster, and makes the next step easy.",
+        "ctaPrimary": "Request a project",
+        "ctaSecondary": "View portfolio",
         "principles": {
             "architecture": {
-                "title": "System Architecture",
-                "description": "No quick fixes. I build scalable foundations tailored to your setup—so things stay stable, maintainable, and easy to evolve."
+                "title": "Clear positioning",
+                "description": "Visitors understand within seconds what you offer, who it is for, and why they should work with you.",
+                "highlight": "Easy to grasp"
             },
             "execution": {
-                "title": "Precision Execution",
-                "description": "Every line of code has a job. High performance, no bloat, and a relentless focus on a polished user experience."
+                "title": "Design with impact",
+                "description": "A refined visual identity sets you apart, builds trust, and directs attention toward the actions that matter.",
+                "highlight": "Trust at a glance"
             },
             "scalability": {
-                "title": "Built to Scale",
-                "description": "Designed not just for today's launch, but ready to support tomorrow's growth."
+                "title": "Built cleanly",
+                "description": "Fast, mobile-optimized, and implemented so the site can grow later without friction.",
+                "highlight": "Ready to grow"
             }
         }
     },
     "work": {
+        "eyebrow": "Selected Work",
         "sectionTitle": "Work",
         "sectionSubtitle": "Two real client projects. From brief to launch.",
-        "visitSite": "View live →",
+        "previewBadge": "Live Preview",
+        "visitSite": "View live",
         "visitSiteLabel": "Visit {title} (opens in a new tab)",
         "previewLoading": "Loading preview…",
         "previewAlt": "{title} screenshot",
         "previewDesktopTitle": "Live desktop preview of {title}",
         "theProblem": "The Problem",
         "theApproach": "The Solution",
-        "theOutcome": "Measurable Result",
-        "ctaWt": "Book a free consult",
-        "ctaDaisy": "Start a similar project",
+        "theOutcome": "The Result",
+        "ctaWt": "Request a similar project",
+        "ctaDaisy": "Request a similar brand site",
         "previewGdprText": "Loading the live preview will establish a connection to external servers. Your IP address may be transmitted in the process.",
         "previewLoadBtn": "Load live preview",
         "projects": {
             "wt-erdbewegungen": {
                 "title": "WT Erdbewegungen",
-                "description": "Industry: Excavation & earthmoving",
-                "problem": "No real online presence. Local clients couldn't find the business.",
-                "approach": "A focused, mobile-first site built around services and local SEO.",
-                "outcome1": "🚀 Load time under 2 seconds on smartphones",
-                "outcome2": "📈 Visible in local search results",
-                "outcome3": "🤝 A clear first touchpoint for new projects",
-                "testimonial": "“We finally show up online—and the site looks great on every phone.”"
+                "description": "A local web presence for excavation and earthmoving.",
+                "problem": "The company was nearly invisible online. Potential clients had no clear digital first touchpoint.",
+                "approach": "A focused company website with a clear service structure, local SEO foundations, and a mobile-first build.",
+                "outcome1": "A clear digital entry point for new project inquiries",
+                "outcome2": "Fast mobile performance and cleaner user flow",
+                "outcome3": "Stronger visibility in the local market",
+                "testimonial": "“We finally get found online, and the site now feels as professional as our work.”"
             },
             "daisymays-salon": {
                 "title": "Daisy May's Salon",
-                "description": "Industry: Dog grooming",
-                "problem": "Inquiries came in via social and phone, without structure. No clear place for services and pricing.",
-                "approach": "A modern, bilingual site that answers common questions upfront and lists services transparently.",
-                "outcome1": "📉 Fewer time-consuming phone calls",
-                "outcome2": "🌍 Clients find what they need immediately—in their language",
-                "outcome3": "⏳ More time for the work that matters",
-                "testimonial": "“Our day-to-day is much calmer now that the key questions are answered directly on the website.”"
+                "description": "A multilingual brand presence for a modern dog salon.",
+                "problem": "Inquiries came in through social media and phone without structure. Services, pricing, and expectations were not explained in one place.",
+                "approach": "An elegant bilingual website that structures the offer clearly, builds trust, and answers recurring questions before contact happens.",
+                "outcome1": "Fewer repeated questions by phone",
+                "outcome2": "Services and pricing understood immediately",
+                "outcome3": "More time for appointments instead of explanations",
+                "testimonial": "“My day-to-day feels much calmer now because the website answers the most important questions upfront.”"
             }
         }
     },
@@ -163,6 +214,7 @@
         "privacy": "Privacy",
         "github": "GitHub",
         "linkedin": "LinkedIn",
+        "fiverr": "Fiverr",
         "footerNav": "Footer navigation",
         "llmContext": "NuVioLabs is an independent web studio in Kranenburg, Germany, building fast, modern Next.js websites with a focus on SEO and conversion."
     },

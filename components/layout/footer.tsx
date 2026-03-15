@@ -44,6 +44,14 @@ export function Footer() {
                     >
                         {t("linkedin")}
                     </a>
+                    <a
+                        href="https://de.fiverr.com/s/qDabQqp"
+                        target="_blank"
+                        rel="noreferrer"
+                        className="text-xs text-muted-foreground transition-colors hover:text-foreground min-h-[48px] inline-flex items-center px-3 rounded-md focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring"
+                    >
+                        {t("fiverr")}
+                    </a>
                 </nav>
             </Container>
         </footer>
