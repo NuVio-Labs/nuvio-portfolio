@@ -28,14 +28,15 @@ export function Work() {
     return (
         <section
             id="work"
-            className="relative overflow-hidden bg-[linear-gradient(180deg,#0E0B09_0%,#090706_18%,#0D0A08_58%,#090706_100%)] py-24 md:py-32"
+            className="relative -mt-12 overflow-hidden bg-[linear-gradient(180deg,#0E0B09_0%,#090706_18%,#0D0A08_58%,#090706_100%)] py-28 md:-mt-16 md:py-36"
         >
             <div className="pointer-events-none absolute inset-0">
+                <div className="absolute inset-x-[-6%] top-0 h-48 bg-[linear-gradient(to_bottom,rgba(11,9,8,1),rgba(11,9,8,0.8)_34%,rgba(11,9,8,0.26)_72%,rgba(11,9,8,0)_100%)] blur-[6px]" />
+                <div className="absolute inset-x-[-6%] bottom-0 h-52 bg-[linear-gradient(to_bottom,rgba(9,7,6,0),rgba(10,8,7,0.3)_32%,rgba(10,8,7,0.76)_68%,rgba(11,9,8,1)_100%)] blur-[8px]" />
                 <div className="absolute inset-0 bg-[radial-gradient(circle_at_14%_18%,rgba(224,184,74,0.16),transparent_24%),radial-gradient(circle_at_84%_24%,rgba(224,184,74,0.12),transparent_24%),radial-gradient(circle_at_58%_78%,rgba(177,126,44,0.08),transparent_24%)]" />
                 <div className="absolute inset-0 opacity-[0.07] [background-image:linear-gradient(rgba(122,93,47,0.08)_1px,transparent_1px),linear-gradient(90deg,rgba(122,93,47,0.08)_1px,transparent_1px)] [background-size:58px_58px]" />
                 <div className="absolute left-[8%] top-[8%] h-[20rem] w-[20rem] rounded-full bg-[#E0B84A]/10 blur-[120px]" />
                 <div className="absolute right-[6%] top-[18%] h-[22rem] w-[22rem] rounded-full bg-[#E0B84A]/10 blur-[140px]" />
-                <div className="absolute inset-x-0 top-0 h-32 bg-[linear-gradient(to_bottom,rgba(10,8,6,0.9),rgba(10,8,6,0))]" />
             </div>
 
             <Container className="relative z-10">

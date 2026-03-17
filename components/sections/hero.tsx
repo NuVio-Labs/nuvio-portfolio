@@ -1,45 +1,25 @@
-"use client";
-
+import type { CSSProperties } from "react";
 import Image from "next/image";
-import { motion } from "framer-motion";
-import { useTranslations } from "next-intl";
+import { getTranslations } from "next-intl/server";
+import { ArrowRight, BriefcaseBusiness, Sparkles } from "lucide-react";
 import { Link } from "@/i18n/navigation";
-import {
-    ArrowRight,
-    BriefcaseBusiness,
-    Sparkles,
-} from "lucide-react";
-
-const easing = [0.22, 1, 0.36, 1] as const;
-
-const reveal = {
-    hidden: { opacity: 0, y: 28 },
-    visible: {
-        opacity: 1,
-        y: 0,
-        transition: {
-            duration: 0.75,
-            ease: easing,
-        },
-    },
-};
 
 const sparkles = [
-    { top: "14%", left: "51%", size: 3, opacity: 0.35, delay: 0.4 },
-    { top: "18%", left: "60%", size: 2, opacity: 0.3, delay: 1.1 },
-    { top: "22%", left: "74%", size: 4, opacity: 0.45, delay: 0.7 },
-    { top: "29%", left: "67%", size: 3, opacity: 0.32, delay: 1.8 },
-    { top: "33%", left: "82%", size: 2, opacity: 0.25, delay: 0.9 },
-    { top: "41%", left: "58%", size: 3, opacity: 0.22, delay: 1.5 },
-    { top: "48%", left: "77%", size: 4, opacity: 0.34, delay: 0.2 },
-    { top: "54%", left: "70%", size: 2, opacity: 0.28, delay: 1.3 },
-    { top: "61%", left: "84%", size: 3, opacity: 0.4, delay: 0.6 },
-    { top: "73%", left: "63%", size: 4, opacity: 0.38, delay: 1.7 },
-    { top: "80%", left: "75%", size: 2, opacity: 0.25, delay: 0.5 },
-];
+    { top: "14%", left: "51%", size: 3, opacity: 0.35, delay: "0.4s" },
+    { top: "18%", left: "60%", size: 2, opacity: 0.3, delay: "1.1s" },
+    { top: "22%", left: "74%", size: 4, opacity: 0.45, delay: "0.7s" },
+    { top: "29%", left: "67%", size: 3, opacity: 0.32, delay: "1.8s" },
+    { top: "33%", left: "82%", size: 2, opacity: 0.25, delay: "0.9s" },
+    { top: "41%", left: "58%", size: 3, opacity: 0.22, delay: "1.5s" },
+    { top: "48%", left: "77%", size: 4, opacity: 0.34, delay: "0.2s" },
+    { top: "54%", left: "70%", size: 2, opacity: 0.28, delay: "1.3s" },
+    { top: "61%", left: "84%", size: 3, opacity: 0.4, delay: "0.6s" },
+    { top: "73%", left: "63%", size: 4, opacity: 0.38, delay: "1.7s" },
+    { top: "80%", left: "75%", size: 2, opacity: 0.25, delay: "0.5s" },
+] as const;
 
-export function Hero() {
-    const t = useTranslations("hero");
+export async function Hero() {
+    const t = await getTranslations("hero");
     const headlineLines = t.raw("headlineLines") as string[];
     const performanceFeatures = t.raw("cards.performance.features") as string[];
     const optimizedItems = t.raw("cards.optimized.items") as string[];
@@ -62,6 +42,7 @@ export function Hero() {
                     alt=""
                     fill
                     priority
+                    sizes="100vw"
                     className="object-cover object-center opacity-25 mix-blend-screen"
                 />
 
@@ -82,35 +63,29 @@ export function Hero() {
                 </div>
 
                 {sparkles.map((sparkle) => (
-                    <motion.span
+                    <span
                         key={`${sparkle.top}-${sparkle.left}`}
-                        className="absolute rounded-full bg-[#FFD27C]"
-                        style={{
-                            top: sparkle.top,
-                            left: sparkle.left,
-                            width: sparkle.size,
-                            height: sparkle.size,
-                            opacity: sparkle.opacity,
-                            boxShadow: "0 0 18px rgba(255,198,102,0.55)",
-                        }}
-                        animate={{ opacity: [sparkle.opacity * 0.45, sparkle.opacity, sparkle.opacity * 0.45] }}
-                        transition={{
-                            duration: 4.8,
-                            repeat: Infinity,
-                            delay: sparkle.delay,
-                            ease: "easeInOut",
-                        }}
+                        className="hero-sparkle absolute rounded-full bg-[#FFD27C]"
+                        style={
+                            {
+                                top: sparkle.top,
+                                left: sparkle.left,
+                                width: sparkle.size,
+                                height: sparkle.size,
+                                boxShadow: "0 0 18px rgba(255,198,102,0.55)",
+                                "--sparkle-opacity": sparkle.opacity,
+                                "--sparkle-delay": sparkle.delay,
+                            } as CSSProperties
+                        }
                     />
                 ))}
             </div>
 
             <div className="relative z-10 mx-auto flex min-h-[calc(100svh-4rem)] w-full max-w-[1480px] items-center px-6 pb-10 pt-24 sm:px-8 sm:pt-24 lg:px-12 lg:pb-12 lg:pt-24">
                 <div className="grid w-full items-center gap-10 xl:grid-cols-[0.9fr_1.1fr] xl:gap-0">
-                    <motion.div
-                        variants={reveal}
-                        initial="hidden"
-                        animate="visible"
-                        className="max-w-[670px]"
+                    <div
+                        className="hero-reveal max-w-[670px]"
+                        style={{ animationDelay: "0.05s" }}
                     >
                         <div className="mb-8 inline-flex items-center gap-3 rounded-full border border-white/10 bg-black/30 px-5 py-3 backdrop-blur-xl shadow-[0_0_0_1px_rgba(255,255,255,0.02)]">
                             <span className="relative flex h-2.5 w-2.5">
@@ -168,28 +143,25 @@ export function Hero() {
                                 </div>
                             ))}
                         </div>
-                    </motion.div>
+                    </div>
 
-                    <motion.div
-                        variants={reveal}
-                        initial="hidden"
-                        animate="visible"
-                        transition={{ delay: 0.15 }}
-                        className="relative h-[500px] w-full sm:h-[540px] lg:h-[620px] xl:h-[660px]"
+                    <div
+                        className="hero-reveal relative h-[500px] w-full sm:h-[540px] lg:h-[620px] xl:h-[660px]"
+                        style={{ animationDelay: "0.15s" }}
                     >
                         <div className="absolute inset-x-[8%] bottom-[15%] h-24 rounded-full bg-[#E0B84A]/25 blur-[90px]" />
                         <div className="absolute right-[6%] top-[18%] h-[18rem] w-[18rem] rounded-full bg-[#E0B84A]/16 blur-[120px]" />
 
-                        <motion.div
-                            initial={{ opacity: 0, y: 30 }}
-                            animate={{ opacity: 1, y: 0 }}
-                            transition={{ duration: 0.9, ease: easing }}
-                            className="absolute left-[4%] top-[8%] w-[90%] max-w-[860px]"
-                            style={{
-                                transform:
-                                    "perspective(2200px) rotateY(-18deg) rotateX(10deg) rotateZ(-4deg)",
-                                transformStyle: "preserve-3d",
-                            }}
+                        <div
+                            className="hero-reveal absolute left-[4%] top-[8%] w-[90%] max-w-[860px]"
+                            style={
+                                {
+                                    animationDelay: "0.25s",
+                                    transform:
+                                        "perspective(2200px) rotateY(-18deg) rotateX(10deg) rotateZ(-4deg)",
+                                    transformStyle: "preserve-3d",
+                                } as CSSProperties
+                            }
                         >
                             <div className="absolute inset-x-[12%] bottom-[-2.4rem] h-10 rounded-full bg-[#D39C3D]/30 blur-[28px]" />
 
@@ -214,6 +186,7 @@ export function Hero() {
                                         alt=""
                                         fill
                                         priority
+                                        sizes="(min-width: 1280px) 48vw, (min-width: 1024px) 55vw, 92vw"
                                         className="object-cover object-top opacity-[0.92]"
                                     />
                                     <div className="absolute inset-0 bg-[radial-gradient(circle_at_78%_18%,rgba(234,182,79,0.34),transparent_24%),linear-gradient(135deg,rgba(15,12,10,0.08),rgba(8,6,5,0.22)_45%,rgba(7,6,5,0.58)_100%)]" />
@@ -223,16 +196,19 @@ export function Hero() {
 
                             <div className="absolute left-[14%] right-[9%] top-[100%] h-5 rounded-b-[2rem] bg-[linear-gradient(180deg,#2E241B_0%,#16110E_100%)] shadow-[0_12px_28px_rgba(0,0,0,0.45)]" />
                             <div className="absolute left-[31%] right-[27%] top-[calc(100%+0.55rem)] h-1 rounded-full bg-[#4A3A2B]/80" />
-                        </motion.div>
+                        </div>
 
-                        <motion.div
-                            animate={{ y: [0, -10, 0], x: [0, 6, 0] }}
-                            transition={{ duration: 8.8, repeat: Infinity, ease: "easeInOut" }}
-                            className="absolute left-[45%] top-[30%] hidden w-[24%] min-w-[160px] max-w-[220px] rounded-[1.6rem] border border-[#F0C97D]/18 bg-[rgba(12,9,7,0.84)] p-2 shadow-[0_34px_70px_rgba(0,0,0,0.6),0_0_60px_rgba(236,182,83,0.18)] backdrop-blur-2xl lg:block"
-                            style={{
-                                transform:
-                                    "perspective(1600px) rotateY(-18deg) rotateX(9deg) rotateZ(5deg)",
-                            }}
+                        <div
+                            className="hero-float absolute left-[45%] top-[30%] hidden w-[24%] min-w-[160px] max-w-[220px] rounded-[1.6rem] border border-[#F0C97D]/18 bg-[rgba(12,9,7,0.84)] p-2 shadow-[0_34px_70px_rgba(0,0,0,0.6),0_0_60px_rgba(236,182,83,0.18)] backdrop-blur-2xl lg:block"
+                            style={
+                                {
+                                    transform:
+                                        "perspective(1600px) rotateY(-18deg) rotateX(9deg) rotateZ(5deg)",
+                                    "--float-duration": "8.8s",
+                                    "--float-x": "6px",
+                                    "--float-y": "-10px",
+                                } as CSSProperties
+                            }
                         >
                             <div className="rounded-[1.2rem] border border-white/8 bg-[#0A0908] p-2">
                                 <div className="mb-2 flex items-center gap-1.5 px-1.5">
@@ -245,17 +221,23 @@ export function Hero() {
                                         src="/previews/daisy.webp"
                                         alt=""
                                         fill
+                                        sizes="220px"
                                         className="object-cover object-top opacity-95"
                                     />
                                     <div className="absolute inset-0 bg-[linear-gradient(180deg,rgba(0,0,0,0.04),rgba(0,0,0,0.34))]" />
                                 </div>
                             </div>
-                        </motion.div>
+                        </div>
 
-                        <motion.div
-                            animate={{ y: [0, -8, 0], x: [0, 4, 0] }}
-                            transition={{ duration: 8, repeat: Infinity, ease: "easeInOut" }}
-                            className="absolute right-0 top-[28%] hidden w-[280px] rounded-[1.7rem] border border-[#EDC57B]/24 bg-[linear-gradient(180deg,rgba(27,21,16,0.92),rgba(18,14,11,0.88))] p-6 shadow-[0_30px_70px_rgba(0,0,0,0.58),0_0_70px_rgba(232,177,73,0.16)] backdrop-blur-2xl lg:block"
+                        <div
+                            className="hero-float absolute right-[-3%] top-[20%] hidden w-[280px] rounded-[1.7rem] border border-[#EDC57B]/24 bg-[linear-gradient(180deg,rgba(27,21,16,0.92),rgba(18,14,11,0.88))] p-6 shadow-[0_30px_70px_rgba(0,0,0,0.58),0_0_70px_rgba(232,177,73,0.16)] backdrop-blur-2xl lg:block"
+                            style={
+                                {
+                                    "--float-duration": "8s",
+                                    "--float-x": "4px",
+                                    "--float-y": "-8px",
+                                } as CSSProperties
+                            }
                         >
                             <div className="absolute inset-0 rounded-[1.7rem] border border-white/[0.05]" />
                             <div className="relative flex gap-4">
@@ -280,12 +262,17 @@ export function Hero() {
                                     </div>
                                 ))}
                             </div>
-                        </motion.div>
+                        </div>
 
-                        <motion.div
-                            animate={{ y: [0, 10, 0], x: [0, -5, 0] }}
-                            transition={{ duration: 9.4, repeat: Infinity, ease: "easeInOut" }}
-                            className="absolute bottom-[15%] right-[2%] hidden w-[320px] rounded-[1.7rem] border border-[#EDC57B]/24 bg-[linear-gradient(180deg,rgba(28,22,17,0.9),rgba(18,14,11,0.86))] p-6 shadow-[0_30px_70px_rgba(0,0,0,0.56),0_0_70px_rgba(232,177,73,0.16)] backdrop-blur-2xl lg:block"
+                        <div
+                            className="hero-float absolute bottom-[20%] right-[-1%] hidden w-[320px] rounded-[1.7rem] border border-[#EDC57B]/24 bg-[linear-gradient(180deg,rgba(28,22,17,0.9),rgba(18,14,11,0.86))] p-6 shadow-[0_30px_70px_rgba(0,0,0,0.56),0_0_70px_rgba(232,177,73,0.16)] backdrop-blur-2xl lg:block"
+                            style={
+                                {
+                                    "--float-duration": "9.4s",
+                                    "--float-x": "-5px",
+                                    "--float-y": "10px",
+                                } as CSSProperties
+                            }
                         >
                             <div className="absolute inset-0 rounded-[1.7rem] border border-white/[0.05]" />
                             <div className="relative flex items-center gap-3 text-[#F7F0E8]">
@@ -301,12 +288,16 @@ export function Hero() {
                                     </div>
                                 ))}
                             </div>
-                        </motion.div>
+                        </div>
 
-                        <motion.div
-                            animate={{ y: [0, -8, 0] }}
-                            transition={{ duration: 10, repeat: Infinity, ease: "easeInOut" }}
-                            className="absolute bottom-[2%] right-[8%] hidden w-[360px] rounded-[1.7rem] border border-[#EDC57B]/26 bg-[linear-gradient(180deg,rgba(30,24,18,0.92),rgba(18,14,11,0.9))] px-6 py-5 shadow-[0_30px_70px_rgba(0,0,0,0.6),0_0_70px_rgba(232,177,73,0.18)] backdrop-blur-2xl lg:block"
+                        <div
+                            className="hero-float absolute bottom-[-4%] right-[11%] hidden w-[360px] rounded-[1.7rem] border border-[#EDC57B]/26 bg-[linear-gradient(180deg,rgba(30,24,18,0.92),rgba(18,14,11,0.9))] px-6 py-5 shadow-[0_30px_70px_rgba(0,0,0,0.6),0_0_70px_rgba(232,177,73,0.18)] backdrop-blur-2xl lg:block"
+                            style={
+                                {
+                                    "--float-duration": "10s",
+                                    "--float-y": "-8px",
+                                } as CSSProperties
+                            }
                         >
                             <div className="absolute inset-0 rounded-[1.7rem] border border-white/[0.05]" />
                             <div className="relative flex items-start gap-4">
@@ -322,8 +313,8 @@ export function Hero() {
                                     </p>
                                 </div>
                             </div>
-                        </motion.div>
-                    </motion.div>
+                        </div>
+                    </div>
                 </div>
             </div>
 

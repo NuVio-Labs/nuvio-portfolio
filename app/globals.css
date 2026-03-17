@@ -125,34 +125,62 @@
 }
 
 /* ─── Hero entrance animation ─── */
-@keyframes fadeInUp {
+@keyframes heroReveal {
   from {
     opacity: 0;
-    transform: translateY(12px);
+    transform: translate3d(0, 24px, 0);
   }
 
   to {
     opacity: 1;
-    transform: translateY(0);
+    transform: translate3d(0, 0, 0);
   }
 }
 
-.animate-fade-in-up {
-  animation: fadeInUp 1s cubic-bezier(0.2, 0.6, 0.4, 1) forwards;
+@keyframes heroFloat {
+  0%,
+  100% {
+    transform: translate3d(0, 0, 0);
+  }
+
+  50% {
+    transform: translate3d(var(--float-x, 0px), var(--float-y, -8px), 0);
+  }
 }
 
-.delay-100 { animation-delay: 0.1s; }
-.delay-200 { animation-delay: 0.2s; }
-.delay-300 { animation-delay: 0.3s; }
-.delay-400 { animation-delay: 0.4s; }
-.delay-500 { animation-delay: 0.5s; }
+@keyframes heroSparkle {
+  0%,
+  100% {
+    opacity: calc(var(--sparkle-opacity, 0.35) * 0.45);
+  }
 
-.animate-fade-in-up {
-  animation: fadeInUp 0.8s ease-out forwards;
+  50% {
+    opacity: var(--sparkle-opacity, 0.35);
+  }
 }
 
-.delay-100 { animation-delay: 0.1s; }
-.delay-200 { animation-delay: 0.2s; }
-.delay-300 { animation-delay: 0.3s; }
-.delay-400 { animation-delay: 0.4s; }
-.delay-500 { animation-delay: 0.5s; }
+.hero-reveal {
+  opacity: 0;
+  animation: heroReveal 0.8s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+  will-change: transform, opacity;
+}
+
+.hero-float {
+  animation: heroFloat var(--float-duration, 8s) ease-in-out infinite;
+  will-change: transform;
+}
+
+.hero-sparkle {
+  animation: heroSparkle 4.8s ease-in-out infinite;
+  animation-delay: var(--sparkle-delay, 0s);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .hero-reveal,
+  .hero-float,
+  .hero-sparkle {
+    animation: none;
+    opacity: 1;
+    transform: none;
+  }
+}
