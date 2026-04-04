@@ -1,8 +1,6 @@
 import { useTranslations } from "next-intl"
 import { Container } from "@/components/layout/container"
 import { setRequestLocale } from "next-intl/server"
-import { Navbar } from "@/components/layout/navbar"
-import { Footer } from "@/components/layout/footer"
 
 export default function ImprintPage({ params: { locale } }: { params: { locale: string } }) {
     setRequestLocale(locale)

@@ -17,10 +17,9 @@ export function ScrollAnimation({
 }: ScrollAnimationProps) {
     return (
         <motion.div
-            initial={{ opacity: 0, y: 20, scale: 0.95 }}
-            whileInView={{ opacity: 1, y: 0, scale: 1 }}
-            exit={{ opacity: 0, y: 20, scale: 0.95 }}
-            viewport={{ once: true, margin: "-50px" }}
+            initial={{ opacity: 0, y: 18 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, margin: "-40px" }}
             transition={{ duration: 0.5, delay, ease: "easeOut" }}
             className={cn(className)}
             {...props}

@@ -77,8 +77,8 @@ export async function ValueProposition() {
 
                                         <div className="relative flex h-full flex-col">
                                             <div className="flex items-start justify-between">
-                                                <div className="flex h-14 w-14 items-center justify-center rounded-2xl border border-[#D5B37C]/28 bg-[linear-gradient(180deg,rgba(255,248,236,0.98),rgba(245,229,198,0.98))] text-[#7E6440] shadow-[0_14px_34px_rgba(193,146,65,0.14)]">
-                                                    <Icon className="h-5 w-5" />
+                                                <div className="flex h-12 w-12 items-center justify-center rounded-[1rem] border border-[#D5B37C]/22 bg-[#1A1410] text-[#D4A84A] shadow-[0_8px_24px_rgba(0,0,0,0.3),inset_0_1px_0_rgba(255,255,255,0.04)]">
+                                                    <Icon className="h-[1.15rem] w-[1.15rem]" />
                                                 </div>
 
                                                 <span className="text-[11px] font-semibold uppercase tracking-[0.24em] text-[#8F7B60]">
@@ -96,7 +96,7 @@ export async function ValueProposition() {
                                                 </p>
                                             </div>
 
-                                            <div className="mt-8 inline-flex w-fit items-center rounded-full border border-[#D5AC66]/34 bg-[#FFF2D8] px-3 py-2 text-[11px] font-semibold uppercase tracking-[0.18em] text-[#6E4A1A] shadow-[0_12px_26px_rgba(193,146,65,0.08)]">
+                                            <div className="mt-8 inline-flex w-fit items-center rounded-full border border-[#D5AC66]/25 bg-white/[0.04] px-3 py-1.5 text-[10.5px] font-semibold uppercase tracking-[0.18em] text-[#C8A35A]">
                                                 {t(`principles.${principle.id}.highlight`)}
                                             </div>
                                         </div>
@@ -106,7 +106,7 @@ export async function ValueProposition() {
                         </div>
                     </div>
 
-                    <div className="mt-6 overflow-hidden rounded-[2rem] border border-[#CFA565]/30 bg-[linear-gradient(135deg,#1A1410_0%,#241B15_48%,#2B2118_100%)] p-7 text-[#F7F1E9] shadow-[0_34px_90px_rgba(73,49,16,0.24)] sm:p-8 lg:p-8">
+                    <div className="relative mt-6 overflow-hidden rounded-[2rem] border border-[#CFA565]/30 bg-[linear-gradient(135deg,#1A1410_0%,#241B15_48%,#2B2118_100%)] p-7 text-[#F7F1E9] shadow-[0_34px_90px_rgba(73,49,16,0.24)] sm:p-8 lg:p-8">
                         <div className="absolute inset-x-8 top-0 h-px bg-gradient-to-r from-transparent via-[#E0B84A]/45 to-transparent" />
                         <div className="absolute right-[-3rem] top-[-2rem] h-28 w-28 rounded-full bg-[#E0B84A]/18 blur-[55px]" />
 

@@ -87,12 +87,12 @@ export async function Hero() {
                         className="hero-reveal max-w-[670px]"
                         style={{ animationDelay: "0.05s" }}
                     >
-                        <div className="mb-8 inline-flex items-center gap-3 rounded-full border border-white/10 bg-black/30 px-5 py-3 backdrop-blur-xl shadow-[0_0_0_1px_rgba(255,255,255,0.02)]">
-                            <span className="relative flex h-2.5 w-2.5">
-                                <span className="absolute inline-flex h-full w-full rounded-full bg-[#A5E7B7]/55 blur-[2px]" />
-                                <span className="relative inline-flex h-2.5 w-2.5 rounded-full bg-[#B8F4C7]" />
+                        <div className="mb-9 inline-flex items-center gap-2.5 rounded-full border border-white/[0.09] bg-white/[0.04] px-4 py-2.5 backdrop-blur-xl">
+                            <span className="relative flex h-2 w-2">
+                                <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-[#A5E7B7]/50" />
+                                <span className="relative inline-flex h-2 w-2 rounded-full bg-[#B8F4C7]" />
                             </span>
-                            <span className="text-[11px] font-medium uppercase tracking-[0.28em] text-[#D1C8BA]">
+                            <span className="text-[11px] font-medium uppercase tracking-[0.24em] text-[#C8BEB0]">
                                 {t("badge")}
                             </span>
                         </div>
@@ -116,29 +116,29 @@ export async function Hero() {
                             {t("subline")}
                         </p>
 
-                        <div className="mt-8 flex flex-col gap-4 sm:flex-row">
+                        <div className="mt-9 flex flex-col gap-3 sm:flex-row sm:items-center">
                             <Link
                                 href="#contact"
-                                className="inline-flex items-center justify-center rounded-[1.05rem] border border-white/15 bg-[#F6F0E7] px-9 py-4 text-base font-medium text-[#090909] shadow-[0_18px_40px_rgba(255,255,255,0.08)] transition duration-300 hover:-translate-y-0.5 hover:bg-white"
+                                className="inline-flex items-center justify-center rounded-[1.1rem] border border-[#E8C97A]/20 bg-[linear-gradient(135deg,#F5ECD8_0%,#E8C97A_50%,#D4A030_100%)] px-8 py-4 text-[13.5px] font-semibold text-[#1A0E04] shadow-[0_16px_44px_rgba(197,144,58,0.22),inset_0_1px_0_rgba(255,255,255,0.25)] transition duration-300 hover:-translate-y-0.5 hover:shadow-[0_20px_52px_rgba(197,144,58,0.30)]"
                             >
                                 {t("ctaPrimary")}
                             </Link>
 
                             <Link
                                 href="#work"
-                                className="inline-flex items-center justify-center gap-2 rounded-[1.05rem] border border-white/12 bg-black/25 px-9 py-4 text-base font-medium text-[#F3EEE7] backdrop-blur-xl transition duration-300 hover:-translate-y-0.5 hover:border-[#E0B84A]/35 hover:bg-white/[0.05]"
+                                className="inline-flex items-center justify-center gap-2 rounded-[1.1rem] border border-white/[0.1] bg-white/[0.04] px-8 py-4 text-[13.5px] font-medium text-[#D8D0C4] backdrop-blur-xl transition duration-300 hover:-translate-y-0.5 hover:border-white/[0.16] hover:bg-white/[0.07] hover:text-[#F7F1E9]"
                             >
                                 {t("ctaSecondary")}
-                                <ArrowRight className="h-4 w-4" />
+                                <ArrowRight className="h-4 w-4 opacity-70" />
                             </Link>
                         </div>
 
-                        <div className="mt-8 flex flex-wrap items-center gap-x-3 gap-y-2 text-sm text-[#C2B6A3]">
+                        <div className="mt-8 flex flex-wrap items-center gap-x-0 gap-y-2">
                             {trustItems.map((item, index) => (
-                                <div key={item} className="flex items-center gap-3">
-                                    <span className="whitespace-nowrap">{item}</span>
+                                <div key={item} className="flex items-center">
+                                    <span className="whitespace-nowrap text-[12.5px] text-[#8A7E6E]">{item}</span>
                                     {index < trustItems.length - 1 ? (
-                                        <span className="h-1 w-1 rounded-full bg-[#796C58]" />
+                                        <span className="mx-3 h-3 w-px bg-[#3A3028]" />
                                     ) : null}
                                 </div>
                             ))}

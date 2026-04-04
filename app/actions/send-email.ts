@@ -180,7 +180,8 @@ export async function sendEmail(formData: FormData) {
         }
 
         return { success: true, message: responseMessages[lang].success };
-    } catch (e: any) {
-        return { success: false, message: e.message || "Server error." };
+    } catch (e: unknown) {
+        const msg = e instanceof Error ? e.message : "Server error.";
+        return { success: false, message: msg };
     }
 }

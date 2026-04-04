@@ -34,12 +34,13 @@ export function FAQ() {
             <Container className="relative z-10 max-w-3xl">
                 <ScrollAnimation>
                     <div className="mb-12 text-center">
-                        <h2 className="mb-4 text-4xl font-extrabold tracking-tight text-[#F5F3EE] lg:text-5xl">
+                        <span className="inline-flex items-center gap-2 rounded-full border border-[#D5B37C]/18 bg-white/[0.04] px-4 py-2 text-[11px] font-medium uppercase tracking-[0.22em] text-[#BFAF96] mb-6">
+                            <span className="h-1.5 w-1.5 rounded-full bg-[#C8A35A]" />
                             {t("sectionTitle")}
-                        </h2>
-                        <p className="text-lg text-[#C5B8A6]">
+                        </span>
+                        <h2 className="mt-4 text-[clamp(2.4rem,5vw,3.8rem)] font-semibold leading-[1.06] tracking-[-0.05em] text-[#F5F3EE]">
                             {t("sectionSubtitle")}
-                        </p>
+                        </h2>
                     </div>
                 </ScrollAnimation>
 

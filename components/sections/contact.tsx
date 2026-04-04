@@ -1,17 +1,15 @@
 "use client"
 
-import { useState } from "react"
+import { useState, useRef } from "react"
 import { useTranslations, useLocale } from "next-intl"
 import { Container } from "@/components/layout/container"
 import { Button } from "@/components/ui/button"
 import { Input } from "@/components/ui/input"
 import { Textarea } from "@/components/ui/textarea"
 import { Label } from "@/components/ui/label"
-import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
-import { CheckCircle2 } from "lucide-react"
+import { CheckCircle2, ShieldCheck } from "lucide-react"
 import { ScrollAnimation } from "@/components/ui/scroll-animation"
 import { sendEmail } from "@/app/actions/send-email"
-import { useRef } from "react"
 
 export function Contact() {
     const t = useTranslations("contact")
@@ -35,143 +33,212 @@ export function Contact() {
             if (result?.success) {
                 form.reset()
                 setStatus("success")
-                setSuccessMessage(result?.message || t("successToast"))
+                setSuccessMessage(result?.message || t("successText"))
 
-                // Auto-scroll to top of form section with a tiny delay
                 setTimeout(() => {
-                    formRef.current?.scrollIntoView({ behavior: "smooth", block: "start" })
+                    formRef.current?.scrollIntoView({
+                        behavior: "smooth",
+                        block: "start",
+                    })
                 }, 100)
                 return
             }
 
             setStatus("error")
-            setErrorMessage(result?.message || t("errorToast"))
+            setErrorMessage(result?.message || t("formDescription"))
         } catch {
             setStatus("error")
-            setErrorMessage(t("errorToast"))
+            setErrorMessage(t("formDescription"))
         }
     }
 
     return (
         <section
             id="contact"
-            ref={formRef}
+            ref={formRef as React.RefObject<HTMLElement>}
             className="relative -mt-12 overflow-hidden bg-[linear-gradient(180deg,#171310_0%,#1D1713_46%,#16110E_100%)] py-16 scroll-mt-24 md:-mt-16 md:py-28"
         >
+            {/* Background */}
             <div className="pointer-events-none absolute inset-0">
                 <div className="absolute inset-x-[-6%] top-0 h-48 bg-[linear-gradient(to_bottom,rgba(23,19,16,1),rgba(23,19,16,0.8)_34%,rgba(23,19,16,0.24)_72%,rgba(23,19,16,0)_100%)] blur-[6px]" />
-                <div className="absolute inset-0 bg-[radial-gradient(circle_at_18%_18%,rgba(224,184,74,0.10),transparent_24%),radial-gradient(circle_at_82%_26%,rgba(255,255,255,0.05),transparent_28%)]" />
-                <div className="absolute inset-x-0 top-0 h-28 bg-[linear-gradient(to_bottom,rgba(255,255,255,0.03),transparent)]" />
+                <div className="absolute inset-0 bg-[radial-gradient(circle_at_18%_18%,rgba(224,184,74,0.08),transparent_24%),radial-gradient(circle_at_82%_26%,rgba(255,255,255,0.04),transparent_28%)]" />
                 <div className="absolute inset-x-[-6%] bottom-0 h-56 bg-[linear-gradient(to_bottom,rgba(22,17,14,0),rgba(14,11,10,0.28)_30%,rgba(14,11,10,0.78)_68%,rgba(10,8,7,1)_100%)] blur-[8px]" />
             </div>
 
             <Container className="relative z-10 max-w-2xl">
+                {/* Section header */}
                 <ScrollAnimation>
-                    <div className="mb-12 text-center">
-                        <h2 className="mb-4 text-4xl font-extrabold tracking-tight text-[#F5F3EE] lg:text-5xl">
+                    <div className="mb-10 text-center">
+                        <h2 className="text-[clamp(2.6rem,5vw,4rem)] font-semibold leading-[1.04] tracking-[-0.052em] text-[#F5F3EE]">
                             {t("sectionTitle")}
                         </h2>
-                        <p className="mb-12 text-lg text-[#C5B8A6]">
+
+                        <p className="mt-4 text-[15px] leading-7 text-[#7A6E62]">
                             {t("sectionSubtitle")}
                         </p>
+                    </div>
 
-                        <div className="mb-4">
-                            <h3 className="mb-6 text-2xl font-bold text-[#F5F3EE]">{t("whyStartNow")}</h3>
-                            <div className="flex flex-col justify-center gap-4 text-left sm:flex-row">
-                                <div className="flex flex-1 items-start gap-3 rounded-xl border border-[#DAB983]/16 bg-[linear-gradient(180deg,rgba(43,34,28,0.92),rgba(29,23,19,0.96))] p-4 text-sm shadow-[0_18px_45px_rgba(0,0,0,0.18)]">
-                                    <CheckCircle2 className="mt-0.5 h-5 w-5 shrink-0 text-[#E0B84A]" />
-                                    <div>
-                                        <p className="font-semibold text-[#F5F3EE]">{t("benefit1Title")}</p>
-                                        <p className="text-[#B9B2A3]">{t("benefit1Text")}</p>
-                                    </div>
-                                </div>
-                                <div className="flex flex-1 items-start gap-3 rounded-xl border border-[#DAB983]/16 bg-[linear-gradient(180deg,rgba(43,34,28,0.92),rgba(29,23,19,0.96))] p-4 text-sm shadow-[0_18px_45px_rgba(0,0,0,0.18)]">
-                                    <CheckCircle2 className="mt-0.5 h-5 w-5 shrink-0 text-[#E0B84A]" />
-                                    <div>
-                                        <p className="font-semibold text-[#F5F3EE]">{t("benefit2Title")}</p>
-                                        <p className="text-[#B9B2A3]">{t("benefit2Text")}</p>
-                                    </div>
-                                </div>
-                                <div className="flex flex-1 items-start gap-3 rounded-xl border border-[#DAB983]/16 bg-[linear-gradient(180deg,rgba(43,34,28,0.92),rgba(29,23,19,0.96))] p-4 text-sm shadow-[0_18px_45px_rgba(0,0,0,0.18)]">
-                                    <CheckCircle2 className="mt-0.5 h-5 w-5 shrink-0 text-[#E0B84A]" />
-                                    <div>
-                                        <p className="font-semibold text-[#F5F3EE]">{t("benefit3Title")}</p>
-                                        <p className="text-[#B9B2A3]">{t("benefit3Text")}</p>
-                                    </div>
-                                </div>
+                    {/* Trust signals — lightweight inline row */}
+                    <div className="mb-10 flex flex-wrap justify-center gap-x-6 gap-y-3">
+                        {[
+                            t("benefit1Title"),
+                            t("benefit2Title"),
+                            t("benefit3Title"),
+                        ].map((label) => (
+                            <div
+                                key={label}
+                                className="flex items-center gap-2 text-[13px] text-[#7A6E62]"
+                            >
+                                <CheckCircle2 className="h-3.5 w-3.5 shrink-0 text-[#C8A35A]/70" />
+                                {label}
                             </div>
-                        </div>
+                        ))}
                     </div>
                 </ScrollAnimation>
 
-                <ScrollAnimation delay={0.2}>
-                    <Card className="border-[#DAB983]/18 bg-[linear-gradient(180deg,rgba(43,34,28,0.92),rgba(29,23,19,0.96))] text-[#F5F3EE] shadow-[0_24px_60px_rgba(0,0,0,0.24)] hover:shadow-[0_24px_60px_rgba(0,0,0,0.24)]">
-                        <CardHeader>
-                            <CardTitle className="text-[#F5F3EE]">{t("formTitle")}</CardTitle>
-                            <CardDescription className="text-[#B9B2A3]">
+                {/* Form card */}
+                <ScrollAnimation delay={0.12}>
+                    <div className="relative overflow-hidden rounded-[2rem] border border-[#DAB983]/18 bg-[linear-gradient(180deg,rgba(40,31,25,0.96),rgba(26,20,16,0.98))] p-6 shadow-[0_28px_72px_rgba(0,0,0,0.28)] sm:p-8">
+                        {/* Top accent */}
+                        <div className="absolute inset-x-8 top-0 h-px bg-gradient-to-r from-transparent via-[#E0B84A]/30 to-transparent" />
+
+                        {/* Form header */}
+                        <div className="mb-6">
+                            <p className="text-[11px] font-semibold uppercase tracking-[0.2em] text-[#8F7B60]">
+                                {t("formTitle")}
+                            </p>
+                            <p className="mt-2 text-sm leading-6 text-[#9A8E80]">
                                 {t("formDescription")}
-                            </CardDescription>
-                        </CardHeader>
-                        <CardContent>
-                            {status === "success" ? (
-                                <div className="flex flex-col items-center justify-center space-y-4 py-8 text-center animate-in fade-in zoom-in duration-300">
-                                    <div className="rounded-full bg-[#E0B84A]/12 p-3">
-                                        <CheckCircle2 className="h-8 w-8 text-[#E0B84A]" />
-                                    </div>
-                                    <h3 className="text-xl font-bold text-[#F5F3EE]">{t("successTitle")}</h3>
-                                    <p className="text-[#B9B2A3]">{successMessage || t("successText")}</p>
+                            </p>
+                        </div>
+
+                        {status === "success" ? (
+                            <div className="flex flex-col items-center justify-center space-y-4 py-10 text-center">
+                                <div className="rounded-full bg-[#E0B84A]/10 p-4">
+                                    <CheckCircle2 className="h-8 w-8 text-[#E0B84A]" />
                                 </div>
-                            ) : (
-                                <form onSubmit={handleSubmit} className="space-y-6">
-                                    {errorMessage && (
-                                        <div className="mb-4 rounded-md border border-red-400/20 bg-red-500/10 p-3 text-center text-sm text-red-200">
-                                            {errorMessage}
-                                        </div>
-                                    )}
-                                    <input type="text" name="honeypot" style={{ display: "none" }} tabIndex={-1} autoComplete="off" />
-                                    <input type="hidden" name="lang" value={locale} />
-                                    <div className="grid gap-4 md:grid-cols-2">
-                                        <div className="space-y-2">
-                                            <Label htmlFor="name" className="text-[#F5F3EE]">{t("labelName")}</Label>
-                                            <Input id="name" name="name" placeholder={t("placeholderName")} required disabled={status === "submitting"} className="h-11 rounded-xl border-[#DAB983]/16 bg-[#241D18]/80 text-[#F5F3EE] placeholder:text-[#8F8578] focus-visible:ring-[#E0B84A]/35 focus-visible:ring-offset-[#1D1713]" />
-                                        </div>
-                                        <div className="space-y-2">
-                                            <Label htmlFor="email" className="text-[#F5F3EE]">{t("labelEmail")}</Label>
-                                            <Input id="email" name="email" type="email" placeholder={t("placeholderEmail")} required disabled={status === "submitting"} className="h-11 rounded-xl border-[#DAB983]/16 bg-[#241D18]/80 text-[#F5F3EE] placeholder:text-[#8F8578] focus-visible:ring-[#E0B84A]/35 focus-visible:ring-offset-[#1D1713]" />
-                                        </div>
+                                <h3 className="text-xl font-semibold text-[#F5F3EE]">
+                                    {t("successTitle")}
+                                </h3>
+                                <p className="max-w-[28ch] text-[#9A8E80]">
+                                    {successMessage || t("successText")}
+                                </p>
+                            </div>
+                        ) : (
+                            <form onSubmit={handleSubmit} className="space-y-5">
+                                {/* Honeypot */}
+                                <input
+                                    type="text"
+                                    name="honeypot"
+                                    style={{ display: "none" }}
+                                    tabIndex={-1}
+                                    autoComplete="off"
+                                />
+                                <input
+                                    type="hidden"
+                                    name="lang"
+                                    value={locale}
+                                />
+
+                                {errorMessage && (
+                                    <div className="rounded-xl border border-red-400/20 bg-red-500/8 p-3 text-center text-sm text-red-300">
+                                        {errorMessage}
                                     </div>
+                                )}
+
+                                <div className="grid gap-4 sm:grid-cols-2">
                                     <div className="space-y-2">
-                                        <Label htmlFor="subject" className="text-[#F5F3EE]">{t("labelSubject")}</Label>
-                                        <Input id="subject" name="subject" placeholder={t("placeholderSubject")} required disabled={status === "submitting"} className="h-11 rounded-xl border-[#DAB983]/16 bg-[#241D18]/80 text-[#F5F3EE] placeholder:text-[#8F8578] focus-visible:ring-[#E0B84A]/35 focus-visible:ring-offset-[#1D1713]" />
-                                    </div>
-                                    <div className="space-y-2">
-                                        <Label htmlFor="message" className="text-[#F5F3EE]">{t("labelMessage")}</Label>
-                                        <Textarea
-                                            id="message"
-                                            name="message"
-                                            placeholder={t("placeholderMessage")}
-                                            className="min-h-[150px] rounded-xl border-[#DAB983]/16 bg-[#241D18]/80 text-[#F5F3EE] placeholder:text-[#8F8578] focus-visible:ring-[#E0B84A]/35 focus-visible:ring-offset-[#1D1713]"
+                                        <Label
+                                            htmlFor="name"
+                                            className="text-[12px] font-semibold uppercase tracking-[0.16em] text-[#8F7B60]"
+                                        >
+                                            {t("labelName")}
+                                        </Label>
+                                        <Input
+                                            id="name"
+                                            name="name"
+                                            placeholder={t("placeholderName")}
                                             required
                                             disabled={status === "submitting"}
+                                            className="h-11 rounded-xl border-[#DAB983]/16 bg-[#1E1712]/80 text-[#F5F3EE] placeholder:text-[#5A5048] focus-visible:ring-[#E0B84A]/30 focus-visible:ring-offset-[#1D1713]"
                                         />
                                     </div>
-                                    <Button type="submit" className="w-full rounded-xl border border-[#E0B84A]/24 bg-[linear-gradient(135deg,#F2D896_0%,#D8A14A_100%)] py-6 text-base font-semibold text-[#24170A] shadow-[0_20px_40px_rgba(197,144,58,0.18)] hover:brightness-105" disabled={status === "submitting"}>
-                                        {status === "submitting" ? (
-                                            <span className="flex items-center text-[#24170A]">
-                                                <span className="mr-2 h-4 w-4 animate-spin rounded-full border-2 border-[#24170A]/30 border-r-transparent" />
-                                                {t("submitting")}
-                                            </span>
-                                        ) : (
-                                            t("submit")
-                                        )}
-                                    </Button>
-                                    {/* <div className="pt-2 flex items-center justify-center text-xs text-muted-foreground text-center"> */}
-                                    {/* <span className="mr-1.5 opacity-80">🔒</span> {t("trustBadge")} */}
-                                    {/* </div> */}
-                                </form>
-                            )}
-                        </CardContent>
-                    </Card>
+                                    <div className="space-y-2">
+                                        <Label
+                                            htmlFor="email"
+                                            className="text-[12px] font-semibold uppercase tracking-[0.16em] text-[#8F7B60]"
+                                        >
+                                            {t("labelEmail")}
+                                        </Label>
+                                        <Input
+                                            id="email"
+                                            name="email"
+                                            type="email"
+                                            placeholder={t("placeholderEmail")}
+                                            required
+                                            disabled={status === "submitting"}
+                                            className="h-11 rounded-xl border-[#DAB983]/16 bg-[#1E1712]/80 text-[#F5F3EE] placeholder:text-[#5A5048] focus-visible:ring-[#E0B84A]/30 focus-visible:ring-offset-[#1D1713]"
+                                        />
+                                    </div>
+                                </div>
+
+                                <div className="space-y-2">
+                                    <Label
+                                        htmlFor="subject"
+                                        className="text-[12px] font-semibold uppercase tracking-[0.16em] text-[#8F7B60]"
+                                    >
+                                        {t("labelSubject")}
+                                    </Label>
+                                    <Input
+                                        id="subject"
+                                        name="subject"
+                                        placeholder={t("placeholderSubject")}
+                                        required
+                                        disabled={status === "submitting"}
+                                        className="h-11 rounded-xl border-[#DAB983]/16 bg-[#1E1712]/80 text-[#F5F3EE] placeholder:text-[#5A5048] focus-visible:ring-[#E0B84A]/30 focus-visible:ring-offset-[#1D1713]"
+                                    />
+                                </div>
+
+                                <div className="space-y-2">
+                                    <Label
+                                        htmlFor="message"
+                                        className="text-[12px] font-semibold uppercase tracking-[0.16em] text-[#8F7B60]"
+                                    >
+                                        {t("labelMessage")}
+                                    </Label>
+                                    <Textarea
+                                        id="message"
+                                        name="message"
+                                        placeholder={t("placeholderMessage")}
+                                        className="min-h-[140px] rounded-xl border-[#DAB983]/16 bg-[#1E1712]/80 text-[#F5F3EE] placeholder:text-[#5A5048] focus-visible:ring-[#E0B84A]/30 focus-visible:ring-offset-[#1D1713]"
+                                        required
+                                        disabled={status === "submitting"}
+                                    />
+                                </div>
+
+                                <Button
+                                    type="submit"
+                                    className="w-full rounded-xl border border-[#E0B84A]/22 bg-[linear-gradient(135deg,#F2D896_0%,#D8A14A_100%)] py-6 text-[13px] font-semibold uppercase tracking-[0.12em] text-[#24170A] shadow-[0_20px_40px_rgba(197,144,58,0.16)] hover:brightness-105 transition-all"
+                                    disabled={status === "submitting"}
+                                >
+                                    {status === "submitting" ? (
+                                        <span className="flex items-center gap-2 text-[#24170A]">
+                                            <span className="h-4 w-4 animate-spin rounded-full border-2 border-[#24170A]/30 border-r-transparent" />
+                                            {t("submitting")}
+                                        </span>
+                                    ) : (
+                                        t("submit")
+                                    )}
+                                </Button>
+
+                                {/* Trust badge */}
+                                <div className="flex items-center justify-center gap-2 pt-1 text-xs text-[#6A5E52]">
+                                    <ShieldCheck className="h-3.5 w-3.5 text-[#7A6E62]" />
+                                    {t("trustBadge")}
+                                </div>
+                            </form>
+                        )}
+                    </div>
                 </ScrollAnimation>
             </Container>
         </section>

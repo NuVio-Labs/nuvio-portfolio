@@ -74,17 +74,18 @@ export async function About() {
                                     className="relative overflow-hidden rounded-[1.75rem] border border-[#CFA565]/18 bg-[linear-gradient(180deg,rgba(27,21,16,0.92),rgba(17,13,10,0.96))] p-6 shadow-[0_22px_60px_rgba(0,0,0,0.22)] sm:p-7"
                                 >
                                     <div className="absolute inset-x-8 top-0 h-px bg-gradient-to-r from-transparent via-[#E0B84A]/25 to-transparent" />
-                                    <div className="relative flex flex-col gap-5 md:flex-row md:gap-8">
-                                        <div className="w-12 shrink-0">
-                                            <span className="text-xs font-medium tracking-[0.2em] text-[#756854]">
-                                                {value.number}
-                                            </span>
-                                        </div>
-                                        <div className="flex flex-col">
-                                            <h4 className="mb-2 text-xl font-medium tracking-[-0.02em] text-[#F5F3EE]">
+                                    <div className="relative flex items-start gap-5">
+                                        <span
+                                            aria-hidden="true"
+                                            className="shrink-0 select-none font-semibold leading-none tracking-[-0.06em] text-[#2A2018] text-[2.2rem] tabular-nums"
+                                        >
+                                            {value.number}
+                                        </span>
+                                        <div className="flex flex-col pt-1">
+                                            <h4 className="mb-2 text-[1.05rem] font-semibold tracking-[-0.02em] text-[#F5F3EE]">
                                                 {t(`values.${value.key}.title`)}
                                             </h4>
-                                            <p className="max-w-[38ch] text-base leading-8 text-[#B9B2A3]">
+                                            <p className="max-w-[36ch] text-[14.5px] leading-7 text-[#9A8E80]">
                                                 {t(`values.${value.key}.text`)}
                                             </p>
                                         </div>
