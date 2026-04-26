@@ -11,7 +11,8 @@
         "clientAreaHint": "Besloten klantenzone",
         "login": "Inloggen",
         "switchLanguage": "Taal wisselen",
-        "ctaProject": "Project aanvragen"
+        "ctaProject": "Project aanvragen",
+        "services": "Diensten"
     },
     "hero": {
         "badge": "Beschikbaar voor nieuwe projecten",
@@ -56,7 +57,11 @@
             },
             "optimized": {
                 "title": "Geoptimaliseerd voor",
-                "items": ["Vertrouwen", "Design", "Conversie"]
+                "items": [
+                    "Vertrouwen",
+                    "Design",
+                    "Conversie"
+                ]
             },
             "slots": {
                 "title": "Beschikbaar voor",
@@ -134,8 +139,41 @@
                 "outcome2": "Diensten en prijzen direct duidelijk",
                 "outcome3": "Meer tijd voor afspraken in plaats van uitleg",
                 "testimonial": "“Mijn werkdagen zijn veel rustiger geworden omdat de website de belangrijkste vragen al vooraf beantwoordt.”"
+            },
+            "dj-white-label": {
+                "title": "DJ White Label",
+                "description": "Landingpagina voor een dj met focus op boekingen.",
+                "problem": "Geen digitale aanwezigheid. Boekingen verliepen uitsluitend via persoonlijke contacten zonder duidelijke presentatie.",
+                "approach": "Een slanke, sfeervolle landingpagina met een boeking-CTA, biografie en referenties — zonder buildstap, maximaal snel.",
+                "outcome1": "Direct online boekingskanaal",
+                "outcome2": "Professionele uitstraling",
+                "outcome3": "Snel ladend op alle apparaten",
+                "testimonial": "“Eindelijk een pagina die mijn geluid weerspiegelt.”"
+            },
+            "nvl-core": {
+                "title": "NVL Core",
+                "description": "Multi-tenant SaaS-fundament voor schaalbare bedrijfsapplicaties.",
+                "problem": "Elke klantaanpassing vereiste speciale frontendlogica — niet schaalbaar en moeilijk te onderhouden.",
+                "approach": "Een tenantbewuste operationele kern met een schone rol- en rechtenstructuur, modulaire architectuur en gestructureerde datalogica als basis voor verticale producten.",
+                "outcome1": "Volledige tenantscheiding",
+                "outcome2": "Modulaire, uitbreidbare architectuur",
+                "outcome3": "Fundament voor verticale SaaS-producten",
+                "testimonial": "“Structureel goed opgebouwd — niet alleen functioneel, maar ook verkoopbaar.”"
+            },
+            "taste": {
+                "title": "Taste",
+                "description": "Persoonlijke receptenwerkruimte met boodschappenlijsten en favorietenbeheer.",
+                "problem": "Recepten lagen verspreid over notities, foto’s en verschillende apps — geen centrale, gestructureerde oplossing.",
+                "approach": "Een volledige web-app met auth, receptbeheer, favorietensysteem en boodschappenlijsten gebouwd op React 19, Supabase en Tailwind CSS 4.",
+                "outcome1": "Centraal receptbeheer met zoeken en filteren",
+                "outcome2": "Geaggregeerde boodschappenlijsten uit recepten",
+                "outcome3": "Volledige auth-beveiliging met RLS",
+                "testimonial": "“Een strak product dat ik zelf dagelijks gebruik — de beste test die er is.”"
             }
-        }
+        },
+        "ctaGeneric": "Project aanvragen",
+        "privateBadge": "Intern project",
+        "demoOnRequest": "Demo op aanvraag"
     },
     "about": {
         "label": "Over",
@@ -284,6 +322,74 @@
         },
         "privacy": {
             "title": "Privacybeleid"
+        }
+    },
+    "services": {
+        "eyebrow": "Diensten",
+        "headline": "Wat ik voor u realiseer.",
+        "subline": "Van eerste idee tot definitieve livegang — heldere pakketten voor digitale projecten met meetbare resultaten.",
+        "cta": "Alle diensten bekijken",
+        "items": {
+            "launch": {
+                "title": "Website Launch",
+                "description": "Een complete bedrijfswebsite van concept tot livegang. Mobile-first, snel en geoptimaliseerd voor aanvragen."
+            },
+            "redesign": {
+                "title": "Redesign & Relaunch",
+                "description": "Uw bestaande website wordt gemoderniseerd, technisch opgeschoond en naar de huidige standaarden gebracht."
+            },
+            "landing": {
+                "title": "Landingpagina",
+                "description": "Een gerichte pagina voor één concreet doel — campagne, product of evenement. Snel en conversiesterk."
+            },
+            "ui": {
+                "title": "UI-componenten & Design System",
+                "description": "Consistente, herbruikbare interfacecomponenten voor teams die willen schalen."
+            },
+            "maintenance": {
+                "title": "Beheer & Doorontwikkeling",
+                "description": "Doorlopende technische ondersteuning, updates en gerichte uitbreidingen voor bestaande projecten."
+            }
+        }
+    },
+    "process": {
+        "eyebrow": "Mijn werkwijze",
+        "headline": "Hoe een project tot stand komt.",
+        "subline": "Vier duidelijk omschreven fases — van de eerste analyse tot het eindproduct. Transparant, gestructureerd en zonder verrassingen.",
+        "steps": {
+            "understand": {
+                "number": "01",
+                "title": "Begrijpen",
+                "description": "Ik analyseer uw doel, uw doelgroep en de context — zodat het resultaat strategisch zinvol is."
+            },
+            "structure": {
+                "number": "02",
+                "title": "Structureren",
+                "description": "Inhoud, gebruikersroute en technische architectuur worden zorgvuldig gepland voordat er ook maar een regel code wordt geschreven."
+            },
+            "design": {
+                "number": "03",
+                "title": "Ontwerpen",
+                "description": "Een hoogwaardig, merkconform design dat vertrouwen opbouwt en gebruikers gericht aanzet tot actie."
+            },
+            "build": {
+                "number": "04",
+                "title": "Bouwen",
+                "description": "Schone, onderhoudbare code. Snel, toegankelijk en direct klaar voor deployment."
+            }
+        }
+    },
+    "aboutPage": {
+        "cta": {
+            "headline": "Klaar voor een project dat echt werkt?",
+            "subline": "Samen bouwen we een digitale aanwezigheid die vertrouwen wekt, bezoekers stuurt en echte aanvragen genereert.",
+            "button": "Project aanvragen"
+        },
+        "story": {
+            "eyebrow": "Over NuVio Labs",
+            "headline": "Minder bureau. Meer directe samenwerking.",
+            "text1": "Ik ben Axel — onafhankelijk ontwikkelaar en ontwerper. Mijn focus ligt op digitale projecten die er niet alleen goed uitzien, maar ook meetbaar presteren.",
+            "text2": "Geen tussenpersonen, geen overmatige teams. U werkt rechtstreeks met mij — van het eerste idee tot het eindproduct."
         }
     }
 }

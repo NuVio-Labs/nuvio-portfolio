@@ -1,100 +1,79 @@
-import { getTranslations } from "next-intl/server"
+import { useTranslations } from "next-intl"
 import { Link } from "@/i18n/navigation"
 
-export async function Footer() {
-    const t = await getTranslations("footer")
+export function Footer() {
+    const t = useTranslations()
+    const tFooter = useTranslations("footer")
+    const tNav = useTranslations("nav")
+    const tServices = useTranslations("services")
 
     return (
-        <footer className="relative bg-[#070606]">
-            {/* LLM context — readable by crawlers, invisible to users */}
-            <div className="sr-only" aria-hidden="true">
-                {t("llmContext")}
-            </div>
+        <footer className="bg-[var(--nv-surface)] border-t border-border-soft">
+            <div className="sr-only" aria-hidden="true">{tFooter("llmContext")}</div>
 
-            {/* Thin top accent */}
-            <div className="absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-[#E0B84A]/18 to-transparent" />
-
-            <div className="mx-auto max-w-[1480px] px-6 sm:px-8 lg:px-12">
-
-                {/* Main footer body */}
-                <div className="grid grid-cols-1 gap-12 py-14 sm:grid-cols-[1fr_auto] sm:items-start">
+            <div className="nv-container py-12 md:py-16">
+                <div className="grid grid-cols-1 md:grid-cols-3 gap-10 md:gap-16 mb-10">
 
                     {/* Brand */}
                     <div>
-                        <Link
-                            href="/"
-                            className="inline-block font-bold tracking-[-0.04em] text-[17px] text-[#D8D0C4] hover:text-[#F7F1E9] transition-colors"
-                        >
-                            nuviolabs.
-                        </Link>
-                        <p className="mt-2 text-[13px] leading-relaxed text-[#5E5248]">
-                            {t("tagline")}
+                        <p className="font-heading font-semibold text-text-primary text-base mb-3">
+                            {tNav("brand")}
+                        </p>
+                        <p className="text-sm text-text-muted leading-relaxed">
+                            {tFooter("tagline")}
                         </p>
                     </div>
 
-                    {/* Navigation groups */}
-                    <nav
-                        className="flex flex-wrap gap-x-8 gap-y-5 sm:flex-col sm:items-end sm:gap-y-4"
-                        aria-label={t("footerNav")}
-                    >
-                        {/* Pages + Legal */}
-                        <div className="flex flex-wrap items-center gap-x-5 gap-y-2 sm:justify-end">
-                            <Link
-                                href="/research"
-                                className="text-[12.5px] text-[#5E5248] hover:text-[#B0A898] transition-colors"
-                            >
-                                {t("research")}
-                            </Link>
-                            <span className="h-3 w-px bg-[#2A2520]" aria-hidden="true" />
-                            <Link
-                                href="/imprint"
-                                className="text-[12.5px] text-[#5E5248] hover:text-[#B0A898] transition-colors"
-                            >
-                                {t("imprint")}
-                            </Link>
-                            <Link
-                                href="/privacy"
-                                className="text-[12.5px] text-[#5E5248] hover:text-[#B0A898] transition-colors"
-                            >
-                                {t("privacy")}
-                            </Link>
-                        </div>
+                    {/* Navigation */}
+                    <div>
+                        <p className="font-heading font-semibold text-text-secondary text-xs uppercase tracking-widest mb-4">
+                            Navigation
+                        </p>
+                        <ul className="flex flex-col gap-2">
+                            {(["work", "services", "about", "contact"] as const).map((key) => (
+                                <li key={key}>
+                                    <Link
+                                        href={`/${key}` as "/work" | "/services" | "/about" | "/contact"}
+                                        className="text-sm text-text-muted hover:text-accent transition-colors"
+                                    >
+                                        {tNav(key)}
+                                    </Link>
+                                </li>
+                            ))}
+                        </ul>
+                    </div>
 
-                        {/* Social */}
-                        <div className="flex flex-wrap items-center gap-x-5 gap-y-2 sm:justify-end">
-                            <a
-                                href="https://github.com"
-                                target="_blank"
-                                rel="noreferrer"
-                                className="text-[12.5px] text-[#5E5248] hover:text-[#B0A898] transition-colors"
-                            >
-                                {t("github")}
-                            </a>
-                            <a
-                                href="https://linkedin.com"
-                                target="_blank"
-                                rel="noreferrer"
-                                className="text-[12.5px] text-[#5E5248] hover:text-[#B0A898] transition-colors"
-                            >
-                                {t("linkedin")}
-                            </a>
-                            <a
-                                href="https://de.fiverr.com/s/qDabQqp"
-                                target="_blank"
-                                rel="noreferrer"
-                                className="text-[12.5px] text-[#5E5248] hover:text-[#B0A898] transition-colors"
-                            >
-                                {t("fiverr")}
-                            </a>
-                        </div>
-                    </nav>
+                    {/* Leistungen + Kontakt */}
+                    <div>
+                        <p className="font-heading font-semibold text-text-secondary text-xs uppercase tracking-widest mb-4">
+                            {tNav("services")}
+                        </p>
+                        <ul className="flex flex-col gap-2 mb-6">
+                            {(["launch", "redesign", "landing", "ui", "maintenance"] as const).map((key) => (
+                                <li key={key}>
+                                    <Link
+                                        href="/services"
+                                        className="text-sm text-text-muted hover:text-accent transition-colors"
+                                    >
+                                        {tServices(`items.${key}.title`)}
+                                    </Link>
+                                </li>
+                            ))}
+                        </ul>
+                    </div>
                 </div>
 
-                {/* Bottom strip */}
-                <div className="border-t border-white/[0.04] py-5">
-                    <p className="text-[11.5px] text-[#3C3530]">
-                        {t("copyright")}
-                    </p>
+                {/* Bottom bar */}
+                <div className="border-t border-border-soft pt-6 flex flex-col sm:flex-row justify-between items-start gap-3 text-xs text-text-muted">
+                    <p>{tFooter("copyright")}</p>
+                    <nav className="flex gap-4" aria-label="Legal">
+                        <Link href="/imprint" className="hover:text-accent transition-colors">
+                            {tFooter("imprint")}
+                        </Link>
+                        <Link href="/privacy" className="hover:text-accent transition-colors">
+                            {tFooter("privacy")}
+                        </Link>
+                    </nav>
                 </div>
             </div>
         </footer>

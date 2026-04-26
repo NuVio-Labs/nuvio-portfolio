@@ -76,7 +76,7 @@ export function LanguageSwitcher() {
                         animate={{ opacity: 1, y: 0, scale: 1 }}
                         exit={{ opacity: 0, y: 8, scale: 0.95 }}
                         transition={{ duration: 0.15, ease: "easeOut" }}
-                        className="absolute right-0 mt-2 w-48 rounded-lg border border-border bg-background/95 backdrop-blur-md shadow-lg overflow-hidden z-[100]"
+                        className="absolute right-0 mt-2 w-44 rounded-xl border border-border-soft bg-surface/95 backdrop-blur-xl shadow-xl overflow-hidden z-[100]"
                     >
                         <div className="p-1" role="listbox">
                             {routing.locales.map((loc) => (
@@ -86,8 +86,8 @@ export function LanguageSwitcher() {
                                     className={cn(
                                         "w-full flex items-center justify-between px-3 py-2.5 text-sm rounded-md transition-colors text-left",
                                         loc === locale
-                                            ? "bg-secondary text-foreground font-medium"
-                                            : "text-muted-foreground hover:text-foreground hover:bg-secondary/50"
+                                            ? "text-accent font-semibold"
+                                            : "text-text-muted hover:text-text-primary hover:bg-surface-soft"
                                     )}
                                     role="option"
                                     aria-selected={loc === locale}

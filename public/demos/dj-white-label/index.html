@@ -1,0 +1,700 @@
+<!DOCTYPE html>
+<html lang="de">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>White Label DJ Preview</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              abyss: '#050505',
+              coal: '#111111',
+              smoke: '#1C1C1C',
+              inferno: '#C1121F',
+              molten: '#E5383B',
+              bone: '#F5F5F2',
+              ash: '#A8A8A3',
+              steel: '#BFC3C8',
+              line: 'rgba(245,245,242,0.08)'
+            },
+            boxShadow: {
+              hero: '0 30px 80px rgba(0,0,0,0.55)',
+              glow: '0 0 100px rgba(193,18,31,0.24)'
+            },
+            backdropBlur: {
+              xs: '2px'
+            }
+          }
+        }
+      }
+    </script>
+    <style>
+      :root {
+        --hero-image: url('https://unsplash.com/photos/zbQEd3MQxwo/download?force=true&w=1600');
+        --crowd-image: url('https://images.unsplash.com/photo-1501386761578-eac5c94b800a?auto=format&fit=crop&w=1400&q=80');
+        --booth-image: url('https://images.unsplash.com/photo-1571266028243-d220c9f6b0d1?auto=format&fit=crop&w=1400&q=80');
+      }
+
+      body {
+        font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+        background:
+          radial-gradient(circle at 20% 20%, rgba(193, 18, 31, 0.2), transparent 28%),
+          radial-gradient(circle at 80% 15%, rgba(229, 56, 59, 0.16), transparent 20%),
+          radial-gradient(circle at 50% 100%, rgba(193, 18, 31, 0.12), transparent 30%),
+          linear-gradient(180deg, #050505 0%, #090909 100%);
+      }
+
+      .hero-image {
+        background-image:
+          linear-gradient(180deg, rgba(5, 5, 5, 0.16) 0%, rgba(5, 5, 5, 0.24) 100%),
+          var(--hero-image);
+        background-size: cover;
+        background-position: center center;
+        filter: grayscale(1) contrast(1.04);
+      }
+
+      .hero-backdrop {
+        position: absolute;
+        inset: 2% -10% 0 -10%;
+        z-index: 0;
+        background-image:
+          radial-gradient(circle at center, rgba(255, 255, 255, 0.18) 0%, rgba(130, 130, 130, 0.16) 28%, rgba(5, 5, 5, 0.82) 100%),
+          var(--hero-image);
+        background-size: cover;
+        background-position: center;
+        transform: scale(1.18);
+        filter: blur(58px) grayscale(1) saturate(0.2);
+        opacity: 0.82;
+      }
+
+      .noise::before {
+        content: '';
+        position: absolute;
+        inset: 0;
+        pointer-events: none;
+        opacity: 0.08;
+        mix-blend-mode: screen;
+        background-image:
+          radial-gradient(circle at 20% 30%, rgba(255,255,255,0.7) 0 1px, transparent 1.5px),
+          radial-gradient(circle at 70% 40%, rgba(255,255,255,0.55) 0 1px, transparent 1.5px),
+          radial-gradient(circle at 50% 80%, rgba(255,255,255,0.4) 0 1px, transparent 1.5px),
+          radial-gradient(circle at 85% 20%, rgba(255,255,255,0.6) 0 1px, transparent 1.5px);
+        background-size: 240px 240px, 320px 320px, 280px 280px, 360px 360px;
+      }
+
+      .hero-stat {
+        background: linear-gradient(180deg, rgba(28, 28, 28, 0.62) 0%, rgba(5, 5, 5, 0.18) 100%);
+        backdrop-filter: blur(10px);
+      }
+
+      .hero-manifest {
+        display: inline-flex;
+        align-items: center;
+        gap: 0.9rem;
+        font-size: clamp(0.9rem, 1.4vw, 1.15rem);
+        font-weight: 700;
+        letter-spacing: 0.34em;
+        text-transform: uppercase;
+        color: rgba(245, 245, 242, 0.92);
+        text-shadow: 0 10px 28px rgba(0, 0, 0, 0.35);
+      }
+
+      .hero-manifest::before,
+      .hero-manifest::after {
+        content: "";
+        width: 2.8rem;
+        height: 1px;
+        background: linear-gradient(90deg, rgba(229, 56, 59, 0.85), rgba(245, 245, 242, 0.16));
+      }
+
+      .fade-nav {
+        position: fixed;
+        top: 1.25rem;
+        left: 50%;
+        z-index: 60;
+        width: min(calc(100% - 1.5rem), 68rem);
+        transform: translateX(-50%) translateY(-18px);
+        opacity: 0;
+        pointer-events: none;
+        transition: opacity 420ms ease, transform 420ms ease;
+      }
+
+      body.nav-visible .fade-nav {
+        opacity: 1;
+        transform: translateX(-50%) translateY(0);
+        pointer-events: auto;
+      }
+
+      .section-shell {
+        position: relative;
+        width: min(100%, 1280px);
+        margin: 0 auto;
+      }
+
+      .snapshot-card {
+        background:
+          linear-gradient(180deg, rgba(17, 17, 17, 0.94) 0%, rgba(10, 10, 10, 0.98) 100%);
+        box-shadow:
+          0 28px 80px rgba(0, 0, 0, 0.38),
+          0 0 0 1px rgba(245, 245, 242, 0.05);
+      }
+
+      .dossier-card {
+        position: relative;
+        background:
+          linear-gradient(180deg, rgba(15, 15, 15, 0.98) 0%, rgba(8, 8, 8, 1) 100%);
+      }
+
+      .dossier-card::before {
+        content: "";
+        position: absolute;
+        inset: 16px;
+        border: 1px solid rgba(245, 245, 242, 0.06);
+        border-radius: 24px;
+        pointer-events: none;
+      }
+
+      .dossier-card::after {
+        content: "";
+        position: absolute;
+        top: 22px;
+        left: 22px;
+        width: 98px;
+        height: 6px;
+        border-radius: 999px;
+        background: linear-gradient(90deg, rgba(229, 56, 59, 0.95), rgba(229, 56, 59, 0.12));
+        box-shadow: 0 0 18px rgba(193, 18, 31, 0.3);
+        pointer-events: none;
+      }
+
+      .dossier-grid {
+        position: relative;
+      }
+
+      .dossier-grid::before {
+        content: "";
+        position: absolute;
+        inset: 0;
+        background-image:
+          linear-gradient(rgba(245, 245, 242, 0.035) 1px, transparent 1px),
+          linear-gradient(90deg, rgba(245, 245, 242, 0.035) 1px, transparent 1px);
+        background-size: 100% 88px, 88px 100%;
+        opacity: 0.2;
+        pointer-events: none;
+      }
+
+      .dossier-label {
+        display: inline-flex;
+        align-items: center;
+        gap: 0.55rem;
+        font-size: 0.74rem;
+        font-weight: 700;
+        letter-spacing: 0.26em;
+        text-transform: uppercase;
+        color: #bfc3c8;
+      }
+
+      .dossier-label::before {
+        content: "";
+        width: 1.9rem;
+        height: 1px;
+        background: rgba(229, 56, 59, 0.82);
+      }
+
+      .dossier-panel {
+        position: relative;
+        border: 1px solid rgba(245, 245, 242, 0.08);
+        background: rgba(28, 28, 28, 0.58);
+        backdrop-filter: blur(12px);
+      }
+
+      .dossier-panel::before {
+        content: "";
+        position: absolute;
+        top: 12px;
+        right: 12px;
+        width: 10px;
+        height: 10px;
+        border-radius: 999px;
+        background: rgba(229, 56, 59, 0.9);
+        box-shadow: 0 0 16px rgba(229, 56, 59, 0.45);
+      }
+
+      .snapshot-glow {
+        position: absolute;
+        inset: auto auto -8% 6%;
+        width: 24rem;
+        height: 24rem;
+        border-radius: 999px;
+        background: radial-gradient(circle, rgba(193, 18, 31, 0.22) 0%, rgba(193, 18, 31, 0) 70%);
+        filter: blur(30px);
+        pointer-events: none;
+      }
+
+      @media (max-width: 768px) {
+        .fade-nav {
+          top: auto;
+          bottom: 1.75rem;
+          width: calc(100% - 1rem);
+        }
+
+        body.nav-visible .fade-nav {
+          transform: translateX(-50%) translateY(0);
+        }
+      }
+    </style>
+  </head>
+  <body class="min-h-screen overflow-x-hidden bg-abyss text-bone">
+    <div class="fade-nav">
+      <nav class="rounded-full border border-bone/10 bg-smoke/72 px-3 py-3 shadow-[0_20px_50px_rgba(0,0,0,0.35)] backdrop-blur-xl">
+        <div class="flex items-center justify-between gap-3">
+          <a href="#top" class="rounded-full px-4 py-2 text-sm font-semibold tracking-[0.18em] text-bone/86 transition hover:bg-bone/8 hover:text-bone"></a>
+          <div class="flex flex-1 items-center justify-end gap-1 sm:gap-2">
+            <a href="#snapshot" class="rounded-full px-4 py-2 text-sm text-ash transition hover:bg-bone/8 hover:text-bone">Snapshot</a>
+            <a href="#sound" class="rounded-full px-4 py-2 text-sm text-ash transition hover:bg-bone/8 hover:text-bone">Sound</a>
+            <a href="#live" class="rounded-full px-4 py-2 text-sm text-ash transition hover:bg-bone/8 hover:text-bone">Live</a>
+            <a href="#booking" class="rounded-full bg-inferno px-4 py-2 text-sm font-semibold text-bone transition hover:bg-molten">Booking</a>
+          </div>
+        </div>
+      </nav>
+    </div>
+
+    <main class="relative isolate px-4 sm:px-6 lg:px-10">
+      <div class="hero-backdrop pointer-events-none"></div>
+
+      <div class="pointer-events-none absolute inset-0 overflow-hidden">
+        <div class="absolute left-[-10%] top-[10%] h-72 w-72 rounded-full bg-inferno/14 blur-3xl"></div>
+        <div class="absolute right-[-6%] top-[12%] h-96 w-96 rounded-full bg-molten/12 blur-3xl"></div>
+        <div class="absolute bottom-[-10%] left-1/2 h-80 w-[34rem] -translate-x-1/2 rounded-full bg-inferno/12 blur-3xl"></div>
+      </div>
+
+      <div class="flex h-[100svh] w-full items-center justify-center">
+      <section id="top" class="noise hero-image relative w-full max-w-[1536px] overflow-hidden rounded-[30px] border border-bone/10 bg-coal shadow-glow shadow-hero">
+        <div class="absolute inset-0 bg-gradient-to-b from-black/15 via-transparent to-black/45"></div>
+        <div class="absolute inset-0 ring-1 ring-inset ring-white/5"></div>
+        <div class="absolute inset-y-0 left-0 w-[52%] bg-gradient-to-r from-black/55 via-black/24 to-transparent"></div>
+
+        <div class="relative z-10 flex min-h-[540px] flex-col lg:min-h-[560px]">
+          <header class="flex items-center justify-between px-7 pb-5 pt-7 sm:px-10 sm:pb-6 sm:pt-8 lg:px-14 lg:pt-10">
+            <a href="#" class="text-2xl font-semibold tracking-tight text-bone drop-shadow-[0_8px_24px_rgba(0,0,0,0.45)]"></a>
+
+            <div class="hidden items-center gap-6 md:flex">
+              <nav class="rounded-full border border-bone/10 bg-smoke/55 px-5 py-3 backdrop-blur-md">
+                <div class="flex items-center gap-7 text-sm font-medium text-bone/82">
+                  <a href="#booking" class="transition hover:text-bone">Booking</a>
+                </div>
+              </nav>
+
+              <div class="flex items-center gap-3">
+                <a
+                  href="#"
+                  aria-label="Instagram"
+                  class="flex h-12 w-12 items-center justify-center rounded-full border border-bone/12 bg-smoke/60 text-bone backdrop-blur-md transition hover:border-molten/35 hover:bg-inferno/18"
+                >
+                  <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.8">
+                    <rect x="3.5" y="3.5" width="17" height="17" rx="5"></rect>
+                    <circle cx="12" cy="12" r="4"></circle>
+                    <circle cx="17.5" cy="6.5" r="1"></circle>
+                  </svg>
+                </a>
+                <a
+                  href="#"
+                  aria-label="Twitter"
+                  class="flex h-12 w-12 items-center justify-center rounded-full border border-bone/12 bg-smoke/60 text-bone backdrop-blur-md transition hover:border-molten/35 hover:bg-inferno/18"
+                >
+                  <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 24 24" fill="currentColor">
+                    <path d="M18.9 2H22l-6.77 7.74L23 22h-6.1l-4.78-6.24L6.66 22H3.55l7.24-8.27L1 2h6.26l4.31 5.7L18.9 2Zm-1.07 18h1.69L6.34 3.9H4.53L17.83 20Z" />
+                  </svg>
+                </a>
+              </div>
+            </div>
+
+            <button class="inline-flex h-11 w-11 items-center justify-center rounded-full border border-bone/12 bg-smoke/60 text-bone backdrop-blur-md md:hidden">
+              <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.8">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M4 7h16M4 12h16M4 17h16" />
+              </svg>
+            </button>
+          </header>
+
+          <div class="relative flex flex-1 items-center px-7 pb-8 pt-8 sm:px-10 sm:pb-10 sm:pt-10 lg:px-14 lg:pb-12 lg:pt-12">
+            <div class="grid w-full gap-10 lg:grid-cols-[minmax(0,520px)_1fr] lg:items-end">
+              <div class="max-w-[540px] mt-1">
+                
+                <p class="hero-manifest">White Label Experience</p>
+
+                <h1 class="mt-5 max-w-[10ch] text-5xl font-semibold tracking-tight text-bone sm:text-6xl lg:text-[5.25rem] lg:leading-[0.96]">
+                  Club-Sound als neutrale Landingpage.
+                </h1>
+
+                <p class="mt-6 max-w-xl text-base leading-8 text-ash sm:text-lg">
+                  Diese Version ist komplett ohne Logo aufgebaut und eignet sich als White-Label-Preview fuer DJs, Events oder Agencies. Texte, Kennzahlen und Kontaktmodule lassen sich direkt auf neue Namen anpassen.
+                </p>
+
+                <div class="mt-8 flex flex-col gap-3 sm:flex-row">
+                  <a
+                    href="#music"
+                    class="inline-flex min-h-[56px] items-center justify-center rounded-xl border border-molten/35 bg-inferno px-7 text-xl font-semibold text-bone shadow-[0_14px_34px_rgba(193,18,31,0.34)] backdrop-blur-sm transition hover:bg-molten"
+                  >
+                    Demo hoeren
+                  </a>
+                  <a
+                    href="#live"
+                    class="inline-flex min-h-[56px] items-center justify-center rounded-xl border border-steel/15 bg-smoke/72 px-7 text-xl font-semibold text-bone backdrop-blur-sm transition hover:border-bone/20 hover:bg-smoke"
+                  >
+                    Live entdecken
+                  </a>
+                </div>
+
+                <div class="mt-5 flex flex-wrap items-center gap-3 text-[0.72rem] font-semibold uppercase tracking-[0.24em] text-steel">
+                  <span class="inline-flex items-center gap-2 rounded-full border border-bone/10 bg-smoke/65 px-4 py-2 backdrop-blur-sm">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-3.5 w-3.5 text-[#1DB954]" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+                      <path d="M12 1.5a10.5 10.5 0 1 0 10.5 10.5A10.512 10.512 0 0 0 12 1.5Zm4.817 15.143a.655.655 0 0 1-.901.217c-2.468-1.508-5.574-1.85-9.233-1.016a.655.655 0 0 1-.291-1.277c4.005-.913 7.447-.521 10.208 1.166a.655.655 0 0 1 .217.91Zm1.288-2.867a.818.818 0 0 1-1.126.271c-2.825-1.736-7.13-2.24-10.47-1.226a.818.818 0 1 1-.475-1.566c3.808-1.157 8.55-.593 11.8 1.403a.818.818 0 0 1 .271 1.118Zm.111-2.987C14.824 8.772 9.221 8.586 6 9.564a.982.982 0 0 1-.572-1.878c3.7-1.124 9.852-.906 13.816 1.445a.982.982 0 1 1-1.028 1.658Z"/>
+                    </svg>
+                    <span>Streaming</span>
+                  </span>
+                  <span class="inline-flex items-center gap-2 rounded-full border border-bone/10 bg-smoke/65 px-4 py-2 backdrop-blur-sm">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-3.5 w-3.5 text-[#FF0000]" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+                      <path d="M21.582 7.196a2.997 2.997 0 0 0-2.11-2.12C17.615 4.5 12 4.5 12 4.5s-5.615 0-7.472.576a2.997 2.997 0 0 0-2.11 2.12A31.14 31.14 0 0 0 1.5 12a31.14 31.14 0 0 0 .918 4.804 2.997 2.997 0 0 0 2.11 2.12C6.385 19.5 12 19.5 12 19.5s5.615 0 7.472-.576a2.997 2.997 0 0 0 2.11-2.12A31.14 31.14 0 0 0 22.5 12a31.14 31.14 0 0 0-.918-4.804ZM10.2 15.3V8.7l5.7 3.3-5.7 3.3Z"/>
+                    </svg>
+                    <span>Video</span>
+                  </span>
+                  <span class="inline-flex items-center gap-2 rounded-full border border-bone/10 bg-smoke/65 px-4 py-2 backdrop-blur-sm">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-3.5 w-3.5 text-[#FF5500]" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+                      <path d="M9.462 14.428H7.739V9.41H6.283v5.018H4.56V9.41H3.104v5.018a1.45 1.45 0 0 0 1.456 1.456h3.18l1.722 2.663v-2.663a1.45 1.45 0 0 0 1.456-1.456V9.41H9.462v5.018Zm7.397-5.02c-.83 0-1.512.647-1.512 1.451v3.579c0 .804.682 1.456 1.512 1.456.834 0 1.514-.652 1.514-1.456V10.86c0-.804-.68-1.451-1.514-1.451Zm.057 4.943c0 .227-.11.341-.305.341-.19 0-.303-.114-.303-.341v-3.405c0-.223.113-.335.303-.335.195 0 .305.112.305.335v3.405Zm4.076-4.943v3.486c0 .535-.02.894-.057 1.081-.075.314-.258.471-.547.471-.214 0-.428-.103-.642-.315v-4.723h-1.343v6.408h1.343v-.389c.39.296.762.446 1.112.446.536 0 .885-.232 1.048-.698.085-.247.127-.668.127-1.262V9.408H20.99ZM13.21 7.077l1.65-4.305h-1.47l-.974 2.995-.997-2.995H9.93l1.651 4.305v2.92h1.63v-2.92Z"/>
+                    </svg>
+                    <span>Mixes</span>
+                  </span>
+                </div>
+              </div>
+
+              <div class="hidden min-h-[360px] lg:block"></div>
+            </div>
+          </div>
+
+          <div class="relative z-10 mt-auto flex flex-col gap-6 px-7 pb-7 sm:px-10 sm:pb-8 lg:px-14 lg:pb-10">
+            <div class="flex flex-col gap-6 md:flex-row md:items-end md:justify-between">
+              <div class="grid w-full max-w-[560px] grid-cols-1 gap-4 border-t border-bone/10 pt-6 sm:grid-cols-3">
+                <div class="hero-stat rounded-2xl border border-bone/8 px-5 py-4">
+                  <div class="text-3xl font-semibold tracking-tight text-bone">250+</div>
+                  <div class="mt-1 text-lg text-ash">Events</div>
+                </div>
+                <div class="hero-stat rounded-2xl border border-bone/8 px-5 py-4">
+                  <div class="text-3xl font-semibold tracking-tight text-bone">12h</div>
+                  <div class="mt-1 text-lg text-ash">Content Pool</div>
+                </div>
+                <div class="hero-stat rounded-2xl border border-bone/8 px-5 py-4">
+                  <div class="text-3xl font-semibold tracking-tight text-bone">24/7</div>
+                  <div class="mt-1 text-lg text-ash">Einsatzfaehig</div>
+                </div>
+              </div>
+
+              
+            </div>
+          </div>
+        </div>
+      </section>
+      </div>
+
+      <section id="next" class="section-shell pt-10 sm:pt-14">
+        <div id="snapshot" class="snapshot-card dossier-card relative overflow-hidden rounded-[30px] border border-bone/10 px-6 py-8 sm:px-8 sm:py-10 lg:px-12 lg:py-12">
+          <div class="snapshot-glow"></div>
+          <div class="absolute inset-0 bg-[linear-gradient(180deg,rgba(229,56,59,0.03),transparent_28%,transparent_72%,rgba(229,56,59,0.04))]"></div>
+
+          <div class="relative z-10 mb-8 flex flex-col gap-4 border-b border-bone/10 pb-6 sm:flex-row sm:items-end sm:justify-between">
+            <div>
+              <p class="dossier-label">Ueberblick / Identitaet</p>
+              <p class="mt-3 text-sm uppercase tracking-[0.22em] text-ash">Datei 02 / White Label / Club Profil</p>
+            </div>
+            <div class="flex flex-wrap gap-3 text-xs font-semibold uppercase tracking-[0.22em] text-steel">
+              <span class="rounded-full border border-bone/10 bg-smoke/72 px-3 py-2">Neutrales Branding</span>
+              <span class="rounded-full border border-bone/10 bg-smoke/72 px-3 py-2">Modularer Aufbau</span>
+              <span class="rounded-full border border-bone/10 bg-smoke/72 px-3 py-2">Schnell anpassbar</span>
+            </div>
+          </div>
+
+          <div class="dossier-grid relative z-10 grid gap-6 lg:grid-cols-[minmax(0,0.9fr)_minmax(0,1.1fr)] lg:items-stretch">
+            <div class="flex flex-col justify-between">
+              <div>
+                <p class="dossier-label">Soundprofil</p>
+                <h2 class="mt-4 max-w-[10ch] text-4xl font-semibold tracking-tight text-bone sm:text-5xl lg:text-[4rem] lg:leading-[0.98]">
+                  Eine Vorlage fuer DJ, Event und Brand.
+                </h2>
+                <p class="mt-5 max-w-xl text-lg leading-8 text-ash">
+                  Die Seite kombiniert klare Botschaften, starke Bilder und genug Struktur fuer Bookings, Releases oder ein kompaktes EPK, ohne auf ein festes Artist-Branding angewiesen zu sein.
+                </p>
+              </div>
+
+              <div id="sound" class="mt-8 flex flex-wrap gap-3">
+                <span class="rounded-full border border-bone/10 bg-smoke/72 px-4 py-2 text-sm font-medium text-bone/88">Club Culture</span>
+                <span class="rounded-full border border-bone/10 bg-smoke/72 px-4 py-2 text-sm font-medium text-bone/88">Event Ready</span>
+                <span class="rounded-full border border-bone/10 bg-smoke/72 px-4 py-2 text-sm font-medium text-bone/88">White Label</span>
+              </div>
+            </div>
+
+            <div class="grid gap-4 md:grid-cols-[1.25fr_0.75fr]">
+              <article class="overflow-hidden rounded-[26px] border border-bone/10 bg-black/30">
+                <div
+                  class="min-h-[420px] bg-cover bg-center"
+                  style="background-image: linear-gradient(180deg, rgba(5,5,5,0.16), rgba(5,5,5,0.72)), var(--crowd-image);"
+                ></div>
+                <div class="border-t border-bone/10 px-6 py-5">
+                  <p class="text-sm uppercase tracking-[0.22em] text-steel">Visuelle Identitaet</p>
+                  <p class="mt-3 text-2xl font-semibold tracking-tight text-bone">Modern, klar und sofort einsatzbereit.</p>
+                </div>
+              </article>
+
+              <div class="grid gap-4">
+                <article class="dossier-panel rounded-[26px] p-5">
+                  <p class="text-sm uppercase tracking-[0.2em] text-steel">Format</p>
+                  <p class="mt-3 text-xl font-semibold text-bone">Landingpage fuer Acts und Events.</p>
+                </article>
+                <article class="dossier-panel rounded-[26px] bg-gradient-to-br from-inferno/14 to-smoke/78 p-5">
+                  <p class="text-sm uppercase tracking-[0.2em] text-steel">Fokus</p>
+                  <p class="mt-3 text-xl font-semibold text-bone">Flexible Inhalte statt festem Logo.</p>
+                </article>
+                <article class="dossier-panel rounded-[26px] bg-bone/[0.03] p-5">
+                  <p class="text-sm uppercase tracking-[0.2em] text-steel">Warum es bleibt</p>
+                  <p class="mt-3 text-xl font-semibold text-bone">Booking, Media Kit und Social Proof in einem Flow.</p>
+                  <a href="#music" class="mt-5 inline-flex min-h-[48px] items-center justify-center rounded-xl bg-inferno px-5 text-sm font-semibold text-bone transition hover:bg-molten">
+                    Zum Sound
+                  </a>
+                </article>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="music" class="section-shell pt-8 sm:pt-10">
+        <div class="snapshot-card relative overflow-hidden rounded-[30px] border border-bone/10 px-6 py-8 sm:px-8 sm:py-10 lg:px-12 lg:py-12">
+          <div class="absolute inset-0 bg-[radial-gradient(circle_at_top_right,rgba(229,56,59,0.12),transparent_32%),linear-gradient(180deg,rgba(17,17,17,0.98),rgba(7,7,7,1))]"></div>
+
+          <div class="relative z-10 grid gap-8 lg:grid-cols-[minmax(0,0.72fr)_minmax(0,1.28fr)]">
+            <div>
+              <p class="dossier-label">Musik / Releases</p>
+              <h2 class="mt-4 max-w-[9ch] text-4xl font-semibold tracking-tight text-bone sm:text-5xl">
+                Inhalte als Platzhalter, nicht als Brand.
+              </h2>
+                <p class="mt-5 max-w-md text-lg leading-8 text-ash">
+                  Der Musikbereich ist jetzt bewusst generisch gehalten und kann spaeter mit echten Playern, Playlists oder Release-Teasern ersetzt werden.
+                </p>
+
+              <div class="mt-8 flex flex-wrap gap-3">
+                <a href="#booking" class="inline-flex min-h-[52px] items-center justify-center rounded-xl bg-inferno px-6 text-base font-semibold text-bone transition hover:bg-molten">Demo einbauen</a>
+                <a href="#live" class="inline-flex min-h-[52px] items-center justify-center rounded-xl border border-bone/10 bg-smoke/72 px-6 text-base font-semibold text-bone transition hover:bg-smoke">Live-Sektion</a>
+              </div>
+            </div>
+
+            <div class="grid gap-4">
+              <div class="overflow-hidden rounded-[26px] border border-bone/10 bg-black/30">
+                <div class="flex items-center justify-between border-b border-bone/10 px-6 py-4">
+                  <div>
+                    <p class="dossier-label">Player-Modul</p>
+                    <p class="mt-2 text-sm text-ash">Platz fuer Spotify, SoundCloud, YouTube oder eingebettete Sets</p>
+                  </div>
+                  <span class="rounded-full border border-bone/10 bg-smoke/72 px-3 py-2 text-xs font-semibold uppercase tracking-[0.22em] text-steel">Hauptmodul</span>
+                </div>
+                <div class="grid min-h-[420px] place-items-center bg-cover bg-center px-6 text-center" style="background-image: linear-gradient(135deg,rgba(193,18,31,0.18),rgba(5,5,5,0.9)), var(--booth-image);">
+                  <div>
+                    <p class="text-sm uppercase tracking-[0.28em] text-steel">Player / Release-Karussell</p>
+                    <p class="mt-4 text-3xl font-semibold text-bone">Hier kann spaeter dein groesstes Musikmodul sitzen.</p>
+                  </div>
+                </div>
+              </div>
+
+              <div class="grid gap-4 sm:grid-cols-3">
+                <article class="overflow-hidden rounded-[24px] border border-bone/10 bg-black/30">
+                  <div class="h-40 bg-cover bg-center" style="background-image: linear-gradient(180deg,rgba(193,18,31,0.16),rgba(5,5,5,0.88)), var(--hero-image);"></div>
+                  <div class="px-5 py-4">
+                    <p class="text-sm uppercase tracking-[0.2em] text-steel">Featured Slot</p>
+                    <p class="mt-2 text-xl font-semibold text-bone">Aktuelle Single oder Teaser</p>
+                  </div>
+                </article>
+                <article class="overflow-hidden rounded-[24px] border border-bone/10 bg-black/30">
+                  <div class="h-40 bg-cover bg-center" style="background-image: linear-gradient(180deg,rgba(229,56,59,0.12),rgba(5,5,5,0.88)), var(--crowd-image);"></div>
+                  <div class="px-5 py-4">
+                    <p class="text-sm uppercase tracking-[0.2em] text-steel">Highlight Slot</p>
+                    <p class="mt-2 text-xl font-semibold text-bone">Remix, Edit oder Live-Mitschnitt</p>
+                  </div>
+                </article>
+                <article class="overflow-hidden rounded-[24px] border border-bone/10 bg-black/30">
+                  <div class="h-40 bg-cover bg-center" style="background-image: linear-gradient(180deg,rgba(245,245,242,0.08),rgba(5,5,5,0.9)), var(--booth-image);"></div>
+                  <div class="px-5 py-4">
+                    <p class="text-sm uppercase tracking-[0.2em] text-steel">Weitere Titel</p>
+                    <p class="mt-2 text-xl font-semibold text-bone">EP, Playlist oder Backkatalog</p>
+                  </div>
+                </article>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="live" class="section-shell pt-8 sm:pt-10">
+        <div class="snapshot-card dossier-card relative overflow-hidden rounded-[30px] border border-bone/10 px-6 py-8 sm:px-8 sm:py-10 lg:px-12 lg:py-12">
+          <div class="absolute inset-0 bg-[linear-gradient(180deg,rgba(229,56,59,0.04),transparent_26%,transparent_74%,rgba(229,56,59,0.06))]"></div>
+
+          <div class="relative z-10 mb-8 flex flex-col gap-4 border-b border-bone/10 pb-6 sm:flex-row sm:items-end sm:justify-between">
+            <div>
+              <p class="dossier-label">Live / Booking-Fit</p>
+              <p class="mt-3 text-sm uppercase tracking-[0.22em] text-ash">Datei 03 / Stage-Fit / Event-Wert</p>
+            </div>
+            <span class="rounded-full border border-molten/20 bg-inferno/18 px-4 py-2 text-xs font-semibold uppercase tracking-[0.22em] text-bone">Peak-Time Ready</span>
+          </div>
+
+          <div class="relative z-10 grid gap-6 lg:grid-cols-[minmax(0,1.08fr)_minmax(0,0.92fr)]">
+            <div>
+              <div class="overflow-hidden rounded-[26px] border border-bone/10 bg-black/30">
+                <div class="min-h-[460px] bg-cover bg-center" style="background-image: linear-gradient(180deg,rgba(5,5,5,0.12),rgba(5,5,5,0.8)), var(--crowd-image);"></div>
+                <div class="grid gap-4 border-t border-bone/10 px-6 py-5 sm:grid-cols-3">
+                  <div>
+                    <p class="text-sm uppercase tracking-[0.2em] text-steel">Stage-Effekt</p>
+                    <p class="mt-2 text-xl font-semibold text-bone">Klare Positionierung</p>
+                  </div>
+                  <div>
+                    <p class="text-sm uppercase tracking-[0.2em] text-steel">Crowd-Hook</p>
+                    <p class="mt-2 text-xl font-semibold text-bone">Stimmung + Momentum</p>
+                  </div>
+                  <div>
+                    <p class="text-sm uppercase tracking-[0.2em] text-steel">Veranstalter-Wert</p>
+                    <p class="mt-2 text-xl font-semibold text-bone">Look + Conversion</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="grid gap-4">
+              <article class="dossier-panel rounded-[26px] bg-gradient-to-br from-inferno/14 to-smoke/78 p-6">
+                <p class="dossier-label">Warum das live zieht</p>
+                <p class="mt-4 text-2xl font-semibold tracking-tight text-bone">Perfekt fuer Referenzen, Eventformate und schnelle Booker-Entscheidungen.</p>
+              </article>
+
+              <article class="dossier-panel rounded-[26px] p-6">
+                <p class="dossier-label">Booking Snapshot</p>
+                <div class="mt-5 grid gap-4 sm:grid-cols-2">
+                  <div class="rounded-2xl border border-bone/10 bg-black/20 px-5 py-5">
+                    <p class="text-3xl font-semibold text-bone">Festival</p>
+                    <p class="mt-2 text-sm uppercase tracking-[0.2em] text-ash">Referenzslot</p>
+                  </div>
+                  <div class="rounded-2xl border border-bone/10 bg-black/20 px-5 py-5">
+                    <p class="text-3xl font-semibold text-bone">Clubnacht</p>
+                    <p class="mt-2 text-sm uppercase tracking-[0.2em] text-ash">Headline</p>
+                  </div>
+                  <div class="rounded-2xl border border-bone/10 bg-black/20 px-5 py-5">
+                    <p class="text-3xl font-semibold text-bone">Open Air</p>
+                    <p class="mt-2 text-sm uppercase tracking-[0.2em] text-ash">Sunset Set</p>
+                  </div>
+                  <div class="rounded-2xl border border-bone/10 bg-black/20 px-5 py-5">
+                    <p class="text-3xl font-semibold text-bone">Brand Event</p>
+                    <p class="mt-2 text-sm uppercase tracking-[0.2em] text-ash">Special Guest</p>
+                  </div>
+                </div>
+              </article>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="booking" class="section-shell pt-8 pb-12 sm:pt-10 sm:pb-16">
+        <div class="snapshot-card relative overflow-hidden rounded-[30px] border border-bone/10 px-6 py-8 sm:px-8 sm:py-10 lg:px-12 lg:py-12">
+          <div class="absolute inset-0 bg-[radial-gradient(circle_at_bottom_left,rgba(229,56,59,0.12),transparent_34%),linear-gradient(180deg,rgba(14,14,14,0.96),rgba(7,7,7,1))]"></div>
+
+          <div class="relative z-10 grid gap-6 lg:grid-cols-[minmax(0,0.78fr)_minmax(0,1.22fr)]">
+            <div>
+              <p class="dossier-label">Presse / Social Proof</p>
+              <h2 class="mt-4 max-w-[8ch] text-4xl font-semibold tracking-tight text-bone sm:text-5xl">
+                Kompakt. Schnell. Buchbar.
+              </h2>
+              <p class="mt-5 max-w-md text-lg leading-8 text-ash">
+                Alle zentralen Inhalte bleiben kompakt und koennen spaeter mit echten Assets, Kontaktinfos und Downloadlinks gefuellt werden.
+              </p>
+
+              <div class="mt-8 flex flex-wrap gap-3">
+                <span class="rounded-full border border-bone/10 bg-smoke/72 px-4 py-2 text-sm font-medium text-bone/88">Pressefotos</span>
+                <span class="rounded-full border border-bone/10 bg-smoke/72 px-4 py-2 text-sm font-medium text-bone/88">Brand Assets</span>
+                <span class="rounded-full border border-bone/10 bg-smoke/72 px-4 py-2 text-sm font-medium text-bone/88">Kurzbio</span>
+                <span class="rounded-full border border-bone/10 bg-smoke/72 px-4 py-2 text-sm font-medium text-bone/88">Kontaktbereit</span>
+              </div>
+
+              <div class="mt-8 flex flex-wrap gap-3">
+                <a href="mailto:booking@example.com" class="inline-flex min-h-[52px] items-center justify-center rounded-xl bg-inferno px-6 text-base font-semibold text-bone transition hover:bg-molten">Booking anfragen</a>
+                <a href="#top" class="inline-flex min-h-[52px] items-center justify-center rounded-xl border border-bone/10 bg-smoke/72 px-6 text-base font-semibold text-bone transition hover:bg-smoke">Startbereich</a>
+              </div>
+            </div>
+
+            <div class="grid gap-4">
+              <div class="overflow-hidden rounded-[26px] border border-bone/10 bg-black/30">
+                <div class="grid min-h-[260px] place-items-center bg-cover bg-center text-center" style="background-image: linear-gradient(135deg,rgba(193,18,31,0.22),rgba(5,5,5,0.9)), var(--booth-image);">
+                  <div>
+                    <p class="text-sm uppercase tracking-[0.28em] text-steel">EPK / Assets</p>
+                    <p class="mt-4 text-3xl font-semibold text-bone">Download, Fotos, Kontakte und Module.</p>
+                  </div>
+                </div>
+              </div>
+
+              <div class="grid gap-4 sm:grid-cols-2">
+                <article class="dossier-panel rounded-[24px] p-5">
+                  <p class="text-sm uppercase tracking-[0.2em] text-steel">Kanaele</p>
+                  <p class="mt-3 text-xl font-semibold text-bone">Instagram, TikTok, Newsletter, Web</p>
+                </article>
+                <article class="dossier-panel rounded-[24px] p-5">
+                  <p class="text-sm uppercase tracking-[0.2em] text-steel">Plattformen</p>
+                  <p class="mt-3 text-xl font-semibold text-bone">Spotify, SoundCloud, YouTube, Mixcloud</p>
+                </article>
+                <article class="dossier-panel rounded-[24px] p-5">
+                  <p class="text-sm uppercase tracking-[0.2em] text-steel">Formate</p>
+                  <p class="mt-3 text-xl font-semibold text-bone">Festivals, Clubs, Brand Events</p>
+                </article>
+                <article class="dossier-panel rounded-[24px] p-5">
+                  <p class="text-sm uppercase tracking-[0.2em] text-steel">Kontakt</p>
+                  <p class="mt-3 text-xl font-semibold text-bone">booking@example.com</p>
+                </article>
+              </div>
+
+              <article class="dossier-panel rounded-[26px] p-6">
+                <p class="dossier-label">EPK-Hinweis</p>
+                <p class="mt-4 text-2xl font-semibold tracking-tight text-bone">Alles an einem Ort.</p>
+              </article>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="border-t border-bone/10 bg-black/30 px-4 py-8 sm:px-6 lg:px-10">
+      <div class="mx-auto flex w-full max-w-[1280px] flex-col gap-4 text-sm text-ash sm:flex-row sm:items-center sm:justify-between">
+        <div>
+          <p class="font-semibold uppercase tracking-[0.2em] text-bone/80">White Label Preview</p>
+          <p class="mt-2">Neutrale DJ- und Event-Landingpage mit Unsplash-Bildwelt und austauschbaren Inhalten.</p>
+        </div>
+
+        <div class="flex flex-wrap gap-4 text-bone/72">
+          <a href="#top" class="transition hover:text-bone">Top</a>
+          <a href="#snapshot" class="transition hover:text-bone">Profil</a>
+          <a href="#music" class="transition hover:text-bone">Musik</a>
+          <a href="#booking" class="transition hover:text-bone">Booking</a>
+        </div>
+      </div>
+    </footer>
+
+    <script>
+      const heroSection = document.querySelector("#top");
+
+      if (heroSection) {
+        const observer = new IntersectionObserver(
+          ([entry]) => {
+            document.body.classList.toggle("nav-visible", !entry.isIntersecting);
+          },
+          {
+            threshold: 0.18
+          }
+        );
+
+        observer.observe(heroSection);
+      }
+    </script>
+  </body>
+</html>

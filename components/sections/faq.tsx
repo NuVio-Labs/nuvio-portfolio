@@ -3,10 +3,9 @@
 import { useState } from "react"
 import { useTranslations } from "next-intl"
 import { motion, AnimatePresence } from "framer-motion"
-import { Container } from "@/components/layout/container"
-import { ScrollAnimation } from "@/components/ui/scroll-animation"
 import { ChevronDown } from "lucide-react"
 import { cn } from "@/lib/utils"
+import { SectionWrapper } from "@/components/ui/section-wrapper"
 
 const FAQ_KEYS = ["cost", "duration", "hosting", "cms"] as const
 
@@ -14,50 +13,43 @@ export function FAQ() {
     const t = useTranslations("faq")
     const [openIndex, setOpenIndex] = useState<number | null>(0)
 
-    const toggleAccordion = (index: number) => {
-        setOpenIndex(openIndex === index ? null : index)
-    }
-
     return (
-        <section
-            id="faq"
-            className="relative -mt-24 overflow-hidden bg-[linear-gradient(180deg,rgba(20,16,13,0.18)_0%,rgba(24,19,16,0.38)_26%,rgba(27,22,18,0.58)_52%,rgba(24,19,16,0.52)_100%)] py-24 md:-mt-28 md:py-36"
-        >
-            <div className="pointer-events-none absolute inset-0">
-                <div className="absolute inset-x-[-14%] top-[-9rem] h-[28rem] bg-[radial-gradient(ellipse_at_top,rgba(18,14,12,0.72)_0%,rgba(18,14,12,0.36)_34%,rgba(18,14,12,0.12)_56%,transparent_78%)] blur-[38px]" />
-                <div className="absolute inset-x-[-12%] top-[-2rem] h-64 bg-[linear-gradient(to_bottom,rgba(20,16,13,0.42),rgba(20,16,13,0.18)_34%,rgba(20,16,13,0.06)_58%,transparent_100%)] blur-[18px]" />
-                <div className="absolute inset-x-[-14%] bottom-[-8rem] h-[26rem] bg-[radial-gradient(ellipse_at_bottom,rgba(18,14,12,0.78)_0%,rgba(18,14,12,0.4)_34%,rgba(18,14,12,0.14)_58%,transparent_80%)] blur-[38px]" />
-                <div className="absolute inset-x-[-10%] bottom-0 h-64 bg-[linear-gradient(to_bottom,transparent,rgba(18,14,12,0.06)_30%,rgba(18,14,12,0.18)_56%,rgba(18,14,12,0.42)_100%)] blur-[18px]" />
-                <div className="absolute inset-0 bg-[radial-gradient(circle_at_18%_18%,rgba(224,184,74,0.07),transparent_24%),radial-gradient(circle_at_82%_26%,rgba(255,255,255,0.035),transparent_28%)]" />
-            </div>
-
-            <Container className="relative z-10 max-w-3xl">
-                <ScrollAnimation>
+        <SectionWrapper id="faq" light>
+            <div className="nv-container">
+                <div className="max-w-2xl mx-auto">
                     <div className="mb-12 text-center">
-                        <span className="inline-flex items-center gap-2 rounded-full border border-[#D5B37C]/18 bg-white/[0.04] px-4 py-2 text-[11px] font-medium uppercase tracking-[0.22em] text-[#BFAF96] mb-6">
-                            <span className="h-1.5 w-1.5 rounded-full bg-[#C8A35A]" />
+                        <h2
+                            className="font-heading font-semibold text-text-primary mb-4"
+                            style={{ fontSize: "clamp(1.5rem, 3vw, 2.25rem)" }}
+                        >
                             {t("sectionTitle")}
-                        </span>
-                        <h2 className="mt-4 text-[clamp(2.4rem,5vw,3.8rem)] font-semibold leading-[1.06] tracking-[-0.05em] text-[#F5F3EE]">
-                            {t("sectionSubtitle")}
                         </h2>
+                        <p className="text-text-muted">{t("sectionSubtitle")}</p>
                     </div>
-                </ScrollAnimation>
 
-                <div className="space-y-4">
-                    {FAQ_KEYS.map((key, index) => {
-                        const isOpen = openIndex === index
+                    <div className="space-y-3">
+                        {FAQ_KEYS.map((key, index) => {
+                            const isOpen = openIndex === index
 
-                        return (
-                            <ScrollAnimation key={key} delay={index * 0.1}>
-                                <div className="overflow-hidden rounded-xl border border-[#DAB983]/16 bg-[linear-gradient(180deg,rgba(43,34,28,0.92),rgba(29,23,19,0.96))] shadow-[0_18px_45px_rgba(0,0,0,0.22)] transition-colors hover:border-[#E0B84A]/28">
+                            return (
+                                <div
+                                    key={key}
+                                    className="overflow-hidden rounded-2xl border border-border-soft bg-surface hover:border-accent/40 transition-colors"
+                                >
                                     <button
-                                        onClick={() => toggleAccordion(index)}
-                                        className="flex w-full items-center justify-between p-6 text-left focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#E0B84A]/35 focus-visible:ring-offset-2 focus-visible:ring-offset-[#1B1511]"
+                                        onClick={() => setOpenIndex(isOpen ? null : index)}
+                                        className="flex w-full items-center justify-between p-6 text-left focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring"
                                         aria-expanded={isOpen}
                                     >
-                                        <span className="pr-8 font-semibold text-[#F5F3EE]">{t(`questions.${key}.q`)}</span>
-                                        <ChevronDown className={cn("h-5 w-5 shrink-0 text-[#B9B2A3] transition-transform duration-200", isOpen && "rotate-180")} />
+                                        <span className="pr-6 font-semibold text-text-primary">
+                                            {t(`questions.${key}.q`)}
+                                        </span>
+                                        <ChevronDown
+                                            className={cn(
+                                                "h-5 w-5 shrink-0 text-text-muted transition-transform duration-200",
+                                                isOpen && "rotate-180 text-accent"
+                                            )}
+                                        />
                                     </button>
 
                                     <AnimatePresence initial={false}>
@@ -66,20 +58,20 @@ export function FAQ() {
                                                 initial={{ height: 0, opacity: 0 }}
                                                 animate={{ height: "auto", opacity: 1 }}
                                                 exit={{ height: 0, opacity: 0 }}
-                                                transition={{ duration: 0.3, ease: "easeInOut" }}
+                                                transition={{ duration: 0.25, ease: "easeInOut" }}
                                             >
-                                                <div className="px-6 pb-6 leading-relaxed text-[#D1C6B7]">
+                                                <div className="px-6 pb-6 text-sm leading-relaxed text-text-muted">
                                                     {t(`questions.${key}.a`)}
                                                 </div>
                                             </motion.div>
                                         )}
                                     </AnimatePresence>
                                 </div>
-                            </ScrollAnimation>
-                        )
-                    })}
+                            )
+                        })}
+                    </div>
                 </div>
-            </Container>
-        </section>
+            </div>
+        </SectionWrapper>
     )
 }

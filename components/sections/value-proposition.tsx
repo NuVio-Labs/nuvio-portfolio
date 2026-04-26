@@ -1,7 +1,7 @@
 import { getTranslations } from "next-intl/server";
 import { ArrowRight, BadgeCheck, Layers, Scale, Terminal } from "lucide-react";
 import { Link } from "@/i18n/navigation";
-import { Container } from "@/components/layout/container";
+import { SectionWrapper } from "@/components/ui/section-wrapper";
 
 const principleIcons = {
     architecture: Layers,
@@ -21,42 +21,34 @@ export async function ValueProposition() {
     const proofPoints = t.raw("proofPoints") as string[];
 
     return (
-        <section
-            id="principles"
-            className="relative -mt-12 overflow-hidden bg-[linear-gradient(180deg,#0A0908_0%,#120F0C_48%,#0D0B09_100%)] py-24 pt-32 transition-colors duration-300 md:-mt-16 md:py-32 md:pt-40"
-        >
-            <div className="pointer-events-none absolute inset-0">
-                <div className="absolute inset-x-0 top-0 h-52 bg-[linear-gradient(to_bottom,#070606_0%,rgba(7,6,6,0.9)_28%,rgba(10,9,8,0.8)_72%,rgba(10,9,8,0)_100%)]" />
-                <div className="absolute inset-x-0 bottom-0 h-40 bg-[linear-gradient(to_bottom,rgba(13,11,9,0),rgba(13,11,9,0.68)_55%,rgba(11,9,8,0.96)_100%)]" />
-                <div className="absolute inset-0 bg-[radial-gradient(circle_at_15%_24%,rgba(224,184,74,0.15),transparent_22%),radial-gradient(circle_at_84%_18%,rgba(224,184,74,0.16),transparent_20%),radial-gradient(circle_at_78%_74%,rgba(196,148,63,0.08),transparent_22%)]" />
-                <div className="absolute inset-0 opacity-[0.08] [background-image:linear-gradient(rgba(122,93,47,0.08)_1px,transparent_1px),linear-gradient(90deg,rgba(122,93,47,0.08)_1px,transparent_1px)] [background-size:56px_56px]" />
-                <div className="absolute left-[12%] top-[10%] h-[20rem] w-[20rem] rounded-full bg-[#E0B84A]/10 blur-[120px]" />
-                <div className="absolute right-[8%] top-[12%] h-[20rem] w-[20rem] rounded-full bg-[#E0B84A]/12 blur-[130px]" />
-            </div>
-
-            <Container className="relative z-10">
+        <SectionWrapper id="principles" light>
+            <div className="nv-container">
                 <div className="mx-auto max-w-[1120px]">
                     <div className="grid gap-5 xl:grid-cols-[420px_minmax(0,1fr)] xl:items-stretch">
-                        <article className="relative h-full min-h-[420px] overflow-hidden rounded-[2rem] border border-[#CFA565]/22 bg-[linear-gradient(180deg,rgba(24,19,15,0.92),rgba(15,12,10,0.97))] p-8 shadow-[0_30px_90px_rgba(0,0,0,0.25),0_0_80px_rgba(224,184,74,0.08)] sm:p-9">
-                            <div className="absolute inset-x-8 top-0 h-px bg-gradient-to-r from-transparent via-[#E0B84A]/38 to-transparent" />
-                            <div className="absolute left-[-2rem] top-[18%] h-28 w-28 rounded-full bg-[#E0B84A]/10 blur-[50px]" />
-                            <div className="absolute right-[-2rem] bottom-[10%] h-28 w-28 rounded-full bg-[#E0B84A]/8 blur-[46px]" />
+                        {/* Headline card */}
+                        <article className="relative h-full min-h-[420px] overflow-hidden rounded-[2rem] border border-border-soft bg-background p-8 sm:p-9">
+                            <div className="absolute inset-x-8 top-0 h-px bg-gradient-to-r from-transparent via-accent/30 to-transparent" />
+                            <div className="absolute left-[-2rem] top-[18%] h-28 w-28 rounded-full bg-accent/8 blur-[50px]" />
 
                             <div className="relative flex h-full flex-col">
-                                <div className="inline-flex w-fit items-center gap-2 rounded-full border border-[#D5B37C]/22 bg-white/[0.04] px-4 py-2 text-[11px] font-medium uppercase tracking-[0.2em] text-[#BFAF96]">
-                                    <span className="h-1.5 w-1.5 rounded-full bg-[#C8A35A] shadow-[0_0_12px_rgba(200,163,90,0.5)]" />
+                                <div className="inline-flex w-fit items-center gap-2 rounded-full border border-border-soft bg-surface px-4 py-2 text-[11px] font-medium uppercase tracking-[0.2em] text-text-muted">
+                                    <span className="h-1.5 w-1.5 rounded-full bg-accent" />
                                     {t("label")}
                                 </div>
 
-                                <h2 className="mt-8 max-w-[10ch] text-[clamp(3.2rem,4.6vw,4.6rem)] font-semibold leading-[0.95] tracking-[-0.055em] text-[#F7F1E9]">
+                                <h2
+                                    className="mt-8 max-w-[10ch] font-heading font-semibold leading-[0.95] tracking-[-0.05em] text-text-primary"
+                                    style={{ fontSize: "clamp(3rem, 4.6vw, 4.6rem)" }}
+                                >
                                     <span className="block">{t("headlinePart1")}</span>
-                                    <span className="block bg-gradient-to-r from-[#9A733A] via-[#C99747] to-[#E1BD79] bg-clip-text text-transparent">
+                                    <span className="block text-accent">
                                         {t("headlinePart2")}
                                     </span>
                                 </h2>
                             </div>
                         </article>
 
+                        {/* Principle cards */}
                         <div className="grid gap-4 lg:grid-cols-[1fr_1fr] lg:grid-rows-[270px_270px]">
                             {principles.map((principle, index) => {
                                 const Icon = principle.icon;
@@ -70,33 +62,33 @@ export async function ValueProposition() {
                                 return (
                                     <article
                                         key={principle.id}
-                                        className={`relative overflow-hidden rounded-[2rem] border border-[#CFA565]/24 bg-[linear-gradient(180deg,rgba(28,22,17,0.94),rgba(19,15,12,0.98))] p-7 shadow-[0_30px_90px_rgba(0,0,0,0.22),0_0_80px_rgba(224,184,74,0.06)] sm:p-8 ${cardClass}`}
+                                        className={`relative overflow-hidden rounded-[2rem] border border-border-soft bg-surface p-7 sm:p-8 ${cardClass}`}
                                     >
-                                        <div className="absolute inset-x-8 top-0 h-px bg-gradient-to-r from-transparent via-[#E0B84A]/30 to-transparent" />
-                                        <div className="absolute right-[-2rem] top-[-2rem] h-24 w-24 rounded-full bg-[#E0B84A]/12 blur-[44px]" />
+                                        <div className="absolute inset-x-8 top-0 h-px bg-gradient-to-r from-transparent via-accent/20 to-transparent" />
+                                        <div className="absolute right-[-2rem] top-[-2rem] h-24 w-24 rounded-full bg-accent/8 blur-[44px]" />
 
                                         <div className="relative flex h-full flex-col">
                                             <div className="flex items-start justify-between">
-                                                <div className="flex h-12 w-12 items-center justify-center rounded-[1rem] border border-[#D5B37C]/22 bg-[#1A1410] text-[#D4A84A] shadow-[0_8px_24px_rgba(0,0,0,0.3),inset_0_1px_0_rgba(255,255,255,0.04)]">
-                                                    <Icon className="h-[1.15rem] w-[1.15rem]" />
+                                                <div className="flex h-14 w-14 items-center justify-center rounded-2xl border border-accent/20 bg-accent-soft text-accent shadow-sm">
+                                                    <Icon className="h-5 w-5" />
                                                 </div>
 
-                                                <span className="text-[11px] font-semibold uppercase tracking-[0.24em] text-[#8F7B60]">
+                                                <span className="text-[11px] font-semibold uppercase tracking-[0.24em] text-text-muted">
                                                     {principle.number}
                                                 </span>
                                             </div>
 
                                             <div className="mt-10 flex-1">
-                                                <h3 className="max-w-[11ch] text-2xl font-semibold tracking-[-0.03em] text-[#F7F1E9] sm:text-[1.8rem]">
+                                                <h3 className="max-w-[11ch] text-2xl font-semibold tracking-[-0.03em] text-text-primary sm:text-[1.8rem]">
                                                     {t(`principles.${principle.id}.title`)}
                                                 </h3>
 
-                                                <p className="mt-4 max-w-[33ch] text-[15px] leading-7 text-[#BAAC98]">
+                                                <p className="mt-4 max-w-[33ch] text-[15px] leading-7 text-text-muted">
                                                     {t(`principles.${principle.id}.description`)}
                                                 </p>
                                             </div>
 
-                                            <div className="mt-8 inline-flex w-fit items-center rounded-full border border-[#D5AC66]/25 bg-white/[0.04] px-3 py-1.5 text-[10.5px] font-semibold uppercase tracking-[0.18em] text-[#C8A35A]">
+                                            <div className="mt-8 inline-flex w-fit items-center rounded-full border border-accent/25 bg-accent-soft px-3 py-2 text-[11px] font-semibold uppercase tracking-[0.18em] text-accent">
                                                 {t(`principles.${principle.id}.highlight`)}
                                             </div>
                                         </div>
@@ -106,37 +98,40 @@ export async function ValueProposition() {
                         </div>
                     </div>
 
-                    <div className="relative mt-6 overflow-hidden rounded-[2rem] border border-[#CFA565]/30 bg-[linear-gradient(135deg,#1A1410_0%,#241B15_48%,#2B2118_100%)] p-7 text-[#F7F1E9] shadow-[0_34px_90px_rgba(73,49,16,0.24)] sm:p-8 lg:p-8">
-                        <div className="absolute inset-x-8 top-0 h-px bg-gradient-to-r from-transparent via-[#E0B84A]/45 to-transparent" />
-                        <div className="absolute right-[-3rem] top-[-2rem] h-28 w-28 rounded-full bg-[#E0B84A]/18 blur-[55px]" />
+                    {/* CTA bar */}
+                    <div className="relative mt-6 overflow-hidden rounded-[2rem] border border-border-soft bg-background p-7 sm:p-8 lg:p-8">
+                        <div className="absolute inset-x-8 top-0 h-px bg-gradient-to-r from-transparent via-accent/30 to-transparent" />
 
                         <div className="relative grid gap-8 lg:grid-cols-[1.05fr_auto] lg:items-end">
                             <div className="max-w-3xl">
-                                <span className="inline-flex items-center gap-2 rounded-full border border-[#DAB983]/25 bg-white/[0.05] px-3 py-2 text-[11px] font-medium uppercase tracking-[0.18em] text-[#D8C8AE]">
-                                    <BadgeCheck className="h-3.5 w-3.5 text-[#E0B84A]" />
+                                <span className="inline-flex items-center gap-2 rounded-full border border-border-soft bg-surface px-3 py-2 text-[11px] font-medium uppercase tracking-[0.18em] text-text-muted">
+                                    <BadgeCheck className="h-3.5 w-3.5 text-accent" />
                                     {t("ctaEyebrow")}
                                 </span>
 
-                                <h3 className="mt-5 max-w-[15ch] text-[clamp(2rem,2.9vw,3.1rem)] font-semibold leading-[1.02] tracking-[-0.04em] text-[#F7F1E9]">
+                                <h3
+                                    className="mt-5 max-w-[15ch] font-heading font-semibold leading-[1.02] tracking-[-0.04em] text-text-primary"
+                                    style={{ fontSize: "clamp(2rem, 2.9vw, 3.1rem)" }}
+                                >
                                     {t("ctaTitle")}
                                 </h3>
 
-                                <p className="mt-4 max-w-[38rem] text-base leading-8 text-[#C8BAA6]">
+                                <p className="mt-4 max-w-[38rem] text-base leading-8 text-text-muted">
                                     {t("ctaText")}
                                 </p>
                             </div>
 
                             <div className="flex flex-col gap-3 sm:flex-row lg:flex-row">
                                 <Link
-                                    href="#contact"
-                                    className="inline-flex min-w-[160px] items-center justify-center rounded-[1.05rem] border border-[#E0B84A]/25 bg-[linear-gradient(135deg,#F2D896_0%,#D8A14A_100%)] px-6 py-4 text-sm font-semibold text-[#24170A] shadow-[0_20px_40px_rgba(197,144,58,0.18)] transition duration-300 hover:-translate-y-0.5 hover:brightness-105"
+                                    href="/contact"
+                                    className="inline-flex min-w-[160px] items-center justify-center rounded-full bg-accent px-6 py-4 text-sm font-semibold text-surface shadow-sm transition duration-200 hover:bg-[var(--nv-accent-hover)] active:scale-[0.98]"
                                 >
                                     {t("ctaPrimary")}
                                 </Link>
 
                                 <Link
                                     href="#work"
-                                    className="inline-flex min-w-[170px] items-center justify-center gap-2 rounded-[1.05rem] border border-[#DAB983]/20 bg-white/[0.05] px-6 py-4 text-sm font-semibold text-[#F7F1E9] transition duration-300 hover:-translate-y-0.5 hover:bg-white/[0.08]"
+                                    className="inline-flex min-w-[170px] items-center justify-center gap-2 rounded-full border border-border-soft bg-surface px-6 py-4 text-sm font-semibold text-text-primary transition duration-200 hover:border-accent/40 hover:text-accent"
                                 >
                                     {t("ctaSecondary")}
                                     <ArrowRight className="h-4 w-4" />
@@ -148,16 +143,16 @@ export async function ValueProposition() {
                             {proofPoints.map((point) => (
                                 <div
                                     key={point}
-                                    className="flex items-center gap-3 rounded-[1.25rem] border border-white/8 bg-white/[0.04] px-4 py-4 text-sm text-[#E7D9C4]"
+                                    className="flex items-center gap-3 rounded-[1.25rem] border border-border-soft bg-surface px-4 py-4 text-sm text-text-secondary"
                                 >
-                                    <BadgeCheck className="h-4 w-4 shrink-0 text-[#E0B84A]" />
+                                    <BadgeCheck className="h-4 w-4 shrink-0 text-accent" />
                                     <span>{point}</span>
                                 </div>
                             ))}
                         </div>
                     </div>
                 </div>
-            </Container>
-        </section>
+            </div>
+        </SectionWrapper>
     );
 }

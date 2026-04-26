@@ -1,22 +1,26 @@
 import dynamic from "next/dynamic"
 import { Hero } from "@/components/sections/hero"
 import { ValueProposition } from "@/components/sections/value-proposition"
-import { About } from "@/components/sections/about"
+import { ServicesPreview } from "@/components/sections/services-preview"
+import { Process } from "@/components/sections/process"
+import { AboutPreview } from "@/components/sections/about-preview"
+import { CtaFinal } from "@/components/sections/cta-final"
 
 /* ─── Lazy-load below-fold sections ─── */
 const Work = dynamic(() => import("@/components/sections/work").then((m) => m.Work))
 const FAQ = dynamic(() => import("@/components/sections/faq").then((m) => m.FAQ))
-const Contact = dynamic(() => import("@/components/sections/contact").then((m) => m.Contact))
 
 export default function Home() {
     return (
-        <div className="flex flex-col pb-16">
+        <div className="flex flex-col">
             <Hero />
             <ValueProposition />
             <Work />
-            <About />
+            <ServicesPreview />
+            <Process />
+            <AboutPreview />
             <FAQ />
-            <Contact />
+            <CtaFinal />
         </div>
     )
 }

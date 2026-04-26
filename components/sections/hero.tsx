@@ -34,45 +34,24 @@ export async function Hero() {
     return (
         <section
             id="home"
-            className="relative min-h-[100svh] overflow-hidden bg-[#070606] text-[#F6F1E9]"
+            className="relative min-h-[100svh] overflow-hidden bg-background text-text-primary"
         >
+            {/* Subtle accent glow — visible in both modes */}
             <div className="pointer-events-none absolute inset-0">
-                <Image
-                    src="/hero_bg.webp"
-                    alt=""
-                    fill
-                    priority
-                    sizes="100vw"
-                    className="object-cover object-center opacity-25 mix-blend-screen"
-                />
-
-                <div className="absolute inset-0 bg-[radial-gradient(circle_at_72%_30%,rgba(235,178,69,0.32),transparent_18%),radial-gradient(circle_at_74%_48%,rgba(235,178,69,0.18),transparent_20%),radial-gradient(circle_at_85%_38%,rgba(255,214,132,0.12),transparent_16%),radial-gradient(circle_at_20%_32%,rgba(255,255,255,0.06),transparent_24%)]" />
-                <div className="absolute inset-0 bg-[linear-gradient(90deg,rgba(7,6,6,0.98)_0%,rgba(7,6,6,0.93)_32%,rgba(7,6,6,0.58)_62%,rgba(7,6,6,0.88)_100%)]" />
-                <div className="absolute inset-0 bg-[linear-gradient(to_bottom,rgba(7,6,6,0.58),rgba(7,6,6,0.28),rgba(7,6,6,0.92))]" />
-
-                <div className="absolute right-[-8rem] top-[14%] h-[28rem] w-[28rem] rounded-full bg-[#E4AF48]/20 blur-[140px]" />
-                <div className="absolute bottom-[-8rem] right-[5%] h-[26rem] w-[26rem] rounded-full bg-[#E4AF48]/16 blur-[130px]" />
-                <div className="absolute left-[-12rem] top-[16%] h-[24rem] w-[24rem] rounded-full bg-white/[0.05] blur-[130px]" />
-                <div className="absolute right-[8%] top-[18%] h-px w-[30rem] rotate-[12deg] bg-gradient-to-r from-transparent via-[#F7C66B]/50 to-transparent blur-sm" />
-                <div className="absolute right-[16%] top-[56%] h-px w-[22rem] rotate-[-14deg] bg-gradient-to-r from-transparent via-[#F7C66B]/30 to-transparent blur-sm" />
-
-                <div className="absolute inset-x-[-10%] bottom-[-22%] h-[56%] [transform:perspective(1200px)_rotateX(74deg)]">
-                    <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_0%,rgba(242,187,89,0.22),rgba(242,187,89,0.04)_28%,transparent_65%)]" />
-                    <div className="absolute inset-0 [background-image:linear-gradient(rgba(228,175,72,0.16)_1px,transparent_1px),linear-gradient(90deg,rgba(228,175,72,0.16)_1px,transparent_1px)] [background-size:110px_110px] opacity-80" />
-                    <div className="absolute inset-0 bg-[linear-gradient(to_bottom,rgba(255,194,84,0.12),transparent_20%,transparent_72%,rgba(0,0,0,0.62)_100%)]" />
-                </div>
+                <div className="absolute right-[-8rem] top-[14%] h-[28rem] w-[28rem] rounded-full bg-accent/10 blur-[140px]" />
+                <div className="absolute bottom-[-8rem] right-[5%] h-[26rem] w-[26rem] rounded-full bg-accent/8 blur-[130px]" />
+                <div className="absolute left-[-12rem] top-[16%] h-[24rem] w-[24rem] rounded-full bg-accent/5 blur-[130px]" />
 
                 {sparkles.map((sparkle) => (
                     <span
                         key={`${sparkle.top}-${sparkle.left}`}
-                        className="hero-sparkle absolute rounded-full bg-[#FFD27C]"
+                        className="hero-sparkle absolute rounded-full bg-accent"
                         style={
                             {
                                 top: sparkle.top,
                                 left: sparkle.left,
                                 width: sparkle.size,
                                 height: sparkle.size,
-                                boxShadow: "0 0 18px rgba(255,198,102,0.55)",
                                 "--sparkle-opacity": sparkle.opacity,
                                 "--sparkle-delay": sparkle.delay,
                             } as CSSProperties
@@ -87,58 +66,57 @@ export async function Hero() {
                         className="hero-reveal max-w-[670px]"
                         style={{ animationDelay: "0.05s" }}
                     >
-                        <div className="mb-9 inline-flex items-center gap-2.5 rounded-full border border-white/[0.09] bg-white/[0.04] px-4 py-2.5 backdrop-blur-xl">
-                            <span className="relative flex h-2 w-2">
-                                <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-[#A5E7B7]/50" />
-                                <span className="relative inline-flex h-2 w-2 rounded-full bg-[#B8F4C7]" />
+                        <div className="mb-8 inline-flex items-center gap-3 rounded-full border border-border-soft bg-surface px-5 py-3 shadow-sm">
+                            <span className="relative flex h-2.5 w-2.5">
+                                <span className="absolute inline-flex h-full w-full rounded-full bg-green-400/55 blur-[2px]" />
+                                <span className="relative inline-flex h-2.5 w-2.5 rounded-full bg-green-400" />
                             </span>
-                            <span className="text-[11px] font-medium uppercase tracking-[0.24em] text-[#C8BEB0]">
+                            <span className="text-[11px] font-medium uppercase tracking-[0.28em] text-text-muted">
                                 {t("badge")}
                             </span>
                         </div>
 
-                        <h1 className="max-w-[10ch] text-[clamp(2.45rem,4.9vw,4.75rem)] font-semibold leading-[0.92] tracking-[-0.065em] text-[#F7F1E9]">
+                        <h1
+                            className="max-w-[10ch] font-heading font-semibold leading-[0.92] tracking-[-0.05em] text-text-primary"
+                            style={{ fontSize: "clamp(2.45rem, 4.9vw, 4.75rem)" }}
+                        >
                             {headlineLines.map((line, index) => (
                                 <span
                                     key={`${line}-${index}`}
-                                    className={
-                                        index === headlineLines.length - 1
-                                            ? "block text-[#F0E5D1]"
-                                            : "block"
-                                    }
+                                    className="block"
                                 >
                                     {line}
                                 </span>
                             ))}
                         </h1>
 
-                        <p className="mt-6 max-w-[36rem] text-base leading-[1.7] text-[#C5B8A6] sm:text-[1.12rem]">
+                        <p className="mt-6 max-w-[36rem] text-base leading-[1.7] text-text-muted sm:text-[1.12rem]">
                             {t("subline")}
                         </p>
 
-                        <div className="mt-9 flex flex-col gap-3 sm:flex-row sm:items-center">
+                        <div className="mt-8 flex flex-col gap-4 sm:flex-row">
                             <Link
-                                href="#contact"
-                                className="inline-flex items-center justify-center rounded-[1.1rem] border border-[#E8C97A]/20 bg-[linear-gradient(135deg,#F5ECD8_0%,#E8C97A_50%,#D4A030_100%)] px-8 py-4 text-[13.5px] font-semibold text-[#1A0E04] shadow-[0_16px_44px_rgba(197,144,58,0.22),inset_0_1px_0_rgba(255,255,255,0.25)] transition duration-300 hover:-translate-y-0.5 hover:shadow-[0_20px_52px_rgba(197,144,58,0.30)]"
+                                href="/contact"
+                                className="inline-flex items-center justify-center rounded-full bg-accent px-9 py-4 text-base font-semibold text-surface shadow-sm transition duration-200 hover:bg-[var(--nv-accent-hover)] active:scale-[0.98]"
                             >
                                 {t("ctaPrimary")}
                             </Link>
 
                             <Link
                                 href="#work"
-                                className="inline-flex items-center justify-center gap-2 rounded-[1.1rem] border border-white/[0.1] bg-white/[0.04] px-8 py-4 text-[13.5px] font-medium text-[#D8D0C4] backdrop-blur-xl transition duration-300 hover:-translate-y-0.5 hover:border-white/[0.16] hover:bg-white/[0.07] hover:text-[#F7F1E9]"
+                                className="inline-flex items-center justify-center gap-2 rounded-full border border-border-soft bg-surface px-9 py-4 text-base font-medium text-text-primary transition duration-200 hover:border-accent/40 hover:text-accent"
                             >
                                 {t("ctaSecondary")}
-                                <ArrowRight className="h-4 w-4 opacity-70" />
+                                <ArrowRight className="h-4 w-4" />
                             </Link>
                         </div>
 
-                        <div className="mt-8 flex flex-wrap items-center gap-x-0 gap-y-2">
+                        <div className="mt-8 flex flex-wrap items-center gap-x-3 gap-y-2 text-sm text-text-muted">
                             {trustItems.map((item, index) => (
-                                <div key={item} className="flex items-center">
-                                    <span className="whitespace-nowrap text-[12.5px] text-[#8A7E6E]">{item}</span>
+                                <div key={item} className="flex items-center gap-3">
+                                    <span className="whitespace-nowrap">{item}</span>
                                     {index < trustItems.length - 1 ? (
-                                        <span className="mx-3 h-3 w-px bg-[#3A3028]" />
+                                        <span className="h-1 w-1 rounded-full bg-text-muted/40" />
                                     ) : null}
                                 </div>
                             ))}
@@ -149,9 +127,10 @@ export async function Hero() {
                         className="hero-reveal relative h-[500px] w-full sm:h-[540px] lg:h-[620px] xl:h-[660px]"
                         style={{ animationDelay: "0.15s" }}
                     >
-                        <div className="absolute inset-x-[8%] bottom-[15%] h-24 rounded-full bg-[#E0B84A]/25 blur-[90px]" />
-                        <div className="absolute right-[6%] top-[18%] h-[18rem] w-[18rem] rounded-full bg-[#E0B84A]/16 blur-[120px]" />
+                        <div className="absolute inset-x-[8%] bottom-[15%] h-24 rounded-full bg-accent/15 blur-[90px]" />
+                        <div className="absolute right-[6%] top-[18%] h-[18rem] w-[18rem] rounded-full bg-accent/10 blur-[120px]" />
 
+                        {/* Main browser mockup */}
                         <div
                             className="hero-reveal absolute left-[4%] top-[8%] w-[90%] max-w-[860px]"
                             style={
@@ -163,24 +142,22 @@ export async function Hero() {
                                 } as CSSProperties
                             }
                         >
-                            <div className="absolute inset-x-[12%] bottom-[-2.4rem] h-10 rounded-full bg-[#D39C3D]/30 blur-[28px]" />
+                            <div className="absolute inset-x-[12%] bottom-[-2.4rem] h-10 rounded-full bg-accent/20 blur-[28px]" />
 
-                            <div className="relative overflow-hidden rounded-[2.2rem] border border-[#F0C97D]/15 bg-[rgba(14,10,8,0.88)] p-3 shadow-[0_60px_120px_rgba(0,0,0,0.7),0_0_90px_rgba(232,177,73,0.2)]">
-                                <div className="absolute inset-0 rounded-[2.2rem] border border-white/[0.05]" />
-
-                                <div className="mb-3 flex items-center gap-3 rounded-[1.35rem] border border-white/6 bg-black/30 px-5 py-3">
+                            <div className="relative overflow-hidden rounded-[2.2rem] border border-border-soft bg-surface p-3 shadow-xl">
+                                <div className="mb-3 flex items-center gap-3 rounded-[1.35rem] border border-border-soft bg-surface-soft px-5 py-3">
                                     <div className="flex gap-2">
-                                        <span className="h-2.5 w-2.5 rounded-full bg-white/15" />
-                                        <span className="h-2.5 w-2.5 rounded-full bg-white/12" />
-                                        <span className="h-2.5 w-2.5 rounded-full bg-white/10" />
+                                        <span className="h-2.5 w-2.5 rounded-full bg-border-soft" />
+                                        <span className="h-2.5 w-2.5 rounded-full bg-border-soft" />
+                                        <span className="h-2.5 w-2.5 rounded-full bg-border-soft" />
                                     </div>
-                                    <div className="ml-2 h-7 flex-1 rounded-full border border-white/6 bg-white/[0.03]" />
-                                    <div className="w-10 text-right text-[10px] uppercase tracking-[0.18em] text-[#8C7A63]">
+                                    <div className="ml-2 h-7 flex-1 rounded-full border border-border-soft bg-background" />
+                                    <div className="w-10 text-right text-[10px] uppercase tracking-[0.18em] text-text-muted">
                                         .de
                                     </div>
                                 </div>
 
-                                <div className="relative aspect-[16/10] overflow-hidden rounded-[1.7rem] border border-white/8 bg-[#090807]">
+                                <div className="relative aspect-[16/10] overflow-hidden rounded-[1.7rem] border border-border-soft bg-surface-soft">
                                     <Image
                                         src="/daisymays.webp"
                                         alt=""
@@ -189,17 +166,16 @@ export async function Hero() {
                                         sizes="(min-width: 1280px) 48vw, (min-width: 1024px) 55vw, 92vw"
                                         className="object-cover object-top opacity-[0.92]"
                                     />
-                                    <div className="absolute inset-0 bg-[radial-gradient(circle_at_78%_18%,rgba(234,182,79,0.34),transparent_24%),linear-gradient(135deg,rgba(15,12,10,0.08),rgba(8,6,5,0.22)_45%,rgba(7,6,5,0.58)_100%)]" />
-                                    <div className="absolute inset-0 shadow-[inset_0_0_80px_rgba(0,0,0,0.45)]" />
                                 </div>
                             </div>
 
-                            <div className="absolute left-[14%] right-[9%] top-[100%] h-5 rounded-b-[2rem] bg-[linear-gradient(180deg,#2E241B_0%,#16110E_100%)] shadow-[0_12px_28px_rgba(0,0,0,0.45)]" />
-                            <div className="absolute left-[31%] right-[27%] top-[calc(100%+0.55rem)] h-1 rounded-full bg-[#4A3A2B]/80" />
+                            <div className="absolute left-[14%] right-[9%] top-[100%] h-5 rounded-b-[2rem] bg-surface-soft shadow-md" />
+                            <div className="absolute left-[31%] right-[27%] top-[calc(100%+0.55rem)] h-1 rounded-full bg-border-soft" />
                         </div>
 
+                        {/* Mobile mockup */}
                         <div
-                            className="hero-float absolute left-[45%] top-[30%] hidden w-[24%] min-w-[160px] max-w-[220px] rounded-[1.6rem] border border-[#F0C97D]/18 bg-[rgba(12,9,7,0.84)] p-2 shadow-[0_34px_70px_rgba(0,0,0,0.6),0_0_60px_rgba(236,182,83,0.18)] backdrop-blur-2xl lg:block"
+                            className="hero-float absolute left-[45%] top-[30%] hidden w-[24%] min-w-[160px] max-w-[220px] rounded-[1.6rem] border border-border-soft bg-surface p-2 shadow-lg backdrop-blur-2xl lg:block"
                             style={
                                 {
                                     transform:
@@ -210,13 +186,13 @@ export async function Hero() {
                                 } as CSSProperties
                             }
                         >
-                            <div className="rounded-[1.2rem] border border-white/8 bg-[#0A0908] p-2">
+                            <div className="rounded-[1.2rem] border border-border-soft bg-surface-soft p-2">
                                 <div className="mb-2 flex items-center gap-1.5 px-1.5">
-                                    <span className="h-1.5 w-1.5 rounded-full bg-white/15" />
-                                    <span className="h-1.5 w-1.5 rounded-full bg-white/12" />
-                                    <span className="h-1.5 w-1.5 rounded-full bg-white/10" />
+                                    <span className="h-1.5 w-1.5 rounded-full bg-border-soft" />
+                                    <span className="h-1.5 w-1.5 rounded-full bg-border-soft" />
+                                    <span className="h-1.5 w-1.5 rounded-full bg-border-soft" />
                                 </div>
-                                <div className="relative aspect-[5/7] overflow-hidden rounded-[0.95rem] border border-white/6">
+                                <div className="relative aspect-[5/7] overflow-hidden rounded-[0.95rem] border border-border-soft">
                                     <Image
                                         src="/previews/daisy.webp"
                                         alt=""
@@ -224,13 +200,13 @@ export async function Hero() {
                                         sizes="220px"
                                         className="object-cover object-top opacity-95"
                                     />
-                                    <div className="absolute inset-0 bg-[linear-gradient(180deg,rgba(0,0,0,0.04),rgba(0,0,0,0.34))]" />
                                 </div>
                             </div>
                         </div>
 
+                        {/* Performance card */}
                         <div
-                            className="hero-float absolute right-[-3%] top-[20%] hidden w-[280px] rounded-[1.7rem] border border-[#EDC57B]/24 bg-[linear-gradient(180deg,rgba(27,21,16,0.92),rgba(18,14,11,0.88))] p-6 shadow-[0_30px_70px_rgba(0,0,0,0.58),0_0_70px_rgba(232,177,73,0.16)] backdrop-blur-2xl lg:block"
+                            className="hero-float absolute right-[-3%] top-[8%] hidden w-[260px] rounded-[1.7rem] border border-border-soft bg-surface p-5 shadow-lg backdrop-blur-2xl lg:block"
                             style={
                                 {
                                     "--float-duration": "8s",
@@ -239,33 +215,33 @@ export async function Hero() {
                                 } as CSSProperties
                             }
                         >
-                            <div className="absolute inset-0 rounded-[1.7rem] border border-white/[0.05]" />
                             <div className="relative flex gap-4">
-                                <div className="flex h-14 w-14 items-center justify-center rounded-full border border-[#E9C06E]/40 bg-[#D9B15C]/12 text-lg font-semibold text-[#F5D48C] shadow-[inset_0_0_18px_rgba(233,192,110,0.2)]">
+                                <div className="flex h-14 w-14 items-center justify-center rounded-full border border-accent/30 bg-accent-soft text-lg font-semibold text-accent">
                                     {t("cards.performance.score").replace("+", "")}
                                 </div>
                                 <div>
-                                    <p className="text-[0.95rem] font-semibold text-[#F7F0E8]">
+                                    <p className="text-[0.95rem] font-semibold text-text-primary">
                                         {t("cards.performance.title")}
                                     </p>
-                                    <p className="mt-1 text-xs uppercase tracking-[0.14em] text-[#B99D75]">
+                                    <p className="mt-1 text-xs uppercase tracking-[0.14em] text-text-muted">
                                         {t("cards.performance.label")}
                                     </p>
                                 </div>
                             </div>
 
-                            <div className="relative mt-5 space-y-3 text-[1.02rem] text-[#E7D8BE]">
+                            <div className="relative mt-5 space-y-3 text-[1.02rem] text-text-secondary">
                                 {performanceFeatures.map((feature) => (
                                     <div key={feature} className="flex items-center gap-3">
-                                        <span className="h-1.5 w-1.5 rounded-full bg-[#F0C46F]" />
+                                        <span className="h-1.5 w-1.5 rounded-full bg-accent" />
                                         <span>{feature}</span>
                                     </div>
                                 ))}
                             </div>
                         </div>
 
+                        {/* Optimized card */}
                         <div
-                            className="hero-float absolute bottom-[20%] right-[-1%] hidden w-[320px] rounded-[1.7rem] border border-[#EDC57B]/24 bg-[linear-gradient(180deg,rgba(28,22,17,0.9),rgba(18,14,11,0.86))] p-6 shadow-[0_30px_70px_rgba(0,0,0,0.56),0_0_70px_rgba(232,177,73,0.16)] backdrop-blur-2xl lg:block"
+                            className="hero-float absolute right-[-3%] top-[52%] hidden w-[260px] rounded-[1.7rem] border border-border-soft bg-surface p-5 shadow-lg backdrop-blur-2xl lg:block"
                             style={
                                 {
                                     "--float-duration": "9.4s",
@@ -274,24 +250,24 @@ export async function Hero() {
                                 } as CSSProperties
                             }
                         >
-                            <div className="absolute inset-0 rounded-[1.7rem] border border-white/[0.05]" />
-                            <div className="relative flex items-center gap-3 text-[#F7F0E8]">
+                            <div className="relative flex items-center gap-3 text-text-primary">
                                 <ShieldIcon />
                                 <p className="text-[0.95rem] font-semibold">{t("cards.optimized.title")}:</p>
                             </div>
 
-                            <div className="relative mt-5 space-y-3 text-[1.02rem] text-[#E7D8BE]">
+                            <div className="relative mt-5 space-y-3 text-[1.02rem] text-text-secondary">
                                 {optimizedItems.map((item) => (
                                     <div key={item} className="flex items-center gap-3">
-                                        <span className="h-1.5 w-1.5 rounded-full bg-[#F0C46F]" />
+                                        <span className="h-1.5 w-1.5 rounded-full bg-accent" />
                                         <span>{item}</span>
                                     </div>
                                 ))}
                             </div>
                         </div>
 
+                        {/* Slots card */}
                         <div
-                            className="hero-float absolute bottom-[-4%] right-[11%] hidden w-[360px] rounded-[1.7rem] border border-[#EDC57B]/26 bg-[linear-gradient(180deg,rgba(30,24,18,0.92),rgba(18,14,11,0.9))] px-6 py-5 shadow-[0_30px_70px_rgba(0,0,0,0.6),0_0_70px_rgba(232,177,73,0.18)] backdrop-blur-2xl lg:block"
+                            className="hero-float absolute bottom-[2%] right-[8%] hidden w-[320px] rounded-[1.7rem] border border-border-soft bg-surface px-6 py-5 shadow-lg backdrop-blur-2xl lg:block"
                             style={
                                 {
                                     "--float-duration": "10s",
@@ -299,16 +275,15 @@ export async function Hero() {
                                 } as CSSProperties
                             }
                         >
-                            <div className="absolute inset-0 rounded-[1.7rem] border border-white/[0.05]" />
                             <div className="relative flex items-start gap-4">
-                                <div className="mt-1 flex h-10 w-10 items-center justify-center rounded-lg border border-[#E9C06E]/30 bg-[#D9B15C]/12 text-[#F2C76F]">
+                                <div className="mt-1 flex h-10 w-10 items-center justify-center rounded-lg border border-accent/30 bg-accent-soft text-accent">
                                     <BriefcaseBusiness className="h-5 w-5" />
                                 </div>
                                 <div>
-                                    <p className="text-[0.95rem] font-semibold text-[#F7F0E8]">
+                                    <p className="text-[0.95rem] font-semibold text-text-primary">
                                         {t("cards.slots.title")}:
                                     </p>
-                                    <p className="mt-1 text-3xl font-semibold tracking-[-0.04em] text-[#E8BC62]">
+                                    <p className="mt-1 text-3xl font-semibold tracking-[-0.04em] text-accent">
                                         {t("cards.slots.status")}
                                     </p>
                                 </div>
@@ -319,9 +294,7 @@ export async function Hero() {
             </div>
 
             <div className="pointer-events-none absolute inset-x-0 bottom-0 h-40">
-                <div className="absolute inset-0 bg-[linear-gradient(to_bottom,transparent,rgba(7,6,6,0.38),#070606_72%)]" />
-                <div className="absolute left-1/2 top-8 h-24 w-[56%] -translate-x-1/2 rounded-full bg-[#E0B84A]/16 blur-[75px]" />
-                <div className="absolute inset-x-[16%] bottom-0 h-px bg-gradient-to-r from-transparent via-[#E0B84A]/28 to-transparent" />
+                <div className="absolute inset-x-[16%] bottom-0 h-px bg-gradient-to-r from-transparent via-accent/20 to-transparent" />
             </div>
         </section>
     );
@@ -329,7 +302,7 @@ export async function Hero() {
 
 function ShieldIcon() {
     return (
-        <div className="flex h-9 w-9 items-center justify-center rounded-full border border-[#E9C06E]/28 bg-[#D9B15C]/12 text-[#F2C76F]">
+        <div className="flex h-9 w-9 items-center justify-center rounded-full border border-accent/30 bg-accent-soft text-accent">
             <Sparkles className="h-4 w-4" />
         </div>
     );

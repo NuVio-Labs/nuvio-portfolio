@@ -6,6 +6,7 @@ import { routing } from "@/i18n/routing";
 import { ThemeProvider } from "@/components/theme-provider";
 import { Navbar } from "@/components/layout/navbar";
 import { Footer } from "@/components/layout/footer";
+import { AuthProvider } from "@/lib/auth";
 
 /* ─── Production SEO Metadata ───────────────────────── */
 const SITE_URL = "https://www.nuviolabs.de";
@@ -35,14 +36,13 @@ export async function generateMetadata({
         description: t("description"),
 
         keywords: [
-            "Web Design",
-            "Web Development",
-            "Next.js",
+            "Junior Developer",
+            "Fullstack Developer",
+            "Self-Taught",
             "React",
+            "Next.js",
             "TypeScript",
-            "Business Website",
-            "Local SEO",
-            "NuVioLabs",
+            "Portfolio",
         ],
 
         authors: [{ name: "NuVioLabs", url: SITE_URL }],
@@ -89,60 +89,6 @@ export async function generateMetadata({
     };
 }
 
-/* ─── JSON-LD Structured Data ────────────────────── */
-function JsonLd({ locale }: { locale: string }) {
-    const schema = {
-        "@context": "https://schema.org",
-        "@graph": [
-            {
-                "@type": "Person",
-                "@id": `${SITE_URL}/#person`,
-                name: "Axel Schurer",
-                jobTitle: "Web Developer & Designer",
-                url: SITE_URL,
-                sameAs: [
-                    "https://github.com",
-                    "https://linkedin.com",
-                ],
-                worksFor: {
-                    "@id": `${SITE_URL}/#organization`,
-                },
-            },
-            {
-                "@type": "LocalBusiness",
-                "@id": `${SITE_URL}/#organization`,
-                name: "NuVioLabs",
-                url: SITE_URL,
-                email: "contact@nuviolabs.de",
-                address: {
-                    "@type": "PostalAddress",
-                    streetAddress: "Nimwegerstraße 3",
-                    addressLocality: "Kranenburg",
-                    postalCode: "47559",
-                    addressCountry: "DE",
-                },
-                areaServed: ["DE", "NL", "AT", "CH"],
-                serviceType: ["Web Design", "Web Development", "SEO"],
-                inLanguage: locale,
-            },
-            {
-                "@type": "WebSite",
-                "@id": `${SITE_URL}/#website`,
-                url: SITE_URL,
-                name: "NuVioLabs",
-                publisher: { "@id": `${SITE_URL}/#organization` },
-            },
-        ],
-    };
-
-    return (
-        <script
-            type="application/ld+json"
-            dangerouslySetInnerHTML={{ __html: JSON.stringify(schema) }}
-        />
-    );
-}
-
 /* ─── Locale Layout (providers only, no html/body) ── */
 export default async function LocaleLayout({
     children,
@@ -163,7 +109,12 @@ export default async function LocaleLayout({
 
     return (
         <>
-            <JsonLd locale={locale} />
+            {/* Set html lang attribute via script to match locale */}
+            <script
+                dangerouslySetInnerHTML={{
+                    __html: `document.documentElement.lang="${locale}"`,
+                }}
+            />
             {/* Skip-to-content link */}
             <a
                 href="#main-content"
@@ -172,20 +123,22 @@ export default async function LocaleLayout({
                 {t("skipToContent")}
             </a>
             <NextIntlClientProvider messages={messages}>
-                <ThemeProvider
-                    attribute="class"
-                    defaultTheme="system"
-                    enableSystem
-                    disableTransitionOnChange
-                >
-                    <div className="relative flex min-h-screen flex-col">
-                        <Navbar />
-                        <main id="main-content" className="flex-1">
-                            {children}
-                        </main>
-                        <Footer />
-                    </div>
-                </ThemeProvider>
+                <AuthProvider>
+                    <ThemeProvider
+                        attribute="class"
+                        defaultTheme="light"
+                        storageKey="nuvio-theme"
+                        disableTransitionOnChange
+                    >
+                        <div className="relative flex min-h-screen flex-col">
+                            <Navbar />
+                            <main id="main-content" className="flex-1">
+                                {children}
+                            </main>
+                            <Footer />
+                        </div>
+                    </ThemeProvider>
+                </AuthProvider>
             </NextIntlClientProvider>
         </>
     );

@@ -1,70 +1,88 @@
 "use client"
 
 import { useTranslations } from "next-intl"
-import { ArrowRight } from "lucide-react"
-import { Container } from "@/components/layout/container"
+import { ArrowRight, BadgeCheck, Lock, Quote } from "lucide-react"
 import { ScrollAnimation } from "@/components/ui/scroll-animation"
 import { ProjectLivePreview } from "@/components/ui/project-live-preview"
+import { SectionWrapper } from "@/components/ui/section-wrapper"
 import { Link } from "@/i18n/navigation"
 
-const PROJECT_IDS = ["wt-erdbewegungen", "daisymays-salon"] as const
+type ProjectId = "wt-erdbewegungen" | "daisymays-salon" | "dj-white-label" | "nvl-core" | "taste"
 
-const PROJECT_META: Record<string, { link: string; previewImage: string; tags: string[]; category: string }> = {
+interface ProjectMeta {
+    link?: string
+    demoUrl?: string
+    previewImage: string
+    tags: string[]
+    private?: boolean
+}
+
+const PROJECT_IDS: ProjectId[] = ["wt-erdbewegungen", "daisymays-salon", "dj-white-label", "nvl-core", "taste"]
+
+const PROJECT_META: Record<ProjectId, ProjectMeta> = {
     "wt-erdbewegungen": {
         link: "https://www.wt-erdbewegungen.de",
         previewImage: "/previews/wt.webp",
         tags: ["Next.js", "TypeScript", "Tailwind CSS", "Vercel"],
-        category: "Local business · Web presence",
     },
     "daisymays-salon": {
         link: "https://www.daisymayssalon.de",
         previewImage: "/previews/daisy.webp",
         tags: ["React", "TypeScript", "Vite", "Tailwind CSS", "i18n"],
-        category: "Salon · Bilingual brand site",
     },
+    "dj-white-label": {
+        demoUrl: "/demos/dj-white-label/index.html",
+        previewImage: "/previews/dj-white-label.webp",
+        tags: ["HTML", "CSS", "JavaScript"],
+    },
+    "nvl-core": {
+        previewImage: "/previews/nvl-core.png",
+        tags: ["React", "TypeScript", "Supabase", "Vite", "Multi-Tenant"],
+        private: true,
+    },
+    "taste": {
+        previewImage: "/previews/taste.png",
+        tags: ["React 19", "TypeScript", "Supabase", "Tailwind CSS 4", "Vite"],
+        private: true,
+    },
+}
+
+const CTA_KEY: Record<ProjectId, string> = {
+    "wt-erdbewegungen": "ctaWt",
+    "daisymays-salon": "ctaDaisy",
+    "dj-white-label": "ctaGeneric",
+    "nvl-core": "ctaGeneric",
+    "taste": "ctaGeneric",
 }
 
 export function Work() {
     const t = useTranslations("work")
 
     return (
-        <section
-            id="work"
-            className="relative -mt-12 overflow-hidden bg-[linear-gradient(180deg,#0E0B09_0%,#090706_18%,#0D0A08_58%,#090706_100%)] py-28 md:-mt-16 md:py-36"
-        >
-            {/* Background atmosphere */}
-            <div className="pointer-events-none absolute inset-0">
-                <div className="absolute inset-x-[-6%] top-0 h-48 bg-[linear-gradient(to_bottom,rgba(11,9,8,1),rgba(11,9,8,0.8)_34%,rgba(11,9,8,0.26)_72%,rgba(11,9,8,0)_100%)] blur-[6px]" />
-                <div className="absolute inset-x-[-6%] bottom-0 h-52 bg-[linear-gradient(to_bottom,rgba(9,7,6,0),rgba(10,8,7,0.3)_32%,rgba(10,8,7,0.76)_68%,rgba(11,9,8,1)_100%)] blur-[8px]" />
-                <div className="absolute inset-0 bg-[radial-gradient(circle_at_14%_18%,rgba(224,184,74,0.12),transparent_24%),radial-gradient(circle_at_84%_24%,rgba(224,184,74,0.10),transparent_24%)]" />
-                <div className="absolute inset-0 opacity-[0.06] [background-image:linear-gradient(rgba(122,93,47,0.08)_1px,transparent_1px),linear-gradient(90deg,rgba(122,93,47,0.08)_1px,transparent_1px)] [background-size:58px_58px]" />
-                <div className="absolute left-[8%] top-[8%] h-[18rem] w-[18rem] rounded-full bg-[#E0B84A]/8 blur-[120px]" />
-                <div className="absolute right-[6%] top-[18%] h-[22rem] w-[22rem] rounded-full bg-[#E0B84A]/8 blur-[140px]" />
-            </div>
-
-            <Container className="relative z-10">
+        <SectionWrapper id="work">
+            <div className="nv-container">
                 <div className="mx-auto max-w-[1120px]">
-
-                    {/* Section header */}
                     <ScrollAnimation>
-                        <div className="mx-auto max-w-[640px] text-center">
-                            <span className="inline-flex items-center gap-2 rounded-full border border-[#D5B37C]/18 bg-white/[0.04] px-4 py-2 text-[11px] font-medium uppercase tracking-[0.22em] text-[#BFAF96]">
-                                <span className="h-1.5 w-1.5 rounded-full bg-[#C8A35A] shadow-[0_0_12px_rgba(200,163,90,0.5)]" />
+                        <div className="mx-auto max-w-[760px] text-center mb-16">
+                            <span className="inline-flex items-center gap-2 rounded-full border border-border-soft bg-surface px-4 py-2 text-[11px] font-medium uppercase tracking-[0.22em] text-text-muted">
+                                <span className="h-1.5 w-1.5 rounded-full bg-accent" />
                                 {t("eyebrow")}
                             </span>
 
-                            <h2 className="mt-6 text-[clamp(3rem,5vw,4.7rem)] font-semibold tracking-[-0.055em] text-[#F7F1E9]">
+                            <h2
+                                className="mt-6 font-heading font-semibold tracking-tight text-text-primary"
+                                style={{ fontSize: "clamp(2rem, 4vw, 3.5rem)" }}
+                            >
                                 {t("sectionTitle")}
                             </h2>
 
-                            <p className="mx-auto mt-4 max-w-[34rem] text-base leading-7 text-[#9A8E80] sm:text-[1.05rem]">
+                            <p className="mx-auto mt-5 max-w-[36rem] text-base leading-8 text-text-muted sm:text-lg">
                                 {t("sectionSubtitle")}
                             </p>
                         </div>
                     </ScrollAnimation>
 
-                    {/* Project cards */}
-                    <div className="mt-20 space-y-5">
+                    <div className="space-y-6 sm:space-y-8">
                         {PROJECT_IDS.map((id, index) => {
                             const meta = PROJECT_META[id]
                             const title = t(`projects.${id}.title`)
@@ -73,128 +91,134 @@ export function Work() {
                                 t(`projects.${id}.outcome2`),
                                 t(`projects.${id}.outcome3`),
                             ]
+                            const cardNumber = String(index + 1).padStart(2, "0")
                             const reverseOnDesktop = index % 2 === 1
-                            const cardIndex = String(index + 1).padStart(2, "0")
+                            const previewUrl = meta.link ?? meta.demoUrl
 
                             return (
-                                <ScrollAnimation key={id} delay={index * 0.07}>
-                                    <article className="group relative overflow-hidden rounded-[2rem] border border-[#CFA565]/20 bg-[linear-gradient(180deg,rgba(24,19,14,0.97),rgba(15,12,9,0.99))] shadow-[0_24px_80px_rgba(0,0,0,0.26),0_0_60px_rgba(224,184,74,0.05)] transition-colors duration-500 hover:border-[#CFA565]/32">
-                                        {/* Top accent line */}
-                                        <div className="absolute inset-x-10 top-0 h-px bg-gradient-to-r from-transparent via-[#E0B84A]/28 to-transparent" />
-                                        {/* Ambient glow */}
-                                        <div className="absolute right-[-3rem] top-[15%] h-32 w-32 rounded-full bg-[#E0B84A]/7 blur-[64px] transition-opacity duration-500 group-hover:opacity-150" />
+                                <ScrollAnimation key={id} delay={index * 0.06}>
+                                    <article className="relative overflow-hidden rounded-[2rem] border border-border-soft bg-surface p-5 shadow-sm sm:p-6 lg:p-8">
+                                        <div className="relative grid gap-8 xl:grid-cols-[minmax(0,1fr)_460px] xl:items-center">
 
-                                        <div className="relative p-6 sm:p-8 lg:p-10">
-                                            <div className="grid gap-8 xl:grid-cols-[minmax(0,1fr)_400px] xl:items-start">
-
-                                                {/* ── Content column ── */}
-                                                <div className={reverseOnDesktop ? "xl:order-2" : ""}>
-
-                                                    {/* Project header */}
-                                                    <div className="flex items-start justify-between gap-6">
-                                                        <div className="flex-1">
-                                                            {/* Category pill */}
-                                                            <p className="text-[11px] font-medium uppercase tracking-[0.2em] text-[#7A6E62]">
-                                                                {meta.category}
-                                                            </p>
-
-                                                            <h3 className="mt-3 max-w-[14ch] text-[clamp(2.1rem,3.2vw,3.4rem)] font-semibold leading-[0.97] tracking-[-0.048em] text-[#F7F1E9]">
-                                                                {title}
-                                                            </h3>
-
-                                                            <p className="mt-4 max-w-[42ch] text-[15px] leading-7 text-[#B0A393]">
-                                                                {t(`projects.${id}.description`)}
-                                                            </p>
+                                            {/* Text content */}
+                                            <div className={reverseOnDesktop ? "xl:order-2" : ""}>
+                                                <div className="flex items-start justify-between gap-4">
+                                                    <div>
+                                                        <div className="flex items-center gap-2">
+                                                            <span className="inline-flex items-center rounded-full border border-border-soft bg-surface-soft px-3 py-2 text-[11px] font-medium uppercase tracking-[0.2em] text-text-muted">
+                                                                {t("eyebrow")}
+                                                            </span>
+                                                            {meta.private && (
+                                                                <span className="inline-flex items-center gap-1.5 rounded-full border border-border-soft bg-surface-soft px-3 py-2 text-[11px] font-medium text-text-muted">
+                                                                    <Lock className="h-3 w-3" />
+                                                                    {t("privateBadge")}
+                                                                </span>
+                                                            )}
                                                         </div>
 
-                                                        {/* Large faded project index */}
-                                                        <span
-                                                            aria-hidden="true"
-                                                            className="shrink-0 select-none pt-1 font-bold leading-none tracking-[-0.08em] text-[#1E1610] tabular-nums text-[clamp(3rem,5vw,5rem)]"
+                                                        <h3
+                                                            className="mt-6 max-w-[12ch] font-heading font-semibold leading-tight text-text-primary"
+                                                            style={{ fontSize: "clamp(1.8rem, 2.8vw, 3rem)" }}
                                                         >
-                                                            {cardIndex}
-                                                        </span>
-                                                    </div>
+                                                            {title}
+                                                        </h3>
 
-                                                    {/* Problem / Solution */}
-                                                    <div className="mt-8 grid gap-3 lg:grid-cols-2">
-                                                        <div className="rounded-[1.4rem] border border-white/[0.06] bg-white/[0.025] p-5">
-                                                            <p className="text-[10.5px] font-semibold uppercase tracking-[0.22em] text-[#7A6E62]">
-                                                                {t("theProblem")}
-                                                            </p>
-                                                            <p className="mt-3 text-[14.5px] leading-7 text-[#B9ADA0]">
-                                                                {t(`projects.${id}.problem`)}
-                                                            </p>
-                                                        </div>
-
-                                                        <div className="rounded-[1.4rem] border border-white/[0.06] bg-white/[0.025] p-5">
-                                                            <p className="text-[10.5px] font-semibold uppercase tracking-[0.22em] text-[#7A6E62]">
-                                                                {t("theApproach")}
-                                                            </p>
-                                                            <p className="mt-3 text-[14.5px] leading-7 text-[#B9ADA0]">
-                                                                {t(`projects.${id}.approach`)}
-                                                            </p>
-                                                        </div>
-                                                    </div>
-
-                                                    {/* Outcomes */}
-                                                    <div className="mt-5">
-                                                        <p className="mb-3 text-[10.5px] font-semibold uppercase tracking-[0.22em] text-[#C8A35A]">
-                                                            {t("theOutcome")}
+                                                        <p className="mt-4 text-base leading-7 text-text-muted">
+                                                            {t(`projects.${id}.description`)}
                                                         </p>
-                                                        <div className="space-y-2">
-                                                            {outcomes.map((outcome) => (
-                                                                <div
-                                                                    key={outcome}
-                                                                    className="flex items-start gap-3"
-                                                                >
-                                                                    <span className="mt-2 h-1.5 w-1.5 shrink-0 rounded-full bg-[#C8A35A]" />
-                                                                    <p className="text-[14.5px] leading-7 text-[#D8CEC0]">
-                                                                        {outcome}
-                                                                    </p>
-                                                                </div>
-                                                            ))}
-                                                        </div>
                                                     </div>
 
-                                                    {/* Testimonial — pull quote style */}
-                                                    <div className="mt-7 border-l-2 border-[#E0B84A]/25 pl-5">
-                                                        <p className="text-[14.5px] italic leading-7 text-[#9A8E80]">
+                                                    <span className="pt-1 text-[11px] font-semibold uppercase tracking-[0.26em] text-text-muted">
+                                                        {cardNumber}
+                                                    </span>
+                                                </div>
+
+                                                <div className="mt-8 grid gap-4 lg:grid-cols-2">
+                                                    <div className="rounded-[1.5rem] border border-border-soft bg-surface-soft p-5">
+                                                        <p className="text-[11px] font-semibold uppercase tracking-[0.2em] text-text-muted">
+                                                            {t("theProblem")}
+                                                        </p>
+                                                        <p className="mt-4 text-[15px] leading-7 text-text-secondary">
+                                                            {t(`projects.${id}.problem`)}
+                                                        </p>
+                                                    </div>
+
+                                                    <div className="rounded-[1.5rem] border border-border-soft bg-surface-soft p-5">
+                                                        <p className="text-[11px] font-semibold uppercase tracking-[0.2em] text-text-muted">
+                                                            {t("theApproach")}
+                                                        </p>
+                                                        <p className="mt-4 text-[15px] leading-7 text-text-secondary">
+                                                            {t(`projects.${id}.approach`)}
+                                                        </p>
+                                                    </div>
+                                                </div>
+
+                                                <div className="mt-4 rounded-[1.6rem] border border-accent/20 bg-accent-soft p-5">
+                                                    <p className="text-[11px] font-semibold uppercase tracking-[0.2em] text-accent">
+                                                        {t("theOutcome")}
+                                                    </p>
+                                                    <div className="mt-4 grid gap-3 sm:grid-cols-3">
+                                                        {outcomes.map((outcome) => (
+                                                            <div
+                                                                key={outcome}
+                                                                className="rounded-[1.2rem] border border-border-soft bg-surface px-4 py-4"
+                                                            >
+                                                                <BadgeCheck className="h-4 w-4 text-accent" />
+                                                                <p className="mt-3 text-sm leading-6 text-text-primary">
+                                                                    {outcome}
+                                                                </p>
+                                                            </div>
+                                                        ))}
+                                                    </div>
+                                                </div>
+
+                                                <div className="mt-6 flex flex-wrap gap-2">
+                                                    {meta.tags.map((tag) => (
+                                                        <span
+                                                            key={tag}
+                                                            className="rounded-full border border-border-soft bg-surface-soft px-3 py-2 text-[11px] font-medium uppercase tracking-[0.12em] text-text-muted"
+                                                        >
+                                                            {tag}
+                                                        </span>
+                                                    ))}
+                                                </div>
+
+                                                <blockquote className="mt-6 rounded-[1.5rem] border border-border-soft bg-surface-soft px-5 py-5">
+                                                    <div className="flex items-start gap-3">
+                                                        <Quote className="mt-1 h-4 w-4 shrink-0 text-accent" />
+                                                        <p className="text-[15px] leading-7 text-text-secondary">
                                                             {t(`projects.${id}.testimonial`)}
                                                         </p>
                                                     </div>
+                                                </blockquote>
 
-                                                    {/* Footer row: tags + CTA */}
-                                                    <div className="mt-7 flex flex-wrap items-center justify-between gap-4">
-                                                        <div className="flex flex-wrap gap-2">
-                                                            {meta.tags.map((tag) => (
-                                                                <span
-                                                                    key={tag}
-                                                                    className="rounded-full border border-white/[0.07] bg-white/[0.03] px-3 py-1.5 text-[11px] font-medium tracking-[0.08em] text-[#8F8578]"
-                                                                >
-                                                                    {tag}
-                                                                </span>
-                                                            ))}
-                                                        </div>
-
-                                                        <Link
-                                                            href="#contact"
-                                                            className="inline-flex shrink-0 items-center gap-2 rounded-[1rem] border border-[#E0B84A]/20 bg-[linear-gradient(135deg,#F2D896_0%,#D8A14A_100%)] px-5 py-3 text-[12.5px] font-semibold text-[#24170A] shadow-[0_16px_36px_rgba(197,144,58,0.14)] transition duration-300 hover:-translate-y-0.5 hover:brightness-105"
-                                                        >
-                                                            {t(id === "wt-erdbewegungen" ? "ctaWt" : "ctaDaisy")}
-                                                            <ArrowRight className="h-3.5 w-3.5" />
-                                                        </Link>
-                                                    </div>
+                                                <div className="mt-6">
+                                                    <Link
+                                                        href="/contact"
+                                                        className="inline-flex min-w-[180px] items-center justify-center gap-2 rounded-full bg-accent px-6 py-4 text-sm font-semibold text-surface shadow-sm transition duration-200 hover:bg-[var(--nv-accent-hover)] active:scale-[0.98]"
+                                                    >
+                                                        {t(CTA_KEY[id])}
+                                                        <ArrowRight className="h-4 w-4" />
+                                                    </Link>
                                                 </div>
+                                            </div>
 
-                                                {/* ── Preview column ── */}
-                                                <div className={reverseOnDesktop ? "xl:order-1" : ""}>
+                                            {/* Preview */}
+                                            <div className={reverseOnDesktop ? "xl:order-1" : ""}>
+                                                {previewUrl ? (
                                                     <ProjectLivePreview
-                                                        url={meta.link}
+                                                        url={previewUrl}
                                                         title={title}
                                                         previewImage={meta.previewImage}
+                                                        isLocal={!!meta.demoUrl}
                                                     />
-                                                </div>
+                                                ) : (
+                                                    <PrivatePreview
+                                                        previewImage={meta.previewImage}
+                                                        label={t("demoOnRequest")}
+                                                        title={title}
+                                                    />
+                                                )}
                                             </div>
                                         </div>
                                     </article>
@@ -202,9 +226,43 @@ export function Work() {
                             )
                         })}
                     </div>
-
                 </div>
-            </Container>
-        </section>
+            </div>
+        </SectionWrapper>
+    )
+}
+
+function PrivatePreview({ previewImage, label, title }: { previewImage: string; label: string; title: string }) {
+    return (
+        <div className="w-full">
+            <div className="overflow-hidden rounded-[1.6rem] border border-border-soft bg-surface shadow-sm">
+                <div className="flex items-center gap-3 border-b border-border-soft bg-surface-soft px-4 py-3">
+                    <div className="flex gap-1.5">
+                        <span className="h-2.5 w-2.5 rounded-full bg-border-soft" />
+                        <span className="h-2.5 w-2.5 rounded-full bg-border-soft" />
+                        <span className="h-2.5 w-2.5 rounded-full bg-border-soft" />
+                    </div>
+                    <div className="flex flex-1 items-center gap-2 rounded-full border border-border-soft bg-background px-3 py-1.5 text-[10px] uppercase tracking-[0.16em] text-text-muted">
+                        <Lock className="h-3 w-3" />
+                        <span>{title}</span>
+                    </div>
+                </div>
+                <div className="relative aspect-[16/10] w-full overflow-hidden bg-surface-soft">
+                    {/* eslint-disable-next-line @next/next/no-img-element */}
+                    <img
+                        src={previewImage}
+                        alt={title}
+                        className="h-full w-full object-cover object-top opacity-60 blur-[2px]"
+                        onError={(e) => { (e.target as HTMLImageElement).style.display = "none" }}
+                    />
+                    <div className="absolute inset-0 flex items-center justify-center">
+                        <div className="rounded-2xl border border-border-soft bg-surface/90 px-6 py-4 text-center backdrop-blur-sm">
+                            <Lock className="mx-auto mb-2 h-5 w-5 text-text-muted" />
+                            <p className="text-sm font-medium text-text-secondary">{label}</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
     )
 }

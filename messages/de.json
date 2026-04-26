@@ -11,7 +11,8 @@
         "clientAreaHint": "Bereich für Kunden",
         "login": "Anmelden",
         "switchLanguage": "Sprache wechseln",
-        "ctaProject": "Projekt anfragen"
+        "ctaProject": "Projekt anfragen",
+        "services": "Leistungen"
     },
     "hero": {
         "badge": "Verfügbar für neue Projekte",
@@ -56,7 +57,11 @@
             },
             "optimized": {
                 "title": "Optimiert für",
-                "items": ["Vertrauen", "Design", "Conversion"]
+                "items": [
+                    "Vertrauen",
+                    "Design",
+                    "Conversion"
+                ]
             },
             "slots": {
                 "title": "Freie Slots für",
@@ -134,8 +139,41 @@
                 "outcome2": "Leistungen und Preise sofort verständlich",
                 "outcome3": "Mehr Zeit für Kundentermine statt Erklärungen",
                 "testimonial": "„Mein Alltag ist viel entspannter geworden, weil die Website die wichtigsten Fragen schon vorab beantwortet.“"
+            },
+            "dj-white-label": {
+                "title": "DJ White Label",
+                "description": "Landingpage für einen DJ mit Booking-Fokus.",
+                "problem": "Kein digitaler Auftritt. Buchungen liefen ausschließlich über persönliche Kontakte ohne klare Präsentation.",
+                "approach": "Eine schlanke, atmosphärische Landingpage mit Booking-CTA, Biografie und Referenzen — ohne Build-Step, maximal schnell.",
+                "outcome1": "Direkter Booking-Kanal online",
+                "outcome2": "Professionelle Außendarstellung",
+                "outcome3": "Schnell ladend auf allen Geräten",
+                "testimonial": "„Endlich habe ich eine Seite, die meinen Sound widerspiegelt.“"
+            },
+            "nvl-core": {
+                "title": "NVL Core",
+                "description": "Multi-Tenant SaaS-Fundament für skalierbare Unternehmensanwendungen.",
+                "problem": "Für jede Kundenanpassung wurde bisher Sonderlogik im Frontend gebaut — nicht skalierbar und schwer wartbar.",
+                "approach": "Ein mandantenfähiger Betriebskern mit sauberer Rollen- und Rechtestruktur, modularer Architektur und strukturierter Datenlogik als Basis für vertikale Produkte.",
+                "outcome1": "Vollständige Mandantentrennung",
+                "outcome2": "Modulare, erweiterbare Architektur",
+                "outcome3": "Fundament für vertikale SaaS-Produkte",
+                "testimonial": "„Strukturell richtig aufgebaut — nicht nur funktional, sondern verkaufbar.“"
+            },
+            "taste": {
+                "title": "Taste",
+                "description": "Persönlicher Rezept-Workspace mit Einkaufslisten und Favoritenverwaltung.",
+                "problem": "Rezepte lagen verstreut in Notizen, Fotos und verschiedenen Apps — keine zentrale, strukturierte Lösung.",
+                "approach": "Eine vollständige Web-App mit Auth, Rezeptverwaltung, Favoritensystem und Einkaufslisten auf Basis von React 19, Supabase und Tailwind CSS 4.",
+                "outcome1": "Zentrale Rezeptverwaltung mit Suche und Filter",
+                "outcome2": "Aggregierte Einkaufslisten aus Rezepten",
+                "outcome3": "Vollständige Auth-Absicherung mit RLS",
+                "testimonial": "„Ein sauberes Produkt, das ich täglich selbst nutze — der beste Test.“"
             }
-        }
+        },
+        "ctaGeneric": "Projekt anfragen",
+        "privateBadge": "Internes Projekt",
+        "demoOnRequest": "Demo auf Anfrage"
     },
     "about": {
         "label": "The Architect",
@@ -282,6 +320,74 @@
         },
         "privacy": {
             "title": "Datenschutzerklärung"
+        }
+    },
+    "services": {
+        "eyebrow": "Leistungen",
+        "headline": "Was ich für Sie umsetze.",
+        "subline": "Von der ersten Idee bis zum fertigen Launch — klare Pakete für digitale Projekte mit messbarem Ergebnis.",
+        "cta": "Alle Leistungen ansehen",
+        "items": {
+            "launch": {
+                "title": "Website Launch",
+                "description": "Komplette Unternehmenswebsite von Konzept bis Go-live. Mobile-first, performant und auf Anfragen optimiert."
+            },
+            "redesign": {
+                "title": "Redesign & Relaunch",
+                "description": "Ihre bestehende Website wird modernisiert, technisch bereinigt und auf heutige Standards gebracht."
+            },
+            "landing": {
+                "title": "Landingpage",
+                "description": "Eine fokussierte Seite für ein konkretes Ziel — Kampagne, Produkt oder Event. Schnell und konversionsstark."
+            },
+            "ui": {
+                "title": "UI-Komponenten & Design System",
+                "description": "Konsistente, wiederverwendbare Interface-Bausteine für Teams, die skalieren wollen."
+            },
+            "maintenance": {
+                "title": "Pflege & Weiterentwicklung",
+                "description": "Laufende technische Betreuung, Updates und gezielte Erweiterungen für bestehende Projekte."
+            }
+        }
+    },
+    "process": {
+        "eyebrow": "Meine Arbeitsweise",
+        "headline": "Wie ein Projekt entsteht.",
+        "subline": "Vier klar definierte Phasen — von der ersten Analyse bis zum fertigen Produkt. Transparent, strukturiert und ohne Überraschungen.",
+        "steps": {
+            "understand": {
+                "number": "01",
+                "title": "Verstehen",
+                "description": "Ich analysiere Ihr Ziel, Ihre Zielgruppe und den Kontext — damit das Ergebnis strategisch sinnvoll ist."
+            },
+            "structure": {
+                "number": "02",
+                "title": "Strukturieren",
+                "description": "Inhalte, Nutzerführung und technische Architektur werden sauber geplant, bevor auch nur eine Zeile Code entsteht."
+            },
+            "design": {
+                "number": "03",
+                "title": "Gestalten",
+                "description": "Ein hochwertiges, markenkonformes Design, das Vertrauen aufbaut und gezielt zur Handlung führt."
+            },
+            "build": {
+                "number": "04",
+                "title": "Umsetzen",
+                "description": "Sauberer, wartbarer Code. Performant, zugänglich und direkt deploybereit."
+            }
+        }
+    },
+    "aboutPage": {
+        "cta": {
+            "headline": "Bereit für ein Projekt, das wirklich funktioniert?",
+            "subline": "Gemeinsam entwickeln wir eine digitale Präsenz, die Vertrauen aufbaut, Besucher führt und echte Anfragen generiert.",
+            "button": "Projekt anfragen"
+        },
+        "story": {
+            "eyebrow": "Über NuVio Labs",
+            "headline": "Weniger Agentur. Mehr direkte Zusammenarbeit.",
+            "text1": "Ich bin Axel — unabhängiger Entwickler und Designer. Mein Fokus liegt auf digitalen Projekten, die nicht nur gut aussehen, sondern messbar performen.",
+            "text2": "Keine Zwischenstellen, keine überdimensionierten Teams. Sie arbeiten direkt mit mir — von der ersten Idee bis zum fertigen Produkt."
         }
     }
 }
