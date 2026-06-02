@@ -73,7 +73,7 @@ export function Contact() {
                             {t("sectionTitle")}
                         </h2>
 
-                        <p className="mt-4 text-[15px] leading-7 text-[#7A6E62]">
+                        <p className="mt-4 text-[15px] leading-7 text-[#B8AFA4]">
                             {t("sectionSubtitle")}
                         </p>
                     </div>
@@ -87,7 +87,7 @@ export function Contact() {
                         ].map((label) => (
                             <div
                                 key={label}
-                                className="flex items-center gap-2 text-[13px] text-[#7A6E62]"
+                                className="flex items-center gap-2 text-[13px] text-[#B8AFA4]"
                             >
                                 <CheckCircle2 className="h-3.5 w-3.5 shrink-0 text-[#C8A35A]/70" />
                                 {label}
@@ -104,10 +104,10 @@ export function Contact() {
 
                         {/* Form header */}
                         <div className="mb-6">
-                            <p className="text-[11px] font-semibold uppercase tracking-[0.2em] text-[#8F7B60]">
+                            <p className="text-[11px] font-semibold uppercase tracking-[0.2em] text-[#C8B99A]">
                                 {t("formTitle")}
                             </p>
-                            <p className="mt-2 text-sm leading-6 text-[#9A8E80]">
+                            <p className="mt-2 text-sm leading-6 text-[#C0B5A8]">
                                 {t("formDescription")}
                             </p>
                         </div>
@@ -120,7 +120,7 @@ export function Contact() {
                                 <h3 className="text-xl font-semibold text-[#F5F3EE]">
                                     {t("successTitle")}
                                 </h3>
-                                <p className="max-w-[28ch] text-[#9A8E80]">
+                                <p className="max-w-[28ch] text-[#C0B5A8]">
                                     {successMessage || t("successText")}
                                 </p>
                             </div>
@@ -150,7 +150,7 @@ export function Contact() {
                                     <div className="space-y-2">
                                         <Label
                                             htmlFor="name"
-                                            className="text-[12px] font-semibold uppercase tracking-[0.16em] text-[#8F7B60]"
+                                            className="text-[12px] font-semibold uppercase tracking-[0.16em] text-[#C8B99A]"
                                         >
                                             {t("labelName")}
                                         </Label>
@@ -160,13 +160,13 @@ export function Contact() {
                                             placeholder={t("placeholderName")}
                                             required
                                             disabled={status === "submitting"}
-                                            className="h-11 rounded-xl border-[#DAB983]/16 bg-[#1E1712]/80 text-[#F5F3EE] placeholder:text-[#5A5048] focus-visible:ring-[#E0B84A]/30 focus-visible:ring-offset-[#1D1713]"
+                                            className="h-11 rounded-xl border-[#DAB983]/16 bg-[#1E1712]/80 text-[#F5F3EE] placeholder:text-[#7A6E62] focus-visible:ring-[#E0B84A]/30 focus-visible:ring-offset-[#1D1713]"
                                         />
                                     </div>
                                     <div className="space-y-2">
                                         <Label
                                             htmlFor="email"
-                                            className="text-[12px] font-semibold uppercase tracking-[0.16em] text-[#8F7B60]"
+                                            className="text-[12px] font-semibold uppercase tracking-[0.16em] text-[#C8B99A]"
                                         >
                                             {t("labelEmail")}
                                         </Label>
@@ -177,7 +177,7 @@ export function Contact() {
                                             placeholder={t("placeholderEmail")}
                                             required
                                             disabled={status === "submitting"}
-                                            className="h-11 rounded-xl border-[#DAB983]/16 bg-[#1E1712]/80 text-[#F5F3EE] placeholder:text-[#5A5048] focus-visible:ring-[#E0B84A]/30 focus-visible:ring-offset-[#1D1713]"
+                                            className="h-11 rounded-xl border-[#DAB983]/16 bg-[#1E1712]/80 text-[#F5F3EE] placeholder:text-[#7A6E62] focus-visible:ring-[#E0B84A]/30 focus-visible:ring-offset-[#1D1713]"
                                         />
                                     </div>
                                 </div>
@@ -185,7 +185,7 @@ export function Contact() {
                                 <div className="space-y-2">
                                     <Label
                                         htmlFor="subject"
-                                        className="text-[12px] font-semibold uppercase tracking-[0.16em] text-[#8F7B60]"
+                                        className="text-[12px] font-semibold uppercase tracking-[0.16em] text-[#C8B99A]"
                                     >
                                         {t("labelSubject")}
                                     </Label>
@@ -195,14 +195,14 @@ export function Contact() {
                                         placeholder={t("placeholderSubject")}
                                         required
                                         disabled={status === "submitting"}
-                                        className="h-11 rounded-xl border-[#DAB983]/16 bg-[#1E1712]/80 text-[#F5F3EE] placeholder:text-[#5A5048] focus-visible:ring-[#E0B84A]/30 focus-visible:ring-offset-[#1D1713]"
+                                        className="h-11 rounded-xl border-[#DAB983]/16 bg-[#1E1712]/80 text-[#F5F3EE] placeholder:text-[#7A6E62] focus-visible:ring-[#E0B84A]/30 focus-visible:ring-offset-[#1D1713]"
                                     />
                                 </div>
 
                                 <div className="space-y-2">
                                     <Label
                                         htmlFor="message"
-                                        className="text-[12px] font-semibold uppercase tracking-[0.16em] text-[#8F7B60]"
+                                        className="text-[12px] font-semibold uppercase tracking-[0.16em] text-[#C8B99A]"
                                     >
                                         {t("labelMessage")}
                                     </Label>
@@ -210,7 +210,7 @@ export function Contact() {
                                         id="message"
                                         name="message"
                                         placeholder={t("placeholderMessage")}
-                                        className="min-h-[140px] rounded-xl border-[#DAB983]/16 bg-[#1E1712]/80 text-[#F5F3EE] placeholder:text-[#5A5048] focus-visible:ring-[#E0B84A]/30 focus-visible:ring-offset-[#1D1713]"
+                                        className="min-h-[140px] rounded-xl border-[#DAB983]/16 bg-[#1E1712]/80 text-[#F5F3EE] placeholder:text-[#7A6E62] focus-visible:ring-[#E0B84A]/30 focus-visible:ring-offset-[#1D1713]"
                                         required
                                         disabled={status === "submitting"}
                                     />
@@ -232,8 +232,8 @@ export function Contact() {
                                 </Button>
 
                                 {/* Trust badge */}
-                                <div className="flex items-center justify-center gap-2 pt-1 text-xs text-[#6A5E52]">
-                                    <ShieldCheck className="h-3.5 w-3.5 text-[#7A6E62]" />
+                                <div className="flex items-center justify-center gap-2 pt-1 text-xs text-[#A89880]">
+                                    <ShieldCheck className="h-3.5 w-3.5 text-[#B8A882]" />
                                     {t("trustBadge")}
                                 </div>
                             </form>

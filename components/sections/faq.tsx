@@ -29,6 +29,7 @@ export function FAQ() {
                     <div className="space-y-3">
                         {FAQ_KEYS.map((key, index) => {
                             const isOpen = openIndex === index
+                            const panelId = `faq-panel-${key}`
 
                             return (
                                 <div
@@ -39,6 +40,7 @@ export function FAQ() {
                                         onClick={() => setOpenIndex(isOpen ? null : index)}
                                         className="flex w-full items-center justify-between p-6 text-left focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring"
                                         aria-expanded={isOpen}
+                                        aria-controls={panelId}
                                     >
                                         <span className="pr-6 font-semibold text-text-primary">
                                             {t(`questions.${key}.q`)}
@@ -52,6 +54,8 @@ export function FAQ() {
                                     </button>
 
                                     <div
+                                        id={panelId}
+                                        role="region"
                                         className="grid transition-[grid-template-rows] duration-250 ease-in-out"
                                         style={{ gridTemplateRows: isOpen ? "1fr" : "0fr" }}
                                     >

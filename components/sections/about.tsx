@@ -30,7 +30,7 @@ export async function About() {
 
                             <div className="relative flex flex-col items-start text-left">
                                 <div className="mb-6">
-                                    <span className="inline-flex items-center gap-2 rounded-full border border-[#DAB983]/16 bg-white/[0.04] px-3 py-1.5 text-[10px] font-medium uppercase tracking-[0.18em] text-[#BFAF96]">
+                                    <span className="inline-flex items-center gap-2 rounded-full border border-[#DAB983]/16 bg-white/[0.04] px-3 py-1.5 text-[10px] font-medium uppercase tracking-[0.18em] text-[#D4C9B0]">
                                         <span className="h-1.5 w-1.5 rounded-full bg-[#C8A35A]" />
                                         {t("label")}
                                     </span>
@@ -49,7 +49,7 @@ export async function About() {
                                 </div>
 
                                 <div className="mt-12 w-full border-t border-white/8 pt-8">
-                                    <p className="text-sm italic text-[#A99C88]">{t("signature")}</p>
+                                    <p className="text-sm italic text-[#C5B8A6]">{t("signature")}</p>
                                 </div>
                             </div>
                         </article>
@@ -57,7 +57,7 @@ export async function About() {
 
                     <div className="flex flex-col pt-4 lg:col-span-6 lg:col-start-7 lg:pt-0">
                         <div className="mb-8 lg:mb-12">
-                            <span className="inline-flex items-center gap-2 rounded-full border border-[#DAB983]/18 bg-white/[0.04] px-4 py-2 text-[11px] font-medium uppercase tracking-[0.2em] text-[#BFAF96]">
+                            <span className="inline-flex items-center gap-2 rounded-full border border-[#DAB983]/18 bg-white/[0.04] px-4 py-2 text-[11px] font-medium uppercase tracking-[0.2em] text-[#D4C9B0]">
                                 <span className="h-1.5 w-1.5 rounded-full bg-[#C8A35A]" />
                                 {t("principlesTitle")}
                             </span>
@@ -85,7 +85,7 @@ export async function About() {
                                             <h4 className="mb-2 text-[1.05rem] font-semibold tracking-[-0.02em] text-[#F5F3EE]">
                                                 {t(`values.${value.key}.title`)}
                                             </h4>
-                                            <p className="max-w-[36ch] text-[14.5px] leading-7 text-[#9A8E80]">
+                                            <p className="max-w-[36ch] text-[14.5px] leading-7 text-[#C0B5A8]">
                                                 {t(`values.${value.key}.text`)}
                                             </p>
                                         </div>
@@ -93,7 +93,7 @@ export async function About() {
                                 </article>
                             ))}
 
-                            <div className="mt-4 flex items-center gap-3 font-mono text-xs text-[#8F7B60]">
+                            <div className="mt-4 flex items-center gap-3 font-mono text-xs text-[#A89880]">
                                 <div className="h-px max-w-[40px] flex-1 bg-white/10" />
                                 <p>{t("techStack")}</p>
                             </div>
