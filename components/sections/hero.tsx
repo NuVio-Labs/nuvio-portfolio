@@ -36,7 +36,7 @@ export async function Hero() {
             id="home"
             className="relative min-h-[100svh] overflow-hidden bg-background text-text-primary"
         >
-            {/* Subtle accent glow — visible in both modes */}
+            {/* Subtle accent glow */}
             <div className="pointer-events-none absolute inset-0">
                 <div className="absolute right-[-8rem] top-[14%] h-[28rem] w-[28rem] rounded-full bg-accent/10 blur-[140px]" />
                 <div className="absolute bottom-[-8rem] right-[5%] h-[26rem] w-[26rem] rounded-full bg-accent/8 blur-[130px]" />
@@ -197,6 +197,7 @@ export async function Hero() {
                                         src="/previews/daisy.webp"
                                         alt=""
                                         fill
+                                        priority
                                         sizes="220px"
                                         className="object-cover object-top opacity-95"
                                     />

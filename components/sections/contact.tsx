@@ -78,7 +78,7 @@ export function Contact() {
                         </p>
                     </div>
 
-                    {/* Trust signals — lightweight inline row */}
+                    {/* Trust signals */}
                     <div className="mb-10 flex flex-wrap justify-center gap-x-6 gap-y-3">
                         {[
                             t("benefit1Title"),

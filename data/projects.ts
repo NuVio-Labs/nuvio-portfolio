@@ -20,7 +20,7 @@ export const projects: Project[] = [
     {
         id: "wt-erdbewegungen",
         title: "WT Erdbewegungen",
-        description: "Professional website for a local excavation and earthmoving company — fast, responsive, and built for search visibility.",
+        description: "Professional website for a local excavation and earthmoving company. Fast, responsive, and built for search visibility.",
         category: "Web",
         image: "/wterd.webp",
         previewImage: "/previews/wt.webp",
@@ -36,7 +36,7 @@ export const projects: Project[] = [
     {
         id: "daisymays-salon",
         title: "Daisy May's Salon",
-        description: "Bilingual website for a dog grooming salon — warm branding, booking information, and multi-language support.",
+        description: "Bilingual website for a dog grooming salon. Warm branding, booking information, and multi-language support.",
         category: "Web",
         image: "/daisymays.webp",
         previewImage: "/previews/daisy.webp",

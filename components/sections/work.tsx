@@ -36,12 +36,12 @@ const PROJECT_META: Record<ProjectId, ProjectMeta> = {
         tags: ["HTML", "CSS", "JavaScript"],
     },
     "nvl-core": {
-        previewImage: "/previews/nvl-core.png",
+        previewImage: "/previews/nvl-core.webp",
         tags: ["React", "TypeScript", "Supabase", "Vite", "Multi-Tenant"],
         private: true,
     },
     "taste": {
-        previewImage: "/previews/taste.png",
+        previewImage: "/previews/taste.webp",
         tags: ["React 19", "TypeScript", "Supabase", "Tailwind CSS 4", "Vite"],
         private: true,
     },

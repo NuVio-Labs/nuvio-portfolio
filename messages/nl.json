@@ -128,7 +128,7 @@
                 "outcome1": "Een duidelijk digitaal startpunt voor nieuwe aanvragen",
                 "outcome2": "Snelle mobiele performance en helderdere gebruikersroute",
                 "outcome3": "Sterkere zichtbaarheid in de lokale markt",
-                "testimonial": "“We worden eindelijk online gevonden en de site voelt nu net zo professioneel als ons werk.”"
+                "testimonial": "We worden eindelijk online gevonden en de site voelt nu net zo professioneel als ons werk."
             },
             "daisymays-salon": {
                 "title": "Daisy May's Salon",
@@ -138,37 +138,37 @@
                 "outcome1": "Minder terugkerende vragen per telefoon",
                 "outcome2": "Diensten en prijzen direct duidelijk",
                 "outcome3": "Meer tijd voor afspraken in plaats van uitleg",
-                "testimonial": "“Mijn werkdagen zijn veel rustiger geworden omdat de website de belangrijkste vragen al vooraf beantwoordt.”"
+                "testimonial": "Mijn werkdagen zijn veel rustiger geworden omdat de website de belangrijkste vragen al vooraf beantwoordt."
             },
             "dj-white-label": {
                 "title": "DJ White Label",
                 "description": "Landingpagina voor een dj met focus op boekingen.",
                 "problem": "Geen digitale aanwezigheid. Boekingen verliepen uitsluitend via persoonlijke contacten zonder duidelijke presentatie.",
-                "approach": "Een slanke, sfeervolle landingpagina met een boeking-CTA, biografie en referenties — zonder buildstap, maximaal snel.",
+                "approach": "Een slanke, sfeervolle landingpagina met een boeking-CTA, biografie en referenties. Zonder buildstap, maximaal snel.",
                 "outcome1": "Direct online boekingskanaal",
                 "outcome2": "Professionele uitstraling",
                 "outcome3": "Snel ladend op alle apparaten",
-                "testimonial": "“Eindelijk een pagina die mijn geluid weerspiegelt.”"
+                "testimonial": "Eindelijk een pagina die mijn geluid weerspiegelt."
             },
             "nvl-core": {
                 "title": "NVL Core",
                 "description": "Multi-tenant SaaS-fundament voor schaalbare bedrijfsapplicaties.",
-                "problem": "Elke klantaanpassing vereiste speciale frontendlogica — niet schaalbaar en moeilijk te onderhouden.",
+                "problem": "Elke klantaanpassing vereiste speciale frontendlogica. Niet schaalbaar en moeilijk te onderhouden.",
                 "approach": "Een tenantbewuste operationele kern met een schone rol- en rechtenstructuur, modulaire architectuur en gestructureerde datalogica als basis voor verticale producten.",
                 "outcome1": "Volledige tenantscheiding",
                 "outcome2": "Modulaire, uitbreidbare architectuur",
                 "outcome3": "Fundament voor verticale SaaS-producten",
-                "testimonial": "“Structureel goed opgebouwd — niet alleen functioneel, maar ook verkoopbaar.”"
+                "testimonial": "Structureel goed opgebouwd, niet alleen functioneel, maar ook verkoopbaar."
             },
             "taste": {
                 "title": "Taste",
                 "description": "Persoonlijke receptenwerkruimte met boodschappenlijsten en favorietenbeheer.",
-                "problem": "Recepten lagen verspreid over notities, foto’s en verschillende apps — geen centrale, gestructureerde oplossing.",
+                "problem": "Recepten lagen verspreid over notities, foto’s en verschillende apps. Geen centrale, gestructureerde oplossing.",
                 "approach": "Een volledige web-app met auth, receptbeheer, favorietensysteem en boodschappenlijsten gebouwd op React 19, Supabase en Tailwind CSS 4.",
                 "outcome1": "Centraal receptbeheer met zoeken en filteren",
                 "outcome2": "Geaggregeerde boodschappenlijsten uit recepten",
                 "outcome3": "Volledige auth-beveiliging met RLS",
-                "testimonial": "“Een strak product dat ik zelf dagelijks gebruik — de beste test die er is.”"
+                "testimonial": "Een strak product dat ik zelf dagelijks gebruik. De beste test die er is."
             }
         },
         "ctaGeneric": "Project aanvragen",
@@ -178,7 +178,7 @@
     "about": {
         "label": "Over",
         "headline": "Digitaal vakmanschap.",
-        "bio1": "Ik ben Axel, onafhankelijk ontwikkelaar. Ik bouw stabiele, snelle systemen die echte zakelijke waarde leveren — zonder bureau-ruis.",
+        "bio1": "Ik ben Axel, onafhankelijk ontwikkelaar. Ik bouw stabiele, snelle systemen die echte zakelijke waarde leveren, zonder bureau-ruis.",
         "bio2": "Voor het mkb ontwikkel ik digitale platforms die functioneren als een stille, betrouwbare stroom van aanvragen. Geen loze beloftes. Alleen meetbare resultaten.",
         "principlesTitle": "Werkwijze",
         "values": {
@@ -188,7 +188,7 @@
             },
             "performance": {
                 "title": "Prestaties",
-                "text": "Elke milliseconde telt — vooral voor conversie."
+                "text": "Elke milliseconde telt, vooral voor conversie."
             },
             "sustainability": {
                 "title": "Duurzaamheid",
@@ -296,7 +296,7 @@
         "questions": {
             "cost": {
                 "q": "Wat kost een nieuwe website?",
-                "a": "Elk project is anders. De meeste websites starten rond €800. In het eerste gesprek bepalen we samen scope, doelen en budget — zodat u een realistische en transparante indicatie krijgt."
+                "a": "Elk project is anders. De meeste websites starten rond €800. In het eerste gesprek bepalen we samen scope, doelen en budget, zodat u een realistische en transparante indicatie krijgt."
             },
             "duration": {
                 "q": "Hoe lang duurt de realisatie?",
@@ -315,7 +315,23 @@
     "seo": {
         "home": {
             "title": "NuVioLabs | Modern webdesign voor lokale bedrijven",
-            "description": "Snelle, moderne websites voor vakmensen, salons en mkb-bedrijven — gebouwd voor helderheid, prestaties en meer aanvragen. Plan een gratis adviesgesprek."
+            "description": "Snelle, moderne websites voor vakmensen, salons en mkb-bedrijven. Gebouwd voor helderheid, prestaties en meer aanvragen. Plan een gratis adviesgesprek."
+        },
+        "work": {
+            "title": "Projecten | NuVio Labs",
+            "description": "Geselecteerde webprojecten van NuVio Labs. Echte websites voor echte bedrijven, snel, modern en gericht op meer aanvragen."
+        },
+        "about": {
+            "title": "Over NuVio Labs | Axel Schurer",
+            "description": "NuVio Labs is het webdesignstudio van Axel Schurer. Directe samenwerking, geen bureauoverhead, digitale projecten met meetbare resultaten."
+        },
+        "services": {
+            "title": "Diensten | NuVio Labs",
+            "description": "Website launch, redesign, landingpaginas en UI-componenten. Heldere pakketten voor digitale projecten met meetbare resultaten."
+        },
+        "contact": {
+            "title": "Contact | NuVio Labs",
+            "description": "Een project aanvragen of gewoon hallo zeggen. Gratis kennismaking, directe reactie en een duidelijke volgende stap."
         },
         "imprint": {
             "title": "Impressum"
@@ -327,7 +343,7 @@
     "services": {
         "eyebrow": "Diensten",
         "headline": "Wat ik voor u realiseer.",
-        "subline": "Van eerste idee tot definitieve livegang — heldere pakketten voor digitale projecten met meetbare resultaten.",
+        "subline": "Van eerste idee tot definitieve livegang. Heldere pakketten voor digitale projecten met meetbare resultaten.",
         "cta": "Alle diensten bekijken",
         "items": {
             "launch": {
@@ -340,7 +356,7 @@
             },
             "landing": {
                 "title": "Landingpagina",
-                "description": "Een gerichte pagina voor één concreet doel — campagne, product of evenement. Snel en conversiesterk."
+                "description": "Een gerichte pagina voor één concreet doel: campagne, product of evenement. Snel en conversiesterk."
             },
             "ui": {
                 "title": "UI-componenten & Design System",
@@ -355,12 +371,12 @@
     "process": {
         "eyebrow": "Mijn werkwijze",
         "headline": "Hoe een project tot stand komt.",
-        "subline": "Vier duidelijk omschreven fases — van de eerste analyse tot het eindproduct. Transparant, gestructureerd en zonder verrassingen.",
+        "subline": "Vier duidelijk omschreven fases: van de eerste analyse tot het eindproduct. Transparant, gestructureerd en zonder verrassingen.",
         "steps": {
             "understand": {
                 "number": "01",
                 "title": "Begrijpen",
-                "description": "Ik analyseer uw doel, uw doelgroep en de context — zodat het resultaat strategisch zinvol is."
+                "description": "Ik analyseer uw doel, uw doelgroep en de context, zodat het resultaat strategisch zinvol is."
             },
             "structure": {
                 "number": "02",
@@ -388,8 +404,8 @@
         "story": {
             "eyebrow": "Over NuVio Labs",
             "headline": "Minder bureau. Meer directe samenwerking.",
-            "text1": "Ik ben Axel — onafhankelijk ontwikkelaar en ontwerper. Mijn focus ligt op digitale projecten die er niet alleen goed uitzien, maar ook meetbaar presteren.",
-            "text2": "Geen tussenpersonen, geen overmatige teams. U werkt rechtstreeks met mij — van het eerste idee tot het eindproduct."
+            "text1": "Ik ben Axel, onafhankelijk ontwikkelaar en ontwerper. Mijn focus ligt op digitale projecten die er niet alleen goed uitzien, maar ook meetbaar presteren.",
+            "text2": "Geen tussenpersonen, geen overmatige teams. U werkt rechtstreeks met mij, van het eerste idee tot het eindproduct."
         }
     }
 }

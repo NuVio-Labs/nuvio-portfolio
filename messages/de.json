@@ -128,7 +128,7 @@
                 "outcome1": "Klarer digitaler Einstieg für neue Bauanfragen",
                 "outcome2": "Schnelle mobile Performance und saubere Nutzerführung",
                 "outcome3": "Bessere Auffindbarkeit im lokalen Umfeld",
-                "testimonial": "„Endlich werden wir auch online gefunden und der Auftritt wirkt so professionell wie unsere Arbeit.“"
+                "testimonial": "Endlich werden wir auch online gefunden und der Auftritt wirkt so professionell wie unsere Arbeit."
             },
             "daisymays-salon": {
                 "title": "Daisy May's Salon",
@@ -138,37 +138,37 @@
                 "outcome1": "Weniger wiederkehrende Rückfragen per Telefon",
                 "outcome2": "Leistungen und Preise sofort verständlich",
                 "outcome3": "Mehr Zeit für Kundentermine statt Erklärungen",
-                "testimonial": "„Mein Alltag ist viel entspannter geworden, weil die Website die wichtigsten Fragen schon vorab beantwortet.“"
+                "testimonial": "Mein Alltag ist viel entspannter geworden, weil die Website die wichtigsten Fragen schon vorab beantwortet."
             },
             "dj-white-label": {
                 "title": "DJ White Label",
                 "description": "Landingpage für einen DJ mit Booking-Fokus.",
                 "problem": "Kein digitaler Auftritt. Buchungen liefen ausschließlich über persönliche Kontakte ohne klare Präsentation.",
-                "approach": "Eine schlanke, atmosphärische Landingpage mit Booking-CTA, Biografie und Referenzen — ohne Build-Step, maximal schnell.",
+                "approach": "Eine schlanke, atmosphärische Landingpage mit Booking-CTA, Biografie und Referenzen. Ohne Build-Step, maximal schnell.",
                 "outcome1": "Direkter Booking-Kanal online",
                 "outcome2": "Professionelle Außendarstellung",
                 "outcome3": "Schnell ladend auf allen Geräten",
-                "testimonial": "„Endlich habe ich eine Seite, die meinen Sound widerspiegelt.“"
+                "testimonial": "Endlich habe ich eine Seite, die meinen Sound widerspiegelt."
             },
             "nvl-core": {
                 "title": "NVL Core",
                 "description": "Multi-Tenant SaaS-Fundament für skalierbare Unternehmensanwendungen.",
-                "problem": "Für jede Kundenanpassung wurde bisher Sonderlogik im Frontend gebaut — nicht skalierbar und schwer wartbar.",
+                "problem": "Für jede Kundenanpassung wurde bisher Sonderlogik im Frontend gebaut. Nicht skalierbar und schwer wartbar.",
                 "approach": "Ein mandantenfähiger Betriebskern mit sauberer Rollen- und Rechtestruktur, modularer Architektur und strukturierter Datenlogik als Basis für vertikale Produkte.",
                 "outcome1": "Vollständige Mandantentrennung",
                 "outcome2": "Modulare, erweiterbare Architektur",
                 "outcome3": "Fundament für vertikale SaaS-Produkte",
-                "testimonial": "„Strukturell richtig aufgebaut — nicht nur funktional, sondern verkaufbar.“"
+                "testimonial": "Strukturell richtig aufgebaut, nicht nur funktional, sondern verkaufbar."
             },
             "taste": {
                 "title": "Taste",
                 "description": "Persönlicher Rezept-Workspace mit Einkaufslisten und Favoritenverwaltung.",
-                "problem": "Rezepte lagen verstreut in Notizen, Fotos und verschiedenen Apps — keine zentrale, strukturierte Lösung.",
+                "problem": "Rezepte lagen verstreut in Notizen, Fotos und verschiedenen Apps. Keine zentrale, strukturierte Lösung.",
                 "approach": "Eine vollständige Web-App mit Auth, Rezeptverwaltung, Favoritensystem und Einkaufslisten auf Basis von React 19, Supabase und Tailwind CSS 4.",
                 "outcome1": "Zentrale Rezeptverwaltung mit Suche und Filter",
                 "outcome2": "Aggregierte Einkaufslisten aus Rezepten",
                 "outcome3": "Vollständige Auth-Absicherung mit RLS",
-                "testimonial": "„Ein sauberes Produkt, das ich täglich selbst nutze — der beste Test.“"
+                "testimonial": "Ein sauberes Produkt, das ich täglich selbst nutze. Der beste Test."
             }
         },
         "ctaGeneric": "Projekt anfragen",
@@ -315,6 +315,22 @@
             "title": "NuVioLabs | Webdesign  für lokale Unternehmen",
             "description": "Ich entwickle schnelle, conversion-starke Websites für Handwerk, Salons und KMUs. Mehr Sichtbarkeit. Mehr Anfragen. Jetzt kostenloses Erstgespräch sichern."
         },
+        "work": {
+            "title": "Projekte | NuVio Labs",
+            "description": "Ausgewählte Webprojekte von NuVio Labs. Echte Websites für echte Unternehmen, performant, modern und auf Anfragen ausgerichtet."
+        },
+        "about": {
+            "title": "Über NuVio Labs | Axel Schurer",
+            "description": "NuVio Labs ist das Webdesign-Studio von Axel Schurer. Direkte Zusammenarbeit, kein Agenturoverhead, digitale Projekte mit messbarem Ergebnis."
+        },
+        "services": {
+            "title": "Leistungen | NuVio Labs",
+            "description": "Website Launch, Redesign, Landingpages und UI-Komponenten. Klare Pakete für digitale Projekte mit messbarem Ergebnis."
+        },
+        "contact": {
+            "title": "Kontakt | NuVio Labs",
+            "description": "Projekt anfragen oder einfach Hallo sagen. Kostenlose Erstberatung, direkte Antwort und klarer nächster Schritt."
+        },
         "imprint": {
             "title": "Impressum"
         },
@@ -325,7 +341,7 @@
     "services": {
         "eyebrow": "Leistungen",
         "headline": "Was ich für Sie umsetze.",
-        "subline": "Von der ersten Idee bis zum fertigen Launch — klare Pakete für digitale Projekte mit messbarem Ergebnis.",
+        "subline": "Von der ersten Idee bis zum fertigen Launch. Klare Pakete für digitale Projekte mit messbarem Ergebnis.",
         "cta": "Alle Leistungen ansehen",
         "items": {
             "launch": {
@@ -338,7 +354,7 @@
             },
             "landing": {
                 "title": "Landingpage",
-                "description": "Eine fokussierte Seite für ein konkretes Ziel — Kampagne, Produkt oder Event. Schnell und konversionsstark."
+                "description": "Eine fokussierte Seite für ein konkretes Ziel: Kampagne, Produkt oder Event. Schnell und konversionsstark."
             },
             "ui": {
                 "title": "UI-Komponenten & Design System",
@@ -353,12 +369,12 @@
     "process": {
         "eyebrow": "Meine Arbeitsweise",
         "headline": "Wie ein Projekt entsteht.",
-        "subline": "Vier klar definierte Phasen — von der ersten Analyse bis zum fertigen Produkt. Transparent, strukturiert und ohne Überraschungen.",
+        "subline": "Vier klar definierte Phasen: von der ersten Analyse bis zum fertigen Produkt. Transparent, strukturiert und ohne Überraschungen.",
         "steps": {
             "understand": {
                 "number": "01",
                 "title": "Verstehen",
-                "description": "Ich analysiere Ihr Ziel, Ihre Zielgruppe und den Kontext — damit das Ergebnis strategisch sinnvoll ist."
+                "description": "Ich analysiere Ihr Ziel, Ihre Zielgruppe und den Kontext, damit das Ergebnis strategisch sinnvoll ist."
             },
             "structure": {
                 "number": "02",
@@ -386,8 +402,8 @@
         "story": {
             "eyebrow": "Über NuVio Labs",
             "headline": "Weniger Agentur. Mehr direkte Zusammenarbeit.",
-            "text1": "Ich bin Axel — unabhängiger Entwickler und Designer. Mein Fokus liegt auf digitalen Projekten, die nicht nur gut aussehen, sondern messbar performen.",
-            "text2": "Keine Zwischenstellen, keine überdimensionierten Teams. Sie arbeiten direkt mit mir — von der ersten Idee bis zum fertigen Produkt."
+            "text1": "Ich bin Axel, unabhängiger Entwickler und Designer. Mein Fokus liegt auf digitalen Projekten, die nicht nur gut aussehen, sondern messbar performen.",
+            "text2": "Keine Zwischenstellen, keine überdimensionierten Teams. Sie arbeiten direkt mit mir, von der ersten Idee bis zum fertigen Produkt."
         }
     }
 }

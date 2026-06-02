@@ -5,7 +5,6 @@ import { useLocale } from "next-intl"
 import { usePathname, useRouter } from "next/navigation"
 import { routing } from "@/i18n/routing"
 import { ChevronDown, Check } from "lucide-react"
-import { motion, AnimatePresence } from "framer-motion"
 import { cn } from "@/lib/utils"
 
 const localeLabels: Record<string, string> = {
@@ -38,14 +37,11 @@ export function LanguageSwitcher() {
     }, [])
 
     function switchLocale(newLocale: string) {
-        // Replace the current locale prefix with the new one
         const segments = pathname.split("/")
         segments[1] = newLocale
         const newPath = segments.join("/")
 
-        // Set cookie for locale persistence
         if (typeof document !== "undefined") {
-            // eslint-disable-next-line react-hooks/immutability
             document.cookie = `NEXT_LOCALE=${newLocale};path=/;max-age=31536000;SameSite=Lax`
         }
 
@@ -69,37 +65,35 @@ export function LanguageSwitcher() {
                 <ChevronDown className={cn("h-4 w-4 transition-transform duration-200", isOpen && "rotate-180")} />
             </button>
 
-            <AnimatePresence>
-                {isOpen && (
-                    <motion.div
-                        initial={{ opacity: 0, y: 8, scale: 0.95 }}
-                        animate={{ opacity: 1, y: 0, scale: 1 }}
-                        exit={{ opacity: 0, y: 8, scale: 0.95 }}
-                        transition={{ duration: 0.15, ease: "easeOut" }}
-                        className="absolute right-0 mt-2 w-44 rounded-xl border border-border-soft bg-surface/95 backdrop-blur-xl shadow-xl overflow-hidden z-[100]"
-                    >
-                        <div className="p-1" role="listbox">
-                            {routing.locales.map((loc) => (
-                                <button
-                                    key={loc}
-                                    onClick={() => switchLocale(loc)}
-                                    className={cn(
-                                        "w-full flex items-center justify-between px-3 py-2.5 text-sm rounded-md transition-colors text-left",
-                                        loc === locale
-                                            ? "text-accent font-semibold"
-                                            : "text-text-muted hover:text-text-primary hover:bg-surface-soft"
-                                    )}
-                                    role="option"
-                                    aria-selected={loc === locale}
-                                >
-                                    <span>{localeLabels[loc]}</span>
-                                    {loc === locale && <Check className="h-4 w-4" />}
-                                </button>
-                            ))}
-                        </div>
-                    </motion.div>
+            <div
+                className={cn(
+                    "absolute right-0 mt-2 w-44 rounded-xl border border-border-soft bg-surface/95 backdrop-blur-xl shadow-xl overflow-hidden z-[100]",
+                    "transition-all duration-150 ease-out origin-top-right",
+                    isOpen
+                        ? "opacity-100 scale-100 translate-y-0 pointer-events-auto"
+                        : "opacity-0 scale-95 translate-y-2 pointer-events-none"
                 )}
-            </AnimatePresence>
+            >
+                <div className="p-1" role="listbox">
+                    {routing.locales.map((loc) => (
+                        <button
+                            key={loc}
+                            onClick={() => switchLocale(loc)}
+                            className={cn(
+                                "w-full flex items-center justify-between px-3 py-2.5 text-sm rounded-md transition-colors text-left",
+                                loc === locale
+                                    ? "text-accent font-semibold"
+                                    : "text-text-muted hover:text-text-primary hover:bg-surface-soft"
+                            )}
+                            role="option"
+                            aria-selected={loc === locale}
+                        >
+                            <span>{localeLabels[loc]}</span>
+                            {loc === locale && <Check className="h-4 w-4" />}
+                        </button>
+                    ))}
+                </div>
+            </div>
         </div>
     )
 }

@@ -128,7 +128,7 @@
                 "outcome1": "A clear digital entry point for new project inquiries",
                 "outcome2": "Fast mobile performance and cleaner user flow",
                 "outcome3": "Stronger visibility in the local market",
-                "testimonial": "“We finally get found online, and the site now feels as professional as our work.”"
+                "testimonial": "We finally get found online, and the site now feels as professional as our work."
             },
             "daisymays-salon": {
                 "title": "Daisy May's Salon",
@@ -138,37 +138,37 @@
                 "outcome1": "Fewer repeated questions by phone",
                 "outcome2": "Services and pricing understood immediately",
                 "outcome3": "More time for appointments instead of explanations",
-                "testimonial": "“My day-to-day feels much calmer now because the website answers the most important questions upfront.”"
+                "testimonial": "My day-to-day feels much calmer now because the website answers the most important questions upfront."
             },
             "dj-white-label": {
                 "title": "DJ White Label",
                 "description": "Landing page for a DJ with a focus on bookings.",
                 "problem": "No digital presence. Bookings ran entirely through personal contacts with no clear presentation.",
-                "approach": "A lean, atmospheric landing page with a booking CTA, biography, and references — no build step, maximum speed.",
+                "approach": "A lean, atmospheric landing page with a booking CTA, biography, and references. No build step, maximum speed.",
                 "outcome1": "A direct online booking channel",
                 "outcome2": "Professional public presence",
                 "outcome3": "Fast loading on all devices",
-                "testimonial": "“Finally a page that reflects my sound.”"
+                "testimonial": "Finally a page that reflects my sound."
             },
             "nvl-core": {
                 "title": "NVL Core",
                 "description": "Multi-tenant SaaS foundation for scalable business applications.",
-                "problem": "Every client customisation required special-case frontend logic — not scalable and hard to maintain.",
+                "problem": "Every client customisation required special-case frontend logic. Not scalable and hard to maintain.",
                 "approach": "A tenant-aware operating core with clean role and permission structures, modular architecture, and structured data logic as the foundation for vertical products.",
                 "outcome1": "Full tenant isolation",
                 "outcome2": "Modular, extensible architecture",
                 "outcome3": "Foundation for vertical SaaS products",
-                "testimonial": "“Built the right way structurally — not just functional, but sellable.”"
+                "testimonial": "Built the right way structurally, not just functional, but sellable."
             },
             "taste": {
                 "title": "Taste",
                 "description": "Personal recipe workspace with shopping lists and favourites management.",
-                "problem": "Recipes were scattered across notes, photos, and different apps — no central, structured solution.",
+                "problem": "Recipes were scattered across notes, photos, and different apps. No central, structured solution.",
                 "approach": "A full web app with auth, recipe management, favourites system, and shopping lists built on React 19, Supabase, and Tailwind CSS 4.",
                 "outcome1": "Central recipe management with search and filter",
                 "outcome2": "Aggregated shopping lists from recipes",
                 "outcome3": "Full auth protection with RLS",
-                "testimonial": "“A clean product I use myself every day — the best test there is.”"
+                "testimonial": "A clean product I use myself every day. The best test there is."
             }
         },
         "ctaGeneric": "Request this project",
@@ -178,7 +178,7 @@
     "about": {
         "label": "About",
         "headline": "Digital Craftsmanship.",
-        "bio1": "I'm Axel, an independent developer. I focus on building resilient, high-performance systems that deliver real business value—without the agency noise.",
+        "bio1": "I'm Axel, an independent developer. I focus on building resilient, high-performance systems that deliver real business value, without the agency noise.",
         "bio2": "I build platforms for small and mid-sized businesses that work as a quiet, reliable lead channel. No buzzwords. Just results you can measure.",
         "principlesTitle": "Methodology",
         "values": {
@@ -188,7 +188,7 @@
             },
             "performance": {
                 "title": "Performance",
-                "text": "Every millisecond matters—especially for conversion."
+                "text": "Every millisecond matters, especially for conversion."
             },
             "sustainability": {
                 "title": "Sustainability",
@@ -239,7 +239,7 @@
         "benefit2Text": "We'll discuss cost and timeline right away.",
         "benefit3Title": "Clear next steps",
         "benefit3Text": "You'll know exactly what happens next.",
-        "trustBadge": "Your data stays private. No spam—ever.",
+        "trustBadge": "Your data stays private. No spam, ever.",
         "successTitle": "Message sent.",
         "successText": "I'll get back to you shortly.",
         "sendAnother": "Send another"
@@ -294,7 +294,7 @@
         "questions": {
             "cost": {
                 "q": "How much does a new website cost?",
-                "a": "Every project is different. Most sites start around €800. In our first call, we'll define scope, goals, and budget—so you get a realistic, transparent estimate."
+                "a": "Every project is different. Most sites start around €800. In our first call, we'll define scope, goals, and budget, so you get a realistic, transparent estimate."
             },
             "duration": {
                 "q": "How long does the build take?",
@@ -313,7 +313,23 @@
     "seo": {
         "home": {
             "title": "NuVioLabs | Modern Web Design for Local Businesses",
-            "description": "Fast, modern websites for trades, salons, and SMEs—built for clarity, performance, and more inbound requests. Book a free consultation."
+            "description": "Fast, modern websites for trades, salons, and SMEs. Built for clarity, performance, and more inbound requests. Book a free consultation."
+        },
+        "work": {
+            "title": "Projects | NuVio Labs",
+            "description": "Selected web projects by NuVio Labs. Real websites for real businesses, performant, modern, and built to generate inquiries."
+        },
+        "about": {
+            "title": "About NuVio Labs | Axel Schurer",
+            "description": "NuVio Labs is the web design studio of Axel Schurer. Direct collaboration, no agency overhead, digital projects with measurable results."
+        },
+        "services": {
+            "title": "Services | NuVio Labs",
+            "description": "Website launch, redesign, landing pages, and UI components. Clear packages for digital projects with measurable results."
+        },
+        "contact": {
+            "title": "Contact | NuVio Labs",
+            "description": "Request a project or just say hello. Free initial consultation, direct response, and a clear next step."
         },
         "imprint": {
             "title": "Imprint"
@@ -325,7 +341,7 @@
     "services": {
         "eyebrow": "Services",
         "headline": "What I build for you.",
-        "subline": "From first idea to final launch — clear packages for digital projects with measurable results.",
+        "subline": "From first idea to final launch. Clear packages for digital projects with measurable results.",
         "cta": "View all services",
         "items": {
             "launch": {
@@ -338,7 +354,7 @@
             },
             "landing": {
                 "title": "Landing Page",
-                "description": "A focused page for a specific goal — campaign, product, or event. Fast and built for conversion."
+                "description": "A focused page for a specific goal: campaign, product, or event. Fast and built for conversion."
             },
             "ui": {
                 "title": "UI Components & Design System",
@@ -353,12 +369,12 @@
     "process": {
         "eyebrow": "How I work",
         "headline": "How a project comes together.",
-        "subline": "Four clearly defined phases — from the first analysis to the finished product. Transparent, structured, and without surprises.",
+        "subline": "Four clearly defined phases: from the first analysis to the finished product. Transparent, structured, and without surprises.",
         "steps": {
             "understand": {
                 "number": "01",
                 "title": "Understand",
-                "description": "I analyse your goal, your audience, and the context — so the outcome is strategically sound."
+                "description": "I analyse your goal, your audience, and the context, so the outcome is strategically sound."
             },
             "structure": {
                 "number": "02",
@@ -386,8 +402,8 @@
         "story": {
             "eyebrow": "About NuVio Labs",
             "headline": "Less agency. More direct collaboration.",
-            "text1": "I'm Axel — an independent developer and designer. My focus is on digital projects that don't just look good, but perform measurably.",
-            "text2": "No intermediaries, no oversized teams. You work directly with me — from the first idea to the finished product."
+            "text1": "I'm Axel, an independent developer and designer. My focus is on digital projects that don't just look good, but perform measurably.",
+            "text2": "No intermediaries, no oversized teams. You work directly with me, from the first idea to the finished product."
         }
     }
 }

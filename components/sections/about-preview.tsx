@@ -2,6 +2,7 @@ import { getTranslations } from "next-intl/server"
 import { Link } from "@/i18n/navigation"
 import { ArrowRight } from "lucide-react"
 import { SectionWrapper } from "@/components/ui/section-wrapper"
+import Image from "next/image"
 
 export async function AboutPreview() {
     const t = await getTranslations("aboutPage")
@@ -37,10 +38,17 @@ export async function AboutPreview() {
                         </Link>
                     </div>
 
-                    {/* Image placeholder */}
+                    {/* Portrait */}
                     <div className="order-1 md:order-2">
-                        <div className="aspect-[4/5] max-w-sm mx-auto md:mx-0 md:ml-auto rounded-2xl bg-surface border border-border-soft flex items-center justify-center text-text-muted text-sm">
-                            NuVio Labs
+                        <div className="relative aspect-[4/5] max-w-sm mx-auto md:mx-0 md:ml-auto rounded-2xl overflow-hidden border border-border-soft">
+                            <Image
+                                src="/axel-portrait.webp"
+                                alt="Axel Schurer – NuVio Labs"
+                                fill
+                                className="object-cover object-center"
+                                sizes="(min-width: 768px) 384px, 100vw"
+                                priority
+                            />
                         </div>
                     </div>
                 </div>

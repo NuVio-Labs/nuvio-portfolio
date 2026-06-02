@@ -71,7 +71,7 @@ export function ProjectLivePreview({ url, title, previewImage, isLocal = false }
                     </div>
                 </div>
 
-                {/* Preview viewport — fixed 16:10 aspect ratio */}
+                {/* Preview viewport */}
                 <div className="relative aspect-[16/10] w-full overflow-hidden bg-surface-soft">
                     {/* Screenshot always visible as base layer */}
                     <Image
@@ -82,7 +82,7 @@ export function ProjectLivePreview({ url, title, previewImage, isLocal = false }
                         sizes="(min-width: 1280px) 40vw, (min-width: 768px) 50vw, 100vw"
                     />
 
-                    {/* GDPR consent overlay — centered, clean */}
+                    {/* GDPR consent overlay */}
                     {iframeState === "idle" && (
                         <div className="absolute inset-0 z-10 flex items-center justify-center bg-background/60 backdrop-blur-sm">
                             <div className="mx-6 max-w-[320px] rounded-2xl border border-border-soft bg-surface p-6 text-center shadow-md">
@@ -111,7 +111,7 @@ export function ProjectLivePreview({ url, title, previewImage, isLocal = false }
                         </div>
                     )}
 
-                    {/* Live iframe — only mounted when loading/loaded and width is known */}
+                    {/* Live iframe */}
                     {(iframeState === "loading" || iframeState === "loaded") && scale > 0 && (
                         <div
                             className="absolute inset-0 z-20"

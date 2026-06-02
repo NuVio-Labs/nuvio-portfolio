@@ -2,7 +2,6 @@
 
 import { useState } from "react"
 import { useTranslations } from "next-intl"
-import { motion, AnimatePresence } from "framer-motion"
 import { ChevronDown } from "lucide-react"
 import { cn } from "@/lib/utils"
 import { SectionWrapper } from "@/components/ui/section-wrapper"
@@ -52,20 +51,16 @@ export function FAQ() {
                                         />
                                     </button>
 
-                                    <AnimatePresence initial={false}>
-                                        {isOpen && (
-                                            <motion.div
-                                                initial={{ height: 0, opacity: 0 }}
-                                                animate={{ height: "auto", opacity: 1 }}
-                                                exit={{ height: 0, opacity: 0 }}
-                                                transition={{ duration: 0.25, ease: "easeInOut" }}
-                                            >
-                                                <div className="px-6 pb-6 text-sm leading-relaxed text-text-muted">
-                                                    {t(`questions.${key}.a`)}
-                                                </div>
-                                            </motion.div>
-                                        )}
-                                    </AnimatePresence>
+                                    <div
+                                        className="grid transition-[grid-template-rows] duration-250 ease-in-out"
+                                        style={{ gridTemplateRows: isOpen ? "1fr" : "0fr" }}
+                                    >
+                                        <div className="overflow-hidden">
+                                            <div className="px-6 pb-6 text-sm leading-relaxed text-text-muted">
+                                                {t(`questions.${key}.a`)}
+                                            </div>
+                                        </div>
+                                    </div>
                                 </div>
                             )
                         })}

@@ -1,30 +1,47 @@
 "use client"
 
-import { motion, MotionProps } from "framer-motion"
+import { useEffect, useRef, useState } from "react"
 import { cn } from "@/lib/utils"
 
-interface ScrollAnimationProps extends MotionProps {
+interface ScrollAnimationProps {
     children: React.ReactNode
     className?: string
     delay?: number
 }
 
-export function ScrollAnimation({
-    children,
-    className,
-    delay = 0,
-    ...props
-}: ScrollAnimationProps) {
+export function ScrollAnimation({ children, className, delay = 0 }: ScrollAnimationProps) {
+    const ref = useRef<HTMLDivElement>(null)
+    const [visible, setVisible] = useState(false)
+
+    useEffect(() => {
+        const el = ref.current
+        if (!el) return
+
+        const observer = new IntersectionObserver(
+            ([entry]) => {
+                if (entry.isIntersecting) {
+                    setVisible(true)
+                    observer.disconnect()
+                }
+            },
+            { rootMargin: "-40px" }
+        )
+
+        observer.observe(el)
+        return () => observer.disconnect()
+    }, [])
+
     return (
-        <motion.div
-            initial={{ opacity: 0, y: 18 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true, margin: "-40px" }}
-            transition={{ duration: 0.5, delay, ease: "easeOut" }}
+        <div
+            ref={ref}
             className={cn(className)}
-            {...props}
+            style={{
+                opacity: visible ? 1 : 0,
+                transform: visible ? "translateY(0)" : "translateY(18px)",
+                transition: `opacity 0.5s ease-out ${delay}s, transform 0.5s ease-out ${delay}s`,
+            }}
         >
             {children}
-        </motion.div>
+        </div>
     )
 }
