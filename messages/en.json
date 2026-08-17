@@ -12,7 +12,8 @@
         "login": "Log in",
         "switchLanguage": "Switch language",
         "ctaProject": "Start a project",
-        "services": "Services"
+        "services": "Services",
+        "journal": "Journal"
     },
     "hero": {
         "badge": "Available for new projects",
@@ -150,30 +151,12 @@
                 "outcome3": "Fast loading on all devices",
                 "testimonial": "Finally a page that reflects my sound."
             },
-            "nvl-core": {
-                "title": "NVL Core",
-                "description": "Multi-tenant SaaS foundation for scalable business applications.",
-                "problem": "Every client customisation required special-case frontend logic. Not scalable and hard to maintain.",
-                "approach": "A tenant-aware operating core with clean role and permission structures, modular architecture, and structured data logic as the foundation for vertical products.",
-                "outcome1": "Full tenant isolation",
-                "outcome2": "Modular, extensible architecture",
-                "outcome3": "Foundation for vertical SaaS products",
-                "testimonial": "Built the right way structurally, not just functional, but sellable."
-            },
-            "taste": {
-                "title": "Taste",
-                "description": "Personal recipe workspace with shopping lists and favourites management.",
-                "problem": "Recipes were scattered across notes, photos, and different apps. No central, structured solution.",
-                "approach": "A full web app with auth, recipe management, favourites system, and shopping lists built on React 19, Supabase, and Tailwind CSS 4.",
-                "outcome1": "Central recipe management with search and filter",
-                "outcome2": "Aggregated shopping lists from recipes",
-                "outcome3": "Full auth protection with RLS",
-                "testimonial": "A clean product I use myself every day. The best test there is."
+            "physio-athlete": {
+                "title": "Physio Athlete by Lea",
+                "description": "One-page site for a mobile sports physiotherapy practice. Clear service overview, local search visibility and a direct path to online booking."
             }
         },
-        "ctaGeneric": "Request this project",
-        "privateBadge": "Internal Project",
-        "demoOnRequest": "Demo on request"
+        "ctaGeneric": "Request this project"
     },
     "about": {
         "label": "About",
@@ -282,9 +265,11 @@
             "ssl": "For security reasons and to protect the transmission of confidential content, such as inquiries you send to us, this site uses SSL or TLS encryption.",
             "logfilesTitle": "5. Server Log Files",
             "logfiles": "The provider of the pages automatically collects and stores information in server log files (e.g. browser type/version, OS, referrer URL, host name, time, IP address). These data are not combined with other data sources.\nThe basis for data processing is Art. 6 (1) (f) GDPR.",
-            "rightsTitle": "6. Data Subject Rights (Art. 15–21 GDPR)",
+            "cookiesTitle": "6. Cookies",
+            "cookies": "This website uses strictly necessary cookies only.\n\nThis applies in particular to storing the selected language version of the website. This storage is required in order to provide the function requested by the user.\n\nThe legal basis is Section 25 (2) TDDDG in conjunction with Art. 6 (1) (f) GDPR.\n\nNo analytics, marketing or tracking cookies are used.",
+            "rightsTitle": "7. Data Subject Rights (Art. 15–21 GDPR)",
             "rights": "You have the right at any time to free information about your stored personal data, its origin and recipient and the purpose of data processing, and a right to correction, blocking or deletion of this data. For questions you can contact us at any time.",
-            "complaintTitle": "7. Right of Appeal to the Supervisory Authority",
+            "complaintTitle": "8. Right of Appeal to the Supervisory Authority",
             "complaint": "In the event of violations of the GDPR, data subjects have the right to lodge a complaint with a supervisory authority."
         }
     },
@@ -364,6 +349,17 @@
                 "title": "Maintenance & Development",
                 "description": "Ongoing technical support, updates, and targeted enhancements for existing projects."
             }
+        },
+        "page": {
+            "hero": {
+                "eyebrow": "Services",
+                "headline": "What I build for you.",
+                "subline": "Clearly defined packages for digital projects: from a new website to ongoing development."
+            },
+            "cta": {
+                "headline": "Ready to start your project?",
+                "button": "Start a project"
+            }
         }
     },
     "process": {
@@ -394,16 +390,127 @@
         }
     },
     "aboutPage": {
-        "cta": {
-            "headline": "Ready for a project that actually works?",
-            "subline": "Together we build a digital presence that earns trust, guides visitors, and generates real inquiries.",
-            "button": "Request a project"
+        "hero": {
+            "eyebrow": "About",
+            "headline": "The person behind NuVio Labs.",
+            "subline": "Independent, directly reachable and committed to finishing digital projects properly."
         },
         "story": {
             "eyebrow": "About NuVio Labs",
             "headline": "Less agency. More direct collaboration.",
             "text1": "I'm Axel, an independent developer and designer. My focus is on digital projects that don't just look good, but perform measurably.",
             "text2": "No intermediaries, no oversized teams. You work directly with me, from the first idea to the finished product."
+        },
+        "approach": {
+            "eyebrow": "How I work",
+            "headline": "What I focus on in every project.",
+            "items": {
+                "clarity": {
+                    "title": "Clarity over effect",
+                    "text": "Structure and content come first. Design supports the message instead of burying it."
+                },
+                "quality": {
+                    "title": "Craft, not templates",
+                    "text": "Clean, maintainable code without unnecessary dependencies. Your site stays extensible long term."
+                },
+                "performance": {
+                    "title": "Measurable performance",
+                    "text": "Load time, accessibility and search visibility are part of the build, not an afterthought."
+                },
+                "partnership": {
+                    "title": "Direct collaboration",
+                    "text": "One point of contact from the first idea until after launch. Short paths, clear agreements."
+                }
+            }
+        },
+        "cta": {
+            "headline": "Ready for a project that actually works?",
+            "subline": "Together we build a digital presence that earns trust, guides visitors, and generates real inquiries.",
+            "button": "Request a project"
+        }
+    },
+    "contactPage": {
+        "hero": {
+            "eyebrow": "Contact",
+            "headline": "Let's talk about your project.",
+            "subline": "A new website, a redesign or just a first idea: tell me briefly what you need. I'll get back to you within 24 hours."
+        },
+        "form": {
+            "labelName": "Name",
+            "labelEmail": "Email",
+            "labelCompany": "Company",
+            "labelType": "Project type",
+            "labelMessage": "Your project",
+            "placeholderName": "Your name",
+            "placeholderEmail": "you@example.com",
+            "placeholderCompany": "Optional",
+            "placeholderMessage": "What is it about? Bullet points are perfectly fine.",
+            "typeOptions": {
+                "launch": "Website launch",
+                "redesign": "Redesign & relaunch",
+                "landing": "Landing page",
+                "ui": "UI components & design system",
+                "other": "Something else"
+            },
+            "privacy": "By submitting, you agree that your details will be processed to handle your enquiry. They will not be shared with third parties.",
+            "submit": "Send enquiry",
+            "submitting": "Sending…",
+            "error": "Something went wrong. Please try again.",
+            "successTitle": "Your enquiry arrived.",
+            "successText": "Thank you. I'll get back to you within 24 hours.",
+            "sendAnother": "Send another message"
+        }
+    },
+    "workPage": {
+        "hero": {
+            "eyebrow": "Projects",
+            "headline": "Work with a clear direction.",
+            "subline": "From local service businesses to digital products. Every project follows a clear brief: look better, read clearer, load faster."
+        },
+        "cta": "Visit website",
+        "ctaContact": "Start a project"
+    },
+    "journal": {
+        "nav": "Journal",
+        "readingTime": "{minutes} min read",
+        "updatedOn": "updated on",
+        "related": "Keep reading",
+        "backToIndex": "All articles",
+        "breadcrumb": {
+            "label": "Breadcrumb",
+            "home": "Home"
+        },
+        "toc": {
+            "title": "Contents"
+        },
+        "callouts": {
+            "info": "Note",
+            "tip": "Tip",
+            "important": "Important"
+        },
+        "categories": {
+            "webdesign": "Web design",
+            "performance": "Performance",
+            "ux": "User experience",
+            "development": "Development",
+            "seo": "SEO",
+            "case-study": "Case study",
+            "behind-the-build": "Behind the build"
+        },
+        "cta": {
+            "eyebrow": "Your website can do more.",
+            "headline": "Design, performance and user guidance should work together.",
+            "subline": "If you want to know where your site stands today and what is worth fixing: tell me briefly what it is about.",
+            "button": "Discuss your website",
+            "href": "/contact"
+        },
+        "index": {
+            "eyebrow": "Journal",
+            "headline": "Notes on web design, performance and user guidance.",
+            "subline": "What actually makes a website good, beyond looks. Practical, without buzzwords.",
+            "empty": "No articles published in this language yet.",
+            "metaTitle": "Journal | NuVio Labs",
+            "metaDescription": "Articles on web design, web performance and user experience. Practical perspective from NuVio Labs."
         }
     }
 }

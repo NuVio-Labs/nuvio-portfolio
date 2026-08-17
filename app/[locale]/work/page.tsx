@@ -16,6 +16,7 @@ export default async function WorkPage({ params }: { params: Promise<{ locale: s
     setRequestLocale(locale)
 
     const t = await getTranslations("workPage")
+    const tWork = await getTranslations("work")
 
     return (
         <main className="pt-20 md:pt-24">
@@ -48,6 +49,8 @@ export default async function WorkPage({ params }: { params: Promise<{ locale: s
                                 key={project.id}
                                 project={project}
                                 index={i}
+                                title={tWork(`projects.${project.id}.title`)}
+                                description={tWork(`projects.${project.id}.description`)}
                                 ctaLabel={t("cta")}
                             />
                         ))}
@@ -59,7 +62,7 @@ export default async function WorkPage({ params }: { params: Promise<{ locale: s
                             href="/contact"
                             className="inline-flex items-center px-8 py-4 rounded-full bg-accent text-surface text-base font-semibold hover:bg-[var(--nv-accent-hover)] transition-all duration-200 active:scale-[0.98]"
                         >
-                            {t("cta")}
+                            {t("ctaContact")}
                         </Link>
                     </div>
                 </div>

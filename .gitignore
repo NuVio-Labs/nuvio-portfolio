@@ -5,3 +5,13 @@ node_modules
 .env.*.local
 *.tsbuildinfo
 next-env.d.ts
+
+# Lint- und Werkzeug-Ausgaben (jederzeit reproduzierbar)
+lint*.txt
+lint*.log
+eslint-*.txt
+eslint-*.log
+eslint-report.json
+
+# Design-Quelldateien gehoeren nicht ins oeffentlich ausgelieferte public/
+*.psd

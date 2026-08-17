@@ -12,7 +12,8 @@
         "login": "Anmelden",
         "switchLanguage": "Sprache wechseln",
         "ctaProject": "Projekt anfragen",
-        "services": "Leistungen"
+        "services": "Leistungen",
+        "journal": "Journal"
     },
     "hero": {
         "badge": "Verfügbar für neue Projekte",
@@ -150,30 +151,12 @@
                 "outcome3": "Schnell ladend auf allen Geräten",
                 "testimonial": "Endlich habe ich eine Seite, die meinen Sound widerspiegelt."
             },
-            "nvl-core": {
-                "title": "NVL Core",
-                "description": "Multi-Tenant SaaS-Fundament für skalierbare Unternehmensanwendungen.",
-                "problem": "Für jede Kundenanpassung wurde bisher Sonderlogik im Frontend gebaut. Nicht skalierbar und schwer wartbar.",
-                "approach": "Ein mandantenfähiger Betriebskern mit sauberer Rollen- und Rechtestruktur, modularer Architektur und strukturierter Datenlogik als Basis für vertikale Produkte.",
-                "outcome1": "Vollständige Mandantentrennung",
-                "outcome2": "Modulare, erweiterbare Architektur",
-                "outcome3": "Fundament für vertikale SaaS-Produkte",
-                "testimonial": "Strukturell richtig aufgebaut, nicht nur funktional, sondern verkaufbar."
-            },
-            "taste": {
-                "title": "Taste",
-                "description": "Persönlicher Rezept-Workspace mit Einkaufslisten und Favoritenverwaltung.",
-                "problem": "Rezepte lagen verstreut in Notizen, Fotos und verschiedenen Apps. Keine zentrale, strukturierte Lösung.",
-                "approach": "Eine vollständige Web-App mit Auth, Rezeptverwaltung, Favoritensystem und Einkaufslisten auf Basis von React 19, Supabase und Tailwind CSS 4.",
-                "outcome1": "Zentrale Rezeptverwaltung mit Suche und Filter",
-                "outcome2": "Aggregierte Einkaufslisten aus Rezepten",
-                "outcome3": "Vollständige Auth-Absicherung mit RLS",
-                "testimonial": "Ein sauberes Produkt, das ich täglich selbst nutze. Der beste Test."
+            "physio-athlete": {
+                "title": "Physio Athlete by Lea",
+                "description": "Onepager für eine mobile Sportphysiotherapie. Klare Leistungsübersicht, lokale Auffindbarkeit und ein direkter Weg zur Terminbuchung."
             }
         },
-        "ctaGeneric": "Projekt anfragen",
-        "privateBadge": "Internes Projekt",
-        "demoOnRequest": "Demo auf Anfrage"
+        "ctaGeneric": "Projekt anfragen"
     },
     "about": {
         "label": "The Architect",
@@ -282,9 +265,11 @@
             "ssl": "Diese Seite nutzt aus Sicherheitsgründen und zum Schutz der Übertragung vertraulicher Inhalte, wie zum Beispiel der Anfragen, die Sie an uns senden, eine SSL- bzw. TLS-Verschlüsselung.",
             "logfilesTitle": "5. Server-Log-Dateien",
             "logfiles": "Der Provider der Seiten erfasst und speichert automatisch Informationen in so genannten Server-Log-Dateien, die Ihr Browser automatisch an uns übermittelt (z.B. Browsertyp/-version, Betriebssystem, Referrer URL, Hostname des zugreifenden Rechners, Uhrzeit, IP-Adresse). Eine Zusammenführung dieser Daten mit anderen Datenquellen wird nicht vorgenommen.\nDie Erfassung dieser Daten erfolgt auf Grundlage von Art. 6 Abs. 1 lit. f DSGVO.",
-            "rightsTitle": "6. Betroffenenrechte (Art. 15–21 DSGVO)",
+            "cookiesTitle": "6. Cookies",
+            "cookies": "Diese Website verwendet ausschließlich technisch notwendige Cookies.\n\nDies betrifft insbesondere die Speicherung der gewählten Sprachversion der Website. Diese Speicherung ist erforderlich, um die vom Nutzer gewünschte Funktion bereitzustellen.\n\nRechtsgrundlage ist § 25 Abs. 2 TDDDG in Verbindung mit Art. 6 Abs. 1 lit. f DSGVO.\n\nAnalyse-, Marketing- oder Tracking-Cookies werden nicht eingesetzt.",
+            "rightsTitle": "7. Betroffenenrechte (Art. 15–21 DSGVO)",
             "rights": "Sie haben das Recht auf unentgeltliche Auskunft über Ihre gespeicherten personenbezogenen Daten, deren Herkunft/Empfänger und Zweck der Verarbeitung, sowie ein Recht auf Berichtigung, Sperrung oder Löschung dieser Daten. Hierzu sowie zu weiteren Fragen können Sie sich jederzeit an uns wenden.",
-            "complaintTitle": "7. Beschwerderecht bei der Aufsichtsbehörde",
+            "complaintTitle": "8. Beschwerderecht bei der Aufsichtsbehörde",
             "complaint": "Im Falle von Verstößen gegen die DSGVO steht den Betroffenen ein Beschwerderecht bei einer zuständigen Aufsichtsbehörde zu. Das Beschwerderecht besteht unbeschadet anderweitiger Rechtsbehelfe."
         }
     },
@@ -364,6 +349,17 @@
                 "title": "Pflege & Weiterentwicklung",
                 "description": "Laufende technische Betreuung, Updates und gezielte Erweiterungen für bestehende Projekte."
             }
+        },
+        "page": {
+            "hero": {
+                "eyebrow": "Leistungen",
+                "headline": "Was ich für Sie umsetze.",
+                "subline": "Klar umrissene Pakete für digitale Projekte: von der neuen Website bis zur laufenden Weiterentwicklung."
+            },
+            "cta": {
+                "headline": "Bereit, Ihr Projekt zu starten?",
+                "button": "Projekt anfragen"
+            }
         }
     },
     "process": {
@@ -394,16 +390,127 @@
         }
     },
     "aboutPage": {
-        "cta": {
-            "headline": "Bereit für ein Projekt, das wirklich funktioniert?",
-            "subline": "Gemeinsam entwickeln wir eine digitale Präsenz, die Vertrauen aufbaut, Besucher führt und echte Anfragen generiert.",
-            "button": "Projekt anfragen"
+        "hero": {
+            "eyebrow": "Über mich",
+            "headline": "Der Mensch hinter NuVio Labs.",
+            "subline": "Unabhängig, direkt erreichbar und mit dem Anspruch, digitale Projekte sauber zu Ende zu bringen."
         },
         "story": {
             "eyebrow": "Über NuVio Labs",
             "headline": "Weniger Agentur. Mehr direkte Zusammenarbeit.",
             "text1": "Ich bin Axel, unabhängiger Entwickler und Designer. Mein Fokus liegt auf digitalen Projekten, die nicht nur gut aussehen, sondern messbar performen.",
             "text2": "Keine Zwischenstellen, keine überdimensionierten Teams. Sie arbeiten direkt mit mir, von der ersten Idee bis zum fertigen Produkt."
+        },
+        "approach": {
+            "eyebrow": "Arbeitsweise",
+            "headline": "Worauf ich bei jedem Projekt achte.",
+            "items": {
+                "clarity": {
+                    "title": "Klarheit vor Effekt",
+                    "text": "Struktur und Inhalt kommen zuerst. Gestaltung unterstützt die Aussage, statt sie zu überdecken."
+                },
+                "quality": {
+                    "title": "Handwerk statt Baukasten",
+                    "text": "Sauberer, wartbarer Code ohne unnötige Abhängigkeiten. Ihre Seite bleibt langfristig erweiterbar."
+                },
+                "performance": {
+                    "title": "Messbare Performance",
+                    "text": "Ladezeit, Zugänglichkeit und Auffindbarkeit sind Teil der Umsetzung, kein nachträglicher Zusatz."
+                },
+                "partnership": {
+                    "title": "Direkte Zusammenarbeit",
+                    "text": "Ein Ansprechpartner von der ersten Idee bis nach dem Launch. Kurze Wege, klare Absprachen."
+                }
+            }
+        },
+        "cta": {
+            "headline": "Bereit für ein Projekt, das wirklich funktioniert?",
+            "subline": "Gemeinsam entwickeln wir eine digitale Präsenz, die Vertrauen aufbaut, Besucher führt und echte Anfragen generiert.",
+            "button": "Projekt anfragen"
+        }
+    },
+    "contactPage": {
+        "hero": {
+            "eyebrow": "Kontakt",
+            "headline": "Lassen Sie uns über Ihr Projekt sprechen.",
+            "subline": "Ob neue Website, Redesign oder eine erste Idee: Beschreiben Sie kurz, was Sie brauchen. Ich melde mich innerhalb von 24 Stunden."
+        },
+        "form": {
+            "labelName": "Name",
+            "labelEmail": "E-Mail",
+            "labelCompany": "Unternehmen",
+            "labelType": "Art des Projekts",
+            "labelMessage": "Ihr Projekt",
+            "placeholderName": "Ihr Name",
+            "placeholderEmail": "ihre@email.de",
+            "placeholderCompany": "Optional",
+            "placeholderMessage": "Worum geht es? Stichpunkte genügen völlig.",
+            "typeOptions": {
+                "launch": "Website Launch",
+                "redesign": "Redesign & Relaunch",
+                "landing": "Landingpage",
+                "ui": "UI-Komponenten & Design System",
+                "other": "Etwas anderes"
+            },
+            "privacy": "Mit dem Absenden erklären Sie sich einverstanden, dass Ihre Angaben zur Bearbeitung der Anfrage verarbeitet werden. Eine Weitergabe an Dritte erfolgt nicht.",
+            "submit": "Anfrage senden",
+            "submitting": "Wird gesendet…",
+            "error": "Etwas ist schiefgelaufen. Bitte versuchen Sie es erneut.",
+            "successTitle": "Anfrage ist angekommen.",
+            "successText": "Vielen Dank. Ich melde mich innerhalb von 24 Stunden bei Ihnen.",
+            "sendAnother": "Weitere Nachricht senden"
+        }
+    },
+    "workPage": {
+        "hero": {
+            "eyebrow": "Projekte",
+            "headline": "Arbeiten mit klarer Richtung.",
+            "subline": "Von lokalen Dienstleistern bis zu digitalen Produkten. Jedes Projekt folgt einer klaren Aufgabe: besser aussehen, verständlicher werden, schneller laden."
+        },
+        "cta": "Website ansehen",
+        "ctaContact": "Projekt anfragen"
+    },
+    "journal": {
+        "nav": "Journal",
+        "readingTime": "{minutes} Min. Lesezeit",
+        "updatedOn": "aktualisiert am",
+        "related": "Weiterlesen",
+        "backToIndex": "Alle Artikel",
+        "breadcrumb": {
+            "label": "Brotkrumennavigation",
+            "home": "Start"
+        },
+        "toc": {
+            "title": "Inhalt"
+        },
+        "callouts": {
+            "info": "Hinweis",
+            "tip": "Tipp",
+            "important": "Wichtig"
+        },
+        "categories": {
+            "webdesign": "Webdesign",
+            "performance": "Performance",
+            "ux": "User Experience",
+            "development": "Development",
+            "seo": "SEO",
+            "case-study": "Case Study",
+            "behind-the-build": "Behind the Build"
+        },
+        "cta": {
+            "eyebrow": "Deine Website kann mehr.",
+            "headline": "Design, Performance und Nutzerführung sollten zusammenarbeiten.",
+            "subline": "Wenn Sie wissen wollen, wo Ihre Website heute steht und was sich lohnt: Schreiben Sie mir kurz, worum es geht.",
+            "button": "Website unverbindlich besprechen",
+            "href": "/contact"
+        },
+        "index": {
+            "eyebrow": "Journal",
+            "headline": "Notizen zu Webdesign, Performance und Nutzerführung.",
+            "subline": "Was eine Website wirklich gut macht, jenseits von Optik. Praxisnah, ohne Buzzwords.",
+            "empty": "In dieser Sprache sind noch keine Artikel veröffentlicht.",
+            "metaTitle": "Journal | NuVio Labs",
+            "metaDescription": "Artikel zu Webdesign, Web Performance und User Experience. Praxisnahe Einordnung von NuVio Labs."
         }
     }
 }

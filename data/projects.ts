@@ -48,5 +48,16 @@ export const projects: Project[] = [
             solution: "Built a fully responsive, bilingual website with internationalization (i18n) support. Focused on warm, approachable design that matches the salon's brand. Included clear service descriptions, pricing, image galleries, and easy-to-find contact information.",
             result: "The salon now has a professional bilingual website that reduces repetitive phone inquiries about services and prices. Customers can browse offerings in their preferred language and find all the information they need to book an appointment."
         }
+    },
+    {
+        id: "physio-athlete",
+        title: "Physio Athlete by Lea",
+        description: "One-page site for a mobile sports physiotherapy practice. Clear service overview, local search visibility and a direct path to online booking.",
+        category: "Web",
+        image: "/physio.webp",
+        previewImage: "/previews/physio.webp",
+        tags: ["React", "TypeScript", "Vite", "Tailwind CSS", "SEO"],
+        link: "https://physio-athlete.de",
+        featured: true
     }
 ]

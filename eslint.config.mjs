@@ -12,6 +12,11 @@ const eslintConfig = defineConfig([
     "out/**",
     "build/**",
     "next-env.d.ts",
+    // Werkzeug-Verzeichnisse: fremder Code, nicht Teil der Website.
+    ".claude/**",
+    ".cursor/**",
+    // Mitgelieferte Demo-Seiten werden nicht von uns gepflegt.
+    "public/demos/**",
   ]),
 ]);
 

@@ -19,6 +19,10 @@ const localeCodes: Record<string, string> = {
     nl: "NL",
 }
 
+function persistLocaleCookie(newLocale: string) {
+    document.cookie = `NEXT_LOCALE=${newLocale};path=/;max-age=31536000;SameSite=Lax`
+}
+
 export function LanguageSwitcher() {
     const locale = useLocale()
     const pathname = usePathname()
@@ -41,9 +45,7 @@ export function LanguageSwitcher() {
         segments[1] = newLocale
         const newPath = segments.join("/")
 
-        if (typeof document !== "undefined") {
-            document.cookie = `NEXT_LOCALE=${newLocale};path=/;max-age=31536000;SameSite=Lax`
-        }
+        persistLocaleCookie(newLocale)
 
         router.push(newPath)
         setIsOpen(false)

@@ -163,7 +163,7 @@ export function ContactForm() {
 
             {status === "error" && (
                 <p className="text-sm text-destructive mt-2" role="alert">
-                    Etwas ist schiefgelaufen. Bitte versuche es erneut.
+                    {t("error")}
                 </p>
             )}
         </form>

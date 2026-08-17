@@ -5,10 +5,13 @@ import type { Project } from "@/data/projects"
 interface ProjectCardProps {
     project: Project
     index: number
+    /** Übersetzter Titel — der Wert aus `project` ist nur ein Fallback für die Bild-Alt. */
+    title: string
+    description: string
     ctaLabel: string
 }
 
-export function ProjectCard({ project, index, ctaLabel }: ProjectCardProps) {
+export function ProjectCard({ project, index, title, description, ctaLabel }: ProjectCardProps) {
     return (
         <article className="group bg-surface rounded-2xl overflow-hidden border border-border-soft hover:border-accent/40 hover:shadow-lg transition-all duration-300">
             {/* Image / Mockup */}
@@ -16,14 +19,14 @@ export function ProjectCard({ project, index, ctaLabel }: ProjectCardProps) {
                 {project.image ? (
                     <Image
                         src={project.image}
-                        alt={project.title}
+                        alt={title}
                         fill
                         sizes="(min-width: 1024px) 50vw, 90vw"
                         className="object-cover object-top group-hover:scale-[1.02] transition-transform duration-500"
                     />
                 ) : (
                     <div className="absolute inset-0 flex items-center justify-center text-text-muted text-sm">
-                        {project.title}
+                        {title}
                     </div>
                 )}
             </div>
@@ -38,10 +41,10 @@ export function ProjectCard({ project, index, ctaLabel }: ProjectCardProps) {
                 </div>
 
                 <h3 className="font-heading font-semibold text-text-primary text-xl mb-3">
-                    {project.title}
+                    {title}
                 </h3>
                 <p className="text-text-muted text-sm leading-relaxed mb-5">
-                    {project.description}
+                    {description}
                 </p>
 
                 {/* Tags */}

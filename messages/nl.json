@@ -12,7 +12,8 @@
         "login": "Inloggen",
         "switchLanguage": "Taal wisselen",
         "ctaProject": "Project aanvragen",
-        "services": "Diensten"
+        "services": "Diensten",
+        "journal": "Journal"
     },
     "hero": {
         "badge": "Beschikbaar voor nieuwe projecten",
@@ -150,30 +151,12 @@
                 "outcome3": "Snel ladend op alle apparaten",
                 "testimonial": "Eindelijk een pagina die mijn geluid weerspiegelt."
             },
-            "nvl-core": {
-                "title": "NVL Core",
-                "description": "Multi-tenant SaaS-fundament voor schaalbare bedrijfsapplicaties.",
-                "problem": "Elke klantaanpassing vereiste speciale frontendlogica. Niet schaalbaar en moeilijk te onderhouden.",
-                "approach": "Een tenantbewuste operationele kern met een schone rol- en rechtenstructuur, modulaire architectuur en gestructureerde datalogica als basis voor verticale producten.",
-                "outcome1": "Volledige tenantscheiding",
-                "outcome2": "Modulaire, uitbreidbare architectuur",
-                "outcome3": "Fundament voor verticale SaaS-producten",
-                "testimonial": "Structureel goed opgebouwd, niet alleen functioneel, maar ook verkoopbaar."
-            },
-            "taste": {
-                "title": "Taste",
-                "description": "Persoonlijke receptenwerkruimte met boodschappenlijsten en favorietenbeheer.",
-                "problem": "Recepten lagen verspreid over notities, foto’s en verschillende apps. Geen centrale, gestructureerde oplossing.",
-                "approach": "Een volledige web-app met auth, receptbeheer, favorietensysteem en boodschappenlijsten gebouwd op React 19, Supabase en Tailwind CSS 4.",
-                "outcome1": "Centraal receptbeheer met zoeken en filteren",
-                "outcome2": "Geaggregeerde boodschappenlijsten uit recepten",
-                "outcome3": "Volledige auth-beveiliging met RLS",
-                "testimonial": "Een strak product dat ik zelf dagelijks gebruik. De beste test die er is."
+            "physio-athlete": {
+                "title": "Physio Athlete by Lea",
+                "description": "Onepager voor een mobiele sportfysiotherapie. Helder dienstenoverzicht, lokale vindbaarheid en een directe weg naar online boeken."
             }
         },
-        "ctaGeneric": "Project aanvragen",
-        "privateBadge": "Intern project",
-        "demoOnRequest": "Demo op aanvraag"
+        "ctaGeneric": "Project aanvragen"
     },
     "about": {
         "label": "Over",
@@ -272,18 +255,18 @@
         "privacy": {
             "title": "Privacybeleid",
             "intro": "Wij nemen de bescherming van uw persoonsgegevens zeer serieus. Wij behandelen uw gegevens vertrouwelijk en in overeenstemming met de wettelijke voorschriften inzake gegevensbescherming (in het bijzonder de AVG) en dit privacybeleid.",
-            "responsibleTitle": "1. Verantwoordelijke Instantie",
-            "responsible": "De verantwoordelijke voor de gegevensverwerking op deze website is:\n\nAxel Schurer\nNuVioLabs\nNimwegerstraße 3\n47559 Kranenburg\nDuitsland\n\nE-mail: contact@nuviolabs.de",
             "hostingTitle": "2. Hosting",
             "hosting": "Onze website wordt gehost door Vercel Inc., 340 S Lemon Ave #4133, Walnut, CA 91789, VS.\n\nPersoonsgegevens die op deze website worden verzameld, worden verwerkt op de servers van Vercel. Hiertoe kunnen met name IP-adressen, technische toegangsgegevens en communicatiegegevens behoren.\n\nDe gegevensoverdracht naar de VS is gebaseerd op de EU-modelcontractbepalingen in overeenstemming met Art. 46 AVG.\n\nMeer informatie over gegevensbescherming bij Vercel vindt u op:\nhttps://vercel.com/legal/privacy-policy\n\nDe wettelijke basis voor verwerking is Art. 6 (1) (f) AVG (gerechtvaardigd belang bij een veilige en efficiënte werking van de website).",
-            "logfilesTitle": "3. Serverlogbestanden",
-            "logfiles": "Bij een bezoek aan deze website wordt automatisch informatie verzameld door de hostingprovider en opgeslagen in zogenaamde serverlogbestanden. Dit zijn in het bijzonder:\n\n- Browsertype en browserversie\n- Gebruikt besturingssysteem\n- Referrer URL\n- Hostnaam van de toegangscomputer\n- Tijdstip van de serveraanvraag\n- IP-adres\n\nDeze gegevens dienen voor de technische veiligheid, stabiliteit en optimalisatie van de website.\n\nDeze gegevens worden niet samengevoegd met andere gegevensbronnen.\n\nDe opslag vindt plaats voor maximaal 7 dagen en wordt daarna automatisch verwijderd.\n\nDe wettelijke basis is Art. 6 (1) (f) AVG.",
             "contactFormTitle": "4. Contactformulier",
             "contactForm": "Als u ons via het contactformulier aanvragen stuurt, worden uw gegevens uit het formulier inclusief de contactgegevens die u daar hebt opgegeven verwerkt voor de verwerking van de aanvraag en in het geval van vervolgvragen.\n\nDe e-mails worden verzonden via de dienst \"Resend\", Resend Inc., 2261 Market Street #5039, San Francisco, CA 94114, VS.\n\nDe gegevensoverdracht naar de VS is gebaseerd op de EU-modelcontractbepalingen in overeenstemming met Art. 46 AVG.\n\nDe verwerking vindt plaats op basis van Art. 6 (1) (b) AVG (contractinitiatie of verwerking van uw aanvraag).\n\nDe door u ingevoerde gegevens blijven bij ons totdat het doel voor gegevensopslag niet meer van toepassing is of u ons verzoekt deze te verwijderen, mits er geen wettelijke bewaarplichten bestaan.",
+            "responsibleTitle": "1. Verantwoordelijke Instantie",
+            "responsible": "De verantwoordelijke voor de gegevensverwerking op deze website is:\n\nAxel Schurer\nNuVioLabs\nNimwegerstraße 3\n47559 Kranenburg\nDuitsland\n\nE-mail: contact@nuviolabs.de",
             "sslTitle": "5. SSL/TLS-versleuteling",
             "ssl": "Om veiligheidsredenen en ter bescherming van de overdracht van vertrouwelijke inhoud maakt deze website gebruik van een SSL- of TLS-versleuteling. U herkent een versleutelde verbinding aan de \"https://\" adresbalk van uw browser.",
+            "logfilesTitle": "3. Serverlogbestanden",
+            "logfiles": "Bij een bezoek aan deze website wordt automatisch informatie verzameld door de hostingprovider en opgeslagen in zogenaamde serverlogbestanden. Dit zijn in het bijzonder:\n\n- Browsertype en browserversie\n- Gebruikt besturingssysteem\n- Referrer URL\n- Hostnaam van de toegangscomputer\n- Tijdstip van de serveraanvraag\n- IP-adres\n\nDeze gegevens dienen voor de technische veiligheid, stabiliteit en optimalisatie van de website.\n\nDeze gegevens worden niet samengevoegd met andere gegevensbronnen.\n\nDe opslag vindt plaats voor maximaal 7 dagen en wordt daarna automatisch verwijderd.\n\nDe wettelijke basis is Art. 6 (1) (f) AVG.",
             "cookiesTitle": "6. Cookies",
-            "cookies": "Deze website maakt uitsluitend gebruik van technisch noodzakelijke cookies.\n\nDit omvat met name het opslaan van de geselecteerde taalversie van de website. Deze opslag is noodzakelijk om de door de gebruiker gevraagde functie te bieden.\n\nDe wettelijke basis is § 25 (2) TTDSG in combinatie met Art. 6 (1) (f) AVG.\n\nEr worden geen analyse-, marketing- of trackingcookies gebruikt.",
+            "cookies": "Deze website maakt uitsluitend gebruik van technisch noodzakelijke cookies.\n\nDit omvat met name het opslaan van de geselecteerde taalversie van de website. Deze opslag is noodzakelijk om de door de gebruiker gevraagde functie te bieden.\n\nDe wettelijke basis is § 25 (2) TDDDG in combinatie met Art. 6 (1) (f) AVG.\n\nEr worden geen analyse-, marketing- of trackingcookies gebruikt.",
             "rightsTitle": "7. Uw Rechten volgens Art. 15–21 AVG",
             "rights": "U heeft het recht:\n\n- op informatie over uw opgeslagen persoonsgegevens (Art. 15 AVG)\n- op correctie van onjuiste gegevens (Art. 16 AVG)\n- op verwijdering van uw gegevens (Art. 17 AVG)\n- op beperking van de verwerking (Art. 18 AVG)\n- op gegevensoverdraagbaarheid (Art. 20 AVG)\n- op bezwaar tegen de verwerking (Art. 21 AVG)\n\nOm uw rechten uit te oefenen, kunt u te allen tijde contact met ons opnemen.",
             "complaintTitle": "8. Recht op klacht bij een toezichthoudende autoriteit",
@@ -366,6 +349,17 @@
                 "title": "Beheer & Doorontwikkeling",
                 "description": "Doorlopende technische ondersteuning, updates en gerichte uitbreidingen voor bestaande projecten."
             }
+        },
+        "page": {
+            "hero": {
+                "eyebrow": "Diensten",
+                "headline": "Wat ik voor u bouw.",
+                "subline": "Duidelijk afgebakende pakketten voor digitale projecten: van een nieuwe website tot doorlopende doorontwikkeling."
+            },
+            "cta": {
+                "headline": "Klaar om uw project te starten?",
+                "button": "Project aanvragen"
+            }
         }
     },
     "process": {
@@ -396,16 +390,127 @@
         }
     },
     "aboutPage": {
-        "cta": {
-            "headline": "Klaar voor een project dat echt werkt?",
-            "subline": "Samen bouwen we een digitale aanwezigheid die vertrouwen wekt, bezoekers stuurt en echte aanvragen genereert.",
-            "button": "Project aanvragen"
+        "hero": {
+            "eyebrow": "Over mij",
+            "headline": "De mens achter NuVio Labs.",
+            "subline": "Onafhankelijk, direct bereikbaar en met de ambitie om digitale projecten netjes af te ronden."
         },
         "story": {
             "eyebrow": "Over NuVio Labs",
             "headline": "Minder bureau. Meer directe samenwerking.",
             "text1": "Ik ben Axel, onafhankelijk ontwikkelaar en ontwerper. Mijn focus ligt op digitale projecten die er niet alleen goed uitzien, maar ook meetbaar presteren.",
             "text2": "Geen tussenpersonen, geen overmatige teams. U werkt rechtstreeks met mij, van het eerste idee tot het eindproduct."
+        },
+        "approach": {
+            "eyebrow": "Werkwijze",
+            "headline": "Waar ik bij elk project op let.",
+            "items": {
+                "clarity": {
+                    "title": "Helderheid boven effect",
+                    "text": "Structuur en inhoud komen eerst. Vormgeving ondersteunt de boodschap in plaats van die te overstemmen."
+                },
+                "quality": {
+                    "title": "Vakwerk, geen bouwpakket",
+                    "text": "Schone, onderhoudbare code zonder onnodige afhankelijkheden. Uw site blijft op lange termijn uitbreidbaar."
+                },
+                "performance": {
+                    "title": "Meetbare performance",
+                    "text": "Laadtijd, toegankelijkheid en vindbaarheid horen bij de uitvoering, niet als bijzaak achteraf."
+                },
+                "partnership": {
+                    "title": "Directe samenwerking",
+                    "text": "Eén aanspreekpunt van het eerste idee tot na de lancering. Korte lijnen, duidelijke afspraken."
+                }
+            }
+        },
+        "cta": {
+            "headline": "Klaar voor een project dat echt werkt?",
+            "subline": "Samen bouwen we een digitale aanwezigheid die vertrouwen wekt, bezoekers stuurt en echte aanvragen genereert.",
+            "button": "Project aanvragen"
+        }
+    },
+    "contactPage": {
+        "hero": {
+            "eyebrow": "Contact",
+            "headline": "Laten we het over uw project hebben.",
+            "subline": "Een nieuwe website, een redesign of gewoon een eerste idee: beschrijf kort wat u nodig heeft. Ik reageer binnen 24 uur."
+        },
+        "form": {
+            "labelName": "Naam",
+            "labelEmail": "E-mail",
+            "labelCompany": "Bedrijf",
+            "labelType": "Soort project",
+            "labelMessage": "Uw project",
+            "placeholderName": "Uw naam",
+            "placeholderEmail": "uw@email.nl",
+            "placeholderCompany": "Optioneel",
+            "placeholderMessage": "Waar gaat het om? Steekwoorden zijn ruim voldoende.",
+            "typeOptions": {
+                "launch": "Website launch",
+                "redesign": "Redesign & relaunch",
+                "landing": "Landingspagina",
+                "ui": "UI-componenten & designsysteem",
+                "other": "Iets anders"
+            },
+            "privacy": "Door te verzenden gaat u ermee akkoord dat uw gegevens worden verwerkt om uw aanvraag te behandelen. Ze worden niet gedeeld met derden.",
+            "submit": "Aanvraag versturen",
+            "submitting": "Wordt verzonden…",
+            "error": "Er is iets misgegaan. Probeer het opnieuw.",
+            "successTitle": "Uw aanvraag is binnen.",
+            "successText": "Hartelijk dank. Ik neem binnen 24 uur contact met u op.",
+            "sendAnother": "Nog een bericht sturen"
+        }
+    },
+    "workPage": {
+        "hero": {
+            "eyebrow": "Projecten",
+            "headline": "Werk met een duidelijke richting.",
+            "subline": "Van lokale dienstverleners tot digitale producten. Elk project volgt een heldere opdracht: er beter uitzien, duidelijker worden, sneller laden."
+        },
+        "cta": "Website bekijken",
+        "ctaContact": "Project aanvragen"
+    },
+    "journal": {
+        "nav": "Journal",
+        "readingTime": "{minutes} min leestijd",
+        "updatedOn": "bijgewerkt op",
+        "related": "Verder lezen",
+        "backToIndex": "Alle artikelen",
+        "breadcrumb": {
+            "label": "Kruimelpad",
+            "home": "Home"
+        },
+        "toc": {
+            "title": "Inhoud"
+        },
+        "callouts": {
+            "info": "Let op",
+            "tip": "Tip",
+            "important": "Belangrijk"
+        },
+        "categories": {
+            "webdesign": "Webdesign",
+            "performance": "Performance",
+            "ux": "User experience",
+            "development": "Development",
+            "seo": "SEO",
+            "case-study": "Case study",
+            "behind-the-build": "Behind the build"
+        },
+        "cta": {
+            "eyebrow": "Uw website kan meer.",
+            "headline": "Design, performance en gebruikersgeleiding horen samen te werken.",
+            "subline": "Wilt u weten waar uw site vandaag staat en wat de moeite waard is? Laat kort weten waar het om gaat.",
+            "button": "Uw website bespreken",
+            "href": "/contact"
+        },
+        "index": {
+            "eyebrow": "Journal",
+            "headline": "Notities over webdesign, performance en gebruikersgeleiding.",
+            "subline": "Wat een website écht goed maakt, verder dan het uiterlijk. Praktisch, zonder buzzwords.",
+            "empty": "Nog geen artikelen gepubliceerd in deze taal.",
+            "metaTitle": "Journal | NuVio Labs",
+            "metaDescription": "Artikelen over webdesign, web performance en user experience. Praktische kijk van NuVio Labs."
         }
     }
 }

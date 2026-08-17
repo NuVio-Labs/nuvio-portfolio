@@ -140,13 +140,13 @@ export default async function ServicesPage({ params }: { params: Promise<{ local
                         className="font-heading font-semibold text-text-primary mb-5"
                         style={{ fontSize: "clamp(1.75rem, 4vw, 2.75rem)" }}
                     >
-                        {t("headline")}
+                        {t("page.cta.headline")}
                     </h2>
                     <Link
                         href="/contact"
                         className="inline-flex items-center px-8 py-4 rounded-full bg-accent text-surface text-base font-semibold hover:bg-[var(--nv-accent-hover)] transition-all duration-200 active:scale-[0.98]"
                     >
-                        {t("cta")}
+                        {t("page.cta.button")}
                     </Link>
                 </div>
             </SectionWrapper>

@@ -2,7 +2,6 @@ import { useTranslations } from "next-intl"
 import { Link } from "@/i18n/navigation"
 
 export function Footer() {
-    const t = useTranslations()
     const tFooter = useTranslations("footer")
     const tNav = useTranslations("nav")
     const tServices = useTranslations("services")

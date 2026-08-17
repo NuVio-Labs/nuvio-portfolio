@@ -1,49 +1,41 @@
 "use client"
 
 import { useTranslations } from "next-intl"
-import { ArrowRight, BadgeCheck, Lock, Quote } from "lucide-react"
+import { ArrowRight, BadgeCheck, Quote } from "lucide-react"
 import { ScrollAnimation } from "@/components/ui/scroll-animation"
 import { ProjectLivePreview } from "@/components/ui/project-live-preview"
 import { SectionWrapper } from "@/components/ui/section-wrapper"
 import { Link } from "@/i18n/navigation"
 
-type ProjectId = "wt-erdbewegungen" | "daisymays-salon" | "dj-white-label" | "nvl-core" | "taste"
+type ProjectId = "wt-erdbewegungen" | "daisymays-salon" | "dj-white-label"
 
 interface ProjectMeta {
-    link?: string
-    demoUrl?: string
+    /** Live-URL des Projekts oder Pfad zu einer lokalen Demo. */
+    url: string
+    /** true, wenn `url` auf eine mitgelieferte Demo statt auf eine fremde Seite zeigt. */
+    isLocalDemo?: boolean
     previewImage: string
     tags: string[]
-    private?: boolean
 }
 
-const PROJECT_IDS: ProjectId[] = ["wt-erdbewegungen", "daisymays-salon", "dj-white-label", "nvl-core", "taste"]
+const PROJECT_IDS: ProjectId[] = ["wt-erdbewegungen", "daisymays-salon", "dj-white-label"]
 
 const PROJECT_META: Record<ProjectId, ProjectMeta> = {
     "wt-erdbewegungen": {
-        link: "https://www.wt-erdbewegungen.de",
+        url: "https://www.wt-erdbewegungen.de",
         previewImage: "/previews/wt.webp",
         tags: ["Next.js", "TypeScript", "Tailwind CSS", "Vercel"],
     },
     "daisymays-salon": {
-        link: "https://www.daisymayssalon.de",
+        url: "https://www.daisymayssalon.de",
         previewImage: "/previews/daisy.webp",
         tags: ["React", "TypeScript", "Vite", "Tailwind CSS", "i18n"],
     },
     "dj-white-label": {
-        demoUrl: "/demos/dj-white-label/index.html",
+        url: "/demos/dj-white-label/index.html",
+        isLocalDemo: true,
         previewImage: "/previews/dj-white-label.webp",
         tags: ["HTML", "CSS", "JavaScript"],
-    },
-    "nvl-core": {
-        previewImage: "/previews/nvl-core.webp",
-        tags: ["React", "TypeScript", "Supabase", "Vite", "Multi-Tenant"],
-        private: true,
-    },
-    "taste": {
-        previewImage: "/previews/taste.webp",
-        tags: ["React 19", "TypeScript", "Supabase", "Tailwind CSS 4", "Vite"],
-        private: true,
     },
 }
 
@@ -51,8 +43,6 @@ const CTA_KEY: Record<ProjectId, string> = {
     "wt-erdbewegungen": "ctaWt",
     "daisymays-salon": "ctaDaisy",
     "dj-white-label": "ctaGeneric",
-    "nvl-core": "ctaGeneric",
-    "taste": "ctaGeneric",
 }
 
 export function Work() {
@@ -93,7 +83,6 @@ export function Work() {
                             ]
                             const cardNumber = String(index + 1).padStart(2, "0")
                             const reverseOnDesktop = index % 2 === 1
-                            const previewUrl = meta.link ?? meta.demoUrl
 
                             return (
                                 <ScrollAnimation key={id} delay={index * 0.06}>
@@ -108,12 +97,6 @@ export function Work() {
                                                             <span className="inline-flex items-center rounded-full border border-border-soft bg-surface-soft px-3 py-2 text-[11px] font-medium uppercase tracking-[0.2em] text-text-muted">
                                                                 {t("eyebrow")}
                                                             </span>
-                                                            {meta.private && (
-                                                                <span className="inline-flex items-center gap-1.5 rounded-full border border-border-soft bg-surface-soft px-3 py-2 text-[11px] font-medium text-text-muted">
-                                                                    <Lock className="h-3 w-3" />
-                                                                    {t("privateBadge")}
-                                                                </span>
-                                                            )}
                                                         </div>
 
                                                         <h3
@@ -205,20 +188,12 @@ export function Work() {
 
                                             {/* Preview */}
                                             <div className={reverseOnDesktop ? "xl:order-1" : ""}>
-                                                {previewUrl ? (
-                                                    <ProjectLivePreview
-                                                        url={previewUrl}
-                                                        title={title}
-                                                        previewImage={meta.previewImage}
-                                                        isLocal={!!meta.demoUrl}
-                                                    />
-                                                ) : (
-                                                    <PrivatePreview
-                                                        previewImage={meta.previewImage}
-                                                        label={t("demoOnRequest")}
-                                                        title={title}
-                                                    />
-                                                )}
+                                                <ProjectLivePreview
+                                                    url={meta.url}
+                                                    title={title}
+                                                    previewImage={meta.previewImage}
+                                                    isLocal={!!meta.isLocalDemo}
+                                                />
                                             </div>
                                         </div>
                                     </article>
@@ -229,40 +204,5 @@ export function Work() {
                 </div>
             </div>
         </SectionWrapper>
-    )
-}
-
-function PrivatePreview({ previewImage, label, title }: { previewImage: string; label: string; title: string }) {
-    return (
-        <div className="w-full">
-            <div className="overflow-hidden rounded-[1.6rem] border border-border-soft bg-surface shadow-sm">
-                <div className="flex items-center gap-3 border-b border-border-soft bg-surface-soft px-4 py-3">
-                    <div className="flex gap-1.5">
-                        <span className="h-2.5 w-2.5 rounded-full bg-border-soft" />
-                        <span className="h-2.5 w-2.5 rounded-full bg-border-soft" />
-                        <span className="h-2.5 w-2.5 rounded-full bg-border-soft" />
-                    </div>
-                    <div className="flex flex-1 items-center gap-2 rounded-full border border-border-soft bg-background px-3 py-1.5 text-[10px] uppercase tracking-[0.16em] text-text-muted">
-                        <Lock className="h-3 w-3" />
-                        <span>{title}</span>
-                    </div>
-                </div>
-                <div className="relative aspect-[16/10] w-full overflow-hidden bg-surface-soft">
-                    {/* eslint-disable-next-line @next/next/no-img-element */}
-                    <img
-                        src={previewImage}
-                        alt={title}
-                        className="h-full w-full object-cover object-top opacity-60 blur-[2px]"
-                        onError={(e) => { (e.target as HTMLImageElement).style.display = "none" }}
-                    />
-                    <div className="absolute inset-0 flex items-center justify-center">
-                        <div className="rounded-2xl border border-border-soft bg-surface/90 px-6 py-4 text-center backdrop-blur-sm">
-                            <Lock className="mx-auto mb-2 h-5 w-5 text-text-muted" />
-                            <p className="text-sm font-medium text-text-secondary">{label}</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
     )
 }
