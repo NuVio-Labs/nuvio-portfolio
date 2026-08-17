@@ -5,9 +5,10 @@ import { useTranslations } from "next-intl"
 import { usePathname } from "next/navigation"
 import { Moon, Sun, Menu, X } from "lucide-react"
 import { useTheme } from "next-themes"
-import { Link } from "@/i18n/navigation"
+import { Link, usePathname as useLocalePathname } from "@/i18n/navigation"
 import { cn } from "@/lib/utils"
 import { LanguageSwitcher } from "@/components/layout/language-switcher"
+import { isForcedLightRoute } from "@/components/theme-provider"
 
 const navItems = [
     { key: "work",     href: "/work" },
@@ -25,6 +26,9 @@ export function Navbar() {
     const pathname = usePathname()
     const [scrolled, setScrolled] = React.useState(false)
     const [menuOpen, setMenuOpen] = React.useState(false)
+
+    /* Im Journal ist das Farbschema fest, der Umschalter waere wirkungslos. */
+    const themeToggleHidden = isForcedLightRoute(useLocalePathname())
 
     React.useEffect(() => {
         let rafId: number
@@ -91,14 +95,16 @@ export function Navbar() {
                         <LanguageSwitcher />
 
                         {/* Theme Toggle */}
-                        <button
-                            aria-label={t("toggleTheme")}
-                            onClick={() => setTheme(theme === "dark" ? "light" : "dark")}
-                            className="flex h-9 w-9 items-center justify-center rounded-full border border-border-soft bg-transparent text-text-muted hover:text-text-primary hover:border-accent/40 transition-all"
-                        >
-                            <Sun className="h-4 w-4 rotate-0 scale-100 transition-all dark:-rotate-90 dark:scale-0" />
-                            <Moon className="absolute h-4 w-4 rotate-90 scale-0 transition-all dark:rotate-0 dark:scale-100" />
-                        </button>
+                        {!themeToggleHidden && (
+                            <button
+                                aria-label={t("toggleTheme")}
+                                onClick={() => setTheme(theme === "dark" ? "light" : "dark")}
+                                className="flex h-9 w-9 items-center justify-center rounded-full border border-border-soft bg-transparent text-text-muted hover:text-text-primary hover:border-accent/40 transition-all"
+                            >
+                                <Sun className="h-4 w-4 rotate-0 scale-100 transition-all dark:-rotate-90 dark:scale-0" />
+                                <Moon className="absolute h-4 w-4 rotate-90 scale-0 transition-all dark:rotate-0 dark:scale-100" />
+                            </button>
+                        )}
 
                         {/* CTA */}
                         <Link

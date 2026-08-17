@@ -1,5 +1,6 @@
 import type { Metadata } from "next"
 import { getTranslations, setRequestLocale } from "next-intl/server"
+import { redirect } from "@/i18n/navigation"
 import { routing } from "@/i18n/routing"
 import { SITE_URL } from "@/lib/site"
 import { getJournalArticles, toOgLocale } from "@/lib/journal"
@@ -43,6 +44,16 @@ export default async function JournalIndexPage({ params }: { params: Promise<Par
     setRequestLocale(locale)
 
     const articles = await getJournalArticles(locale)
+
+    /*
+     * Artikel erscheinen zunaechst nur auf Deutsch. Statt einer leeren
+     * Uebersicht landen Besucher anderer Sprachen bei der deutschen Fassung.
+     * Sobald es uebersetzte Artikel gibt, greift das hier von selbst nicht mehr.
+     */
+    if (articles.length === 0 && locale !== routing.defaultLocale) {
+        redirect({ href: "/journal", locale: routing.defaultLocale })
+    }
+
     const t = await getTranslations("journal")
 
     return (

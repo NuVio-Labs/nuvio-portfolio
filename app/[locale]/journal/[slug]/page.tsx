@@ -5,7 +5,7 @@ import { MDXRemote } from "next-mdx-remote/rsc"
 import remarkGfm from "remark-gfm"
 import rehypeSlug from "rehype-slug"
 import { getTranslations, setRequestLocale } from "next-intl/server"
-import { Link } from "@/i18n/navigation"
+import { Link, redirect } from "@/i18n/navigation"
 import { routing } from "@/i18n/routing"
 import { SITE_URL } from "@/lib/site"
 import {
@@ -88,7 +88,13 @@ export default async function JournalArticlePage({ params }: { params: Promise<P
     setRequestLocale(locale)
 
     const article = await getJournalArticle(locale, slug)
-    if (!article) notFound()
+    if (!article) {
+        /* Gibt es den Artikel auf Deutsch, dorthin leiten statt 404 zu zeigen. */
+        if (locale !== routing.defaultLocale && (await getJournalArticle(routing.defaultLocale, slug))) {
+            redirect({ href: `/journal/${slug}`, locale: routing.defaultLocale })
+        }
+        notFound()
+    }
 
     const { meta, body } = article
     const toc = extractToc(body)
