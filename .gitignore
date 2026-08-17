@@ -15,3 +15,8 @@ eslint-report.json
 
 # Design-Quelldateien gehoeren nicht ins oeffentlich ausgelieferte public/
 *.psd
+
+# Lokale Werkzeug-Konfiguration, gehoert nicht ins Projekt
+.claude/skills/
+.claude/settings.local.json
+.cursor/
