@@ -513,6 +513,13 @@
             "empty": "No articles published in this language yet.",
             "metaTitle": "Journal | NuVio Labs",
             "metaDescription": "Articles on web design, web performance and user experience. Practical perspective from NuVio Labs."
+        },
+        "share": {
+            "label": "Share this article",
+            "native": "Share",
+            "copy": "Copy link",
+            "copied": "Link copied",
+            "linkedin": "Share on LinkedIn"
         }
     }
 }

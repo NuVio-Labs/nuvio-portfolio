@@ -513,6 +513,13 @@
             "empty": "Nog geen artikelen gepubliceerd in deze taal.",
             "metaTitle": "Journal | NuVio Labs",
             "metaDescription": "Artikelen over webdesign, web performance en user experience. Praktische kijk van NuVio Labs."
+        },
+        "share": {
+            "label": "Artikel delen",
+            "native": "Delen",
+            "copy": "Link kopiëren",
+            "copied": "Link gekopieerd",
+            "linkedin": "Delen op LinkedIn"
         }
     }
 }

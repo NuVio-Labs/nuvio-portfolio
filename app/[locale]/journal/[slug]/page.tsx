@@ -22,6 +22,7 @@ import { JournalImage } from "@/components/journal/journal-image"
 import { JournalBreadcrumb } from "@/components/journal/journal-breadcrumb"
 import { JournalCard } from "@/components/journal/journal-card"
 import { JournalCta } from "@/components/journal/journal-cta"
+import { JournalShare } from "@/components/journal/journal-share"
 import { JournalStructuredData } from "@/components/journal/journal-structured-data"
 import { JournalToc, TOC_MIN_HEADINGS } from "@/components/journal/journal-toc"
 import { ReadingProgress } from "@/components/journal/reading-progress"
@@ -163,6 +164,11 @@ export default async function JournalArticlePage({ params }: { params: Promise<P
                                 ))}
                             </ul>
                         )}
+
+                        <JournalShare
+                            title={meta.title}
+                            url={`${SITE_URL}/${locale}/journal/${slug}`}
+                        />
 
                         <JournalCta />
 
