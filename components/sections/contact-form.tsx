@@ -3,7 +3,9 @@
 import { useRef, useState } from "react"
 import { useTranslations } from "next-intl"
 import { Copy, Check, Mail, MessageCircle } from "lucide-react"
+import { useRouter } from "@/i18n/navigation"
 import { CONTACT_EMAIL, WHATSAPP_NUMBER } from "@/lib/site"
+import { SENT_MESSAGE_KEY } from "@/components/sections/contact-sent"
 
 type Channel = "whatsapp" | "mail"
 
@@ -23,9 +25,19 @@ const SUBJECT_MAX = 150
  */
 export function ContactForm() {
     const t = useTranslations("contactPage.form")
+    const router = useRouter()
     const formRef = useRef<HTMLFormElement>(null)
-    const [opened, setOpened] = useState<Channel | null>(null)
     const [copied, setCopied] = useState(false)
+
+    /**
+     * Uebergabe an die Bestaetigungsseite. Der Aufruf dort ist zugleich das
+     * einzige messbare Signal fuer eine Anfrage — die Klicks selbst
+     * hinterlassen keinen Seitenaufruf.
+     */
+    function goToConfirmation(channel: Channel, body: string) {
+        window.sessionStorage.setItem(SENT_MESSAGE_KEY, body)
+        router.push(`/contact/sent?via=${channel}`)
+    }
 
     /** Liest das Formular aus, erzwingt vorher die native Validierung. */
     function collect() {
@@ -62,18 +74,24 @@ export function ContactForm() {
             "_blank",
             "noopener,noreferrer",
         )
-        setOpened("whatsapp")
+        goToConfirmation("whatsapp", payload.body)
     }
 
     function handleMail() {
         const payload = collect()
         if (!payload) return
-        /* location statt window.open — sonst bleibt ein leeres Tab zurueck. */
+
+        /*
+         * Der mailto-Aufruf uebergibt an das Betriebssystem und navigiert die
+         * Seite nicht weg. Erst danach zur Bestaetigung wechseln, sonst kann
+         * der Wechsel die Uebergabe abbrechen.
+         */
         window.location.href =
             `mailto:${CONTACT_EMAIL}` +
             `?subject=${encodeURIComponent(payload.subject)}` +
             `&body=${encodeURIComponent(payload.body)}`
-        setOpened("mail")
+
+        window.setTimeout(() => goToConfirmation("mail", payload.body), 400)
     }
 
     async function handleCopy() {
@@ -193,16 +211,6 @@ export function ContactForm() {
                     {t("sendMail")}
                 </button>
             </div>
-
-            {/* Bestaetigung, dass die Nachricht nur geoeffnet wurde */}
-            {opened && (
-                <p
-                    className="rounded-xl border border-accent/25 bg-accent-soft px-4 py-3 text-sm leading-6 text-text-secondary"
-                    role="status"
-                >
-                    {opened === "whatsapp" ? t("openedWhatsapp") : t("openedMail")}
-                </p>
-            )}
 
             {/* Fallback fuer Rechner ohne Mailprogramm */}
             <div className="border-t border-border-soft pt-5">
