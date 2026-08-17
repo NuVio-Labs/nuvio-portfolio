@@ -258,7 +258,7 @@
             "hostingTitle": "1. Hosting",
             "hosting": "Our website is hosted by Vercel Inc., 340 S Lemon Ave #4133, Walnut, CA 91789, USA.\nPersonal data collected on this website is processed on Vercel's servers.\n\nData transfer to the US is based on the EU Standard Contractual Clauses in accordance with Art. 46 GDPR.\n\nFurther information on data protection at Vercel can be found at:\nhttps://vercel.com/legal/privacy-policy",
             "contactFormTitle": "2. Contact Form",
-            "contactForm": "If you send us inquiries via the contact form, your details from the inquiry form, including the contact details you provided there, will be processed and stored via Resend for the purpose of processing the inquiry and in case of follow-up questions. We do not share this data without your consent.",
+            "contactForm": "This contact form sends nothing to us. Your input stays in your browser and is only assembled into a ready-made message that opens in WhatsApp or your email client. Transmission happens only once you send that message yourself, at which point the terms of the respective service apply. For WhatsApp that is WhatsApp Ireland Ltd. Enquiries that reach us by email are stored to handle the request and any follow-up questions. They are not shared with third parties.",
             "responsibleTitle": "3. Responsible Entity",
             "responsible": "The entity responsible for data processing on this website is:\n\nAxel Schurer\nNuVioLabs\nNimwegerstraße 3\n47559 Kranenburg\nGermany\n\nEmail: contact@nuviolabs.de",
             "sslTitle": "4. SSL/TLS Encryption",
@@ -452,13 +452,15 @@
                 "ui": "UI components & design system",
                 "other": "Something else"
             },
-            "privacy": "By submitting, you agree that your details will be processed to handle your enquiry. They will not be shared with third parties.",
-            "submit": "Send enquiry",
-            "submitting": "Sending…",
-            "error": "Something went wrong. Please try again.",
-            "successTitle": "Your enquiry arrived.",
-            "successText": "Thank you. I'll get back to you within 24 hours.",
-            "sendAnother": "Send another message"
+            "privacy": "Your details are not transmitted to us. They are only assembled into a ready-made message in WhatsApp or your email client. They reach us once you press send there.",
+            "templateIntro": "Enquiry via nuviolabs.de",
+            "sendWhatsapp": "Send via WhatsApp",
+            "sendMail": "Send via email",
+            "openedWhatsapp": "WhatsApp opened with your message. Please send it from there — it only reaches us once you do.",
+            "openedMail": "Your email client opened with the finished message. Please send it from there. If nothing happened, copy the text below.",
+            "copyHint": "No email client set up? Copy the text and send it to",
+            "copyButton": "Copy text",
+            "copied": "Copied"
         }
     },
     "workPage": {

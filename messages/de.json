@@ -258,7 +258,7 @@
             "hostingTitle": "1. Hosting",
             "hosting": "Unsere Website wird bei Vercel Inc., 340 S Lemon Ave #4133, Walnut, CA 91789, USA, gehostet.\nPersonenbezogene Daten, die auf dieser Website erfasst werden, werden auf den Servern von Vercel verarbeitet.\n\nDie Datenübermittlung in die USA erfolgt auf Grundlage der EU-Standardvertragsklauseln gemäß Art. 46 DSGVO.\n\nWeitere Informationen zum Datenschutz bei Vercel finden Sie unter:\nhttps://vercel.com/legal/privacy-policy",
             "contactFormTitle": "2. Kontaktformular",
-            "contactForm": "Wenn Sie uns per Kontaktformular Anfragen zukommen lassen, werden Ihre Angaben aus dem Anfrageformular inklusive der von Ihnen dort angegebenen Kontaktdaten zwecks Bearbeitung der Anfrage und für den Fall von Anschlussfragen bei uns über Resend verarbeitet und gespeichert. Diese Daten geben wir nicht ohne Ihre Einwilligung weiter.",
+            "contactForm": "Dieses Kontaktformular sendet nichts an uns. Ihre Eingaben bleiben in Ihrem Browser und werden lediglich zu einer fertigen Nachricht zusammengesetzt, die sich in WhatsApp oder Ihrem Mailprogramm öffnet. Eine Übertragung findet erst statt, wenn Sie die Nachricht dort selbst absenden — dann gelten die Bedingungen des jeweiligen Dienstes. Für WhatsApp ist das die WhatsApp Ireland Ltd. Anfragen, die uns per E-Mail erreichen, speichern wir zur Bearbeitung und für mögliche Anschlussfragen. Eine Weitergabe an Dritte erfolgt nicht.",
             "responsibleTitle": "3. Verantwortliche Stelle",
             "responsible": "Verantwortlich für die Datenverarbeitung auf dieser Website ist:\n\nAxel Schurer\nNuVioLabs\nNimwegerstraße 3\n47559 Kranenburg\nDeutschland\n\nE-Mail: contact@nuviolabs.de",
             "sslTitle": "4. SSL- / TLS-Verschlüsselung",
@@ -452,13 +452,15 @@
                 "ui": "UI-Komponenten & Design System",
                 "other": "Etwas anderes"
             },
-            "privacy": "Mit dem Absenden erklären Sie sich einverstanden, dass Ihre Angaben zur Bearbeitung der Anfrage verarbeitet werden. Eine Weitergabe an Dritte erfolgt nicht.",
-            "submit": "Anfrage senden",
-            "submitting": "Wird gesendet…",
-            "error": "Etwas ist schiefgelaufen. Bitte versuchen Sie es erneut.",
-            "successTitle": "Anfrage ist angekommen.",
-            "successText": "Vielen Dank. Ich melde mich innerhalb von 24 Stunden bei Ihnen.",
-            "sendAnother": "Weitere Nachricht senden"
+            "privacy": "Ihre Angaben werden nicht an uns übertragen, sondern nur als fertige Nachricht in WhatsApp oder Ihrem Mailprogramm vorbereitet. Erst wenn Sie dort auf Senden tippen, erreichen sie uns.",
+            "templateIntro": "Anfrage über nuviolabs.de",
+            "sendWhatsapp": "Per WhatsApp senden",
+            "sendMail": "Per E-Mail senden",
+            "openedWhatsapp": "WhatsApp wurde mit Ihrer Nachricht geöffnet. Bitte schicken Sie sie dort noch ab — abgeschickt ist sie erst dann.",
+            "openedMail": "Ihr Mailprogramm wurde mit der fertigen Nachricht geöffnet. Bitte schicken Sie sie dort noch ab. Falls sich nichts getan hat, kopieren Sie den Text unten.",
+            "copyHint": "Kein Mailprogramm eingerichtet? Kopieren Sie den Text und schicken Sie ihn an",
+            "copyButton": "Text kopieren",
+            "copied": "Kopiert"
         }
     },
     "workPage": {

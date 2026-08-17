@@ -258,7 +258,7 @@
             "hostingTitle": "2. Hosting",
             "hosting": "Onze website wordt gehost door Vercel Inc., 340 S Lemon Ave #4133, Walnut, CA 91789, VS.\n\nPersoonsgegevens die op deze website worden verzameld, worden verwerkt op de servers van Vercel. Hiertoe kunnen met name IP-adressen, technische toegangsgegevens en communicatiegegevens behoren.\n\nDe gegevensoverdracht naar de VS is gebaseerd op de EU-modelcontractbepalingen in overeenstemming met Art. 46 AVG.\n\nMeer informatie over gegevensbescherming bij Vercel vindt u op:\nhttps://vercel.com/legal/privacy-policy\n\nDe wettelijke basis voor verwerking is Art. 6 (1) (f) AVG (gerechtvaardigd belang bij een veilige en efficiënte werking van de website).",
             "contactFormTitle": "4. Contactformulier",
-            "contactForm": "Als u ons via het contactformulier aanvragen stuurt, worden uw gegevens uit het formulier inclusief de contactgegevens die u daar hebt opgegeven verwerkt voor de verwerking van de aanvraag en in het geval van vervolgvragen.\n\nDe e-mails worden verzonden via de dienst \"Resend\", Resend Inc., 2261 Market Street #5039, San Francisco, CA 94114, VS.\n\nDe gegevensoverdracht naar de VS is gebaseerd op de EU-modelcontractbepalingen in overeenstemming met Art. 46 AVG.\n\nDe verwerking vindt plaats op basis van Art. 6 (1) (b) AVG (contractinitiatie of verwerking van uw aanvraag).\n\nDe door u ingevoerde gegevens blijven bij ons totdat het doel voor gegevensopslag niet meer van toepassing is of u ons verzoekt deze te verwijderen, mits er geen wettelijke bewaarplichten bestaan.",
+            "contactForm": "Dit contactformulier stuurt niets naar ons. Uw invoer blijft in uw browser en wordt alleen samengesteld tot een kant-en-klaar bericht dat in WhatsApp of uw e-mailprogramma opent. Verzending vindt pas plaats wanneer u het bericht zelf verstuurt; dan gelden de voorwaarden van de betreffende dienst. Voor WhatsApp is dat WhatsApp Ireland Ltd. Aanvragen die ons per e-mail bereiken, bewaren wij om de aanvraag en eventuele vervolgvragen te behandelen. Ze worden niet gedeeld met derden.",
             "responsibleTitle": "1. Verantwoordelijke Instantie",
             "responsible": "De verantwoordelijke voor de gegevensverwerking op deze website is:\n\nAxel Schurer\nNuVioLabs\nNimwegerstraße 3\n47559 Kranenburg\nDuitsland\n\nE-mail: contact@nuviolabs.de",
             "sslTitle": "5. SSL/TLS-versleuteling",
@@ -452,13 +452,15 @@
                 "ui": "UI-componenten & designsysteem",
                 "other": "Iets anders"
             },
-            "privacy": "Door te verzenden gaat u ermee akkoord dat uw gegevens worden verwerkt om uw aanvraag te behandelen. Ze worden niet gedeeld met derden.",
-            "submit": "Aanvraag versturen",
-            "submitting": "Wordt verzonden…",
-            "error": "Er is iets misgegaan. Probeer het opnieuw.",
-            "successTitle": "Uw aanvraag is binnen.",
-            "successText": "Hartelijk dank. Ik neem binnen 24 uur contact met u op.",
-            "sendAnother": "Nog een bericht sturen"
+            "privacy": "Uw gegevens worden niet naar ons verzonden, maar alleen samengesteld tot een kant-en-klaar bericht in WhatsApp of uw e-mailprogramma. Pas als u daar op verzenden tikt, bereiken ze ons.",
+            "templateIntro": "Aanvraag via nuviolabs.de",
+            "sendWhatsapp": "Via WhatsApp versturen",
+            "sendMail": "Via e-mail versturen",
+            "openedWhatsapp": "WhatsApp is geopend met uw bericht. Verstuur het daar nog — pas dan bereikt het ons.",
+            "openedMail": "Uw e-mailprogramma is geopend met het complete bericht. Verstuur het daar nog. Gebeurde er niets, kopieer dan de tekst hieronder.",
+            "copyHint": "Geen e-mailprogramma ingesteld? Kopieer de tekst en stuur hem naar",
+            "copyButton": "Tekst kopiëren",
+            "copied": "Gekopieerd"
         }
     },
     "workPage": {
