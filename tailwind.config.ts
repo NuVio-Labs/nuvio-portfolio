@@ -20,14 +20,18 @@ const config: Config = {
         background:       "var(--nv-bg)",
         surface:          "var(--nv-surface)",
         "surface-soft":   "var(--nv-surface-soft)",
+        "surface-raised": "var(--nv-surface-raised)",
+        "surface-strong": "var(--nv-surface-strong)",
         foreground:       "var(--nv-text-primary)",
         "text-primary":   "var(--nv-text-primary)",
         "text-secondary": "var(--nv-text-secondary)",
         "text-muted":     "var(--nv-text-muted)",
         accent:           "var(--nv-accent)",
         "accent-soft":    "var(--nv-accent-soft)",
+        "accent-text":    "var(--nv-accent-text)",
         "border-soft":    "var(--nv-border-soft)",
         "border-subtle":  "var(--nv-border-subtle)",
+        "border-strong":  "var(--nv-border-strong)",
         /* Gold scale */
         gold: {
           300: "var(--nv-gold-300)",

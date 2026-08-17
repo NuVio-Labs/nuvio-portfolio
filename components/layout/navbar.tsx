@@ -12,9 +12,12 @@ import { LanguageSwitcher } from "@/components/layout/language-switcher"
 const navItems = [
     { key: "work",     href: "/work" },
     { key: "services", href: "/services" },
+    { key: "journal",  href: "/journal" },
     { key: "about",    href: "/about" },
     { key: "contact",  href: "/contact" },
 ] as const
+
+type NavHref = (typeof navItems)[number]["href"]
 
 export function Navbar() {
     const t = useTranslations("nav")
@@ -70,7 +73,7 @@ export function Navbar() {
                         {navItems.map((item) => (
                             <Link
                                 key={item.href}
-                                href={item.href as "/work" | "/services" | "/about" | "/contact"}
+                                href={item.href as NavHref}
                                 className={cn(
                                     "text-sm font-medium transition-colors",
                                     isActive(item.href)
@@ -125,7 +128,7 @@ export function Navbar() {
                         {navItems.map((item) => (
                             <Link
                                 key={item.href}
-                                href={item.href as "/work" | "/services" | "/about" | "/contact"}
+                                href={item.href as NavHref}
                                 onClick={() => setMenuOpen(false)}
                                 className={cn(
                                     "block py-4 text-lg font-medium border-b border-border-soft transition-colors",

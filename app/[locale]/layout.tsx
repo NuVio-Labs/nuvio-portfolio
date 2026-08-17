@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 import { NextIntlClientProvider } from "next-intl";
-import { getMessages, getTranslations } from "next-intl/server";
+import { getMessages, getTranslations, setRequestLocale } from "next-intl/server";
 import { routing } from "@/i18n/routing";
 import { ThemeProvider } from "@/components/theme-provider";
 import { Navbar } from "@/components/layout/navbar";
@@ -103,6 +103,11 @@ export default async function LocaleLayout({
     if (!routing.locales.includes(locale as typeof routing.locales[number])) {
         notFound();
     }
+
+    // Ermoeglicht statisches Rendering: ohne diesen Aufruf greifen die
+    // Uebersetzungs-APIs auf Request-Header zu und erzwingen SSR.
+    // Seiten muessen setRequestLocale zusaetzlich selbst aufrufen.
+    setRequestLocale(locale);
 
     const messages = await getMessages();
     const t = await getTranslations();

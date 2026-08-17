@@ -20,6 +20,18 @@
   --nv-border-soft:   rgba(17, 17, 17, 0.12);
   --nv-border-subtle: rgba(17, 17, 17, 0.06);
 
+  /* Editorial-Flaechen: Abstufung ueber Tonwert, nicht ueber Farbe.
+     raised = neutrale Komponente (heller als die Seite)
+     strong = staerker hervorgehobene Flaeche (dunkler, warm)  */
+  --nv-surface-raised: #FBFAF7;
+  --nv-surface-strong: #ECE6DA;
+  --nv-border-strong:  #D5CDBF;
+
+  /* Gold fuer kleinen Text. --nv-accent (#C89A2E) erreicht auf Cream nur
+     2.35:1 und faellt damit durch WCAG AA; dieser Ton kommt auf 4.6:1.
+     Nur fuer Textfarbe verwenden, nicht fuer Flaechen oder Kanten. */
+  --nv-accent-text: #8A6A15;
+
   /* Semantic aliases used by Tailwind */
   --background:   var(--nv-bg);
   --foreground:   var(--nv-text-primary);
@@ -48,6 +60,15 @@
   --nv-gold-700:      #C89A2E;
   --nv-border-soft:   rgba(245, 231, 184, 0.16);
   --nv-border-subtle: rgba(255, 255, 255, 0.04);
+
+  /* Dark: dieselbe Logik umgekehrt — raised hebt sich vom Grund ab,
+     strong geht einen Schritt weiter und bleibt leicht warm. */
+  --nv-surface-raised: #121212;
+  --nv-surface-strong: #1F1D19;
+  --nv-border-strong:  rgba(245, 231, 184, 0.24);
+
+  /* Dark: das regulaere Gold erreicht hier bereits 10.8:1. */
+  --nv-accent-text: var(--nv-accent);
 
   --background: var(--nv-bg);
   --foreground: var(--nv-text-primary);

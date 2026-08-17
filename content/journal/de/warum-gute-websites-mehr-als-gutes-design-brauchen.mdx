@@ -1,0 +1,148 @@
+---
+title: "Warum gute Websites mehr als gutes Design brauchen"
+description: "Design entscheidet über den ersten Eindruck. Performance und Nutzerführung darüber, was danach passiert."
+date: "2026-08-17"
+updatedAt: "2026-08-17"
+category: "webdesign"
+tags:
+  - Webdesign
+  - Performance
+  - UX
+author: "NuVio Labs"
+featured: true
+image: "/journal/warum-gute-websites-mehr-als-gutes-design-brauchen/og.webp"
+imageAlt: "Warum gute Websites mehr als gutes Design brauchen. Design, Performance und Experience im Zusammenspiel."
+hero: "/journal/warum-gute-websites-mehr-als-gutes-design-brauchen/hero.webp"
+heroAlt: "Website-Entwurf im Browser, daneben drei Karten für Design, Performance und Experience sowie eine Übersicht der Core Web Vitals mit LCP 2,5 s, INP 200 ms und CLS 0,1."
+heroWidth: 1107
+heroHeight: 971
+---
+
+Die meisten Website-Projekte beginnen mit einer Frage nach dem Aussehen. Welche Farben, welche Schrift, welches Bild oben. Das ist nachvollziehbar, denn Gestaltung ist das Einzige, was man vorab sehen kann.
+
+Nur entscheidet sie eben nicht allein darüber, ob eine Website funktioniert. Eine Seite kann gut aussehen und trotzdem keine einzige Anfrage erzeugen. Sie kann preisverdächtig gestaltet sein und auf dem Smartphone drei Sekunden lang weiß bleiben. Beides kommt häufiger vor, als es sollte.
+
+## Design ist ein Versprechen, keine Einlösung
+
+Gestaltung leistet etwas sehr Konkretes: Sie schafft in den ersten Sekunden Glaubwürdigkeit. Wer auf einer Seite landet, entscheidet sehr schnell und weitgehend unbewusst, ob er es hier mit jemandem zu tun hat, der sein Handwerk ernst nimmt.
+
+Dieses Urteil ist ein Versprechen. Eingelöst wird es erst danach, wenn jemand tatsächlich etwas sucht, liest, vergleicht und im besten Fall handelt.
+
+> Design bringt Menschen dazu, zu bleiben. Ob sie auch ankommen, entscheidet sich woanders.
+
+Genau an dieser Stelle fallen viele Projekte auseinander. Die Startseite ist durchgestaltet, die Leistungsseite ist eine Textwüste. Der erste Eindruck stimmt, der zweite nicht mehr.
+
+## Was Performance mit Vertrauen zu tun hat
+
+Ladezeit wird oft als technisches Detail behandelt, das man am Ende noch „optimiert". Tatsächlich ist sie Teil der Wahrnehmung. Eine Seite, die zögert, wirkt unzuverlässig, auch wenn niemand das bewusst so formulieren würde.
+
+Google misst diese Wahrnehmung seit Jahren mit den [Core Web Vitals](https://web.dev/articles/vitals). Drei Werte, die zusammen beschreiben, wie sich eine Seite für echte Nutzer anfühlt:
+
+<JournalStatGroup>
+  <JournalStat value="≤ 2,5 s" label="LCP" description="Wann der größte sichtbare Inhalt steht." />
+  <JournalStat value="≤ 200 ms" label="INP" description="Wie schnell die Seite auf Eingaben reagiert." />
+  <JournalStat value="≤ 0,1" label="CLS" description="Wie stark das Layout beim Laden springt." />
+</JournalStatGroup>
+
+Der interessanteste Wert ist meist CLS. Er beschreibt das Springen von Inhalten während des Ladens: Der Text verschiebt sich, weil ein Bild nachträglich Platz beansprucht, und der Klick landet auf dem falschen Element. Das ist kein Schönheitsfehler, das ist ein direkter Abbruchgrund.
+
+<JournalCallout type="tip">
+Die häufigste Ursache für Layout-Sprünge sind Bilder ohne feste Maße. Wer `width` und `height` mitgibt, reserviert den Platz, bevor das Bild da ist.
+</JournalCallout>
+
+### Wo die Zeit tatsächlich verloren geht
+
+Aus der Praxis sind es fast immer dieselben drei Punkte:
+
+- **Bilder**, die in voller Kameraauflösung ausgeliefert werden, obwohl sie auf 800 Pixel Breite dargestellt werden
+- **Schriften**, die das Rendern blockieren, sodass der Text erst erscheint, wenn die Schrift geladen ist
+- **Skripte** für Funktionen, die auf der jeweiligen Seite gar nicht vorkommen
+
+Der letzte Punkt ist der unterschätzteste. Ein Cookie-Banner, ein Chat-Widget, ein Analytics-Tool und eine Animationsbibliothek summieren sich schnell zu mehr Übertragungsvolumen als die eigentliche Seite.
+
+Bei den Schriften genügt oft eine Zeile:
+
+```css
+@font-face {
+  font-family: "Inter";
+  src: url("/fonts/inter.woff2") format("woff2");
+  font-display: swap;
+}
+```
+
+`font-display: swap` sorgt dafür, dass der Text sofort in einer Systemschrift erscheint und später ausgetauscht wird. Der Inhalt ist lesbar, bevor das Design vollständig ist. In dieser Reihenfolge, nicht umgekehrt.
+
+<JournalImage
+  src="/previews/wt.webp"
+  alt="Startseite der Website von WT Erdbewegungen auf dem Desktop"
+  caption="Bei WT Erdbewegungen stand die Ladezeit auf dem Smartphone im Vordergrund: dort suchen die meisten Kunden."
+/>
+
+## Nutzerführung ist die Summe kleiner Entscheidungen
+
+Der dritte Bereich ist der am schwersten greifbare, weil er sich nicht messen lässt wie eine Ladezeit und nicht zeigen wie ein Entwurf.
+
+User Experience heißt im Alltag vor allem: Beantwortet die Seite die Fragen in der Reihenfolge, in der sie auftauchen?
+
+### Der Weg zur Anfrage
+
+Wer eine Dienstleistung sucht, arbeitet fast immer dieselbe Liste ab:
+
+1. Macht der überhaupt das, was ich brauche?
+2. Arbeitet der in meiner Region?
+3. Wirkt das seriös?
+4. Was kostet das ungefähr?
+5. Wie nehme ich Kontakt auf?
+
+Eine Website, die diese fünf Fragen in dieser Reihenfolge beantwortet, braucht keine Überredungskunst. Eine, die mit der Firmengeschichte beginnt und den Leistungsumfang im Fließtext versteckt, verliert Leute bei Frage eins.
+
+Das Gleiche gilt für den Kontaktweg. Ein Formular mit elf Pflichtfeldern ist keine Qualifizierung, sondern eine Hürde. Meistens genügen Name, Erreichbarkeit und ein Freitextfeld. Alles Weitere klärt sich im Gespräch ohnehin.
+
+<JournalCallout type="important">
+Wenn Sie nur eine Sache prüfen wollen: Öffnen Sie Ihre Startseite auf dem Handy und lesen Sie nur, was ohne Scrollen sichtbar ist. Steht dort, was Sie anbieten und für wen? Wenn nicht, ist das der erste Punkt auf der Liste.
+</JournalCallout>
+
+## Die drei Ebenen zusammen denken
+
+Aus Sicht des Besuchers hängen die drei Bereiche an einer einzigen Abfolge. Jede Stufe entscheidet, ob es überhaupt eine nächste gibt.
+
+<JournalSteps>
+  <JournalStep
+    number="01"
+    title="Wahrnehmen"
+    description="Die Gestaltung entscheidet in den ersten Sekunden, ob jemand Sie für seriös hält."
+  />
+  <JournalStep
+    number="02"
+    title="Verstehen"
+    description="Tempo und Struktur entscheiden, ob jemand lange genug bleibt, um Ihr Angebot zu erfassen."
+  />
+  <JournalStep
+    number="03"
+    title="Handeln"
+    description="Die Nutzerführung entscheidet, ob aus Interesse eine Anfrage wird."
+  />
+</JournalSteps>
+
+Design, Performance und Nutzerführung werden in vielen Projekten trotzdem nacheinander bearbeitet: erst der Entwurf, dann die Umsetzung, dann irgendwann die Optimierung. Das erzeugt vorhersehbare Konflikte.
+
+Ein Entwurf mit vier Schriftschnitten und großflächigen Hintergrundbildern ist eine Performance-Entscheidung, auch wenn sie im Design-Tool getroffen wird. Eine Navigation mit neun Punkten ist eine UX-Entscheidung, die sich später kaum noch korrigieren lässt, ohne die Struktur anzufassen.
+
+Umgekehrt gilt genauso: Eine technisch tadellose Seite ohne gestalterische Haltung wirkt beliebig. Geschwindigkeit allein überzeugt niemanden, sie fällt nur auf, wenn sie fehlt.
+
+<JournalCallout type="info">
+Diese drei Ebenen sind auch der Grund, warum wir Projekte nicht in getrennte Design- und Entwicklungsphasen aufteilen. Mehr dazu unter [Leistungen](/services).
+</JournalCallout>
+
+## Was das praktisch heißt
+
+Wenn Sie eine bestehende Website einschätzen wollen, kommen Sie mit vier Schritten überraschend weit:
+
+1. **Messen statt schätzen.** PageSpeed Insights liefert echte Werte für LCP, INP und CLS. Gemessen auf dem Smartphone, nicht auf Ihrem Rechner mit Glasfaser.
+2. **Die erste Bildschirmseite prüfen.** Angebot und Zielgruppe müssen ohne Scrollen erkennbar sein.
+3. **Den Weg zur Anfrage nachgehen.** Zählen Sie die Klicks von der Startseite bis zum abgeschickten Formular.
+4. **Ballast identifizieren.** Jedes eingebundene Skript sollte einen Zweck haben, den Sie benennen können.
+
+Das ersetzt keine gründliche Analyse, zeigt aber meist schon, wo der größte Hebel liegt. Häufig ist es nicht das Design.
+
+Wie das in fertigen Projekten aussieht, zeigen die [Arbeiten](/work). Wenn Sie Ihre eigene Seite einordnen lassen wollen, [schreiben Sie mir kurz](/contact).
