@@ -13,6 +13,7 @@ export default function PrivacyPage({ params: { locale } }: { params: { locale: 
         { title: "sslTitle", content: "ssl" },
         { title: "logfilesTitle", content: "logfiles" },
         { title: "cookiesTitle", content: "cookies" },
+        { title: "analyticsTitle", content: "analytics" },
         { title: "rightsTitle", content: "rights" },
         { title: "complaintTitle", content: "complaint" }
     ]

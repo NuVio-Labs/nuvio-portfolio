@@ -267,9 +267,11 @@
             "logfiles": "The provider of the pages automatically collects and stores information in server log files (e.g. browser type/version, OS, referrer URL, host name, time, IP address). These data are not combined with other data sources.\nThe basis for data processing is Art. 6 (1) (f) GDPR.",
             "cookiesTitle": "6. Cookies",
             "cookies": "This website uses strictly necessary cookies only.\n\nThis applies in particular to storing the selected language version of the website. This storage is required in order to provide the function requested by the user.\n\nThe legal basis is Section 25 (2) TDDDG in conjunction with Art. 6 (1) (f) GDPR.\n\nNo analytics, marketing or tracking cookies are used.",
-            "rightsTitle": "7. Data Subject Rights (Art. 15–21 GDPR)",
+            "analyticsTitle": "7. Usage measurement",
+            "analytics": "This website uses Vercel Web Analytics, a service provided by Vercel Inc., USA, to evaluate use of the site statistically.\n\nMeasurement works without cookies. No information is stored on or read from your device.\n\nThe following is recorded per page view: timestamp, the address called up, referring page, filtered query parameters, approximate location (country, region, city), device type, operating system and browser including versions, and the version of the measurement script.\n\nTo distinguish visits, a value is derived from the technical details of your request. According to the provider, the data is not associated with any individual or IP address, and the association of a visit is discarded after 24 hours. Recognition over longer periods or across other websites is therefore not possible.\n\nThe legal basis is Art. 6 (1) (f) GDPR. Our legitimate interest lies in understanding which content is used in order to improve the website.\n\nFurther information from the provider: https://vercel.com/docs/analytics/privacy-policy",
+            "rightsTitle": "8. Data Subject Rights (Art. 15–21 GDPR)",
             "rights": "You have the right at any time to free information about your stored personal data, its origin and recipient and the purpose of data processing, and a right to correction, blocking or deletion of this data. For questions you can contact us at any time.",
-            "complaintTitle": "8. Right of Appeal to the Supervisory Authority",
+            "complaintTitle": "9. Right of Appeal to the Supervisory Authority",
             "complaint": "In the event of violations of the GDPR, data subjects have the right to lodge a complaint with a supervisory authority."
         }
     },
