@@ -534,6 +534,11 @@
             "copy": "Link kopiëren",
             "copied": "Link gekopieerd",
             "linkedin": "Delen op LinkedIn"
+        },
+        "likes": {
+            "like": "Vind ik leuk",
+            "liked": "Vind je leuk",
+            "count": "{count, plural, =0 {Nog geen likes} one {# like} other {# likes}}"
         }
     }
 }

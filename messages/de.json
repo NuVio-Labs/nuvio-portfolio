@@ -534,6 +534,11 @@
             "copy": "Link kopieren",
             "copied": "Link kopiert",
             "linkedin": "Auf LinkedIn teilen"
+        },
+        "likes": {
+            "like": "Gefällt mir",
+            "liked": "Gefällt dir",
+            "count": "{count, plural, =0 {Noch keine Likes} one {# Like} other {# Likes}}"
         }
     }
 }

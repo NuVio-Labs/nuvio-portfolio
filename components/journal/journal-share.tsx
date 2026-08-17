@@ -8,6 +8,8 @@ interface JournalShareProps {
     title: string
     /** Absolute URL des Artikels. */
     url: string
+    /** Wird rechts neben den Teilen-Buttons gezeigt (Like-Zaehler). */
+    children?: React.ReactNode
 }
 
 const BUTTON_CLASS =
@@ -21,7 +23,7 @@ const BUTTON_CLASS =
  * Mounten, weil der Server navigator.share nicht kennt und das Markup
  * sonst beim Hydrieren auseinanderliefe.
  */
-export function JournalShare({ title, url }: JournalShareProps) {
+export function JournalShare({ title, url, children }: JournalShareProps) {
     const t = useTranslations("journal.share")
     const [canShare, setCanShare] = React.useState(false)
     const [copied, setCopied] = React.useState(false)
@@ -56,6 +58,8 @@ export function JournalShare({ title, url }: JournalShareProps) {
             >
                 {t("label")}
             </h2>
+
+            {children && <div className="mb-5">{children}</div>}
 
             <div className="flex flex-wrap gap-3">
                 {canShare && (
