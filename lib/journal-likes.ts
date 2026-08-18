@@ -1,65 +1,80 @@
 import "server-only"
 
 /**
- * Zugriff auf den Like-Zaehler ueber die REST-Schnittstelle von Supabase.
+ * Like-Zaehler auf Upstash Redis, angesprochen ueber dessen REST-Schnittstelle.
  *
- * Bewusst ohne @supabase/supabase-js: es sind genau zwei Aufrufe, dafuer
- * lohnt keine zusaetzliche Abhaengigkeit.
+ * Fuer einen reinen Zaehler ist das die passende Bauform: INCR ist atomar,
+ * es braucht kein Schema und keine Migration. Bewusst ohne SDK — es sind
+ * zwei Aufrufe, das rechtfertigt keine Abhaengigkeit.
  *
- * Verwendet wird der anon-Key, nicht der service_role-Key. Der anon-Key
- * unterliegt weiterhin den Row-Level-Security-Regeln — Schreiben ist damit
- * nur ueber die SECURITY-DEFINER-Funktion moeglich, nicht direkt auf der
- * Tabelle. Beide Werte bleiben serverseitig, sie erreichen den Browser nie.
+ * Beide Werte bleiben serverseitig und erreichen den Browser nie. Der Token
+ * hat vollen Schreibzugriff auf die Datenbank, er darf nicht ins Bundle.
  */
 
-const SUPABASE_URL = process.env.SUPABASE_URL
-const SUPABASE_ANON_KEY = process.env.SUPABASE_ANON_KEY
+/*
+ * Die Vercel-Integration legt die Variablen je nach Anbieterweg unter
+ * unterschiedlichen Namen an. Beide Schreibweisen akzeptieren, damit es
+ * ohne Nacharbeit passt.
+ */
+const REST_URL = process.env.UPSTASH_REDIS_REST_URL ?? process.env.KV_REST_API_URL
+const REST_TOKEN = process.env.UPSTASH_REDIS_REST_TOKEN ?? process.env.KV_REST_API_TOKEN
 
-export function likesConfigured(): boolean {
-    return Boolean(SUPABASE_URL && SUPABASE_ANON_KEY)
+/** Eigener Namensraum, falls die Datenbank noch anderes enthaelt. */
+function key(slug: string): string {
+    return encodeURIComponent(`journal:likes:${slug}`)
 }
 
-function headers(): HeadersInit {
-    return {
-        apikey: SUPABASE_ANON_KEY as string,
-        Authorization: `Bearer ${SUPABASE_ANON_KEY}`,
-        "Content-Type": "application/json",
+export function likesConfigured(): boolean {
+    return Boolean(REST_URL && REST_TOKEN)
+}
+
+/**
+ * Ergebnis eines Kommandos.
+ *
+ * `ok: false` heisst Stoerung, `ok: true` mit `result: null` heisst dagegen,
+ * dass der Schluessel schlicht noch nicht existiert. Die beiden Faelle
+ * duerfen nicht zusammenfallen: sonst zeigte der Zaehler bei einem Ausfall
+ * "noch keine Likes" an, statt sich auszublenden.
+ */
+type CommandResult = { ok: true; result: unknown } | { ok: false }
+
+async function command(path: string): Promise<CommandResult> {
+    if (!likesConfigured()) return { ok: false }
+
+    try {
+        const res = await fetch(`${REST_URL}/${path}`, {
+            headers: { Authorization: `Bearer ${REST_TOKEN}` },
+            cache: "no-store",
+        })
+        if (!res.ok) return { ok: false }
+
+        const body: { result?: unknown; error?: string } = await res.json()
+        if (body.error) {
+            console.error("Upstash-Fehler:", body.error)
+            return { ok: false }
+        }
+        return { ok: true, result: body.result ?? null }
+    } catch {
+        return { ok: false }
     }
 }
 
 /** Aktueller Stand. Null, wenn der Dienst nicht erreichbar ist. */
 export async function getLikeCount(slug: string): Promise<number | null> {
-    if (!likesConfigured()) return null
+    const response = await command(`get/${key(slug)}`)
+    if (!response.ok) return null
 
-    try {
-        const url = `${SUPABASE_URL}/rest/v1/journal_likes?slug=eq.${encodeURIComponent(slug)}&select=count`
-        const res = await fetch(url, { headers: headers(), cache: "no-store" })
-        if (!res.ok) return null
+    /* Schluessel noch nicht angelegt: der Artikel hat schlicht null Likes. */
+    if (response.result === null) return 0
 
-        const rows: Array<{ count: number }> = await res.json()
-        /* Noch kein Like: die Zeile entsteht erst beim ersten Hochzaehlen. */
-        return rows[0]?.count ?? 0
-    } catch {
-        return null
-    }
+    const value = Number(response.result)
+    return Number.isFinite(value) ? value : 0
 }
 
-/** Zaehlt hoch und liefert den neuen Stand. Null bei Fehlern. */
+/** Zaehlt atomar hoch und liefert den neuen Stand. Null bei Fehlern. */
 export async function incrementLike(slug: string): Promise<number | null> {
-    if (!likesConfigured()) return null
+    const response = await command(`incr/${key(slug)}`)
+    if (!response.ok) return null
 
-    try {
-        const res = await fetch(`${SUPABASE_URL}/rest/v1/rpc/increment_journal_like`, {
-            method: "POST",
-            headers: headers(),
-            body: JSON.stringify({ article_slug: slug }),
-            cache: "no-store",
-        })
-        if (!res.ok) return null
-
-        const value = await res.json()
-        return typeof value === "number" ? value : null
-    } catch {
-        return null
-    }
+    return typeof response.result === "number" ? response.result : null
 }
