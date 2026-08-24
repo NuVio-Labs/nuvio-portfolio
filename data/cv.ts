@@ -33,7 +33,8 @@ export const cvContact = {
        vollstaendige Anschrift steht nur in den PDF-Unterlagen. */
     location: "47559 Kranenburg",
     birthDate: "1994-09-05",
-    portrait: "/axel-portrait.webp",
+    /* Freigestelltes Bewerbungsfoto, Seitenverhaeltnis 3:4. */
+    portrait: "/cv/axel-portrait.webp",
 } as const
 
 /** Pflichtpraktikum im Rahmen der Umschulung. */

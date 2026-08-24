@@ -174,12 +174,13 @@ export default async function CvPage({
                         </div>
 
                         <div className="order-first md:order-last w-40 sm:w-48 md:w-full">
-                            <div className="relative aspect-[4/5] overflow-hidden rounded-2xl border border-border-soft bg-surface">
+                            <div className="relative aspect-[3/4] overflow-hidden rounded-2xl border border-border-soft bg-surface">
                                 <Image
                                     src={cvContact.portrait}
                                     alt={t("hero.portraitAlt")}
                                     fill
-                                    className="object-cover object-center"
+                                    /* Freisteller: 3:4 wie die Quelle, damit nichts beschnitten wird. */
+                                    className="object-cover object-top"
                                     sizes="(min-width: 768px) 280px, 192px"
                                     priority
                                 />
