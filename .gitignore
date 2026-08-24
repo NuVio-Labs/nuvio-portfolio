@@ -20,3 +20,9 @@ eslint-report.json
 .claude/skills/
 .claude/settings.local.json
 .cursor/
+
+# Erzeugte QR-Codes: sie enthalten den Zugriffsschluessel der Bewerbungsseite
+# und gehoeren deshalb nicht in dieses oeffentliche Repository.
+# Neu erzeugen nach docs/qr/README.md.
+docs/qr/*.svg
+docs/qr/*.png

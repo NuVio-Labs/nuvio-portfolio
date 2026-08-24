@@ -14,9 +14,15 @@
  * steht nur im QR-Code auf den gedruckten Unterlagen, damit die Seite nicht
  * durch Raten oder Ausprobieren erreichbar ist.
  *
- * Wird er geaendert, muss der QR-Code in docs/qr neu erzeugt werden.
+ * Der echte Schluessel gehoert nicht ins Repository, weil es oeffentlich ist:
+ * er kommt aus CV_ACCESS_KEY (lokal .env.local, in Produktion die Vercel
+ * Environment Variables) und wird beim Build eingesetzt. Ohne gesetzte
+ * Variable greift ein Platzhalter, dann ist nur /cv/preview erreichbar.
+ *
+ * Wird der Schluessel geaendert, muss der QR-Code in docs/qr neu erzeugt und
+ * die Variable in Vercel angepasst werden; danach ist ein Redeploy noetig.
  */
-export const cvAccessKey = "n3pdva75kt3z"
+export const cvAccessKey = process.env.CV_ACCESS_KEY?.trim() || "preview"
 
 export const cvContact = {
     phone: "+49 1590 1698608",
