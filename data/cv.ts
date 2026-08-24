@@ -89,10 +89,10 @@ export interface CvDownload {
 }
 
 export const cvDownloads: CvDownload[] = [
-    { id: "complete", file: "/cv/axel-schurer-bewerbung-komplett.pdf", sizeKb: 215, primary: true },
-    { id: "letter", file: "/cv/axel-schurer-anschreiben.pdf", sizeKb: 42 },
-    { id: "resume", file: "/cv/axel-schurer-lebenslauf.pdf", sizeKb: 130 },
-    { id: "certificate", file: "/cv/bfw-bescheinigung-praktikumsgeber.pdf", sizeKb: 47 },
+    { id: "complete", file: "/cv/axel-schurer-bewerbung-komplett.pdf", sizeKb: 208, primary: true },
+    { id: "letter", file: "/cv/axel-schurer-anschreiben.pdf", sizeKb: 43 },
+    { id: "resume", file: "/cv/axel-schurer-lebenslauf.pdf", sizeKb: 102 },
+    { id: "certificate", file: "/cv/bfw-bescheinigung-praktikumsgeber.pdf", sizeKb: 33 },
 ]
 
 export const cvFactIds = [
