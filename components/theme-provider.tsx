@@ -8,9 +8,16 @@ import { usePathname } from "@/i18n/navigation"
  * Routen, die unabhaengig vom gewaehlten Farbschema immer hell erscheinen.
  * Das Journal ist bewusst als Lesefläche gestaltet und nur fuer Light Mode
  * abgestimmt — die Editorial-Grafiken haben hellen Hintergrund.
+ * Die Bewerbungsseite /cv folgt derselben Logik: sie ist ein Dokument und
+ * soll am Bildschirm wie auf dem Ausdruck gleich aussehen.
  */
 export function isForcedLightRoute(pathname: string) {
-    return pathname === "/journal" || pathname.startsWith("/journal/")
+    return (
+        pathname === "/journal" ||
+        pathname.startsWith("/journal/") ||
+        pathname === "/cv" ||
+        pathname.startsWith("/cv/")
+    )
 }
 
 export function ThemeProvider({

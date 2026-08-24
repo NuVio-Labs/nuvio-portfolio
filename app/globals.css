@@ -268,3 +268,29 @@
 
 .accordion-down { animation: accordion-down 0.2s ease-out; }
 .accordion-up   { animation: accordion-up 0.2s ease-out; }
+
+/* ─── Bewerbungsseite /cv: Druckansicht ─── */
+@media print {
+  /* Navigation, Footer und Aktionsflaechen bringen auf Papier nichts. */
+  header,
+  footer,
+  .nv-cv-noprint {
+    display: none !important;
+  }
+
+  .nv-cv {
+    padding-top: 0 !important;
+  }
+
+  .nv-cv section {
+    padding-top: 1.25rem !important;
+    padding-bottom: 1.25rem !important;
+    background: #ffffff !important;
+    break-inside: avoid;
+  }
+
+  .nv-cv article,
+  .nv-cv li {
+    break-inside: avoid;
+  }
+}

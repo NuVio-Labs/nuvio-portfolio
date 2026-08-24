@@ -323,6 +323,10 @@
         },
         "privacy": {
             "title": "Privacy Policy"
+        },
+        "cv": {
+            "title": "CV & Application | Axel Schurer",
+            "description": "CV, cover letter and internship documents of Axel Schurer, currently retraining as an application developer."
         }
     },
     "services": {
@@ -540,5 +544,175 @@
             "liked": "Liked",
             "count": "{count, plural, =0 {No likes yet} one {# like} other {# likes}}"
         }
+    },
+    "cvPage": {
+        "hero": {
+            "eyebrow": "Application documents",
+            "name": "Axel Schurer",
+            "role": "Retraining as an IT specialist for application development",
+            "tagline": "Technically versatile all-rounder focused on web development and digital solutions. Eager to learn, structured and open to new challenges.",
+            "portraitAlt": "Portrait photo of Axel Schurer",
+            "availability": "Mandatory internship {start} to {end}",
+            "labels": {
+                "phone": "Phone",
+                "email": "Email",
+                "location": "Location",
+                "birthday": "Date of birth"
+            },
+            "actions": {
+                "download": "Documents as PDF",
+                "contact": "Send an email"
+            }
+        },
+        "facts": {
+            "eyebrow": "The internship at a glance",
+            "headline": "What a host company should know.",
+            "items": {
+                "period": {
+                    "title": "Period",
+                    "text": "{start} to {end}, full time and in one block."
+                },
+                "mandatory": {
+                    "title": "Mandatory internship",
+                    "text": "A fixed part of my retraining as an IT specialist for application development at BFW Oberhausen."
+                },
+                "cost": {
+                    "title": "No staffing costs",
+                    "text": "The host company pays neither wages nor insurance contributions."
+                },
+                "insurance": {
+                    "title": "Accident insurance covered",
+                    "text": "Cover is provided by the responsible rehabilitation institution and includes accidents on the way to work."
+                },
+                "travel": {
+                    "title": "Travel costs",
+                    "text": "Travel costs are reimbursed by BFW Oberhausen, not by the company."
+                },
+                "contract": {
+                    "title": "Internship contract",
+                    "text": "A contract is signed between the company, BFW Oberhausen and me."
+                }
+            },
+            "note": "Based on the official confirmation for host companies issued by Berufsförderungswerk Oberhausen. Contacts there are Mr Mades, Mr Pack, Mr Hüllen, Mr Greese, Mr Lück, Mr Maikowski or Ms Berberovic."
+        },
+        "letter": {
+            "eyebrow": "Cover letter",
+            "headline": "Why I am applying.",
+            "place": "Kranenburg",
+            "salutation": "Dear Sir or Madam,",
+            "paragraphs": [
+                "as part of my retraining as an IT specialist for application development at Berufsförderungswerk Oberhausen, I will complete a mandatory internship from {start} to {end}. Because it is a mandatory part of the programme, the host company incurs no staffing costs.",
+                "For this period I am looking for a company where I can apply my current knowledge in practice, get to know professional development processes and grow technically. I am particularly interested in environments where modern technology, software development and demanding technical systems come together.",
+                "Web and software development occupy me well beyond my retraining. In my own projects I work with HTML, CSS, JavaScript, TypeScript, React and Next.js, and I care about responsive interfaces, good user experience and a structured, maintainable implementation.",
+                "Through my own projects and my self-employed work with NuVio Labs I am used to analysing requirements independently, familiarising myself with new technologies and turning solutions into working software. My completed apprenticeship as an electronics technician for energy and building technology adds a solid technical background.",
+                "During the internship I would above all like to learn professional development workflows, contribute to real software projects and expand my knowledge in exchange with experienced developers.",
+                "I would be glad to convince you of my motivation in person and to present some of my previous projects. I would very much welcome the opportunity to complete my mandatory internship at your company."
+            ],
+            "closing": "Kind regards",
+            "signature": "Axel Schurer"
+        },
+        "experience": {
+            "eyebrow": "Career",
+            "headline": "Professional experience"
+        },
+        "education": {
+            "eyebrow": "Qualification",
+            "headline": "Education"
+        },
+        "entries": {
+            "nuvio": {
+                "period": "2026 to today",
+                "title": "Founder, Web & Digital Services",
+                "org": "NuVio Labs, self-employed as a side business",
+                "bullets": [
+                    "Building modern websites and web applications",
+                    "Frontend development with React, Next.js, TypeScript and Tailwind CSS",
+                    "Responsive web design and mobile-first implementation",
+                    "UI and UX concepts including implementation",
+                    "Multilingual websites in German, English and Dutch",
+                    "Deployment and hosting, among others with Vercel",
+                    "Digital back office, data maintenance and organisational services"
+                ]
+            },
+            "electrician": {
+                "period": "2023 to 2024",
+                "title": "Qualified electronics technician for energy and building technology",
+                "org": "Elektro van Kessel GmbH & Co. KG, Kranenburg",
+                "bullets": []
+            },
+            "retraining": {
+                "period": "2026 to today",
+                "title": "Retraining as IT specialist for application development",
+                "org": "Berufsförderungswerk Oberhausen, final exam at IHK Essen",
+                "bullets": []
+            },
+            "apprenticeship": {
+                "period": "2019 to 2023",
+                "title": "Apprenticeship as electronics technician for energy and building technology",
+                "org": "Completed vocational training",
+                "bullets": []
+            },
+            "school": {
+                "period": "2005 to 2010",
+                "title": "Secondary school",
+                "org": "Completed with intermediate school leaving certificate",
+                "bullets": []
+            }
+        },
+        "skills": {
+            "eyebrow": "Skills",
+            "headline": "Technical focus",
+            "note": "Self-assessment, as stated in the CV.",
+            "levelLabel": "{label}: {level} out of 100",
+            "toolboxHeadline": "What I work with"
+        },
+        "profile": {
+            "eyebrow": "Profile",
+            "headline": "A short introduction",
+            "languagesHeadline": "Languages",
+            "languages": {
+                "de": {
+                    "name": "German",
+                    "level": "Native speaker"
+                },
+                "en": {
+                    "name": "English",
+                    "level": "B1 to B2"
+                }
+            },
+            "licenseHeadline": "Driving licence",
+            "license": "Category B"
+        },
+        "downloads": {
+            "eyebrow": "Documents",
+            "headline": "Everything to download",
+            "hint": "PDF, {size} KB",
+            "items": {
+                "complete": {
+                    "title": "Complete application",
+                    "text": "Cover letter, CV and confirmation in a single file."
+                },
+                "letter": {
+                    "title": "Cover letter",
+                    "text": "Motivation and framework of the mandatory internship."
+                },
+                "resume": {
+                    "title": "CV",
+                    "text": "Career, skills and contact details."
+                },
+                "certificate": {
+                    "title": "Confirmation for host companies",
+                    "text": "BFW Oberhausen, conditions and contacts."
+                }
+            }
+        },
+        "contact": {
+            "headline": "Questions about the internship?",
+            "text": "Feel free to get in touch directly. I usually reply the same day.",
+            "mail": "Send an email",
+            "phone": "Call",
+            "portfolio": "View portfolio"
+        },
+        "unlisted": "This page is not linked publicly and exists solely for applications."
     }
 }

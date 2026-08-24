@@ -323,6 +323,10 @@
         },
         "privacy": {
             "title": "Datenschutzerklärung"
+        },
+        "cv": {
+            "title": "Lebenslauf & Bewerbung | Axel Schurer",
+            "description": "Lebenslauf, Anschreiben und Praktikumsunterlagen von Axel Schurer, Fachinformatiker für Anwendungsentwicklung in Umschulung."
         }
     },
     "services": {
@@ -540,5 +544,175 @@
             "liked": "Gefällt dir",
             "count": "{count, plural, =0 {Noch keine Likes} one {# Like} other {# Likes}}"
         }
+    },
+    "cvPage": {
+        "hero": {
+            "eyebrow": "Bewerbungsunterlagen",
+            "name": "Axel Schurer",
+            "role": "Fachinformatiker für Anwendungsentwicklung in Umschulung",
+            "tagline": "Technisch versierter Allrounder mit Fokus auf Webentwicklung und digitale Lösungen. Lernbereit, strukturiert und offen für neue Herausforderungen.",
+            "portraitAlt": "Porträtfoto von Axel Schurer",
+            "availability": "Pflichtpraktikum {start} bis {end}",
+            "labels": {
+                "phone": "Telefon",
+                "email": "E-Mail",
+                "location": "Standort",
+                "birthday": "Geburtsdatum"
+            },
+            "actions": {
+                "download": "Unterlagen als PDF",
+                "contact": "E-Mail schreiben"
+            }
+        },
+        "facts": {
+            "eyebrow": "Praktikum auf einen Blick",
+            "headline": "Was ein Praktikumsbetrieb wissen sollte.",
+            "items": {
+                "period": {
+                    "title": "Zeitraum",
+                    "text": "{start} bis {end}, in Vollzeit und am Stück."
+                },
+                "mandatory": {
+                    "title": "Pflichtpraktikum",
+                    "text": "Fester Bestandteil meiner Umschulung zum Fachinformatiker für Anwendungsentwicklung am BFW Oberhausen."
+                },
+                "cost": {
+                    "title": "Keine Personalkosten",
+                    "text": "Dem Praktikumsbetrieb entstehen weder Lohn- noch Versicherungskosten."
+                },
+                "insurance": {
+                    "title": "Unfallversichert",
+                    "text": "Der Versicherungsschutz läuft über den zuständigen Rehabilitationsträger und gilt auch für Wegeunfälle."
+                },
+                "travel": {
+                    "title": "Fahrtkosten",
+                    "text": "Die Fahrtkosten übernimmt das BFW Oberhausen, nicht der Betrieb."
+                },
+                "contract": {
+                    "title": "Praktikumsvertrag",
+                    "text": "Zwischen Betrieb, BFW Oberhausen und mir wird ein Praktikumsvertrag geschlossen."
+                }
+            },
+            "note": "Grundlage ist die Bescheinigung des Berufsförderungswerks Oberhausen für Praktikumsgeber. Ansprechpartner dort sind Herr Mades, Herr Pack, Herr Hüllen, Herr Greese, Herr Lück, Herr Maikowski oder Frau Berberovic."
+        },
+        "letter": {
+            "eyebrow": "Anschreiben",
+            "headline": "Warum ich mich bewerbe.",
+            "place": "Kranenburg",
+            "salutation": "Sehr geehrte Damen und Herren,",
+            "paragraphs": [
+                "im Rahmen meiner Umschulung zum Fachinformatiker für Anwendungsentwicklung am Berufsförderungswerk Oberhausen absolviere ich vom {start} bis zum {end} ein verpflichtendes Praktikum. Da es sich um ein Pflichtpraktikum innerhalb meiner Umschulung handelt, entstehen dem Praktikumsbetrieb keine Personalkosten.",
+                "Für diesen Zeitraum suche ich ein Unternehmen, in dem ich meine bisherigen Kenntnisse praktisch einsetzen, professionelle Entwicklungsprozesse kennenlernen und mich fachlich weiterentwickeln kann. Besonders interessant ist für mich, wenn moderne Technologie, Softwareentwicklung und technisch anspruchsvolle Systeme miteinander verbunden werden.",
+                "Web- und Softwareentwicklung beschäftigen mich auch über meine Umschulung hinaus. In eigenen Projekten arbeite ich unter anderem mit HTML, CSS, JavaScript, TypeScript, React und Next.js. Dabei lege ich Wert auf responsive Benutzeroberflächen, eine gute User Experience sowie eine strukturierte und wartbare Umsetzung.",
+                "Durch meine eigenen Projekte und meine selbstständige Tätigkeit mit NuVio Labs bin ich es gewohnt, Anforderungen eigenständig zu analysieren, mich in neue Technologien und Problemstellungen einzuarbeiten und Lösungen praktisch umzusetzen. Zusätzlich bringe ich durch meine abgeschlossene Berufsausbildung zum Elektroniker für Energie- und Gebäudetechnik einen technischen beruflichen Hintergrund mit.",
+                "Während meines Praktikums möchte ich insbesondere professionelle Entwicklungsabläufe kennenlernen, an realen Softwareprojekten mitarbeiten und meine Kenntnisse im Austausch mit erfahrenen Entwicklerinnen und Entwicklern weiter ausbauen.",
+                "Gerne überzeuge ich Sie in einem persönlichen Gespräch von meiner Motivation und stelle Ihnen einige meiner bisherigen Projekte vor. Über die Möglichkeit, mein Pflichtpraktikum in Ihrem Unternehmen zu absolvieren, würde ich mich sehr freuen."
+            ],
+            "closing": "Mit freundlichen Grüßen",
+            "signature": "Axel Schurer"
+        },
+        "experience": {
+            "eyebrow": "Werdegang",
+            "headline": "Berufserfahrung"
+        },
+        "education": {
+            "eyebrow": "Qualifikation",
+            "headline": "Bildungsweg"
+        },
+        "entries": {
+            "nuvio": {
+                "period": "2026 bis heute",
+                "title": "Founder, Web & Digital Services",
+                "org": "NuVio Labs, selbstständig im Nebengewerbe",
+                "bullets": [
+                    "Entwicklung moderner Websites und Webanwendungen",
+                    "Frontend-Entwicklung mit React, Next.js, TypeScript und Tailwind CSS",
+                    "Responsive Webdesign und Mobile-First-Umsetzung",
+                    "UI- und UX-Konzeption inklusive Umsetzung",
+                    "Mehrsprachige Websites in Deutsch, Englisch und Niederländisch",
+                    "Deployment und Hosting, unter anderem mit Vercel",
+                    "Digitale Büro-, Datenpflege- und organisatorische Dienstleistungen"
+                ]
+            },
+            "electrician": {
+                "period": "2023 bis 2024",
+                "title": "Geselle Elektroniker für Energie- und Gebäudetechnik",
+                "org": "Elektro van Kessel GmbH & Co. KG, Kranenburg",
+                "bullets": []
+            },
+            "retraining": {
+                "period": "2026 bis heute",
+                "title": "Umschulung Fachinformatiker für Anwendungsentwicklung",
+                "org": "Berufsförderungswerk Oberhausen, Abschluss vor der IHK zu Essen",
+                "bullets": []
+            },
+            "apprenticeship": {
+                "period": "2019 bis 2023",
+                "title": "Ausbildung Elektroniker für Energie- und Gebäudetechnik",
+                "org": "Abgeschlossene Berufsausbildung",
+                "bullets": []
+            },
+            "school": {
+                "period": "2005 bis 2010",
+                "title": "Hauptschule",
+                "org": "Abgeschlossen mit mittlerer Reife",
+                "bullets": []
+            }
+        },
+        "skills": {
+            "eyebrow": "Fähigkeiten",
+            "headline": "Technische Schwerpunkte",
+            "note": "Selbsteinschätzung, wie im Lebenslauf angegeben.",
+            "levelLabel": "{label}: {level} von 100",
+            "toolboxHeadline": "Womit ich arbeite"
+        },
+        "profile": {
+            "eyebrow": "Profil",
+            "headline": "Kurz zu mir",
+            "languagesHeadline": "Sprachen",
+            "languages": {
+                "de": {
+                    "name": "Deutsch",
+                    "level": "Muttersprache"
+                },
+                "en": {
+                    "name": "Englisch",
+                    "level": "B1 bis B2"
+                }
+            },
+            "licenseHeadline": "Führerschein",
+            "license": "Klasse B"
+        },
+        "downloads": {
+            "eyebrow": "Unterlagen",
+            "headline": "Alles zum Herunterladen",
+            "hint": "PDF, {size} KB",
+            "items": {
+                "complete": {
+                    "title": "Vollständige Bewerbung",
+                    "text": "Anschreiben, Lebenslauf und Bescheinigung in einer Datei."
+                },
+                "letter": {
+                    "title": "Anschreiben",
+                    "text": "Motivation und Rahmen des Pflichtpraktikums."
+                },
+                "resume": {
+                    "title": "Lebenslauf",
+                    "text": "Werdegang, Fähigkeiten und Kontaktdaten."
+                },
+                "certificate": {
+                    "title": "Bescheinigung für Praktikumsgeber",
+                    "text": "BFW Oberhausen, Konditionen und Ansprechpartner."
+                }
+            }
+        },
+        "contact": {
+            "headline": "Fragen zum Praktikum?",
+            "text": "Melden Sie sich gerne direkt. Ich antworte in der Regel am selben Tag.",
+            "mail": "E-Mail schreiben",
+            "phone": "Anrufen",
+            "portfolio": "Portfolio ansehen"
+        },
+        "unlisted": "Diese Seite ist nicht öffentlich verlinkt und ausschließlich für Bewerbungen gedacht."
     }
 }

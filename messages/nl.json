@@ -323,6 +323,10 @@
         },
         "privacy": {
             "title": "Privacybeleid"
+        },
+        "cv": {
+            "title": "CV & Sollicitatie | Axel Schurer",
+            "description": "CV, sollicitatiebrief en stagedocumenten van Axel Schurer, in omscholing tot applicatieontwikkelaar."
         }
     },
     "services": {
@@ -540,5 +544,175 @@
             "liked": "Vind je leuk",
             "count": "{count, plural, =0 {Nog geen likes} one {# like} other {# likes}}"
         }
+    },
+    "cvPage": {
+        "hero": {
+            "eyebrow": "Sollicitatiedocumenten",
+            "name": "Axel Schurer",
+            "role": "In omscholing tot applicatieontwikkelaar",
+            "tagline": "Technisch veelzijdige allrounder met focus op webontwikkeling en digitale oplossingen. Leergierig, gestructureerd en open voor nieuwe uitdagingen.",
+            "portraitAlt": "Portretfoto van Axel Schurer",
+            "availability": "Verplichte stage {start} tot {end}",
+            "labels": {
+                "phone": "Telefoon",
+                "email": "E-mail",
+                "location": "Locatie",
+                "birthday": "Geboortedatum"
+            },
+            "actions": {
+                "download": "Documenten als pdf",
+                "contact": "Stuur een e-mail"
+            }
+        },
+        "facts": {
+            "eyebrow": "De stage in het kort",
+            "headline": "Wat een stagebedrijf moet weten.",
+            "items": {
+                "period": {
+                    "title": "Periode",
+                    "text": "{start} tot {end}, voltijd en aaneengesloten."
+                },
+                "mandatory": {
+                    "title": "Verplichte stage",
+                    "text": "Vast onderdeel van mijn omscholing tot applicatieontwikkelaar aan het BFW Oberhausen."
+                },
+                "cost": {
+                    "title": "Geen personeelskosten",
+                    "text": "Het stagebedrijf betaalt geen loon en geen verzekeringspremies."
+                },
+                "insurance": {
+                    "title": "Ongevallenverzekering geregeld",
+                    "text": "De dekking loopt via de verantwoordelijke re-integratie-instantie en geldt ook voor ongevallen onderweg."
+                },
+                "travel": {
+                    "title": "Reiskosten",
+                    "text": "De reiskosten worden vergoed door het BFW Oberhausen, niet door het bedrijf."
+                },
+                "contract": {
+                    "title": "Stageovereenkomst",
+                    "text": "Tussen bedrijf, BFW Oberhausen en mij wordt een stageovereenkomst gesloten."
+                }
+            },
+            "note": "Basis is de verklaring voor stagebedrijven van het Berufsförderungswerk Oberhausen. Contactpersonen daar zijn de heer Mades, de heer Pack, de heer Hüllen, de heer Greese, de heer Lück, de heer Maikowski of mevrouw Berberovic."
+        },
+        "letter": {
+            "eyebrow": "Sollicitatiebrief",
+            "headline": "Waarom ik solliciteer.",
+            "place": "Kranenburg",
+            "salutation": "Geachte heer, mevrouw,",
+            "paragraphs": [
+                "in het kader van mijn omscholing tot applicatieontwikkelaar aan het Berufsförderungswerk Oberhausen loop ik van {start} tot {end} een verplichte stage. Omdat het om een verplichte stage binnen de omscholing gaat, heeft het stagebedrijf geen personeelskosten.",
+                "Voor die periode zoek ik een bedrijf waar ik mijn kennis in de praktijk kan inzetten, professionele ontwikkelprocessen leer kennen en mij vakinhoudelijk verder ontwikkel. Vooral omgevingen waarin moderne technologie, softwareontwikkeling en technisch veeleisende systemen samenkomen spreken mij aan.",
+                "Web- en softwareontwikkeling houden mij ook buiten mijn omscholing bezig. In eigen projecten werk ik onder andere met HTML, CSS, JavaScript, TypeScript, React en Next.js. Daarbij let ik op responsieve interfaces, een goede gebruikerservaring en een gestructureerde, onderhoudbare uitwerking.",
+                "Door mijn eigen projecten en mijn zelfstandige werk met NuVio Labs ben ik gewend eisen zelfstandig te analyseren, mij in nieuwe technologie in te werken en oplossingen praktisch te realiseren. Daarnaast breng ik met mijn afgeronde opleiding tot elektrotechnicus voor energie- en gebouwtechniek een technische achtergrond mee.",
+                "Tijdens mijn stage wil ik vooral professionele ontwikkelprocessen leren kennen, aan echte softwareprojecten meewerken en mijn kennis in de uitwisseling met ervaren ontwikkelaars verder uitbouwen.",
+                "Graag overtuig ik u in een persoonlijk gesprek van mijn motivatie en laat ik enkele van mijn projecten zien. Over de mogelijkheid mijn verplichte stage bij uw bedrijf te lopen zou ik zeer verheugd zijn."
+            ],
+            "closing": "Met vriendelijke groet",
+            "signature": "Axel Schurer"
+        },
+        "experience": {
+            "eyebrow": "Loopbaan",
+            "headline": "Werkervaring"
+        },
+        "education": {
+            "eyebrow": "Kwalificatie",
+            "headline": "Opleiding"
+        },
+        "entries": {
+            "nuvio": {
+                "period": "2026 tot heden",
+                "title": "Founder, Web & Digital Services",
+                "org": "NuVio Labs, zelfstandig als nevenactiviteit",
+                "bullets": [
+                    "Ontwikkeling van moderne websites en webapplicaties",
+                    "Frontendontwikkeling met React, Next.js, TypeScript en Tailwind CSS",
+                    "Responsief webdesign en mobile-first uitwerking",
+                    "UI- en UX-concept inclusief realisatie",
+                    "Meertalige websites in het Duits, Engels en Nederlands",
+                    "Deployment en hosting, onder andere met Vercel",
+                    "Digitale kantoor-, datawerk- en organisatorische diensten"
+                ]
+            },
+            "electrician": {
+                "period": "2023 tot 2024",
+                "title": "Gediplomeerd elektrotechnicus energie- en gebouwtechniek",
+                "org": "Elektro van Kessel GmbH & Co. KG, Kranenburg",
+                "bullets": []
+            },
+            "retraining": {
+                "period": "2026 tot heden",
+                "title": "Omscholing tot applicatieontwikkelaar",
+                "org": "Berufsförderungswerk Oberhausen, examen bij de IHK Essen",
+                "bullets": []
+            },
+            "apprenticeship": {
+                "period": "2019 tot 2023",
+                "title": "Opleiding elektrotechnicus energie- en gebouwtechniek",
+                "org": "Afgeronde beroepsopleiding",
+                "bullets": []
+            },
+            "school": {
+                "period": "2005 tot 2010",
+                "title": "Middelbare school",
+                "org": "Afgerond met Duits diploma mittlere Reife",
+                "bullets": []
+            }
+        },
+        "skills": {
+            "eyebrow": "Vaardigheden",
+            "headline": "Technische focus",
+            "note": "Zelfinschatting, zoals vermeld in het cv.",
+            "levelLabel": "{label}: {level} van 100",
+            "toolboxHeadline": "Waarmee ik werk"
+        },
+        "profile": {
+            "eyebrow": "Profiel",
+            "headline": "Kort over mij",
+            "languagesHeadline": "Talen",
+            "languages": {
+                "de": {
+                    "name": "Duits",
+                    "level": "Moedertaal"
+                },
+                "en": {
+                    "name": "Engels",
+                    "level": "B1 tot B2"
+                }
+            },
+            "licenseHeadline": "Rijbewijs",
+            "license": "Categorie B"
+        },
+        "downloads": {
+            "eyebrow": "Documenten",
+            "headline": "Alles om te downloaden",
+            "hint": "Pdf, {size} KB",
+            "items": {
+                "complete": {
+                    "title": "Volledige sollicitatie",
+                    "text": "Brief, cv en verklaring in een bestand."
+                },
+                "letter": {
+                    "title": "Sollicitatiebrief",
+                    "text": "Motivatie en kader van de verplichte stage."
+                },
+                "resume": {
+                    "title": "Curriculum vitae",
+                    "text": "Loopbaan, vaardigheden en contactgegevens."
+                },
+                "certificate": {
+                    "title": "Verklaring voor stagebedrijven",
+                    "text": "BFW Oberhausen, voorwaarden en contactpersonen."
+                }
+            }
+        },
+        "contact": {
+            "headline": "Vragen over de stage?",
+            "text": "Neem gerust direct contact op. Ik antwoord meestal dezelfde dag.",
+            "mail": "Stuur een e-mail",
+            "phone": "Bellen",
+            "portfolio": "Portfolio bekijken"
+        },
+        "unlisted": "Deze pagina is niet openbaar gelinkt en is uitsluitend bedoeld voor sollicitaties."
     }
 }
