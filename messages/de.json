@@ -250,7 +250,9 @@
             "vatTitle": "Umsatzsteuer",
             "vat": "Gemäß § 19 UStG wird keine Umsatzsteuer berechnet (Kleinunternehmerregelung).\nEine Umsatzsteuer-Identifikationsnummer liegt derzeit nicht vor.",
             "disputeTitle": "Verbraucherstreitbeilegung / EU-Streitschlichtung",
-            "dispute": "Die Europäische Kommission stellt eine Plattform zur Online-Streitbeilegung (OS) bereit:\nhttps://ec.europa.eu/consumers/odr/\n\nWir sind nicht verpflichtet und nicht bereit, an Streitbeilegungsverfahren vor einer Verbraucherschlichtungsstelle teilzunehmen."
+            "dispute": "Die Europäische Kommission stellt eine Plattform zur Online-Streitbeilegung (OS) bereit:\nhttps://ec.europa.eu/consumers/odr/\n\nWir sind nicht verpflichtet und nicht bereit, an Streitbeilegungsverfahren vor einer Verbraucherschlichtungsstelle teilzunehmen.",
+            "creditsTitle": "Bildnachweise",
+            "credits": "Ein Teil der Fotografien im Journal stammt von Unsplash und wird unter der Unsplash-Lizenz verwendet: https://unsplash.com/license\n\n„Selbstständigkeit, AEO und Digital Marketing“: Michael Soledad, https://unsplash.com/@michsole\n\nAlle übrigen Bilder, Grafiken und Illustrationen stammen von NuVio Labs."
         },
         "privacy": {
             "title": "Datenschutzerklärung",

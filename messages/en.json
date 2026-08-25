@@ -250,7 +250,9 @@
             "vatTitle": "VAT Information",
             "vat": "In accordance with § 19 UStG (German VAT Act), no value-added tax is charged (small business regulation).\nA VAT identification number is currently not available.",
             "disputeTitle": "Dispute Resolution",
-            "dispute": "The European Commission provides a platform for online dispute resolution (OS):\nhttps://ec.europa.eu/consumers/odr/\n\nWe are not willing or obliged to participate in dispute resolution proceedings before a consumer arbitration board."
+            "dispute": "The European Commission provides a platform for online dispute resolution (OS):\nhttps://ec.europa.eu/consumers/odr/\n\nWe are not willing or obliged to participate in dispute resolution proceedings before a consumer arbitration board.",
+            "creditsTitle": "Image credits",
+            "credits": "Some of the photographs in the journal come from Unsplash and are used under the Unsplash licence: https://unsplash.com/license\n\n“Selbstständigkeit, AEO und Digital Marketing”: Michael Soledad, https://unsplash.com/@michsole\n\nAll other images, graphics and illustrations are by NuVio Labs."
         },
         "privacy": {
             "title": "Privacy Policy",

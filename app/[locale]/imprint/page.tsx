@@ -35,6 +35,12 @@ export default function ImprintPage({ params: { locale } }: { params: { locale: 
                                 <h2 className="text-xl font-bold mb-4">{t("disputeTitle")}</h2>
                                 <p className="whitespace-pre-line text-muted-foreground">{t("dispute")}</p>
                             </div>
+
+                            {/* Quellenangabe fuer zugekaufte oder frei lizenzierte Bilder. */}
+                            <div>
+                                <h2 className="text-xl font-bold mb-4">{t("creditsTitle")}</h2>
+                                <p className="whitespace-pre-line text-muted-foreground">{t("credits")}</p>
+                            </div>
                         </div>
                     </Container>
                 </section>
