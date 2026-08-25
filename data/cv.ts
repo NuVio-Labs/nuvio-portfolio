@@ -89,8 +89,10 @@ export interface CvDownload {
 }
 
 export const cvDownloads: CvDownload[] = [
-    { id: "complete", file: "/cv/axel-schurer-bewerbung-komplett.pdf", sizeKb: 208, primary: true },
-    { id: "letter", file: "/cv/axel-schurer-anschreiben.pdf", sizeKb: 43 },
+    /* Anschreiben und Gesamtbewerbung kommen aus /api/cv: die Route setzt das
+       Datum des Abruftags in die Datei, damit sie nie veraltet wirkt. */
+    { id: "complete", file: "/api/cv/bewerbung-komplett", sizeKb: 179, primary: true },
+    { id: "letter", file: "/api/cv/anschreiben", sizeKb: 41 },
     { id: "resume", file: "/cv/axel-schurer-lebenslauf.pdf", sizeKb: 102 },
     { id: "certificate", file: "/cv/bfw-bescheinigung-praktikumsgeber.pdf", sizeKb: 33 },
 ]
