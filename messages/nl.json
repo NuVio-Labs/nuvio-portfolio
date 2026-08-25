@@ -609,7 +609,8 @@
                 "Graag overtuig ik u in een persoonlijk gesprek van mijn motivatie en laat ik enkele van mijn projecten zien. Over de mogelijkheid mijn verplichte stage bij uw bedrijf te lopen zou ik zeer verheugd zijn."
             ],
             "closing": "Met vriendelijke groet",
-            "signature": "Axel Schurer"
+            "signature": "Axel Schurer",
+            "dateline": "{place}, {date}"
         },
         "experience": {
             "eyebrow": "Loopbaan",

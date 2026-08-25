@@ -42,6 +42,10 @@ import {
 /* Nur der eine gueltige Schluessel wird vorgerendert. */
 export const dynamicParams = false
 
+/* Die Seite traegt im Anschreiben das aktuelle Datum. Stuendlich neu bauen
+   reicht dafuer und behaelt die statische Auslieferung bei. */
+export const revalidate = 3600
+
 export function generateStaticParams() {
     return [{ key: cvAccessKey }]
 }
@@ -91,6 +95,7 @@ export default async function CvPage({
         end: dateFormat.format(new Date(cvInternship.endDate)),
     }
     const birthday = dateFormat.format(new Date(cvContact.birthDate))
+    const heute = dateFormat.format(new Date())
     const letterParagraphs = t.raw("letter.paragraphs") as string[]
 
     const contactItems = [
@@ -247,7 +252,9 @@ export default async function CvPage({
                     </div>
 
                     <article className="rounded-2xl border border-border-soft bg-surface p-7 sm:p-10 max-w-3xl">
-                        <p className="text-text-muted text-sm mb-8">{t("letter.place")}</p>
+                        <p className="text-text-muted text-sm mb-8">
+                            {t("letter.dateline", { place: t("letter.place"), date: heute })}
+                        </p>
                         <p className="text-text-primary mb-6">{t("letter.salutation")}</p>
                         {letterParagraphs.map((_, index) => (
                             <p

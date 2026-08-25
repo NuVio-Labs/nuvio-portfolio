@@ -609,7 +609,8 @@
                 "Gerne überzeuge ich Sie in einem persönlichen Gespräch von meiner Motivation und stelle Ihnen einige meiner bisherigen Projekte vor. Über die Möglichkeit, mein Pflichtpraktikum in Ihrem Unternehmen zu absolvieren, würde ich mich sehr freuen."
             ],
             "closing": "Mit freundlichen Grüßen",
-            "signature": "Axel Schurer"
+            "signature": "Axel Schurer",
+            "dateline": "{place}, {date}"
         },
         "experience": {
             "eyebrow": "Werdegang",

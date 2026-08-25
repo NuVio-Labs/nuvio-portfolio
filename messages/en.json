@@ -609,7 +609,8 @@
                 "I would be glad to convince you of my motivation in person and to present some of my previous projects. I would very much welcome the opportunity to complete my mandatory internship at your company."
             ],
             "closing": "Kind regards",
-            "signature": "Axel Schurer"
+            "signature": "Axel Schurer",
+            "dateline": "{place}, {date}"
         },
         "experience": {
             "eyebrow": "Career",
