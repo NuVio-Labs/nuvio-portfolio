@@ -106,7 +106,7 @@
     "work": {
         "eyebrow": "Selected Work",
         "sectionTitle": "Work",
-        "sectionSubtitle": "Two real client projects. From brief to launch.",
+        "sectionSubtitle": "Selected projects. From brief to launch.",
         "previewBadge": "Live Preview",
         "visitSite": "View live",
         "visitSiteLabel": "Visit {title} (opens in a new tab)",
@@ -148,14 +148,24 @@
                 "approach": "A lean, atmospheric landing page with a booking CTA, biography, and references. No build step, maximum speed.",
                 "outcome1": "A direct online booking channel",
                 "outcome2": "Professional public presence",
-                "outcome3": "Fast loading on all devices",
-                "testimonial": "Finally a page that reflects my sound."
+                "outcome3": "Fast loading on all devices"
             },
             "physio-athlete": {
                 "title": "Physio Athlete by Lea",
                 "description": "One-page site for a mobile sports physiotherapy practice. Clear service overview, local search visibility and a direct path to online booking."
+            },
+            "jan-behr": {
+                "title": "Jan Behr",
+                "description": "Personal blog about smart home, home networking and IT side projects. Static, tracking-free and built to load instantly.",
+                "problem": "Jan had been documenting his smart home and IT projects for years, but only in scattered notes. There was no place of his own that other people could actually read.",
+                "approach": "A static blog with no framework: a project diary with topic tabs, a gallery, self-hosted fonts, a strict content security policy and no tracking.",
+                "outcome1": "A dedicated home for the project diary and notes",
+                "outcome2": "No tracking, no cookies, no third-party servers",
+                "outcome3": "Served statically, loads almost instantly",
+                "testimonial": "The blog finally gives me a way to show what I can do and what I have built. And the way it is structured, I can speak to potential employers and to people who are into IT at the same time. From where I stand, this site makes the most of its potential."
             }
         },
+        "ctaBehr": "Request a blog like this",
         "ctaGeneric": "Request this project"
     },
     "about": {

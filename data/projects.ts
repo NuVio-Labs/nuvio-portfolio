@@ -59,5 +59,16 @@ export const projects: Project[] = [
         tags: ["React", "TypeScript", "Vite", "Tailwind CSS", "SEO"],
         link: "https://physio-athlete.de",
         featured: true
+    },
+    {
+        id: "jan-behr",
+        title: "Jan Behr",
+        description: "Personal blog about smart home, home networking and IT side projects. Static, tracking-free and built to load instantly.",
+        category: "Web",
+        image: "/behr.webp",
+        previewImage: "/previews/behr.webp",
+        tags: ["HTML", "Tailwind CSS", "JavaScript", "Vercel"],
+        link: "https://www.behr.blog",
+        featured: true
     }
 ]

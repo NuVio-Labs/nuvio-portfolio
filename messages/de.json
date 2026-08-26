@@ -106,7 +106,7 @@
     "work": {
         "eyebrow": "Ausgewählte Arbeiten",
         "sectionTitle": "Projekte",
-        "sectionSubtitle": "Zwei echte Aufträge. Vom Briefing bis zum Launch.",
+        "sectionSubtitle": "Ausgewählte Projekte. Vom Briefing bis zum Launch.",
         "previewBadge": "Live-Vorschau",
         "visitSite": "Live ansehen",
         "visitSiteLabel": "{title} besuchen öffnet in neuem Tab",
@@ -148,14 +148,24 @@
                 "approach": "Eine schlanke, atmosphärische Landingpage mit Booking-CTA, Biografie und Referenzen. Ohne Build-Step, maximal schnell.",
                 "outcome1": "Direkter Booking-Kanal online",
                 "outcome2": "Professionelle Außendarstellung",
-                "outcome3": "Schnell ladend auf allen Geräten",
-                "testimonial": "Endlich habe ich eine Seite, die meinen Sound widerspiegelt."
+                "outcome3": "Schnell ladend auf allen Geräten"
             },
             "physio-athlete": {
                 "title": "Physio Athlete by Lea",
                 "description": "Onepager für eine mobile Sportphysiotherapie. Klare Leistungsübersicht, lokale Auffindbarkeit und ein direkter Weg zur Terminbuchung."
+            },
+            "jan-behr": {
+                "title": "Jan Behr",
+                "description": "Persönlicher Blog über Smart Home, Heimnetzwerk und IT-Projekte. Statisch gebaut, ohne Tracking und blitzschnell geladen.",
+                "problem": "Jan dokumentiert seine Smart-Home- und IT-Projekte seit Jahren, aber nur in verstreuten Notizen. Ein eigener Ort dafür, den auch andere lesen können, fehlte.",
+                "approach": "Ein statischer Blog ohne Framework: Projekttagebuch mit Themen-Tabs, Galerie, lokale Schriften, strenge Content-Security-Policy und kein Tracking.",
+                "outcome1": "Eigener Ort für Projekttagebuch und Notizen",
+                "outcome2": "Kein Tracking, keine Cookies, keine Fremdserver",
+                "outcome3": "Statisch ausgeliefert, lädt praktisch sofort",
+                "testimonial": "Durch den Blog habe ich endlich die Möglichkeit meine Fähigkeiten und Projekte zu präsentieren. Zudem ist es mir durch den strukturellen Aufbau möglich, sowohl potentielle Arbeitgeber als auch IT-Interessierte anzusprechen. Diese Seite schöpft aus meiner Sicht das volle Potential aus."
             }
         },
+        "ctaBehr": "Eigenen Blog anfragen",
         "ctaGeneric": "Projekt anfragen"
     },
     "about": {

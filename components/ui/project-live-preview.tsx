@@ -15,12 +15,24 @@ interface ProjectLivePreviewProps {
     title: string
     previewImage: string
     isLocal?: boolean
+    /**
+     * false, wenn die Zielseite das Einbetten verbietet (X-Frame-Options bzw.
+     * frame-ancestors). Dann bleibt es beim Screenshot, statt eine Einwilligung
+     * fuer eine Vorschau einzuholen, die ohnehin nie laedt.
+     */
+    framable?: boolean
 }
 
-export function ProjectLivePreview({ url, title, previewImage, isLocal = false }: ProjectLivePreviewProps) {
+export function ProjectLivePreview({
+    url,
+    title,
+    previewImage,
+    isLocal = false,
+    framable = true,
+}: ProjectLivePreviewProps) {
     const t = useTranslations("work")
     const [iframeState, setIframeState] = useState<"idle" | "loading" | "loaded" | "fallback">(
-        isLocal ? "loading" : "idle"
+        !framable ? "fallback" : isLocal ? "loading" : "idle"
     )
     const [containerWidth, setContainerWidth] = useState(0)
     const containerRef = useRef<HTMLDivElement>(null)

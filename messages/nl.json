@@ -106,7 +106,7 @@
     "work": {
         "eyebrow": "Geselecteerd werk",
         "sectionTitle": "Werk",
-        "sectionSubtitle": "Twee echte klantprojecten. Van briefing tot livegang.",
+        "sectionSubtitle": "Geselecteerde projecten. Van briefing tot livegang.",
         "previewBadge": "Live-preview",
         "visitSite": "Bekijk live",
         "visitSiteLabel": "Bezoek {title} (opent in nieuw tabblad)",
@@ -148,14 +148,24 @@
                 "approach": "Een slanke, sfeervolle landingpagina met een boeking-CTA, biografie en referenties. Zonder buildstap, maximaal snel.",
                 "outcome1": "Direct online boekingskanaal",
                 "outcome2": "Professionele uitstraling",
-                "outcome3": "Snel ladend op alle apparaten",
-                "testimonial": "Eindelijk een pagina die mijn geluid weerspiegelt."
+                "outcome3": "Snel ladend op alle apparaten"
             },
             "physio-athlete": {
                 "title": "Physio Athlete by Lea",
                 "description": "Onepager voor een mobiele sportfysiotherapie. Helder dienstenoverzicht, lokale vindbaarheid en een directe weg naar online boeken."
+            },
+            "jan-behr": {
+                "title": "Jan Behr",
+                "description": "Persoonlijke blog over smart home, thuisnetwerk en IT-projecten. Statisch gebouwd, zonder tracking en razendsnel geladen.",
+                "problem": "Jan documenteert zijn smart home- en IT-projecten al jaren, maar alleen in verspreide notities. Een eigen plek die ook voor anderen leesbaar is, ontbrak.",
+                "approach": "Een statische blog zonder framework: projectdagboek met themetabs, galerij, lokale fonts, een strikte content security policy en geen tracking.",
+                "outcome1": "Een eigen plek voor projectdagboek en notities",
+                "outcome2": "Geen tracking, geen cookies, geen externe servers",
+                "outcome3": "Statisch uitgeleverd, laadt vrijwel direct",
+                "testimonial": "Dankzij de blog kan ik eindelijk mijn vaardigheden en projecten laten zien. Door de structurele opzet spreek ik zowel potentiële werkgevers als IT-geïnteresseerden aan. Deze site benut wat mij betreft het volledige potentieel."
             }
         },
+        "ctaBehr": "Eigen blog aanvragen",
         "ctaGeneric": "Project aanvragen"
     },
     "about": {

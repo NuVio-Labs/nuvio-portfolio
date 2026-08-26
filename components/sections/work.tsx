@@ -6,19 +6,18 @@ import { ScrollAnimation } from "@/components/ui/scroll-animation"
 import { ProjectLivePreview } from "@/components/ui/project-live-preview"
 import { SectionWrapper } from "@/components/ui/section-wrapper"
 import { Link } from "@/i18n/navigation"
-
-type ProjectId = "wt-erdbewegungen" | "daisymays-salon" | "dj-white-label"
+import { getRotatedProjectIds, type ProjectId } from "@/lib/work-rotation"
 
 interface ProjectMeta {
     /** Live-URL des Projekts oder Pfad zu einer lokalen Demo. */
     url: string
     /** true, wenn `url` auf eine mitgelieferte Demo statt auf eine fremde Seite zeigt. */
     isLocalDemo?: boolean
+    /** false, wenn die Zielseite das Einbetten per X-Frame-Options verbietet. */
+    framable?: boolean
     previewImage: string
     tags: string[]
 }
-
-const PROJECT_IDS: ProjectId[] = ["wt-erdbewegungen", "daisymays-salon", "dj-white-label"]
 
 const PROJECT_META: Record<ProjectId, ProjectMeta> = {
     "wt-erdbewegungen": {
@@ -31,6 +30,13 @@ const PROJECT_META: Record<ProjectId, ProjectMeta> = {
         previewImage: "/previews/daisy.webp",
         tags: ["React", "TypeScript", "Vite", "Tailwind CSS", "i18n"],
     },
+    "jan-behr": {
+        url: "https://www.behr.blog",
+        // behr.blog setzt X-Frame-Options: DENY, eine Live-Vorschau ist dort nicht moeglich.
+        framable: false,
+        previewImage: "/previews/behr.webp",
+        tags: ["HTML", "Tailwind CSS", "JavaScript", "Vercel"],
+    },
     "dj-white-label": {
         url: "/demos/dj-white-label/index.html",
         isLocalDemo: true,
@@ -42,11 +48,21 @@ const PROJECT_META: Record<ProjectId, ProjectMeta> = {
 const CTA_KEY: Record<ProjectId, string> = {
     "wt-erdbewegungen": "ctaWt",
     "daisymays-salon": "ctaDaisy",
+    "jan-behr": "ctaBehr",
     "dj-white-label": "ctaGeneric",
 }
 
-export function Work() {
+interface WorkProps {
+    /**
+     * Reihenfolge der Karten. Wird auf der Startseite serverseitig berechnet,
+     * damit Server und Client dieselbe Auswahl rendern.
+     */
+    projectIds?: ProjectId[]
+}
+
+export function Work({ projectIds }: WorkProps) {
     const t = useTranslations("work")
+    const ids = projectIds ?? getRotatedProjectIds()
 
     return (
         <SectionWrapper id="work">
@@ -73,7 +89,7 @@ export function Work() {
                     </ScrollAnimation>
 
                     <div className="space-y-6 sm:space-y-8">
-                        {PROJECT_IDS.map((id, index) => {
+                        {ids.map((id, index) => {
                             const meta = PROJECT_META[id]
                             const title = t(`projects.${id}.title`)
                             const outcomes = [
@@ -81,6 +97,8 @@ export function Work() {
                                 t(`projects.${id}.outcome2`),
                                 t(`projects.${id}.outcome3`),
                             ]
+                            // Kundenstimmen werden nicht erfunden: fehlt eine, entfaellt der Block.
+                            const hasTestimonial = t.has(`projects.${id}.testimonial`)
                             const cardNumber = String(index + 1).padStart(2, "0")
                             const reverseOnDesktop = index % 2 === 1
 
@@ -166,14 +184,16 @@ export function Work() {
                                                     ))}
                                                 </div>
 
-                                                <blockquote className="mt-6 rounded-[1.5rem] border border-border-soft bg-surface-soft px-5 py-5">
-                                                    <div className="flex items-start gap-3">
-                                                        <Quote className="mt-1 h-4 w-4 shrink-0 text-accent" />
-                                                        <p className="text-[15px] leading-7 text-text-secondary">
-                                                            {t(`projects.${id}.testimonial`)}
-                                                        </p>
-                                                    </div>
-                                                </blockquote>
+                                                {hasTestimonial && (
+                                                    <blockquote className="mt-6 rounded-[1.5rem] border border-border-soft bg-surface-soft px-5 py-5">
+                                                        <div className="flex items-start gap-3">
+                                                            <Quote className="mt-1 h-4 w-4 shrink-0 text-accent" />
+                                                            <p className="text-[15px] leading-7 text-text-secondary">
+                                                                {t(`projects.${id}.testimonial`)}
+                                                            </p>
+                                                        </div>
+                                                    </blockquote>
+                                                )}
 
                                                 <div className="mt-6">
                                                     <Link
@@ -193,6 +213,7 @@ export function Work() {
                                                     title={title}
                                                     previewImage={meta.previewImage}
                                                     isLocal={!!meta.isLocalDemo}
+                                                    framable={meta.framable !== false}
                                                 />
                                             </div>
                                         </div>
