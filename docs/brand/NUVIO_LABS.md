@@ -33,12 +33,10 @@ Websites, die nicht nur gut aussehen, sondern klarer wirken, schneller laden und
 
 ## Leistungen
 - Website Launch
-- Website Redesign
-- Landingpages
-- Portfolio und Personal Brand Websites
-- UI Konzepte und Prototypen
-- technische Optimierung
-- Wartung und Betreuung
+- Redesign & Relaunch
+- Landingpage
+- UI-Komponenten & Design System
+- Pflege & Weiterentwicklung
 
 ## Conversion Ziel
 Primär: Kontaktanfrage starten.

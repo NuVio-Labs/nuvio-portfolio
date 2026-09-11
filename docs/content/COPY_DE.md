@@ -1,22 +1,25 @@
 # COPY_DE.md
 
 ## Navigation
-Start · Arbeiten · Leistungen · Über NuVio · Kontakt
+Projekte · Leistungen · Journal · Über mich · Kontakt
 
 ## Hero
-Eyebrow: NuVio Labs · Webdesign und digitale Oberflächen
+Eyebrow: Verfügbar für neue Projekte
 
-Headline: Moderne Websites, die klar wirken und sauber funktionieren.
+Headline: Websites, die Vertrauen schaffen und Anfragen generieren.
 
-Subline: NuVio Labs entwickelt hochwertige Websites, Landingpages und digitale Interfaces für Selbstständige, lokale Unternehmen und kleine Marken, die online professioneller auftreten wollen.
+Subline: Ich entwickle moderne Unternehmenswebsites mit klarer Struktur, hochwertigem Design und starker Performance. Für Marken, die online professionell auftreten und nicht austauschbar wirken wollen.
 
 Primary CTA: Projekt anfragen
-Secondary CTA: Arbeiten ansehen
+Secondary CTA: Portfolio ansehen
 
 Trust Punkte:
-- Mobile first gedacht
-- Performance bewusst umgesetzt
-- Design, Text und Technik aus einer Hand
+- Lighthouse 95+
+- Mobile first
+- SEO optimiert
+- Mehrsprachig
+- Next.js nativ
+- Skalierbare Systeme
 
 ## Kurzpositionierung
 Headline: Nicht einfach nur eine Website. Ein digitaler Eindruck, der hängen bleibt.
@@ -29,15 +32,15 @@ Text: Von lokalen Dienstleistern bis zu digitalen Produktideen: Jede Arbeit folg
 CTA: Alle Arbeiten ansehen
 
 ## Leistungen
-Headline: Was NuVio Labs für dich bauen kann.
-Website Launch: Eine neue Website von Grund auf: Struktur, Design, Umsetzung und Launch.
-Redesign: Bestehende Websites modernisieren, klarer strukturieren und visuell hochwertiger machen.
-Landingpages: Fokussierte Seiten für Angebote, Kampagnen, Produkte oder lokale Dienstleistungen.
-UI Konzepte: Interaktive Oberflächen, Prototypen und Designsysteme für digitale Produkte.
-Wartung: Technische Pflege, kleine Anpassungen und Weiterentwicklung nach dem Launch.
+Headline: Was ich für Sie umsetze.
+Website Launch: Komplette Unternehmenswebsite von Konzept bis Go-live. Mobile-first, performant und auf Anfragen optimiert.
+Redesign & Relaunch: Ihre bestehende Website wird modernisiert, technisch bereinigt und auf heutige Standards gebracht.
+Landingpage: Eine fokussierte Seite für ein konkretes Ziel: Kampagne, Produkt oder Event. Schnell und konversionsstark.
+UI-Komponenten & Design System: Konsistente, wiederverwendbare Interface-Bausteine für Teams, die skalieren wollen.
+Pflege & Weiterentwicklung: Laufende technische Betreuung, Updates und gezielte Erweiterungen für bestehende Projekte.
 
 ## Kontakt
-Headline: Lass uns über dein Projekt sprechen.
-Text: Ob neue Website, Redesign oder erste Idee: Beschreib kurz, was du brauchst.
-Submit: Anfrage senden
-Datenschutz Hinweis: Mit dem Absenden erklärst du dich einverstanden, dass deine Angaben zur Bearbeitung deiner Anfrage verarbeitet werden.
+Headline: Lassen Sie uns über Ihr Projekt sprechen.
+Text: Ob neue Website, Redesign oder eine erste Idee: Beschreiben Sie kurz, was Sie brauchen. Ich melde mich innerhalb von 24 Stunden.
+Submit: Per WhatsApp senden / Per E-Mail senden (kein klassisches Formular-Submit — die Nachricht wird vorbereitet und in WhatsApp oder dem E-Mail-Programm geöffnet)
+Datenschutz Hinweis: Ihre Angaben werden nicht an uns übertragen, sondern nur als fertige Nachricht in WhatsApp oder Ihrem Mailprogramm vorbereitet. Erst wenn Sie dort auf Senden tippen, erreichen sie uns.
