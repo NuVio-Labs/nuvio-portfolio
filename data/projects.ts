@@ -8,7 +8,6 @@ export interface Project {
     tags: string[]
     link: string
     featured: boolean
-    demoRoute?: string
     caseStudy?: {
         problem: string
         solution: string

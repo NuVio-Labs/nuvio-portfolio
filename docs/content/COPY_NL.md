@@ -1,22 +1,25 @@
 # COPY_NL.md
 
 ## Navigatie
-Start · Werk · Diensten · Over NuVio · Contact
+Werk · Diensten · Journal · Over · Contact
 
 ## Hero
-Eyebrow: NuVio Labs · Webdesign en digitale interfaces
+Eyebrow: Beschikbaar voor nieuwe projecten
 
-Headline: Moderne websites die helder overkomen en technisch goed werken.
+Headline: Websites die vertrouwen bouwen en aanvragen genereren.
 
-Subline: NuVio Labs maakt hoogwaardige websites, landingspagina's en digitale interfaces voor zelfstandigen, lokale bedrijven en kleine merken die online professioneler zichtbaar willen zijn.
+Subline: Ik ontwikkel moderne zakelijke websites met een heldere structuur, hoogwaardig design en sterke prestaties. Voor merken die online professioneel willen overkomen zonder inwisselbaar te voelen.
 
 Primary CTA: Project aanvragen
-Secondary CTA: Werk bekijken
+Secondary CTA: Portfolio bekijken
 
 Trust Punten:
-- Mobile first ontworpen
-- Gebouwd met aandacht voor performance
-- Design, tekst en techniek op elkaar afgestemd
+- Lighthouse 95+
+- Mobile first
+- SEO geoptimaliseerd
+- Meertalig
+- Next.js native
+- Schaalbare systemen
 
 ## Korte positionering
 Headline: Niet zomaar een website. Een digitale eerste indruk die klopt.
@@ -29,15 +32,15 @@ Text: Van lokale dienstverleners tot digitale productideeën: elk project heeft 
 CTA: Alle projecten bekijken
 
 ## Diensten
-Headline: Wat NuVio Labs voor jou kan bouwen.
-Website Launch: Een nieuwe website vanaf de basis: structuur, design, ontwikkeling en launch.
-Redesign: Een bestaande website moderniseren, duidelijker maken en visueel sterker neerzetten.
-Landingpages: Gerichte pagina's voor aanbiedingen, campagnes, producten of lokale diensten.
-UI Concepten: Digitale interfaces, prototypes en designsystemen voor webproducten.
-Onderhoud: Technisch onderhoud, kleine aanpassingen en verdere ontwikkeling na de launch.
+Headline: Wat ik voor u realiseer.
+Website Launch: Een complete bedrijfswebsite van concept tot livegang. Mobile-first, snel en geoptimaliseerd voor aanvragen.
+Redesign & Relaunch: Uw bestaande website wordt gemoderniseerd, technisch opgeschoond en naar de huidige standaarden gebracht.
+Landingpagina: Een gerichte pagina voor één concreet doel: campagne, product of evenement. Snel en conversiesterk.
+UI-componenten & Design System: Consistente, herbruikbare interfacecomponenten voor teams die willen schalen.
+Beheer & Doorontwikkeling: Doorlopende technische ondersteuning, updates en gerichte uitbreidingen voor bestaande projecten.
 
 ## Contact
-Headline: Laten we over je project praten.
-Text: Of het nu gaat om een nieuwe website, een redesign of een eerste idee: beschrijf kort wat je nodig hebt.
-Submit: Aanvraag versturen
-Privacy Notice: Door het formulier te versturen ga je ermee akkoord dat je gegevens worden verwerkt om je aanvraag te beantwoorden.
+Headline: Laten we het over uw project hebben.
+Text: Een nieuwe website, een redesign of gewoon een eerste idee: beschrijf kort wat u nodig heeft. Ik reageer binnen 24 uur.
+Submit: Via WhatsApp versturen / Via e-mail versturen (geen klassieke formulierverzending — het bericht wordt voorbereid en geopend in WhatsApp of het e-mailprogramma)
+Privacy Notice: Uw gegevens worden niet naar ons verzonden, maar alleen samengesteld tot een kant-en-klaar bericht in WhatsApp of uw e-mailprogramma. Pas als u daar op verzenden tikt, bereiken ze ons.

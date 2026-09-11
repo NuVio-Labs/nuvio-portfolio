@@ -6,7 +6,6 @@ import { routing } from "@/i18n/routing";
 import { ThemeProvider } from "@/components/theme-provider";
 import { Navbar } from "@/components/layout/navbar";
 import { Footer } from "@/components/layout/footer";
-import { AuthProvider } from "@/lib/auth";
 import { SITE_URL } from "@/lib/site";
 import { buildAlternates } from "@/lib/seo";
 
@@ -122,22 +121,20 @@ export default async function LocaleLayout({
                 {t("skipToContent")}
             </a>
             <NextIntlClientProvider messages={messages}>
-                <AuthProvider>
-                    <ThemeProvider
-                        attribute="class"
-                        defaultTheme="light"
-                        storageKey="nuvio-theme"
-                        disableTransitionOnChange
-                    >
-                        <div className="relative flex min-h-screen flex-col">
-                            <Navbar />
-                            <main id="main-content" className="flex-1">
-                                {children}
-                            </main>
-                            <Footer />
-                        </div>
-                    </ThemeProvider>
-                </AuthProvider>
+                <ThemeProvider
+                    attribute="class"
+                    defaultTheme="light"
+                    storageKey="nuvio-theme"
+                    disableTransitionOnChange
+                >
+                    <div className="relative flex min-h-screen flex-col">
+                        <Navbar />
+                        <main id="main-content" className="flex-1">
+                            {children}
+                        </main>
+                        <Footer />
+                    </div>
+                </ThemeProvider>
             </NextIntlClientProvider>
         </>
     );

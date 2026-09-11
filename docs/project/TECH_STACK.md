@@ -1,36 +1,39 @@
 # TECH_STACK.md
 
-## Empfohlener Stack
-- Next.js App Router
-- React
-- TypeScript
-- Tailwind CSS
-- Framer Motion für subtile Animationen
+## Tatsächlicher Stack (Stand: siehe package.json)
+- Next.js App Router (16.x), React 19, TypeScript
+- Tailwind CSS 3 (`tailwindcss-animate`-Plugin)
 - next-intl für de/en/nl
-- next-themes oder eigenes data-theme System
-- Resend optional für Kontaktformular
-- Vercel Deployment
+- next-themes für den Dark/Light-Toggle
+- next-mdx-remote + gray-matter + rehype-slug + remark-gfm für das Journal (MDX-Artikel unter `content/journal/<locale>/`)
+- pdf-lib + @pdf-lib/fontkit für die generierte Bewerbungs-PDF (`app/api/cv/[dokument]/route.ts`)
+- lucide-react für Icons
+- Kontaktformular ohne Backend/E-Mail-API: bereitet eine Nachricht vor und öffnet sie in WhatsApp oder dem E-Mail-Programm des Besuchers
+- @vercel/analytics + @vercel/speed-insights, Vercel Deployment
 
-## Struktur
+Kein Framer Motion und kein Resend im Einsatz — Animationen laufen über CSS-Transitions (`ScrollAnimation`-Komponente).
+
+## Struktur (kein `src/`-Präfix)
 ```txt
-src/
-  app/[locale]/
-  components/layout/
-  components/sections/
-  components/ui/
-  components/work/
-  data/
-  i18n/
-  lib/
-  messages/de.json
-  messages/en.json
-  messages/nl.json
+app/[locale]/
+components/layout/
+components/sections/
+components/ui/
+components/work/
+content/journal/<locale>/
+data/
+i18n/
+lib/
+messages/de.json
+messages/en.json
+messages/nl.json
+public/
 ```
 
 ## Theme Regeln
-- Farben über CSS Variablen
+- Farben über CSS Variablen (`app/globals.css`, Präfix `--nv-*`)
 - keine verstreuten Hex Codes in Komponenten
-- semantische Tokens: background, surface, textPrimary, textMuted, accent, borderSoft
+- semantische Tailwind-Tokens: `bg-background`, `bg-surface`, `text-text-primary`, `text-text-muted`, `bg-accent`, `border-border-soft`
 - Dark und Light Mode immer zusammen prüfen
 
 ## i18n Regeln

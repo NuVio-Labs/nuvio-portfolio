@@ -9,10 +9,16 @@
 6. Impressum
 7. Datenschutz
 
+## Seitenbestand, Stand September 2026 (zusätzlich zu Version 1)
+- Journal (`/journal`, `/journal/<slug>`) — mehrsprachige Artikel, nicht in jeder Sprache identisch verfügbar
+- Research / Lab (`/research`)
+- CV-Seite (`/cv/<key>`) — nicht öffentlich verlinkt, nur per QR-Code erreichbar, `noindex` (siehe `docs/qr/README.md`)
+- Lokale SEO-Landingpages: `/de/webdesign-kranenburg`, `/de/webdesign-kleve`, `/nl/webdesign-groesbeek` (jeweils einsprachig, siehe `lib/seo.ts`)
+
 ## Navigation
-Deutsch: Start, Arbeiten, Leistungen, Über NuVio, Kontakt
-Englisch: Home, Work, Services, About, Contact
-Niederländisch: Start, Werk, Diensten, Over NuVio, Contact
+Deutsch: Projekte, Leistungen, Journal, Über mich, Kontakt
+Englisch: Work, Services, Journal, About, Contact
+Niederländisch: Werk, Diensten, Journal, Over, Contact
 
 ## Startseite Sections
 1. Hero
@@ -35,11 +41,10 @@ Niederländisch: Start, Werk, Diensten, Over NuVio, Contact
 
 ## Leistungen
 - Website Launch
-- Redesign
-- Landingpages
-- UI Konzepte
-- Wartung und Betreuung
-- technische Optimierung
+- Redesign & Relaunch
+- Landingpage
+- UI-Komponenten & Design System
+- Pflege & Weiterentwicklung
 
 ## Kontaktformular
 - Name

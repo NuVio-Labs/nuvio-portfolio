@@ -18,11 +18,15 @@ Dokumentation für Strategie, Design, Content und technische Umsetzung der offiz
 - Light Mode
 - Deutsch, Englisch, Niederländisch
 
+## Seitenbestand, Stand September 2026
+Über den Pflichtumfang Version 1 hinaus sind inzwischen Journal, Research/Lab, eine unlisted CV-Seite (nur per QR-Code, `noindex`) sowie drei einsprachige lokale SEO-Landingpages (`/de/webdesign-kranenburg`, `/de/webdesign-kleve`, `/nl/webdesign-groesbeek`) hinzugekommen. Details siehe `docs/content/CONTENT_PLAN.md`.
+
 ## Dokumentation
 - docs/brand: Marke, Stil, Designsystem
 - docs/content: Struktur und Copy für de/en/nl
 - docs/project: Technik, Plan, TODO
 - docs/wireframes: Seitenaufbau
+- docs/history: archivierte, historische Projektdokumente (nicht mehr aktueller Stand)
 - CLAUDE.md: zentrale Agent Anweisung
 
 ## Qualitätsziel

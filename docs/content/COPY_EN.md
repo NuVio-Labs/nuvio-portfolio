@@ -1,22 +1,25 @@
 # COPY_EN.md
 
 ## Navigation
-Home · Work · Services · About · Contact
+Work · Services · Journal · About · Contact
 
 ## Hero
-Eyebrow: NuVio Labs · Web design and digital interfaces
+Eyebrow: Available for new projects
 
-Headline: Modern websites that look clear and work cleanly.
+Headline: Websites that build trust and generate inquiries.
 
-Subline: NuVio Labs creates high quality websites, landing pages and digital interfaces for independent professionals, local businesses and small brands that want a stronger online presence.
+Subline: I develop modern business websites with clear structure, premium design, and strong performance. For brands that want to look professional online without feeling generic.
 
-Primary CTA: Start a project
-Secondary CTA: View work
+Primary CTA: Request a project
+Secondary CTA: View portfolio
 
 Trust Points:
-- Mobile first by design
-- Built with performance in mind
-- Design, copy and implementation aligned
+- Lighthouse 95+
+- Mobile first
+- SEO optimized
+- Multi-language
+- Next.js native
+- Scalable systems
 
 ## Short Positioning
 Headline: Not just a website. A digital first impression that feels intentional.
@@ -29,15 +32,15 @@ Text: From local service businesses to digital product concepts: every project f
 CTA: View all work
 
 ## Services
-Headline: What NuVio Labs can build for you.
-Website Launch: A new website from the ground up: structure, design, implementation and launch.
-Redesign: Modernize an existing website, improve clarity and create a more premium visual experience.
-Landing Pages: Focused pages for offers, campaigns, products or local services.
-UI Concepts: Digital interfaces, prototypes and design systems for web products.
-Maintenance: Technical care, small updates and continuous improvement after launch.
+Headline: What I build for you.
+Website Launch: A complete business website from concept to go-live. Mobile-first, performant, and optimised for inquiries.
+Redesign & Relaunch: Your existing website gets modernised, technically cleaned up, and brought to today's standards.
+Landing Page: A focused page for a specific goal: campaign, product, or event. Fast and built for conversion.
+UI Components & Design System: Consistent, reusable interface building blocks for teams that want to scale.
+Maintenance & Development: Ongoing technical support, updates, and targeted enhancements for existing projects.
 
 ## Contact
-Headline: Let’s talk about your project.
-Text: Whether it is a new website, a redesign or an early idea: briefly describe what you need.
-Submit: Send request
-Privacy Notice: By submitting the form, you agree that your details may be processed to handle your request.
+Headline: Let's talk about your project.
+Text: A new website, a redesign or just a first idea: tell me briefly what you need. I'll get back to you within 24 hours.
+Submit: Send via WhatsApp / Send via email (no classic form submit — the message is prepared and opened in WhatsApp or the email client)
+Privacy Notice: Your details are not transmitted to us. They are only assembled into a ready-made message in WhatsApp or your email client. They reach us once you press send there.
