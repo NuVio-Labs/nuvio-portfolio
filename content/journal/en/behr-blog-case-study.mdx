@@ -1,0 +1,65 @@
+---
+title: "behr.blog: a project diary with no framework, no tracking"
+description: "Case study on behr.blog: how scattered notes on smart home and IT projects became a static blog with no tracking at all."
+date: "2026-09-10"
+updatedAt: "2026-09-10"
+category: "case-study"
+tags:
+  - Case Study
+  - Performance
+  - Privacy
+author: "NuVio Labs"
+featured: false
+image: "/behr.webp"
+imageAlt: "Homepage of behr.blog with project diary and topic tabs."
+hero: "/behr.webp"
+heroAlt: "Homepage of behr.blog with project diary and topic tabs."
+heroWidth: 1920
+heroHeight: 1080
+---
+
+Jan Behr has been documenting his smart home and IT projects for years. Just not in one place: notes were scattered across apps, folders and half-finished text files, readable at best by himself. What was missing was a place other people could actually find and understand.
+
+That gap is where behr.blog came from — a personal blog about smart home, home networking and IT projects. The brief sounded simple: a home for a project diary and notes. The decisions behind it were less so.
+
+## The first fork: no framework
+
+For a blog of modest scope with a clearly defined audience, one question came first: does this need a framework, or is the platform itself enough structure?
+
+The answer ruled out React, Next.js or a CMS. behr.blog is static HTML with Tailwind CSS, and JavaScript only where it actually does something — topic tabs, a gallery, small interactions. No build step that could hide anything, no framework overhead for a handful of pages.
+
+The effect shows up first in load time. With no hydration, no client bundle, no runtime that has to catch up, the server essentially ships exactly what arrives in the browser. For a personal blog visited by potential employers and IT enthusiasts alike, that's not a side effect — it's the first impression.
+
+## Structure instead of a wall of text
+
+A project diary lives or dies on how you organize years of notes so they read like a workshop log rather than an archive. The solution: topic tabs that sort projects by area, plus a gallery for photos and screenshots sitting directly inside the relevant entries.
+
+<JournalCallout type="tip">
+A project diary isn't a blog in the classic sense — it has no end date. The structure has to be built for growth, not just for launch day.
+</JournalCallout>
+
+That structure makes the site work for two very different readers at once. Someone looking for competence sees documented projects with a history. Someone looking for a solution to their own problem finds the right topic tab directly, without clicking through everything else first.
+
+## Privacy as a design decision
+
+behr.blog shipped with no tracking from the start, not bolted on afterward. No cookies, no third-party servers, no analytics scripts sending data anywhere. Fonts are self-hosted instead of pulled from a Google Fonts CDN, and a strict content security policy limits what the site is allowed to load at all.
+
+That decision has a direct side effect: there is nothing left to fetch before the page can actually respond. Privacy and performance aren't two separate concerns here — they're the same decision seen from two angles.
+
+<JournalCallout type="important">
+behr.blog's strict content security policy sets <code>X-Frame-Options: DENY</code> among other things. That blocks the page from ever loading inside an iframe — including its own live preview on <a href="/work">/work</a>. Instead of a preview that would stay blank forever there, <code>ProjectLivePreview</code> shows the screenshot directly for this one project. A technical detail the site itself gets right had to be accounted for somewhere else.
+</JournalCallout>
+
+## Outcome
+
+behr.blog gave Jan Behr a dedicated home for his project diary — no tracking, no cookies, no third-party servers, served statically and loading almost instantly.
+
+> The blog finally gives me a way to show what I can do and what I have built. And the way it is structured, I can speak to potential employers and to people who are into IT at the same time. From where I stand, this site makes the most of its potential.
+>
+> — Jan Behr
+
+behr.blog has been live since August 2026 and rotates through the project pool on the NuVio Labs homepage.
+
+<JournalCallout type="info">
+More projects live under [Work](/work). For your own blog or a similar brief: [get in touch](/contact).
+</JournalCallout>

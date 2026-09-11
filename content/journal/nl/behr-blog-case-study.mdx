@@ -1,0 +1,65 @@
+---
+title: "behr.blog: een projectdagboek zonder framework, zonder tracking"
+description: "Case study over behr.blog: hoe verspreide notities over smart home en IT-projecten een statische blog zonder tracking werden."
+date: "2026-09-10"
+updatedAt: "2026-09-10"
+category: "case-study"
+tags:
+  - Case Study
+  - Performance
+  - Privacy
+author: "NuVio Labs"
+featured: false
+image: "/behr.webp"
+imageAlt: "Startpagina van behr.blog met projectdagboek en themetabs."
+hero: "/behr.webp"
+heroAlt: "Startpagina van behr.blog met projectdagboek en themetabs."
+heroWidth: 1920
+heroHeight: 1080
+---
+
+Jan Behr documenteert zijn smart home- en IT-projecten al jaren. Alleen niet op één plek: notities stonden verspreid over apps, mappen en halfafgewerkte tekstbestanden, hoogstens leesbaar voor hemzelf. Een plek die ook anderen konden vinden en begrijpen, ontbrak.
+
+Uit dat gat is behr.blog ontstaan — een persoonlijke blog over smart home, thuisnetwerk en IT-projecten. De opdracht klonk eenvoudig: een thuis voor projectdagboek en notities. De keuzes erachter waren dat minder.
+
+## De eerste bakenkeuze: geen framework
+
+Voor een blog van bescheiden omvang met een duidelijk doelpubliek kwam eerst een principiële vraag naar boven: heeft dit een framework nodig, of is het platform zelf al genoeg structuur?
+
+Het antwoord viel af tegen React, Next.js of een CMS. behr.blog is statische HTML met Tailwind CSS, en JavaScript alleen waar het echt iets doet — themetabs, een galerij, kleine interacties. Geen build-stap die iets zou kunnen verbergen, geen framework-overhead voor een handvol pagina's.
+
+Het effect is als eerste merkbaar in de laadtijd. Zonder hydration, zonder client-bundle, zonder runtime die eerst moet bijladen, levert de server in de kern precies dat wat er in de browser aankomt. Bij een persoonlijke blog die zowel potentiële werkgevers als IT-geïnteresseerden bezoeken, is dat geen bijeffect — het is de eerste indruk.
+
+## Structuur in plaats van een lap tekst
+
+Een projectdagboek staat of valt met de manier waarop je jaren aan notities ordent zodat ze lezen als een werkplaatsverslag en niet als een archief. De oplossing: themetabs waarmee projecten op onderwerp te sorteren zijn, plus een galerij voor foto's en screenshots die direct in de bijbehorende items staat.
+
+<JournalCallout type="tip">
+Een projectdagboek is geen blog in de klassieke zin — het heeft geen einddatum. De structuur moet dus gebouwd zijn op groei, niet alleen op de start.
+</JournalCallout>
+
+Die structuur maakt de site bruikbaar voor twee heel verschillende lezers tegelijk. Wie op zoek is naar bekwaamheid, ziet gedocumenteerde projecten met een geschiedenis. Wie op zoek is naar een oplossing voor een eigen probleem, vindt via de themetabs direct het juiste onderdeel, zonder eerst overal doorheen te hoeven klikken.
+
+## Privacy als ontwerpkeuze
+
+behr.blog kende vanaf het begin geen tracking, niet als latere toevoeging. Geen cookies, geen externe servers, geen analytics-scripts die ergens data naartoe sturen. Lettertypen worden lokaal aangeleverd in plaats van via een Google Fonts-CDN, en een strikte content security policy beperkt wat de site überhaupt mag laden.
+
+Die keuze heeft een direct neveneffect: er is niets meer om na te laden voordat de pagina daadwerkelijk reageert. Privacy en performance zijn hier geen twee gescheiden kwesties, maar dezelfde keuze bekeken vanuit twee invalshoeken.
+
+<JournalCallout type="important">
+De strikte content security policy van behr.blog zet onder meer <code>X-Frame-Options: DENY</code>. Dat voorkomt dat de pagina ooit in een iframe laadt — ook niet in de eigen live-preview op <a href="/work">/work</a>. In plaats van een preview die daar voor altijd leeg zou blijven, toont <code>ProjectLivePreview</code> voor dit ene project rechtstreeks de screenshot. Een technisch detail dat de site zelf goed doet, moest ergens anders worden opgevangen.
+</JournalCallout>
+
+## Resultaat
+
+behr.blog gaf Jan Behr een eigen plek voor zijn projectdagboek — zonder tracking, zonder cookies, zonder externe servers, statisch uitgeleverd en laadt vrijwel direct.
+
+> Dankzij de blog kan ik eindelijk mijn vaardigheden en projecten laten zien. Door de structurele opzet spreek ik zowel potentiële werkgevers als IT-geïnteresseerden aan. Deze site benut wat mij betreft het volledige potentieel.
+>
+> — Jan Behr
+
+behr.blog staat sinds augustus 2026 live en draait mee in de projectpool op de startpagina van NuVio Labs.
+
+<JournalCallout type="info">
+Meer projecten staan onder [Werk](/work). Voor een eigen blog of een vergelijkbare opdracht: [neem kort contact op](/contact).
+</JournalCallout>

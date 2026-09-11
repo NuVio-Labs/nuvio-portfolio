@@ -7,7 +7,8 @@ import rehypeSlug from "rehype-slug"
 import { getTranslations, setRequestLocale } from "next-intl/server"
 import { Link, redirect } from "@/i18n/navigation"
 import { routing } from "@/i18n/routing"
-import { SITE_URL } from "@/lib/site"
+import { SITE_NAME, SITE_URL } from "@/lib/site"
+import { buildAlternates } from "@/lib/seo"
 import {
     extractToc,
     getArticleLocales,
@@ -52,16 +53,17 @@ export async function generateMetadata({ params }: { params: Promise<Params> }):
 
     /* hreflang nur fuer Sprachen, in denen der Artikel wirklich existiert. */
     const available = await getArticleLocales(slug, routing.locales)
-    const languages = Object.fromEntries(
-        available.map((code) => [code, `${SITE_URL}/${code}/journal/${slug}`]),
-    )
 
     return {
-        title: meta.title,
+        /* meta.title traegt die Marke nicht selbst; hier einmalig ergaenzen,
+           da kein globales title.template mehr existiert. OpenGraph/Twitter
+           bleiben bewusst ohne Suffix: og:site_name traegt die Marke dort
+           schon, og:title soll der reine Artikeltitel bleiben. */
+        title: { absolute: `${meta.title} | ${SITE_NAME}` },
         description: meta.description,
         keywords: meta.tags,
         authors: [{ name: meta.author, url: SITE_URL }],
-        alternates: { canonical: url, languages },
+        alternates: buildAlternates({ locale, path: `/journal/${slug}`, availableLocales: available }),
         openGraph: {
             type: "article",
             url,

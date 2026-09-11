@@ -4,11 +4,19 @@ import { Link } from "@/i18n/navigation"
 import { projects } from "@/data/projects"
 import { ProjectCard } from "@/components/work/project-card"
 import { SectionWrapper } from "@/components/ui/section-wrapper"
+import { routing } from "@/i18n/routing"
+import { buildPageMetadata } from "@/lib/seo"
 
 export async function generateMetadata({ params }: { params: Promise<{ locale: string }> }) {
     const { locale } = await params
     const t = await getTranslations({ locale, namespace: "seo.work" })
-    return { title: t("title"), description: t("description") }
+    return buildPageMetadata({
+        locale,
+        path: "/work",
+        title: t("title"),
+        description: t("description"),
+        availableLocales: routing.locales,
+    })
 }
 
 export default async function WorkPage({ params }: { params: Promise<{ locale: string }> }) {

@@ -276,11 +276,9 @@ export function extractToc(body: string): TocEntry[] {
 
 /* ─── Formatierung ──────────────────────────────────────────────────── */
 
-const OG_LOCALES: Record<string, string> = { de: "de_DE", en: "en_US", nl: "nl_NL" }
-
-export function toOgLocale(locale: string): string {
-    return OG_LOCALES[locale] ?? "en_US"
-}
+/* OG-Locale-Mapping lebt zentral in lib/seo.ts; hier nur re-exportiert,
+   damit bestehende Imports aus "@/lib/journal" unveraendert bleiben. */
+export { toOgLocale } from "@/lib/seo"
 
 export function formatArticleDate(date: string, locale: string): string {
     return new Intl.DateTimeFormat(locale, { day: "numeric", month: "long", year: "numeric" }).format(

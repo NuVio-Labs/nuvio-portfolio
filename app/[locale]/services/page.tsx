@@ -2,6 +2,8 @@ import { getTranslations } from "next-intl/server"
 import { setRequestLocale } from "next-intl/server"
 import { Link } from "@/i18n/navigation"
 import { SectionWrapper } from "@/components/ui/section-wrapper"
+import { routing } from "@/i18n/routing"
+import { buildPageMetadata } from "@/lib/seo"
 
 const serviceKeys = ["launch", "redesign", "landing", "ui", "maintenance"] as const
 const stepKeys = ["understand", "structure", "design", "build"] as const
@@ -9,7 +11,13 @@ const stepKeys = ["understand", "structure", "design", "build"] as const
 export async function generateMetadata({ params }: { params: Promise<{ locale: string }> }) {
     const { locale } = await params
     const t = await getTranslations({ locale, namespace: "seo.services" })
-    return { title: t("title"), description: t("description") }
+    return buildPageMetadata({
+        locale,
+        path: "/services",
+        title: t("title"),
+        description: t("description"),
+        availableLocales: routing.locales,
+    })
 }
 
 export default async function ServicesPage({ params }: { params: Promise<{ locale: string }> }) {

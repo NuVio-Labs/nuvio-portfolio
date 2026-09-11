@@ -7,9 +7,8 @@ import { ThemeProvider } from "@/components/theme-provider";
 import { Navbar } from "@/components/layout/navbar";
 import { Footer } from "@/components/layout/footer";
 import { AuthProvider } from "@/lib/auth";
-
-/* ─── Production SEO Metadata ───────────────────────── */
-const SITE_URL = "https://www.nuviolabs.de";
+import { SITE_URL } from "@/lib/site";
+import { buildAlternates } from "@/lib/seo";
 
 type Params = { locale: string };
 
@@ -28,10 +27,12 @@ export async function generateMetadata({
     return {
         metadataBase: new URL(SITE_URL),
 
-        title: {
-            default: t("title"),
-            template: `%s | NuVioLabs`,
-        },
+        /* `absolute` statt `default` + Suffix-Template: jede Seite liefert
+           ihren Title vollstaendig selbst (siehe lib/seo.ts), die Homepage
+           macht hier keine Ausnahme mehr. Ein globales Template hat frueher
+           zu doppelten Markennamen gefuehrt, sobald der Uebersetzungs-Title
+           die Marke bereits enthielt. */
+        title: { absolute: t("title") },
 
         description: t("description"),
 
@@ -57,14 +58,7 @@ export async function generateMetadata({
             "max-video-preview": -1,
         },
 
-        alternates: {
-            canonical: `${SITE_URL}/${locale}`,
-            languages: {
-                de: `${SITE_URL}/de`,
-                en: `${SITE_URL}/en`,
-                nl: `${SITE_URL}/nl`,
-            },
-        },
+        alternates: buildAlternates({ locale, path: "", availableLocales: routing.locales }),
 
         openGraph: {
             type: "website",

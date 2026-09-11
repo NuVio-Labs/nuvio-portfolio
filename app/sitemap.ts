@@ -1,20 +1,35 @@
 import type { MetadataRoute } from "next";
 import { routing } from "@/i18n/routing";
 import { getJournalArticles } from "@/lib/journal";
+import { SITE_URL } from "@/lib/site";
 
-const SITE_URL = "https://www.nuviolabs.de";
+/**
+ * Indexierbare, statische Seiten je Locale mit Basis-Prioritaet (bei der
+ * Default-Locale unveraendert, bei den anderen Locales mit Faktor 0.8
+ * skaliert — reproduziert exakt die bisherigen Homepage-Werte 1 / 0.8).
+ * `cv/[key]` und `contact/sent` fehlen hier bewusst: beide sind `noindex`.
+ */
+const ROUTES: { path: string; priority: number }[] = [
+    { path: "", priority: 1 },
+    { path: "/work", priority: 0.7 },
+    { path: "/services", priority: 0.7 },
+    { path: "/about", priority: 0.6 },
+    { path: "/contact", priority: 0.6 },
+    { path: "/research", priority: 0.4 },
+    { path: "/privacy", priority: 0.2 },
+    { path: "/imprint", priority: 0.2 },
+];
 
 export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
-    const routes = [""];
     const entries: MetadataRoute.Sitemap = [];
 
     for (const locale of routing.locales) {
-        for (const route of routes) {
+        for (const route of ROUTES) {
             entries.push({
-                url: `${SITE_URL}/${locale}${route}`,
+                url: `${SITE_URL}/${locale}${route.path}`,
                 lastModified: new Date(),
                 changeFrequency: "weekly",
-                priority: locale === routing.defaultLocale ? 1 : 0.8,
+                priority: locale === routing.defaultLocale ? route.priority : route.priority * 0.8,
             });
         }
 
@@ -37,6 +52,28 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
             });
         }
     }
+
+    /* Lokale SEO-Landingpages, nur fuer Deutsch (siehe jeweiliges page.tsx). */
+    entries.push({
+        url: `${SITE_URL}/de/webdesign-kranenburg`,
+        lastModified: new Date(),
+        changeFrequency: "monthly",
+        priority: 0.9,
+    });
+    entries.push({
+        url: `${SITE_URL}/de/webdesign-kleve`,
+        lastModified: new Date(),
+        changeFrequency: "monthly",
+        priority: 0.9,
+    });
+
+    /* Lokale SEO-Landingpage, nur fuer Niederlaendisch (siehe app/[locale]/webdesign-groesbeek/page.tsx). */
+    entries.push({
+        url: `${SITE_URL}/nl/webdesign-groesbeek`,
+        lastModified: new Date(),
+        changeFrequency: "monthly",
+        priority: 0.9,
+    });
 
     return entries;
 }

@@ -6,6 +6,8 @@ import { Link } from "@/i18n/navigation"
 import { routing } from "@/i18n/routing"
 import { SectionWrapper } from "@/components/ui/section-wrapper"
 import { ContactSent } from "@/components/sections/contact-sent"
+import { SITE_NAME } from "@/lib/site"
+import { localeUrl } from "@/lib/seo"
 
 type Params = { locale: string }
 
@@ -18,7 +20,13 @@ export async function generateMetadata({ params }: { params: Promise<Params> }):
     const t = await getTranslations({ locale, namespace: "contactPage.sent" })
 
     return {
-        title: t("metaTitle"),
+        /* metaTitle traegt die Marke nicht selbst; hier einmalig ergaenzen,
+           da kein globales title.template mehr existiert. */
+        title: { absolute: `${t("metaTitle")} | ${SITE_NAME}` },
+        /* Self-Canonical fuer Konsistenz, aber keine hreflang-Matrix: die
+           Bestaetigungsseite ist noindex und soll in Suchergebnissen nie
+           auftauchen, hreflang haette hier keinen Zweck. */
+        alternates: { canonical: localeUrl(locale, "/contact/sent") },
         /* Bestaetigungsseite gehoert nicht in den Index. */
         robots: { index: false, follow: true },
     }

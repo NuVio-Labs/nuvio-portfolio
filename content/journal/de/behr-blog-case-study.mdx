@@ -1,0 +1,65 @@
+---
+title: "behr.blog: ein Projekttagebuch ohne Framework, ohne Tracking"
+description: "Case Study zu behr.blog: wie aus verstreuten Notizen zu Smart Home und IT ein eigener, statisch ausgelieferter Blog ohne Tracking wurde."
+date: "2026-09-10"
+updatedAt: "2026-09-10"
+category: "case-study"
+tags:
+  - Case Study
+  - Performance
+  - Datenschutz
+author: "NuVio Labs"
+featured: false
+image: "/behr.webp"
+imageAlt: "Startseite von behr.blog mit Projekttagebuch und Themen-Tabs."
+hero: "/behr.webp"
+heroAlt: "Startseite von behr.blog mit Projekttagebuch und Themen-Tabs."
+heroWidth: 1920
+heroHeight: 1080
+---
+
+Jan Behr dokumentiert seine Smart-Home- und IT-Projekte seit Jahren. Nur eben nicht an einem Ort: Notizen lagen verstreut in Apps, Ordnern und halb fertigen Textdateien, lesbar höchstens für ihn selbst. Ein Ort, den auch andere finden und verstehen können, fehlte.
+
+Aus dieser Lücke ist behr.blog entstanden — ein persönlicher Blog über Smart Home, Heimnetzwerk und IT-Projekte. Die Aufgabe klang einfach: ein Zuhause für Projekttagebuch und Notizen. Die Entscheidungen dahinter waren es weniger.
+
+## Die erste Weichenstellung: kein Framework
+
+Für einen Blog mit überschaubarem Umfang und einer klaren Zielgruppe stellte sich zuerst eine Grundsatzfrage: braucht das ein Framework, oder reicht die Plattform selbst als Struktur?
+
+Die Antwort fiel gegen React, Next.js oder ein CMS aus. behr.blog ist statisches HTML mit Tailwind CSS und JavaScript nur dort, wo es etwas bewirkt — Themen-Tabs, eine Galerie, kleine Interaktionen. Kein Build-Schritt, der etwas verstecken könnte, kein Framework-Overhead für eine Handvoll Seiten.
+
+Der Effekt zeigt sich zuerst in der Ladezeit. Ohne Hydration, ohne Client-Bundle, ohne Runtime, die erst nachladen muss, liefert der Server im Grunde genau das aus, was im Browser ankommt. Bei einem persönlichen Blog, den potenzielle Arbeitgeber genauso besuchen wie IT-Interessierte, ist das kein Nebeneffekt — es ist der erste Eindruck.
+
+## Struktur statt Textwüste
+
+Ein Projekttagebuch lebt von der Frage, wie man Jahre an Notizen so ordnet, dass sie sich lesen lassen wie ein Werkstattbericht und nicht wie ein Archiv. Die Lösung: Themen-Tabs, über die sich Projekte nach Bereich sortieren lassen, dazu eine Galerie für Fotos und Screenshots direkt im Fluss der jeweiligen Einträge.
+
+<JournalCallout type="tip">
+Ein Projekttagebuch ist kein Blog im klassischen Sinn — es hat kein Enddatum. Die Struktur muss also für Wachstum ausgelegt sein, nicht nur für den Start.
+</JournalCallout>
+
+Diese Struktur macht die Seite gleichzeitig für zwei sehr unterschiedliche Leser nutzbar. Wer nach Kompetenz sucht, sieht dokumentierte Projekte mit Verlauf. Wer nach Lösungen für ein eigenes Problem sucht, findet über die Themen-Tabs direkt den passenden Bereich, ohne sich durch alles andere zu klicken.
+
+## Datenschutz als Designentscheidung
+
+Bei behr.blog war kein Tracking von Anfang an gesetzt, nicht als nachträgliche Anpassung. Keine Cookies, keine Drittserver, keine Analytics-Skripte, die Daten irgendwohin senden. Schriften liegen lokal statt über ein Google-Fonts-CDN geladen zu werden, und eine strenge Content-Security-Policy begrenzt, was die Seite überhaupt laden darf.
+
+Diese Entscheidung hat einen direkten Nebeneffekt: Es gibt nichts, das nachgeladen werden muss, bevor die Seite tatsächlich reagiert. Datenschutz und Performance sind hier keine zwei getrennten Baustellen, sondern dieselbe Entscheidung aus zwei Blickwinkeln betrachtet.
+
+<JournalCallout type="important">
+Die strenge Content-Security-Policy von behr.blog setzt unter anderem <code>X-Frame-Options: DENY</code>. Das verhindert, dass die Seite in einem iframe geladen wird — auch nicht in der eigenen Live-Vorschau auf <a href="/work">/work</a>. Statt einer Vorschau, die dort für immer leer bliebe, zeigt <code>ProjectLivePreview</code> für dieses eine Projekt direkt den Screenshot. Ein technisches Detail, das die Seite selbst richtig macht, musste an anderer Stelle mitgedacht werden.
+</JournalCallout>
+
+## Ergebnis
+
+behr.blog hat Jan Behr einen eigenen Ort für sein Projekttagebuch gegeben — ohne Tracking, ohne Cookies, ohne Drittserver, statisch ausgeliefert und praktisch sofort geladen.
+
+> Durch den Blog habe ich endlich die Möglichkeit, meine Fähigkeiten und Projekte zu präsentieren. Zudem ist es mir durch den strukturellen Aufbau möglich, sowohl potenzielle Arbeitgeber als auch IT-Interessierte anzusprechen. Diese Seite schöpft aus meiner Sicht das volle Potenzial aus.
+>
+> — Jan Behr
+
+behr.blog steht seit August 2026 live und rotiert im Projektpool auf der Startseite von NuVio Labs.
+
+<JournalCallout type="info">
+Weitere Projekte gibt es unter [Arbeiten](/work). Für einen eigenen Blog oder eine ähnliche Aufgabe: [schreiben Sie mir kurz](/contact).
+</JournalCallout>

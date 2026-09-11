@@ -331,14 +331,24 @@
             "description": "Een project aanvragen of gewoon hallo zeggen. Gratis kennismaking, directe reactie en een duidelijke volgende stap."
         },
         "imprint": {
-            "title": "Impressum"
+            "title": "Colofon | NuVio Labs",
+            "description": "Colofon en wettelijke gegevens van NuVio Labs."
         },
         "privacy": {
-            "title": "Privacybeleid"
+            "title": "Privacybeleid | NuVio Labs",
+            "description": "Informatie over gegevensverzameling, hosting, cookies en uw rechten onder de AVG bij NuVio Labs."
+        },
+        "research": {
+            "title": "Research & Insights | NuVio Labs",
+            "description": "Experimenten en technische deep dives van NuVio Labs over performance, interactie en architectuur in webdesign."
         },
         "cv": {
             "title": "CV & Sollicitatie | Axel Schurer",
             "description": "CV, sollicitatiebrief en stagedocumenten van Axel Schurer, in omscholing tot applicatieontwikkelaar."
+        },
+        "webdesignGroesbeek": {
+            "title": "Webdesign Groesbeek | Website laten maken | NuVio Labs",
+            "description": "Professionele website laten maken in Groesbeek? NuVio Labs ontwikkelt snelle, moderne en meertalige websites voor bedrijven in de grensregio."
         }
     },
     "services": {
@@ -727,5 +737,194 @@
             "portfolio": "Portfolio bekijken"
         },
         "unlisted": "Deze pagina is niet openbaar gelinkt en is uitsluitend bedoeld voor sollicitaties."
+    },
+    "webdesignGroesbeek": {
+        "hero": {
+            "eyebrow": "Grensregio",
+            "headline": "Webdesign voor bedrijven in Groesbeek",
+            "subline": "Moderne, snelle en meertalige websites voor ondernemers in Groesbeek en de Duits-Nederlandse grensregio.",
+            "ctaPrimary": "Project aanvragen",
+            "ctaSecondary": "Projecten bekijken",
+            "crossBorderNote": "Gevestigd in Kranenburg, vlak over de grens bij Groesbeek."
+        },
+        "intent": {
+            "eyebrow": "Website laten maken",
+            "headline": "Een website laten maken die bij uw bedrijf past",
+            "subline": "Een website is geen doel op zich, maar een middel: vertrouwen wekken, uw diensten uitleggen en het bezoekers makkelijk maken om contact op te nemen.",
+            "points": {
+                "professional": "Oogt professioneel, ook op het eerste gezicht",
+                "clearServices": "Legt uw diensten begrijpelijk uit",
+                "mobile": "Werkt vlekkeloos op de smartphone",
+                "fast": "Laadt snel, op elk apparaat",
+                "contact": "Maakt contact opnemen eenvoudig",
+                "fit": "Past bij de uitstraling van uw bedrijf",
+                "trust": "Bouwt vertrouwen op bij nieuwe bezoekers"
+            }
+        },
+        "crossBorder": {
+            "eyebrow": "Grensregio",
+            "headline": "Webdesign net over de grens",
+            "badgeFrom": "Kranenburg (DE)",
+            "badgeTo": "Groesbeek (NL)",
+            "paragraphs": {
+                "base": "NuVio Labs is gevestigd in Kranenburg, direct aan de Duits-Nederlandse grens. Groesbeek ligt op enkele minuten afstand.",
+                "proximity": "Die korte afstand maakt persoonlijk contact mogelijk: een gesprek, een bezoek of gewoon snel schakelen, zonder dat de grens daarbij in de weg zit.",
+                "understanding": "Door de ligging in de grensregio ken ik zowel de Duitse als de Nederlandse markt, en weet ik hoe ik beide doelgroepen gericht aanspreek."
+            }
+        },
+        "multilingual": {
+            "eyebrow": "Meertalig",
+            "headline": "Meertalige websites voor de grensregio",
+            "subline": "Bedrijven in de grensregio hebben vaak zowel Nederlandse als Duitse klanten. Een website die beide groepen goed bedient, is dan geen overbodige luxe, maar een praktische keuze.",
+            "languages": {
+                "nl": "Nederlands",
+                "de": "Duits",
+                "en": "Engels"
+            },
+            "points": {
+                "reach": "Nederlandse en Duitse klanten bereiken met dezelfde website",
+                "structure": "Content per taal overzichtelijk en apart gestructureerd",
+                "technical": "Een zorgvuldig opgezette technische basis voor meertaligheid, zonder haastwerk"
+            }
+        },
+        "services": {
+            "eyebrow": "Diensten",
+            "headline": "Diensten voor bedrijven in Groesbeek",
+            "subline": "Bouwstenen die per project worden gecombineerd.",
+            "items": {
+                "companySite": {
+                    "title": "Bedrijfswebsites",
+                    "description": "Een centrale website die uw bedrijf professioneel presenteert en aanvragen genereert."
+                },
+                "landing": {
+                    "title": "Landingspagina's",
+                    "description": "Een gerichte pagina voor één dienst, aanbod of campagne."
+                },
+                "redesign": {
+                    "title": "Website redesign",
+                    "description": "Een bestaande website wordt technisch en visueel naar een hedendaags niveau gebracht."
+                },
+                "responsive": {
+                    "title": "Responsive webdesign",
+                    "description": "Betrouwbare weergave op smartphone, tablet en desktop."
+                },
+                "multilingual": {
+                    "title": "Meertalige websites",
+                    "description": "Websites in het Nederlands, Duits of Engels voor klanten aan beide kanten van de grens."
+                },
+                "technical": {
+                    "title": "Technische optimalisatie",
+                    "description": "Snellere laadtijden en schone code als basis voor betere vindbaarheid."
+                },
+                "maintenance": {
+                    "title": "Website onderhoud",
+                    "description": "Doorlopend beheer, updates en een vast aanspreekpunt na livegang."
+                }
+            }
+        },
+        "audiences": {
+            "eyebrow": "Voor wie",
+            "headline": "Klanten waarmee ik vaak samenwerk",
+            "items": {
+                "zzp": "ZZP'ers",
+                "dienstverleners": "Lokale dienstverleners",
+                "vakbedrijven": "Ambachtelijke bedrijven",
+                "praktijken": "Praktijken",
+                "horeca": "Horeca",
+                "mkb": "MKB-bedrijven"
+            }
+        },
+        "whyNuvio": {
+            "eyebrow": "Waarom NuVio Labs",
+            "headline": "Wat de samenwerking met bedrijven in de grensregio onderscheidt",
+            "items": {
+                "direct": "Direct contact, geen tussenpersonen",
+                "custom": "Maatwerk in plaats van een standaardsjabloon",
+                "modern": "Moderne technische basis",
+                "fast": "Snelle, technisch degelijke websites",
+                "responsive": "Werkt soepel op elk scherm",
+                "multilingual": "Meertalige mogelijkheden in NL, DE en EN",
+                "clear": "Heldere communicatie, geen vakjargon",
+                "aftercare": "Onderhoud en ondersteuning na oplevering",
+                "located": "Gevestigd vlak over de grens, in Kranenburg"
+            }
+        },
+        "process": {
+            "eyebrow": "Werkwijze",
+            "headline": "Zo verloopt een website-project",
+            "subline": "Zes stappen van kennismaking tot doorlopende ondersteuning.",
+            "steps": {
+                "kennismaking": {
+                    "title": "Kennismaking",
+                    "description": "Een kort gesprek over uw bedrijf, doelgroep en wensen."
+                },
+                "doelen": {
+                    "title": "Doelen en wensen",
+                    "description": "Functionaliteiten, omvang en prioriteiten worden samen bepaald."
+                },
+                "structuur": {
+                    "title": "Structuur en concept",
+                    "description": "De opbouw van de website wordt zo gepland dat bezoekers snel vinden wat ze zoeken."
+                },
+                "design": {
+                    "title": "Design en ontwikkeling",
+                    "description": "Vormgeving en techniek worden uitgewerkt, mobile-first en performant."
+                },
+                "feedback": {
+                    "title": "Feedback en afwerking",
+                    "description": "Het ontwerp wordt beoordeeld en op basis van uw feedback verfijnd."
+                },
+                "lancering": {
+                    "title": "Lancering en ondersteuning",
+                    "description": "De website gaat live, desgewenst met doorlopend onderhoud daarna."
+                }
+            }
+        },
+        "pricing": {
+            "eyebrow": "Indicatie",
+            "headline": "Wat kost een professionele website?",
+            "text": "Bedrijfswebsites starten, afhankelijk van omvang en wensen, vanaf € 1.490.",
+            "note": "De uiteindelijke prijs hangt af van het aantal pagina's, gewenste functionaliteiten, meertaligheid en specifieke wensen.",
+            "cta": "Vraag vrijblijvend een project aan"
+        },
+        "faq": {
+            "eyebrow": "Vragen",
+            "headline": "Veelgestelde vragen over webdesign in Groesbeek",
+            "questions": {
+                "cost": {
+                    "q": "Wat kost een website laten maken in Groesbeek?",
+                    "a": "Bedrijfswebsites starten, afhankelijk van omvang en wensen, vanaf € 1.490. De exacte prijs hangt af van de structuur, functionaliteiten en eventuele meertaligheid, en wordt na een kort gesprek duidelijk."
+                },
+                "duration": {
+                    "q": "Hoe lang duurt het om een website te laten maken?",
+                    "a": "Dat hangt af van de omvang van het project en hoe snel u feedback geeft. Reken op enkele weken tot een paar maanden, van kennismaking tot livegang."
+                },
+                "existing": {
+                    "q": "Kan NuVio Labs mijn bestaande website vernieuwen?",
+                    "a": "Ja. Bij een redesign wordt bruikbare content overgenomen en breng ik het design, de structuur en de techniek naar een actueel niveau."
+                },
+                "dutch": {
+                    "q": "Werkt NuVio Labs ook met Nederlandse bedrijven?",
+                    "a": "Ja. Hoewel NuVio Labs in Kranenburg is gevestigd, werk ik regelmatig met bedrijven in Groesbeek en de rest van de grensregio."
+                },
+                "languages": {
+                    "q": "Kan mijn website in het Nederlands én Duits worden opgebouwd?",
+                    "a": "Ja. Een website kan in het Nederlands, Duits en Engels worden opgebouwd, met een heldere structuur per taal."
+                },
+                "maintenance": {
+                    "q": "Is er ook onderhoud mogelijk na de lancering?",
+                    "a": "Ja, na livegang verzorg ik desgewenst doorlopend onderhoud, updates en kleine aanpassingen. U heeft dan steeds hetzelfde aanspreekpunt."
+                },
+                "hosting": {
+                    "q": "Kunnen hosting en technisch beheer ook geregeld worden?",
+                    "a": "Ja, dat kan onderdeel zijn van het onderhoud. Ik neem hosting en techniek dan voor mijn rekening, of we sluiten aan op uw bestaande infrastructuur."
+                }
+            }
+        },
+        "finalCta": {
+            "headline": "Op zoek naar webdesign voor uw bedrijf in Groesbeek?",
+            "text": "Vertel kort waar uw project om draait. Ik denk graag mee, ook net over de grens.",
+            "cta": "Project aanvragen"
+        }
     }
 }

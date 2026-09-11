@@ -28,6 +28,7 @@ import {
     cvToolbox,
     type CvEntryId,
 } from "@/data/cv"
+import { SITE_NAME } from "@/lib/site"
 
 /**
  * Bewerbungsseite mit Lebenslauf, Anschreiben und Praktikumsunterlagen.
@@ -68,9 +69,13 @@ export async function generateMetadata({
     const t = await getTranslations({ locale, namespace: "seo.cv" })
 
     return {
-        title: t("title"),
+        /* seo.cv.title traegt die Marke nicht selbst; hier einmalig
+           ergaenzen, da kein globales title.template mehr existiert. */
+        title: { absolute: `${t("title")} | ${SITE_NAME}` },
         description: t("description"),
         robots: { index: false, follow: false, nocache: true },
+        /* Bewusst kein Canonical: die Seite ist eine private, nicht
+           indexierte Bewerbungsseite ohne oeffentliches Gegenstueck. */
         alternates: { canonical: undefined },
     }
 }

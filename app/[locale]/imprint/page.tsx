@@ -1,6 +1,20 @@
 import { useTranslations } from "next-intl"
 import { Container } from "@/components/layout/container"
-import { setRequestLocale } from "next-intl/server"
+import { getTranslations, setRequestLocale } from "next-intl/server"
+import { routing } from "@/i18n/routing"
+import { buildPageMetadata } from "@/lib/seo"
+
+export async function generateMetadata({ params }: { params: Promise<{ locale: string }> }) {
+    const { locale } = await params
+    const t = await getTranslations({ locale, namespace: "seo.imprint" })
+    return buildPageMetadata({
+        locale,
+        path: "/imprint",
+        title: t("title"),
+        description: t("description"),
+        availableLocales: routing.locales,
+    })
+}
 
 export default function ImprintPage({ params: { locale } }: { params: { locale: string } }) {
     setRequestLocale(locale)

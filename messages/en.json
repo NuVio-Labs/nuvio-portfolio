@@ -331,10 +331,16 @@
             "description": "Request a project or just say hello. Free initial consultation, direct response, and a clear next step."
         },
         "imprint": {
-            "title": "Imprint"
+            "title": "Imprint | NuVio Labs",
+            "description": "Legal notice and provider information for NuVio Labs."
         },
         "privacy": {
-            "title": "Privacy Policy"
+            "title": "Privacy Policy | NuVio Labs",
+            "description": "Information on data collection, hosting, cookies and your rights under GDPR at NuVio Labs."
+        },
+        "research": {
+            "title": "Research & Insights | NuVio Labs",
+            "description": "Experiments and technical deep dives from NuVio Labs on performance, interaction and architecture in web design."
         },
         "cv": {
             "title": "CV & Application | Axel Schurer",

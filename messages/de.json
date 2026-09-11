@@ -311,8 +311,8 @@
     },
     "seo": {
         "home": {
-            "title": "NuVioLabs | Webdesign  für lokale Unternehmen",
-            "description": "Ich entwickle schnelle, conversion-starke Websites für Handwerk, Salons und KMUs. Mehr Sichtbarkeit. Mehr Anfragen. Jetzt kostenloses Erstgespräch sichern."
+            "title": "Webdesign Kranenburg & Kleve | NuVio Labs",
+            "description": "Moderne Websites für Unternehmen am Niederrhein. Schnell, mehrsprachig und auf Anfragen optimiert. Webdesign aus Kranenburg für Kleve und Umgebung."
         },
         "work": {
             "title": "Projekte | NuVio Labs",
@@ -331,10 +331,24 @@
             "description": "Projekt anfragen oder einfach Hallo sagen. Kostenlose Erstberatung, direkte Antwort und klarer nächster Schritt."
         },
         "imprint": {
-            "title": "Impressum"
+            "title": "Impressum | NuVio Labs",
+            "description": "Anbieterkennzeichnung und rechtliche Angaben zu NuVio Labs."
         },
         "privacy": {
-            "title": "Datenschutzerklärung"
+            "title": "Datenschutz | NuVio Labs",
+            "description": "Informationen zu Datenerhebung, Hosting, Cookies und Ihren Rechten gemäß DSGVO bei NuVio Labs."
+        },
+        "research": {
+            "title": "Research & Insights | NuVio Labs",
+            "description": "Experimente und technische Deep Dives von NuVio Labs zu Performance, Interaktion und Architektur im Webdesign."
+        },
+        "webdesignKranenburg": {
+            "title": "Webdesign Kranenburg | Websites für Unternehmen | NuVio Labs",
+            "description": "Professionelles Webdesign aus Kranenburg für Unternehmen, Selbstständige und Handwerksbetriebe. Moderne, schnelle und individuelle Websites von NuVio Labs."
+        },
+        "webdesignKleve": {
+            "title": "Webdesign Kleve | Websites für Unternehmen | NuVio Labs",
+            "description": "Professionelles Webdesign für Unternehmen in Kleve. Moderne, schnelle und individuelle Websites, Relaunches und laufende Betreuung von NuVio Labs."
         },
         "cv": {
             "title": "Lebenslauf & Bewerbung | Axel Schurer",
@@ -727,5 +741,430 @@
             "portfolio": "Portfolio ansehen"
         },
         "unlisted": "Diese Seite ist nicht öffentlich verlinkt und ausschließlich für Bewerbungen gedacht."
+    },
+    "webdesignKranenburg": {
+        "hero": {
+            "eyebrow": "Webdesign Kranenburg",
+            "headline": "Webdesign in Kranenburg für lokale Unternehmen",
+            "subline": "Individuelle, schnelle und moderne Websites für Selbstständige, Handwerksbetriebe und Unternehmen aus Kranenburg und Umgebung.",
+            "ctaPrimary": "Projekt anfragen",
+            "ctaSecondary": "Referenzen ansehen"
+        },
+        "problem": {
+            "eyebrow": "Herausforderung",
+            "headline": "Eine Website sollte mehr leisten als nur gut aussehen",
+            "subline": "Viele Websites lokaler Unternehmen bremsen mehr, als sie helfen.",
+            "issues": {
+                "outdated": {
+                    "title": "Veralteter Webauftritt",
+                    "description": "Design und Struktur wirken nicht mehr zeitgemäß und spiegeln das Unternehmen nicht mehr richtig wider."
+                },
+                "mobile": {
+                    "title": "Schlechte Darstellung auf dem Smartphone",
+                    "description": "Die meisten Besucher kommen über das Smartphone, doch die Seite lässt sich darauf kaum bedienen."
+                },
+                "contact": {
+                    "title": "Unklare Kontaktwege",
+                    "description": "Interessenten finden Telefonnummer, Formular oder Adresse nicht auf Anhieb."
+                },
+                "slow": {
+                    "title": "Langsame Ladezeiten",
+                    "description": "Die Seite baut sich zu langsam auf, Besucher springen ab, bevor Inhalte sichtbar sind."
+                },
+                "impression": {
+                    "title": "Schwacher professioneller Eindruck",
+                    "description": "Der erste Eindruck passt nicht zur eigentlichen Qualität der Arbeit."
+                },
+                "content": {
+                    "title": "Inhalte schwer auffindbar",
+                    "description": "Leistungen, Preise oder Kontaktinformationen sind versteckt statt klar strukturiert."
+                },
+                "outgrown": {
+                    "title": "Website passt nicht mehr zum Unternehmen",
+                    "description": "Das Unternehmen hat sich weiterentwickelt, der Webauftritt aber nicht."
+                }
+            },
+            "solutionsLabel": "Was NuVio Labs dagegen liefert",
+            "solutions": {
+                "structure": "Moderne, klare Struktur",
+                "performance": "Schnelle Ladezeiten",
+                "guidance": "Klare Nutzerführung",
+                "mobileOpt": "Optimierung für Smartphone und Tablet",
+                "appearance": "Professioneller, hochwertiger Auftritt",
+                "focus": "Klarer Fokus auf Anfragen und Kontakt"
+            }
+        },
+        "services": {
+            "eyebrow": "Leistungen",
+            "headline": "Leistungen für Unternehmen aus Kranenburg",
+            "subline": "Von der ersten Idee bis zur laufenden Betreuung.",
+            "items": {
+                "companySite": {
+                    "title": "Unternehmenswebsites",
+                    "description": "Komplette Website für Ihr Unternehmen, von der Struktur bis zum fertigen Launch."
+                },
+                "landing": {
+                    "title": "Landingpages",
+                    "description": "Fokussierte Seite für eine Leistung, eine Aktion oder eine gezielte Kampagne."
+                },
+                "relaunch": {
+                    "title": "Website-Relaunch",
+                    "description": "Bestehende Website wird technisch und optisch auf den aktuellen Stand gebracht."
+                },
+                "responsive": {
+                    "title": "Responsive Webdesign",
+                    "description": "Zuverlässige Darstellung auf Smartphone, Tablet und Desktop."
+                },
+                "multilingual": {
+                    "title": "Mehrsprachige Websites",
+                    "description": "Websites in Deutsch, Englisch oder Niederländisch für Kunden diesseits und jenseits der Grenze."
+                },
+                "technical": {
+                    "title": "Technische Optimierung",
+                    "description": "Bessere Ladezeiten, sauberer Code und eine solide Grundlage für lokale Sichtbarkeit."
+                },
+                "maintenance": {
+                    "title": "Website-Betreuung",
+                    "description": "Laufende Pflege, Aktualisierungen und ein Ansprechpartner nach dem Launch."
+                }
+            }
+        },
+        "local": {
+            "eyebrow": "Standort",
+            "headline": "Webdesign aus Kranenburg",
+            "paragraphs": {
+                "base": "NuVio Labs hat seinen Sitz in Kranenburg und arbeitet mit Unternehmen am gesamten Niederrhein zusammen, unter anderem in Kleve und Goch.",
+                "border": "Durch die Lage direkt an der Grenze zu den Niederlanden ergibt sich ein zusätzlicher Vorteil für Unternehmen mit Kunden oder Partnern in Groesbeek oder Nijmegen: Websites lassen sich von Anfang an zweisprachig oder mehrsprachig planen.",
+                "contact": "Als direkter Ansprechpartner begleite ich Projekte persönlich, von der ersten Idee bis zur laufenden Betreuung nach dem Launch."
+            }
+        },
+        "audiences": {
+            "eyebrow": "Für wen",
+            "headline": "Websites für lokale Zielgruppen",
+            "items": {
+                "handwerk": {
+                    "title": "Handwerksbetriebe",
+                    "description": "Klare Darstellung von Leistungen, Referenzen und Kontaktwegen für Kunden in der Region."
+                },
+                "dienstleister": {
+                    "title": "Lokale Dienstleister",
+                    "description": "Übersichtliche Website, die Vertrauen schafft und Anfragen einfacher macht."
+                },
+                "praxen": {
+                    "title": "Praxen",
+                    "description": "Ruhiger, professioneller Auftritt mit klaren Informationen zu Leistungen und Kontakt."
+                },
+                "gastronomie": {
+                    "title": "Gastronomie",
+                    "description": "Speisekarte, Öffnungszeiten und Kontakt übersichtlich an einem Ort."
+                },
+                "vereine": {
+                    "title": "Vereine",
+                    "description": "Einfache, gepflegte Website für Informationen, Termine und Ansprechpartner."
+                },
+                "kmu": {
+                    "title": "Kleine und mittelständische Unternehmen",
+                    "description": "Website als solide digitale Basis, die mit dem Unternehmen mitwächst."
+                }
+            }
+        },
+        "process": {
+            "eyebrow": "Ablauf",
+            "headline": "So läuft die Zusammenarbeit",
+            "subline": "Sechs klare Schritte von der ersten Anfrage bis zur laufenden Betreuung.",
+            "steps": {
+                "start": { "title": "Erstgespräch", "description": "Kurzes Gespräch zu Zielen, Umfang und Anforderungen des Projekts." },
+                "concept": { "title": "Konzept", "description": "Struktur, Inhalte und Umfang der Website werden gemeinsam festgelegt." },
+                "design": { "title": "Design & Entwicklung", "description": "Umsetzung von Design und technischer Struktur, mobile-first und performant." },
+                "feedback": { "title": "Feedback", "description": "Sie prüfen den Entwurf, Anpassungen fließen direkt ein." },
+                "launch": { "title": "Veröffentlichung", "description": "Die Website geht live, inklusive technischer Grundprüfung." },
+                "care": { "title": "Betreuung", "description": "Auf Wunsch laufende Pflege, Aktualisierungen und Ansprechpartner nach dem Launch." }
+            }
+        },
+        "pricing": {
+            "eyebrow": "Orientierung",
+            "headline": "Was kostet eine Website?",
+            "text": "Unternehmenswebsites starten je nach Umfang ab 1.490 €.",
+            "note": "Der finale Preis hängt vom Umfang, den gewünschten Funktionen und dem Aufwand für Inhalte und Design ab. Nach einem kurzen Erstgespräch erhalten Sie ein passendes Angebot."
+        },
+        "faq": {
+            "eyebrow": "Fragen",
+            "headline": "Häufige Fragen zum Webdesign in Kranenburg",
+            "questions": {
+                "cost": {
+                    "q": "Was kostet eine Website in Kranenburg?",
+                    "a": "Unternehmenswebsites starten je nach Umfang ab 1.490 €. Der genaue Preis hängt von Struktur, Funktionen und Inhalten ab und wird nach einem kurzen Erstgespräch festgelegt."
+                },
+                "duration": {
+                    "q": "Wie lange dauert die Erstellung einer Website?",
+                    "a": "Je nach Umfang und Reaktionszeit bei Inhalten und Feedback dauert ein Projekt meist mehrere Wochen, von der ersten Abstimmung bis zur Veröffentlichung."
+                },
+                "revamp": {
+                    "q": "Kann NuVio Labs bestehende Websites überarbeiten?",
+                    "a": "Ja. Ein Relaunch übernimmt sinnvolle bestehende Inhalte und bringt Design, Struktur und Technik auf den aktuellen Stand."
+                },
+                "maintenance": {
+                    "q": "Bietest du auch Website-Betreuung an?",
+                    "a": "Ja, auf Wunsch übernehme ich nach dem Launch laufende Pflege und Aktualisierungen und stehe als direkter Ansprechpartner zur Verfügung."
+                },
+                "multilingual": {
+                    "q": "Sind mehrsprachige Websites möglich?",
+                    "a": "Ja. Websites lassen sich in Deutsch, Englisch und Niederländisch umsetzen, was gerade für Unternehmen nahe der Grenze sinnvoll sein kann."
+                },
+                "onlyKranenburg": {
+                    "q": "Arbeitest du nur mit Unternehmen aus Kranenburg?",
+                    "a": "Nein. Der Sitz von NuVio Labs ist Kranenburg, die Zusammenarbeit erfolgt aber ortsunabhängig mit Unternehmen am gesamten Niederrhein und darüber hinaus."
+                }
+            }
+        },
+        "finalCta": {
+            "headline": "Du suchst einen Webdesigner in Kranenburg?",
+            "text": "Kurze Nachricht genügt: Erzählen Sie mir von Ihrem Projekt, ich melde mich zeitnah mit den nächsten Schritten zurück.",
+            "cta": "Website-Projekt anfragen"
+        }
+    },
+    "webdesignKleve": {
+        "hero": {
+            "eyebrow": "Webdesign für Kleve",
+            "headline": "Webdesign für Unternehmen in Kleve",
+            "subline": "Moderne Unternehmenswebsites für Betriebe, Selbstständige und Dienstleister aus Kleve – schnell, professionell und auf klare Kontaktwege ausgerichtet.",
+            "ctaPrimary": "Projekt anfragen",
+            "ctaSecondary": "Referenzen ansehen"
+        },
+        "businessTool": {
+            "eyebrow": "Digitaler Auftritt",
+            "headline": "Die Website als erster Kontaktpunkt zum Kunden",
+            "subline": "Für viele Interessenten ist die Website der erste Berührungspunkt mit einem Unternehmen, oft noch vor dem ersten Gespräch.",
+            "points": {
+                "compare": {
+                    "title": "Anbieter werden online verglichen",
+                    "description": "Bevor eine Anfrage gestellt wird, prüfen potenzielle Kunden meist mehrere Unternehmen parallel im Netz."
+                },
+                "trust": {
+                    "title": "Veraltete Seiten kosten Vertrauen",
+                    "description": "Ein unprofessioneller oder alter Auftritt wirkt sich direkt auf die Wahrnehmung des Unternehmens aus."
+                },
+                "mobileExpectation": {
+                    "title": "Mobile Nutzer erwarten Tempo",
+                    "description": "Smartphones sind für die meisten Interessenten der erste Zugang zur Website, entsprechend hoch ist der Anspruch an Tempo und Übersicht."
+                },
+                "clarity": {
+                    "title": "Leistungen müssen sofort verständlich sein",
+                    "description": "Was ein Unternehmen anbietet, sollte ohne Umwege erkennbar sein."
+                },
+                "reachability": {
+                    "title": "Kontakt muss sofort erreichbar sein",
+                    "description": "Telefonnummer, Formular oder E-Mail dürfen nicht erst gesucht werden müssen."
+                }
+            }
+        },
+        "problems": {
+            "eyebrow": "Bestandsaufnahme",
+            "headline": "Woran bestehende Websites in der Praxis oft scheitern",
+            "subline": "Diese Muster begegnen uns bei Relaunch-Projekten immer wieder.",
+            "items": {
+                "outdatedLook": {
+                    "title": "Technisch oder gestalterisch veraltet",
+                    "description": "Design und Umsetzung entsprechen nicht mehr dem heutigen Standard."
+                },
+                "unclearServices": {
+                    "title": "Leistungen nicht klar strukturiert",
+                    "description": "Besucher müssen zu lange suchen, um zu verstehen, was angeboten wird."
+                },
+                "poorMobile": {
+                    "title": "Schlechte mobile Bedienung",
+                    "description": "Navigation und Inhalte funktionieren auf dem Smartphone nur eingeschränkt."
+                },
+                "complicatedForm": {
+                    "title": "Kompliziertes Kontaktformular",
+                    "description": "Zu viele Felder oder unklare Abläufe schrecken vor einer Anfrage ab."
+                },
+                "slowLoading": {
+                    "title": "Lange Ladezeiten",
+                    "description": "Die Seite braucht zu lange, bis Inhalte sichtbar sind."
+                },
+                "misfitContent": {
+                    "title": "Inhalte passen nicht mehr zum Unternehmen",
+                    "description": "Das Angebot hat sich verändert, die Website spiegelt das nicht mehr wider."
+                },
+                "qualityMismatch": {
+                    "title": "Website zeigt nicht die eigentliche Qualität",
+                    "description": "Die tatsächliche Arbeit ist besser als das, was der Webauftritt vermittelt."
+                }
+            },
+            "transition": "Genau hier setzt NuVio Labs an: mit einer Website, die Struktur, Tempo und Außenwirkung wieder zusammenbringt."
+        },
+        "services": {
+            "eyebrow": "Leistungen",
+            "headline": "Leistungen für Unternehmen in Kleve",
+            "subline": "Sieben Bausteine, die je nach Projekt kombiniert werden.",
+            "items": {
+                "companySite": {
+                    "title": "Unternehmenswebsites",
+                    "description": "Website als zentraler Anlaufpunkt für Kunden, mit klarer Struktur und Fokus auf Anfragen."
+                },
+                "relaunch": {
+                    "title": "Website-Relaunch",
+                    "description": "Nicht nur neues Design, sondern bestehende Inhalte, Struktur und Nutzerführung modernisieren."
+                },
+                "landing": {
+                    "title": "Landingpages",
+                    "description": "Eigene Seite für eine Leistung, ein Angebot oder eine gezielte Kampagne."
+                },
+                "responsive": {
+                    "title": "Responsive Webdesign",
+                    "description": "Verlässliche Darstellung und Bedienung auf Smartphone, Tablet und Desktop."
+                },
+                "multilingual": {
+                    "title": "Mehrsprachige Websites",
+                    "description": "Zweisprachige oder mehrsprachige Umsetzung für Unternehmen mit Kunden in Deutschland und den Niederlanden."
+                },
+                "technical": {
+                    "title": "Technische Optimierung",
+                    "description": "Schnellere Ladezeiten und sauberer Code als Grundlage für bessere Sichtbarkeit."
+                },
+                "maintenance": {
+                    "title": "Laufende Website-Betreuung",
+                    "description": "Regelmäßige Pflege und ein fester Ansprechpartner nach dem Launch."
+                }
+            }
+        },
+        "audiences": {
+            "eyebrow": "Für wen wir Websites entwickeln",
+            "headline": "Branchen, mit denen wir häufig zusammenarbeiten",
+            "items": {
+                "handwerk": {
+                    "title": "Handwerksbetriebe",
+                    "description": "Klare Darstellung von Leistungen und Referenzen für Anfragen aus der Region."
+                },
+                "dienstleistung": {
+                    "title": "Dienstleistungsunternehmen",
+                    "description": "Website als verlässlicher Anlaufpunkt für Bestandskunden und neue Anfragen."
+                },
+                "praxen": {
+                    "title": "Praxen",
+                    "description": "Sachliche, gut auffindbare Informationen zu Leistungen und Kontakt."
+                },
+                "kmu": {
+                    "title": "Kleine und mittelständische Unternehmen",
+                    "description": "Digitale Basis, die mit wachsenden Anforderungen mitgeht."
+                },
+                "gastronomie": {
+                    "title": "Gastronomie",
+                    "description": "Speisekarte, Öffnungszeiten und Kontakt klar und schnell auffindbar."
+                },
+                "beratend": {
+                    "title": "Beratende Berufe",
+                    "description": "Vertrauensbildender Auftritt, der Kompetenz und Erreichbarkeit zeigt."
+                },
+                "marken": {
+                    "title": "Lokale Marken",
+                    "description": "Website, die Wiedererkennung und Markenauftritt konsistent unterstützt."
+                }
+            }
+        },
+        "whyNuvio": {
+            "eyebrow": "Warum NuVio Labs",
+            "headline": "Ein direkter Ansprechpartner statt anonymer Prozesse",
+            "items": {
+                "directContact": {
+                    "title": "Direkter Ansprechpartner",
+                    "description": "Ein fester Ansprechpartner über das gesamte Projekt hinweg, ohne Zwischenstationen."
+                },
+                "individual": {
+                    "title": "Individuelle Entwicklung",
+                    "description": "Kein austauschbares Baukastensystem, sondern eine auf das Unternehmen zugeschnittene Website."
+                },
+                "modernBasis": {
+                    "title": "Moderne technische Basis",
+                    "description": "Aktuelle Technologien als Grundlage für Performance und Wartbarkeit."
+                },
+                "performance": {
+                    "title": "Performance und responsive Nutzung",
+                    "description": "Schnelle Ladezeiten und zuverlässige Darstellung auf allen Geräten."
+                },
+                "communication": {
+                    "title": "Klare Kommunikation",
+                    "description": "Verständliche Abstimmung ohne unnötigen Fachjargon."
+                },
+                "regionalProximity": {
+                    "title": "Regionale Nähe",
+                    "description": "NuVio Labs betreut Unternehmen in Kleve und am gesamten Niederrhein, mit kurzen Wegen für die Abstimmung vor Ort oder online."
+                }
+            }
+        },
+        "process": {
+            "eyebrow": "Ablauf",
+            "headline": "Ablauf eines Website-Projekts",
+            "subline": "Sechs Schritte von der ersten Kontaktaufnahme bis zur laufenden Betreuung.",
+            "steps": {
+                "start": {
+                    "title": "Kennenlernen",
+                    "description": "Kurzer Austausch zu Unternehmen, Zielgruppe und Erwartungen an die neue Website."
+                },
+                "requirements": {
+                    "title": "Anforderungen und Ziele",
+                    "description": "Funktionen, Umfang und Prioritäten werden gemeinsam festgelegt."
+                },
+                "concept": {
+                    "title": "Struktur und Konzept",
+                    "description": "Seitenstruktur und Inhalte werden so geplant, dass Besucher schnell zum Kontakt finden."
+                },
+                "design": {
+                    "title": "Design und Entwicklung",
+                    "description": "Umsetzung von Gestaltung und Technik, mobile-first und performant."
+                },
+                "feedback": {
+                    "title": "Feedback und Feinschliff",
+                    "description": "Der Entwurf wird geprüft und auf Basis Ihrer Rückmeldung angepasst."
+                },
+                "launch": {
+                    "title": "Veröffentlichung und Betreuung",
+                    "description": "Die Website geht live, auf Wunsch mit laufender Pflege danach."
+                }
+            }
+        },
+        "pricing": {
+            "eyebrow": "Orientierung",
+            "headline": "Was kostet eine professionelle Website?",
+            "text": "Unternehmenswebsites starten je nach Umfang ab 1.490 €.",
+            "note": "Der konkrete Preis hängt von Seitenumfang, Funktionen, Mehrsprachigkeit und individuellen Anforderungen ab.",
+            "cta": "Projekt unverbindlich anfragen"
+        },
+        "faq": {
+            "eyebrow": "Fragen",
+            "headline": "Häufige Fragen zum Webdesign in Kleve",
+            "questions": {
+                "cost": {
+                    "q": "Was kostet professionelles Webdesign in Kleve?",
+                    "a": "Unternehmenswebsites starten je nach Umfang ab 1.490 €. Der genaue Preis richtet sich nach Struktur, Funktionen und Mehrsprachigkeit und wird nach einem kurzen Gespräch festgelegt."
+                },
+                "duration": {
+                    "q": "Wie lange dauert die Erstellung einer Unternehmenswebsite?",
+                    "a": "Je nach Umfang und Abstimmungstempo liegt ein Projekt meist zwischen wenigen Wochen und wenigen Monaten."
+                },
+                "modernize": {
+                    "q": "Kann meine bestehende Website modernisiert werden?",
+                    "a": "Ja. Bei einem Relaunch werden sinnvolle bestehende Inhalte übernommen und Design, Struktur sowie Technik überarbeitet."
+                },
+                "location": {
+                    "q": "Muss mein Unternehmen aus Kleve kommen?",
+                    "a": "Nein. Die Zusammenarbeit erfolgt ortsunabhängig, NuVio Labs betreut Unternehmen in Kleve und am gesamten Niederrhein."
+                },
+                "multilingual": {
+                    "q": "Sind mehrsprachige Websites für deutsche und niederländische Kunden möglich?",
+                    "a": "Ja, Websites lassen sich in Deutsch, Englisch und Niederländisch umsetzen."
+                },
+                "maintenance": {
+                    "q": "Bietet NuVio Labs nach dem Launch weiterhin Betreuung an?",
+                    "a": "Ja, auf Wunsch übernehme ich laufende Pflege und Aktualisierungen und stehe danach weiterhin als Ansprechpartner zur Verfügung."
+                }
+            }
+        },
+        "finalCta": {
+            "headline": "Bereit für eine professionelle Website für dein Unternehmen in Kleve?",
+            "text": "Kurze Nachricht genügt: Beschreiben Sie Ihr Projekt, ich melde mich zeitnah mit den nächsten Schritten zurück.",
+            "cta": "Website-Projekt anfragen"
+        }
     }
 }

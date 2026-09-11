@@ -2,8 +2,8 @@ import type { Metadata } from "next"
 import { getTranslations, setRequestLocale } from "next-intl/server"
 import { redirect } from "@/i18n/navigation"
 import { routing } from "@/i18n/routing"
-import { SITE_URL } from "@/lib/site"
 import { getJournalArticles, toOgLocale } from "@/lib/journal"
+import { buildAlternates, localeUrl } from "@/lib/seo"
 import { JournalCard } from "@/components/journal/journal-card"
 import { SectionWrapper } from "@/components/ui/section-wrapper"
 
@@ -16,17 +16,12 @@ export async function generateStaticParams() {
 export async function generateMetadata({ params }: { params: Promise<Params> }): Promise<Metadata> {
     const { locale } = await params
     const t = await getTranslations({ locale, namespace: "journal.index" })
-    const url = `${SITE_URL}/${locale}/journal`
+    const url = localeUrl(locale, "/journal")
 
     return {
-        title: t("metaTitle"),
+        title: { absolute: t("metaTitle") },
         description: t("metaDescription"),
-        alternates: {
-            canonical: url,
-            languages: Object.fromEntries(
-                routing.locales.map((code) => [code, `${SITE_URL}/${code}/journal`]),
-            ),
-        },
+        alternates: buildAlternates({ locale, path: "/journal", availableLocales: routing.locales }),
         openGraph: {
             type: "website",
             url,
