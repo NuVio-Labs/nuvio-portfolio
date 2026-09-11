@@ -2,7 +2,8 @@ import type { Metadata } from "next"
 import { notFound } from "next/navigation"
 import { getTranslations, setRequestLocale } from "next-intl/server"
 import { Work } from "@/components/sections/work"
-import { buildPageMetadata } from "@/lib/seo"
+import { buildPageMetadata, localeUrl } from "@/lib/seo"
+import { buildBreadcrumbSchema, buildServiceSchema, jsonLdScriptProps } from "@/lib/structured-data"
 import { Hero } from "./_sections/hero"
 import { Intent } from "./_sections/intent"
 import { CrossBorder } from "./_sections/cross-border"
@@ -58,8 +59,26 @@ export default async function WebdesignGroesbeekPage({
     }
     setRequestLocale(locale)
 
+    const t = await getTranslations({ locale, namespace: "webdesignGroesbeek" })
+    const tSeo = await getTranslations({ locale, namespace: "seo.webdesignGroesbeek" })
+    const tNav = await getTranslations({ locale, namespace: "nav" })
+    const pageUrl = localeUrl(locale, "/webdesign-groesbeek")
+
+    const serviceSchema = buildServiceSchema({
+        name: t("hero.headline"),
+        description: tSeo("description"),
+        url: pageUrl,
+        areaServed: "Groesbeek",
+    })
+    const breadcrumbSchema = buildBreadcrumbSchema([
+        { name: tNav("brand"), url: localeUrl(locale, "") },
+        { name: t("hero.headline"), url: pageUrl },
+    ])
+
     return (
         <div className="flex flex-col">
+            <script {...jsonLdScriptProps(serviceSchema)} />
+            <script {...jsonLdScriptProps(breadcrumbSchema)} />
             <Hero />
             <Intent />
             <CrossBorder />

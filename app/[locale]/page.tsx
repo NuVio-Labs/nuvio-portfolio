@@ -6,6 +6,7 @@ import { Process } from "@/components/sections/process"
 import { AboutPreview } from "@/components/sections/about-preview"
 import { CtaFinal } from "@/components/sections/cta-final"
 import { getRotatedProjectIds } from "@/lib/work-rotation"
+import { buildOrganizationSchema, buildWebsiteSchema, jsonLdScriptProps } from "@/lib/structured-data"
 
 /**
  * Die Route wird aktuell pro Request gerendert, die Projektrotation greift also
@@ -24,6 +25,8 @@ export default function Home() {
 
     return (
         <div className="flex flex-col">
+            <script {...jsonLdScriptProps(buildOrganizationSchema())} />
+            <script {...jsonLdScriptProps(buildWebsiteSchema())} />
             <Hero />
             <ValueProposition />
             <Work projectIds={projectIds} />
