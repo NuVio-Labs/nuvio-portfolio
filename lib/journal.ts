@@ -23,6 +23,7 @@ export const JOURNAL_CATEGORIES = [
     "seo",
     "case-study",
     "behind-the-build",
+    "politics-economy",
 ] as const
 
 export type JournalCategory = (typeof JOURNAL_CATEGORIES)[number]
