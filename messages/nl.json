@@ -262,7 +262,7 @@
         "questions": {
             "cost": {
                 "q": "Wat kost een nieuwe website?",
-                "a": "Elk project is anders. De meeste websites starten rond €800. In het eerste gesprek bepalen we samen scope, doelen en budget, zodat u een realistische en transparante indicatie krijgt."
+                "a": "Elk project is anders. De meeste websites starten vanaf € 1.490. In het eerste gesprek bepalen we samen scope, doelen en budget, zodat u een realistische en transparante indicatie krijgt."
             },
             "duration": {
                 "q": "Hoe lang duurt de realisatie?",
@@ -275,6 +275,11 @@
             "cms": {
                 "q": "Kan inhoud later worden aangepast?",
                 "a": "Ja. Kleine wijzigingen zijn altijd mogelijk. Wilt u zelf regelmatig content beheren, dan kiezen we een passende oplossing."
+            },
+            "groesbeek": {
+                "q": "Bieden jullie ook webdesign in Groesbeek aan?",
+                "a": "Ja. NuVio Labs is gevestigd vlak over de grens in Kranenburg en werkt regelmatig voor bedrijven in Groesbeek en de grensregio.",
+                "linkText": "Meer over webdesign in Groesbeek"
             }
         }
     },

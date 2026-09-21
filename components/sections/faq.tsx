@@ -1,16 +1,27 @@
 "use client"
 
 import { useState } from "react"
-import { useTranslations } from "next-intl"
-import { ChevronDown } from "lucide-react"
+import { useLocale, useTranslations } from "next-intl"
+import { ChevronDown, ArrowRight } from "lucide-react"
 import { cn } from "@/lib/utils"
 import { SectionWrapper } from "@/components/ui/section-wrapper"
+import { Link } from "@/i18n/navigation"
 
-const FAQ_KEYS = ["cost", "duration", "hosting", "cms"] as const
+const BASE_FAQ_KEYS = ["cost", "duration", "hosting", "cms"] as const
+
+/**
+ * "groesbeek" existiert nur in messages/nl.json: die Landingpage
+ * /nl/webdesign-groesbeek ist bewusst einsprachig (siehe deren page.tsx),
+ * daher taucht der Verweis auch nur auf der niederlaendischen Startseite auf.
+ */
+const NL_ONLY_FAQ_KEYS = ["groesbeek"] as const
 
 export function FAQ() {
     const t = useTranslations("faq")
+    const locale = useLocale()
     const [openIndex, setOpenIndex] = useState<number | null>(0)
+
+    const FAQ_KEYS = locale === "nl" ? [...BASE_FAQ_KEYS, ...NL_ONLY_FAQ_KEYS] : BASE_FAQ_KEYS
 
     return (
         <SectionWrapper id="faq" light>
@@ -61,7 +72,16 @@ export function FAQ() {
                                     >
                                         <div className="overflow-hidden">
                                             <div className="px-6 pb-6 text-sm leading-relaxed text-text-muted">
-                                                {t(`questions.${key}.a`)}
+                                                <p>{t(`questions.${key}.a`)}</p>
+                                                {key === "groesbeek" ? (
+                                                    <Link
+                                                        href="/webdesign-groesbeek"
+                                                        className="mt-3 inline-flex items-center gap-2 font-medium text-accent hover:text-[var(--nv-accent-hover)] transition-colors group"
+                                                    >
+                                                        {t("questions.groesbeek.linkText")}
+                                                        <ArrowRight className="h-4 w-4 group-hover:translate-x-1 transition-transform" />
+                                                    </Link>
+                                                ) : null}
                                             </div>
                                         </div>
                                     </div>
