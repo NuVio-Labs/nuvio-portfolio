@@ -1,3 +1,4 @@
+import Image from "next/image"
 import { getTranslations } from "next-intl/server"
 import { setRequestLocale } from "next-intl/server"
 import { Link } from "@/i18n/navigation"
@@ -64,8 +65,14 @@ export default async function AboutPage({ params }: { params: Promise<{ locale: 
                             <p className="text-text-muted leading-relaxed mb-4">{t("story.text1")}</p>
                             <p className="text-text-muted leading-relaxed">{t("story.text2")}</p>
                         </div>
-                        <div className="aspect-[4/5] max-w-sm mx-auto md:mx-0 md:ml-auto rounded-2xl bg-background border border-border-soft flex items-center justify-center text-text-muted text-sm">
-                            NuVio Labs
+                        <div className="relative aspect-[4/5] max-w-sm mx-auto md:mx-0 md:ml-auto overflow-hidden rounded-2xl border border-border-soft">
+                            <Image
+                                src="/axel-portrait.webp"
+                                alt="Axel Schurer – NuVio Labs"
+                                fill
+                                className="object-cover object-center"
+                                sizes="(min-width: 768px) 384px, 100vw"
+                            />
                         </div>
                     </div>
                 </div>

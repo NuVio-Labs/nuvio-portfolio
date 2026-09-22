@@ -1,6 +1,4 @@
-"use client"
-
-import { useEffect, useRef, useState } from "react"
+import type { CSSProperties } from "react"
 import { cn } from "@/lib/utils"
 
 interface ScrollAnimationProps {
@@ -9,37 +7,23 @@ interface ScrollAnimationProps {
     delay?: number
 }
 
+/**
+ * Sanfte Eintritts-Animation fuer Sektionsinhalte.
+ *
+ * Rein CSS-basiert (".nv-reveal" in globals.css, analog zum bestehenden
+ * ".hero-reveal"-Muster) statt IntersectionObserver + React-State: der
+ * Inhalt steht damit unveraendert im initialen HTML und ist ohne
+ * JavaScript sowie unabhaengig von Scroll-Position sofort vorhanden. Die
+ * Animation laeuft automatisch beim Mount ab und endet garantiert bei
+ * opacity:1 — sie ist nie Voraussetzung fuer Sichtbarkeit, nur eine
+ * zusaetzliche, rein optische Anreicherung. prefers-reduced-motion wird
+ * zentral in globals.css respektiert.
+ */
 export function ScrollAnimation({ children, className, delay = 0 }: ScrollAnimationProps) {
-    const ref = useRef<HTMLDivElement>(null)
-    const [visible, setVisible] = useState(false)
-
-    useEffect(() => {
-        const el = ref.current
-        if (!el) return
-
-        const observer = new IntersectionObserver(
-            ([entry]) => {
-                if (entry.isIntersecting) {
-                    setVisible(true)
-                    observer.disconnect()
-                }
-            },
-            { rootMargin: "-40px" }
-        )
-
-        observer.observe(el)
-        return () => observer.disconnect()
-    }, [])
-
     return (
         <div
-            ref={ref}
-            className={cn(className)}
-            style={{
-                opacity: visible ? 1 : 0,
-                transform: visible ? "translateY(0)" : "translateY(18px)",
-                transition: `opacity 0.5s ease-out ${delay}s, transform 0.5s ease-out ${delay}s`,
-            }}
+            className={cn("nv-reveal", className)}
+            style={delay ? ({ "--reveal-delay": `${delay}s` } as CSSProperties) : undefined}
         >
             {children}
         </div>

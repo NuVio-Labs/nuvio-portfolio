@@ -4,6 +4,7 @@ import { useState, useRef, useEffect } from "react"
 import { useLocale } from "next-intl"
 import { usePathname, useRouter } from "next/navigation"
 import { routing } from "@/i18n/routing"
+import { resolveLocaleSwitchPath } from "@/i18n/locale-routes"
 import { ChevronDown, Check } from "lucide-react"
 import { cn } from "@/lib/utils"
 
@@ -42,8 +43,15 @@ export function LanguageSwitcher() {
 
     function switchLocale(newLocale: string) {
         const segments = pathname.split("/")
-        segments[1] = newLocale
-        const newPath = segments.join("/")
+        // Pfad unterhalb des Locale-Segments, z. B. "/webdesign-kleve" oder
+        // "" fuer die Startseite ("/de" -> segments = ["", "de"]).
+        const belowLocale = segments.length > 2 ? `/${segments.slice(2).join("/")}` : ""
+
+        // Nie auf eine Route zeigen, die es in der Zielsprache nicht gibt
+        // (z. B. die einsprachigen Local-SEO-Landingpages) — stattdessen auf
+        // die Startseite der Zielsprache ausweichen.
+        const targetPath = resolveLocaleSwitchPath(belowLocale, newLocale)
+        const newPath = `/${newLocale}${targetPath}`
 
         persistLocaleCookie(newLocale)
 

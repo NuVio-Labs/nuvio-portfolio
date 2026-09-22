@@ -245,10 +245,30 @@
   animation-delay: var(--sparkle-delay, 0s);
 }
 
+/*
+ * Section-Reveal fuer ScrollAnimation (components/ui/scroll-animation.tsx).
+ * Bewusst eine reine CSS-Keyframe-Animation statt IntersectionObserver +
+ * React-State: sie startet automatisch beim Mount, unabhaengig von
+ * Scroll-Position, Hydration-Timing oder JavaScript ueberhaupt (CSS-
+ * Animationen laufen nativ im Browser). Damit ist der Inhalt garantiert
+ * sichtbar, auch ohne JS oder wenn kein Scroll-Event jemals ausgeloest wird.
+ */
+@keyframes nvReveal {
+  from { opacity: 0; transform: translate3d(0, 18px, 0); }
+  to   { opacity: 1; transform: translate3d(0, 0, 0); }
+}
+
+.nv-reveal {
+  opacity: 0;
+  animation: nvReveal 0.5s ease-out var(--reveal-delay, 0s) both;
+  will-change: transform, opacity;
+}
+
 @media (prefers-reduced-motion: reduce) {
   .hero-reveal,
   .hero-float,
-  .hero-sparkle {
+  .hero-sparkle,
+  .nv-reveal {
     animation: none;
     opacity: 1;
     transform: none;
