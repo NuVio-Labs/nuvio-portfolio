@@ -22,6 +22,8 @@ export async function Pricing() {
                     <p className="mb-8 text-text-muted leading-relaxed">{t("note")}</p>
                     <Link
                         href="/contact"
+                        data-track="pricing_cta_click"
+                        data-track-location="webdesign-groesbeek-pricing"
                         className="inline-flex items-center justify-center rounded-full bg-accent px-8 py-4 text-base font-semibold text-surface shadow-sm transition duration-200 hover:bg-[var(--nv-accent-hover)] active:scale-[0.98]"
                     >
                         {t("cta")}

@@ -5,6 +5,7 @@ import { useTranslations } from "next-intl"
 import { Copy, Check, Mail, MessageCircle } from "lucide-react"
 import { useRouter } from "@/i18n/navigation"
 import { CONTACT_EMAIL, WHATSAPP_NUMBER } from "@/lib/site"
+import { trackEvent } from "@/lib/analytics"
 import { SENT_MESSAGE_KEY } from "@/components/sections/contact-sent"
 
 type Channel = "whatsapp" | "mail"
@@ -28,6 +29,14 @@ export function ContactForm() {
     const router = useRouter()
     const formRef = useRef<HTMLFormElement>(null)
     const [copied, setCopied] = useState(false)
+    const formStarted = useRef(false)
+
+    /** Erste Interaktion mit dem Formular — nur einmal pro Seitenaufruf gemeldet. */
+    function handleFormStart() {
+        if (formStarted.current) return
+        formStarted.current = true
+        trackEvent("contact_form_start")
+    }
 
     /**
      * Uebergabe an die Bestaetigungsseite. Der Aufruf dort ist zugleich das
@@ -69,6 +78,9 @@ export function ContactForm() {
     function handleWhatsapp() {
         const payload = collect()
         if (!payload) return
+        // Belegt nur, dass WhatsApp mit vorbefuellter Nachricht geoeffnet wurde —
+        // nicht, dass dort tatsaechlich auf "Senden" getippt wurde.
+        trackEvent("contact_handoff_click", { channel: "whatsapp" })
         window.open(
             `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(payload.body)}`,
             "_blank",
@@ -80,6 +92,10 @@ export function ContactForm() {
     function handleMail() {
         const payload = collect()
         if (!payload) return
+        // Belegt nur, dass der mailto:-Aufruf ausgeloest wurde — ob ein
+        // Mailprogramm installiert ist und der Nutzer dort sendet, ist
+        // technisch nicht feststellbar (siehe Kommentar unten).
+        trackEvent("contact_handoff_click", { channel: "email" })
 
         /*
          * Der mailto-Aufruf uebergibt an das Betriebssystem und navigiert die
@@ -110,7 +126,12 @@ export function ContactForm() {
         "w-full rounded-xl border border-border-soft bg-surface px-4 py-3 text-sm text-text-primary placeholder:text-text-muted focus:outline-none focus:border-accent/60 focus:ring-1 focus:ring-accent/30 transition-colors"
 
     return (
-        <form ref={formRef} onSubmit={(e) => e.preventDefault()} className="space-y-6">
+        <form
+            ref={formRef}
+            onSubmit={(e) => e.preventDefault()}
+            onFocus={handleFormStart}
+            className="space-y-6"
+        >
             {/* Name + E-Mail */}
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
                 <div className="space-y-2">
@@ -218,6 +239,8 @@ export function ContactForm() {
                     {t("copyHint")}{" "}
                     <a
                         href={`mailto:${CONTACT_EMAIL}`}
+                        data-track="email_click"
+                        data-track-location="contact-form-fallback"
                         className="font-medium text-text-secondary underline decoration-accent/50 underline-offset-2 hover:text-accent"
                     >
                         {CONTACT_EMAIL}

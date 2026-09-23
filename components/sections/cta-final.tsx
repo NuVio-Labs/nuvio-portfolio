@@ -27,6 +27,8 @@ export async function CtaFinal() {
                 <div className="flex flex-wrap justify-center gap-4">
                     <Link
                         href="/contact"
+                        data-track="primary_cta_click"
+                        data-track-location="home-final-cta"
                         className="inline-flex items-center px-8 py-4 rounded-full bg-accent text-surface text-base font-semibold hover:bg-[var(--nv-accent-hover)] transition-all duration-200 active:scale-[0.98]"
                     >
                         {t("cta.button")}

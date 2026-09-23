@@ -1,4 +1,5 @@
 import { getTranslations } from "next-intl/server"
+import { Link } from "@/i18n/navigation"
 import { SectionWrapper } from "@/components/ui/section-wrapper"
 
 export async function Pricing() {
@@ -18,7 +19,15 @@ export async function Pricing() {
                         {t("headline")}
                     </h2>
                     <p className="mb-3 text-lg font-semibold text-text-primary">{t("text")}</p>
-                    <p className="text-text-muted leading-relaxed">{t("note")}</p>
+                    <p className="mb-8 text-text-muted leading-relaxed">{t("note")}</p>
+                    <Link
+                        href="/contact"
+                        data-track="pricing_cta_click"
+                        data-track-location="webdesign-kranenburg-pricing"
+                        className="inline-flex items-center justify-center rounded-full bg-accent px-8 py-4 text-base font-semibold text-surface shadow-sm transition duration-200 hover:bg-[var(--nv-accent-hover)] active:scale-[0.98]"
+                    >
+                        {t("cta")}
+                    </Link>
                 </div>
             </div>
         </SectionWrapper>

@@ -5,6 +5,7 @@ import { useSearchParams } from "next/navigation"
 import { useTranslations } from "next-intl"
 import { Check, Copy, MessageCircle } from "lucide-react"
 import { CONTACT_EMAIL, WHATSAPP_NUMBER } from "@/lib/site"
+import { trackEvent } from "@/lib/analytics"
 
 /** Schluessel, unter dem das Formular die fertige Nachricht ablegt. */
 export const SENT_MESSAGE_KEY = "nuvio:contact-message"
@@ -27,6 +28,17 @@ export function ContactSent() {
     React.useEffect(() => {
         setMessage(window.sessionStorage.getItem(SENT_MESSAGE_KEY) ?? "")
     }, [])
+
+    /*
+     * Kein Erfolgssignal, nur ein Seitenaufruf: ob WhatsApp/Mail-Client
+     * tatsaechlich geoeffnet ist oder dort etwas versendet wurde, laesst
+     * sich technisch nicht feststellen (siehe contact-form.tsx). Diese Seite
+     * wird unabhaengig davon erreicht — das Event misst also ausschliesslich
+     * "Bestaetigungsseite aufgerufen", keine Lead-Conversion.
+     */
+    React.useEffect(() => {
+        trackEvent("contact_sent_page_view", { channel: via === "whatsapp" ? "whatsapp" : "email" })
+    }, [via])
 
     async function handleCopy() {
         try {
@@ -100,6 +112,8 @@ export function ContactSent() {
                         {t("orMail")}{" "}
                         <a
                             href={`mailto:${CONTACT_EMAIL}`}
+                            data-track="email_click"
+                            data-track-location="contact-sent-fallback"
                             className="font-medium text-text-secondary underline decoration-accent/50 underline-offset-2 hover:text-accent"
                         >
                             {CONTACT_EMAIL}

@@ -97,6 +97,8 @@ export async function Hero() {
                         <div className="mt-8 flex flex-col gap-4 sm:flex-row">
                             <Link
                                 href="/contact"
+                                data-track="primary_cta_click"
+                                data-track-location="home-hero"
                                 className="inline-flex items-center justify-center rounded-full bg-accent px-9 py-4 text-base font-semibold text-surface shadow-sm transition duration-200 hover:bg-[var(--nv-accent-hover)] active:scale-[0.98]"
                             >
                                 {t("ctaPrimary")}
@@ -159,7 +161,7 @@ export async function Hero() {
 
                                 <div className="relative aspect-[16/10] overflow-hidden rounded-[1.7rem] border border-border-soft bg-surface-soft">
                                     <Image
-                                        src="/daisymays.webp"
+                                        src="/behr.webp"
                                         alt=""
                                         fill
                                         priority
@@ -171,38 +173,6 @@ export async function Hero() {
 
                             <div className="absolute left-[14%] right-[9%] top-[100%] h-5 rounded-b-[2rem] bg-surface-soft shadow-md" />
                             <div className="absolute left-[31%] right-[27%] top-[calc(100%+0.55rem)] h-1 rounded-full bg-border-soft" />
-                        </div>
-
-                        {/* Mobile mockup */}
-                        <div
-                            className="hero-float absolute left-[45%] top-[30%] hidden w-[24%] min-w-[160px] max-w-[220px] rounded-[1.6rem] border border-border-soft bg-surface p-2 shadow-lg backdrop-blur-2xl lg:block"
-                            style={
-                                {
-                                    transform:
-                                        "perspective(1600px) rotateY(-18deg) rotateX(9deg) rotateZ(5deg)",
-                                    "--float-duration": "8.8s",
-                                    "--float-x": "6px",
-                                    "--float-y": "-10px",
-                                } as CSSProperties
-                            }
-                        >
-                            <div className="rounded-[1.2rem] border border-border-soft bg-surface-soft p-2">
-                                <div className="mb-2 flex items-center gap-1.5 px-1.5">
-                                    <span className="h-1.5 w-1.5 rounded-full bg-border-soft" />
-                                    <span className="h-1.5 w-1.5 rounded-full bg-border-soft" />
-                                    <span className="h-1.5 w-1.5 rounded-full bg-border-soft" />
-                                </div>
-                                <div className="relative aspect-[5/7] overflow-hidden rounded-[0.95rem] border border-border-soft">
-                                    <Image
-                                        src="/previews/daisy.webp"
-                                        alt=""
-                                        fill
-                                        priority
-                                        sizes="220px"
-                                        className="object-cover object-top opacity-95"
-                                    />
-                                </div>
-                            </div>
                         </div>
 
                         {/* Performance card */}
