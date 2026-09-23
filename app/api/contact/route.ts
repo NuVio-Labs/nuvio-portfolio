@@ -1,5 +1,6 @@
 import { NextResponse } from "next/server"
 import { CONTACT_LIMITS, validateContactRequest, type ContactResponse } from "@/lib/contact"
+import { forwardContactLead } from "@/lib/contact-lead"
 import { sendContactMail } from "@/lib/contact-mail"
 import { isContactRateLimited } from "@/lib/contact-rate-limit"
 import { SITE_URL } from "@/lib/site"
@@ -96,6 +97,10 @@ export async function POST(request: Request) {
     if (!sent.ok) {
         return reply({ success: false, error: "SEND_FAILED" }, 500)
     }
+
+    /* Erst nach erfolgreicher Mail: Lead an n8n. Best effort, wirft nie und
+       aendert die Antwort nicht — die Anfrage ist per Resend bereits zugestellt. */
+    await forwardContactLead(result.data)
 
     return reply({ success: true }, 200)
 }
