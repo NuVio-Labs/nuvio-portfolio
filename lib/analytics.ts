@@ -1,14 +1,14 @@
 import { track } from "@vercel/analytics"
+import { hasAnalyticsConsent } from "@/lib/consent"
 import { trackGoogleEvent } from "@/lib/google-analytics"
 
 /**
  * Conversion-relevante Events. Zentral gepflegt, damit Event-Namen nicht an
  * jeder Aufrufstelle frei erfunden werden.
  *
- * Nutzt bewusst die bereits vorhandene, cookielose Vercel-Analytics-Instanz
- * (siehe app/layout.tsx) statt einer neuen Tracking-Plattform — dort ist
- * `track()` fuer genau diesen Zweck vorgesehen, ohne zusaetzliche
- * Abhaengigkeit und ohne Consent-Banner (keine Tracking-Cookies).
+ * Ziele sind Vercel Web Analytics und Google Analytics 4 — beide gehoeren
+ * zur selben Consent-Kategorie "Analyse" und bekommen ohne Zustimmung
+ * nichts (siehe components/analytics/*).
  *
  * Properties duerfen ausschliesslich kurzen technischen Kontext enthalten
  * (z. B. welche Sektion/Seite, welcher Kanal) — niemals Formularinhalte,
@@ -35,12 +35,14 @@ type EventProperties = Record<string, string | number | boolean>
 /**
  * Sendet ein Conversion-Event. Serverseitig (kein `window`) ein no-op.
  *
- * Zwei Ziele: Vercel Analytics (unveraendert, cookielos) und — nur mit
- * Analytics-Zustimmung — Google Analytics 4. Die Consent-Pruefung fuer GA
- * liegt zentral in lib/google-analytics.ts; Komponenten rufen nie selbst gtag().
+ * Ohne Analytics-Zustimmung geht nichts raus, auch nichts in eine
+ * Warteschlange, die spaeter nachgesendet werden koennte. Nach einem
+ * Widerruf im selben Tab verwirft zusaetzlich `beforeSend` in
+ * vercel-analytics.tsx jedes Event. Komponenten rufen nie selbst gtag()
+ * oder track(); GA prueft zusaetzlich in lib/google-analytics.ts.
  */
 export function trackEvent(name: ConversionEvent, properties?: EventProperties): void {
-    if (typeof window === "undefined") return
+    if (typeof window === "undefined" || !hasAnalyticsConsent()) return
     track(name, properties)
     trackGoogleEvent(name, properties)
 }

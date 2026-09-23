@@ -16,6 +16,11 @@ export const SENT_MESSAGE_KEY = "nuvio:contact-message"
  * Die Nachricht wird aus dem sessionStorage geholt: Wenn das Mailprogramm
  * nicht aufgegangen ist — auf Desktops ohne eingerichteten Client passiert
  * schlicht nichts — waere der getippte Text sonst verloren.
+ *
+ * Der Eintrag enthaelt personenbezogene Daten (Name, E-Mail, Nachricht) und
+ * wird deshalb direkt nach dem Lesen entfernt: Die Nachricht lebt danach nur
+ * noch im React-State dieser Seitenansicht. Folge: Nach einem Neuladen der
+ * Bestaetigungsseite wird der Rueckfall-Bereich nicht mehr angezeigt.
  */
 export function ContactSent() {
     const t = useTranslations("contactPage.sent")
@@ -26,8 +31,29 @@ export function ContactSent() {
     const [copied, setCopied] = React.useState(false)
 
     React.useEffect(() => {
-        setMessage(window.sessionStorage.getItem(SENT_MESSAGE_KEY) ?? "")
+        const stored = window.sessionStorage.getItem(SENT_MESSAGE_KEY)
+        // Nur bei vorhandenem Eintrag: der doppelte Effect-Aufruf im
+        // React-Strict-Mode findet ihn bereits geloescht vor und darf den
+        // uebernommenen Text nicht mit "" ueberschreiben.
+        if (stored === null) return
+        setMessage(stored)
+        window.sessionStorage.removeItem(SENT_MESSAGE_KEY)
     }, [])
+
+    /*
+     * Button mit window.open statt <a href>: Die Ziel-URL enthaelt die
+     * komplette Nachricht (Name, E-Mail, Text). Echte Link-Klicks erfasst
+     * Google Analytics per "Outbound Clicks" samt vollstaendiger URL — im
+     * Test landeten Name und Nachricht so bei Google. window.open wird davon
+     * nicht erfasst (gleiches Vorgehen wie im Kontaktformular).
+     */
+    function handleRetryWhatsapp() {
+        window.open(
+            `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(message)}`,
+            "_blank",
+            "noopener,noreferrer",
+        )
+    }
 
     /*
      * Kein Erfolgssignal, nur ein Seitenaufruf: ob WhatsApp/Mail-Client
@@ -97,15 +123,14 @@ export function ContactSent() {
                             {copied ? t("copied") : t("copyButton")}
                         </button>
 
-                        <a
-                            href={`https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(message)}`}
-                            target="_blank"
-                            rel="noopener noreferrer"
+                        <button
+                            type="button"
+                            onClick={handleRetryWhatsapp}
                             className="inline-flex items-center gap-2 rounded-full border border-border-soft px-4 py-2.5 text-[13px] font-medium text-text-secondary transition-colors hover:border-accent/50 hover:text-accent"
                         >
                             <MessageCircle className="h-4 w-4" aria-hidden="true" />
                             {t("retryWhatsapp")}
-                        </a>
+                        </button>
                     </div>
 
                     <p className="mt-4 text-xs leading-6 text-text-muted">

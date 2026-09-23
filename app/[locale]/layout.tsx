@@ -8,6 +8,7 @@ import { Navbar } from "@/components/layout/navbar";
 import { Footer } from "@/components/layout/footer";
 import { ClickTracker } from "@/components/analytics/click-tracker";
 import { GoogleAnalytics } from "@/components/analytics/google-analytics";
+import { VercelAnalytics } from "@/components/analytics/vercel-analytics";
 import { ConsentProvider } from "@/components/consent/consent-provider";
 import { ConsentBanner } from "@/components/consent/consent-banner";
 import { ConsentDialog } from "@/components/consent/consent-dialog";
@@ -141,6 +142,7 @@ export default async function LocaleLayout({
                             <Footer />
                             <ClickTracker />
                             <GoogleAnalytics />
+                            <VercelAnalytics />
                             <ConsentBanner />
                             <ConsentDialog />
                         </div>
