@@ -1,5 +1,7 @@
 import { useTranslations } from "next-intl"
 import { Link } from "@/i18n/navigation"
+import { CONTACT_EMAIL } from "@/lib/site"
+import { CookieSettingsLink } from "@/components/consent/cookie-settings-link"
 
 export function Footer() {
     const tFooter = useTranslations("footer")
@@ -21,6 +23,14 @@ export function Footer() {
                         <p className="text-sm text-text-muted leading-relaxed">
                             {tFooter("tagline")}
                         </p>
+                        <a
+                            href={`mailto:${CONTACT_EMAIL}`}
+                            data-track="email_click"
+                            data-track-location="footer"
+                            className="mt-3 inline-block text-sm text-text-muted hover:text-accent transition-colors"
+                        >
+                            {CONTACT_EMAIL}
+                        </a>
                     </div>
 
                     {/* Navigation */}
@@ -72,6 +82,7 @@ export function Footer() {
                         <Link href="/privacy" className="hover:text-accent transition-colors">
                             {tFooter("privacy")}
                         </Link>
+                        <CookieSettingsLink />
                     </nav>
                 </div>
             </div>

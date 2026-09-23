@@ -124,7 +124,7 @@ export default async function ServicesPage({ params }: { params: Promise<{ local
                     </div>
 
                     <div className="max-w-2xl space-y-5">
-                        {(["cost", "duration", "hosting", "cms"] as const).map((key) => (
+                        {(["cost", "duration", "hosting", "cms", "clientInput"] as const).map((key) => (
                             <div
                                 key={key}
                                 className="rounded-2xl border border-border-soft bg-background p-6"
@@ -152,6 +152,8 @@ export default async function ServicesPage({ params }: { params: Promise<{ local
                     </h2>
                     <Link
                         href="/contact"
+                        data-track="primary_cta_click"
+                        data-track-location="services-page-cta"
                         className="inline-flex items-center px-8 py-4 rounded-full bg-accent text-surface text-base font-semibold hover:bg-[var(--nv-accent-hover)] transition-all duration-200 active:scale-[0.98]"
                     >
                         {t("page.cta.button")}

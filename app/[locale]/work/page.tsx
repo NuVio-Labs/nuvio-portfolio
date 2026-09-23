@@ -26,6 +26,32 @@ export default async function WorkPage({ params }: { params: Promise<{ locale: s
     const t = await getTranslations("workPage")
     const tWork = await getTranslations("work")
 
+    /**
+     * Case-Study-Inhalte kommen aus derselben lokalisierten Quelle wie die
+     * Homepage-Work-Sektion (messages/*.json -> work.projects.<id>), nicht
+     * aus dem englischsprachigen data/projects.ts.caseStudy. Nur gesetzt,
+     * wenn fuer das Projekt in dieser Sprache tatsaechlich Daten existieren
+     * (z. B. physio-athlete hat aktuell keine) — nichts wird erfunden.
+     */
+    function buildCaseStudy(projectId: string) {
+        if (!tWork.has(`projects.${projectId}.problem`)) return undefined
+
+        const outcomes = (["outcome1", "outcome2", "outcome3"] as const)
+            .filter((key) => tWork.has(`projects.${projectId}.${key}`))
+            .map((key) => tWork(`projects.${projectId}.${key}`))
+
+        return {
+            theProblemLabel: tWork("theProblem"),
+            theApproachLabel: tWork("theApproach"),
+            problem: tWork(`projects.${projectId}.problem`),
+            approach: tWork(`projects.${projectId}.approach`),
+            outcomes,
+            testimonial: tWork.has(`projects.${projectId}.testimonial`)
+                ? tWork(`projects.${projectId}.testimonial`)
+                : undefined,
+        }
+    }
+
     return (
         <main className="pt-20 md:pt-24">
             {/* Page Hero */}
@@ -60,6 +86,8 @@ export default async function WorkPage({ params }: { params: Promise<{ locale: s
                                 title={tWork(`projects.${project.id}.title`)}
                                 description={tWork(`projects.${project.id}.description`)}
                                 ctaLabel={t("cta")}
+                                contactLabel={t("ctaContact")}
+                                caseStudy={buildCaseStudy(project.id)}
                             />
                         ))}
                     </div>
@@ -68,6 +96,8 @@ export default async function WorkPage({ params }: { params: Promise<{ locale: s
                     <div className="text-center pt-8 border-t border-border-soft">
                         <Link
                             href="/contact"
+                            data-track="primary_cta_click"
+                            data-track-location="work-page-cta"
                             className="inline-flex items-center px-8 py-4 rounded-full bg-accent text-surface text-base font-semibold hover:bg-[var(--nv-accent-hover)] transition-all duration-200 active:scale-[0.98]"
                         >
                             {t("ctaContact")}

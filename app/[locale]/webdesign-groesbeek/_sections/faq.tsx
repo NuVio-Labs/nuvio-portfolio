@@ -2,7 +2,7 @@ import { getTranslations } from "next-intl/server"
 import { SectionWrapper } from "@/components/ui/section-wrapper"
 import { FaqAccordion } from "../faq-accordion"
 
-const questionKeys = ["cost", "duration", "existing", "dutch", "languages", "maintenance", "hosting"] as const
+const questionKeys = ["cost", "clientInput", "duration", "existing", "dutch", "languages", "maintenance", "hosting"] as const
 
 export async function Faq() {
     const t = await getTranslations("webdesignGroesbeek.faq")

@@ -1,7 +1,7 @@
 import type { CSSProperties } from "react";
 import Image from "next/image";
 import { getTranslations } from "next-intl/server";
-import { ArrowRight, BriefcaseBusiness, Sparkles } from "lucide-react";
+import { ArrowRight, BriefcaseBusiness, Check, Sparkles } from "lucide-react";
 import { Link } from "@/i18n/navigation";
 
 const sparkles = [
@@ -187,8 +187,14 @@ export async function Hero() {
                             }
                         >
                             <div className="relative flex gap-4">
-                                <div className="flex h-14 w-14 items-center justify-center rounded-full border border-accent/30 bg-accent-soft text-lg font-semibold text-accent">
-                                    {t("cards.performance.score").replace("+", "")}
+                                {/*
+                                  * Bewusst kein konkreter Benchmark-Wert (z. B. ein Lighthouse-Score):
+                                  * variable Messbedingungen, kein sichtbarer/verlinkter Beleg auf der
+                                  * Seite. Das Haekchen bestaetigt die tatsaechlich technisch gestuetzten
+                                  * Punkte darunter (Next.js nativ, SEO sauber aufgebaut, Responsive).
+                                  */}
+                                <div className="flex h-14 w-14 items-center justify-center rounded-full border border-accent/30 bg-accent-soft text-accent">
+                                    <Check className="h-6 w-6" aria-hidden="true" />
                                 </div>
                                 <div>
                                     <p className="text-[0.95rem] font-semibold text-text-primary">

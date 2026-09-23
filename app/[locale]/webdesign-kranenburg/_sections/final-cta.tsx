@@ -25,6 +25,8 @@ export async function FinalCta() {
                 </p>
                 <Link
                     href="/contact"
+                    data-track="primary_cta_click"
+                    data-track-location="webdesign-kranenburg-final-cta"
                     className="inline-flex items-center rounded-full bg-accent px-8 py-4 text-base font-semibold text-surface transition-all duration-200 hover:bg-[var(--nv-accent-hover)] active:scale-[0.98]"
                 >
                     {t("cta")}

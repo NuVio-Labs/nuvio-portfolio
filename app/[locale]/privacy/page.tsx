@@ -28,6 +28,8 @@ export default function PrivacyPage({ params: { locale } }: { params: { locale: 
         { title: "logfilesTitle", content: "logfiles" },
         { title: "cookiesTitle", content: "cookies" },
         { title: "analyticsTitle", content: "analytics" },
+        { title: "consentTitle", content: "consent" },
+        { title: "googleAnalyticsTitle", content: "googleAnalytics" },
         { title: "rightsTitle", content: "rights" },
         { title: "complaintTitle", content: "complaint" }
     ]

@@ -33,6 +33,8 @@ export async function Hero() {
                         <div className="mt-9 flex flex-col gap-4 sm:flex-row">
                             <Link
                                 href="/contact"
+                                data-track="primary_cta_click"
+                                data-track-location="webdesign-kleve-hero"
                                 className="inline-flex items-center justify-center rounded-full bg-accent px-8 py-4 text-base font-semibold text-surface shadow-sm transition duration-200 hover:bg-[var(--nv-accent-hover)] active:scale-[0.98]"
                             >
                                 {t("ctaPrimary")}

@@ -198,6 +198,8 @@ export function Work({ projectIds }: WorkProps) {
                                                 <div className="mt-6">
                                                     <Link
                                                         href="/contact"
+                                                        data-track="primary_cta_click"
+                                                        data-track-location={`work-card-${id}`}
                                                         className="inline-flex min-w-[180px] items-center justify-center gap-2 rounded-full bg-accent px-6 py-4 text-sm font-semibold text-surface shadow-sm transition duration-200 hover:bg-[var(--nv-accent-hover)] active:scale-[0.98]"
                                                     >
                                                         {t(CTA_KEY[id])}

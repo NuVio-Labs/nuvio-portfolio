@@ -33,7 +33,7 @@
             "secondaryCta": "Learn more"
         },
         "trustRow": {
-            "lighthouse": "Lighthouse 95+",
+            "lighthouse": "Core Web Vitals focused",
             "mobile": "Mobile first",
             "seo": "SEO optimized",
             "multilang": "Multi-language",
@@ -43,7 +43,6 @@
         "cards": {
             "performance": {
                 "title": "Performance",
-                "score": "95+",
                 "badge": "Live",
                 "label": "Optimization for",
                 "features": [
@@ -218,6 +217,28 @@
         "footerNav": "Footer navigation",
         "llmContext": "NuVioLabs is an independent web studio in Kranenburg, Germany, building fast, modern Next.js websites with a focus on SEO and conversion."
     },
+    "consent": {
+        "bannerAriaLabel": "Cookie notice",
+        "title": "This website respects your privacy",
+        "description": "Necessary technologies are always active. We only use optional analytics technologies (Google Analytics) with your consent. You can change your decision at any time via \"Cookie settings\" in the footer.",
+        "acceptAll": "Accept all",
+        "rejectOptional": "Necessary only",
+        "settings": "Settings",
+        "dialogTitle": "Cookie settings",
+        "dialogDescription": "Choose which optional technologies we may use. Necessary technologies are always active and cannot be turned off.",
+        "essential": {
+            "title": "Necessary",
+            "description": "Required to operate the website, e.g. storing your language preference and this choice.",
+            "alwaysOn": "Always active"
+        },
+        "analytics": {
+            "title": "Analytics",
+            "description": "Google Analytics 4 helps us understand how the website is used, so we can improve it. Only loaded with your consent, and then sets Google Analytics cookies."
+        },
+        "save": "Save settings",
+        "close": "Close",
+        "footerLink": "Cookie settings"
+    },
     "skipToContent": "Skip to content",
     "legal": {
         "imprint": {
@@ -247,12 +268,16 @@
             "logfilesTitle": "5. Server Log Files",
             "logfiles": "The provider of the pages automatically collects and stores information in server log files (e.g. browser type/version, OS, referrer URL, host name, time, IP address). These data are not combined with other data sources.\nThe basis for data processing is Art. 6 (1) (f) GDPR.",
             "cookiesTitle": "6. Cookies",
-            "cookies": "This website uses strictly necessary cookies only.\n\nThis applies in particular to storing the selected language version of the website. This storage is required in order to provide the function requested by the user.\n\nThe legal basis is Section 25 (2) TDDDG in conjunction with Art. 6 (1) (f) GDPR.\n\nNo analytics, marketing or tracking cookies are used.",
+            "cookies": "This website uses strictly necessary cookies and – only with your consent – Google Analytics cookies.\n\nStrictly necessary cookies apply in particular to storing the selected language version of the website. This storage is required in order to provide the function requested by the user.\n\nThe legal basis is Section 25 (2) TDDDG in conjunction with Art. 6 (1) (f) GDPR.\n\nGoogle Analytics cookies are only set if you have consented to analytics (see sections 8 and 9). No marketing or advertising cookies are used.",
             "analyticsTitle": "7. Usage and performance measurement",
-            "analytics": "This website uses Vercel Web Analytics, a service provided by Vercel Inc., USA, to evaluate use of the site statistically.\n\nMeasurement works without cookies. No information is stored on or read from your device.\n\nThe following is recorded per page view: timestamp, the address called up, referring page, filtered query parameters, approximate location (country, region, city), device type, operating system and browser including versions, and the version of the measurement script.\n\nTo distinguish visits, a value is derived from the technical details of your request. According to the provider, the data is not associated with any individual or IP address, and the association of a visit is discarded after 24 hours. Recognition over longer periods or across other websites is therefore not possible.\n\nThe legal basis is Art. 6 (1) (f) GDPR. Our legitimate interest lies in understanding which content is used in order to improve the website.\n\nFurther information from the provider: https://vercel.com/docs/analytics/privacy-policy\n\nWe additionally use Vercel Speed Insights from the same provider to measure actual loading performance for real visitors. Recorded are the route and address of the page, network speed, browser, device type, operating system, the country as a two-letter code, the measured Web Vitals values including the element they relate to, and the timestamp and version of the measurement script. Here too, according to the provider, measurement takes place without reference to any individual or IP address.\n\nFurther information from the provider: https://vercel.com/docs/speed-insights/privacy-policy",
-            "rightsTitle": "8. Data Subject Rights (Art. 15–21 GDPR)",
+            "analytics": "This website uses Vercel Web Analytics, a service provided by Vercel Inc., USA, to evaluate use of the site statistically.\n\nMeasurement works without cookies. However, the measurement script checks whether an entry \"__va_attribution\" exists in your browser's local storage (localStorage). Such an entry is only created if a website passes user or group identifiers to Vercel; this website does not do so, which means the measurement stores no data on your device.\n\nThe following is recorded per page view: timestamp, the address called up, referring page, filtered query parameters, approximate location (country, region, city), device type, operating system and browser including versions, and the version of the measurement script.\n\nTo distinguish visits, a value is derived from the technical details of your request. According to the provider, the data is not associated with any individual or IP address, and the association of a visit is discarded after 24 hours. Recognition over longer periods or across other websites is therefore not possible.\n\nIn addition, for selected interactions – clicks on enquiry buttons, starting to fill in the contact form, switching to WhatsApp or email, viewing the confirmation page and clicks on the email address – we send an event to Vercel Web Analytics. It only contains the name of the interaction and technical information about the position of the element or the contact channel chosen, no contents of the contact form.\n\nThe legal basis is Art. 6 (1) (f) GDPR. Our legitimate interest lies in understanding which content is used in order to improve the website.\n\nFurther information from the provider: https://vercel.com/docs/analytics/privacy-policy\n\nWe additionally use Vercel Speed Insights from the same provider to measure actual loading performance for real visitors. Recorded are the route and address of the page, network speed, browser, device type, operating system, the country as a two-letter code, the measured Web Vitals values including the element they relate to, and the timestamp and version of the measurement script. Here too, according to the provider, measurement takes place without reference to any individual or IP address.\n\nFurther information from the provider: https://vercel.com/docs/speed-insights/privacy-policy",
+            "consentTitle": "8. Consent management (cookie settings)",
+            "consent": "We store your choice regarding optional analytics technologies in your browser's local storage (localStorage) under the key \"nuvio_consent_v1\". Only whether you have consented to analytics and a version number are stored. No user identifier is created, and this information is not transmitted to our servers.\n\nThis storage is necessary so that your decision is respected on subsequent page views. It remains in place until you change your choice or delete the website data in your browser.\n\nYou can change your choice and withdraw any consent given at any time via the \"Cookie settings\" link in the footer.",
+            "googleAnalyticsTitle": "9. Google Analytics 4",
+            "googleAnalytics": "With your consent, we use Google Analytics 4, a web analytics service provided by Google, to evaluate use of the website statistically and to improve it.\n\nGoogle Analytics is only loaded after you have consented to analytics (\"Accept all\" or the \"Analytics\" category enabled in the cookie settings). Before that, no script from Google is loaded, no connection to Google Analytics is established, and no Google Analytics cookies are set.\n\nAfter your consent, the pages you view (address and page title) and selected interactions are recorded: clicks on enquiry buttons, starting to fill in the contact form, switching to WhatsApp or email, viewing the confirmation page, and clicks on the email address. For this, we only transmit technical information about the position of the clicked element on the website or the contact channel chosen. We do not transmit contents of the contact form such as your name, email address or message to Google Analytics. Google Analytics also independently records technical information such as device type, browser and approximate location, as well as – depending on the settings of the Google Analytics property – further interactions such as scrolling a page or starting to fill in a form.\n\nGoogle Analytics sets two cookies: according to Google, \"_ga\" is used to distinguish users and \"_ga_<ID>\" to persist session state.\n\nYou can withdraw your consent at any time via \"Cookie settings\" in the footer. From the moment of withdrawal, no further data is collected for Google Analytics, the Google Analytics cookies are deleted, and the page is reloaded so that no Google scripts remain active.",
+            "rightsTitle": "10. Data Subject Rights (Art. 15–21 GDPR)",
             "rights": "You have the right at any time to free information about your stored personal data, its origin and recipient and the purpose of data processing, and a right to correction, blocking or deletion of this data. For questions you can contact us at any time.",
-            "complaintTitle": "9. Right of Appeal to the Supervisory Authority",
+            "complaintTitle": "11. Right of Appeal to the Supervisory Authority",
             "complaint": "In the event of violations of the GDPR, data subjects have the right to lodge a complaint with a supervisory authority."
         }
     },
@@ -262,7 +287,7 @@
         "questions": {
             "cost": {
                 "q": "How much does a new website cost?",
-                "a": "Every project is different. Most sites start from €1,490. In our first call, we'll define scope, goals, and budget, so you get a realistic, transparent estimate."
+                "a": "Every project is different. Most sites start from €1,490. That includes concept, structure, design, and development of a complete, mobile-first website through go-live. In our first call, we'll define scope, goals, and budget, so you get a realistic, transparent estimate."
             },
             "duration": {
                 "q": "How long does the build take?",
@@ -275,6 +300,10 @@
             "cms": {
                 "q": "Can content be updated later?",
                 "a": "Yes. Small updates are always possible. If you want to maintain content yourself, we can choose a setup that fits."
+            },
+            "clientInput": {
+                "q": "What do I need to provide for the project?",
+                "a": "To get started, the basics about your business and services are enough. We work out the site's structure and content together in our first call — existing texts, images, or a logo are welcome but not required."
             }
         }
     },

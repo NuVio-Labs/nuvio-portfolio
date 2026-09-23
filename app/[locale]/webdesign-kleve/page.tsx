@@ -2,6 +2,7 @@ import type { Metadata } from "next"
 import { notFound } from "next/navigation"
 import { getTranslations, setRequestLocale } from "next-intl/server"
 import { Work } from "@/components/sections/work"
+import { LocalTrust } from "@/components/sections/local-trust"
 import { buildPageMetadata, localeUrl } from "@/lib/seo"
 import { buildBreadcrumbSchema, buildServiceSchema, jsonLdScriptProps } from "@/lib/structured-data"
 import { Hero } from "./_sections/hero"
@@ -92,6 +93,7 @@ export default async function WebdesignKlevePage({
                 fuer eine andere Card-Verteilung auf der Seite. */}
             <Work projectIds={["daisymays-salon", "wt-erdbewegungen"]} />
             <WhyNuvio />
+            <LocalTrust />
             <Process />
             <Pricing />
             <Faq />

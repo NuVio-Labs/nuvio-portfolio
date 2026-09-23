@@ -6,6 +6,11 @@ import { routing } from "@/i18n/routing";
 import { ThemeProvider } from "@/components/theme-provider";
 import { Navbar } from "@/components/layout/navbar";
 import { Footer } from "@/components/layout/footer";
+import { ClickTracker } from "@/components/analytics/click-tracker";
+import { GoogleAnalytics } from "@/components/analytics/google-analytics";
+import { ConsentProvider } from "@/components/consent/consent-provider";
+import { ConsentBanner } from "@/components/consent/consent-banner";
+import { ConsentDialog } from "@/components/consent/consent-dialog";
 import { SITE_URL } from "@/lib/site";
 import { buildAlternates } from "@/lib/seo";
 
@@ -127,13 +132,19 @@ export default async function LocaleLayout({
                     storageKey="nuvio-theme"
                     disableTransitionOnChange
                 >
-                    <div className="relative flex min-h-screen flex-col">
-                        <Navbar />
-                        <main id="main-content" className="flex-1">
-                            {children}
-                        </main>
-                        <Footer />
-                    </div>
+                    <ConsentProvider>
+                        <div className="relative flex min-h-screen flex-col">
+                            <Navbar />
+                            <main id="main-content" className="flex-1">
+                                {children}
+                            </main>
+                            <Footer />
+                            <ClickTracker />
+                            <GoogleAnalytics />
+                            <ConsentBanner />
+                            <ConsentDialog />
+                        </div>
+                    </ConsentProvider>
                 </ThemeProvider>
             </NextIntlClientProvider>
         </>

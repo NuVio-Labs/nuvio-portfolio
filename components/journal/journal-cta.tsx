@@ -26,6 +26,8 @@ export async function JournalCta() {
 
             <Link
                 href={href}
+                data-track="primary_cta_click"
+                data-track-location="journal-cta"
                 className="mt-8 inline-flex items-center gap-2 rounded-full bg-accent px-7 py-4 text-sm font-semibold text-surface transition duration-200 hover:bg-[var(--nv-accent-hover)] active:scale-[0.98]"
             >
                 {t("button")}

@@ -124,6 +124,8 @@ export async function ValueProposition() {
                             <div className="flex flex-col gap-3 sm:flex-row lg:flex-row">
                                 <Link
                                     href="/contact"
+                                    data-track="primary_cta_click"
+                                    data-track-location="value-proposition"
                                     className="inline-flex min-w-[160px] items-center justify-center rounded-full bg-accent px-6 py-4 text-sm font-semibold text-surface shadow-sm transition duration-200 hover:bg-[var(--nv-accent-hover)] active:scale-[0.98]"
                                 >
                                     {t("ctaPrimary")}

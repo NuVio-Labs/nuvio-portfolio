@@ -109,6 +109,8 @@ export function Navbar() {
                         {/* CTA */}
                         <Link
                             href="/contact"
+                            data-track="primary_cta_click"
+                            data-track-location="navbar-desktop"
                             className="hidden sm:inline-flex items-center px-5 py-2.5 rounded-full bg-accent text-surface text-sm font-semibold hover:bg-[var(--nv-accent-hover)] transition-all duration-200 active:scale-[0.98]"
                         >
                             {t("ctaProject")}
@@ -149,6 +151,8 @@ export function Navbar() {
                         <Link
                             href="/contact"
                             onClick={() => setMenuOpen(false)}
+                            data-track="primary_cta_click"
+                            data-track-location="navbar-mobile"
                             className="mt-8 inline-flex items-center justify-center px-6 py-3.5 rounded-full bg-accent text-surface font-semibold text-center hover:bg-[var(--nv-accent-hover)] transition-colors"
                         >
                             {t("ctaProject")}

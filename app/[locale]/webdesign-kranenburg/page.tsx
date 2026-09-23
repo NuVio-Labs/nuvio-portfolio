@@ -2,6 +2,7 @@ import type { Metadata } from "next"
 import { notFound } from "next/navigation"
 import { getTranslations, setRequestLocale } from "next-intl/server"
 import { Work } from "@/components/sections/work"
+import { LocalTrust } from "@/components/sections/local-trust"
 import { buildPageMetadata, localeUrl } from "@/lib/seo"
 import { buildBreadcrumbSchema, buildServiceSchema, jsonLdScriptProps } from "@/lib/structured-data"
 import { Hero } from "./_sections/hero"
@@ -9,6 +10,7 @@ import { Problem } from "./_sections/problem"
 import { Services } from "./_sections/services"
 import { LocalArea } from "./_sections/local"
 import { Audiences } from "./_sections/audiences"
+import { WhyNuvio } from "./_sections/why-nuvio"
 import { Process } from "./_sections/process"
 import { Pricing } from "./_sections/pricing"
 import { Faq } from "./_sections/faq"
@@ -85,6 +87,8 @@ export default async function WebdesignKranenburgPage({
             {/* Referenzen: bestehende Work-Sektion mit echten, bereits vorhandenen
                 Projekten (keine erfundenen Kennzahlen oder Kundenstimmen). */}
             <Work projectIds={["wt-erdbewegungen", "daisymays-salon"]} />
+            <WhyNuvio />
+            <LocalTrust />
             <Process />
             <Pricing />
             <Faq />

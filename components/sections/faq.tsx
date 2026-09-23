@@ -7,7 +7,7 @@ import { cn } from "@/lib/utils"
 import { SectionWrapper } from "@/components/ui/section-wrapper"
 import { Link } from "@/i18n/navigation"
 
-const BASE_FAQ_KEYS = ["cost", "duration", "hosting", "cms"] as const
+const BASE_FAQ_KEYS = ["cost", "duration", "hosting", "cms", "clientInput"] as const
 
 /**
  * "groesbeek" existiert nur in messages/nl.json: die Landingpage

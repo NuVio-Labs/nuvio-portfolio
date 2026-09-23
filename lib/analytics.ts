@@ -1,4 +1,5 @@
 import { track } from "@vercel/analytics"
+import { trackGoogleEvent } from "@/lib/google-analytics"
 
 /**
  * Conversion-relevante Events. Zentral gepflegt, damit Event-Namen nicht an
@@ -31,8 +32,15 @@ export type ConversionEvent =
 
 type EventProperties = Record<string, string | number | boolean>
 
-/** Sendet ein Conversion-Event. Serverseitig (kein `window`) ein no-op. */
+/**
+ * Sendet ein Conversion-Event. Serverseitig (kein `window`) ein no-op.
+ *
+ * Zwei Ziele: Vercel Analytics (unveraendert, cookielos) und — nur mit
+ * Analytics-Zustimmung — Google Analytics 4. Die Consent-Pruefung fuer GA
+ * liegt zentral in lib/google-analytics.ts; Komponenten rufen nie selbst gtag().
+ */
 export function trackEvent(name: ConversionEvent, properties?: EventProperties): void {
     if (typeof window === "undefined") return
     track(name, properties)
+    trackGoogleEvent(name, properties)
 }

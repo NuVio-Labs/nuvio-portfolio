@@ -33,7 +33,7 @@
             "secondaryCta": "Mehr erfahren"
         },
         "trustRow": {
-            "lighthouse": "Lighthouse 95+",
+            "lighthouse": "Core-Web-Vitals-orientiert",
             "mobile": "Mobile first",
             "seo": "SEO optimiert",
             "multilang": "Mehrsprachig",
@@ -43,7 +43,6 @@
         "cards": {
             "performance": {
                 "title": "Performance",
-                "score": "95+",
                 "badge": "Live",
                 "label": "Optimierung für",
                 "features": [
@@ -218,6 +217,28 @@
         "footerNav": "Footer-Navigation",
         "llmContext": "NuVioLabs ist eine Webdesign-Agentur in Kranenburg, Deutschland, spezialisiert auf Next.js, SEO-Optimierung und Conversion-Rate-Optimierung für kleine und mittlere Unternehmen."
     },
+    "consent": {
+        "bannerAriaLabel": "Cookie-Hinweis",
+        "title": "Diese Website respektiert Ihre Privatsphäre",
+        "description": "Notwendige Technologien sind immer aktiv. Optionale Analyse-Technologien (Google Analytics) nutzen wir nur mit Ihrer Zustimmung. Sie können Ihre Entscheidung jederzeit über „Cookie-Einstellungen” im Footer ändern.",
+        "acceptAll": "Alle akzeptieren",
+        "rejectOptional": "Nur notwendige",
+        "settings": "Einstellungen",
+        "dialogTitle": "Cookie-Einstellungen",
+        "dialogDescription": "Wählen Sie, welche optionalen Technologien wir verwenden dürfen. Notwendige Technologien sind immer aktiv und nicht deaktivierbar.",
+        "essential": {
+            "title": "Notwendig",
+            "description": "Erforderlich für den Betrieb der Website, z. B. die Speicherung Ihrer Spracheinstellung und dieser Auswahl.",
+            "alwaysOn": "Immer aktiv"
+        },
+        "analytics": {
+            "title": "Analyse",
+            "description": "Google Analytics 4 hilft uns zu verstehen, wie die Website genutzt wird, um sie zu verbessern. Wird nur mit Ihrer Zustimmung geladen und setzt dann Cookies von Google Analytics."
+        },
+        "save": "Einstellungen speichern",
+        "close": "Schließen",
+        "footerLink": "Cookie-Einstellungen"
+    },
     "skipToContent": "Zum Inhalt springen",
     "legal": {
         "imprint": {
@@ -247,12 +268,16 @@
             "logfilesTitle": "5. Server-Log-Dateien",
             "logfiles": "Der Provider der Seiten erfasst und speichert automatisch Informationen in so genannten Server-Log-Dateien, die Ihr Browser automatisch an uns übermittelt (z.B. Browsertyp/-version, Betriebssystem, Referrer URL, Hostname des zugreifenden Rechners, Uhrzeit, IP-Adresse). Eine Zusammenführung dieser Daten mit anderen Datenquellen wird nicht vorgenommen.\nDie Erfassung dieser Daten erfolgt auf Grundlage von Art. 6 Abs. 1 lit. f DSGVO.",
             "cookiesTitle": "6. Cookies",
-            "cookies": "Diese Website verwendet ausschließlich technisch notwendige Cookies.\n\nDies betrifft insbesondere die Speicherung der gewählten Sprachversion der Website. Diese Speicherung ist erforderlich, um die vom Nutzer gewünschte Funktion bereitzustellen.\n\nRechtsgrundlage ist § 25 Abs. 2 TDDDG in Verbindung mit Art. 6 Abs. 1 lit. f DSGVO.\n\nAnalyse-, Marketing- oder Tracking-Cookies werden nicht eingesetzt.",
+            "cookies": "Diese Website verwendet technisch notwendige Cookies sowie – ausschließlich nach Ihrer Einwilligung – Analyse-Cookies von Google Analytics.\n\nTechnisch notwendige Cookies betreffen insbesondere die Speicherung der gewählten Sprachversion der Website. Diese Speicherung ist erforderlich, um die vom Nutzer gewünschte Funktion bereitzustellen.\n\nRechtsgrundlage ist § 25 Abs. 2 TDDDG in Verbindung mit Art. 6 Abs. 1 lit. f DSGVO.\n\nAnalyse-Cookies von Google Analytics werden nur gesetzt, wenn Sie der Analyse zugestimmt haben (siehe Abschnitte 8 und 9). Marketing- oder Werbe-Cookies werden nicht eingesetzt.",
             "analyticsTitle": "7. Reichweiten- und Ladezeitmessung",
-            "analytics": "Diese Website nutzt Vercel Web Analytics, einen Dienst der Vercel Inc., USA, um die Nutzung der Website statistisch auszuwerten.\n\nDie Messung erfolgt ohne Cookies. Es werden keine Informationen auf Ihrem Endgerät gespeichert oder von dort ausgelesen.\n\nErfasst werden je Seitenaufruf: Zeitpunkt, aufgerufene Adresse, verweisende Seite, gefilterte Suchparameter, ungefährer Standort (Land, Region, Ort), Gerätetyp, Betriebssystem und Browser jeweils mit Version sowie die Version des Messskripts.\n\nZur Unterscheidung von Besuchen wird aus den technischen Angaben Ihrer Anfrage ein Kennwert gebildet. Nach Angaben des Anbieters werden die Daten keiner Person und keiner IP-Adresse zugeordnet, und die Zuordnung eines Besuchs wird nach 24 Stunden verworfen. Eine Wiedererkennung über längere Zeiträume oder über andere Websites hinweg ist damit nicht möglich.\n\nRechtsgrundlage ist Art. 6 Abs. 1 lit. f DSGVO. Unser berechtigtes Interesse liegt darin, zu verstehen, welche Inhalte genutzt werden, um die Website zu verbessern.\n\nWeitere Informationen des Anbieters: https://vercel.com/docs/analytics/privacy-policy\n\nZusätzlich nutzen wir Vercel Speed Insights desselben Anbieters, um die tatsächliche Ladeleistung bei echten Besuchern zu messen. Erfasst werden dabei Route und Adresse der Seite, Netzwerkgeschwindigkeit, Browser, Gerätetyp, Betriebssystem, das Land als zweistelliger Ländercode, die gemessenen Web-Vitals-Werte samt zugehörigem Seitenelement sowie Zeitpunkt und Version des Messskripts. Auch hier erfolgt die Messung nach Angaben des Anbieters ohne Bezug zu einer Person oder IP-Adresse.\n\nWeitere Informationen des Anbieters: https://vercel.com/docs/speed-insights/privacy-policy",
-            "rightsTitle": "8. Betroffenenrechte (Art. 15–21 DSGVO)",
+            "analytics": "Diese Website nutzt Vercel Web Analytics, einen Dienst der Vercel Inc., USA, um die Nutzung der Website statistisch auszuwerten.\n\nDie Messung erfolgt ohne Cookies. Das Messskript prüft jedoch, ob im lokalen Speicher Ihres Browsers (localStorage) ein Eintrag „__va_attribution“ vorhanden ist. Angelegt wird ein solcher Eintrag nur, wenn eine Website Nutzer- oder Gruppenkennungen an Vercel übergibt; diese Website tut das nicht, sodass durch die Messung keine Daten auf Ihrem Endgerät gespeichert werden.\n\nErfasst werden je Seitenaufruf: Zeitpunkt, aufgerufene Adresse, verweisende Seite, gefilterte Suchparameter, ungefährer Standort (Land, Region, Ort), Gerätetyp, Betriebssystem und Browser jeweils mit Version sowie die Version des Messskripts.\n\nZur Unterscheidung von Besuchen wird aus den technischen Angaben Ihrer Anfrage ein Kennwert gebildet. Nach Angaben des Anbieters werden die Daten keiner Person und keiner IP-Adresse zugeordnet, und die Zuordnung eines Besuchs wird nach 24 Stunden verworfen. Eine Wiedererkennung über längere Zeiträume oder über andere Websites hinweg ist damit nicht möglich.\n\nZusätzlich übermitteln wir bei ausgewählten Interaktionen – Klicks auf Anfrage-Buttons, Beginn einer Eingabe im Kontaktformular, Wechsel zu WhatsApp oder E-Mail, Aufruf der Bestätigungsseite und Klicks auf die E-Mail-Adresse – ein Ereignis an Vercel Web Analytics. Es enthält nur den Namen der Interaktion und technische Angaben zur Position des Elements bzw. zum gewählten Kontaktweg, keine Formularinhalte.\n\nRechtsgrundlage ist Art. 6 Abs. 1 lit. f DSGVO. Unser berechtigtes Interesse liegt darin, zu verstehen, welche Inhalte genutzt werden, um die Website zu verbessern.\n\nWeitere Informationen des Anbieters: https://vercel.com/docs/analytics/privacy-policy\n\nZusätzlich nutzen wir Vercel Speed Insights desselben Anbieters, um die tatsächliche Ladeleistung bei echten Besuchern zu messen. Erfasst werden dabei Route und Adresse der Seite, Netzwerkgeschwindigkeit, Browser, Gerätetyp, Betriebssystem, das Land als zweistelliger Ländercode, die gemessenen Web-Vitals-Werte samt zugehörigem Seitenelement sowie Zeitpunkt und Version des Messskripts. Auch hier erfolgt die Messung nach Angaben des Anbieters ohne Bezug zu einer Person oder IP-Adresse.\n\nWeitere Informationen des Anbieters: https://vercel.com/docs/speed-insights/privacy-policy",
+            "consentTitle": "8. Einwilligungsverwaltung (Cookie-Einstellungen)",
+            "consent": "Ihre Auswahl zu optionalen Analyse-Technologien speichern wir im lokalen Speicher Ihres Browsers (localStorage) unter dem Schlüssel „nuvio_consent_v1“. Gespeichert werden ausschließlich die Angabe, ob Sie der Analyse zugestimmt haben, sowie eine Versionsnummer. Es wird keine Nutzerkennung erzeugt, und diese Angabe wird nicht an unsere Server übertragen.\n\nDie Speicherung ist erforderlich, damit Ihre Entscheidung bei weiteren Seitenaufrufen berücksichtigt wird. Sie bleibt bestehen, bis Sie Ihre Auswahl ändern oder die Website-Daten in Ihrem Browser löschen.\n\nSie können Ihre Auswahl jederzeit über den Link „Cookie-Einstellungen“ im Footer ändern und eine erteilte Einwilligung widerrufen.",
+            "googleAnalyticsTitle": "9. Google Analytics 4",
+            "googleAnalytics": "Mit Ihrer Einwilligung nutzen wir Google Analytics 4, einen Webanalysedienst von Google, um die Nutzung der Website statistisch auszuwerten und sie zu verbessern.\n\nGoogle Analytics wird erst geladen, nachdem Sie der Analyse zugestimmt haben („Alle akzeptieren“ oder aktivierte Kategorie „Analyse“ in den Cookie-Einstellungen). Vorher wird kein Skript von Google geladen, es wird keine Verbindung zu Google Analytics aufgebaut, und es werden keine Cookies von Google Analytics gesetzt.\n\nNach Ihrer Einwilligung werden aufgerufene Seiten (Adresse und Seitentitel) sowie ausgewählte Interaktionen erfasst: Klicks auf Anfrage-Buttons, der Beginn einer Eingabe im Kontaktformular, der Wechsel zu WhatsApp oder E-Mail, der Aufruf der Bestätigungsseite und Klicks auf die E-Mail-Adresse. Dazu übermitteln wir nur technische Angaben zur Position des geklickten Elements auf der Website bzw. zum gewählten Kontaktweg. Inhalte des Kontaktformulars wie Name, E-Mail-Adresse oder Nachricht übertragen wir nicht an Google Analytics. Google Analytics erfasst außerdem selbstständig technische Informationen wie Gerätetyp, Browser und ungefähren Standort sowie – abhängig von den Einstellungen der Google-Analytics-Property – weitere Interaktionen, etwa das Scrollen einer Seite oder den Beginn einer Formulareingabe.\n\nGoogle Analytics setzt dabei zwei Cookies: „_ga“ dient laut Google zur Unterscheidung von Nutzern, „_ga_<Kennung>“ zur Speicherung des Sitzungsstatus.\n\nSie können Ihre Einwilligung jederzeit über „Cookie-Einstellungen“ im Footer widerrufen. Ab dem Widerruf werden keine weiteren Daten für Google Analytics erfasst, die Cookies von Google Analytics werden gelöscht, und die Seite wird neu geladen, damit keine Skripte von Google mehr aktiv sind.",
+            "rightsTitle": "10. Betroffenenrechte (Art. 15–21 DSGVO)",
             "rights": "Sie haben das Recht auf unentgeltliche Auskunft über Ihre gespeicherten personenbezogenen Daten, deren Herkunft/Empfänger und Zweck der Verarbeitung, sowie ein Recht auf Berichtigung, Sperrung oder Löschung dieser Daten. Hierzu sowie zu weiteren Fragen können Sie sich jederzeit an uns wenden.",
-            "complaintTitle": "9. Beschwerderecht bei der Aufsichtsbehörde",
+            "complaintTitle": "11. Beschwerderecht bei der Aufsichtsbehörde",
             "complaint": "Im Falle von Verstößen gegen die DSGVO steht den Betroffenen ein Beschwerderecht bei einer zuständigen Aufsichtsbehörde zu. Das Beschwerderecht besteht unbeschadet anderweitiger Rechtsbehelfe."
         }
     },
@@ -262,7 +287,7 @@
         "questions": {
             "cost": {
                 "q": "Was kostet eine neue Website?",
-                "a": "Jedes Projekt ist individuell. Reine Website-Projekte starten ab 1.490 €. Im ersten Gespräch klären wir Umfang, Ziel und Budget, damit Sie eine realistische und transparente Einschätzung erhalten."
+                "a": "Jedes Projekt ist individuell. Reine Website-Projekte starten ab 1.490 €. Enthalten sind Konzept, Struktur, Design und Entwicklung einer vollständigen, mobile-first umgesetzten Website bis zum Go-live. Im ersten Gespräch klären wir Umfang, Ziel und Budget, damit Sie eine realistische und transparente Einschätzung erhalten."
             },
             "duration": {
                 "q": "Wie lange dauert die Umsetzung?",
@@ -275,6 +300,10 @@
             "cms": {
                 "q": "Kann ich Inhalte später ändern lassen?",
                 "a": "Ja. Kleine Anpassungen sind jederzeit möglich. Wenn Sie Inhalte regelmäßig selbst pflegen möchten, besprechen wir eine passende Lösung im Erstgespräch."
+            },
+            "clientInput": {
+                "q": "Was muss ich für das Projekt bereitstellen?",
+                "a": "Für den Start reichen grundlegende Informationen zu Ihrem Unternehmen und Ihren Leistungen. Struktur und Inhalte der Website legen wir gemeinsam im ersten Gespräch fest – vorhandene Texte, Bilder oder ein Logo können Sie einbringen, sie sind aber keine Voraussetzung."
             }
         }
     },
@@ -430,6 +459,10 @@
             "button": "Projekt anfragen"
         }
     },
+    "localTrust": {
+        "eyebrow": "Ihr Ansprechpartner",
+        "linkLabel": "Mehr über mich"
+    },
     "contactPage": {
         "hero": {
             "eyebrow": "Kontakt",
@@ -514,7 +547,7 @@
             "politics-economy": "Politik & Wirtschaft"
         },
         "cta": {
-            "eyebrow": "Deine Website kann mehr.",
+            "eyebrow": "Ihre Website kann mehr.",
             "headline": "Design, Performance und Nutzerführung sollten zusammenarbeiten.",
             "subline": "Wenn Sie wissen wollen, wo Ihre Website heute steht und was sich lohnt: Schreiben Sie mir kurz, worum es geht.",
             "button": "Website unverbindlich besprechen",
@@ -838,6 +871,36 @@
                 }
             }
         },
+        "whyNuvio": {
+            "eyebrow": "Warum NuVio Labs",
+            "headline": "Warum Unternehmen aus Kranenburg mit NuVio Labs arbeiten",
+            "items": {
+                "located": {
+                    "title": "Sitz direkt in Kranenburg",
+                    "description": "NuVio Labs ist nicht nur für Kranenburg tätig, sondern hier ansässig – kurze Wege für Abstimmung und persönliche Termine."
+                },
+                "directContact": {
+                    "title": "Direkter Ansprechpartner",
+                    "description": "Ein fester Ansprechpartner von der ersten Idee bis zur laufenden Betreuung nach dem Launch, ohne Zwischenstationen."
+                },
+                "individual": {
+                    "title": "Individuell statt Baukasten",
+                    "description": "Websites, die auf das jeweilige Unternehmen zugeschnitten sind, statt auf ein austauschbares Vorlagensystem."
+                },
+                "modernBasis": {
+                    "title": "Moderne technische Basis",
+                    "description": "Aktuelle Technologien für Ladezeit, Wartbarkeit und eine solide Grundlage für lokale Sichtbarkeit."
+                },
+                "borderRegion": {
+                    "title": "Grenznähe als Vorteil",
+                    "description": "Durch die Lage direkt an der Grenze zu den Niederlanden lassen sich Websites von Anfang an zwei- oder mehrsprachig planen."
+                },
+                "aftercare": {
+                    "title": "Betreuung nach dem Launch",
+                    "description": "Laufende Pflege und Aktualisierungen, auf Wunsch mit demselben Ansprechpartner wie während des Projekts."
+                }
+            }
+        },
         "process": {
             "eyebrow": "Ablauf",
             "headline": "So läuft die Zusammenarbeit",
@@ -855,7 +918,8 @@
             "eyebrow": "Orientierung",
             "headline": "Was kostet eine Website?",
             "text": "Unternehmenswebsites starten je nach Umfang ab 1.490 €.",
-            "note": "Der finale Preis hängt vom Umfang, den gewünschten Funktionen und dem Aufwand für Inhalte und Design ab. Nach einem kurzen Erstgespräch erhalten Sie ein passendes Angebot."
+            "note": "Der finale Preis hängt vom Umfang, den gewünschten Funktionen und dem Aufwand für Inhalte und Design ab. Nach einem kurzen Erstgespräch erhalten Sie ein passendes Angebot.",
+            "cta": "Projekt unverbindlich anfragen"
         },
         "faq": {
             "eyebrow": "Fragen",
@@ -863,7 +927,11 @@
             "questions": {
                 "cost": {
                     "q": "Was kostet eine Website in Kranenburg?",
-                    "a": "Unternehmenswebsites starten je nach Umfang ab 1.490 €. Der genaue Preis hängt von Struktur, Funktionen und Inhalten ab und wird nach einem kurzen Erstgespräch festgelegt."
+                    "a": "Unternehmenswebsites starten je nach Umfang ab 1.490 €. Enthalten sind Konzept, Struktur, Design und Entwicklung bis zum Launch. Der genaue Preis hängt von Struktur, Funktionen und Inhalten ab und wird nach einem kurzen Erstgespräch festgelegt."
+                },
+                "clientInput": {
+                    "q": "Was muss ich für das Projekt bereitstellen?",
+                    "a": "Für den Start reichen grundlegende Informationen zu Ihrem Unternehmen und Ihren Leistungen. Struktur und Inhalte legen wir im Erstgespräch gemeinsam fest – vorhandene Texte, Bilder oder ein Logo können Sie einbringen, sie sind aber keine Voraussetzung."
                 },
                 "duration": {
                     "q": "Wie lange dauert die Erstellung einer Website?",
@@ -888,7 +956,7 @@
             }
         },
         "finalCta": {
-            "headline": "Du suchst einen Webdesigner in Kranenburg?",
+            "headline": "Sie suchen einen Webdesigner in Kranenburg?",
             "text": "Kurze Nachricht genügt: Erzählen Sie mir von Ihrem Projekt, ich melde mich zeitnah mit den nächsten Schritten zurück.",
             "cta": "Website-Projekt anfragen"
         }
@@ -1107,7 +1175,11 @@
             "questions": {
                 "cost": {
                     "q": "Was kostet professionelles Webdesign in Kleve?",
-                    "a": "Unternehmenswebsites starten je nach Umfang ab 1.490 €. Der genaue Preis richtet sich nach Struktur, Funktionen und Mehrsprachigkeit und wird nach einem kurzen Gespräch festgelegt."
+                    "a": "Unternehmenswebsites starten je nach Umfang ab 1.490 €. Enthalten sind Konzept, Struktur, Design und Entwicklung bis zum Launch. Der genaue Preis richtet sich nach Struktur, Funktionen und Mehrsprachigkeit und wird nach einem kurzen Gespräch festgelegt."
+                },
+                "clientInput": {
+                    "q": "Was muss ich für das Projekt bereitstellen?",
+                    "a": "Für den Start reichen grundlegende Informationen zu Ihrem Unternehmen und Ihren Leistungen. Struktur und Inhalte legen wir im Erstgespräch gemeinsam fest – vorhandene Texte, Bilder oder ein Logo können Sie einbringen, sie sind aber keine Voraussetzung."
                 },
                 "duration": {
                     "q": "Wie lange dauert die Erstellung einer Unternehmenswebsite?",
@@ -1132,7 +1204,7 @@
             }
         },
         "finalCta": {
-            "headline": "Bereit für eine professionelle Website für dein Unternehmen in Kleve?",
+            "headline": "Bereit für eine professionelle Website für Ihr Unternehmen in Kleve?",
             "text": "Kurze Nachricht genügt: Beschreiben Sie Ihr Projekt, ich melde mich zeitnah mit den nächsten Schritten zurück.",
             "cta": "Website-Projekt anfragen"
         }
