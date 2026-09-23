@@ -36,7 +36,7 @@ const AREA_SERVED = [
  * Profil-Link), description (die einzige vorhandene Kurzbeschreibung,
  * footer.llmContext, ist aria-hidden und damit fuer keinen Nutzer
  * wahrnehmbar), telephone (die Nummer wird auf allen oeffentlichen Seiten —
- * /imprint, Kontaktformular — ausschliesslich als WhatsApp-Kontakt
+ * /imprint — ausschliesslich als WhatsApp-Kontakt
  * bezeichnet, nie als allgemeine Geschaeftsrufnummer; ein `tel:`-Link
  * existiert nur auf der privaten, nicht oeffentlichen CV-Seite fuer einen
  * anderen Zweck).

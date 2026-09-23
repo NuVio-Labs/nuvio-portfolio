@@ -14,21 +14,24 @@ import { trackGoogleEvent } from "@/lib/google-analytics"
  * (z. B. welche Sektion/Seite, welcher Kanal) — niemals Formularinhalte,
  * Namen, E-Mail-Adressen oder andere personenbezogene Daten.
  *
- * Event-Namen sind bewusst so gewaehlt, dass sie nur behaupten, was
- * technisch tatsaechlich nachweisbar ist (siehe contact-form.tsx /
- * contact-sent.tsx): weder der Klick auf "Per WhatsApp/E-Mail senden" noch
- * das Erreichen von /contact/sent belegen, dass eine Nachricht wirklich
- * versendet wurde — beides oeffnet nur einen externen Kanal, ohne
- * Rueckmeldung. Deshalb "..._click" / "..._page_view" statt "submit" /
- * "success".
+ * Event-Namen behaupten nur, was technisch nachweisbar ist. Kontaktformular
+ * (siehe contact-form.tsx / app/api/contact):
+ * - contact_form_start:    erste Interaktion mit dem Formular
+ * - contact_form_submit:   gueltiges Formular abgeschickt, Request startet
+ * - contact_form_accepted: Server hat validiert UND der Mailprovider hat die
+ *                          Nachricht zur Zustellung angenommen — nicht
+ *                          "zugestellt" und nicht "gelesen"
+ * - contact_form_error:    Versand fehlgeschlagen; `reason` ist nur der
+ *                          technische Fehlercode, nie eine Fehlermeldung
  */
 export type ConversionEvent =
     | "primary_cta_click"
     | "pricing_cta_click"
     | "email_click"
     | "contact_form_start"
-    | "contact_handoff_click"
-    | "contact_sent_page_view"
+    | "contact_form_submit"
+    | "contact_form_accepted"
+    | "contact_form_error"
 
 type EventProperties = Record<string, string | number | boolean>
 

@@ -1,137 +1,197 @@
 "use client"
 
-import { useRef, useState } from "react"
-import { useTranslations } from "next-intl"
-import { Copy, Check, Mail, MessageCircle } from "lucide-react"
-import { useRouter } from "@/i18n/navigation"
-import { CONTACT_EMAIL, WHATSAPP_NUMBER } from "@/lib/site"
+import { useRef, useState, type SubmitEvent } from "react"
+import { useLocale, useTranslations } from "next-intl"
+import { AlertCircle, Check, Copy, Loader2, Send } from "lucide-react"
+import { Link } from "@/i18n/navigation"
+import { CONTACT_EMAIL } from "@/lib/site"
 import { trackEvent } from "@/lib/analytics"
-import { SENT_MESSAGE_KEY } from "@/components/sections/contact-sent"
+import {
+    CONTACT_LIMITS,
+    CONTACT_TYPES,
+    type ContactErrorCode,
+    type ContactField,
+    type ContactRequest,
+    type ContactResponse,
+} from "@/lib/contact"
 
-type Channel = "whatsapp" | "mail"
+/** NETWORK = Server gar nicht erreicht; nur clientseitig. */
+type ErrorCode = Exclude<ContactErrorCode, "FORBIDDEN"> | "NETWORK"
 
-const typeOptionKeys = ["launch", "redesign", "landing", "ui", "other"] as const
+type Status =
+    | { kind: "idle" }
+    | { kind: "submitting" }
+    | { kind: "success" }
+    | { kind: "error"; code: ErrorCode; fields: ContactField[] }
+
+const REQUEST_TIMEOUT_MS = 15_000
+const EVENT_CONTEXT = { location: "contact-form" } as const
 
 /**
- * Betreff- und Textlaenge bewusst begrenzt: mailto:-URLs werden von manchen
- * Mailprogrammen oberhalb von etwa 2000 Zeichen abgeschnitten.
- */
-const SUBJECT_MAX = 150
-
-/**
- * Das Formular versendet nichts selbst. Es baut aus den Eingaben eine
- * Nachricht und oeffnet damit WhatsApp oder das Mailprogramm des Besuchers.
- * Abgeschickt wird dort — deshalb gibt es hier bewusst keinen
- * "Gesendet"-Zustand, den wir gar nicht kennen koennen.
+ * Kontaktformular mit direktem Versand ueber /api/contact.
+ *
+ * Erfolg wird nur angezeigt, wenn der Server die Anfrage validiert und der
+ * Mailprovider sie angenommen hat. Bei Fehlern bleiben alle Eingaben
+ * erhalten. Formularinhalte gehen nie an Analytics — Events tragen nur
+ * technischen Kontext.
  */
 export function ContactForm() {
     const t = useTranslations("contactPage.form")
-    const router = useRouter()
+    const locale = useLocale()
     const formRef = useRef<HTMLFormElement>(null)
-    const [copied, setCopied] = useState(false)
+    const errorRef = useRef<HTMLDivElement>(null)
+    const successRef = useRef<HTMLDivElement>(null)
     const formStarted = useRef(false)
+    const [status, setStatus] = useState<Status>({ kind: "idle" })
+    const [copied, setCopied] = useState(false)
+
+    const submitting = status.kind === "submitting"
+    const invalid = status.kind === "error" ? status.fields : []
 
     /** Erste Interaktion mit dem Formular — nur einmal pro Seitenaufruf gemeldet. */
     function handleFormStart() {
         if (formStarted.current) return
         formStarted.current = true
-        trackEvent("contact_form_start")
+        trackEvent("contact_form_start", EVENT_CONTEXT)
     }
 
-    /**
-     * Uebergabe an die Bestaetigungsseite. Der Aufruf dort ist zugleich das
-     * einzige messbare Signal fuer eine Anfrage — die Klicks selbst
-     * hinterlassen keinen Seitenaufruf.
-     */
-    function goToConfirmation(channel: Channel, body: string) {
-        window.sessionStorage.setItem(SENT_MESSAGE_KEY, body)
-        router.push(`/contact/sent?via=${channel}`)
-    }
-
-    /** Liest das Formular aus, erzwingt vorher die native Validierung. */
-    function collect() {
-        const form = formRef.current
-        if (!form || !form.reportValidity()) return null
-
+    function readForm(form: HTMLFormElement): ContactRequest {
         const data = new FormData(form)
-        const name = String(data.get("name") ?? "").trim()
-        const email = String(data.get("email") ?? "").trim()
-        const company = String(data.get("company") ?? "").trim()
-        const type = String(data.get("type") ?? "other")
-        const message = String(data.get("message") ?? "").trim()
-
-        const typeLabel = t(`typeOptions.${type}`)
-        const subject = (company ? `${typeLabel} · ${company}` : typeLabel).slice(0, SUBJECT_MAX)
-
-        const lines = [
-            t("templateIntro"),
-            "",
-            `${t("labelName")}: ${name}`,
-            `${t("labelEmail")}: ${email}`,
-        ]
-        if (company) lines.push(`${t("labelCompany")}: ${company}`)
-        lines.push(`${t("labelType")}: ${typeLabel}`, "", `${t("labelMessage")}:`, message)
-
-        return { subject, body: lines.join("\n") }
+        const value = (key: string) => String(data.get(key) ?? "")
+        return {
+            name: value("name"),
+            email: value("email"),
+            company: value("company"),
+            type: value("type") || "other",
+            message: value("message"),
+            locale,
+            website: value("website"),
+        }
     }
 
-    function handleWhatsapp() {
-        const payload = collect()
-        if (!payload) return
-        // Belegt nur, dass WhatsApp mit vorbefuellter Nachricht geoeffnet wurde —
-        // nicht, dass dort tatsaechlich auf "Senden" getippt wurde.
-        trackEvent("contact_handoff_click", { channel: "whatsapp" })
-        window.open(
-            `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(payload.body)}`,
-            "_blank",
-            "noopener,noreferrer",
-        )
-        goToConfirmation("whatsapp", payload.body)
+    function fail(code: ErrorCode, fields: ContactField[] = []) {
+        setStatus({ kind: "error", code, fields })
+        trackEvent("contact_form_error", { ...EVENT_CONTEXT, reason: code })
+        window.requestAnimationFrame(() => errorRef.current?.focus())
     }
 
-    function handleMail() {
-        const payload = collect()
-        if (!payload) return
-        // Belegt nur, dass der mailto:-Aufruf ausgeloest wurde — ob ein
-        // Mailprogramm installiert ist und der Nutzer dort sendet, ist
-        // technisch nicht feststellbar (siehe Kommentar unten).
-        trackEvent("contact_handoff_click", { channel: "email" })
+    /* Die native Validierung laeuft vor onSubmit; hier kommen nur gueltige Formulare an. */
+    async function handleSubmit(event: SubmitEvent<HTMLFormElement>) {
+        event.preventDefault()
+        if (submitting || status.kind === "success") return
+        const form = event.currentTarget
+        const payload = readForm(form)
 
-        /*
-         * Der mailto-Aufruf uebergibt an das Betriebssystem und navigiert die
-         * Seite nicht weg. Erst danach zur Bestaetigung wechseln, sonst kann
-         * der Wechsel die Uebergabe abbrechen.
-         */
-        window.location.href =
-            `mailto:${CONTACT_EMAIL}` +
-            `?subject=${encodeURIComponent(payload.subject)}` +
-            `&body=${encodeURIComponent(payload.body)}`
+        setStatus({ kind: "submitting" })
+        trackEvent("contact_form_submit", EVENT_CONTEXT)
 
-        window.setTimeout(() => goToConfirmation("mail", payload.body), 400)
-    }
-
-    async function handleCopy() {
-        const payload = collect()
-        if (!payload) return
+        const controller = new AbortController()
+        const timeout = window.setTimeout(() => controller.abort(), REQUEST_TIMEOUT_MS)
+        let response: Response
         try {
-            await navigator.clipboard.writeText(payload.body)
+            response = await fetch("/api/contact", {
+                method: "POST",
+                headers: { "Content-Type": "application/json" },
+                body: JSON.stringify(payload),
+                signal: controller.signal,
+            })
+        } catch {
+            fail("NETWORK")
+            return
+        } finally {
+            window.clearTimeout(timeout)
+        }
+
+        let body: ContactResponse | null = null
+        try {
+            body = (await response.json()) as ContactResponse
+        } catch {
+            body = null
+        }
+
+        if (response.ok && body?.success === true) {
+            form.reset()
+            setStatus({ kind: "success" })
+            trackEvent("contact_form_accepted", EVENT_CONTEXT)
+            window.requestAnimationFrame(() => successRef.current?.focus())
+            return
+        }
+
+        if (body && !body.success && body.error === "INVALID_INPUT") fail("INVALID_INPUT", body.fields ?? [])
+        else if (body && !body.success && body.error === "RATE_LIMITED") fail("RATE_LIMITED")
+        else fail("SEND_FAILED")
+    }
+
+    /** Fallback bei Fehlern: Nachricht lokal kopieren, um sie selbst zu mailen. */
+    async function handleCopy() {
+        const form = formRef.current
+        if (!form) return
+        const p = readForm(form)
+        const typeKey = (CONTACT_TYPES as readonly string[]).includes(p.type) ? p.type : "other"
+        const lines = [t("templateIntro"), "", `${t("labelName")}: ${p.name}`, `${t("labelEmail")}: ${p.email}`]
+        if (p.company) lines.push(`${t("labelCompany")}: ${p.company}`)
+        lines.push(`${t("labelType")}: ${t(`typeOptions.${typeKey}`)}`, "", `${t("labelMessage")}:`, p.message)
+        try {
+            await navigator.clipboard.writeText(lines.join("\n"))
             setCopied(true)
             window.setTimeout(() => setCopied(false), 2500)
         } catch {
-            /* Clipboard gesperrt — der Text steht im Formular weiterhin bereit. */
+            /* Clipboard gesperrt — die Eingaben stehen weiterhin im Formular. */
         }
     }
 
     const fieldClass =
-        "w-full rounded-xl border border-border-soft bg-surface px-4 py-3 text-sm text-text-primary placeholder:text-text-muted focus:outline-none focus:border-accent/60 focus:ring-1 focus:ring-accent/30 transition-colors"
+        "w-full rounded-xl border border-border-soft bg-surface px-4 py-3 text-sm text-text-primary placeholder:text-text-muted focus:outline-none focus:border-accent/60 focus:ring-1 focus:ring-accent/30 transition-colors aria-[invalid=true]:border-destructive disabled:opacity-60"
+
+    /** aria-Attribute fuer ein Feld, das der Server als ungueltig gemeldet hat. */
+    function fieldState(field: ContactField) {
+        const isInvalid = invalid.includes(field)
+        return {
+            "aria-invalid": isInvalid || undefined,
+            "aria-describedby": isInvalid ? `${field}-error` : undefined,
+        }
+    }
+
+    function fieldError(field: ContactField) {
+        if (!invalid.includes(field)) return null
+        return (
+            <p id={`${field}-error`} className="text-xs font-medium text-text-secondary">
+                {t(`fieldErrors.${field}`)}
+            </p>
+        )
+    }
+
+    if (status.kind === "success") {
+        return (
+            <div
+                ref={successRef}
+                tabIndex={-1}
+                role="status"
+                className="scroll-mt-28 rounded-2xl border border-accent/30 bg-accent-soft p-6 focus:outline-none sm:p-8"
+            >
+                <div className="mb-5 flex h-12 w-12 items-center justify-center rounded-full border border-accent/30 bg-surface">
+                    <Check className="h-5 w-5 text-accent" aria-hidden="true" />
+                </div>
+                <h2 className="mb-3 font-heading text-xl font-semibold text-text-primary">{t("successTitle")}</h2>
+                <p className="text-sm leading-6 text-text-secondary">{t("successText")}</p>
+            </div>
+        )
+    }
 
     return (
         <form
             ref={formRef}
-            onSubmit={(e) => e.preventDefault()}
+            onSubmit={handleSubmit}
             onFocus={handleFormStart}
-            className="space-y-6"
+            aria-busy={submitting}
+            className="relative space-y-6"
         >
+            {/* Honeypot: fuer Menschen und Screenreader unsichtbar, Bots fuellen es. */}
+            <div aria-hidden="true" className="absolute -left-[10000px] top-auto h-px w-px overflow-hidden">
+                <label htmlFor="website">{t("honeypotLabel")}</label>
+                <input id="website" name="website" type="text" tabIndex={-1} autoComplete="off" defaultValue="" />
+            </div>
+
             {/* Name + E-Mail */}
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
                 <div className="space-y-2">
@@ -143,11 +203,15 @@ export function ContactForm() {
                         name="name"
                         type="text"
                         required
-                        minLength={2}
-                        maxLength={80}
+                        autoComplete="name"
+                        minLength={CONTACT_LIMITS.nameMin}
+                        maxLength={CONTACT_LIMITS.nameMax}
                         placeholder={t("placeholderName")}
+                        readOnly={submitting}
                         className={fieldClass}
+                        {...fieldState("name")}
                     />
+                    {fieldError("name")}
                 </div>
                 <div className="space-y-2">
                     <label htmlFor="email" className="block text-sm font-medium text-text-secondary">
@@ -158,10 +222,14 @@ export function ContactForm() {
                         name="email"
                         type="email"
                         required
-                        maxLength={120}
+                        autoComplete="email"
+                        maxLength={CONTACT_LIMITS.emailMax}
                         placeholder={t("placeholderEmail")}
+                        readOnly={submitting}
                         className={fieldClass}
+                        {...fieldState("email")}
                     />
+                    {fieldError("email")}
                 </div>
             </div>
 
@@ -175,22 +243,27 @@ export function ContactForm() {
                         id="company"
                         name="company"
                         type="text"
-                        maxLength={80}
+                        autoComplete="organization"
+                        maxLength={CONTACT_LIMITS.companyMax}
                         placeholder={t("placeholderCompany")}
+                        readOnly={submitting}
                         className={fieldClass}
+                        {...fieldState("company")}
                     />
+                    {fieldError("company")}
                 </div>
                 <div className="space-y-2">
                     <label htmlFor="type" className="block text-sm font-medium text-text-secondary">
                         {t("labelType")}
                     </label>
-                    <select id="type" name="type" className={fieldClass}>
-                        {typeOptionKeys.map((key) => (
+                    <select id="type" name="type" className={fieldClass} {...fieldState("type")}>
+                        {CONTACT_TYPES.map((key) => (
                             <option key={key} value={key}>
                                 {t(`typeOptions.${key}`)}
                             </option>
                         ))}
                     </select>
+                    {fieldError("type")}
                 </div>
             </div>
 
@@ -203,40 +276,87 @@ export function ContactForm() {
                     id="message"
                     name="message"
                     required
-                    minLength={5}
-                    maxLength={1500}
-                    rows={5}
+                    minLength={CONTACT_LIMITS.messageMin}
+                    maxLength={CONTACT_LIMITS.messageMax}
+                    rows={6}
                     placeholder={t("placeholderMessage")}
-                    className={`${fieldClass} resize-none`}
+                    readOnly={submitting}
+                    className={`${fieldClass} resize-y`}
+                    {...fieldState("message")}
                 />
+                {fieldError("message")}
             </div>
 
-            <p className="text-xs text-text-muted leading-relaxed">{t("privacy")}</p>
+            <p className="text-xs text-text-muted leading-relaxed">
+                {t.rich("privacy", {
+                    link: (chunks) => (
+                        <Link href="/privacy" className="underline decoration-accent/50 underline-offset-2 hover:text-accent">
+                            {chunks}
+                        </Link>
+                    ),
+                })}
+            </p>
 
-            {/* Kanaele */}
-            <div className="flex flex-col sm:flex-row gap-3">
-                <button
-                    type="button"
-                    onClick={handleWhatsapp}
-                    className="inline-flex items-center justify-center gap-2 px-7 py-4 rounded-full bg-accent text-surface text-sm font-semibold hover:bg-[var(--nv-accent-hover)] transition-all duration-200 active:scale-[0.98]"
+            {status.kind === "error" && (
+                <div
+                    ref={errorRef}
+                    tabIndex={-1}
+                    role="alert"
+                    className="scroll-mt-28 rounded-2xl border border-destructive/50 bg-destructive/5 p-5 focus:outline-none"
                 >
-                    <MessageCircle className="h-4 w-4" aria-hidden="true" />
-                    {t("sendWhatsapp")}
-                </button>
+                    <p className="flex items-start gap-2 text-sm font-semibold text-text-primary">
+                        <AlertCircle className="mt-0.5 h-4 w-4 shrink-0 text-destructive" aria-hidden="true" />
+                        {t("errorTitle")}
+                    </p>
+                    <p className="mt-2 text-sm leading-6 text-text-secondary">{t(`errors.${status.code}`)}</p>
+                    {status.code !== "INVALID_INPUT" && (
+                        <div className="mt-4 space-y-3">
+                            <p className="text-xs leading-6 text-text-muted">
+                                {t("errorFallback")}{" "}
+                                <a
+                                    href={`mailto:${CONTACT_EMAIL}`}
+                                    data-track="email_click"
+                                    data-track-location="contact-form-error"
+                                    className="font-medium text-text-secondary underline decoration-accent/50 underline-offset-2 hover:text-accent"
+                                >
+                                    {CONTACT_EMAIL}
+                                </a>
+                            </p>
+                            <button
+                                type="button"
+                                onClick={handleCopy}
+                                className="inline-flex items-center gap-2 rounded-full border border-border-soft px-4 py-2 text-xs font-medium text-text-secondary hover:border-accent/50 hover:text-accent transition-colors"
+                            >
+                                {copied ? <Check className="h-3.5 w-3.5" aria-hidden="true" /> : <Copy className="h-3.5 w-3.5" aria-hidden="true" />}
+                                {copied ? t("copied") : t("copyButton")}
+                            </button>
+                        </div>
+                    )}
+                </div>
+            )}
+
+            <div className="flex flex-col sm:flex-row sm:items-center gap-4">
                 <button
-                    type="button"
-                    onClick={handleMail}
-                    className="inline-flex items-center justify-center gap-2 px-7 py-4 rounded-full border border-border-strong text-text-primary text-sm font-semibold hover:border-accent/50 hover:text-accent transition-all duration-200 active:scale-[0.98]"
+                    type="submit"
+                    disabled={submitting}
+                    className="inline-flex items-center justify-center gap-2 px-7 py-4 rounded-full bg-accent text-surface text-sm font-semibold hover:bg-[var(--nv-accent-hover)] transition-all duration-200 active:scale-[0.98] disabled:cursor-wait disabled:opacity-70 disabled:active:scale-100"
                 >
-                    <Mail className="h-4 w-4" aria-hidden="true" />
-                    {t("sendMail")}
+                    {submitting ? (
+                        <Loader2 className="h-4 w-4 animate-spin motion-reduce:animate-none" aria-hidden="true" />
+                    ) : (
+                        <Send className="h-4 w-4" aria-hidden="true" />
+                    )}
+                    {submitting ? t("submitting") : t("submit")}
                 </button>
+                {/* Screenreader-Ansage fuer den Ladezustand */}
+                <p className="sr-only" role="status" aria-live="polite">
+                    {submitting ? t("submitting") : ""}
+                </p>
             </div>
 
-            {/* Fallback fuer Rechner ohne Mailprogramm */}
             <div className="border-t border-border-soft pt-5">
                 <p className="text-xs leading-6 text-text-muted">
-                    {t("copyHint")}{" "}
+                    {t("directHint")}{" "}
                     <a
                         href={`mailto:${CONTACT_EMAIL}`}
                         data-track="email_click"
@@ -246,18 +366,6 @@ export function ContactForm() {
                         {CONTACT_EMAIL}
                     </a>
                 </p>
-                <button
-                    type="button"
-                    onClick={handleCopy}
-                    className="mt-3 inline-flex items-center gap-2 rounded-full border border-border-soft px-4 py-2 text-xs font-medium text-text-secondary hover:border-accent/50 hover:text-accent transition-colors"
-                >
-                    {copied ? (
-                        <Check className="h-3.5 w-3.5" aria-hidden="true" />
-                    ) : (
-                        <Copy className="h-3.5 w-3.5" aria-hidden="true" />
-                    )}
-                    {copied ? t("copied") : t("copyButton")}
-                </button>
             </div>
         </form>
     )

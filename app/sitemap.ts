@@ -7,7 +7,7 @@ import { SITE_URL } from "@/lib/site";
  * Indexierbare, statische Seiten je Locale mit Basis-Prioritaet (bei der
  * Default-Locale unveraendert, bei den anderen Locales mit Faktor 0.8
  * skaliert — reproduziert exakt die bisherigen Homepage-Werte 1 / 0.8).
- * `cv/[key]` und `contact/sent` fehlen hier bewusst: beide sind `noindex`.
+ * `cv/[key]` (noindex) und `contact/sent` (nur noch Weiterleitung) fehlen hier bewusst.
  */
 const ROUTES: { path: string; priority: number }[] = [
     { path: "", priority: 1 },
