@@ -1,4 +1,5 @@
 import { hasAnalyticsConsent } from "@/lib/consent"
+import { SITE_URL } from "@/lib/site"
 
 /**
  * Zentrale Google-Analytics-4-Integration. Einzige Stelle im Projekt, die
@@ -44,8 +45,17 @@ declare global {
 const GTAG_SCRIPT_ID = "nuvio-gtag"
 const DISABLE_KEY = `ga-disable-${GA_MEASUREMENT_ID}` as const
 
+/**
+ * Einziger Host, auf dem GA4 laeuft: die kanonische Produktions-Domain
+ * (www.nuviolabs.de). Vercel-Previews (*.vercel.app), localhost und die
+ * Apex-Domain senden nichts, damit fremde Hostnamen die Daten nicht
+ * verfaelschen.
+ */
+const PRODUCTION_HOSTNAME = new URL(SITE_URL).hostname
+
 let initialized = false
 let warnedMissingId = false
+let warnedHost = false
 
 export function isGoogleAnalyticsConfigured(): boolean {
     if (GA_MEASUREMENT_ID) return true
@@ -56,9 +66,23 @@ export function isGoogleAnalyticsConfigured(): boolean {
     return false
 }
 
+function isProductionHost(): boolean {
+    if (window.location.hostname === PRODUCTION_HOSTNAME) return true
+    if (process.env.NODE_ENV === "development" && !warnedHost) {
+        warnedHost = true
+        console.info(`[analytics] Google Analytics laeuft nur auf ${PRODUCTION_HOSTNAME}, nicht auf ${window.location.hostname}.`)
+    }
+    return false
+}
+
 /** Darf gerade etwas an GA4 gehen? Zentrale Pruefung vor jedem Senden. */
 function canSend(): boolean {
-    return typeof window !== "undefined" && isGoogleAnalyticsConfigured() && hasAnalyticsConsent()
+    return (
+        typeof window !== "undefined" &&
+        isGoogleAnalyticsConfigured() &&
+        isProductionHost() &&
+        hasAnalyticsConsent()
+    )
 }
 
 /**
