@@ -312,8 +312,8 @@
                 "a": "Für den Start reichen grundlegende Informationen zu Ihrem Unternehmen und Ihren Leistungen. Struktur und Inhalte der Website legen wir gemeinsam im ersten Gespräch fest – vorhandene Texte, Bilder oder ein Logo können Sie einbringen, sie sind aber keine Voraussetzung."
             },
             "region": {
-                "q": "Bieten Sie auch Webdesign in Kranenburg und Kleve an?",
-                "a": "Ja. NuVio Labs hat seinen Sitz in Kranenburg und betreut Unternehmen in Kleve und am gesamten Niederrhein.",
+                "q": "Wo sitzt NuVio Labs, und arbeiten Sie auch vor Ort?",
+                "a": "In Kranenburg am Niederrhein. Ich betreue Unternehmen in Kranenburg, Kleve und der ganzen Region, persönlich vor Ort oder online.",
                 "linkKranenburg": "Mehr über Webdesign in Kranenburg",
                 "linkKleve": "Mehr über Webdesign in Kleve"
             }
@@ -321,7 +321,7 @@
     },
     "seo": {
         "home": {
-            "title": "Webdesign am Niederrhein für Unternehmen | NuVio Labs",
+            "title": "Webdesign & Websites am Niederrhein | NuVio Labs",
             "description": "Moderne Websites für Unternehmen am Niederrhein. Schnell, mehrsprachig und auf Anfragen optimiert. Webdesign aus Kranenburg für Kleve und Umgebung."
         },
         "work": {
@@ -1207,7 +1207,7 @@
                 },
                 "location": {
                     "q": "Muss mein Unternehmen aus Kleve kommen?",
-                    "a": "Nein. Die Zusammenarbeit erfolgt ortsunabhängig, NuVio Labs betreut Unternehmen in Kleve und am gesamten Niederrhein. Der Sitz ist im benachbarten <kranenburg>Kranenburg</kranenburg>."
+                    "a": "Nein. Die Zusammenarbeit erfolgt ortsunabhängig, NuVio Labs betreut Unternehmen in Kleve und am gesamten Niederrhein. NuVio Labs sitzt im benachbarten <kranenburg>Kranenburg</kranenburg>."
                 },
                 "multilingual": {
                     "q": "Sind mehrsprachige Websites für deutsche und niederländische Kunden möglich?",
