@@ -214,7 +214,14 @@
         "github": "GitHub",
         "linkedin": "LinkedIn",
         "fiverr": "Fiverr",
-        "footerNav": "Footer-Navigation"
+        "footerNav": "Footer-Navigation",
+        "local": {
+            "title": "Webdesign vor Ort",
+            "links": {
+                "kranenburg": "Webdesign Kranenburg",
+                "kleve": "Webdesign Kleve"
+            }
+        }
     },
     "consent": {
         "bannerAriaLabel": "Cookie-Hinweis",

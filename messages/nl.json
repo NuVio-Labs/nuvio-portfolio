@@ -214,7 +214,13 @@
         "github": "GitHub",
         "linkedin": "LinkedIn",
         "fiverr": "Fiverr",
-        "footerNav": "Footernavigatie"
+        "footerNav": "Footernavigatie",
+        "local": {
+            "title": "Webdesign in de regio",
+            "links": {
+                "groesbeek": "Webdesign Groesbeek"
+            }
+        }
     },
     "consent": {
         "bannerAriaLabel": "Cookiemelding",
