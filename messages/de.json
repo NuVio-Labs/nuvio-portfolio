@@ -852,7 +852,7 @@
             "eyebrow": "Standort",
             "headline": "Webdesign aus Kranenburg",
             "paragraphs": {
-                "base": "NuVio Labs hat seinen Sitz in Kranenburg und arbeitet mit Unternehmen am gesamten Niederrhein zusammen, unter anderem in Kleve und Goch.",
+                "base": "NuVio Labs hat seinen Sitz in Kranenburg und arbeitet mit Unternehmen am gesamten Niederrhein zusammen, unter anderem in <kleve>Kleve</kleve> und Goch.",
                 "border": "Durch die Lage direkt an der Grenze zu den Niederlanden ergibt sich ein zusätzlicher Vorteil für Unternehmen mit Kunden oder Partnern in Groesbeek oder Nijmegen: Websites lassen sich von Anfang an zweisprachig oder mehrsprachig planen.",
                 "contact": "Als direkter Ansprechpartner begleite ich Projekte persönlich, von der ersten Idee bis zur laufenden Betreuung nach dem Launch."
             }
@@ -1207,7 +1207,7 @@
                 },
                 "location": {
                     "q": "Muss mein Unternehmen aus Kleve kommen?",
-                    "a": "Nein. Die Zusammenarbeit erfolgt ortsunabhängig, NuVio Labs betreut Unternehmen in Kleve und am gesamten Niederrhein."
+                    "a": "Nein. Die Zusammenarbeit erfolgt ortsunabhängig, NuVio Labs betreut Unternehmen in Kleve und am gesamten Niederrhein. Der Sitz ist im benachbarten <kranenburg>Kranenburg</kranenburg>."
                 },
                 "multilingual": {
                     "q": "Sind mehrsprachige Websites für deutsche und niederländische Kunden möglich?",

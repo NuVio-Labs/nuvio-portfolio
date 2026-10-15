@@ -1,12 +1,13 @@
 "use client"
 
-import { useState } from "react"
+import { useState, type ReactNode } from "react"
 import { ChevronDown } from "lucide-react"
 import { cn } from "@/lib/utils"
 
 interface FaqItem {
     question: string
-    answer: string
+    /** ReactNode statt string, damit Antworten Links enthalten koennen. */
+    answer: ReactNode
 }
 
 interface FaqAccordionProps {
