@@ -1,4 +1,5 @@
 import type { MetadataRoute } from "next";
+import { SITE_URL } from "@/lib/site";
 
 export default function robots(): MetadataRoute.Robots {
     return {
@@ -6,9 +7,11 @@ export default function robots(): MetadataRoute.Robots {
             {
                 userAgent: "*",
                 allow: "/",
-                disallow: ["/login", "/dashboard", "/(protected)/"],
+                /* Endpunkte ohne indexierbaren Inhalt (Kontaktformular,
+                   Likes, generierte Bewerbungs-PDFs). */
+                disallow: ["/api/"],
             },
         ],
-        sitemap: "https://www.nuviolabs.de/sitemap.xml",
+        sitemap: `${SITE_URL}/sitemap.xml`,
     };
 }
