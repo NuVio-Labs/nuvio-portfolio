@@ -1,4 +1,5 @@
 import { getTranslations } from "next-intl/server"
+import { Link } from "@/i18n/navigation"
 import { SectionWrapper } from "@/components/ui/section-wrapper"
 import { FaqAccordion } from "../faq-accordion"
 
@@ -9,7 +10,17 @@ export async function Faq() {
 
     const items = questionKeys.map((key) => ({
         question: t(`questions.${key}.q`),
-        answer: t(`questions.${key}.a`),
+        /* rich: die Standort-Antwort verlinkt die Kranenburg-Landingpage. */
+        answer: t.rich(`questions.${key}.a`, {
+            kranenburg: (chunks) => (
+                <Link
+                    href="/webdesign-kranenburg"
+                    className="font-medium text-text-primary underline decoration-accent/50 underline-offset-[3px] transition-colors hover:decoration-accent hover:text-accent"
+                >
+                    {chunks}
+                </Link>
+            ),
+        }),
     }))
 
     return (

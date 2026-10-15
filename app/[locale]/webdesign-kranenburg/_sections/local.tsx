@@ -1,5 +1,6 @@
 import { getTranslations } from "next-intl/server"
 import { MapPin } from "lucide-react"
+import { Link } from "@/i18n/navigation"
 import { SectionWrapper } from "@/components/ui/section-wrapper"
 
 export async function LocalArea() {
@@ -22,7 +23,18 @@ export async function LocalArea() {
                     </h2>
 
                     <div className="space-y-5">
-                        <p className="text-text-secondary leading-relaxed">{t("paragraphs.base")}</p>
+                        <p className="text-text-secondary leading-relaxed">
+                            {t.rich("paragraphs.base", {
+                                kleve: (chunks) => (
+                                    <Link
+                                        href="/webdesign-kleve"
+                                        className="font-medium text-text-primary underline decoration-accent/50 underline-offset-[3px] transition-colors hover:decoration-accent hover:text-accent"
+                                    >
+                                        {chunks}
+                                    </Link>
+                                ),
+                            })}
+                        </p>
                         <p className="text-text-secondary leading-relaxed">{t("paragraphs.border")}</p>
                         <p className="text-text-secondary leading-relaxed">{t("paragraphs.contact")}</p>
                     </div>

@@ -9,19 +9,38 @@ import { Link } from "@/i18n/navigation"
 
 const BASE_FAQ_KEYS = ["cost", "duration", "hosting", "cms", "clientInput"] as const
 
+interface LocalFaq {
+    key: string
+    links: { href: string; labelKey: string }[]
+}
+
 /**
- * "groesbeek" existiert nur in messages/nl.json: die Landingpage
- * /nl/webdesign-groesbeek ist bewusst einsprachig (siehe deren page.tsx),
- * daher taucht der Verweis auch nur auf der niederlaendischen Startseite auf.
+ * Zusaetzliche Frage je Sprache mit Links auf die einsprachigen lokalen
+ * Landingpages (siehe i18n/locale-routes.ts). "region" existiert nur in
+ * messages/de.json, "groesbeek" nur in messages/nl.json, daher taucht der
+ * Verweis auch nur auf der jeweiligen Startseite auf.
  */
-const NL_ONLY_FAQ_KEYS = ["groesbeek"] as const
+const LOCAL_FAQ: Partial<Record<string, LocalFaq>> = {
+    de: {
+        key: "region",
+        links: [
+            { href: "/webdesign-kranenburg", labelKey: "questions.region.linkKranenburg" },
+            { href: "/webdesign-kleve", labelKey: "questions.region.linkKleve" },
+        ],
+    },
+    nl: {
+        key: "groesbeek",
+        links: [{ href: "/webdesign-groesbeek", labelKey: "questions.groesbeek.linkText" }],
+    },
+}
 
 export function FAQ() {
     const t = useTranslations("faq")
     const locale = useLocale()
     const [openIndex, setOpenIndex] = useState<number | null>(0)
 
-    const FAQ_KEYS = locale === "nl" ? [...BASE_FAQ_KEYS, ...NL_ONLY_FAQ_KEYS] : BASE_FAQ_KEYS
+    const localFaq = LOCAL_FAQ[locale]
+    const FAQ_KEYS: readonly string[] = localFaq ? [...BASE_FAQ_KEYS, localFaq.key] : BASE_FAQ_KEYS
 
     return (
         <SectionWrapper id="faq" light>
@@ -73,14 +92,19 @@ export function FAQ() {
                                         <div className="overflow-hidden">
                                             <div className="px-6 pb-6 text-sm leading-relaxed text-text-muted">
                                                 <p>{t(`questions.${key}.a`)}</p>
-                                                {key === "groesbeek" ? (
-                                                    <Link
-                                                        href="/webdesign-groesbeek"
-                                                        className="mt-3 inline-flex items-center gap-2 font-medium text-accent hover:text-[var(--nv-accent-hover)] transition-colors group"
-                                                    >
-                                                        {t("questions.groesbeek.linkText")}
-                                                        <ArrowRight className="h-4 w-4 group-hover:translate-x-1 transition-transform" />
-                                                    </Link>
+                                                {localFaq && key === localFaq.key ? (
+                                                    <div className="mt-3 flex flex-wrap gap-x-6 gap-y-2">
+                                                        {localFaq.links.map((link) => (
+                                                            <Link
+                                                                key={link.href}
+                                                                href={link.href}
+                                                                className="inline-flex items-center gap-2 font-medium text-accent hover:text-[var(--nv-accent-hover)] transition-colors group"
+                                                            >
+                                                                {t(link.labelKey)}
+                                                                <ArrowRight className="h-4 w-4 group-hover:translate-x-1 transition-transform" />
+                                                            </Link>
+                                                        ))}
+                                                    </div>
                                                 ) : null}
                                             </div>
                                         </div>
