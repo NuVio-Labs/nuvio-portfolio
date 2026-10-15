@@ -1,3 +1,4 @@
+import { isAnalyticsOptedOut } from "@/lib/analytics-opt-out"
 import { hasAnalyticsConsent } from "@/lib/consent"
 import { SITE_URL } from "@/lib/site"
 
@@ -53,38 +54,9 @@ const DISABLE_KEY = `ga-disable-${GA_MEASUREMENT_ID}` as const
  */
 const PRODUCTION_HOSTNAME = new URL(SITE_URL).hostname
 
-/**
- * Opt-out fuer eigene Geraete: Aufruf einer beliebigen Seite mit
- * ?analytics=off setzt dieses Flag, ?analytics=on entfernt es. Solange es
- * gesetzt ist, wird gtag.js nicht geladen und nichts gesendet. Normale
- * Besucher bekommen den Eintrag nie.
- */
-const OPT_OUT_STORAGE_KEY = "nuvio_ga_opt_out"
-const OPT_OUT_QUERY_PARAM = "analytics"
-
 let initialized = false
 let warnedMissingId = false
 let warnedHost = false
-
-/** Wertet ?analytics=off|on der aktuellen URL aus. Einmal pro Seitenaufruf aufrufen. */
-export function applyAnalyticsOptOutParam(): void {
-    if (typeof window === "undefined") return
-    const value = new URLSearchParams(window.location.search).get(OPT_OUT_QUERY_PARAM)
-    try {
-        if (value === "off") window.localStorage.setItem(OPT_OUT_STORAGE_KEY, "1")
-        else if (value === "on") window.localStorage.removeItem(OPT_OUT_STORAGE_KEY)
-    } catch {
-        /* localStorage gesperrt — dann laesst sich kein Opt-out speichern. */
-    }
-}
-
-function isOptedOut(): boolean {
-    try {
-        return window.localStorage.getItem(OPT_OUT_STORAGE_KEY) === "1"
-    } catch {
-        return false
-    }
-}
 
 export function isGoogleAnalyticsConfigured(): boolean {
     if (GA_MEASUREMENT_ID) return true
@@ -110,7 +82,7 @@ function canSend(): boolean {
         typeof window !== "undefined" &&
         isGoogleAnalyticsConfigured() &&
         isProductionHost() &&
-        !isOptedOut() &&
+        !isAnalyticsOptedOut() &&
         hasAnalyticsConsent()
     )
 }

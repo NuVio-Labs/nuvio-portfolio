@@ -1,4 +1,5 @@
 import { track } from "@vercel/analytics"
+import { isAnalyticsOptedOut } from "@/lib/analytics-opt-out"
 import { hasAnalyticsConsent } from "@/lib/consent"
 import { trackGoogleEvent } from "@/lib/google-analytics"
 
@@ -51,13 +52,14 @@ const GA4_RECOMMENDED_EVENTS: Partial<Record<ConversionEvent, { name: string; pa
  * Sendet ein Conversion-Event. Serverseitig (kein `window`) ein no-op.
  *
  * Ohne Analytics-Zustimmung geht nichts raus, auch nichts in eine
- * Warteschlange, die spaeter nachgesendet werden koennte. Nach einem
+ * Warteschlange, die spaeter nachgesendet werden koennte; ebenso nicht auf
+ * per ?analytics=off ausgeschlossenen Geraeten. Nach einem
  * Widerruf im selben Tab verwirft zusaetzlich `beforeSend` in
  * vercel-analytics.tsx jedes Event. Komponenten rufen nie selbst gtag()
  * oder track(); GA prueft zusaetzlich in lib/google-analytics.ts.
  */
 export function trackEvent(name: ConversionEvent, properties?: EventProperties): void {
-    if (typeof window === "undefined" || !hasAnalyticsConsent()) return
+    if (typeof window === "undefined" || !hasAnalyticsConsent() || isAnalyticsOptedOut()) return
     track(name, properties)
     trackGoogleEvent(name, properties)
 
