@@ -30,6 +30,32 @@ interface BuildAlternatesOptions {
     availableLocales?: readonly string[]
 }
 
+/**
+ * hreflang-Matrix (Locale -> absolute URL, plus x-default) fuer einen Pfad.
+ * Gemeinsame Quelle fuer die Seiten-Metadaten und app/sitemap.ts, damit
+ * beide immer dieselben Alternativen melden.
+ *
+ * `undefined` bei weniger als zwei Locales: eine einsprachige Seite hat
+ * keine Alternativen, eine Matrix mit nur sich selbst waere bedeutungslos.
+ */
+export function buildLanguageAlternates(
+    path: string,
+    locales: readonly string[],
+): Record<string, string> | undefined {
+    if (locales.length <= 1) return undefined
+
+    const languages: Record<string, string> = Object.fromEntries(
+        locales.map((code) => [code, localeUrl(code, path)]),
+    )
+
+    /* x-default nur, wenn die Default-Locale tatsaechlich zu den Alternativen gehoert. */
+    if (locales.includes(routing.defaultLocale)) {
+        languages["x-default"] = localeUrl(routing.defaultLocale, path)
+    }
+
+    return languages
+}
+
 /** Canonical + hreflang-Alternates fuer eine Seite. */
 export function buildAlternates({
     locale,
@@ -37,21 +63,9 @@ export function buildAlternates({
     availableLocales,
 }: BuildAlternatesOptions): Metadata["alternates"] {
     const canonical = localeUrl(locale, path)
+    const languages = availableLocales ? buildLanguageAlternates(path, availableLocales) : undefined
 
-    if (!availableLocales || availableLocales.length <= 1) {
-        return { canonical }
-    }
-
-    const languages: Record<string, string> = Object.fromEntries(
-        availableLocales.map((code) => [code, localeUrl(code, path)]),
-    )
-
-    /* x-default nur, wenn die Default-Locale tatsaechlich zu den Alternativen gehoert. */
-    if (availableLocales.includes(routing.defaultLocale)) {
-        languages["x-default"] = localeUrl(routing.defaultLocale, path)
-    }
-
-    return { canonical, languages }
+    return languages ? { canonical, languages } : { canonical }
 }
 
 interface BuildPageMetadataOptions extends BuildAlternatesOptions {
