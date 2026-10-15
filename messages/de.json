@@ -310,6 +310,12 @@
             "clientInput": {
                 "q": "Was muss ich für das Projekt bereitstellen?",
                 "a": "Für den Start reichen grundlegende Informationen zu Ihrem Unternehmen und Ihren Leistungen. Struktur und Inhalte der Website legen wir gemeinsam im ersten Gespräch fest – vorhandene Texte, Bilder oder ein Logo können Sie einbringen, sie sind aber keine Voraussetzung."
+            },
+            "region": {
+                "q": "Bieten Sie auch Webdesign in Kranenburg und Kleve an?",
+                "a": "Ja. NuVio Labs hat seinen Sitz in Kranenburg und betreut Unternehmen in Kleve und am gesamten Niederrhein.",
+                "linkKranenburg": "Mehr über Webdesign in Kranenburg",
+                "linkKleve": "Mehr über Webdesign in Kleve"
             }
         }
     },
