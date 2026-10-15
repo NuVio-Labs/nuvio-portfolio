@@ -56,16 +56,6 @@ export async function generateMetadata({
 
         description: t("description"),
 
-        keywords: [
-            "Junior Developer",
-            "Fullstack Developer",
-            "Self-Taught",
-            "React",
-            "Next.js",
-            "TypeScript",
-            "Portfolio",
-        ],
-
         authors: [{ name: "NuVioLabs", url: SITE_URL }],
         creator: "NuVioLabs",
         publisher: "NuVioLabs",

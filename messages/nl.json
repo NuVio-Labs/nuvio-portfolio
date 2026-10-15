@@ -214,8 +214,7 @@
         "github": "GitHub",
         "linkedin": "LinkedIn",
         "fiverr": "Fiverr",
-        "footerNav": "Footernavigatie",
-        "llmContext": "NuVioLabs is een onafhankelijke webstudio in Kranenburg, Duitsland, gespecialiseerd in moderne Next.js websites met focus op SEO en conversie."
+        "footerNav": "Footernavigatie"
     },
     "consent": {
         "bannerAriaLabel": "Cookiemelding",

@@ -214,8 +214,7 @@
         "github": "GitHub",
         "linkedin": "LinkedIn",
         "fiverr": "Fiverr",
-        "footerNav": "Footer navigation",
-        "llmContext": "NuVioLabs is an independent web studio in Kranenburg, Germany, building fast, modern Next.js websites with a focus on SEO and conversion."
+        "footerNav": "Footer navigation"
     },
     "consent": {
         "bannerAriaLabel": "Cookie notice",

@@ -33,9 +33,8 @@ const AREA_SERVED = [
  * Bewusst NICHT enthalten: postalAddress (kein vermarkteter Standort),
  * sameAs (keine echten, im Frontend verlinkten Social-Profile gefunden —
  * der LinkedIn-Link im Journal ist ein generischer Share-Intent-Link, kein
- * Profil-Link), description (die einzige vorhandene Kurzbeschreibung,
- * footer.llmContext, ist aria-hidden und damit fuer keinen Nutzer
- * wahrnehmbar), telephone (die Nummer wird auf allen oeffentlichen Seiten —
+ * Profil-Link), description (es gibt keine sichtbare Kurzbeschreibung,
+ * auf die sie sich stuetzen koennte), telephone (die Nummer wird auf allen oeffentlichen Seiten —
  * /imprint — ausschliesslich als WhatsApp-Kontakt
  * bezeichnet, nie als allgemeine Geschaeftsrufnummer; ein `tel:`-Link
  * existiert nur auf der privaten, nicht oeffentlichen CV-Seite fuer einen

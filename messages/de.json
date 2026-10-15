@@ -214,8 +214,7 @@
         "github": "GitHub",
         "linkedin": "LinkedIn",
         "fiverr": "Fiverr",
-        "footerNav": "Footer-Navigation",
-        "llmContext": "NuVioLabs ist eine Webdesign-Agentur in Kranenburg, Deutschland, spezialisiert auf Next.js, SEO-Optimierung und Conversion-Rate-Optimierung für kleine und mittlere Unternehmen."
+        "footerNav": "Footer-Navigation"
     },
     "consent": {
         "bannerAriaLabel": "Cookie-Hinweis",
