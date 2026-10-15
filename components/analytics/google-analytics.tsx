@@ -2,7 +2,12 @@
 
 import { useEffect } from "react"
 import { useConsent } from "@/components/consent/consent-provider"
-import { disableGoogleAnalytics, initGoogleAnalytics, isGoogleAnalyticsConfigured } from "@/lib/google-analytics"
+import {
+    applyAnalyticsOptOutParam,
+    disableGoogleAnalytics,
+    initGoogleAnalytics,
+    isGoogleAnalyticsConfigured,
+} from "@/lib/google-analytics"
 
 /**
  * Verbindet den bestehenden Consent-Store (Phase 1) mit
@@ -22,12 +27,20 @@ import { disableGoogleAnalytics, initGoogleAnalytics, isGoogleAnalyticsConfigure
  *                      und Consent-Pruefung.
  * - keine Entscheidung -> nichts
  *
+ * Vorher wird einmalig ?analytics=off|on ausgewertet (Opt-out fuer eigene
+ * Geraete, siehe lib/google-analytics.ts). Der Effect steht bewusst vor dem
+ * Consent-Effect, damit das Flag schon greift, bevor gtag.js geladen wuerde.
+ *
  * Kein eigenes Route-Tracking (usePathname etc.): ein zweiter
  * Pageview-Mechanismus neben dem von GA4 wuerde doppelt zaehlen.
  */
 export function GoogleAnalytics() {
     const { consent } = useConsent()
     const decision = consent === null ? null : consent.analytics
+
+    useEffect(() => {
+        applyAnalyticsOptOutParam()
+    }, [])
 
     useEffect(() => {
         if (decision === null || !isGoogleAnalyticsConfigured()) return
