@@ -1,4 +1,6 @@
+import { isAnalyticsOptedOut } from "@/lib/analytics-opt-out"
 import { hasAnalyticsConsent } from "@/lib/consent"
+import { SITE_URL } from "@/lib/site"
 
 /**
  * Zentrale Google-Analytics-4-Integration. Einzige Stelle im Projekt, die
@@ -9,14 +11,26 @@ import { hasAnalyticsConsent } from "@/lib/consent"
  * keine Requests, keine Cookies, keine cookielosen Pings. Jede sendende
  * Funktion prueft zusaetzlich selbst hasAnalyticsConsent() (Phase-1-Store),
  * damit auch nach einem Widerruf im selben Tab nichts mehr rausgeht.
+ *
+ * Consent Mode v2 (Basic-Variante): beim Laden zuerst `consent default`
+ * mit allen Signalen auf "denied", direkt danach `consent update` mit
+ * analytics_storage "granted". Die Werbe-Signale (ad_storage,
+ * ad_user_data, ad_personalization) bleiben "denied" — der Banner fragt
+ * keine Marketing-Einwilligung ab. Der Advanced Mode (cookielose Pings
+ * schon vor der Einwilligung) ist bewusst nicht umgesetzt.
  */
 
 /** Ausschliesslich aus der Umgebung (.env.local bzw. Vercel-Environment). */
 export const GA_MEASUREMENT_ID = process.env.NEXT_PUBLIC_GA_MEASUREMENT_ID ?? ""
 
 type GtagParams = Record<string, string | number | boolean | undefined>
+type ConsentState = "granted" | "denied"
+type ConsentParams = Partial<
+    Record<"ad_storage" | "ad_user_data" | "ad_personalization" | "analytics_storage", ConsentState>
+>
 type GtagCommand =
     | ["js", Date]
+    | ["consent", "default" | "update", ConsentParams]
     | ["config", string, GtagParams?]
     | ["event", string, GtagParams?]
 
@@ -32,8 +46,17 @@ declare global {
 const GTAG_SCRIPT_ID = "nuvio-gtag"
 const DISABLE_KEY = `ga-disable-${GA_MEASUREMENT_ID}` as const
 
+/**
+ * Einziger Host, auf dem GA4 laeuft: die kanonische Produktions-Domain
+ * (www.nuviolabs.de). Vercel-Previews (*.vercel.app), localhost und die
+ * Apex-Domain senden nichts, damit fremde Hostnamen die Daten nicht
+ * verfaelschen.
+ */
+const PRODUCTION_HOSTNAME = new URL(SITE_URL).hostname
+
 let initialized = false
 let warnedMissingId = false
+let warnedHost = false
 
 export function isGoogleAnalyticsConfigured(): boolean {
     if (GA_MEASUREMENT_ID) return true
@@ -44,9 +67,24 @@ export function isGoogleAnalyticsConfigured(): boolean {
     return false
 }
 
+function isProductionHost(): boolean {
+    if (window.location.hostname === PRODUCTION_HOSTNAME) return true
+    if (process.env.NODE_ENV === "development" && !warnedHost) {
+        warnedHost = true
+        console.info(`[analytics] Google Analytics laeuft nur auf ${PRODUCTION_HOSTNAME}, nicht auf ${window.location.hostname}.`)
+    }
+    return false
+}
+
 /** Darf gerade etwas an GA4 gehen? Zentrale Pruefung vor jedem Senden. */
 function canSend(): boolean {
-    return typeof window !== "undefined" && isGoogleAnalyticsConfigured() && hasAnalyticsConsent()
+    return (
+        typeof window !== "undefined" &&
+        isGoogleAnalyticsConfigured() &&
+        isProductionHost() &&
+        !isAnalyticsOptedOut() &&
+        hasAnalyticsConsent()
+    )
 }
 
 /**
@@ -80,6 +118,7 @@ export function initGoogleAnalytics(): boolean {
         // geladen, siehe GoogleAnalytics-Komponente): best effort.
         if (window[DISABLE_KEY] === true) {
             window[DISABLE_KEY] = false
+            window.gtag?.("consent", "update", { analytics_storage: "granted" })
             window.gtag?.("config", GA_MEASUREMENT_ID)
         }
         return true
@@ -94,6 +133,15 @@ export function initGoogleAnalytics(): boolean {
         // eslint-disable-next-line prefer-rest-params
         window.dataLayer?.push(arguments)
     }
+
+    // Consent Mode v2: Default muss vor `config` in der dataLayer stehen.
+    window.gtag("consent", "default", {
+        ad_storage: "denied",
+        ad_user_data: "denied",
+        ad_personalization: "denied",
+        analytics_storage: "denied",
+    })
+    window.gtag("consent", "update", { analytics_storage: "granted" })
 
     window.gtag("js", new Date())
     window.gtag("config", GA_MEASUREMENT_ID)
@@ -144,6 +192,8 @@ function deleteGoogleAnalyticsCookies(): void {
 
 /**
  * Widerruf bzw. keine Zustimmung:
+ * 0. lief gtag.js bereits: Consent Mode auf analytics_storage "denied"
+ *    setzen, damit auch Google selbst den Widerruf als Signal erhaelt,
  * 1. offizielles Google-Opt-out-Flag setzen — stoppt sofort auch die
  *    automatischen Hits (Verlaufs-Pageviews, Enhanced Measurement) eines
  *    bereits geladenen gtag.js, die canSend() nicht erreicht,
@@ -163,6 +213,7 @@ function deleteGoogleAnalyticsCookies(): void {
  */
 export function disableGoogleAnalytics({ reloadIfLoaded }: { reloadIfLoaded: boolean }): void {
     if (typeof window === "undefined" || !GA_MEASUREMENT_ID) return
+    if (initialized) window.gtag?.("consent", "update", { analytics_storage: "denied" })
     window[DISABLE_KEY] = true
     deleteGoogleAnalyticsCookies()
     if (reloadIfLoaded && initialized) window.location.reload()

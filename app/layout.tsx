@@ -1,51 +1,21 @@
 import type { Metadata } from "next"
-import { Geist, Geist_Mono } from "next/font/google"
-import { SpeedInsights } from "@vercel/speed-insights/next"
 import "./globals.css"
-import { cn } from "@/lib/utils"
-
-const geist = Geist({
-  subsets: ["latin"],
-  display: "swap",
-  variable: "--font-geist",
-})
-
-const geistMono = Geist_Mono({
-  subsets: ["latin"],
-  display: "swap",
-  variable: "--font-geist-mono",
-})
 
 export const metadata: Metadata = {
   icons: { icon: "/favicon.ico" },
 }
 
+/**
+ * Durchreichendes Root-Layout. <html> und <body> rendert
+ * app/[locale]/layout.tsx, damit `lang` schon im ausgelieferten HTML zur
+ * Locale passt (vorher stand hier fest "de" und wurde erst per Script
+ * korrigiert). Fuer alles ausserhalb von [locale] rendert app/not-found.tsx
+ * eigene html/body-Tags.
+ */
 export default function RootLayout({
   children,
 }: {
   children: React.ReactNode
 }) {
-  return (
-    <html lang="de" suppressHydrationWarning>
-      <body
-        className={cn(
-          geist.variable,
-          geistMono.variable,
-          "min-h-screen bg-background antialiased"
-        )}
-        style={{
-          fontFamily: "var(--font-geist), system-ui, sans-serif",
-        }}
-      >
-        {children}
-        {/*
-          Ladezeitmessung (Core Web Vitals), ohne Cookies und ohne
-          Browser-Speicher. Nur in der Vercel-Umgebung aktiv. Vercel Web
-          Analytics laeuft dagegen consent-gebunden im Locale-Layout
-          (components/analytics/vercel-analytics.tsx).
-        */}
-        <SpeedInsights />
-      </body>
-    </html>
-  )
+  return children
 }

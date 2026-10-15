@@ -2,6 +2,7 @@
 
 import { useEffect } from "react"
 import { useConsent } from "@/components/consent/consent-provider"
+import { applyAnalyticsOptOutParam } from "@/lib/analytics-opt-out"
 import { disableGoogleAnalytics, initGoogleAnalytics, isGoogleAnalyticsConfigured } from "@/lib/google-analytics"
 
 /**
@@ -22,12 +23,21 @@ import { disableGoogleAnalytics, initGoogleAnalytics, isGoogleAnalyticsConfigure
  *                      und Consent-Pruefung.
  * - keine Entscheidung -> nichts
  *
+ * Vorher wird einmalig ?analytics=off|on gespeichert (Opt-out fuer eigene
+ * Geraete, gilt auch fuer Vercel Analytics, siehe lib/analytics-opt-out.ts).
+ * Die Pruefung selbst liest den URL-Parameter zusaetzlich direkt, haengt
+ * also nicht von der Reihenfolge der Effects ab.
+ *
  * Kein eigenes Route-Tracking (usePathname etc.): ein zweiter
  * Pageview-Mechanismus neben dem von GA4 wuerde doppelt zaehlen.
  */
 export function GoogleAnalytics() {
     const { consent } = useConsent()
     const decision = consent === null ? null : consent.analytics
+
+    useEffect(() => {
+        applyAnalyticsOptOutParam()
+    }, [])
 
     useEffect(() => {
         if (decision === null || !isGoogleAnalyticsConfigured()) return

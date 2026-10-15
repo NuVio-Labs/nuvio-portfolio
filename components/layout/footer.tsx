@@ -10,7 +10,6 @@ export function Footer() {
 
     return (
         <footer className="bg-[var(--nv-surface)] border-t border-border-soft">
-            <div className="sr-only" aria-hidden="true">{tFooter("llmContext")}</div>
 
             <div className="nv-container py-12 md:py-16">
                 <div className="grid grid-cols-1 md:grid-cols-3 gap-10 md:gap-16 mb-10">

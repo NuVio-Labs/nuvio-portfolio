@@ -214,8 +214,7 @@
         "github": "GitHub",
         "linkedin": "LinkedIn",
         "fiverr": "Fiverr",
-        "footerNav": "Footernavigatie",
-        "llmContext": "NuVioLabs is een onafhankelijke webstudio in Kranenburg, Duitsland, gespecialiseerd in moderne Next.js websites met focus op SEO en conversie."
+        "footerNav": "Footernavigatie"
     },
     "consent": {
         "bannerAriaLabel": "Cookiemelding",
@@ -243,7 +242,7 @@
     "legal": {
         "imprint": {
             "title": "Colofon / Impressum",
-            "provider": "Informatie volgens § 5 TMG (Duitsland)",
+            "provider": "Informatie volgens § 5 DDG (Duitsland)",
             "address": "NuVioLabs\nAxel Schurer\nNimwegerstraße 3\n47559 Kranenburg\nNoordrijn-Westfalen\nDuitsland",
             "contactTitle": "Contact",
             "contact": "E-mail: contact@nuviolabs.de\nWhatsApp: +49 1590 1698608",

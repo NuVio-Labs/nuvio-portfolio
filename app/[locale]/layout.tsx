@@ -1,5 +1,7 @@
 import type { Metadata } from "next";
+import { Geist, Geist_Mono } from "next/font/google";
 import { notFound } from "next/navigation";
+import { SpeedInsights } from "@vercel/speed-insights/next";
 import { NextIntlClientProvider } from "next-intl";
 import { getMessages, getTranslations, setRequestLocale } from "next-intl/server";
 import { routing } from "@/i18n/routing";
@@ -14,6 +16,19 @@ import { ConsentBanner } from "@/components/consent/consent-banner";
 import { ConsentDialog } from "@/components/consent/consent-dialog";
 import { SITE_URL } from "@/lib/site";
 import { buildAlternates } from "@/lib/seo";
+import { cn } from "@/lib/utils";
+
+const geist = Geist({
+    subsets: ["latin"],
+    display: "swap",
+    variable: "--font-geist",
+});
+
+const geistMono = Geist_Mono({
+    subsets: ["latin"],
+    display: "swap",
+    variable: "--font-geist-mono",
+});
 
 type Params = { locale: string };
 
@@ -40,16 +55,6 @@ export async function generateMetadata({
         title: { absolute: t("title") },
 
         description: t("description"),
-
-        keywords: [
-            "Junior Developer",
-            "Fullstack Developer",
-            "Self-Taught",
-            "React",
-            "Next.js",
-            "TypeScript",
-            "Portfolio",
-        ],
 
         authors: [{ name: "NuVioLabs", url: SITE_URL }],
         creator: "NuVioLabs",
@@ -88,7 +93,7 @@ export async function generateMetadata({
     };
 }
 
-/* ─── Locale Layout (providers only, no html/body) ── */
+/* ─── Locale Layout (rendert html/body, siehe app/layout.tsx) ── */
 export default async function LocaleLayout({
     children,
     params,
@@ -112,43 +117,55 @@ export default async function LocaleLayout({
     const t = await getTranslations();
 
     return (
-        <>
-            {/* Set html lang attribute via script to match locale */}
-            <script
-                dangerouslySetInnerHTML={{
-                    __html: `document.documentElement.lang="${locale}"`,
+        <html lang={locale} suppressHydrationWarning>
+            <body
+                className={cn(
+                    geist.variable,
+                    geistMono.variable,
+                    "min-h-screen bg-background antialiased"
+                )}
+                style={{
+                    fontFamily: "var(--font-geist), system-ui, sans-serif",
                 }}
-            />
-            {/* Skip-to-content link */}
-            <a
-                href="#main-content"
-                className="sr-only focus:not-sr-only focus:fixed focus:top-4 focus:left-4 focus:z-[100] focus:rounded-md focus:bg-primary focus:px-4 focus:py-2 focus:text-primary-foreground focus:text-sm focus:font-medium focus:shadow-lg"
             >
-                {t("skipToContent")}
-            </a>
-            <NextIntlClientProvider messages={messages}>
-                <ThemeProvider
-                    attribute="class"
-                    defaultTheme="light"
-                    storageKey="nuvio-theme"
-                    disableTransitionOnChange
+                {/* Skip-to-content link */}
+                <a
+                    href="#main-content"
+                    className="sr-only focus:not-sr-only focus:fixed focus:top-4 focus:left-4 focus:z-[100] focus:rounded-md focus:bg-primary focus:px-4 focus:py-2 focus:text-primary-foreground focus:text-sm focus:font-medium focus:shadow-lg"
                 >
-                    <ConsentProvider>
-                        <div className="relative flex min-h-screen flex-col">
-                            <Navbar />
-                            <main id="main-content" className="flex-1">
-                                {children}
-                            </main>
-                            <Footer />
-                            <ClickTracker />
-                            <GoogleAnalytics />
-                            <VercelAnalytics />
-                            <ConsentBanner />
-                            <ConsentDialog />
-                        </div>
-                    </ConsentProvider>
-                </ThemeProvider>
-            </NextIntlClientProvider>
-        </>
+                    {t("skipToContent")}
+                </a>
+                <NextIntlClientProvider messages={messages}>
+                    <ThemeProvider
+                        attribute="class"
+                        defaultTheme="light"
+                        storageKey="nuvio-theme"
+                        disableTransitionOnChange
+                    >
+                        <ConsentProvider>
+                            <div className="relative flex min-h-screen flex-col">
+                                <Navbar />
+                                <main id="main-content" className="flex-1">
+                                    {children}
+                                </main>
+                                <Footer />
+                                <ClickTracker />
+                                <GoogleAnalytics />
+                                <VercelAnalytics />
+                                <ConsentBanner />
+                                <ConsentDialog />
+                            </div>
+                        </ConsentProvider>
+                    </ThemeProvider>
+                </NextIntlClientProvider>
+                {/*
+                  Ladezeitmessung (Core Web Vitals), ohne Cookies und ohne
+                  Browser-Speicher. Nur in der Vercel-Umgebung aktiv. Vercel Web
+                  Analytics laeuft dagegen consent-gebunden (siehe
+                  components/analytics/vercel-analytics.tsx).
+                */}
+                <SpeedInsights />
+            </body>
+        </html>
     );
 }

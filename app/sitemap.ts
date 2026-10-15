@@ -1,79 +1,75 @@
 import type { MetadataRoute } from "next";
 import { routing } from "@/i18n/routing";
+import { LOCALE_RESTRICTED_PATHS, getPathLocales } from "@/i18n/locale-routes";
 import { getJournalArticles } from "@/lib/journal";
-import { SITE_URL } from "@/lib/site";
+import { buildLanguageAlternates, localeUrl } from "@/lib/seo";
 
 /**
- * Indexierbare, statische Seiten je Locale mit Basis-Prioritaet (bei der
- * Default-Locale unveraendert, bei den anderen Locales mit Faktor 0.8
- * skaliert — reproduziert exakt die bisherigen Homepage-Werte 1 / 0.8).
- * `cv/[key]` (noindex) und `contact/sent` (nur noch Weiterleitung) fehlen hier bewusst.
+ * Indexierbare statische Pfade unterhalb des Locale-Segments. Einsprachige
+ * Landingpages kommen aus LOCALE_RESTRICTED_PATHS dazu. `cv/[key]`
+ * (noindex) und `contact/sent` (nur noch Weiterleitung) fehlen bewusst.
  */
-const ROUTES: { path: string; priority: number }[] = [
-    { path: "", priority: 1 },
-    { path: "/work", priority: 0.7 },
-    { path: "/services", priority: 0.7 },
-    { path: "/about", priority: 0.6 },
-    { path: "/contact", priority: 0.6 },
-    { path: "/research", priority: 0.4 },
-    { path: "/privacy", priority: 0.2 },
-    { path: "/imprint", priority: 0.2 },
+const STATIC_PATHS = [
+    "",
+    "/work",
+    "/services",
+    "/about",
+    "/contact",
+    "/research",
+    "/privacy",
+    "/imprint",
+    "/journal",
 ];
 
+/**
+ * Ein Eintrag je Locale, in der der Pfad existiert. Jede Locale-Version ist
+ * ihre eigene kanonische URL und traegt dieselbe hreflang-Matrix wie die
+ * Seiten-Metadaten (beides aus buildLanguageAlternates in lib/seo.ts).
+ */
+function localizedEntries(
+    path: string,
+    locales: readonly string[],
+    lastModified?: (locale: string) => string | undefined,
+): MetadataRoute.Sitemap {
+    const languages = buildLanguageAlternates(path, locales);
+
+    return locales.map((locale) => {
+        const modified = lastModified?.(locale);
+        return {
+            url: localeUrl(locale, path),
+            ...(modified ? { lastModified: modified } : {}),
+            ...(languages ? { alternates: { languages } } : {}),
+        };
+    });
+}
+
+/**
+ * Nur kanonische URLs, jeweils mit hreflang-Alternates.
+ *
+ * lastModified nur dort, wo es ein echtes Aenderungsdatum gibt (Journal).
+ * Ein bei jedem Abruf neues Datum fuer statische Seiten lehrt Google nur,
+ * dem Feld nicht zu trauen. changeFrequency und priority wertet Google
+ * nicht aus und fehlen deshalb.
+ */
 export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
-    const entries: MetadataRoute.Sitemap = [];
+    const staticPaths = [...STATIC_PATHS, ...LOCALE_RESTRICTED_PATHS.map((entry) => entry.path)];
+    const entries = staticPaths.flatMap((path) => localizedEntries(path, getPathLocales(path)));
 
+    /* Slug -> (Locale -> Aenderungsdatum) ueber alle Sprachen hinweg. */
+    const articleDates = new Map<string, Map<string, string>>();
     for (const locale of routing.locales) {
-        for (const route of ROUTES) {
-            entries.push({
-                url: `${SITE_URL}/${locale}${route.path}`,
-                lastModified: new Date(),
-                changeFrequency: "weekly",
-                priority: locale === routing.defaultLocale ? route.priority : route.priority * 0.8,
-            });
-        }
-
-        /* Journal-Uebersicht und alle in dieser Sprache vorhandenen Artikel. */
-        const articles = await getJournalArticles(locale);
-
-        entries.push({
-            url: `${SITE_URL}/${locale}/journal`,
-            lastModified: new Date(),
-            changeFrequency: "weekly",
-            priority: locale === routing.defaultLocale ? 0.8 : 0.6,
-        });
-
-        for (const article of articles) {
-            entries.push({
-                url: `${SITE_URL}/${locale}/journal/${article.slug}`,
-                lastModified: new Date(article.updatedAt ?? article.date),
-                changeFrequency: "monthly",
-                priority: locale === routing.defaultLocale ? 0.7 : 0.5,
-            });
+        for (const meta of await getJournalArticles(locale)) {
+            const dates = articleDates.get(meta.slug) ?? new Map<string, string>();
+            dates.set(locale, meta.updatedAt ?? meta.date);
+            articleDates.set(meta.slug, dates);
         }
     }
 
-    /* Lokale SEO-Landingpages, nur fuer Deutsch (siehe jeweiliges page.tsx). */
-    entries.push({
-        url: `${SITE_URL}/de/webdesign-kranenburg`,
-        lastModified: new Date(),
-        changeFrequency: "monthly",
-        priority: 0.9,
-    });
-    entries.push({
-        url: `${SITE_URL}/de/webdesign-kleve`,
-        lastModified: new Date(),
-        changeFrequency: "monthly",
-        priority: 0.9,
-    });
-
-    /* Lokale SEO-Landingpage, nur fuer Niederlaendisch (siehe app/[locale]/webdesign-groesbeek/page.tsx). */
-    entries.push({
-        url: `${SITE_URL}/nl/webdesign-groesbeek`,
-        lastModified: new Date(),
-        changeFrequency: "monthly",
-        priority: 0.9,
-    });
+    for (const [slug, dates] of articleDates) {
+        /* Gleiche Reihenfolge und gleiche Auswahl wie getArticleLocales auf der Artikelseite. */
+        const locales = routing.locales.filter((locale) => dates.has(locale));
+        entries.push(...localizedEntries(`/journal/${slug}`, locales, (locale) => dates.get(locale)));
+    }
 
     return entries;
 }
