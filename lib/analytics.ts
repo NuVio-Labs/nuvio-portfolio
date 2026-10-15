@@ -23,6 +23,9 @@ import { trackGoogleEvent } from "@/lib/google-analytics"
  *                          "zugestellt" und nicht "gelesen"
  * - contact_form_error:    Versand fehlgeschlagen; `reason` ist nur der
  *                          technische Fehlercode, nie eine Fehlermeldung
+ *
+ * Zusaetzlich geht an GA4 (nicht an Vercel) zu contact_form_accepted das
+ * Empfehlungsereignis `generate_lead`, siehe GA4_RECOMMENDED_EVENTS.
  */
 export type ConversionEvent =
     | "primary_cta_click"
@@ -34,6 +37,15 @@ export type ConversionEvent =
     | "contact_form_error"
 
 type EventProperties = Record<string, string | number | boolean>
+
+/**
+ * GA4-Empfehlungsereignisse, die zusaetzlich zum eigenen Event an Google
+ * gehen. `generate_lead` ist in GA4 als Schluesselereignis markiert;
+ * contact_form_accepted bleibt fuer bestehende Auswertungen erhalten.
+ */
+const GA4_RECOMMENDED_EVENTS: Partial<Record<ConversionEvent, { name: string; params: EventProperties }>> = {
+    contact_form_accepted: { name: "generate_lead", params: { lead_source: "contact_form" } },
+}
 
 /**
  * Sendet ein Conversion-Event. Serverseitig (kein `window`) ein no-op.
@@ -48,4 +60,7 @@ export function trackEvent(name: ConversionEvent, properties?: EventProperties):
     if (typeof window === "undefined" || !hasAnalyticsConsent()) return
     track(name, properties)
     trackGoogleEvent(name, properties)
+
+    const recommended = GA4_RECOMMENDED_EVENTS[name]
+    if (recommended) trackGoogleEvent(recommended.name, recommended.params)
 }
