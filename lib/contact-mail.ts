@@ -1,6 +1,6 @@
 import "server-only"
 import { Resend } from "resend"
-import type { ContactPayload, ContactType } from "@/lib/contact"
+import type { ContactPayload, ContactReferral, ContactType } from "@/lib/contact"
 import { CONTACT_EMAIL } from "@/lib/site"
 
 /**
@@ -24,6 +24,15 @@ const TYPE_LABELS: Record<ContactType, string> = {
     landing: "Landingpage",
     ui: "UI-Komponenten & Design System",
     other: "Etwas anderes",
+}
+
+/** Deutsche Bezeichnungen fuer die freiwillige Herkunftsangabe. */
+const REFERRAL_LABELS: Record<ContactReferral, string> = {
+    google_ads: "Google-Anzeige",
+    google_search: "Google-Suche",
+    social: "Instagram / TikTok",
+    recommendation: "Empfehlung",
+    other: "Anderes",
 }
 
 const SUBJECT_NAME_MAX = 60
@@ -55,6 +64,7 @@ function buildRows(payload: ContactPayload, receivedAt: Date): [string, string][
     if (payload.company) rows.push(["Unternehmen", payload.company])
     rows.push(
         ["Art des Projekts", TYPE_LABELS[payload.type]],
+        ["Aufmerksam geworden durch", payload.referral ? REFERRAL_LABELS[payload.referral] : "Keine Angabe"],
         ["Sprache", payload.locale.toUpperCase()],
         ["Quelle", "Kontaktformular auf nuviolabs.de"],
         ["Zeitpunkt", formatTimestamp(receivedAt)],

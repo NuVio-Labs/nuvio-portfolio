@@ -20,6 +20,15 @@ export const CONTACT_LIMITS = {
 export const CONTACT_TYPES = ["launch", "redesign", "landing", "ui", "other"] as const
 export type ContactType = (typeof CONTACT_TYPES)[number]
 
+/**
+ * Optionale Angabe, wie die Person auf NuVio Labs aufmerksam geworden ist.
+ * Ersetzt bewusst ein Werbe-Tracking: die Herkunft einer Anfrage (z. B. ueber
+ * eine Google-Anzeige) wird so ohne Cookies und ohne Einwilligung erfasst,
+ * weil die Person sie selbst angibt. Leer = keine Angabe.
+ */
+export const CONTACT_REFERRALS = ["google_ads", "google_search", "social", "recommendation", "other"] as const
+export type ContactReferral = (typeof CONTACT_REFERRALS)[number]
+
 export const CONTACT_LOCALES = ["de", "en", "nl"] as const
 export type ContactLocale = (typeof CONTACT_LOCALES)[number]
 
@@ -30,6 +39,8 @@ export interface ContactRequest {
     company: string
     type: string
     message: string
+    /** Optional; leer oder einer der CONTACT_REFERRALS. */
+    referral?: string
     locale: string
     website: string
 }
@@ -41,10 +52,12 @@ export interface ContactPayload {
     company: string
     type: ContactType
     message: string
+    /** Leerer String = keine Angabe. */
+    referral: ContactReferral | ""
     locale: ContactLocale
 }
 
-export type ContactField = "name" | "email" | "company" | "type" | "message"
+export type ContactField = "name" | "email" | "company" | "type" | "message" | "referral"
 
 export type ContactErrorCode = "INVALID_INPUT" | "RATE_LIMITED" | "SEND_FAILED" | "FORBIDDEN"
 
@@ -121,6 +134,12 @@ export function validateContactRequest(input: unknown): ContactValidation {
         fields.push("message")
     }
 
+    const rawReferral = body.referral === undefined ? "" : text(body.referral)
+    const referral = rawReferral === "" || (rawReferral !== null && (CONTACT_REFERRALS as readonly string[]).includes(rawReferral))
+        ? (rawReferral as ContactReferral | "")
+        : null
+    if (referral === null) fields.push("referral")
+
     const locale = text(body.locale)
     const safeLocale: ContactLocale = locale !== null && (CONTACT_LOCALES as readonly string[]).includes(locale)
         ? (locale as ContactLocale)
@@ -136,6 +155,7 @@ export function validateContactRequest(input: unknown): ContactValidation {
             company: company as string,
             type: type as ContactType,
             message: message as string,
+            referral: referral as ContactReferral | "",
             locale: safeLocale,
         },
     }

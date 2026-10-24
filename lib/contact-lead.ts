@@ -22,6 +22,8 @@ export interface LeadWebhookPayload {
     company: string
     projectType: ContactPayload["type"]
     message: string
+    /** Freiwillige Herkunftsangabe der Person; leer = keine Angabe. */
+    referral: ContactPayload["referral"]
     locale: ContactPayload["locale"]
     source: "nuviolabs.de"
 }
@@ -35,6 +37,7 @@ function buildLeadPayload(payload: ContactPayload): LeadWebhookPayload {
         company: payload.company,
         projectType: payload.type,
         message: payload.message,
+        referral: payload.referral,
         locale: payload.locale,
         source: "nuviolabs.de",
     }

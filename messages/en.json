@@ -259,7 +259,7 @@
             "hostingTitle": "1. Hosting",
             "hosting": "Our website is hosted by Vercel Inc., 340 S Lemon Ave #4133, Walnut, CA 91789, USA.\nPersonal data collected on this website is processed on Vercel's servers.\n\nData transfer to the US is based on the EU Standard Contractual Clauses in accordance with Art. 46 GDPR.\n\nFurther information on data protection at Vercel can be found at:\nhttps://vercel.com/legal/privacy-policy",
             "contactFormTitle": "2. Contact Form",
-            "contactForm": "When you use the contact form, your details (name, email address, optionally company, project type and your message) are transmitted to our server in encrypted form, checked there and then forwarded to us by email. The email also contains the language in which you use the website and the date and time of the enquiry. Your IP address, cookies or analytics identifiers are not part of the email. The contents of the form are not transmitted to analytics services and are not stored temporarily in your browser.\n\nFor sending, we use the email service Resend of Plus Five Five, Inc., 2261 Market Street #5039, San Francisco, CA 94114, USA, as a processor. Resend processes the email including its content and the related metadata. According to the provider, this data is stored in the USA, and email and log data is retained for 30 days. According to the provider, the transfer to the USA is based on the EU-U.S. Data Privacy Framework and on EU Standard Contractual Clauses. Further information from the provider: https://resend.com/legal/privacy-policy and https://resend.com/security/gdpr\n\nTo protect against abuse, we limit the number of enquiries per internet connection. For this purpose, when you submit the form, a hash of your IP address is kept together with a counter for at most 10 minutes in a database (Upstash Redis) or in the server's memory and is then deleted automatically. The form also contains a field that is invisible to visitors and is used to detect automated spam submissions.\n\nWe store your enquiry in our email inbox in order to handle it and for any follow-up questions. Beyond that, it is not shared with third parties.\n\nThe legal basis is Art. 6 (1) (b) GDPR insofar as your enquiry is aimed at concluding a contract, and otherwise Art. 6 (1) (f) GDPR. Our legitimate interest lies in answering enquiries and in protecting the form against abuse.\n\nAlternatively, you can write to us directly by email. A WhatsApp number is also given in the legal notice; if you use that channel, the terms of WhatsApp Ireland Ltd. apply.",
+            "contactForm": "When you use the contact form, your details (name, email address, optionally company, project type, your message and, optionally, how you heard about us) are transmitted to our server in encrypted form, checked there and then forwarded to us by email. The email also contains the language in which you use the website and the date and time of the enquiry. Your IP address, cookies or analytics identifiers are not part of the email. The contents of the form are not transmitted to analytics services and are not stored temporarily in your browser.\n\nFor sending, we use the email service Resend of Plus Five Five, Inc., 2261 Market Street #5039, San Francisco, CA 94114, USA, as a processor. Resend processes the email including its content and the related metadata. According to the provider, this data is stored in the USA, and email and log data is retained for 30 days. According to the provider, the transfer to the USA is based on the EU-U.S. Data Privacy Framework and on EU Standard Contractual Clauses. Further information from the provider: https://resend.com/legal/privacy-policy and https://resend.com/security/gdpr\n\nTo protect against abuse, we limit the number of enquiries per internet connection. For this purpose, when you submit the form, a hash of your IP address is kept together with a counter for at most 10 minutes in a database (Upstash Redis) or in the server's memory and is then deleted automatically. The form also contains a field that is invisible to visitors and is used to detect automated spam submissions.\n\nWe store your enquiry in our email inbox in order to handle it and for any follow-up questions. Beyond that, it is not shared with third parties.\n\nThe legal basis is Art. 6 (1) (b) GDPR insofar as your enquiry is aimed at concluding a contract, and otherwise Art. 6 (1) (f) GDPR. Our legitimate interest lies in answering enquiries and in protecting the form against abuse.\n\nAlternatively, you can write to us directly by email. A WhatsApp number is also given in the legal notice; if you use that channel, the terms of WhatsApp Ireland Ltd. apply.",
             "responsibleTitle": "3. Responsible Entity",
             "responsible": "The entity responsible for data processing on this website is:\n\nAxel Schurer\nNuVioLabs\nNimwegerstraße 3\n47559 Kranenburg\nGermany\n\nEmail: contact@nuviolabs.de",
             "sslTitle": "4. SSL/TLS Encryption",
@@ -473,6 +473,15 @@
                 "ui": "UI components & design system",
                 "other": "Something else"
             },
+            "labelReferral": "How did you hear about us?",
+            "referralPlaceholder": "Optional – please select",
+            "referralOptions": {
+                "google_ads": "Google ad",
+                "google_search": "Google search",
+                "social": "Instagram / TikTok",
+                "recommendation": "Recommendation",
+                "other": "Other"
+            },
             "templateIntro": "Enquiry via nuviolabs.de",
             "copyButton": "Copy text",
             "copied": "Copied",
@@ -496,7 +505,8 @@
                 "email": "Please enter a valid email address.",
                 "company": "Please shorten the company name to at most 80 characters.",
                 "type": "Please select a project type.",
-                "message": "Please describe your project in 5 to 5,000 characters."
+                "message": "Please describe your project in 5 to 5,000 characters.",
+                "referral": "Please choose one of the offered answers or leave the field empty."
             }
         }
     },
