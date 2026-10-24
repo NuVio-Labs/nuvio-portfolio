@@ -265,7 +265,7 @@
             "hostingTitle": "1. Hosting",
             "hosting": "Onze website wordt gehost door Vercel Inc., 340 S Lemon Ave #4133, Walnut, CA 91789, VS.\n\nPersoonsgegevens die op deze website worden verzameld, worden verwerkt op de servers van Vercel. Hiertoe kunnen met name IP-adressen, technische toegangsgegevens en communicatiegegevens behoren.\n\nDe gegevensoverdracht naar de VS is gebaseerd op de EU-modelcontractbepalingen in overeenstemming met Art. 46 AVG.\n\nMeer informatie over gegevensbescherming bij Vercel vindt u op:\nhttps://vercel.com/legal/privacy-policy\n\nDe wettelijke basis voor verwerking is Art. 6 (1) (f) AVG (gerechtvaardigd belang bij een veilige en efficiënte werking van de website).",
             "contactFormTitle": "2. Contactformulier",
-            "contactForm": "Wanneer u het contactformulier gebruikt, worden uw gegevens (naam, e-mailadres, optioneel bedrijf, soort project en uw bericht) versleuteld naar onze server verzonden, daar gecontroleerd en vervolgens per e-mail naar ons doorgestuurd. De e-mail bevat daarnaast de taal waarin u de website gebruikt en de datum en tijd van de aanvraag. Uw IP-adres, cookies of analyse-ID's maken geen deel uit van de e-mail. De inhoud van het formulier wordt niet naar analysediensten verzonden en niet tijdelijk in uw browser opgeslagen.\n\nVoor het verzenden gebruiken wij de e-maildienst Resend van Plus Five Five, Inc., 2261 Market Street #5039, San Francisco, CA 94114, VS, als verwerker. Resend verwerkt daarbij de e-mail inclusief de inhoud en de bijbehorende metadata. Volgens de aanbieder worden deze gegevens in de VS opgeslagen en worden e-mail- en loggegevens 30 dagen bewaard. De doorgifte naar de VS is volgens de aanbieder gebaseerd op het EU-U.S. Data Privacy Framework en op EU-modelcontractbepalingen. Meer informatie van de aanbieder: https://resend.com/legal/privacy-policy en https://resend.com/security/gdpr\n\nTer bescherming tegen misbruik beperken wij het aantal aanvragen per internetaansluiting. Daarvoor wordt bij het verzenden een hashwaarde van uw IP-adres samen met een teller maximaal 10 minuten bewaard in een database (Upstash Redis) of in het werkgeheugen van de server en daarna automatisch verwijderd. Daarnaast bevat het formulier een voor bezoekers onzichtbaar veld waarmee geautomatiseerde spam wordt herkend.\n\nUw aanvraag bewaren wij in onze mailbox om deze te behandelen en voor eventuele vervolgvragen. Verder wordt zij niet met derden gedeeld.\n\nDe wettelijke basis is Art. 6 (1) (b) AVG voor zover uw aanvraag gericht is op het sluiten van een overeenkomst, en verder Art. 6 (1) (f) AVG. Ons gerechtvaardigd belang ligt in het beantwoorden van aanvragen en in de bescherming van het formulier tegen misbruik.\n\nU kunt ons ook direct per e-mail schrijven. In het colofon staat daarnaast een WhatsApp-nummer; gebruikt u die weg, dan gelden de voorwaarden van WhatsApp Ireland Ltd.",
+            "contactForm": "Wanneer u het contactformulier gebruikt, worden uw gegevens (naam, e-mailadres, optioneel bedrijf, soort project, uw bericht en optioneel hoe u bij ons terechtgekomen bent) versleuteld naar onze server verzonden, daar gecontroleerd en vervolgens per e-mail naar ons doorgestuurd. De e-mail bevat daarnaast de taal waarin u de website gebruikt en de datum en tijd van de aanvraag. Uw IP-adres, cookies of analyse-ID's maken geen deel uit van de e-mail. De inhoud van het formulier wordt niet naar analysediensten verzonden en niet tijdelijk in uw browser opgeslagen.\n\nVoor het verzenden gebruiken wij de e-maildienst Resend van Plus Five Five, Inc., 2261 Market Street #5039, San Francisco, CA 94114, VS, als verwerker. Resend verwerkt daarbij de e-mail inclusief de inhoud en de bijbehorende metadata. Volgens de aanbieder worden deze gegevens in de VS opgeslagen en worden e-mail- en loggegevens 30 dagen bewaard. De doorgifte naar de VS is volgens de aanbieder gebaseerd op het EU-U.S. Data Privacy Framework en op EU-modelcontractbepalingen. Meer informatie van de aanbieder: https://resend.com/legal/privacy-policy en https://resend.com/security/gdpr\n\nTer bescherming tegen misbruik beperken wij het aantal aanvragen per internetaansluiting. Daarvoor wordt bij het verzenden een hashwaarde van uw IP-adres samen met een teller maximaal 10 minuten bewaard in een database (Upstash Redis) of in het werkgeheugen van de server en daarna automatisch verwijderd. Daarnaast bevat het formulier een voor bezoekers onzichtbaar veld waarmee geautomatiseerde spam wordt herkend.\n\nUw aanvraag bewaren wij in onze mailbox om deze te behandelen en voor eventuele vervolgvragen. Verder wordt zij niet met derden gedeeld.\n\nDe wettelijke basis is Art. 6 (1) (b) AVG voor zover uw aanvraag gericht is op het sluiten van een overeenkomst, en verder Art. 6 (1) (f) AVG. Ons gerechtvaardigd belang ligt in het beantwoorden van aanvragen en in de bescherming van het formulier tegen misbruik.\n\nU kunt ons ook direct per e-mail schrijven. In het colofon staat daarnaast een WhatsApp-nummer; gebruikt u die weg, dan gelden de voorwaarden van WhatsApp Ireland Ltd.",
             "responsibleTitle": "3. Verantwoordelijke Instantie",
             "responsible": "De verantwoordelijke voor de gegevensverwerking op deze website is:\n\nAxel Schurer\nNuVioLabs\nNimwegerstraße 3\n47559 Kranenburg\nDuitsland\n\nE-mail: contact@nuviolabs.de",
             "sslTitle": "4. SSL/TLS-versleuteling",
@@ -492,6 +492,15 @@
                 "ui": "UI-componenten & designsysteem",
                 "other": "Iets anders"
             },
+            "labelReferral": "Hoe bent u bij ons terechtgekomen?",
+            "referralPlaceholder": "Optioneel – maak een keuze",
+            "referralOptions": {
+                "google_ads": "Google-advertentie",
+                "google_search": "Google-zoekopdracht",
+                "social": "Instagram / TikTok",
+                "recommendation": "Aanbeveling",
+                "other": "Anders"
+            },
             "templateIntro": "Aanvraag via nuviolabs.de",
             "copyButton": "Tekst kopiëren",
             "copied": "Gekopieerd",
@@ -515,7 +524,8 @@
                 "email": "Vul een geldig e-mailadres in.",
                 "company": "Kort de bedrijfsnaam in tot maximaal 80 tekens.",
                 "type": "Kies een soort project.",
-                "message": "Beschrijf uw project in 5 tot 5.000 tekens."
+                "message": "Beschrijf uw project in 5 tot 5.000 tekens.",
+                "referral": "Kies een van de aangeboden antwoorden of laat het veld leeg."
             }
         }
     },

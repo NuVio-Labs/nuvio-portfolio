@@ -266,7 +266,7 @@
             "hostingTitle": "1. Hosting",
             "hosting": "Unsere Website wird bei Vercel Inc., 340 S Lemon Ave #4133, Walnut, CA 91789, USA, gehostet.\nPersonenbezogene Daten, die auf dieser Website erfasst werden, werden auf den Servern von Vercel verarbeitet.\n\nDie Datenübermittlung in die USA erfolgt auf Grundlage der EU-Standardvertragsklauseln gemäß Art. 46 DSGVO.\n\nWeitere Informationen zum Datenschutz bei Vercel finden Sie unter:\nhttps://vercel.com/legal/privacy-policy",
             "contactFormTitle": "2. Kontaktformular",
-            "contactForm": "Wenn Sie das Kontaktformular nutzen, werden Ihre Angaben (Name, E-Mail-Adresse, optional Unternehmen, Art des Projekts und Ihre Nachricht) verschlüsselt an unseren Server übertragen, dort geprüft und anschließend per E-Mail an uns weitergeleitet. Zusätzlich enthält die E-Mail die Sprache, in der Sie die Website nutzen, sowie Datum und Uhrzeit der Anfrage. Ihre IP-Adresse, Cookies oder Analysekennungen sind nicht Teil der E-Mail. Die Inhalte des Formulars werden nicht an Analysedienste übertragen und nicht in Ihrem Browser zwischengespeichert.\n\nFür den Versand nutzen wir den E-Mail-Dienst Resend der Plus Five Five, Inc., 2261 Market Street #5039, San Francisco, CA 94114, USA, als Auftragsverarbeiter. Resend verarbeitet dabei die E-Mail einschließlich ihres Inhalts und der zugehörigen Metadaten. Nach Angaben des Anbieters werden diese Daten in den USA gespeichert und E-Mail- sowie Protokolldaten 30 Tage aufbewahrt. Die Übermittlung in die USA stützt sich nach Angaben des Anbieters auf das EU-U.S. Data Privacy Framework sowie auf EU-Standardvertragsklauseln. Weitere Informationen des Anbieters: https://resend.com/legal/privacy-policy und https://resend.com/security/gdpr\n\nZum Schutz vor Missbrauch begrenzen wir die Zahl der Anfragen je Internetanschluss. Dafür wird beim Absenden ein Hashwert Ihrer IP-Adresse zusammen mit einem Zähler für höchstens 10 Minuten in einer Datenbank (Upstash Redis) oder im Arbeitsspeicher des Servers gehalten und danach automatisch gelöscht. Außerdem enthält das Formular ein für Besucher unsichtbares Feld, an dem automatisierte Spam-Einsendungen erkannt werden.\n\nIhre Anfrage speichern wir in unserem E-Mail-Postfach zur Bearbeitung und für mögliche Anschlussfragen. Eine Weitergabe an Dritte erfolgt darüber hinaus nicht.\n\nRechtsgrundlage ist Art. 6 Abs. 1 lit. b DSGVO, soweit Ihre Anfrage auf den Abschluss eines Vertrags gerichtet ist, im Übrigen Art. 6 Abs. 1 lit. f DSGVO. Unser berechtigtes Interesse liegt in der Beantwortung von Anfragen und im Schutz des Formulars vor Missbrauch.\n\nAlternativ können Sie uns direkt per E-Mail schreiben. Im Impressum ist außerdem eine WhatsApp-Nummer angegeben; nutzen Sie diesen Weg, gelten die Bedingungen der WhatsApp Ireland Ltd.",
+            "contactForm": "Wenn Sie das Kontaktformular nutzen, werden Ihre Angaben (Name, E-Mail-Adresse, optional Unternehmen, Art des Projekts, Ihre Nachricht sowie optional, wie Sie auf uns aufmerksam geworden sind) verschlüsselt an unseren Server übertragen, dort geprüft und anschließend per E-Mail an uns weitergeleitet. Zusätzlich enthält die E-Mail die Sprache, in der Sie die Website nutzen, sowie Datum und Uhrzeit der Anfrage. Ihre IP-Adresse, Cookies oder Analysekennungen sind nicht Teil der E-Mail. Die Inhalte des Formulars werden nicht an Analysedienste übertragen und nicht in Ihrem Browser zwischengespeichert.\n\nFür den Versand nutzen wir den E-Mail-Dienst Resend der Plus Five Five, Inc., 2261 Market Street #5039, San Francisco, CA 94114, USA, als Auftragsverarbeiter. Resend verarbeitet dabei die E-Mail einschließlich ihres Inhalts und der zugehörigen Metadaten. Nach Angaben des Anbieters werden diese Daten in den USA gespeichert und E-Mail- sowie Protokolldaten 30 Tage aufbewahrt. Die Übermittlung in die USA stützt sich nach Angaben des Anbieters auf das EU-U.S. Data Privacy Framework sowie auf EU-Standardvertragsklauseln. Weitere Informationen des Anbieters: https://resend.com/legal/privacy-policy und https://resend.com/security/gdpr\n\nZum Schutz vor Missbrauch begrenzen wir die Zahl der Anfragen je Internetanschluss. Dafür wird beim Absenden ein Hashwert Ihrer IP-Adresse zusammen mit einem Zähler für höchstens 10 Minuten in einer Datenbank (Upstash Redis) oder im Arbeitsspeicher des Servers gehalten und danach automatisch gelöscht. Außerdem enthält das Formular ein für Besucher unsichtbares Feld, an dem automatisierte Spam-Einsendungen erkannt werden.\n\nIhre Anfrage speichern wir in unserem E-Mail-Postfach zur Bearbeitung und für mögliche Anschlussfragen. Eine Weitergabe an Dritte erfolgt darüber hinaus nicht.\n\nRechtsgrundlage ist Art. 6 Abs. 1 lit. b DSGVO, soweit Ihre Anfrage auf den Abschluss eines Vertrags gerichtet ist, im Übrigen Art. 6 Abs. 1 lit. f DSGVO. Unser berechtigtes Interesse liegt in der Beantwortung von Anfragen und im Schutz des Formulars vor Missbrauch.\n\nAlternativ können Sie uns direkt per E-Mail schreiben. Im Impressum ist außerdem eine WhatsApp-Nummer angegeben; nutzen Sie diesen Weg, gelten die Bedingungen der WhatsApp Ireland Ltd.",
             "responsibleTitle": "3. Verantwortliche Stelle",
             "responsible": "Verantwortlich für die Datenverarbeitung auf dieser Website ist:\n\nAxel Schurer\nNuVioLabs\nNimwegerstraße 3\n47559 Kranenburg\nDeutschland\n\nE-Mail: contact@nuviolabs.de",
             "sslTitle": "4. SSL- / TLS-Verschlüsselung",
@@ -498,6 +498,15 @@
                 "ui": "UI-Komponenten & Design System",
                 "other": "Etwas anderes"
             },
+            "labelReferral": "Wie sind Sie auf uns aufmerksam geworden?",
+            "referralPlaceholder": "Optional – bitte auswählen",
+            "referralOptions": {
+                "google_ads": "Google-Anzeige",
+                "google_search": "Google-Suche",
+                "social": "Instagram / TikTok",
+                "recommendation": "Empfehlung",
+                "other": "Anderes"
+            },
             "templateIntro": "Anfrage über nuviolabs.de",
             "copyButton": "Text kopieren",
             "copied": "Kopiert",
@@ -521,7 +530,8 @@
                 "email": "Bitte geben Sie eine gültige E-Mail-Adresse an.",
                 "company": "Bitte kürzen Sie den Namen des Unternehmens auf höchstens 80 Zeichen.",
                 "type": "Bitte wählen Sie eine Projektart aus.",
-                "message": "Bitte beschreiben Sie Ihr Projekt in 5 bis 5.000 Zeichen."
+                "message": "Bitte beschreiben Sie Ihr Projekt in 5 bis 5.000 Zeichen.",
+                "referral": "Bitte wählen Sie eine der angebotenen Antworten oder lassen Sie das Feld leer."
             }
         }
     },

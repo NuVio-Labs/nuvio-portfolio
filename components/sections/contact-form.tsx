@@ -8,6 +8,7 @@ import { CONTACT_EMAIL } from "@/lib/site"
 import { trackEvent } from "@/lib/analytics"
 import {
     CONTACT_LIMITS,
+    CONTACT_REFERRALS,
     CONTACT_TYPES,
     type ContactErrorCode,
     type ContactField,
@@ -64,6 +65,7 @@ export function ContactForm() {
             company: value("company"),
             type: value("type") || "other",
             message: value("message"),
+            referral: value("referral"),
             locale,
             website: value("website"),
         }
@@ -130,7 +132,11 @@ export function ContactForm() {
         const typeKey = (CONTACT_TYPES as readonly string[]).includes(p.type) ? p.type : "other"
         const lines = [t("templateIntro"), "", `${t("labelName")}: ${p.name}`, `${t("labelEmail")}: ${p.email}`]
         if (p.company) lines.push(`${t("labelCompany")}: ${p.company}`)
-        lines.push(`${t("labelType")}: ${t(`typeOptions.${typeKey}`)}`, "", `${t("labelMessage")}:`, p.message)
+        lines.push(`${t("labelType")}: ${t(`typeOptions.${typeKey}`)}`)
+        if (p.referral && (CONTACT_REFERRALS as readonly string[]).includes(p.referral)) {
+            lines.push(`${t("labelReferral")}: ${t(`referralOptions.${p.referral}`)}`)
+        }
+        lines.push("", `${t("labelMessage")}:`, p.message)
         try {
             await navigator.clipboard.writeText(lines.join("\n"))
             setCopied(true)
@@ -285,6 +291,22 @@ export function ContactForm() {
                     {...fieldState("message")}
                 />
                 {fieldError("message")}
+            </div>
+
+            {/* Herkunft der Anfrage: freiwillig, ersetzt ein Werbe-Tracking */}
+            <div className="space-y-2">
+                <label htmlFor="referral" className="block text-sm font-medium text-text-secondary">
+                    {t("labelReferral")}
+                </label>
+                <select id="referral" name="referral" defaultValue="" className={fieldClass} {...fieldState("referral")}>
+                    <option value="">{t("referralPlaceholder")}</option>
+                    {CONTACT_REFERRALS.map((key) => (
+                        <option key={key} value={key}>
+                            {t(`referralOptions.${key}`)}
+                        </option>
+                    ))}
+                </select>
+                {fieldError("referral")}
             </div>
 
             <p className="text-xs text-text-muted leading-relaxed">
