@@ -277,7 +277,9 @@
             "rightsTitle": "10. Data Subject Rights (Art. 15–21 GDPR)",
             "rights": "You have the right at any time to free information about your stored personal data, its origin and recipient and the purpose of data processing, and a right to correction, blocking or deletion of this data. For questions you can contact us at any time.",
             "complaintTitle": "11. Right of Appeal to the Supervisory Authority",
-            "complaint": "In the event of violations of the GDPR, data subjects have the right to lodge a complaint with a supervisory authority."
+            "complaint": "In the event of violations of the GDPR, data subjects have the right to lodge a complaint with a supervisory authority.",
+            "postalAdvertisingTitle": "12. Advertising by post",
+            "postalAdvertising": "We occasionally introduce our services to businesses and self-employed people in the region by letter. For this purpose we process the name of the business, where applicable the name of a contact person, and the business address. We take this information from publicly accessible sources, in particular the legal notice (imprint) of your website or your Google Business Profile.\n\nWe print the letters ourselves and send them via Deutsche Post AG, which receives your address for this purpose. We keep your details in an internal list for as long as necessary for the letter and a possible follow-up, and delete them no later than twelve months after our last letter unless a business relationship results from it.\n\nThe legal basis is Art. 6 (1) (f) GDPR. Our legitimate interest lies in making our services known (direct marketing, Recital 47 GDPR).\n\nRight to object: You can object to the use of your data for advertising at any time without giving reasons (Art. 21 (2) GDPR), for example by email to contact@nuviolabs.de or by post to the address given above. We will then no longer use your data for advertising and will delete it. So that you receive no further post from us, we only keep your address on a suppression list."
         }
     },
     "faq": {
@@ -478,6 +480,7 @@
             "referralOptions": {
                 "google_ads": "Google ad",
                 "google_search": "Google search",
+                "letter": "Letter by post",
                 "social": "Instagram / TikTok",
                 "recommendation": "Recommendation",
                 "other": "Other"
