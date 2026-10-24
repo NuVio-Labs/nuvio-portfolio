@@ -31,8 +31,7 @@ export default function PrivacyPage({ params: { locale } }: { params: { locale: 
         { title: "consentTitle", content: "consent" },
         { title: "googleAnalyticsTitle", content: "googleAnalytics" },
         { title: "rightsTitle", content: "rights" },
-        { title: "complaintTitle", content: "complaint" },
-        { title: "postalAdvertisingTitle", content: "postalAdvertising" }
+        { title: "complaintTitle", content: "complaint" }
     ]
 
     return (
