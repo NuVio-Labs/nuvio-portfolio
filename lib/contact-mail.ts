@@ -30,6 +30,7 @@ const TYPE_LABELS: Record<ContactType, string> = {
 const REFERRAL_LABELS: Record<ContactReferral, string> = {
     google_ads: "Google-Anzeige",
     google_search: "Google-Suche",
+    letter: "Brief per Post",
     social: "Instagram / TikTok",
     recommendation: "Empfehlung",
     other: "Anderes",

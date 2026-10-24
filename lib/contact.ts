@@ -26,7 +26,7 @@ export type ContactType = (typeof CONTACT_TYPES)[number]
  * eine Google-Anzeige) wird so ohne Cookies und ohne Einwilligung erfasst,
  * weil die Person sie selbst angibt. Leer = keine Angabe.
  */
-export const CONTACT_REFERRALS = ["google_ads", "google_search", "social", "recommendation", "other"] as const
+export const CONTACT_REFERRALS = ["google_ads", "google_search", "letter", "social", "recommendation", "other"] as const
 export type ContactReferral = (typeof CONTACT_REFERRALS)[number]
 
 export const CONTACT_LOCALES = ["de", "en", "nl"] as const
