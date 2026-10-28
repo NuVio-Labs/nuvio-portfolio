@@ -41,7 +41,7 @@ export async function ValueProposition() {
                                     style={{ fontSize: "clamp(3rem, 4.6vw, 4.6rem)" }}
                                 >
                                     <span className="block">{t("headlinePart1")}</span>
-                                    <span className="block text-accent">
+                                    <span className="block text-accent-text">
                                         {t("headlinePart2")}
                                     </span>
                                 </h2>
@@ -88,7 +88,7 @@ export async function ValueProposition() {
                                                 </p>
                                             </div>
 
-                                            <div className="mt-8 inline-flex w-fit items-center rounded-full border border-accent/25 bg-accent-soft px-3 py-2 text-[11px] font-semibold uppercase tracking-[0.18em] text-accent">
+                                            <div className="mt-8 inline-flex w-fit items-center rounded-full border border-accent/25 bg-accent-soft px-3 py-2 text-[11px] font-semibold uppercase tracking-[0.18em] text-accent-text">
                                                 {t(`principles.${principle.id}.highlight`)}
                                             </div>
                                         </div>
@@ -126,14 +126,14 @@ export async function ValueProposition() {
                                     href="/contact"
                                     data-track="primary_cta_click"
                                     data-track-location="value-proposition"
-                                    className="inline-flex min-w-[160px] items-center justify-center rounded-full bg-accent px-6 py-4 text-sm font-semibold text-surface shadow-sm transition duration-200 hover:bg-[var(--nv-accent-hover)] active:scale-[0.98]"
+                                    className="inline-flex min-w-[160px] items-center justify-center rounded-full bg-accent px-6 py-4 text-sm font-semibold text-accent-foreground shadow-sm transition duration-200 hover:bg-[var(--nv-accent-hover)] active:scale-[0.98]"
                                 >
                                     {t("ctaPrimary")}
                                 </Link>
 
                                 <Link
                                     href="#work"
-                                    className="inline-flex min-w-[170px] items-center justify-center gap-2 rounded-full border border-border-soft bg-surface px-6 py-4 text-sm font-semibold text-text-primary transition duration-200 hover:border-accent/40 hover:text-accent"
+                                    className="inline-flex min-w-[170px] items-center justify-center gap-2 rounded-full border border-border-soft bg-surface px-6 py-4 text-sm font-semibold text-text-primary transition duration-200 hover:border-accent/40 hover:text-accent-text"
                                 >
                                     {t("ctaSecondary")}
                                     <ArrowRight className="h-4 w-4" />

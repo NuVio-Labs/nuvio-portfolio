@@ -34,7 +34,7 @@ export default async function ServicesPage({ params }: { params: Promise<{ local
             <SectionWrapper>
                 <div className="nv-container">
                     <div className="max-w-2xl">
-                        <p className="text-accent text-xs font-semibold tracking-widest uppercase mb-4">
+                        <p className="text-accent-text text-xs font-semibold tracking-widest uppercase mb-4">
                             {t("page.hero.eyebrow")}
                         </p>
                         <h1
@@ -59,7 +59,7 @@ export default async function ServicesPage({ params }: { params: Promise<{ local
                                 key={key}
                                 className="bg-background rounded-2xl p-7 border border-border-soft hover:border-accent/40 hover:shadow-md transition-all duration-300"
                             >
-                                <span className="inline-block text-xs font-semibold text-accent bg-accent-soft px-3 py-1 rounded-full mb-5">
+                                <span className="inline-block text-xs font-semibold text-accent-text bg-accent-soft px-3 py-1 rounded-full mb-5">
                                     0{i + 1}
                                 </span>
                                 <h2 className="font-heading font-semibold text-text-primary text-xl mb-3">
@@ -78,7 +78,7 @@ export default async function ServicesPage({ params }: { params: Promise<{ local
             <SectionWrapper>
                 <div className="nv-container">
                     <div className="max-w-xl mb-12">
-                        <p className="text-accent text-xs font-semibold tracking-widest uppercase mb-4">
+                        <p className="text-accent-text text-xs font-semibold tracking-widest uppercase mb-4">
                             {tProcess("eyebrow")}
                         </p>
                         <h2
@@ -94,7 +94,7 @@ export default async function ServicesPage({ params }: { params: Promise<{ local
                         {stepKeys.map((key) => (
                             <div key={key} className="flex flex-col">
                                 <div className="flex items-center gap-3 mb-4">
-                                    <span className="flex h-9 w-9 items-center justify-center rounded-full border border-accent/40 bg-accent-soft text-accent text-sm font-semibold shrink-0">
+                                    <span className="flex h-9 w-9 items-center justify-center rounded-full border border-accent/40 bg-accent-soft text-accent-text text-sm font-semibold shrink-0">
                                         {tProcess(`steps.${key}.number`)}
                                     </span>
                                 </div>
@@ -154,7 +154,7 @@ export default async function ServicesPage({ params }: { params: Promise<{ local
                         href="/contact"
                         data-track="primary_cta_click"
                         data-track-location="services-page-cta"
-                        className="inline-flex items-center px-8 py-4 rounded-full bg-accent text-surface text-base font-semibold hover:bg-[var(--nv-accent-hover)] transition-all duration-200 active:scale-[0.98]"
+                        className="inline-flex items-center px-8 py-4 rounded-full bg-accent text-accent-foreground text-base font-semibold hover:bg-[var(--nv-accent-hover)] transition-all duration-200 active:scale-[0.98]"
                     >
                         {t("page.cta.button")}
                     </Link>

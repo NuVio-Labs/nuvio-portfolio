@@ -14,7 +14,7 @@ export async function AboutPreview() {
 
                     {/* Text */}
                     <div className="order-2 md:order-1">
-                        <p className="text-accent text-xs font-semibold tracking-widest uppercase mb-4">
+                        <p className="text-accent-text text-xs font-semibold tracking-widest uppercase mb-4">
                             {t("story.eyebrow")}
                         </p>
                         <h2
@@ -31,7 +31,7 @@ export async function AboutPreview() {
                         </p>
                         <Link
                             href="/about"
-                            className="inline-flex items-center gap-2 text-sm font-medium text-accent hover:text-[var(--nv-accent-hover)] transition-colors group"
+                            className="inline-flex items-center gap-2 text-sm font-medium text-accent-text hover:text-[var(--nv-accent-hover)] transition-colors group"
                         >
                             {t("cta.button")}
                             <ArrowRight className="h-4 w-4 group-hover:translate-x-1 transition-transform" />

@@ -78,7 +78,7 @@ export function FAQ() {
                                         <ChevronDown
                                             className={cn(
                                                 "h-5 w-5 shrink-0 text-text-muted transition-transform duration-200",
-                                                isOpen && "rotate-180 text-accent"
+                                                isOpen && "rotate-180 text-accent-text"
                                             )}
                                         />
                                     </button>
@@ -98,7 +98,7 @@ export function FAQ() {
                                                             <Link
                                                                 key={link.href}
                                                                 href={link.href}
-                                                                className="inline-flex items-center gap-2 font-medium text-accent hover:text-[var(--nv-accent-hover)] transition-colors group"
+                                                                className="inline-flex items-center gap-2 font-medium text-accent-text hover:text-[var(--nv-accent-hover)] transition-colors group"
                                                             >
                                                                 {t(link.labelKey)}
                                                                 <ArrowRight className="h-4 w-4 group-hover:translate-x-1 transition-transform" />

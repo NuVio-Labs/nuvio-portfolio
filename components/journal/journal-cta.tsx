@@ -14,7 +14,7 @@ export async function JournalCta() {
 
     return (
         <aside className="mt-20 rounded-[2rem] border border-border-soft bg-surface p-8 sm:p-10">
-            <p className="text-[11px] font-semibold uppercase tracking-[0.22em] text-accent">
+            <p className="text-[11px] font-semibold uppercase tracking-[0.22em] text-accent-text">
                 {t("eyebrow")}
             </p>
 
@@ -28,7 +28,7 @@ export async function JournalCta() {
                 href={href}
                 data-track="primary_cta_click"
                 data-track-location="journal-cta"
-                className="mt-8 inline-flex items-center gap-2 rounded-full bg-accent px-7 py-4 text-sm font-semibold text-surface transition duration-200 hover:bg-[var(--nv-accent-hover)] active:scale-[0.98]"
+                className="mt-8 inline-flex items-center gap-2 rounded-full bg-accent px-7 py-4 text-sm font-semibold text-accent-foreground transition duration-200 hover:bg-[var(--nv-accent-hover)] active:scale-[0.98]"
             >
                 {t("button")}
                 <ArrowRight className="h-4 w-4" aria-hidden="true" />

@@ -12,7 +12,7 @@ export async function Intent() {
         <SectionWrapper id="website-laten-maken" light>
             <div className="nv-container">
                 <div className="mx-auto mb-10 max-w-2xl text-center md:mb-12">
-                    <p className="text-accent text-xs font-semibold tracking-widest uppercase mb-4">
+                    <p className="text-accent-text text-xs font-semibold tracking-widest uppercase mb-4">
                         {t("eyebrow")}
                     </p>
                     <h2

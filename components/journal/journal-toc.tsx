@@ -15,7 +15,7 @@ function StaticTocList({ entries, className }: { entries: TocEntry[]; className?
                     <a
                         href={`#${entry.id}`}
                         className={cn(
-                            "block transition-colors hover:text-accent",
+                            "block transition-colors hover:text-accent-text",
                             entry.level === 2
                                 ? "text-[13px] leading-[1.45] text-text-secondary"
                                 : "pl-4 text-[12px] leading-[1.4] text-text-muted",

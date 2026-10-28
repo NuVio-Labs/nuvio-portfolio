@@ -56,7 +56,7 @@ export default async function JournalIndexPage({ params }: { params: Promise<Par
             <SectionWrapper>
                 <div className="nv-container">
                     <div className="max-w-2xl">
-                        <p className="text-xs font-semibold uppercase tracking-widest text-accent">
+                        <p className="text-xs font-semibold uppercase tracking-widest text-accent-text">
                             {t("index.eyebrow")}
                         </p>
                         <h1

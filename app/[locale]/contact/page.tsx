@@ -29,7 +29,7 @@ export default async function ContactPage({ params }: { params: Promise<{ locale
             <SectionWrapper>
                 <div className="nv-container">
                     <div className="max-w-2xl">
-                        <p className="text-accent text-xs font-semibold tracking-widest uppercase mb-4">
+                        <p className="text-accent-text text-xs font-semibold tracking-widest uppercase mb-4">
                             {t("hero.eyebrow")}
                         </p>
                         <h1

@@ -155,7 +155,7 @@ export function Work({ projectIds }: WorkProps) {
                                                 </div>
 
                                                 <div className="mt-4 rounded-[1.6rem] border border-accent/20 bg-accent-soft p-5">
-                                                    <p className="text-[11px] font-semibold uppercase tracking-[0.2em] text-accent">
+                                                    <p className="text-[11px] font-semibold uppercase tracking-[0.2em] text-accent-text">
                                                         {t("theOutcome")}
                                                     </p>
                                                     <div className="mt-4 grid gap-3 sm:grid-cols-3">
@@ -200,7 +200,7 @@ export function Work({ projectIds }: WorkProps) {
                                                         href="/contact"
                                                         data-track="primary_cta_click"
                                                         data-track-location={`work-card-${id}`}
-                                                        className="inline-flex min-w-[180px] items-center justify-center gap-2 rounded-full bg-accent px-6 py-4 text-sm font-semibold text-surface shadow-sm transition duration-200 hover:bg-[var(--nv-accent-hover)] active:scale-[0.98]"
+                                                        className="inline-flex min-w-[180px] items-center justify-center gap-2 rounded-full bg-accent px-6 py-4 text-sm font-semibold text-accent-foreground shadow-sm transition duration-200 hover:bg-[var(--nv-accent-hover)] active:scale-[0.98]"
                                                     >
                                                         {t(CTA_KEY[id])}
                                                         <ArrowRight className="h-4 w-4" />

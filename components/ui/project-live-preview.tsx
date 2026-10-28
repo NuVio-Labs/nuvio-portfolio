@@ -103,7 +103,7 @@ export function ProjectLivePreview({
                                 </p>
                                 <button
                                     onClick={() => setIframeState("loading")}
-                                    className="mt-5 inline-flex w-full items-center justify-center rounded-full bg-accent px-5 py-3 text-sm font-semibold text-surface transition duration-200 hover:bg-[var(--nv-accent-hover)] active:scale-[0.98] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent/50"
+                                    className="mt-5 inline-flex w-full items-center justify-center rounded-full bg-accent px-5 py-3 text-sm font-semibold text-accent-foreground transition duration-200 hover:bg-[var(--nv-accent-hover)] active:scale-[0.98] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent/50"
                                 >
                                     {t("previewLoadBtn")}
                                 </button>
@@ -161,7 +161,7 @@ export function ProjectLivePreview({
                     href={url}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="inline-flex items-center gap-1.5 rounded-full border border-border-soft bg-surface px-4 py-2 text-xs font-medium text-text-muted transition duration-200 hover:border-accent/40 hover:text-accent"
+                    className="inline-flex items-center gap-1.5 rounded-full border border-border-soft bg-surface px-4 py-2 text-xs font-medium text-text-muted transition duration-200 hover:border-accent/40 hover:text-accent-text"
                     aria-label={t("visitSiteLabel", { title })}
                 >
                     {t("visitSite")}

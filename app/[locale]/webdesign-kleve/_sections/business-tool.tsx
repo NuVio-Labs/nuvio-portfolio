@@ -12,7 +12,7 @@ export async function BusinessTool() {
             <div className="nv-container">
                 <div className="grid gap-10 lg:grid-cols-[420px_minmax(0,1fr)] lg:items-start">
                     <div>
-                        <p className="text-accent text-xs font-semibold tracking-widest uppercase mb-4">
+                        <p className="text-accent-text text-xs font-semibold tracking-widest uppercase mb-4">
                             {t("eyebrow")}
                         </p>
                         <h2
@@ -28,7 +28,7 @@ export async function BusinessTool() {
                         {pointKeys.map((key, index) => (
                             <ScrollAnimation key={key} delay={index * 0.05}>
                                 <div className="flex items-start gap-5 p-6">
-                                    <span className="flex h-8 w-8 shrink-0 items-center justify-center rounded-full border border-accent/40 bg-accent-soft text-xs font-semibold text-accent">
+                                    <span className="flex h-8 w-8 shrink-0 items-center justify-center rounded-full border border-accent/40 bg-accent-soft text-xs font-semibold text-accent-text">
                                         {String(index + 1).padStart(2, "0")}
                                     </span>
                                     <div>

@@ -35,13 +35,13 @@ export async function Hero() {
                                 href="/contact"
                                 data-track="primary_cta_click"
                                 data-track-location="webdesign-kleve-hero"
-                                className="inline-flex items-center justify-center rounded-full bg-accent px-8 py-4 text-base font-semibold text-surface shadow-sm transition duration-200 hover:bg-[var(--nv-accent-hover)] active:scale-[0.98]"
+                                className="inline-flex items-center justify-center rounded-full bg-accent px-8 py-4 text-base font-semibold text-accent-foreground shadow-sm transition duration-200 hover:bg-[var(--nv-accent-hover)] active:scale-[0.98]"
                             >
                                 {t("ctaPrimary")}
                             </Link>
                             <Link
                                 href="#work"
-                                className="inline-flex items-center justify-center gap-2 rounded-full border border-border-soft bg-surface px-8 py-4 text-base font-medium text-text-primary transition duration-200 hover:border-accent/40 hover:text-accent"
+                                className="inline-flex items-center justify-center gap-2 rounded-full border border-border-soft bg-surface px-8 py-4 text-base font-medium text-text-primary transition duration-200 hover:border-accent/40 hover:text-accent-text"
                             >
                                 {t("ctaSecondary")}
                                 <ArrowRight className="h-4 w-4" />

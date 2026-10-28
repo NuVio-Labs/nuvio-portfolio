@@ -10,7 +10,7 @@ export async function JournalArticleHeader({ meta }: { meta: JournalMeta }) {
 
     return (
         <header className="mt-8">
-            <p className="text-[11px] font-semibold uppercase tracking-[0.22em] text-accent">
+            <p className="text-[11px] font-semibold uppercase tracking-[0.22em] text-accent-text">
                 {t(`categories.${meta.category}`)}
             </p>
 

@@ -13,7 +13,7 @@ interface JournalShareProps {
 }
 
 const BUTTON_CLASS =
-    "inline-flex items-center gap-2 rounded-full border border-border-soft px-4 py-2.5 text-[13px] font-medium text-text-secondary transition-colors hover:border-accent/50 hover:text-accent"
+    "inline-flex items-center gap-2 rounded-full border border-border-soft px-4 py-2.5 text-[13px] font-medium text-text-secondary transition-colors hover:border-accent/50 hover:text-accent-text"
 
 /**
  * Teilen ohne Fremdskripte und ohne Tracking.

@@ -46,7 +46,7 @@ export function Footer() {
                             href={`mailto:${CONTACT_EMAIL}`}
                             data-track="email_click"
                             data-track-location="footer"
-                            className="mt-3 inline-block text-sm text-text-muted hover:text-accent transition-colors"
+                            className="mt-3 inline-block text-sm text-text-muted hover:text-accent-text transition-colors"
                         >
                             {CONTACT_EMAIL}
                         </a>
@@ -62,7 +62,7 @@ export function Footer() {
                                 <li key={key}>
                                     <Link
                                         href={`/${key}` as "/work" | "/services" | "/about" | "/contact"}
-                                        className="text-sm text-text-muted hover:text-accent transition-colors"
+                                        className="text-sm text-text-muted hover:text-accent-text transition-colors"
                                     >
                                         {tNav(key)}
                                     </Link>
@@ -81,7 +81,7 @@ export function Footer() {
                                 <li key={key}>
                                     <Link
                                         href="/services"
-                                        className="text-sm text-text-muted hover:text-accent transition-colors"
+                                        className="text-sm text-text-muted hover:text-accent-text transition-colors"
                                     >
                                         {tServices(`items.${key}.title`)}
                                     </Link>
@@ -101,7 +101,7 @@ export function Footer() {
                                     <li key={page.path}>
                                         <Link
                                             href={page.path}
-                                            className="text-sm text-text-muted hover:text-accent transition-colors"
+                                            className="text-sm text-text-muted hover:text-accent-text transition-colors"
                                         >
                                             {tFooter(`local.links.${page.key}`)}
                                         </Link>
@@ -116,10 +116,10 @@ export function Footer() {
                 <div className="border-t border-border-soft pt-6 flex flex-col sm:flex-row justify-between items-start gap-3 text-xs text-text-muted">
                     <p>{tFooter("copyright")}</p>
                     <nav className="flex gap-4" aria-label="Legal">
-                        <Link href="/imprint" className="hover:text-accent transition-colors">
+                        <Link href="/imprint" className="hover:text-accent-text transition-colors">
                             {tFooter("imprint")}
                         </Link>
-                        <Link href="/privacy" className="hover:text-accent transition-colors">
+                        <Link href="/privacy" className="hover:text-accent-text transition-colors">
                             {tFooter("privacy")}
                         </Link>
                         <CookieSettingsLink />

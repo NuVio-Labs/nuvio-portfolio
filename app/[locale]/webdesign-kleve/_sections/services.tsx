@@ -21,7 +21,7 @@ export async function Services() {
         <SectionWrapper id="leistungen" light>
             <div className="nv-container">
                 <div className="mx-auto mb-12 max-w-xl md:mb-16">
-                    <p className="text-accent text-xs font-semibold tracking-widest uppercase mb-4">
+                    <p className="text-accent-text text-xs font-semibold tracking-widest uppercase mb-4">
                         {t("eyebrow")}
                     </p>
                     <h2

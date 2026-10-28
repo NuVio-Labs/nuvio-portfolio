@@ -28,7 +28,7 @@ export async function LocalArea() {
                                 kleve: (chunks) => (
                                     <Link
                                         href="/webdesign-kleve"
-                                        className="font-medium text-text-primary underline decoration-accent/50 underline-offset-[3px] transition-colors hover:decoration-accent hover:text-accent"
+                                        className="font-medium text-text-primary underline decoration-accent/50 underline-offset-[3px] transition-colors hover:decoration-accent hover:text-accent-text"
                                     >
                                         {chunks}
                                     </Link>

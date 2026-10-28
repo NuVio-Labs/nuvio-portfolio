@@ -10,7 +10,7 @@ export async function Process() {
         <SectionWrapper id="ablauf">
             <div className="nv-container">
                 <div className="mx-auto mb-12 max-w-xl md:mb-16">
-                    <p className="text-accent text-xs font-semibold tracking-widest uppercase mb-4">
+                    <p className="text-accent-text text-xs font-semibold tracking-widest uppercase mb-4">
                         {t("eyebrow")}
                     </p>
                     <h2
@@ -31,7 +31,7 @@ export async function Process() {
                                     aria-hidden="true"
                                 />
                             )}
-                            <span className="relative z-10 flex h-9 w-9 shrink-0 items-center justify-center rounded-full border border-accent/40 bg-accent-soft text-sm font-semibold text-accent">
+                            <span className="relative z-10 flex h-9 w-9 shrink-0 items-center justify-center rounded-full border border-accent/40 bg-accent-soft text-sm font-semibold text-accent-text">
                                 {String(index + 1).padStart(2, "0")}
                             </span>
                             <div className="pt-1">

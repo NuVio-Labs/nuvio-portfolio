@@ -15,7 +15,7 @@ export async function JournalCard({ meta }: { meta: JournalMeta }) {
                 href={`/journal/${meta.slug}`}
                 className="flex h-full flex-col rounded-2xl border border-border-soft bg-surface p-6 transition-all duration-300 hover:border-accent/40 hover:shadow-md"
             >
-                <p className="text-[11px] font-semibold uppercase tracking-[0.18em] text-accent">
+                <p className="text-[11px] font-semibold uppercase tracking-[0.18em] text-accent-text">
                     {t(`categories.${meta.category}`)}
                 </p>
 

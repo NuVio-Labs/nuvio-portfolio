@@ -37,14 +37,14 @@ export async function LocalTrust() {
                     </div>
 
                     <div>
-                        <p className="text-accent text-xs font-semibold tracking-widest uppercase mb-3">
+                        <p className="text-accent-text text-xs font-semibold tracking-widest uppercase mb-3">
                             {t("eyebrow")}
                         </p>
                         <p className="text-text-secondary leading-relaxed">{tAbout("story.text1")}</p>
                         <p className="mt-2 text-text-secondary leading-relaxed">{tAbout("story.text2")}</p>
                         <Link
                             href="/about"
-                            className="mt-4 inline-flex items-center gap-2 text-sm font-medium text-accent hover:text-[var(--nv-accent-hover)] transition-colors group"
+                            className="mt-4 inline-flex items-center gap-2 text-sm font-medium text-accent-text hover:text-[var(--nv-accent-hover)] transition-colors group"
                         >
                             {t("linkLabel")}
                             <ArrowRight className="h-4 w-4 group-hover:translate-x-1 transition-transform" />

@@ -8,7 +8,7 @@ export async function FinalCta() {
     return (
         <SectionWrapper id="kontakt-kleve" dark>
             <div className="nv-container text-center">
-                <p className="text-accent text-xs font-semibold tracking-widest uppercase mb-4">
+                <p className="text-accent-text text-xs font-semibold tracking-widest uppercase mb-4">
                     NuVio Labs
                 </p>
                 <h2
@@ -27,7 +27,7 @@ export async function FinalCta() {
                     href="/contact"
                     data-track="primary_cta_click"
                     data-track-location="webdesign-kleve-final-cta"
-                    className="inline-flex items-center rounded-full bg-accent px-8 py-4 text-base font-semibold text-surface transition-all duration-200 hover:bg-[var(--nv-accent-hover)] active:scale-[0.98]"
+                    className="inline-flex items-center rounded-full bg-accent px-8 py-4 text-base font-semibold text-accent-foreground transition-all duration-200 hover:bg-[var(--nv-accent-hover)] active:scale-[0.98]"
                 >
                     {t("cta")}
                 </Link>

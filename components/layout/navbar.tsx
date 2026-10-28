@@ -68,7 +68,7 @@ export function Navbar() {
                     {/* Logo */}
                     <Link
                         href="/"
-                        className="font-heading font-semibold text-[18px] tracking-[-0.02em] text-text-primary hover:text-accent transition-colors"
+                        className="font-heading font-semibold text-[18px] tracking-[-0.02em] text-text-primary hover:text-accent-text transition-colors"
                         onClick={() => setMenuOpen(false)}
                     >
                         {t("brand")}
@@ -85,7 +85,7 @@ export function Navbar() {
                                 className={cn(
                                     "whitespace-nowrap text-sm font-medium transition-colors",
                                     isActive(item.href)
-                                        ? "text-accent"
+                                        ? "text-accent-text"
                                         : "text-text-muted hover:text-text-primary"
                                 )}
                             >
@@ -145,7 +145,7 @@ export function Navbar() {
                                 className={cn(
                                     "block py-4 text-lg font-medium border-b border-border-soft transition-colors",
                                     isActive(item.href)
-                                        ? "text-accent"
+                                        ? "text-accent-text"
                                         : "text-text-primary"
                                 )}
                             >

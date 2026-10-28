@@ -202,7 +202,7 @@ export default async function JournalArticlePage({ params }: { params: Promise<P
                         <div className="mt-16 border-t border-border-soft pt-8">
                             <Link
                                 href="/journal"
-                                className="inline-flex items-center gap-2 text-sm font-medium text-text-muted transition-colors hover:text-accent"
+                                className="inline-flex items-center gap-2 text-sm font-medium text-text-muted transition-colors hover:text-accent-text"
                             >
                                 <ArrowLeft className="h-4 w-4" aria-hidden="true" />
                                 {t("backToIndex")}

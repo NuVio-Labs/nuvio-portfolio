@@ -43,7 +43,7 @@ export function FaqAccordion({ items }: FaqAccordionProps) {
                             <ChevronDown
                                 className={cn(
                                     "h-5 w-5 shrink-0 text-text-muted transition-transform duration-200",
-                                    isOpen && "rotate-180 text-accent"
+                                    isOpen && "rotate-180 text-accent-text"
                                 )}
                             />
                         </button>

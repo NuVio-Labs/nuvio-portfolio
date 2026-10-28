@@ -43,7 +43,7 @@ function Paragraph(props: ComponentPropsWithoutRef<"p">) {
 
 function Anchor({ href = "", children, ...props }: ComponentPropsWithoutRef<"a">) {
     const linkClass =
-        "font-medium text-text-primary underline decoration-accent/50 underline-offset-[3px] transition-colors hover:decoration-accent hover:text-accent"
+        "font-medium text-text-primary underline decoration-accent/50 underline-offset-[3px] transition-colors hover:decoration-accent hover:text-accent-text"
 
     /* Interne Ziele ueber next-intl, damit das Sprachpraefix erhalten bleibt. */
     if (href.startsWith("/")) {
@@ -73,7 +73,7 @@ function UnorderedList(props: ComponentPropsWithoutRef<"ul">) {
     return (
         <ul
             {...props}
-            className="my-6 list-disc space-y-2 pl-6 text-[1.0625rem] leading-[1.8] text-text-secondary marker:text-accent"
+            className="my-6 list-disc space-y-2 pl-6 text-[1.0625rem] leading-[1.8] text-text-secondary marker:text-accent-text"
         />
     )
 }

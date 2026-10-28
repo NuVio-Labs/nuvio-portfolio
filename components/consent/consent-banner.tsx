@@ -49,7 +49,7 @@ export function ConsentBanner() {
                     <button
                         type="button"
                         onClick={openSettings}
-                        className="inline-flex items-center justify-center px-2 py-3 text-sm font-medium text-text-secondary underline decoration-border-strong underline-offset-4 transition-colors hover:text-accent"
+                        className="inline-flex items-center justify-center px-2 py-3 text-sm font-medium text-text-secondary underline decoration-border-strong underline-offset-4 transition-colors hover:text-accent-text"
                     >
                         {t("settings")}
                     </button>
@@ -57,7 +57,7 @@ export function ConsentBanner() {
                         type="button"
                         onClick={rejectOptional}
                         data-consent-choice="essential"
-                        className="inline-flex items-center justify-center rounded-full border border-border-strong px-6 py-3 text-sm font-semibold text-text-primary transition-all duration-200 hover:border-accent/50 hover:text-accent active:scale-[0.98]"
+                        className="inline-flex items-center justify-center rounded-full border border-border-strong px-6 py-3 text-sm font-semibold text-text-primary transition-all duration-200 hover:border-accent/50 hover:text-accent-text active:scale-[0.98]"
                     >
                         {t("rejectOptional")}
                     </button>
@@ -65,7 +65,7 @@ export function ConsentBanner() {
                         type="button"
                         onClick={acceptAll}
                         data-consent-choice="all"
-                        className="inline-flex items-center justify-center rounded-full bg-accent px-6 py-3 text-sm font-semibold text-surface transition-all duration-200 hover:bg-[var(--nv-accent-hover)] active:scale-[0.98]"
+                        className="inline-flex items-center justify-center rounded-full bg-accent px-6 py-3 text-sm font-semibold text-accent-foreground transition-all duration-200 hover:bg-[var(--nv-accent-hover)] active:scale-[0.98]"
                     >
                         {t("acceptAll")}
                     </button>

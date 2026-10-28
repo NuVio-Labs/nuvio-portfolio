@@ -162,14 +162,14 @@ export function ConsentDialog() {
                     <button
                         type="button"
                         onClick={() => savePreferences(analyticsDraft)}
-                        className="inline-flex flex-1 items-center justify-center rounded-full bg-accent px-6 py-3 text-sm font-semibold text-surface transition-all duration-200 hover:bg-[var(--nv-accent-hover)] active:scale-[0.98]"
+                        className="inline-flex flex-1 items-center justify-center rounded-full bg-accent px-6 py-3 text-sm font-semibold text-accent-foreground transition-all duration-200 hover:bg-[var(--nv-accent-hover)] active:scale-[0.98]"
                     >
                         {t("save")}
                     </button>
                     <button
                         type="button"
                         onClick={acceptAll}
-                        className="inline-flex flex-1 items-center justify-center rounded-full border border-border-strong px-6 py-3 text-sm font-semibold text-text-primary transition-all duration-200 hover:border-accent/50 hover:text-accent active:scale-[0.98]"
+                        className="inline-flex flex-1 items-center justify-center rounded-full border border-border-strong px-6 py-3 text-sm font-semibold text-text-primary transition-all duration-200 hover:border-accent/50 hover:text-accent-text active:scale-[0.98]"
                     >
                         {t("acceptAll")}
                     </button>

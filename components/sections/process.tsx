@@ -10,7 +10,7 @@ export async function Process() {
         <SectionWrapper id="process">
             <div className="nv-container">
                 <div className="max-w-xl mb-12 md:mb-16">
-                    <p className="text-accent text-xs font-semibold tracking-widest uppercase mb-4">
+                    <p className="text-accent-text text-xs font-semibold tracking-widest uppercase mb-4">
                         {t("eyebrow")}
                     </p>
                     <h2
@@ -36,7 +36,7 @@ export async function Process() {
                             )}
 
                             <div className="flex items-center gap-3 mb-4">
-                                <span className="flex h-9 w-9 items-center justify-center rounded-full border border-accent/40 bg-accent-soft text-accent text-sm font-semibold shrink-0">
+                                <span className="flex h-9 w-9 items-center justify-center rounded-full border border-accent/40 bg-accent-soft text-accent-text text-sm font-semibold shrink-0">
                                     {t(`steps.${key}.number`)}
                                 </span>
                             </div>

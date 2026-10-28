@@ -13,7 +13,7 @@ export function CookieSettingsLink() {
     const { openSettings } = useConsent()
 
     return (
-        <button type="button" onClick={openSettings} className="hover:text-accent transition-colors">
+        <button type="button" onClick={openSettings} className="hover:text-accent-text transition-colors">
             {t("footerLink")}
         </button>
     )
