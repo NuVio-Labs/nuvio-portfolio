@@ -1,4 +1,3 @@
-import { useTranslations } from "next-intl"
 import { Container } from "@/components/layout/container"
 import { ScrollAnimation } from "@/components/ui/scroll-animation"
 import { getTranslations, setRequestLocale } from "next-intl/server"
@@ -18,9 +17,10 @@ export async function generateMetadata({ params }: { params: Promise<{ locale: s
     })
 }
 
-export default function ResearchPage({ params: { locale } }: { params: { locale: string } }) {
+export default async function ResearchPage({ params }: { params: Promise<{ locale: string }> }) {
+    const { locale } = await params
     setRequestLocale(locale)
-    const t = useTranslations("lab")
+    const t = await getTranslations("lab")
 
     return (
         <div className="flex flex-col min-h-screen">

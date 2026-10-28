@@ -275,6 +275,15 @@
   }
 }
 
+/*
+ * Cookie-Banner ausblenden, sobald eine Entscheidung vorliegt. Das Attribut
+ * setzt CONSENT_BOOTSTRAP_SCRIPT (lib/consent.ts) noch vor der Hydration,
+ * React entfernt den Banner danach regulaer.
+ */
+html[data-consent="decided"] [data-consent-banner] {
+  display: none;
+}
+
 /* ─── Accordion (shadcn compat) ─── */
 @keyframes accordion-down {
   from { height: 0; }

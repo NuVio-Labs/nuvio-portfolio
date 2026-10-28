@@ -31,6 +31,36 @@ function isBrowser(): boolean {
     return typeof window !== "undefined"
 }
 
+/**
+ * Attribut auf <html>, sobald eine Entscheidung vorliegt. app/globals.css
+ * blendet den Banner damit aus, auch bevor React hydriert hat.
+ */
+const DECIDED_ATTRIBUTE = "data-consent"
+const DECIDED_VALUE = "decided"
+
+/**
+ * Inline-Script fuer app/[locale]/layout.tsx, steht im HTML vor dem Banner.
+ *
+ * Der Banner kommt mit dem Server-HTML (getServerSnapshot kennt keine
+ * Entscheidung) und ist damit sichtbar, bevor React hydriert hat. Auf
+ * langsamen Handys vergeht bis dahin ueber eine Sekunde: Taps bewirken
+ * nichts, und wiederkehrende Besucher sehen den Banner kurz aufblitzen.
+ * Das Script schliesst beide Luecken ohne React:
+ * - gespeicherte Entscheidung -> Attribut setzen, Banner bleibt unsichtbar
+ * - Klick auf einen [data-consent-choice]-Button -> dieselbe Entscheidung
+ *   speichern wie setConsent() und den Banner sofort ausblenden. Nach der
+ *   Hydration schreibt Reacts eigener Handler denselben Wert noch einmal,
+ *   das ist bewusst idempotent.
+ * Schluessel, Version und Format muessen zu parseConsent()/setConsent() passen.
+ */
+export const CONSENT_BOOTSTRAP_SCRIPT = `(function(){var d=document.documentElement,k=${JSON.stringify(CONSENT_STORAGE_KEY)},v=${CONSENT_VERSION};function m(){d.setAttribute(${JSON.stringify(DECIDED_ATTRIBUTE)},${JSON.stringify(DECIDED_VALUE)})}try{var c=JSON.parse(localStorage.getItem(k));if(c&&c.version===v&&typeof c.analytics==="boolean")m()}catch(e){}document.addEventListener("click",function(e){var b=e.target&&e.target.closest&&e.target.closest("[data-consent-choice]");if(!b)return;try{localStorage.setItem(k,JSON.stringify({analytics:b.getAttribute("data-consent-choice")==="all",version:v}))}catch(e){}m()})})()`
+
+function syncDecidedAttribute(decided: boolean): void {
+    if (!isBrowser()) return
+    if (decided) document.documentElement.setAttribute(DECIDED_ATTRIBUTE, DECIDED_VALUE)
+    else document.documentElement.removeAttribute(DECIDED_ATTRIBUTE)
+}
+
 function parseConsent(raw: string | null): ConsentPreferences | null {
     if (!raw) return null
     try {
@@ -117,6 +147,7 @@ export function setConsent(preferences: { analytics: boolean }): ConsentPreferen
             /* localStorage gesperrt (z. B. strikter privater Modus) — die Entscheidung gilt dann nur fuer diese Seitenansicht. */
         }
     }
+    syncDecidedAttribute(true)
     // Cache invalidieren und Abonnenten (useSyncExternalStore) benachrichtigen —
     // das native "storage"-Event feuert nur in ANDEREN Tabs, nicht im eigenen.
     cacheInitialized = false
@@ -132,6 +163,7 @@ export function clearConsent(): void {
     } catch {
         /* siehe oben */
     }
+    syncDecidedAttribute(false)
     cacheInitialized = false
     notifyListeners()
 }

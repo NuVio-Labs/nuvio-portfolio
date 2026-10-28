@@ -11,7 +11,11 @@ import { disableGoogleAnalytics, initGoogleAnalytics, isGoogleAnalyticsConfigure
  *
  * - analytics=true  -> gtag.js laden (einmalig; Pageview der aktuellen Seite
  *                      kommt aus `config`, Folge-Navigationen erfasst GA4
- *                      selbst ueber Browserverlaufsereignisse)
+ *                      selbst ueber Browserverlaufsereignisse). Erst nach
+ *                      dem load-Event und im Leerlauf des Browsers: gtag.js
+ *                      (~200 KB) blockierte auf Handys sonst ~0,7 s genau
+ *                      dann den Main-Thread, wenn die Seite noch hochfaehrt
+ *                      bzw. direkt nach dem Tap auf "Alle akzeptieren".
  * - analytics=false -> Opt-out-Flag + GA-Cookies entfernen (Widerruf, oder
  *                      Aufraeumen von Resten frueherer Sitzungen). Lief
  *                      gtag.js schon, wird der Tab neu geladen — aber nur
@@ -42,11 +46,34 @@ export function GoogleAnalytics() {
     useEffect(() => {
         if (decision === null || !isGoogleAnalyticsConfigured()) return
         if (decision) {
-            initGoogleAnalytics()
-        } else {
-            disableGoogleAnalytics({ reloadIfLoaded: document.hasFocus() })
+            return whenIdle(initGoogleAnalytics)
         }
+        disableGoogleAnalytics({ reloadIfLoaded: document.hasFocus() })
     }, [decision])
 
     return null
+}
+
+/** Ruft `callback` nach dem load-Event im naechsten Leerlauf auf. Liefert eine Abbruchfunktion. */
+function whenIdle(callback: () => void): () => void {
+    let idleId: number | undefined
+    let timeoutId: ReturnType<typeof setTimeout> | undefined
+
+    function schedule() {
+        // Safari kennt requestIdleCallback nicht.
+        if (typeof window.requestIdleCallback === "function") {
+            idleId = window.requestIdleCallback(callback, { timeout: 2000 })
+        } else {
+            timeoutId = setTimeout(callback, 200)
+        }
+    }
+
+    if (document.readyState === "complete") schedule()
+    else window.addEventListener("load", schedule, { once: true })
+
+    return () => {
+        window.removeEventListener("load", schedule)
+        if (idleId !== undefined) window.cancelIdleCallback(idleId)
+        if (timeoutId !== undefined) clearTimeout(timeoutId)
+    }
 }

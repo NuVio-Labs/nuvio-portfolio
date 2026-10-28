@@ -5,6 +5,7 @@ import { SpeedInsights } from "@vercel/speed-insights/next";
 import { NextIntlClientProvider } from "next-intl";
 import { getMessages, getTranslations, setRequestLocale } from "next-intl/server";
 import { routing } from "@/i18n/routing";
+import { pickClientMessages } from "@/i18n/client-messages";
 import { ThemeProvider } from "@/components/theme-provider";
 import { Navbar } from "@/components/layout/navbar";
 import { Footer } from "@/components/layout/footer";
@@ -14,6 +15,7 @@ import { VercelAnalytics } from "@/components/analytics/vercel-analytics";
 import { ConsentProvider } from "@/components/consent/consent-provider";
 import { ConsentBanner } from "@/components/consent/consent-banner";
 import { ConsentDialog } from "@/components/consent/consent-dialog";
+import { CONSENT_BOOTSTRAP_SCRIPT } from "@/lib/consent";
 import { SITE_URL } from "@/lib/site";
 import { buildAlternates } from "@/lib/seo";
 import { cn } from "@/lib/utils";
@@ -128,6 +130,8 @@ export default async function LocaleLayout({
                     fontFamily: "var(--font-geist), system-ui, sans-serif",
                 }}
             >
+                {/* Muss vor dem Banner im HTML stehen, siehe lib/consent.ts */}
+                <script dangerouslySetInnerHTML={{ __html: CONSENT_BOOTSTRAP_SCRIPT }} />
                 {/* Skip-to-content link */}
                 <a
                     href="#main-content"
@@ -135,7 +139,7 @@ export default async function LocaleLayout({
                 >
                     {t("skipToContent")}
                 </a>
-                <NextIntlClientProvider messages={messages}>
+                <NextIntlClientProvider messages={pickClientMessages(messages)}>
                     <ThemeProvider
                         attribute="class"
                         defaultTheme="light"

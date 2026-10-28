@@ -10,6 +10,11 @@ import { useConsent } from "./consent-provider"
  * Pill-Buttons (nur Fuellung vs. Outline unterscheidet Primary/Secondary,
  * dasselbe Muster wie jedes andere CTA-Paar auf dieser Website) — keines
  * davon ist kleiner, unauffaelliger oder schwerer erreichbar als das andere.
+ *
+ * `data-consent-banner` und `data-consent-choice` sind die Anker fuer
+ * CONSENT_BOOTSTRAP_SCRIPT (lib/consent.ts): darueber reagieren beide
+ * Buttons schon vor der Hydration, und eine gespeicherte Entscheidung
+ * blendet den Banner per CSS aus, ohne dass er aufblitzt.
  */
 export function ConsentBanner() {
     const t = useTranslations("consent")
@@ -29,6 +34,7 @@ export function ConsentBanner() {
             // sichtbar ist ohnehin nichts davon, der Dialog-Hintergrund
             // deckt die Banner-Position vollstaendig ab.
             inert={isSettingsOpen}
+            data-consent-banner=""
             className="fixed inset-x-0 bottom-0 z-[100] border-t border-border-soft bg-surface/95 backdrop-blur-xl shadow-[0_-8px_30px_rgba(0,0,0,0.08)]"
         >
             <div className="nv-container flex flex-col gap-4 py-5 sm:flex-row sm:items-center sm:justify-between sm:gap-8 sm:py-6">
@@ -48,6 +54,7 @@ export function ConsentBanner() {
                     <button
                         type="button"
                         onClick={rejectOptional}
+                        data-consent-choice="essential"
                         className="inline-flex items-center justify-center rounded-full border border-border-strong px-6 py-3 text-sm font-semibold text-text-primary transition-all duration-200 hover:border-accent/50 hover:text-accent active:scale-[0.98]"
                     >
                         {t("rejectOptional")}
@@ -55,6 +62,7 @@ export function ConsentBanner() {
                     <button
                         type="button"
                         onClick={acceptAll}
+                        data-consent-choice="all"
                         className="inline-flex items-center justify-center rounded-full bg-accent px-6 py-3 text-sm font-semibold text-surface transition-all duration-200 hover:bg-[var(--nv-accent-hover)] active:scale-[0.98]"
                     >
                         {t("acceptAll")}
