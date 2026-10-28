@@ -36,10 +36,14 @@ export async function Hero() {
             id="home"
             className="relative min-h-[100svh] overflow-hidden bg-background text-text-primary"
         >
-            {/* Gold-Funkeln. Die frueheren Blur-Glows waren unsichtbar (bg-accent/NN
-                wird nicht erzeugt, siehe tailwind.config.ts) und kosteten auf dem
-                Handy trotzdem den vollen Blur-Filter. */}
+            {/* Gold-Schein (nv-glow: Radial-Gradient statt blur()) und Funkeln. Oben in rem
+                statt Prozent verankert: Prozent haengt an der Section-Hoehe und
+                verschiebt den Schein beim Laden (CLS). */}
             <div className="pointer-events-none absolute inset-0">
+                <div className="nv-glow absolute right-[-8rem] top-[9rem] h-[28rem] w-[28rem] scale-[1.9] [--glow-strength:7%]" />
+                <div className="nv-glow absolute bottom-[-8rem] right-[5%] h-[26rem] w-[26rem] scale-[1.9] [--glow-strength:6%]" />
+                <div className="nv-glow absolute left-[-12rem] top-[10rem] h-[24rem] w-[24rem] scale-[1.9] [--glow-strength:4%]" />
+
                 {sparkles.map((sparkle) => (
                     <span
                         key={`${sparkle.top}-${sparkle.left}`}
@@ -127,45 +131,53 @@ export async function Hero() {
                         className="hero-reveal relative h-[500px] w-full sm:h-[540px] lg:h-[620px] xl:h-[660px]"
                         style={{ animationDelay: "0.15s" }}
                     >
-                        {/* Main browser mockup. Die fruehere 3D-Drehung (Inline-transform)
-                            war nie sichtbar: hero-reveal animiert ebenfalls transform und
-                            haelt per "forwards" translate3d(0,0,0). */}
+                        <div className="nv-glow absolute inset-x-[8%] bottom-[15%] h-24 scale-x-[1.2] scale-y-[3] [--glow-strength:10%]" />
+                        <div className="nv-glow absolute right-[6%] top-[18%] h-[18rem] w-[18rem] scale-[1.9] [--glow-strength:7%]" />
+
+                        {/* Main browser mockup. Die Neigung sitzt auf dem inneren
+                            Element: hero-reveal animiert transform selbst und wuerde
+                            sie per "forwards" ueberschreiben. Erst ab lg, auf dem
+                            Handy bleibt das Mockup flach. */}
                         <div
                             className="hero-reveal absolute left-[4%] top-[8%] w-[90%] max-w-[860px]"
                             style={{ animationDelay: "0.25s" }}
                         >
-                            <div className="relative overflow-hidden rounded-[2.2rem] border border-border-soft bg-surface p-3 shadow-xl">
-                                <div className="mb-3 flex items-center gap-3 rounded-[1.35rem] border border-border-soft bg-surface-soft px-5 py-3">
-                                    <div className="flex gap-2">
-                                        <span className="h-2.5 w-2.5 rounded-full bg-border-soft" />
-                                        <span className="h-2.5 w-2.5 rounded-full bg-border-soft" />
-                                        <span className="h-2.5 w-2.5 rounded-full bg-border-soft" />
+                            <div className="relative lg:[transform:perspective(2200px)_rotateY(-18deg)_rotateX(10deg)_rotateZ(-4deg)]">
+                                <div className="nv-glow absolute inset-x-[12%] bottom-[-2.4rem] h-10 scale-x-[1.1] scale-y-[2.2] [--glow-strength:14%]" />
+
+                                <div className="relative overflow-hidden rounded-[2.2rem] border border-border-soft bg-surface p-3 shadow-xl">
+                                    <div className="mb-3 flex items-center gap-3 rounded-[1.35rem] border border-border-soft bg-surface-soft px-5 py-3">
+                                        <div className="flex gap-2">
+                                            <span className="h-2.5 w-2.5 rounded-full bg-border-soft" />
+                                            <span className="h-2.5 w-2.5 rounded-full bg-border-soft" />
+                                            <span className="h-2.5 w-2.5 rounded-full bg-border-soft" />
+                                        </div>
+                                        <div className="ml-2 h-7 flex-1 rounded-full border border-border-soft bg-background" />
+                                        <div className="w-10 text-right text-[10px] uppercase tracking-[0.18em] text-text-muted">
+                                            .de
+                                        </div>
                                     </div>
-                                    <div className="ml-2 h-7 flex-1 rounded-full border border-border-soft bg-background" />
-                                    <div className="w-10 text-right text-[10px] uppercase tracking-[0.18em] text-text-muted">
-                                        .de
+
+                                    <div className="relative aspect-[16/10] overflow-hidden rounded-[1.7rem] border border-border-soft bg-surface-soft">
+                                        <Image
+                                            src="/behr.webp"
+                                            alt=""
+                                            fill
+                                            priority
+                                            sizes="(min-width: 1280px) 48vw, (min-width: 1024px) 55vw, 92vw"
+                                            className="object-cover object-top opacity-[0.92]"
+                                        />
                                     </div>
                                 </div>
 
-                                <div className="relative aspect-[16/10] overflow-hidden rounded-[1.7rem] border border-border-soft bg-surface-soft">
-                                    <Image
-                                        src="/behr.webp"
-                                        alt=""
-                                        fill
-                                        priority
-                                        sizes="(min-width: 1280px) 48vw, (min-width: 1024px) 55vw, 92vw"
-                                        className="object-cover object-top opacity-[0.92]"
-                                    />
-                                </div>
+                                <div className="absolute left-[14%] right-[9%] top-[100%] h-5 rounded-b-[2rem] bg-surface-soft shadow-md" />
+                                <div className="absolute left-[31%] right-[27%] top-[calc(100%+0.55rem)] h-1 rounded-full bg-border-soft" />
                             </div>
-
-                            <div className="absolute left-[14%] right-[9%] top-[100%] h-5 rounded-b-[2rem] bg-surface-soft shadow-md" />
-                            <div className="absolute left-[31%] right-[27%] top-[calc(100%+0.55rem)] h-1 rounded-full bg-border-soft" />
                         </div>
 
                         {/* Performance card */}
                         <div
-                            className="hero-float absolute right-[-3%] top-[8%] hidden w-[260px] rounded-[1.7rem] border border-border-soft bg-surface p-5 shadow-lg backdrop-blur-2xl lg:block"
+                            className="hero-float absolute right-[-3%] top-[8%] hidden w-[260px] rounded-[1.7rem] border border-border-soft bg-surface p-5 shadow-lg lg:block"
                             style={
                                 {
                                     "--float-duration": "8s",
@@ -206,7 +218,7 @@ export async function Hero() {
 
                         {/* Optimized card */}
                         <div
-                            className="hero-float absolute right-[-3%] top-[52%] hidden w-[260px] rounded-[1.7rem] border border-border-soft bg-surface p-5 shadow-lg backdrop-blur-2xl lg:block"
+                            className="hero-float absolute right-[-3%] top-[52%] hidden w-[260px] rounded-[1.7rem] border border-border-soft bg-surface p-5 shadow-lg lg:block"
                             style={
                                 {
                                     "--float-duration": "9.4s",
@@ -232,7 +244,7 @@ export async function Hero() {
 
                         {/* Slots card */}
                         <div
-                            className="hero-float absolute bottom-[2%] right-[8%] hidden w-[320px] rounded-[1.7rem] border border-border-soft bg-surface px-6 py-5 shadow-lg backdrop-blur-2xl lg:block"
+                            className="hero-float absolute bottom-[2%] right-[8%] hidden w-[320px] rounded-[1.7rem] border border-border-soft bg-surface px-6 py-5 shadow-lg lg:block"
                             style={
                                 {
                                     "--float-duration": "10s",
