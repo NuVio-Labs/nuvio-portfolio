@@ -5,6 +5,7 @@ import { SpeedInsights } from "@vercel/speed-insights/next";
 import { NextIntlClientProvider } from "next-intl";
 import { getMessages, getTranslations, setRequestLocale } from "next-intl/server";
 import { routing } from "@/i18n/routing";
+import { pickClientMessages } from "@/i18n/client-messages";
 import { ThemeProvider } from "@/components/theme-provider";
 import { Navbar } from "@/components/layout/navbar";
 import { Footer } from "@/components/layout/footer";
@@ -138,7 +139,7 @@ export default async function LocaleLayout({
                 >
                     {t("skipToContent")}
                 </a>
-                <NextIntlClientProvider messages={messages}>
+                <NextIntlClientProvider messages={pickClientMessages(messages)}>
                     <ThemeProvider
                         attribute="class"
                         defaultTheme="light"
