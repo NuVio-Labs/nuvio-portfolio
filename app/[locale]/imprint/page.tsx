@@ -1,4 +1,3 @@
-import { useTranslations } from "next-intl"
 import { Container } from "@/components/layout/container"
 import { getTranslations, setRequestLocale } from "next-intl/server"
 import { routing } from "@/i18n/routing"
@@ -16,9 +15,10 @@ export async function generateMetadata({ params }: { params: Promise<{ locale: s
     })
 }
 
-export default function ImprintPage({ params: { locale } }: { params: { locale: string } }) {
+export default async function ImprintPage({ params }: { params: Promise<{ locale: string }> }) {
+    const { locale } = await params
     setRequestLocale(locale)
-    const t = useTranslations("legal.imprint")
+    const t = await getTranslations("legal.imprint")
 
     return (
         <div className="flex flex-col min-h-screen">
