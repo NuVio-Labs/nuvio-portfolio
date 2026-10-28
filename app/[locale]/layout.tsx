@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Geist, Geist_Mono } from "next/font/google";
+import { Geist } from "next/font/google";
 import { notFound } from "next/navigation";
 import { SpeedInsights } from "@vercel/speed-insights/next";
 import { NextIntlClientProvider } from "next-intl";
@@ -24,12 +24,11 @@ const geist = Geist({
     subsets: ["latin"],
     display: "swap",
     variable: "--font-geist",
-});
-
-const geistMono = Geist_Mono({
-    subsets: ["latin"],
-    display: "swap",
-    variable: "--font-geist-mono",
+    // Ein vorgeladener Webfont haelt in Chrome den ersten Paint zurueck,
+    // bis er da ist (gemessen ~0,4 s auf dem Handy, trotz "swap"). Ohne
+    // Preload steht der Text sofort in der metrisch angeglichenen
+    // Ersatzschrift und wechselt ohne Layoutsprung zu Geist.
+    preload: false,
 });
 
 type Params = { locale: string };
@@ -123,7 +122,6 @@ export default async function LocaleLayout({
             <body
                 className={cn(
                     geist.variable,
-                    geistMono.variable,
                     "min-h-screen bg-background antialiased"
                 )}
                 style={{
