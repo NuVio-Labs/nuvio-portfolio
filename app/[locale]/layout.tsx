@@ -14,6 +14,7 @@ import { VercelAnalytics } from "@/components/analytics/vercel-analytics";
 import { ConsentProvider } from "@/components/consent/consent-provider";
 import { ConsentBanner } from "@/components/consent/consent-banner";
 import { ConsentDialog } from "@/components/consent/consent-dialog";
+import { CONSENT_BOOTSTRAP_SCRIPT } from "@/lib/consent";
 import { SITE_URL } from "@/lib/site";
 import { buildAlternates } from "@/lib/seo";
 import { cn } from "@/lib/utils";
@@ -128,6 +129,8 @@ export default async function LocaleLayout({
                     fontFamily: "var(--font-geist), system-ui, sans-serif",
                 }}
             >
+                {/* Muss vor dem Banner im HTML stehen, siehe lib/consent.ts */}
+                <script dangerouslySetInnerHTML={{ __html: CONSENT_BOOTSTRAP_SCRIPT }} />
                 {/* Skip-to-content link */}
                 <a
                     href="#main-content"
