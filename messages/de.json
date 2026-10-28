@@ -115,7 +115,7 @@
         "sectionSubtitle": "Ausgewählte Projekte. Vom Briefing bis zum Launch.",
         "previewBadge": "Live-Vorschau",
         "visitSite": "Live ansehen",
-        "visitSiteLabel": "{title} besuchen öffnet in neuem Tab",
+        "visitSiteLabel": "Live ansehen: {title} (öffnet in neuem Tab)",
         "previewLoading": "Vorschau wird geladen…",
         "previewAlt": "Screenshot von {title}",
         "previewDesktopTitle": "Desktop-Vorschau von {title}",

@@ -115,7 +115,7 @@
         "sectionSubtitle": "Geselecteerde projecten. Van briefing tot livegang.",
         "previewBadge": "Live-preview",
         "visitSite": "Bekijk live",
-        "visitSiteLabel": "Bezoek {title} (opent in nieuw tabblad)",
+        "visitSiteLabel": "Bekijk live: {title} (opent in nieuw tabblad)",
         "previewLoading": "Voorbeeld laden…",
         "previewAlt": "Screenshot van {title}",
         "previewDesktopTitle": "Live desktopweergave van {title}",

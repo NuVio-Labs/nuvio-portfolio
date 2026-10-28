@@ -1,7 +1,7 @@
 "use client"
 
-import { useState, useRef, useEffect } from "react"
-import { useLocale } from "next-intl"
+import { useState, useRef, useEffect, useId } from "react"
+import { useLocale, useTranslations } from "next-intl"
 import { usePathname, useRouter } from "next/navigation"
 import { routing } from "@/i18n/routing"
 import { resolveLocaleSwitchPath } from "@/i18n/locale-routes"
@@ -26,6 +26,8 @@ function persistLocaleCookie(newLocale: string) {
 
 export function LanguageSwitcher() {
     const locale = useLocale()
+    const t = useTranslations("nav")
+    const menuId = useId()
     const pathname = usePathname()
     const router = useRouter()
     const [isOpen, setIsOpen] = useState(false)
@@ -37,8 +39,15 @@ export function LanguageSwitcher() {
                 setIsOpen(false)
             }
         }
+        function handleEscape(event: KeyboardEvent) {
+            if (event.key === "Escape") setIsOpen(false)
+        }
         document.addEventListener("mousedown", handleClickOutside)
-        return () => document.removeEventListener("mousedown", handleClickOutside)
+        document.addEventListener("keydown", handleEscape)
+        return () => {
+            document.removeEventListener("mousedown", handleClickOutside)
+            document.removeEventListener("keydown", handleEscape)
+        }
     }, [])
 
     function switchLocale(newLocale: string) {
@@ -67,42 +76,50 @@ export function LanguageSwitcher() {
                     "flex items-center gap-1.5 min-h-[44px] px-3 rounded-md text-sm font-medium transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring hover:bg-secondary/50",
                     isOpen ? "bg-secondary text-foreground" : "text-muted-foreground hover:text-foreground"
                 )}
-                aria-haspopup="listbox"
                 aria-expanded={isOpen}
-                aria-label={`Select language (Current: ${localeLabels[locale]})`}
+                aria-controls={menuId}
             >
+                {/* Zugaenglicher Name "Sprache wechseln: DE" enthaelt den sichtbaren
+                    Text, so wie es Screenreader und KI-Agenten erwarten. */}
+                <span className="sr-only">{t("switchLanguage")}: </span>
                 <span className="uppercase">{localeCodes[locale]}</span>
-                <ChevronDown className={cn("h-4 w-4 transition-transform duration-200", isOpen && "rotate-180")} />
+                <ChevronDown aria-hidden="true" className={cn("h-4 w-4 transition-transform duration-200", isOpen && "rotate-180")} />
             </button>
 
+            {/* Ausklapp-Menue (Disclosure-Muster): einfache Buttons statt
+                listbox/option. Zugeklappt per "invisible" komplett aus dem
+                Accessibility-Baum, damit niemand unsichtbare Optionen findet. */}
             <div
+                id={menuId}
                 className={cn(
                     "absolute right-0 mt-2 w-44 rounded-xl border border-border-soft bg-surface/95 backdrop-blur-xl shadow-xl overflow-hidden z-[100]",
                     "transition-all duration-150 ease-out origin-top-right",
                     isOpen
-                        ? "opacity-100 scale-100 translate-y-0 pointer-events-auto"
-                        : "opacity-0 scale-95 translate-y-2 pointer-events-none"
+                        ? "visible opacity-100 scale-100 translate-y-0 pointer-events-auto"
+                        : "invisible opacity-0 scale-95 translate-y-2 pointer-events-none"
                 )}
             >
-                <div className="p-1" role="listbox">
+                <ul className="p-1" aria-label={t("switchLanguage")}>
                     {routing.locales.map((loc) => (
-                        <button
-                            key={loc}
-                            onClick={() => switchLocale(loc)}
-                            className={cn(
-                                "w-full flex items-center justify-between px-3 py-2.5 text-sm rounded-md transition-colors text-left",
-                                loc === locale
-                                    ? "text-accent font-semibold"
-                                    : "text-text-muted hover:text-text-primary hover:bg-surface-soft"
-                            )}
-                            role="option"
-                            aria-selected={loc === locale}
-                        >
-                            <span>{localeLabels[loc]}</span>
-                            {loc === locale && <Check className="h-4 w-4" />}
-                        </button>
+                        <li key={loc}>
+                            <button
+                                type="button"
+                                lang={loc}
+                                onClick={() => switchLocale(loc)}
+                                className={cn(
+                                    "w-full flex items-center justify-between px-3 py-2.5 text-sm rounded-md transition-colors text-left",
+                                    loc === locale
+                                        ? "text-accent-text font-semibold"
+                                        : "text-text-muted hover:text-text-primary hover:bg-surface-soft"
+                                )}
+                                aria-current={loc === locale ? "true" : undefined}
+                            >
+                                <span>{localeLabels[loc]}</span>
+                                {loc === locale && <Check aria-hidden="true" className="h-4 w-4" />}
+                            </button>
+                        </li>
                     ))}
-                </div>
+                </ul>
             </div>
         </div>
     )

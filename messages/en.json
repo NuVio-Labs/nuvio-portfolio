@@ -115,7 +115,7 @@
         "sectionSubtitle": "Selected projects. From brief to launch.",
         "previewBadge": "Live Preview",
         "visitSite": "View live",
-        "visitSiteLabel": "Visit {title} (opens in a new tab)",
+        "visitSiteLabel": "View live: {title} (opens in a new tab)",
         "previewLoading": "Loading preview…",
         "previewAlt": "{title} screenshot",
         "previewDesktopTitle": "Live desktop preview of {title}",
