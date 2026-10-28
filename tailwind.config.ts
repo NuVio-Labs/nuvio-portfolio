@@ -40,6 +40,7 @@ const config: Config = {
         accent:           token("accent"),
         "accent-soft":    token("accent-soft"),
         "accent-text":    token("accent-text"),
+        "accent-foreground": token("accent-foreground"),
         "border-soft":    token("border-soft"),
         "border-subtle":  token("border-subtle"),
         "border-strong":  token("border-strong"),

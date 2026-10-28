@@ -10,8 +10,7 @@ interface ScrollAnimationProps {
 /**
  * Sanfte Eintritts-Animation fuer Sektionsinhalte.
  *
- * Rein CSS-basiert (".nv-reveal" in globals.css, analog zum bestehenden
- * ".hero-reveal"-Muster) statt IntersectionObserver + React-State: der
+ * Rein CSS-basiert (".nv-reveal" in globals.css) statt IntersectionObserver + React-State: der
  * Inhalt steht damit unveraendert im initialen HTML und ist ohne
  * JavaScript sowie unabhaengig von Scroll-Position sofort vorhanden. Die
  * Animation laeuft automatisch beim Mount ab und endet garantiert bei

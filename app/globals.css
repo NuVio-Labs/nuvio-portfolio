@@ -32,6 +32,10 @@
      Nur fuer Textfarbe verwenden, nicht fuer Flaechen oder Kanten. */
   --nv-accent-text: #8A6A15;
 
+  /* Schrift auf Gold-Flaechen (Buttons). Weiss auf --nv-accent kommt nur
+     auf ~2.6:1, Fast-Schwarz auf 7.5:1. In beiden Modi gleich. */
+  --nv-accent-foreground: #111111;
+
   /* Semantic aliases used by Tailwind */
   --background:   var(--nv-bg);
   --foreground:   var(--nv-text-primary);
@@ -69,6 +73,7 @@
 
   /* Dark: das regulaere Gold erreicht hier bereits 10.8:1. */
   --nv-accent-text: var(--nv-accent);
+  --nv-accent-foreground: #111111;
 
   --background: var(--nv-bg);
   --foreground: var(--nv-text-primary);
@@ -229,37 +234,15 @@
   }
 }
 
-/* ─── Hero Animations ─── */
-@keyframes heroReveal {
-  from { opacity: 0; transform: translate3d(0, 24px, 0); }
-  to   { opacity: 1; transform: translate3d(0, 0, 0); }
+/* ─── Hero-Projektleiste ───
+   Wischleiste auf dem Handy (components/sections/hero.tsx). Die Scrollbar
+   wird ausgeblendet, das angeschnittene naechste Bild zeigt das Wischen an. */
+.nv-scroll-strip {
+  scrollbar-width: none;
+  -webkit-overflow-scrolling: touch;
 }
-
-@keyframes heroFloat {
-  0%, 100% { transform: translate3d(0, 0, 0); }
-  50%       { transform: translate3d(var(--float-x, 0px), var(--float-y, -8px), 0); }
-}
-
-@keyframes heroSparkle {
-  0%, 100% { opacity: calc(var(--sparkle-opacity, 0.35) * 0.45); }
-  50%       { opacity: var(--sparkle-opacity, 0.35); }
-}
-
-.hero-reveal {
-  opacity: 0;
-  animation: heroReveal 0.8s cubic-bezier(0.22, 1, 0.36, 1) forwards;
-  /* Kein will-change: die Animation laeuft einmal; ein dauerhaft
-     reservierter Layer kostet auf dem Handy nur GPU-Speicher. */
-}
-
-.hero-float {
-  animation: heroFloat var(--float-duration, 8s) ease-in-out infinite;
-  will-change: transform;
-}
-
-.hero-sparkle {
-  animation: heroSparkle 4.8s ease-in-out infinite;
-  animation-delay: var(--sparkle-delay, 0s);
+.nv-scroll-strip::-webkit-scrollbar {
+  display: none;
 }
 
 /*
@@ -278,13 +261,11 @@
 .nv-reveal {
   opacity: 0;
   animation: nvReveal 0.5s ease-out var(--reveal-delay, 0s) both;
-  /* Kein will-change, siehe .hero-reveal. */
+  /* Kein will-change: die Animation laeuft einmal; ein dauerhaft
+     reservierter Layer kostet auf dem Handy nur GPU-Speicher. */
 }
 
 @media (prefers-reduced-motion: reduce) {
-  .hero-reveal,
-  .hero-float,
-  .hero-sparkle,
   .nv-reveal {
     animation: none;
     opacity: 1;

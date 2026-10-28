@@ -43,7 +43,7 @@ export function ProjectCard({
     caseStudy,
 }: ProjectCardProps) {
     return (
-        <article className="group bg-surface rounded-2xl overflow-hidden border border-border-soft hover:border-accent/40 hover:shadow-lg transition-all duration-300">
+        <article id={project.id} className="scroll-mt-28 group bg-surface rounded-2xl overflow-hidden border border-border-soft hover:border-accent/40 hover:shadow-lg transition-all duration-300">
             {/* Image / Mockup */}
             <div className="relative aspect-[16/9] bg-surface-soft overflow-hidden">
                 {project.image ? (

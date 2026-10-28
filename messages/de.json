@@ -12,6 +12,17 @@
         "journal": "Journal"
     },
     "hero": {
+        "eyebrowLocal": "Webdesign aus Kranenburg · DE · NL",
+        "sublineWork": "Moderne Unternehmenswebsites mit klarer Struktur und starker Performance. Ein paar davon sehen Sie direkt hier.",
+        "ctaAllProjects": "Alle Projekte",
+        "workStripLabel": "Ausgewählte Projekte",
+        "projectPreviewAlt": "Startseite von {title}",
+        "projectTags": {
+            "jan-behr": "Blog",
+            "daisymays-salon": "Hundesalon",
+            "physio-athlete": "Physiotherapie",
+            "wt-erdbewegungen": "Erdbau"
+        },
         "badge": "Verfügbar für neue Projekte",
         "headlinePart1": "Websites, die Vertrauen schaffen",
         "headlinePart2": "und Anfragen generieren.",

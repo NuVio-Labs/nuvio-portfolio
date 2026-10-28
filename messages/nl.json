@@ -63,6 +63,17 @@
                 "title": "Beschikbaar voor",
                 "status": "nieuwe projecten"
             }
+        },
+        "eyebrowLocal": "Webdesign uit Kranenburg · DE · NL",
+        "sublineWork": "Moderne bedrijfswebsites met een heldere structuur en sterke prestaties. Een paar ervan ziet u hier direct.",
+        "ctaAllProjects": "Alle projecten",
+        "workStripLabel": "Geselecteerde projecten",
+        "projectPreviewAlt": "Homepage van {title}",
+        "projectTags": {
+            "jan-behr": "Blog",
+            "daisymays-salon": "Hondensalon",
+            "physio-athlete": "Fysiotherapie",
+            "wt-erdbewegungen": "Grondwerk"
         }
     },
     "valueProposition": {
