@@ -17,7 +17,7 @@ export async function Faq() {
             <div className="nv-container">
                 <div className="mx-auto max-w-2xl">
                     <div className="mb-12 text-center">
-                        <p className="text-accent text-xs font-semibold tracking-widest uppercase mb-4">
+                        <p className="text-accent-text text-xs font-semibold tracking-widest uppercase mb-4">
                             {t("eyebrow")}
                         </p>
                         <h2

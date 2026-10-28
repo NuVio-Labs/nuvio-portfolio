@@ -19,7 +19,7 @@ export async function Problems() {
         <SectionWrapper id="probleme">
             <div className="nv-container">
                 <div className="mx-auto mb-12 max-w-2xl text-center md:mb-16">
-                    <p className="text-accent text-xs font-semibold tracking-widest uppercase mb-4">
+                    <p className="text-accent-text text-xs font-semibold tracking-widest uppercase mb-4">
                         {t("eyebrow")}
                     </p>
                     <h2

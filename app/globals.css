@@ -10,7 +10,8 @@
   --nv-surface-soft:  #F0EAE0;
   --nv-text-primary:  #111111;
   --nv-text-secondary:#3D3932;
-  --nv-text-muted:    #746D60;
+  /* #6B6458: mind. 4.7:1 auch auf surface-soft/-strong und accent-soft (WCAG AA). */
+  --nv-text-muted:    #6B6458;
   --nv-accent:        #C89A2E;
   --nv-accent-hover:  #B8891F;
   --nv-accent-soft:   #F5E7B8;
@@ -27,10 +28,11 @@
   --nv-surface-strong: #ECE6DA;
   --nv-border-strong:  #D5CDBF;
 
-  /* Gold fuer kleinen Text. --nv-accent (#C89A2E) erreicht auf Cream nur
-     2.35:1 und faellt damit durch WCAG AA; dieser Ton kommt auf 4.6:1.
-     Nur fuer Textfarbe verwenden, nicht fuer Flaechen oder Kanten. */
-  --nv-accent-text: #8A6A15;
+  /* Gold fuer Text. --nv-accent (#C89A2E) erreicht auf Cream nur 2.35:1
+     und faellt durch WCAG AA; dieser Ton kommt auf jeder hellen Flaeche
+     (auch accent-soft) auf mind. 4.8:1. Fuer Textfarbe verwenden, nicht
+     fuer Flaechen, Kanten oder Icons. */
+  --nv-accent-text: #7D5F12;
 
   /* Schrift auf Gold-Flaechen (Buttons). Weiss auf --nv-accent kommt nur
      auf ~2.6:1, Fast-Schwarz auf 7.5:1. In beiden Modi gleich. */
@@ -55,7 +57,8 @@
   --nv-surface-soft:  #1A1A1A;
   --nv-text-primary:  #F5F3EE;
   --nv-text-secondary:#B9B2A3;
-  --nv-text-muted:    #7E786C;
+  /* #948E81: mind. 5.1:1 auf allen dunklen Flaechen (WCAG AA). */
+  --nv-text-muted:    #948E81;
   --nv-accent:        #E0B84A;
   --nv-accent-hover:  #F0C86A;
   --nv-accent-soft:   rgba(224, 184, 74, 0.12);

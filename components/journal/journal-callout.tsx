@@ -25,13 +25,13 @@ const STYLES = {
     },
     tip: {
         edge: "border-l-accent",
-        icon: "text-accent",
+        icon: "text-accent-text",
         label: "text-text-secondary",
     },
     important: {
         edge: "border-l-accent",
-        icon: "text-accent",
-        label: "text-accent",
+        icon: "text-accent-text",
+        label: "text-accent-text",
     },
 } as const
 

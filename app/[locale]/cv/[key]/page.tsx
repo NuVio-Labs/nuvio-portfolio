@@ -151,7 +151,7 @@ export default async function CvPage({
                                                 {href ? (
                                                     <a
                                                         href={href}
-                                                        className="hover:text-accent transition-colors"
+                                                        className="hover:text-accent-text transition-colors"
                                                     >
                                                         {value}
                                                     </a>
@@ -168,14 +168,14 @@ export default async function CvPage({
                                 <a
                                     href={cvDownloads[0].file}
                                     download
-                                    className="inline-flex items-center gap-2 rounded-full bg-accent px-6 py-3 text-sm font-medium text-surface transition-colors hover:bg-[var(--nv-accent-hover)]"
+                                    className="inline-flex items-center gap-2 rounded-full bg-accent px-6 py-3 text-sm font-medium text-accent-foreground transition-colors hover:bg-[var(--nv-accent-hover)]"
                                 >
                                     <Download className="h-4 w-4" aria-hidden="true" />
                                     {t("hero.actions.download")}
                                 </a>
                                 <a
                                     href={cvContact.emailHref}
-                                    className="inline-flex items-center gap-2 rounded-full border border-border-soft px-6 py-3 text-sm font-medium text-text-primary transition-colors hover:border-accent hover:text-accent"
+                                    className="inline-flex items-center gap-2 rounded-full border border-border-soft px-6 py-3 text-sm font-medium text-text-primary transition-colors hover:border-accent hover:text-accent-text"
                                 >
                                     <Mail className="h-4 w-4" aria-hidden="true" />
                                     {t("hero.actions.contact")}
@@ -406,7 +406,7 @@ export default async function CvPage({
                                         aria-hidden="true"
                                     />
                                     <div>
-                                        <h3 className="font-heading font-semibold text-text-primary text-base mb-1 group-hover:text-accent transition-colors">
+                                        <h3 className="font-heading font-semibold text-text-primary text-base mb-1 group-hover:text-accent-text transition-colors">
                                             {t(`downloads.items.${item.id}.title`)}
                                         </h3>
                                         <p className="text-text-muted text-sm leading-relaxed mb-2">
@@ -439,21 +439,21 @@ export default async function CvPage({
                     <div className="flex flex-wrap justify-center gap-3">
                         <a
                             href={cvContact.emailHref}
-                            className="inline-flex items-center gap-2 rounded-full bg-accent px-6 py-3 text-sm font-medium text-surface transition-colors hover:bg-[var(--nv-accent-hover)]"
+                            className="inline-flex items-center gap-2 rounded-full bg-accent px-6 py-3 text-sm font-medium text-accent-foreground transition-colors hover:bg-[var(--nv-accent-hover)]"
                         >
                             <Mail className="h-4 w-4" aria-hidden="true" />
                             {t("contact.mail")}
                         </a>
                         <a
                             href={cvContact.phoneHref}
-                            className="inline-flex items-center gap-2 rounded-full border border-border-soft px-6 py-3 text-sm font-medium text-text-primary transition-colors hover:border-accent hover:text-accent"
+                            className="inline-flex items-center gap-2 rounded-full border border-border-soft px-6 py-3 text-sm font-medium text-text-primary transition-colors hover:border-accent hover:text-accent-text"
                         >
                             <Phone className="h-4 w-4" aria-hidden="true" />
                             {t("contact.phone")}
                         </a>
                         <Link
                             href="/work"
-                            className="inline-flex items-center gap-2 rounded-full border border-transparent px-6 py-3 text-sm font-medium text-accent-text transition-colors hover:text-accent"
+                            className="inline-flex items-center gap-2 rounded-full border border-transparent px-6 py-3 text-sm font-medium text-accent-text transition-colors hover:text-accent-text"
                         >
                             {t("contact.portfolio")}
                             <ArrowRight className="h-4 w-4" aria-hidden="true" />

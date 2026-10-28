@@ -12,7 +12,7 @@ export const nuvioTheme = {
         champagne: "#F5E7B8",
         textPrimary: "#F5F3EE",
         textSecondary: "#B9B2A3",
-        textMuted: "#7E786C",
+        textMuted: "#948E81",
       },
     },
     borderRadius: {

@@ -12,7 +12,7 @@ export async function ServicesPreview() {
         <SectionWrapper id="services" light>
             <div className="nv-container">
                 <div className="max-w-xl mb-12 md:mb-16">
-                    <p className="text-accent text-xs font-semibold tracking-widest uppercase mb-4">
+                    <p className="text-accent-text text-xs font-semibold tracking-widest uppercase mb-4">
                         {t("eyebrow")}
                     </p>
                     <h2
@@ -33,7 +33,7 @@ export async function ServicesPreview() {
                             className="group bg-surface rounded-2xl p-7 border border-border-soft hover:border-accent/40 hover:shadow-md transition-all duration-300"
                         >
                             <div className="flex items-start justify-between gap-4 mb-5">
-                                <span className="text-xs font-semibold text-accent bg-accent-soft px-3 py-1 rounded-full">
+                                <span className="text-xs font-semibold text-accent-text bg-accent-soft px-3 py-1 rounded-full">
                                     0{i + 1}
                                 </span>
                             </div>
@@ -50,7 +50,7 @@ export async function ServicesPreview() {
                 <div className="text-center">
                     <Link
                         href="/services"
-                        className="inline-flex items-center gap-2 text-sm font-medium text-accent hover:text-[var(--nv-accent-hover)] transition-colors group"
+                        className="inline-flex items-center gap-2 text-sm font-medium text-accent-text hover:text-[var(--nv-accent-hover)] transition-colors group"
                     >
                         {t("cta")}
                         <ArrowRight className="h-4 w-4 group-hover:translate-x-1 transition-transform" />

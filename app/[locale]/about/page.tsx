@@ -32,7 +32,7 @@ export default async function AboutPage({ params }: { params: Promise<{ locale: 
             <SectionWrapper>
                 <div className="nv-container">
                     <div className="max-w-2xl">
-                        <p className="text-accent text-xs font-semibold tracking-widest uppercase mb-4">
+                        <p className="text-accent-text text-xs font-semibold tracking-widest uppercase mb-4">
                             {t("hero.eyebrow")}
                         </p>
                         <h1
@@ -53,7 +53,7 @@ export default async function AboutPage({ params }: { params: Promise<{ locale: 
                 <div className="nv-container">
                     <div className="grid grid-cols-1 md:grid-cols-2 gap-12 md:gap-16 items-center">
                         <div>
-                            <p className="text-accent text-xs font-semibold tracking-widest uppercase mb-4">
+                            <p className="text-accent-text text-xs font-semibold tracking-widest uppercase mb-4">
                                 {t("story.eyebrow")}
                             </p>
                             <h2
@@ -82,7 +82,7 @@ export default async function AboutPage({ params }: { params: Promise<{ locale: 
             <SectionWrapper>
                 <div className="nv-container">
                     <div className="max-w-xl mb-12">
-                        <p className="text-accent text-xs font-semibold tracking-widest uppercase mb-4">
+                        <p className="text-accent-text text-xs font-semibold tracking-widest uppercase mb-4">
                             {t("approach.eyebrow")}
                         </p>
                         <h2
@@ -136,7 +136,7 @@ export default async function AboutPage({ params }: { params: Promise<{ locale: 
                         href="/contact"
                         data-track="primary_cta_click"
                         data-track-location="about-page-cta"
-                        className="inline-flex items-center px-8 py-4 rounded-full bg-accent text-surface text-base font-semibold hover:bg-[var(--nv-accent-hover)] transition-all duration-200 active:scale-[0.98]"
+                        className="inline-flex items-center px-8 py-4 rounded-full bg-accent text-accent-foreground text-base font-semibold hover:bg-[var(--nv-accent-hover)] transition-all duration-200 active:scale-[0.98]"
                     >
                         {t("cta.button")}
                     </Link>

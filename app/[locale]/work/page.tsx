@@ -58,7 +58,7 @@ export default async function WorkPage({ params }: { params: Promise<{ locale: s
             <SectionWrapper>
                 <div className="nv-container">
                     <div className="max-w-2xl">
-                        <p className="text-accent text-xs font-semibold tracking-widest uppercase mb-4">
+                        <p className="text-accent-text text-xs font-semibold tracking-widest uppercase mb-4">
                             {t("hero.eyebrow")}
                         </p>
                         <h1
@@ -98,7 +98,7 @@ export default async function WorkPage({ params }: { params: Promise<{ locale: s
                             href="/contact"
                             data-track="primary_cta_click"
                             data-track-location="work-page-cta"
-                            className="inline-flex items-center px-8 py-4 rounded-full bg-accent text-surface text-base font-semibold hover:bg-[var(--nv-accent-hover)] transition-all duration-200 active:scale-[0.98]"
+                            className="inline-flex items-center px-8 py-4 rounded-full bg-accent text-accent-foreground text-base font-semibold hover:bg-[var(--nv-accent-hover)] transition-all duration-200 active:scale-[0.98]"
                         >
                             {t("ctaContact")}
                         </Link>

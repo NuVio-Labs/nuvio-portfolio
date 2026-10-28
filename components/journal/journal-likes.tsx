@@ -101,7 +101,7 @@ export function JournalLikes({ slug }: { slug: string }) {
                     "inline-flex items-center gap-2 rounded-full border px-4 py-2.5 text-[13px] font-medium transition-colors",
                     liked
                         ? "cursor-default border-accent/40 bg-accent-soft text-accent-text"
-                        : "border-border-soft text-text-secondary hover:border-accent/50 hover:text-accent",
+                        : "border-border-soft text-text-secondary hover:border-accent/50 hover:text-accent-text",
                 )}
             >
                 <Heart

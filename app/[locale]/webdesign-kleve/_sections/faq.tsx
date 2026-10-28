@@ -15,7 +15,7 @@ export async function Faq() {
             kranenburg: (chunks) => (
                 <Link
                     href="/webdesign-kranenburg"
-                    className="font-medium text-text-primary underline decoration-accent/50 underline-offset-[3px] transition-colors hover:decoration-accent hover:text-accent"
+                    className="font-medium text-text-primary underline decoration-accent/50 underline-offset-[3px] transition-colors hover:decoration-accent hover:text-accent-text"
                 >
                     {chunks}
                 </Link>
@@ -28,7 +28,7 @@ export async function Faq() {
             <div className="nv-container">
                 <div className="mx-auto max-w-2xl">
                     <div className="mb-12 text-center">
-                        <p className="text-accent text-xs font-semibold tracking-widest uppercase mb-4">
+                        <p className="text-accent-text text-xs font-semibold tracking-widest uppercase mb-4">
                             {t("eyebrow")}
                         </p>
                         <h2

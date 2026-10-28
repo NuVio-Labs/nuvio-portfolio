@@ -18,7 +18,7 @@ export async function Services() {
         <SectionWrapper id="leistungen">
             <div className="nv-container">
                 <div className="mx-auto mb-12 max-w-xl md:mb-16">
-                    <p className="text-accent text-xs font-semibold tracking-widest uppercase mb-4">
+                    <p className="text-accent-text text-xs font-semibold tracking-widest uppercase mb-4">
                         {t("eyebrow")}
                     </p>
                     <h2
@@ -36,7 +36,7 @@ export async function Services() {
                             key={key}
                             className="group rounded-2xl border border-border-soft bg-surface p-7 transition-all duration-300 hover:border-accent/40 hover:shadow-md"
                         >
-                            <span className="mb-5 inline-block rounded-full bg-accent-soft px-3 py-1 text-xs font-semibold text-accent">
+                            <span className="mb-5 inline-block rounded-full bg-accent-soft px-3 py-1 text-xs font-semibold text-accent-text">
                                 0{index + 1}
                             </span>
                             <h3 className="font-heading font-semibold text-text-primary text-lg mb-3">

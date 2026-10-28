@@ -312,7 +312,7 @@ export function ContactForm() {
             <p className="text-xs text-text-muted leading-relaxed">
                 {t.rich("privacy", {
                     link: (chunks) => (
-                        <Link href="/privacy" className="underline decoration-accent/50 underline-offset-2 hover:text-accent">
+                        <Link href="/privacy" className="underline decoration-accent/50 underline-offset-2 hover:text-accent-text">
                             {chunks}
                         </Link>
                     ),
@@ -339,7 +339,7 @@ export function ContactForm() {
                                     href={`mailto:${CONTACT_EMAIL}`}
                                     data-track="email_click"
                                     data-track-location="contact-form-error"
-                                    className="font-medium text-text-secondary underline decoration-accent/50 underline-offset-2 hover:text-accent"
+                                    className="font-medium text-text-secondary underline decoration-accent/50 underline-offset-2 hover:text-accent-text"
                                 >
                                     {CONTACT_EMAIL}
                                 </a>
@@ -347,7 +347,7 @@ export function ContactForm() {
                             <button
                                 type="button"
                                 onClick={handleCopy}
-                                className="inline-flex items-center gap-2 rounded-full border border-border-soft px-4 py-2 text-xs font-medium text-text-secondary hover:border-accent/50 hover:text-accent transition-colors"
+                                className="inline-flex items-center gap-2 rounded-full border border-border-soft px-4 py-2 text-xs font-medium text-text-secondary hover:border-accent/50 hover:text-accent-text transition-colors"
                             >
                                 {copied ? <Check className="h-3.5 w-3.5" aria-hidden="true" /> : <Copy className="h-3.5 w-3.5" aria-hidden="true" />}
                                 {copied ? t("copied") : t("copyButton")}
@@ -361,7 +361,7 @@ export function ContactForm() {
                 <button
                     type="submit"
                     disabled={submitting}
-                    className="inline-flex items-center justify-center gap-2 px-7 py-4 rounded-full bg-accent text-surface text-sm font-semibold hover:bg-[var(--nv-accent-hover)] transition-all duration-200 active:scale-[0.98] disabled:cursor-wait disabled:opacity-70 disabled:active:scale-100"
+                    className="inline-flex items-center justify-center gap-2 px-7 py-4 rounded-full bg-accent text-accent-foreground text-sm font-semibold hover:bg-[var(--nv-accent-hover)] transition-all duration-200 active:scale-[0.98] disabled:cursor-wait disabled:opacity-70 disabled:active:scale-100"
                 >
                     {submitting ? (
                         <Loader2 className="h-4 w-4 animate-spin motion-reduce:animate-none" aria-hidden="true" />
@@ -383,7 +383,7 @@ export function ContactForm() {
                         href={`mailto:${CONTACT_EMAIL}`}
                         data-track="email_click"
                         data-track-location="contact-form-fallback"
-                        className="font-medium text-text-secondary underline decoration-accent/50 underline-offset-2 hover:text-accent"
+                        className="font-medium text-text-secondary underline decoration-accent/50 underline-offset-2 hover:text-accent-text"
                     >
                         {CONTACT_EMAIL}
                     </a>

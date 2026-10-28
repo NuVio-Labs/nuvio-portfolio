@@ -9,7 +9,7 @@ export async function CtaFinal() {
     return (
         <SectionWrapper id="cta" dark>
             <div className="nv-container text-center">
-                <p className="text-accent text-xs font-semibold tracking-widest uppercase mb-4">
+                <p className="text-accent-text text-xs font-semibold tracking-widest uppercase mb-4">
                     NuVio Labs
                 </p>
                 <h2
@@ -29,13 +29,13 @@ export async function CtaFinal() {
                         href="/contact"
                         data-track="primary_cta_click"
                         data-track-location="home-final-cta"
-                        className="inline-flex items-center px-8 py-4 rounded-full bg-accent text-surface text-base font-semibold hover:bg-[var(--nv-accent-hover)] transition-all duration-200 active:scale-[0.98]"
+                        className="inline-flex items-center px-8 py-4 rounded-full bg-accent text-accent-foreground text-base font-semibold hover:bg-[var(--nv-accent-hover)] transition-all duration-200 active:scale-[0.98]"
                     >
                         {t("cta.button")}
                     </Link>
                     <Link
                         href="/services"
-                        className="inline-flex items-center px-8 py-4 rounded-full border border-border-soft text-text-secondary text-base font-medium hover:border-accent/50 hover:text-accent transition-all duration-200"
+                        className="inline-flex items-center px-8 py-4 rounded-full border border-border-soft text-text-secondary text-base font-medium hover:border-accent/50 hover:text-accent-text transition-all duration-200"
                     >
                         {tNav("services")}
                     </Link>

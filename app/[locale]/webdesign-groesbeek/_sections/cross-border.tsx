@@ -10,7 +10,7 @@ export async function CrossBorder() {
             <div className="nv-container">
                 <div className="mx-auto max-w-4xl">
                     <div className="mb-10 text-center md:mb-12">
-                        <p className="text-accent text-xs font-semibold tracking-widest uppercase mb-4">
+                        <p className="text-accent-text text-xs font-semibold tracking-widest uppercase mb-4">
                             {t("eyebrow")}
                         </p>
                         <h2
@@ -27,7 +27,7 @@ export async function CrossBorder() {
                             {t("badgeFrom")}
                         </span>
                         <ArrowRight className="h-5 w-5 shrink-0 text-accent" />
-                        <span className="rounded-full border border-accent/30 bg-accent-soft px-5 py-3 text-sm font-semibold text-accent">
+                        <span className="rounded-full border border-accent/30 bg-accent-soft px-5 py-3 text-sm font-semibold text-accent-text">
                             {t("badgeTo")}
                         </span>
                     </div>

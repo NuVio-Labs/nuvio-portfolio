@@ -10,7 +10,7 @@ export async function Process() {
         <SectionWrapper id="ablauf" light>
             <div className="nv-container">
                 <div className="mx-auto mb-12 max-w-xl md:mb-16">
-                    <p className="text-accent text-xs font-semibold tracking-widest uppercase mb-4">
+                    <p className="text-accent-text text-xs font-semibold tracking-widest uppercase mb-4">
                         {t("eyebrow")}
                     </p>
                     <h2
@@ -26,7 +26,7 @@ export async function Process() {
                     {stepKeys.map((key, index) => (
                         <div key={key} className="relative flex flex-col">
                             <div className="mb-4 flex items-center gap-3">
-                                <span className="flex h-9 w-9 shrink-0 items-center justify-center rounded-full border border-accent/40 bg-accent-soft text-sm font-semibold text-accent">
+                                <span className="flex h-9 w-9 shrink-0 items-center justify-center rounded-full border border-accent/40 bg-accent-soft text-sm font-semibold text-accent-text">
                                     {String(index + 1).padStart(2, "0")}
                                 </span>
                             </div>

@@ -10,7 +10,7 @@ export async function Audiences() {
         <SectionWrapper id="doelgroepen" light>
             <div className="nv-container">
                 <div className="mx-auto max-w-2xl text-center">
-                    <p className="text-accent text-xs font-semibold tracking-widest uppercase mb-4">
+                    <p className="text-accent-text text-xs font-semibold tracking-widest uppercase mb-4">
                         {t("eyebrow")}
                     </p>
                     <h2
@@ -24,7 +24,7 @@ export async function Audiences() {
                         {audienceKeys.map((key) => (
                             <span
                                 key={key}
-                                className="rounded-full border border-border-soft bg-surface px-5 py-2.5 text-sm font-medium text-text-secondary transition-colors duration-300 hover:border-accent/40 hover:text-accent"
+                                className="rounded-full border border-border-soft bg-surface px-5 py-2.5 text-sm font-medium text-text-secondary transition-colors duration-300 hover:border-accent/40 hover:text-accent-text"
                             >
                                 {t(`items.${key}`)}
                             </span>
