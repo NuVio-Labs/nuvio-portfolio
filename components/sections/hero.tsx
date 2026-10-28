@@ -62,10 +62,10 @@ export async function Hero() {
 
             <div className="relative z-10 mx-auto flex min-h-[calc(100svh-4rem)] w-full max-w-[1480px] items-center px-6 pb-10 pt-24 sm:px-8 sm:pt-24 lg:px-12 lg:pb-12 lg:pt-24">
                 <div className="grid w-full items-center gap-10 xl:grid-cols-[0.9fr_1.1fr] xl:gap-0">
-                    <div
-                        className="hero-reveal max-w-[670px]"
-                        style={{ animationDelay: "0.05s" }}
-                    >
+                    {/* Bewusst ohne hero-reveal: Ueberschrift und CTAs muessen mit dem
+                        ersten Paint sichtbar sein. Das Einblenden aus Deckkraft 0
+                        haengte auf dem Handy noch einmal ~0,4 s an. */}
+                    <div className="max-w-[670px]">
                         <div className="mb-8 inline-flex items-center gap-3 rounded-full border border-border-soft bg-surface px-5 py-3 shadow-sm">
                             <span className="relative flex h-2.5 w-2.5">
                                 <span className="absolute inline-flex h-full w-full rounded-full bg-green-400/55 blur-[2px]" />
