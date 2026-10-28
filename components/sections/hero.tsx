@@ -36,12 +36,10 @@ export async function Hero() {
             id="home"
             className="relative min-h-[100svh] overflow-hidden bg-background text-text-primary"
         >
-            {/* Subtle accent glow */}
+            {/* Gold-Funkeln. Die frueheren Blur-Glows waren unsichtbar (bg-accent/NN
+                wird nicht erzeugt, siehe tailwind.config.ts) und kosteten auf dem
+                Handy trotzdem den vollen Blur-Filter. */}
             <div className="pointer-events-none absolute inset-0">
-                <div className="absolute right-[-8rem] top-[14%] h-[28rem] w-[28rem] rounded-full bg-accent/10 blur-[140px]" />
-                <div className="absolute bottom-[-8rem] right-[5%] h-[26rem] w-[26rem] rounded-full bg-accent/8 blur-[130px]" />
-                <div className="absolute left-[-12rem] top-[16%] h-[24rem] w-[24rem] rounded-full bg-accent/5 blur-[130px]" />
-
                 {sparkles.map((sparkle) => (
                     <span
                         key={`${sparkle.top}-${sparkle.left}`}
@@ -129,23 +127,13 @@ export async function Hero() {
                         className="hero-reveal relative h-[500px] w-full sm:h-[540px] lg:h-[620px] xl:h-[660px]"
                         style={{ animationDelay: "0.15s" }}
                     >
-                        <div className="absolute inset-x-[8%] bottom-[15%] h-24 rounded-full bg-accent/15 blur-[90px]" />
-                        <div className="absolute right-[6%] top-[18%] h-[18rem] w-[18rem] rounded-full bg-accent/10 blur-[120px]" />
-
-                        {/* Main browser mockup */}
+                        {/* Main browser mockup. Die fruehere 3D-Drehung (Inline-transform)
+                            war nie sichtbar: hero-reveal animiert ebenfalls transform und
+                            haelt per "forwards" translate3d(0,0,0). */}
                         <div
                             className="hero-reveal absolute left-[4%] top-[8%] w-[90%] max-w-[860px]"
-                            style={
-                                {
-                                    animationDelay: "0.25s",
-                                    transform:
-                                        "perspective(2200px) rotateY(-18deg) rotateX(10deg) rotateZ(-4deg)",
-                                    transformStyle: "preserve-3d",
-                                } as CSSProperties
-                            }
+                            style={{ animationDelay: "0.25s" }}
                         >
-                            <div className="absolute inset-x-[12%] bottom-[-2.4rem] h-10 rounded-full bg-accent/20 blur-[28px]" />
-
                             <div className="relative overflow-hidden rounded-[2.2rem] border border-border-soft bg-surface p-3 shadow-xl">
                                 <div className="mb-3 flex items-center gap-3 rounded-[1.35rem] border border-border-soft bg-surface-soft px-5 py-3">
                                     <div className="flex gap-2">

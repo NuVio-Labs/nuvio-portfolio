@@ -7,10 +7,6 @@ export async function Hero() {
 
     return (
         <section className="relative overflow-hidden bg-background pb-16 pt-28 text-text-primary md:pb-20 md:pt-32">
-            <div className="pointer-events-none absolute inset-0">
-                <div className="absolute left-1/2 top-[6%] h-[26rem] w-[38rem] -translate-x-1/2 rounded-full bg-accent/8 blur-[150px]" />
-            </div>
-
             <div className="nv-container relative z-10">
                 <div className="grid gap-10 lg:grid-cols-[1.1fr_0.9fr] lg:items-center">
                     <div>

@@ -28,7 +28,6 @@ export async function ValueProposition() {
                         {/* Headline card */}
                         <article className="relative h-full min-h-[420px] overflow-hidden rounded-[2rem] border border-border-soft bg-background p-8 sm:p-9">
                             <div className="absolute inset-x-8 top-0 h-px bg-gradient-to-r from-transparent via-accent/30 to-transparent" />
-                            <div className="absolute left-[-2rem] top-[18%] h-28 w-28 rounded-full bg-accent/8 blur-[50px]" />
 
                             <div className="relative flex h-full flex-col">
                                 <div className="inline-flex w-fit items-center gap-2 rounded-full border border-border-soft bg-surface px-4 py-2 text-[11px] font-medium uppercase tracking-[0.2em] text-text-muted">
@@ -65,7 +64,6 @@ export async function ValueProposition() {
                                         className={`relative overflow-hidden rounded-[2rem] border border-border-soft bg-surface p-7 sm:p-8 ${cardClass}`}
                                     >
                                         <div className="absolute inset-x-8 top-0 h-px bg-gradient-to-r from-transparent via-accent/20 to-transparent" />
-                                        <div className="absolute right-[-2rem] top-[-2rem] h-24 w-24 rounded-full bg-accent/8 blur-[44px]" />
 
                                         <div className="relative flex h-full flex-col">
                                             <div className="flex items-start justify-between">

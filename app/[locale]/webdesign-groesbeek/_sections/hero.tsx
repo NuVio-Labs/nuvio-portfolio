@@ -7,11 +7,6 @@ export async function Hero() {
 
     return (
         <section className="relative overflow-hidden bg-background pb-16 pt-28 text-text-primary md:pb-20 md:pt-32">
-            <div className="pointer-events-none absolute inset-0">
-                <div className="absolute right-[-10rem] top-[10%] h-[24rem] w-[24rem] rounded-full bg-accent/10 blur-[140px]" />
-                <div className="absolute left-[-10rem] bottom-[-6rem] h-[22rem] w-[22rem] rounded-full bg-accent/8 blur-[130px]" />
-            </div>
-
             <div className="nv-container relative z-10">
                 <div className="mx-auto max-w-[760px] text-center">
                     <div className="mb-8 inline-flex items-center gap-2 rounded-full border border-border-soft bg-surface px-4 py-2 text-[11px] font-medium uppercase tracking-[0.22em] text-text-muted">
