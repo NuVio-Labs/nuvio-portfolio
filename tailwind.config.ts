@@ -29,6 +29,7 @@ const config: Config = {
         accent:           "var(--nv-accent)",
         "accent-soft":    "var(--nv-accent-soft)",
         "accent-text":    "var(--nv-accent-text)",
+        "accent-foreground": "var(--nv-accent-foreground)",
         "border-soft":    "var(--nv-border-soft)",
         "border-subtle":  "var(--nv-border-subtle)",
         "border-strong":  "var(--nv-border-strong)",

@@ -63,6 +63,17 @@
                 "title": "Available for",
                 "status": "new projects"
             }
+        },
+        "eyebrowLocal": "Web design from Kranenburg · DE · NL",
+        "sublineWork": "Modern business websites with clear structure and strong performance. You can see a few of them right here.",
+        "ctaAllProjects": "All projects",
+        "workStripLabel": "Selected projects",
+        "projectPreviewAlt": "Homepage of {title}",
+        "projectTags": {
+            "jan-behr": "Blog",
+            "daisymays-salon": "Dog grooming",
+            "physio-athlete": "Physiotherapy",
+            "wt-erdbewegungen": "Earthworks"
         }
     },
     "valueProposition": {
