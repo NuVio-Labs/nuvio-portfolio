@@ -57,11 +57,11 @@ export function Navbar() {
             className={cn(
                 "fixed top-0 left-0 right-0 z-50 transition-all duration-300",
                 // Handy: feste Flaeche statt backdrop-blur, der Filter wird sonst bei
-                // jedem Scroll-Frame neu berechnet. Desktop bleibt beim Blur (eine
+                // jedem Scroll-Frame neu berechnet (auch auf Tablets). Desktop bleibt beim Blur (eine
                 // bg-surface/95 gibt es nicht, Tailwind erzeugt keine Deckkraft fuer
                 // var()-Farben, deshalb dort explizit transparent).
                 scrolled
-                    ? "bg-surface md:bg-transparent md:backdrop-blur-xl border-b border-border-soft shadow-sm"
+                    ? "bg-surface lg:bg-transparent lg:backdrop-blur-xl border-b border-border-soft shadow-sm"
                     : "bg-transparent"
             )}
         >
@@ -77,13 +77,15 @@ export function Navbar() {
                     </Link>
 
                     {/* Desktop Nav */}
-                    <nav className="hidden md:flex items-center gap-8" aria-label="Hauptnavigation">
+                    {/* Erst ab lg: zwischen md und lg reicht die Breite fuer Logo, fuenf Links,
+                        Sprache, Theme und CTA nicht, "Über mich" brach dort um. */}
+                    <nav className="hidden lg:flex items-center gap-7 xl:gap-8" aria-label="Hauptnavigation">
                         {navItems.map((item) => (
                             <Link
                                 key={item.href}
                                 href={item.href as NavHref}
                                 className={cn(
-                                    "text-sm font-medium transition-colors",
+                                    "whitespace-nowrap text-sm font-medium transition-colors",
                                     isActive(item.href)
                                         ? "text-accent"
                                         : "text-text-muted hover:text-text-primary"
@@ -115,14 +117,14 @@ export function Navbar() {
                             href="/contact"
                             data-track="primary_cta_click"
                             data-track-location="navbar-desktop"
-                            className="hidden sm:inline-flex items-center px-5 py-2.5 rounded-full bg-accent text-surface text-sm font-semibold hover:bg-[var(--nv-accent-hover)] transition-all duration-200 active:scale-[0.98]"
+                            className="hidden sm:inline-flex items-center whitespace-nowrap px-5 py-2.5 rounded-full bg-accent text-accent-foreground text-sm font-semibold hover:bg-[var(--nv-accent-hover)] transition-all duration-200 active:scale-[0.98]"
                         >
                             {t("ctaProject")}
                         </Link>
 
                         {/* Mobile Burger */}
                         <button
-                            className="md:hidden flex h-9 w-9 items-center justify-center rounded-full border border-border-soft text-text-primary"
+                            className="lg:hidden flex h-9 w-9 items-center justify-center rounded-full border border-border-soft text-text-primary"
                             aria-label={menuOpen ? "Menü schließen" : "Menü öffnen"}
                             aria-expanded={menuOpen}
                             onClick={() => setMenuOpen(!menuOpen)}
@@ -135,7 +137,7 @@ export function Navbar() {
 
             {/* Mobile Fullscreen Overlay */}
             {menuOpen && (
-                <div className="md:hidden fixed inset-0 top-16 bg-surface z-40 overflow-y-auto">
+                <div className="lg:hidden fixed inset-0 top-16 md:top-20 bg-surface z-40 overflow-y-auto">
                     <nav className="nv-container py-8 flex flex-col gap-1" aria-label="Mobile Navigation">
                         {navItems.map((item) => (
                             <Link
@@ -157,7 +159,7 @@ export function Navbar() {
                             onClick={() => setMenuOpen(false)}
                             data-track="primary_cta_click"
                             data-track-location="navbar-mobile"
-                            className="mt-8 inline-flex items-center justify-center px-6 py-3.5 rounded-full bg-accent text-surface font-semibold text-center hover:bg-[var(--nv-accent-hover)] transition-colors"
+                            className="mt-8 inline-flex items-center justify-center px-6 py-3.5 rounded-full bg-accent text-accent-foreground font-semibold text-center hover:bg-[var(--nv-accent-hover)] transition-colors"
                         >
                             {t("ctaProject")}
                         </Link>
