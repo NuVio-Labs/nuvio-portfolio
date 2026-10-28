@@ -47,7 +47,6 @@ export async function AboutPreview() {
                                 fill
                                 className="object-cover object-center"
                                 sizes="(min-width: 768px) 384px, 100vw"
-                                priority
                             />
                         </div>
                     </div>
