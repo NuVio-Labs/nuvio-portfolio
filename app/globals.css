@@ -232,7 +232,8 @@
 .hero-reveal {
   opacity: 0;
   animation: heroReveal 0.8s cubic-bezier(0.22, 1, 0.36, 1) forwards;
-  will-change: transform, opacity;
+  /* Kein will-change: die Animation laeuft einmal; ein dauerhaft
+     reservierter Layer kostet auf dem Handy nur GPU-Speicher. */
 }
 
 .hero-float {
@@ -261,7 +262,7 @@
 .nv-reveal {
   opacity: 0;
   animation: nvReveal 0.5s ease-out var(--reveal-delay, 0s) both;
-  will-change: transform, opacity;
+  /* Kein will-change, siehe .hero-reveal. */
 }
 
 @media (prefers-reduced-motion: reduce) {
