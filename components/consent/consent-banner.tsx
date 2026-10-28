@@ -35,7 +35,9 @@ export function ConsentBanner() {
             // deckt die Banner-Position vollstaendig ab.
             inert={isSettingsOpen}
             data-consent-banner=""
-            className="fixed inset-x-0 bottom-0 z-[100] border-t border-border-soft bg-surface/95 backdrop-blur-xl shadow-[0_-8px_30px_rgba(0,0,0,0.08)]"
+            // Blur erst ab md: auf dem Handy ist die 95-%-Flaeche praktisch
+            // deckend, der Filter waere beim Scrollen nur Rechenlast.
+            className="fixed inset-x-0 bottom-0 z-[100] border-t border-border-soft bg-surface/95 md:backdrop-blur-xl shadow-[0_-8px_30px_rgba(0,0,0,0.08)]"
         >
             <div className="nv-container flex flex-col gap-4 py-5 sm:flex-row sm:items-center sm:justify-between sm:gap-8 sm:py-6">
                 <div className="max-w-2xl">

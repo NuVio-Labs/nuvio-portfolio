@@ -216,6 +216,22 @@
   .nv-gold-edge {
     box-shadow: inset 0 0 0 1px rgba(224, 184, 74, 0.18);
   }
+
+  /*
+   * Weicher Gold-Schein. Sieht aus wie ein weichgezeichneter Kreis, ist aber
+   * ein Radial-Gradient: kein filter: blur(), der auf dem Handy bei jedem
+   * Paint teuer neu gerechnet wird. Deckkraft im Zentrum ueber
+   * --glow-strength (z. B. Klasse [--glow-strength:6%]).
+   */
+  .nv-glow {
+    pointer-events: none;
+    background: radial-gradient(
+      closest-side,
+      color-mix(in srgb, var(--nv-accent) var(--glow-strength, 8%), transparent) 0%,
+      color-mix(in srgb, var(--nv-accent) calc(var(--glow-strength, 8%) / 2), transparent) 45%,
+      transparent 100%
+    );
+  }
 }
 
 /* ─── Hero-Projektleiste ───

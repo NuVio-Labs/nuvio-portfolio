@@ -1,6 +1,17 @@
 import type { Config } from "tailwindcss"
 import tailwindcssAnimate from "tailwindcss-animate"
 
+/**
+ * Theme-Farbe aus globals.css, die trotzdem Deckkraft-Varianten erlaubt
+ * (bg-accent/10, hover:border-accent/40, bg-surface/95 …). Mit einem
+ * blossen "var(--nv-…)" erzeugt Tailwind diese Klassen gar nicht; vorher
+ * waren dadurch 80 Stellen wirkungslos. color-mix() funktioniert auch mit
+ * den Tokens, die selbst schon rgba() sind; ohne Deckkraftangabe ergibt es
+ * exakt die Ausgangsfarbe.
+ */
+const token = (name: string) =>
+  `color-mix(in srgb, var(--nv-${name}) calc(<alpha-value> * 100%), transparent)`
+
 const config: Config = {
   darkMode: ["class"],
   content: [
@@ -17,47 +28,47 @@ const config: Config = {
       },
       colors: {
         /* NuVio semantic tokens */
-        background:       "var(--nv-bg)",
-        surface:          "var(--nv-surface)",
-        "surface-soft":   "var(--nv-surface-soft)",
-        "surface-raised": "var(--nv-surface-raised)",
-        "surface-strong": "var(--nv-surface-strong)",
-        foreground:       "var(--nv-text-primary)",
-        "text-primary":   "var(--nv-text-primary)",
-        "text-secondary": "var(--nv-text-secondary)",
-        "text-muted":     "var(--nv-text-muted)",
-        accent:           "var(--nv-accent)",
-        "accent-soft":    "var(--nv-accent-soft)",
-        "accent-text":    "var(--nv-accent-text)",
-        "accent-foreground": "var(--nv-accent-foreground)",
-        "border-soft":    "var(--nv-border-soft)",
-        "border-subtle":  "var(--nv-border-subtle)",
-        "border-strong":  "var(--nv-border-strong)",
+        background:       token("bg"),
+        surface:          token("surface"),
+        "surface-soft":   token("surface-soft"),
+        "surface-raised": token("surface-raised"),
+        "surface-strong": token("surface-strong"),
+        foreground:       token("text-primary"),
+        "text-primary":   token("text-primary"),
+        "text-secondary": token("text-secondary"),
+        "text-muted":     token("text-muted"),
+        accent:           token("accent"),
+        "accent-soft":    token("accent-soft"),
+        "accent-text":    token("accent-text"),
+        "accent-foreground": token("accent-foreground"),
+        "border-soft":    token("border-soft"),
+        "border-subtle":  token("border-subtle"),
+        "border-strong":  token("border-strong"),
         /* Gold scale */
         gold: {
-          300: "var(--nv-gold-300)",
-          500: "var(--nv-gold-500)",
-          700: "var(--nv-gold-700)",
+          300: token("gold-300"),
+          500: token("gold-500"),
+          700: token("gold-700"),
         },
         /* shadcn compat */
-        border: "var(--nv-border-soft)",
-        input:  "var(--nv-border-soft)",
-        ring:   "var(--nv-accent)",
+        border: token("border-soft"),
+        input:  token("border-soft"),
+        ring:   token("accent"),
         primary: {
-          DEFAULT:    "var(--nv-text-primary)",
-          foreground: "var(--nv-bg)",
+          DEFAULT:    token("text-primary"),
+          foreground: token("bg"),
         },
         secondary: {
-          DEFAULT:    "var(--nv-surface-soft)",
-          foreground: "var(--nv-text-secondary)",
+          DEFAULT:    token("surface-soft"),
+          foreground: token("text-secondary"),
         },
         muted: {
-          DEFAULT:    "var(--nv-surface-soft)",
-          foreground: "var(--nv-text-muted)",
+          DEFAULT:    token("surface-soft"),
+          foreground: token("text-muted"),
         },
         card: {
-          DEFAULT:    "var(--nv-surface)",
-          foreground: "var(--nv-text-primary)",
+          DEFAULT:    token("surface"),
+          foreground: token("text-primary"),
         },
         destructive: {
           DEFAULT:    "#c0392b",

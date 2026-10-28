@@ -57,11 +57,9 @@ export function Navbar() {
             className={cn(
                 "fixed top-0 left-0 right-0 z-50 transition-all duration-300",
                 // Handy: feste Flaeche statt backdrop-blur, der Filter wird sonst bei
-                // jedem Scroll-Frame neu berechnet (auch auf Tablets). Desktop bleibt beim Blur (eine
-                // bg-surface/95 gibt es nicht, Tailwind erzeugt keine Deckkraft fuer
-                // var()-Farben, deshalb dort explizit transparent).
+                // jedem Scroll-Frame neu berechnet (auch auf Tablets). Desktop: Milchglas.
                 scrolled
-                    ? "bg-surface lg:bg-transparent lg:backdrop-blur-xl border-b border-border-soft shadow-sm"
+                    ? "bg-surface lg:bg-surface/95 lg:backdrop-blur-xl border-b border-border-soft shadow-sm"
                     : "bg-transparent"
             )}
         >
