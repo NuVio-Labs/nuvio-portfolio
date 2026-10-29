@@ -105,7 +105,7 @@ export function Work({ projectIds }: WorkProps) {
                             return (
                                 <ScrollAnimation key={id} delay={index * 0.06}>
                                     <article className="relative overflow-hidden rounded-[2rem] border border-border-soft bg-surface p-5 shadow-sm sm:p-6 lg:p-8">
-                                        <div className="relative grid gap-8 xl:grid-cols-[minmax(0,1fr)_460px] xl:items-center">
+                                        <div className="relative grid grid-cols-1 gap-8 xl:grid-cols-[minmax(0,1fr)_460px] xl:items-center">
 
                                             {/* Text content */}
                                             <div className={reverseOnDesktop ? "xl:order-2" : ""}>

@@ -63,11 +63,16 @@ export function ProjectLivePreview({
         setIframeState("fallback")
     }, [])
 
+    // Lokale Demos wie eine echte Adresse anzeigen statt als Dateipfad.
+    const displayUrl = isLocal
+        ? `nuviolabs.de${url.replace(/\/index\.html$/, "")}`
+        : url.replace(/^https?:\/\//, "")
+
     const scale = containerWidth > 0 ? containerWidth / CANVAS_W : 0
     const iframeHeight = scale > 0 ? CANVAS_H * scale : 0
 
     return (
-        <div ref={containerRef} className="w-full">
+        <div ref={containerRef} className="w-full min-w-0">
             {/* Browser frame */}
             <div className="overflow-hidden rounded-[1.6rem] border border-border-soft bg-surface shadow-sm">
                 {/* Chrome bar */}
@@ -77,8 +82,8 @@ export function ProjectLivePreview({
                         <span className="h-2.5 w-2.5 rounded-full bg-border-soft" />
                         <span className="h-2.5 w-2.5 rounded-full bg-accent/60" />
                     </div>
-                    <div className="flex flex-1 items-center justify-between gap-2 rounded-full border border-border-soft bg-background px-3 py-1.5 text-[10px] uppercase tracking-[0.16em] text-text-muted">
-                        <span className="truncate">{url.replace("https://", "")}</span>
+                    <div className="flex min-w-0 flex-1 items-center justify-between gap-2 rounded-full border border-border-soft bg-background px-3 py-1.5 text-[10px] uppercase tracking-[0.16em] text-text-muted">
+                        <span className="truncate">{displayUrl}</span>
                         <ExternalLink className="h-3 w-3 shrink-0 opacity-50" />
                     </div>
                 </div>

@@ -687,20 +687,19 @@
     </footer>
 
     <script>
+      // Schwebende Nav erst zeigen, wenn wirklich am Hero vorbei gescrollt wurde.
+      // (IntersectionObserver meldet in eingebetteten/lazy iframes anfangs falsch.)
       const heroSection = document.querySelector("#top");
 
-      if (heroSection) {
-        const observer = new IntersectionObserver(
-          ([entry]) => {
-            document.body.classList.toggle("nav-visible", !entry.isIntersecting);
-          },
-          {
-            threshold: 0.18
-          }
-        );
+      const updateNav = () => {
+        if (!heroSection) return;
+        const passed = heroSection.getBoundingClientRect().bottom < window.innerHeight * 0.25;
+        document.body.classList.toggle("nav-visible", passed);
+      };
 
-        observer.observe(heroSection);
-      }
+      window.addEventListener("scroll", updateNav, { passive: true });
+      window.addEventListener("resize", updateNav);
+      updateNav();
     </script>
   </body>
 </html>
