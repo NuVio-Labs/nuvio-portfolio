@@ -26,7 +26,7 @@ export function BrandLogo({ name, tagline, taglineClassName, size = 34, classNam
                 src="/logo.png"
                 alt=""
                 width={size}
-                height={Math.round(size * (399 / 392))}
+                height={size}
                 className="shrink-0"
             />
             <span className="flex flex-col leading-none">

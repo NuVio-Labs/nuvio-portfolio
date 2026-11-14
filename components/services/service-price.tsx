@@ -11,7 +11,7 @@ function formatEuro(amount: number, locale: string) {
     }).format(amount)
 }
 
-/** Preisangabe einer Leistung, sprachabhaengig formatiert ("ab 1.049 €", "€32 / month" …). */
+/** Preisangabe einer Leistung, sprachabhaengig formatiert ("ab 1.490 €", "€32 / month" …). */
 export async function ServicePrice({ price, className }: { price: ServicePriceData; className?: string }) {
     const t = await getTranslations("services.price")
     const locale = await getLocale()

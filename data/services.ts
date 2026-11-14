@@ -3,7 +3,8 @@
  *
  * Einzige Quelle fuer Leistungsseite, Startseiten-Vorschau, Footer und
  * Structured Data. Die Preise entsprechen dem Google-Unternehmensprofil
- * (Stand November 2026) — bei Aenderungen beides gemeinsam pflegen.
+ * und dem Werbebrief (Stand November 2026) — bei Aenderungen alle drei
+ * gemeinsam pflegen. Landingpage: ab 250 € (Einstiegspreis laut Werbebrief).
  *
  * Texte (Titel, Beschreibung) liegen in messages/*.json unter
  * services.categories.<kategorie>.items.<id>.
@@ -45,7 +46,7 @@ export const SERVICE_CATEGORIES: readonly ServiceCategory[] = [
         id: "web",
         items: [
             { id: "website", price: from(1490) },
-            { id: "landing", price: from(1049) },
+            { id: "landing", price: from(250) },
             { id: "redesign", price: onRequest() },
             { id: "check", price: free() },
             { id: "repair", price: fixed(69) },

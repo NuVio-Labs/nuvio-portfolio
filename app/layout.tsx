@@ -2,7 +2,7 @@ import "./globals.css"
 
 /**
  * Icons kommen ueber die Datei-Konventionen von Next.js: app/favicon.ico,
- * app/icon.png und app/apple-icon.png (alle aus public/logo.png erzeugt).
+ * app/icon.png und app/apple-icon.png (wie public/logo.png aus dem Vektor-Signet des Corporate Designs erzeugt).
  *
  * Durchreichendes Root-Layout. <html> und <body> rendert
  * app/[locale]/layout.tsx, damit `lang` schon im ausgelieferten HTML zur
