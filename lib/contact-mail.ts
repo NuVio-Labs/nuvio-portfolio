@@ -22,7 +22,10 @@ const TYPE_LABELS: Record<ContactType, string> = {
     launch: "Website Launch",
     redesign: "Redesign & Relaunch",
     landing: "Landingpage",
-    ui: "UI-Komponenten & Design System",
+    check: "Kostenloser Webseiten-Check",
+    care: "Anpassung, Reparatur oder Wartung",
+    design: "Grafikdesign (Logo, Drucksachen, Geschäftsausstattung)",
+    marketing: "Google-Profil & SEO",
     other: "Etwas anderes",
 }
 

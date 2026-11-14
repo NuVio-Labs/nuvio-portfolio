@@ -39,12 +39,12 @@ Niederländisch: Werk, Diensten, Journal, Over, Contact
 - Technologien optional
 - Bild / Mockup / Screenshot
 
-## Leistungen
-- Website Launch
-- Redesign & Relaunch
-- Landingpage
-- UI-Komponenten & Design System
-- Pflege & Weiterentwicklung
+## Leistungen (Stand November 2026)
+Drei Bereiche unter der Marke „NuVioLabs – Design & Webentwicklung“.
+Leistungen und Preise zentral in `data/services.ts` (abgestimmt mit dem Google-Unternehmensprofil), Texte in `messages/*.json` unter `services.categories`.
+- Webdesign & Entwicklung: Unternehmenswebsite, Landingpage, Redesign & Relaunch, Webseiten-Check (kostenlos), Reparatur, Anpassungen, Wartung, Entwicklung nach Aufwand
+- Grafikdesign: Logo, Geschäftsausstattung, Visitenkarten, Briefkopf, Rechnungs- und Angebotsvorlagen, E-Mail-Signatur, Firmenstempel, Flyer, Banner, Social-Media-Grafiken, ausfüllbare PDFs
+- Online-Marketing & SEO: Google-Unternehmensprofil, SEO-Basisoptimierung, SEO-Analyse
 
 ## Kontaktformular
 - Name

@@ -8,6 +8,7 @@ import { useTheme } from "next-themes"
 import { Link, usePathname as useLocalePathname } from "@/i18n/navigation"
 import { cn } from "@/lib/utils"
 import { LanguageSwitcher } from "@/components/layout/language-switcher"
+import { BrandLogo } from "@/components/layout/brand-logo"
 import { isForcedLightRoute } from "@/components/theme-provider"
 
 const navItems = [
@@ -66,12 +67,18 @@ export function Navbar() {
             <div className="nv-container">
                 <div className="flex items-center justify-between h-16 md:h-20">
                     {/* Logo */}
+                    {/* Zusatz "Design & Webentwicklung" nur, wo die Breite reicht:
+                        nicht auf schmalen Handys und nicht bei lg (dort steht die volle Navigation). */}
                     <Link
                         href="/"
-                        className="font-heading font-semibold text-[18px] tracking-[-0.02em] text-text-primary hover:text-accent-text transition-colors"
+                        className="text-text-primary hover:text-accent-text transition-colors"
                         onClick={() => setMenuOpen(false)}
                     >
-                        {t("brand")}
+                        <BrandLogo
+                            name={t("brand")}
+                            tagline={t("brandTagline")}
+                            taglineClassName="hidden sm:block lg:hidden xl:block"
+                        />
                     </Link>
 
                     {/* Desktop Nav */}

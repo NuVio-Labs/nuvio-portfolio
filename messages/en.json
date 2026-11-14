@@ -1,6 +1,7 @@
 {
     "nav": {
-        "brand": "nuviolabs.",
+        "brand": "NuVioLabs",
+        "brandTagline": "Design & Web Development",
         "work": "Work",
         "about": "About",
         "lab": "Research",
@@ -64,8 +65,8 @@
                 "status": "new projects"
             }
         },
-        "eyebrowLocal": "Web design from Kranenburg · DE · NL",
-        "sublineWork": "Modern business websites with clear structure and strong performance. You can see a few of them right here.",
+        "eyebrowLocal": "Design & web development from Kranenburg · DE · NL",
+        "sublineWork": "Modern websites, logos and business stationery with clear structure and real impact. You can see a few projects right here.",
         "ctaAllProjects": "All projects",
         "workStripLabel": "Selected projects",
         "projectPreviewAlt": "Homepage of {title}",
@@ -218,7 +219,8 @@
     },
     "footer": {
         "copyright": "© 2026 NuVioLabs",
-        "tagline": "Design · Web development · Germany",
+        "tagline": "Web design, graphic design and online marketing from Kranenburg on the Lower Rhine.",
+        "appointments": "Appointments by arrangement",
         "research": "Research",
         "imprint": "Imprint",
         "privacy": "Privacy",
@@ -299,6 +301,10 @@
                 "q": "How much does a new website cost?",
                 "a": "Every project is different. Most sites start from €1,490. That includes concept, structure, design, and development of a complete, mobile-first website through go-live. In our first call, we'll define scope, goals, and budget, so you get a realistic, transparent estimate."
             },
+            "design": {
+                "q": "Do you also design logos and print materials?",
+                "a": "Yes. Alongside websites, I design logos, business cards, letterheads, flyers and business templates. Everything can share the same style, so your website and print materials form one consistent identity. Logos start from €199, the business stationery bundle from €249."
+            },
             "duration": {
                 "q": "How long does the build take?",
                 "a": "Usually a few weeks, depending on scope and how prepared the content is. A clear plan keeps things structured and efficient."
@@ -319,8 +325,8 @@
     },
     "seo": {
         "home": {
-            "title": "Modern Web Design for Local Businesses | NuVio Labs",
-            "description": "Fast, modern websites for trades, salons, and SMEs. Built for clarity, performance, and more inbound requests. Book a free consultation."
+            "title": "Web Design & Graphic Design for Local Businesses | NuVio Labs",
+            "description": "Design & web development from Kranenburg, Germany: modern websites, logos, business stationery and SEO for local businesses. Fast, multilingual and built for inquiries."
         },
         "work": {
             "title": "Projects | NuVio Labs",
@@ -331,8 +337,8 @@
             "description": "NuVio Labs is the web design studio of Axel Schurer. Direct collaboration, no agency overhead, digital projects with measurable results."
         },
         "services": {
-            "title": "Services | NuVio Labs",
-            "description": "Website launch, redesign, landing pages, and UI components. Clear packages for digital projects with measurable results."
+            "title": "Services & Pricing: Web Design, Graphic Design, SEO | NuVio Labs",
+            "description": "Websites, landing pages, logos, business cards, stationery and SEO with transparent starting prices. Free website check to get started."
         },
         "contact": {
             "title": "Contact | NuVio Labs",
@@ -357,40 +363,153 @@
     },
     "services": {
         "eyebrow": "Services",
-        "headline": "What I build for you.",
-        "subline": "From first idea to final launch. Clear packages for digital projects with measurable results.",
-        "cta": "View all services",
-        "items": {
-            "launch": {
-                "title": "Website Launch",
-                "description": "A complete business website from concept to go-live. Mobile-first, performant, and optimised for inquiries."
+        "headline": "Design & web development from a single source.",
+        "subline": "Websites, graphic design and visibility on Google: everything your business needs for a consistent presence. With transparent pricing.",
+        "cta": "View all services & prices",
+        "price": {
+            "free": "Free",
+            "onRequest": "On request",
+            "from": "from {price}",
+            "perMonth": "{price} / month",
+            "perHour": "{price} / hour",
+            "note": "All prices are final prices. Under § 19 of the German VAT Act (UStG), no VAT is charged (small business regulation). Starting prices apply to the basic scope described; you will receive the exact price as a binding quote after a short conversation."
+        },
+        "categories": {
+            "web": {
+                "eyebrow": "Web development",
+                "title": "Web Design & Development",
+                "teaser": "Business websites and landing pages that load fast, work beautifully on mobile and turn visitors into inquiries.",
+                "intro": "Modern websites with clear structure, premium design and strong performance. Mobile first, multilingual on request and built on a clean technical foundation. For existing sites too: check, fixes and ongoing care.",
+                "cta": "Request a website project",
+                "more": "Web design in detail",
+                "items": {
+                    "website": {
+                        "title": "Business Website",
+                        "description": "A custom multi-page website, from concept and design to go-live. Pricing depends on pages and features."
+                    },
+                    "landing": {
+                        "title": "Custom Landing Page",
+                        "description": "A focused page for an offer, campaign or event. Designed and developed to your requirements."
+                    },
+                    "redesign": {
+                        "title": "Redesign & Relaunch",
+                        "description": "Your existing website gets modernised, technically cleaned up and brought to today's standards."
+                    },
+                    "check": {
+                        "title": "Website Check",
+                        "description": "A short assessment of your current website: what works and where it falls short. Not an in-depth analysis."
+                    },
+                    "repair": {
+                        "title": "Website Fix",
+                        "description": "One agreed small change or bug fix, up to 60 minutes."
+                    },
+                    "adjustments": {
+                        "title": "Website Updates",
+                        "description": "Changes to text, images, buttons or the mobile layout."
+                    },
+                    "maintenance": {
+                        "title": "Website Maintenance",
+                        "description": "Ongoing technical care and updates. 12-month minimum term, scope as per contract."
+                    },
+                    "hourly": {
+                        "title": "Web Development by the Hour",
+                        "description": "Technical changes and custom work, billed per hour."
+                    }
+                }
             },
-            "redesign": {
-                "title": "Redesign & Relaunch",
-                "description": "Your existing website gets modernised, technically cleaned up, and brought to today's standards."
+            "design": {
+                "eyebrow": "Design",
+                "title": "Graphic Design",
+                "teaser": "Logo, business cards, letterhead and templates: one identity that works online and on paper.",
+                "intro": "A strong presence doesn't stop at your website. I design logos, print materials and business templates in the same style as your website, so your business is recognisable everywhere.",
+                "cta": "Request a design project",
+                "more": "Graphic design in detail",
+                "items": {
+                    "logo": {
+                        "title": "Logo Design",
+                        "description": "A custom logo for businesses and freelancers. Modern, recognisable and prepared for web and print."
+                    },
+                    "stationery": {
+                        "title": "Business Stationery Bundle",
+                        "description": "Consistent business stationery for companies and freelancers: matching templates in your corporate design."
+                    },
+                    "businessCards": {
+                        "title": "Business Card Design",
+                        "description": "Custom, modern business cards that match your brand."
+                    },
+                    "letterhead": {
+                        "title": "Letterhead & Business Paper",
+                        "description": "Custom letterheads and business paper in line with your corporate design."
+                    },
+                    "invoice": {
+                        "title": "Invoice Templates",
+                        "description": "Invoice templates with your logo, contact details and a clear layout."
+                    },
+                    "quote": {
+                        "title": "Quote Templates",
+                        "description": "Quote templates in your corporate design, clear and professional."
+                    },
+                    "emailSignature": {
+                        "title": "Email Signature",
+                        "description": "A professional email signature with your logo, contact details and consistent design."
+                    },
+                    "stamp": {
+                        "title": "Company Stamp",
+                        "description": "Company stamp design with logo, company name and contact details."
+                    },
+                    "flyer": {
+                        "title": "Flyers & Information Sheets",
+                        "description": "Design of flyers, information sheets and promotional material for your business."
+                    },
+                    "banner": {
+                        "title": "Banners & Ad Graphics",
+                        "description": "Modern advertising banners, website banners and digital ad graphics."
+                    },
+                    "social": {
+                        "title": "Social Media Graphics",
+                        "description": "Graphics for Instagram, Facebook and other social networks, matching your brand."
+                    },
+                    "pdfForms": {
+                        "title": "Digital Forms & Fillable PDFs",
+                        "description": "Custom PDF forms with fillable text fields, checkboxes and more."
+                    }
+                }
             },
-            "landing": {
-                "title": "Landing Page",
-                "description": "A focused page for a specific goal: campaign, product, or event. Fast and built for conversion."
-            },
-            "ui": {
-                "title": "UI Components & Design System",
-                "description": "Consistent, reusable interface building blocks for teams that want to scale."
-            },
-            "maintenance": {
-                "title": "Maintenance & Development",
-                "description": "Ongoing technical support, updates, and targeted enhancements for existing projects."
+            "marketing": {
+                "eyebrow": "Visibility",
+                "title": "Online Marketing & SEO",
+                "teaser": "So customers can find you: an optimised Google Business Profile and a website search engines understand.",
+                "intro": "Even the best website won't help if nobody finds it. I optimise your Google Business Profile and the technical and content foundations of your website for local search.",
+                "cta": "Improve your visibility",
+                "more": "Online marketing in detail",
+                "items": {
+                    "googleProfile": {
+                        "title": "Google Business Profile Optimisation",
+                        "description": "Professional optimisation of your Google Business Profile: categories, services, texts and images, so your profile is complete and convincing."
+                    },
+                    "seoBasic": {
+                        "title": "Basic SEO",
+                        "description": "Search engine optimisation for your website: meta titles, descriptions, heading structure and technical basics."
+                    },
+                    "seoAudit": {
+                        "title": "Website SEO Audit",
+                        "description": "An analysis of your website with concrete recommendations on what can be improved for Google."
+                    }
+                }
             }
         },
         "page": {
             "hero": {
-                "eyebrow": "Services",
-                "headline": "What I build for you.",
-                "subline": "Clearly defined packages for digital projects: from a new website to ongoing development."
+                "eyebrow": "Services & pricing",
+                "headline": "Design & web development from a single source.",
+                "subline": "From your business website to logo and business cards to your Google Business Profile. Clear services, transparent starting prices and one point of contact for everything."
             },
+            "jumpLabel": "Service areas",
             "cta": {
                 "headline": "Ready to start your project?",
-                "button": "Start a project"
+                "text": "Tell me briefly what you need. You'll receive a clear quote, with no obligation.",
+                "button": "Start a project",
+                "check": "Request a free website check"
             }
         }
     },
@@ -465,7 +584,7 @@
         "hero": {
             "eyebrow": "Contact",
             "headline": "Let's talk about your project.",
-            "subline": "A new website, a redesign or just a first idea: tell me briefly what you need. I'll get back to you within 24 hours."
+            "subline": "A new website, a logo, a redesign or just a first idea: tell me briefly what you need. I'll get back to you within 24 hours."
         },
         "form": {
             "labelName": "Name",
@@ -478,10 +597,13 @@
             "placeholderCompany": "Optional",
             "placeholderMessage": "What is it about? Bullet points are perfectly fine.",
             "typeOptions": {
-                "launch": "Website launch",
+                "launch": "New website",
                 "redesign": "Redesign & relaunch",
                 "landing": "Landing page",
-                "ui": "UI components & design system",
+                "check": "Free website check",
+                "care": "Update, fix or maintenance",
+                "design": "Graphic design (logo, business cards, print)",
+                "marketing": "Google profile & SEO",
                 "other": "Something else"
             },
             "labelReferral": "How did you hear about us?",
