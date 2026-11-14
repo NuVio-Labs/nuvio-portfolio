@@ -17,7 +17,11 @@ export const CONTACT_LIMITS = {
     bodyMax: 16_000,
 } as const
 
-export const CONTACT_TYPES = ["launch", "redesign", "landing", "ui", "other"] as const
+/**
+ * Projektarten im Kontaktformular, passend zu den Leistungsbereichen in
+ * data/services.ts (Webdesign, Grafikdesign, Online-Marketing).
+ */
+export const CONTACT_TYPES = ["launch", "redesign", "landing", "check", "care", "design", "marketing", "other"] as const
 export type ContactType = (typeof CONTACT_TYPES)[number]
 
 /**

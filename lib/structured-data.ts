@@ -1,4 +1,5 @@
 import { CONTACT_EMAIL, SITE_LOGO, SITE_NAME, SITE_URL } from "@/lib/site"
+import type { ServicePrice } from "@/data/services"
 
 /**
  * Stabile @id-Werte, damit Entitaeten ueber mehrere JSON-LD-Bloecke und
@@ -87,6 +88,60 @@ export function buildServiceSchema({ name, description, url, areaServed }: Servi
         url,
         provider: { "@id": ORGANIZATION_ID },
         areaServed: { "@type": "City", name: areaServed },
+    }
+}
+
+interface CatalogItem {
+    name: string
+    description: string
+    price: ServicePrice
+}
+
+interface ServiceCatalogOptions {
+    /** Sichtbare H1 der Leistungsseite. */
+    name: string
+    url: string
+    categories: { name: string; items: CatalogItem[] }[]
+}
+
+const UNIT_CODES = { hour: "HUR", month: "MON" } as const
+
+/**
+ * Preisangabe als schema.org-Offer. Nur, was auch sichtbar auf der Seite
+ * steht: "ab"-Preise als minPrice, Festpreise als price, "auf Anfrage"
+ * ohne Preis.
+ */
+function buildOffer({ name, description, price }: CatalogItem) {
+    const offer: Record<string, unknown> = {
+        "@type": "Offer",
+        itemOffered: { "@type": "Service", name, description, provider: { "@id": ORGANIZATION_ID } },
+    }
+    if (price.kind === "onRequest") return offer
+
+    const amount = price.kind === "free" ? 0 : price.amount
+    const unit = price.kind === "free" ? undefined : price.unit
+    offer.priceSpecification = {
+        "@type": unit ? "UnitPriceSpecification" : "PriceSpecification",
+        priceCurrency: "EUR",
+        ...(price.kind === "from" ? { minPrice: amount } : { price: amount }),
+        ...(unit ? { unitCode: UNIT_CODES[unit] } : {}),
+    }
+    return offer
+}
+
+/** Leistungskatalog der Leistungsseite: Organization mit OfferCatalog je Bereich. */
+export function buildServiceCatalogSchema({ name, url, categories }: ServiceCatalogOptions) {
+    return {
+        "@context": "https://schema.org",
+        "@type": "OfferCatalog",
+        name,
+        url,
+        provider: { "@id": ORGANIZATION_ID },
+        itemListElement: categories.map((category) => ({
+            "@type": "OfferCatalog",
+            name: category.name,
+            itemListElement: category.items.map(buildOffer),
+        })),
     }
 }
 

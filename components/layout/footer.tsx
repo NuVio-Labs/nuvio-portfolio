@@ -4,6 +4,8 @@ import { getPathLocales } from "@/i18n/locale-routes"
 import { CONTACT_EMAIL } from "@/lib/site"
 import { cn } from "@/lib/utils"
 import { CookieSettingsLink } from "@/components/consent/cookie-settings-link"
+import { BrandLogo } from "@/components/layout/brand-logo"
+import { SERVICE_CATEGORY_IDS } from "@/data/services"
 
 /**
  * Lokale Landingpages fuer die Spalte "Webdesign vor Ort". Welche davon in
@@ -36,11 +38,14 @@ export function Footer() {
 
                     {/* Brand */}
                     <div>
-                        <p className="font-heading font-semibold text-text-primary text-base mb-3">
-                            {tNav("brand")}
-                        </p>
+                        <Link href="/" className="inline-block mb-4 text-text-primary hover:text-accent-text transition-colors">
+                            <BrandLogo name={tNav("brand")} tagline={tNav("brandTagline")} size={40} />
+                        </Link>
                         <p className="text-sm text-text-muted leading-relaxed">
                             {tFooter("tagline")}
+                        </p>
+                        <p className="mt-2 text-sm text-text-secondary">
+                            {tFooter("appointments")}
                         </p>
                         <a
                             href={`mailto:${CONTACT_EMAIL}`}
@@ -77,16 +82,24 @@ export function Footer() {
                             {tNav("services")}
                         </p>
                         <ul className="flex flex-col gap-2 mb-6">
-                            {(["launch", "redesign", "landing", "ui", "maintenance"] as const).map((key) => (
+                            {SERVICE_CATEGORY_IDS.map((key) => (
                                 <li key={key}>
                                     <Link
-                                        href="/services"
+                                        href={`/services#${key}`}
                                         className="text-sm text-text-muted hover:text-accent-text transition-colors"
                                     >
-                                        {tServices(`items.${key}.title`)}
+                                        {tServices(`categories.${key}.title`)}
                                     </Link>
                                 </li>
                             ))}
+                            <li>
+                                <Link
+                                    href="/services#web"
+                                    className="text-sm text-text-muted hover:text-accent-text transition-colors"
+                                >
+                                    {tServices("categories.web.items.check.title")}
+                                </Link>
+                            </li>
                         </ul>
                     </div>
 

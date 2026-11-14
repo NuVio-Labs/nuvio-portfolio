@@ -1,6 +1,7 @@
 {
     "nav": {
-        "brand": "nuviolabs.",
+        "brand": "NuVioLabs",
+        "brandTagline": "Design & Webontwikkeling",
         "work": "Werk",
         "about": "Over",
         "lab": "Research",
@@ -64,8 +65,8 @@
                 "status": "nieuwe projecten"
             }
         },
-        "eyebrowLocal": "Webdesign uit Kranenburg · DE · NL",
-        "sublineWork": "Moderne bedrijfswebsites met een heldere structuur en sterke prestaties. Een paar ervan ziet u hier direct.",
+        "eyebrowLocal": "Design & webontwikkeling uit Kranenburg · DE · NL",
+        "sublineWork": "Moderne websites, logo's en huisstijl met een heldere structuur en sterke uitstraling. Een paar projecten ziet u hier direct.",
         "ctaAllProjects": "Alle projecten",
         "workStripLabel": "Geselecteerde projecten",
         "projectPreviewAlt": "Homepage van {title}",
@@ -218,7 +219,8 @@
     },
     "footer": {
         "copyright": "© 2026 NuVioLabs",
-        "tagline": "Design · Webontwikkeling · Duitsland",
+        "tagline": "Webdesign, grafisch ontwerp en online marketing uit Kranenburg, vlak over de grens.",
+        "appointments": "Op afspraak",
         "research": "Onderzoek",
         "imprint": "Colofon",
         "privacy": "Privacybeleid",
@@ -305,6 +307,10 @@
                 "q": "Wat kost een nieuwe website?",
                 "a": "Elk project is anders. De meeste websites starten vanaf € 1.490. Dat omvat concept, structuur, design en ontwikkeling van een complete, mobile-first website tot livegang. In het eerste gesprek bepalen we samen scope, doelen en budget, zodat u een realistische en transparante indicatie krijgt."
             },
+            "design": {
+                "q": "Ontwerpt u ook logo's en drukwerk?",
+                "a": "Ja. Naast websites ontwerp ik logo's, visitekaartjes, briefpapier, flyers en zakelijke sjablonen. Alles kan in dezelfde stijl worden uitgevoerd, zodat website en drukwerk één herkenbare huisstijl vormen. Een logo begint vanaf € 199, het complete huisstijlpakket vanaf € 249."
+            },
             "duration": {
                 "q": "Hoe lang duurt de realisatie?",
                 "a": "Meestal enkele weken, afhankelijk van de omvang en voorbereiding. Met een duidelijk plan blijft het traject overzichtelijk en efficiënt."
@@ -330,8 +336,8 @@
     },
     "seo": {
         "home": {
-            "title": "Modern webdesign voor lokale bedrijven | NuVio Labs",
-            "description": "Snelle, moderne websites voor vakmensen, salons en mkb-bedrijven. Gebouwd voor helderheid, prestaties en meer aanvragen. Plan een gratis adviesgesprek."
+            "title": "Webdesign & grafisch ontwerp voor bedrijven | NuVio Labs",
+            "description": "Design & webontwikkeling uit Kranenburg: moderne websites, logo's, huisstijl en SEO voor bedrijven in de grensregio. Snel, meertalig en gericht op aanvragen."
         },
         "work": {
             "title": "Projecten | NuVio Labs",
@@ -342,8 +348,8 @@
             "description": "NuVio Labs is het webdesignstudio van Axel Schurer. Directe samenwerking, geen bureauoverhead, digitale projecten met meetbare resultaten."
         },
         "services": {
-            "title": "Diensten | NuVio Labs",
-            "description": "Website launch, redesign, landingpaginas en UI-componenten. Heldere pakketten voor digitale projecten met meetbare resultaten."
+            "title": "Diensten & prijzen: webdesign, grafisch ontwerp, SEO | NuVio Labs",
+            "description": "Websites, landingspagina's, logo's, visitekaartjes, huisstijl en SEO met transparante vanaf-prijzen. Gratis websitecheck om te beginnen."
         },
         "contact": {
             "title": "Contact | NuVio Labs",
@@ -372,40 +378,153 @@
     },
     "services": {
         "eyebrow": "Diensten",
-        "headline": "Wat ik voor u realiseer.",
-        "subline": "Van eerste idee tot definitieve livegang. Heldere pakketten voor digitale projecten met meetbare resultaten.",
-        "cta": "Alle diensten bekijken",
-        "items": {
-            "launch": {
-                "title": "Website Launch",
-                "description": "Een complete bedrijfswebsite van concept tot livegang. Mobile-first, snel en geoptimaliseerd voor aanvragen."
+        "headline": "Design & webontwikkeling uit één hand.",
+        "subline": "Websites, grafisch ontwerp en zichtbaarheid op Google: alles wat uw bedrijf nodig heeft voor een samenhangende uitstraling. Met transparante prijzen.",
+        "cta": "Alle diensten & prijzen bekijken",
+        "price": {
+            "free": "Gratis",
+            "onRequest": "Op aanvraag",
+            "from": "vanaf {price}",
+            "perMonth": "{price} / maand",
+            "perHour": "{price} / uur",
+            "note": "Alle prijzen zijn eindprijzen. Op grond van § 19 van de Duitse btw-wet (UStG) wordt geen btw in rekening gebracht (kleineondernemersregeling). Vanaf-prijzen gelden voor de beschreven basisomvang; de exacte prijs ontvangt u na een kort gesprek als bindende offerte."
+        },
+        "categories": {
+            "web": {
+                "eyebrow": "Webontwikkeling",
+                "title": "Webdesign & ontwikkeling",
+                "teaser": "Bedrijfswebsites en landingspagina's die snel laden, op mobiel overtuigen en tot aanvragen leiden.",
+                "intro": "Moderne websites met een heldere structuur, hoogwaardig design en sterke prestaties. Mobile first, desgewenst meertalig en technisch zorgvuldig gebouwd. Ook voor bestaande websites: check, reparatie en doorlopend onderhoud.",
+                "cta": "Websiteproject aanvragen",
+                "more": "Webdesign in detail",
+                "items": {
+                    "website": {
+                        "title": "Bedrijfswebsite",
+                        "description": "Een website op maat met meerdere pagina's, van concept en design tot livegang. De prijs hangt af van pagina's en functies."
+                    },
+                    "landing": {
+                        "title": "Landingspagina op maat",
+                        "description": "Een gerichte pagina voor een aanbod, campagne of evenement. Design en ontwikkeling volgens uw wensen."
+                    },
+                    "redesign": {
+                        "title": "Redesign & Relaunch",
+                        "description": "Uw bestaande website wordt gemoderniseerd, technisch opgeschoond en naar de huidige standaarden gebracht."
+                    },
+                    "check": {
+                        "title": "Websitecheck",
+                        "description": "Een korte beoordeling van uw huidige website: wat werkt en waar het hapert. Geen uitgebreide analyse."
+                    },
+                    "repair": {
+                        "title": "Websitereparatie",
+                        "description": "Eén afgesproken kleine wijziging of foutoplossing, tot 60 minuten."
+                    },
+                    "adjustments": {
+                        "title": "Website-aanpassingen",
+                        "description": "Teksten, afbeeldingen, knoppen of de mobiele weergave aanpassen."
+                    },
+                    "maintenance": {
+                        "title": "Website-onderhoud",
+                        "description": "Doorlopende technische ondersteuning en updates. Minimale looptijd 12 maanden, omvang volgens contract."
+                    },
+                    "hourly": {
+                        "title": "Webontwikkeling op uurbasis",
+                        "description": "Technische aanpassingen en maatwerk, afgerekend per uur."
+                    }
+                }
             },
-            "redesign": {
-                "title": "Redesign & Relaunch",
-                "description": "Uw bestaande website wordt gemoderniseerd, technisch opgeschoond en naar de huidige standaarden gebracht."
+            "design": {
+                "eyebrow": "Design",
+                "title": "Grafisch ontwerp",
+                "teaser": "Logo, visitekaartje, briefpapier en sjablonen: één huisstijl die online en op papier klopt.",
+                "intro": "Een sterke uitstraling houdt niet op bij de website. Ik ontwerp logo's, drukwerk en zakelijke sjablonen in dezelfde stijl als uw website, zodat uw bedrijf overal herkenbaar is.",
+                "cta": "Designproject aanvragen",
+                "more": "Grafisch ontwerp in detail",
+                "items": {
+                    "logo": {
+                        "title": "Logo-ontwerp",
+                        "description": "Een logo op maat voor bedrijven en zzp'ers. Modern, herkenbaar en klaar voor web en druk."
+                    },
+                    "stationery": {
+                        "title": "Huisstijl compleet pakket",
+                        "description": "Een uniforme huisstijl voor bedrijven en zzp'ers: op elkaar afgestemde sjablonen in uw corporate design."
+                    },
+                    "businessCards": {
+                        "title": "Visitekaartjes",
+                        "description": "Moderne visitekaartjes op maat, passend bij de uitstraling van uw bedrijf."
+                    },
+                    "letterhead": {
+                        "title": "Briefhoofd & briefpapier",
+                        "description": "Briefhoofden en zakelijk briefpapier op maat, passend bij uw huisstijl."
+                    },
+                    "invoice": {
+                        "title": "Factuursjablonen",
+                        "description": "Factuursjablonen met uw logo, contactgegevens en een overzichtelijke opmaak."
+                    },
+                    "quote": {
+                        "title": "Offertesjablonen",
+                        "description": "Offertesjablonen in de huisstijl van uw bedrijf, overzichtelijk en professioneel."
+                    },
+                    "emailSignature": {
+                        "title": "E-mailhandtekening",
+                        "description": "Een professionele e-mailhandtekening met logo, contactgegevens en uniform design."
+                    },
+                    "stamp": {
+                        "title": "Bedrijfsstempel",
+                        "description": "Ontwerp van bedrijfsstempels met logo, bedrijfsnaam en contactgegevens."
+                    },
+                    "flyer": {
+                        "title": "Flyers & informatiebladen",
+                        "description": "Ontwerp van flyers, informatiebladen en promotiemateriaal voor uw bedrijf."
+                    },
+                    "banner": {
+                        "title": "Banners & advertentiegraphics",
+                        "description": "Moderne reclamebanners, websitebanners en digitale advertentiegraphics."
+                    },
+                    "social": {
+                        "title": "Social-mediagraphics",
+                        "description": "Graphics voor Instagram, Facebook en andere sociale netwerken, passend bij uw uitstraling."
+                    },
+                    "pdfForms": {
+                        "title": "Digitale formulieren & invulbare pdf's",
+                        "description": "Pdf-formulieren op maat met invulbare tekstvelden, selectievakjes en meer."
+                    }
+                }
             },
-            "landing": {
-                "title": "Landingpagina",
-                "description": "Een gerichte pagina voor één concreet doel: campagne, product of evenement. Snel en conversiesterk."
-            },
-            "ui": {
-                "title": "UI-componenten & Design System",
-                "description": "Consistente, herbruikbare interfacecomponenten voor teams die willen schalen."
-            },
-            "maintenance": {
-                "title": "Beheer & Doorontwikkeling",
-                "description": "Doorlopende technische ondersteuning, updates en gerichte uitbreidingen voor bestaande projecten."
+            "marketing": {
+                "eyebrow": "Zichtbaarheid",
+                "title": "Online marketing & SEO",
+                "teaser": "Zodat klanten u vinden: een geoptimaliseerd Google-bedrijfsprofiel en een website die zoekmachines begrijpen.",
+                "intro": "De beste website helpt weinig als niemand hem vindt. Ik optimaliseer uw Google-bedrijfsprofiel en de technische en inhoudelijke basis van uw website voor lokaal zoeken.",
+                "cta": "Zichtbaarheid verbeteren",
+                "more": "Online marketing in detail",
+                "items": {
+                    "googleProfile": {
+                        "title": "Google-bedrijfsprofiel optimaliseren",
+                        "description": "Professionele optimalisatie van uw Google-bedrijfsprofiel: categorieën, diensten, teksten en foto's, zodat uw profiel compleet en overtuigend is."
+                    },
+                    "seoBasic": {
+                        "title": "SEO-basisoptimalisatie",
+                        "description": "Zoekmachineoptimalisatie voor uw website: metatitels, beschrijvingen, kopstructuur en technische basis."
+                    },
+                    "seoAudit": {
+                        "title": "SEO-analyse van een website",
+                        "description": "Een analyse van uw website met concrete aanbevelingen voor wat beter kan voor Google."
+                    }
+                }
             }
         },
         "page": {
             "hero": {
-                "eyebrow": "Diensten",
-                "headline": "Wat ik voor u bouw.",
-                "subline": "Duidelijk afgebakende pakketten voor digitale projecten: van een nieuwe website tot doorlopende doorontwikkeling."
+                "eyebrow": "Diensten & prijzen",
+                "headline": "Design & webontwikkeling uit één hand.",
+                "subline": "Van bedrijfswebsite tot logo, visitekaartje en uw Google-bedrijfsprofiel. Heldere diensten, transparante vanaf-prijzen en één aanspreekpunt voor alles."
             },
+            "jumpLabel": "Dienstgebieden",
             "cta": {
                 "headline": "Klaar om uw project te starten?",
-                "button": "Project aanvragen"
+                "text": "Beschrijf kort wat u nodig heeft. U ontvangt een duidelijke offerte, zonder verplichtingen.",
+                "button": "Project aanvragen",
+                "check": "Gratis websitecheck aanvragen"
             }
         }
     },
@@ -484,7 +603,7 @@
         "hero": {
             "eyebrow": "Contact",
             "headline": "Laten we het over uw project hebben.",
-            "subline": "Een nieuwe website, een redesign of gewoon een eerste idee: beschrijf kort wat u nodig heeft. Ik reageer binnen 24 uur."
+            "subline": "Een nieuwe website, een logo, een redesign of gewoon een eerste idee: beschrijf kort wat u nodig heeft. Ik reageer binnen 24 uur."
         },
         "form": {
             "labelName": "Naam",
@@ -497,10 +616,13 @@
             "placeholderCompany": "Optioneel",
             "placeholderMessage": "Waar gaat het om? Steekwoorden zijn ruim voldoende.",
             "typeOptions": {
-                "launch": "Website launch",
+                "launch": "Nieuwe website",
                 "redesign": "Redesign & relaunch",
                 "landing": "Landingspagina",
-                "ui": "UI-componenten & designsysteem",
+                "check": "Gratis websitecheck",
+                "care": "Aanpassing, reparatie of onderhoud",
+                "design": "Grafisch ontwerp (logo, visitekaartje, drukwerk)",
+                "marketing": "Google-profiel & SEO",
                 "other": "Iets anders"
             },
             "labelReferral": "Hoe bent u bij ons terechtgekomen?",

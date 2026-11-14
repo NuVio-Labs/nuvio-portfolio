@@ -1,6 +1,7 @@
 {
     "nav": {
-        "brand": "nuviolabs.",
+        "brand": "NuVioLabs",
+        "brandTagline": "Design & Webentwicklung",
         "work": "Projekte",
         "about": "Über mich",
         "lab": "Research",
@@ -12,8 +13,8 @@
         "journal": "Journal"
     },
     "hero": {
-        "eyebrowLocal": "Webdesign aus Kranenburg · DE · NL",
-        "sublineWork": "Moderne Unternehmenswebsites mit klarer Struktur und starker Performance. Ein paar davon sehen Sie direkt hier.",
+        "eyebrowLocal": "Design & Webentwicklung aus Kranenburg · DE · NL",
+        "sublineWork": "Moderne Websites, Logos und Geschäftsausstattung mit klarer Struktur und starker Wirkung. Ein paar Projekte sehen Sie direkt hier.",
         "ctaAllProjects": "Alle Projekte",
         "workStripLabel": "Ausgewählte Projekte",
         "projectPreviewAlt": "Startseite von {title}",
@@ -218,7 +219,8 @@
     },
     "footer": {
         "copyright": "© 2026 NuVioLabs",
-        "tagline": "Design · Webentwicklung · Deutschland",
+        "tagline": "Webdesign, Grafikdesign und Online-Marketing aus Kranenburg am Niederrhein.",
+        "appointments": "Termine nach Vereinbarung",
         "research": "Research",
         "imprint": "Impressum",
         "privacy": "Datenschutz",
@@ -306,6 +308,10 @@
                 "q": "Was kostet eine neue Website?",
                 "a": "Jedes Projekt ist individuell. Reine Website-Projekte starten ab 1.490 €. Enthalten sind Konzept, Struktur, Design und Entwicklung einer vollständigen, mobile-first umgesetzten Website bis zum Go-live. Im ersten Gespräch klären wir Umfang, Ziel und Budget, damit Sie eine realistische und transparente Einschätzung erhalten."
             },
+            "design": {
+                "q": "Gestalten Sie auch Logos und Drucksachen?",
+                "a": "Ja. Neben Websites gestalte ich Logos, Visitenkarten, Briefpapier, Flyer und Geschäftsvorlagen. Alles kann im selben Stil umgesetzt werden, sodass Website und Drucksachen ein einheitliches Erscheinungsbild ergeben. Ein Logo startet ab 199 €, das Komplettpaket Geschäftsausstattung ab 249 €."
+            },
             "duration": {
                 "q": "Wie lange dauert die Umsetzung?",
                 "a": "Je nach Umfang und Vorbereitung in der Regel einige Wochen. Ein klarer Projektplan sorgt dafür, dass wir strukturiert und effizient vorgehen."
@@ -332,8 +338,8 @@
     },
     "seo": {
         "home": {
-            "title": "Webdesign & Websites am Niederrhein | NuVio Labs",
-            "description": "Moderne Websites für Unternehmen am Niederrhein. Schnell, mehrsprachig und auf Anfragen optimiert. Webdesign aus Kranenburg für Kleve und Umgebung."
+            "title": "Webdesign & Grafikdesign am Niederrhein | NuVio Labs",
+            "description": "Design & Webentwicklung aus Kranenburg: moderne Websites, Logos, Geschäftsausstattung und SEO für Unternehmen in Kleve und am Niederrhein. Schnell, mehrsprachig, auf Anfragen optimiert."
         },
         "work": {
             "title": "Projekte | NuVio Labs",
@@ -344,8 +350,8 @@
             "description": "NuVio Labs ist das Webdesign-Studio von Axel Schurer. Direkte Zusammenarbeit, kein Agenturoverhead, digitale Projekte mit messbarem Ergebnis."
         },
         "services": {
-            "title": "Leistungen | NuVio Labs",
-            "description": "Website Launch, Redesign, Landingpages und UI-Komponenten. Klare Pakete für digitale Projekte mit messbarem Ergebnis."
+            "title": "Leistungen & Preise: Webdesign, Grafikdesign, SEO | NuVio Labs",
+            "description": "Websites, Landingpages, Logos, Visitenkarten, Geschäftsausstattung und SEO mit transparenten Ab-Preisen. Kostenloser Webseiten-Check zum Einstieg."
         },
         "contact": {
             "title": "Kontakt | NuVio Labs",
@@ -378,40 +384,153 @@
     },
     "services": {
         "eyebrow": "Leistungen",
-        "headline": "Was ich für Sie umsetze.",
-        "subline": "Von der ersten Idee bis zum fertigen Launch. Klare Pakete für digitale Projekte mit messbarem Ergebnis.",
-        "cta": "Alle Leistungen ansehen",
-        "items": {
-            "launch": {
-                "title": "Website Launch",
-                "description": "Komplette Unternehmenswebsite von Konzept bis Go-live. Mobile-first, performant und auf Anfragen optimiert."
+        "headline": "Design & Webentwicklung aus einer Hand.",
+        "subline": "Websites, Grafikdesign und Sichtbarkeit bei Google: alles, was Ihr Unternehmen für einen stimmigen Auftritt braucht. Mit transparenten Preisen.",
+        "cta": "Alle Leistungen & Preise ansehen",
+        "price": {
+            "free": "Kostenlos",
+            "onRequest": "Auf Anfrage",
+            "from": "ab {price}",
+            "perMonth": "{price} / Monat",
+            "perHour": "{price} / Std.",
+            "note": "Alle Preise sind Endpreise. Gemäß § 19 UStG wird keine Umsatzsteuer berechnet (Kleinunternehmerregelung). Ab-Preise gelten für den beschriebenen Grundumfang; den genauen Preis erhalten Sie nach einem kurzen Gespräch als verbindliches Angebot."
+        },
+        "categories": {
+            "web": {
+                "eyebrow": "Webentwicklung",
+                "title": "Webdesign & Entwicklung",
+                "teaser": "Unternehmenswebsites und Landingpages, die schnell laden, auf dem Handy überzeugen und zu Anfragen führen.",
+                "intro": "Moderne Websites mit klarer Struktur, hochwertigem Design und starker Performance. Mobile first, auf Wunsch mehrsprachig und technisch sauber umgesetzt. Auch für bestehende Seiten: Check, Reparatur und laufende Pflege.",
+                "cta": "Website-Projekt anfragen",
+                "more": "Webdesign im Detail",
+                "items": {
+                    "website": {
+                        "title": "Unternehmenswebsite",
+                        "description": "Individuelle Website mit mehreren Seiten, von Konzept und Design bis zum Go-live. Der Preis richtet sich nach Seiten und Funktionen."
+                    },
+                    "landing": {
+                        "title": "Individuelle Landingpage",
+                        "description": "Eine fokussierte Seite für ein Angebot, eine Kampagne oder ein Event. Design und Entwicklung nach Ihren Anforderungen."
+                    },
+                    "redesign": {
+                        "title": "Redesign & Relaunch",
+                        "description": "Ihre bestehende Website wird modernisiert, technisch bereinigt und auf heutige Standards gebracht."
+                    },
+                    "check": {
+                        "title": "Webseiten-Check",
+                        "description": "Kurze Einschätzung Ihrer bestehenden Website: Was funktioniert, wo es hakt. Keine ausführliche Analyse."
+                    },
+                    "repair": {
+                        "title": "Website-Reparatur",
+                        "description": "Eine vereinbarte Kleinänderung oder Fehlerbehebung, bis 60 Minuten."
+                    },
+                    "adjustments": {
+                        "title": "Website-Anpassungen",
+                        "description": "Texte, Bilder, Buttons oder die mobile Darstellung anpassen."
+                    },
+                    "maintenance": {
+                        "title": "Website-Wartung",
+                        "description": "Laufende technische Betreuung und Updates. 12 Monate Mindestlaufzeit, Leistungsumfang laut Vertrag."
+                    },
+                    "hourly": {
+                        "title": "Webentwicklung nach Aufwand",
+                        "description": "Technische Anpassungen und individuelle Arbeiten, abgerechnet pro Stunde."
+                    }
+                }
             },
-            "redesign": {
-                "title": "Redesign & Relaunch",
-                "description": "Ihre bestehende Website wird modernisiert, technisch bereinigt und auf heutige Standards gebracht."
+            "design": {
+                "eyebrow": "Design",
+                "title": "Grafikdesign",
+                "teaser": "Logo, Visitenkarte, Briefpapier und Vorlagen: ein Erscheinungsbild, das online wie auf Papier zusammenpasst.",
+                "intro": "Ein starker Auftritt endet nicht an der Website. Ich gestalte Logos, Drucksachen und Geschäftsvorlagen im selben Stil wie Ihre Website, damit Ihr Unternehmen überall wiedererkennbar ist.",
+                "cta": "Design-Projekt anfragen",
+                "more": "Grafikdesign im Detail",
+                "items": {
+                    "logo": {
+                        "title": "Logo-Design",
+                        "description": "Individuelles Logo für Unternehmen und Selbstständige. Modern, wiedererkennbar und für Web und Druck vorbereitet."
+                    },
+                    "stationery": {
+                        "title": "Geschäftsausstattung Komplettpaket",
+                        "description": "Einheitliche Geschäftsausstattung für Unternehmen und Selbstständige: aufeinander abgestimmte Vorlagen in Ihrem Corporate Design."
+                    },
+                    "businessCards": {
+                        "title": "Visitenkarten-Design",
+                        "description": "Individuelle, moderne Visitenkarten passend zu Ihrem Unternehmensauftritt."
+                    },
+                    "letterhead": {
+                        "title": "Briefkopf & Geschäftspapier",
+                        "description": "Individuelle Briefköpfe und Geschäftspapiere passend zu Ihrem Corporate Design."
+                    },
+                    "invoice": {
+                        "title": "Rechnungsvorlagen",
+                        "description": "Rechnungsvorlagen mit Firmenlogo, Kontaktdaten und übersichtlichem Layout."
+                    },
+                    "quote": {
+                        "title": "Angebotsvorlagen",
+                        "description": "Angebotsvorlagen im Corporate Design Ihres Unternehmens, übersichtlich und professionell."
+                    },
+                    "emailSignature": {
+                        "title": "E-Mail-Signatur",
+                        "description": "Professionelle E-Mail-Signatur mit Firmenlogo, Kontaktdaten und einheitlichem Design."
+                    },
+                    "stamp": {
+                        "title": "Firmenstempel",
+                        "description": "Gestaltung von Firmenstempeln mit Logo, Firmenname und Kontaktdaten."
+                    },
+                    "flyer": {
+                        "title": "Flyer & Informationsblätter",
+                        "description": "Gestaltung von Flyern, Informationsblättern und Werbematerialien für Ihr Unternehmen."
+                    },
+                    "banner": {
+                        "title": "Banner & Werbegrafiken",
+                        "description": "Moderne Werbebanner, Website-Banner und digitale Werbegrafiken."
+                    },
+                    "social": {
+                        "title": "Social-Media-Grafiken",
+                        "description": "Grafiken für Instagram, Facebook und weitere soziale Netzwerke, passend zu Ihrem Auftritt."
+                    },
+                    "pdfForms": {
+                        "title": "Digitale Formulare & ausfüllbare PDFs",
+                        "description": "Individuelle PDF-Formulare mit ausfüllbaren Textfeldern, Checkboxen und mehr."
+                    }
+                }
             },
-            "landing": {
-                "title": "Landingpage",
-                "description": "Eine fokussierte Seite für ein konkretes Ziel: Kampagne, Produkt oder Event. Schnell und konversionsstark."
-            },
-            "ui": {
-                "title": "UI-Komponenten & Design System",
-                "description": "Konsistente, wiederverwendbare Interface-Bausteine für Teams, die skalieren wollen."
-            },
-            "maintenance": {
-                "title": "Pflege & Weiterentwicklung",
-                "description": "Laufende technische Betreuung, Updates und gezielte Erweiterungen für bestehende Projekte."
+            "marketing": {
+                "eyebrow": "Sichtbarkeit",
+                "title": "Online-Marketing & SEO",
+                "teaser": "Damit Kunden Sie finden: ein optimiertes Google-Unternehmensprofil und eine Website, die Suchmaschinen verstehen.",
+                "intro": "Die beste Website hilft wenig, wenn sie niemand findet. Ich optimiere Ihr Google-Unternehmensprofil sowie die technischen und inhaltlichen Grundlagen Ihrer Website für die lokale Suche.",
+                "cta": "Sichtbarkeit verbessern",
+                "more": "Online-Marketing im Detail",
+                "items": {
+                    "googleProfile": {
+                        "title": "Google-Unternehmensprofil optimieren",
+                        "description": "Professionelle Optimierung Ihres Google-Unternehmensprofils: Kategorien, Leistungen, Texte und Bilder, damit Ihr Profil vollständig und überzeugend ist."
+                    },
+                    "seoBasic": {
+                        "title": "SEO-Basisoptimierung",
+                        "description": "Suchmaschinenoptimierung für Ihre Website: Meta-Titel, Beschreibungen, Überschriften-Struktur und technische Grundlagen."
+                    },
+                    "seoAudit": {
+                        "title": "SEO-Analyse einer Website",
+                        "description": "Analyse Ihrer Website mit konkreten Empfehlungen, was sich für Google verbessern lässt."
+                    }
+                }
             }
         },
         "page": {
             "hero": {
-                "eyebrow": "Leistungen",
-                "headline": "Was ich für Sie umsetze.",
-                "subline": "Klar umrissene Pakete für digitale Projekte: von der neuen Website bis zur laufenden Weiterentwicklung."
+                "eyebrow": "Leistungen & Preise",
+                "headline": "Design & Webentwicklung aus einer Hand.",
+                "subline": "Von der Unternehmenswebsite über Logo und Visitenkarte bis zum Google-Unternehmensprofil. Klare Leistungen, transparente Ab-Preise und ein Ansprechpartner für alles."
             },
+            "jumpLabel": "Leistungsbereiche",
             "cta": {
                 "headline": "Bereit, Ihr Projekt zu starten?",
-                "button": "Projekt anfragen"
+                "text": "Beschreiben Sie kurz, was Sie brauchen. Sie erhalten ein klares Angebot, ohne Verpflichtung.",
+                "button": "Projekt anfragen",
+                "check": "Kostenlosen Webseiten-Check anfragen"
             }
         }
     },
@@ -490,7 +609,7 @@
         "hero": {
             "eyebrow": "Kontakt",
             "headline": "Lassen Sie uns über Ihr Projekt sprechen.",
-            "subline": "Ob neue Website, Redesign oder eine erste Idee: Beschreiben Sie kurz, was Sie brauchen. Ich melde mich innerhalb von 24 Stunden."
+            "subline": "Ob neue Website, Logo, Redesign oder eine erste Idee: Beschreiben Sie kurz, was Sie brauchen. Ich melde mich innerhalb von 24 Stunden."
         },
         "form": {
             "labelName": "Name",
@@ -503,10 +622,13 @@
             "placeholderCompany": "Optional",
             "placeholderMessage": "Worum geht es? Stichpunkte genügen völlig.",
             "typeOptions": {
-                "launch": "Website Launch",
+                "launch": "Neue Website",
                 "redesign": "Redesign & Relaunch",
                 "landing": "Landingpage",
-                "ui": "UI-Komponenten & Design System",
+                "check": "Kostenloser Webseiten-Check",
+                "care": "Anpassung, Reparatur oder Wartung",
+                "design": "Grafikdesign (Logo, Visitenkarte, Drucksachen)",
+                "marketing": "Google-Profil & SEO",
                 "other": "Etwas anderes"
             },
             "labelReferral": "Wie sind Sie auf uns aufmerksam geworden?",
